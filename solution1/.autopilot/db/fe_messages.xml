@@ -1,0 +1,27 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution1/csynth.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="main" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=main" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:16:0" msg_body="Inlining function 'std::isnan(float)' into 'is_valid(int, float*)'">
+        <args Callee="std::isnan(float)" Caller="is_valid(int, float*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:220:0" msg_body="Inlining function 'find_region(int, float*)' into 'test_point(int, float*)'">
+        <args Callee="find_region(int, float*)" Caller="test_point(int, float*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:220:0" msg_body="Inlining function 'is_valid(int, float*)' into 'test_point(int, float*)'">
+        <args Callee="is_valid(int, float*)" Caller="test_point(int, float*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:236:0" msg_body="Inlining function 'test_point(int, float*)' into 'test(int)'">
+        <args Callee="test_point(int, float*)" Caller="test(int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:254:0" msg_body="Inlining function 'test(int)' into 'run()'">
+        <args Callee="test(int)" Caller="run()"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:269:0" msg_body="Inlining function 'init()' into 'main'">
+        <args Callee="init()" Caller="main"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:269:0" msg_body="Inlining function 'run()' into 'main'">
+        <args Callee="run()" Caller="main"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

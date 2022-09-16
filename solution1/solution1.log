@@ -1,0 +1,293 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.04 seconds. CPU system time: 0.35 seconds. Elapsed time: 0.99 seconds; current allocated memory: 456.906 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const' into 'fp_struct<float>::to_float() const' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:351:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const' into 'fp_struct<float>::to_ieee() const' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:375:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float generic_copysign<float>(float, float)' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_copysign<float>(float, float)' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'float generic_copysign<float>(float, float)' into 'float generic_fabs<float>(float)' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'float generic_fabs<float>(float)' into 'fabsf' (/wrk/ci/prod/2022.1/rdi_builds/continuous/2022_04_18_3526262/src/shared/hls/clib/hlsmath/src/c/fabsfloat.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'fabsf' into 'std::fabs(float)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:242:0)
+INFO: [HLS 214-178] Inlining function 'std::fabs(float)' into 'compare()' (detector_solid/abs_solid_detector.cpp:76:0)
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float*)' (detector_solid/abs_solid_detector.cpp:15:0)
+INFO: [HLS 214-178] Inlining function 'score_region(REGION_T*, REGION_T*)' into 'find_closest_region(int, float*)' (detector_solid/abs_solid_detector.cpp:120:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float*)' into 'insert_point(float*, bool)' (detector_solid/abs_solid_detector.cpp:155:0)
+INFO: [HLS 214-178] Inlining function 'find_region(float*)' into 'insert_point(float*, bool)' (detector_solid/abs_solid_detector.cpp:155:0)
+INFO: [HLS 214-178] Inlining function 'update_train_regions(int, float*, bool)' into 'insert_point(float*, bool)' (detector_solid/abs_solid_detector.cpp:155:0)
+INFO: [HLS 214-178] Inlining function 'find_closest_region(int, float*)' into 'insert_point(float*, bool)' (detector_solid/abs_solid_detector.cpp:155:0)
+INFO: [HLS 214-178] Inlining function 'merge_regions(int, int)' into 'insert_point(float*, bool)' (detector_solid/abs_solid_detector.cpp:155:0)
+INFO: [HLS 214-178] Inlining function 'compare()' into 'train()' (detector_solid/abs_solid_detector.cpp:236:0)
+INFO: [HLS 214-178] Inlining function 'train()' into 'main' (detector_solid/abs_solid_detector.cpp:246:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.57 seconds. CPU system time: 0.41 seconds. Elapsed time: 4.21 seconds; current allocated memory: 457.145 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 457.145 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 477.590 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 485.070 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_16_1' (detector_solid/abs_solid_detector.cpp:16) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_26_1' (detector_solid/abs_solid_detector.cpp:26) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_69_1' (detector_solid/abs_solid_detector.cpp:69) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_173_1' (detector_solid/abs_solid_detector.cpp:173) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_69_1' (detector_solid/abs_solid_detector.cpp:69) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_1' (detector_solid/abs_solid_detector.cpp:188) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_137_1' (detector_solid/abs_solid_detector.cpp:137) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_150_2' (detector_solid/abs_solid_detector.cpp:150) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_77_1' (detector_solid/abs_solid_detector.cpp:77) in function 'main' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_26_1' (detector_solid/abs_solid_detector.cpp:26) in function 'insert_point' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_122_1' (detector_solid/abs_solid_detector.cpp:188) in function 'insert_point' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_31_2' (detector_solid/abs_solid_detector.cpp:30) in function 'insert_point' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_93_1' (detector_solid/abs_solid_detector.cpp:93) in function 'insert_point' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_99_2' (detector_solid/abs_solid_detector.cpp:99) in function 'insert_point' completely with a factor of 5.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:26:27) to (detector_solid/abs_solid_detector.cpp:26:19) in function 'insert_point'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:188:10) to (detector_solid/abs_solid_detector.cpp:122:20) in function 'insert_point'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'insert_point' (detector_solid/abs_solid_detector.cpp:26:20)...16 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 517.035 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_187_2' (detector_solid/abs_solid_detector.cpp:188:10) in function 'insert_point' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.max' (detector_solid/abs_solid_detector.cpp:70:54)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.min' (detector_solid/abs_solid_detector.cpp:71:59)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.center' (detector_solid/abs_solid_detector.cpp:72:25)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.center' (detector_solid/abs_solid_detector.cpp:174:88)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.max' (detector_solid/abs_solid_detector.cpp:174:57)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.min' (detector_solid/abs_solid_detector.cpp:174:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.min' (detector_solid/abs_solid_detector.cpp:139:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.max' (detector_solid/abs_solid_detector.cpp:142:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.center' (detector_solid/abs_solid_detector.cpp:144:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.min' (detector_solid/abs_solid_detector.cpp:151:14)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 587.180 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'main' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_26_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_26_1'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_26_1' (loop 'VITIS_LOOP_26_1'): Unable to schedule 'load' operation ('regions_max_load_1', detector_solid/abs_solid_detector.cpp:34) on array 'regions_max' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'regions_max'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_26_1' (loop 'VITIS_LOOP_26_1'): Unable to schedule 'load' operation ('regions_max_load_3', detector_solid/abs_solid_detector.cpp:34) on array 'regions_max' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'regions_max'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 38, loop 'VITIS_LOOP_26_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 590.016 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.29 seconds; current allocated memory: 590.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_69_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_69_1'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_69_1' (loop 'VITIS_LOOP_69_1'): Unable to schedule 'store' operation ('regions_min_addr_write_ln71', detector_solid/abs_solid_detector.cpp:71) of constant 0 on array 'regions_min' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 14, loop 'VITIS_LOOP_69_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 590.906 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 590.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_173_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_173_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_173_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 591.219 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 591.219 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_69_11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_69_1'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_69_11' (loop 'VITIS_LOOP_69_1'): Unable to schedule 'store' operation ('regions_min_addr_write_ln71', detector_solid/abs_solid_detector.cpp:71) of constant 0 on array 'regions_min' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 14, loop 'VITIS_LOOP_69_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 591.680 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 591.680 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_122_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_122_1'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_122_1' (loop 'VITIS_LOOP_122_1'): Unable to schedule 'load' operation ('regions_min_load_10', detector_solid/abs_solid_detector.cpp:101) on array 'regions_min' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_122_1' (loop 'VITIS_LOOP_122_1'): Unable to schedule 'load' operation ('regions_min_load_12', detector_solid/abs_solid_detector.cpp:101) on array 'regions_min' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 32, loop 'VITIS_LOOP_122_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.34 seconds; current allocated memory: 594.438 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 594.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_137_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_137_1'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_137_1' (loop 'VITIS_LOOP_137_1'): Unable to schedule 'load' operation ('regions_min_load_6', detector_solid/abs_solid_detector.cpp:138) on array 'regions_min' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 11, loop 'VITIS_LOOP_137_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.52 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 595.309 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 595.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_150_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_150_2'.
+WARNING: [HLS 200-880] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_150_2' (loop 'VITIS_LOOP_150_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('regions_center_addr_write_ln151', detector_solid/abs_solid_detector.cpp:151) of variable 'regions_center_load_1', detector_solid/abs_solid_detector.cpp:151 on array 'regions_center' and 'load' operation ('regions_center_load_1', detector_solid/abs_solid_detector.cpp:151) on array 'regions_center'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_150_2' (loop 'VITIS_LOOP_150_2'): Unable to schedule 'load' operation ('regions_min_load_8', detector_solid/abs_solid_detector.cpp:151) on array 'regions_min' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_150_2' (loop 'VITIS_LOOP_150_2'): Unable to schedule 'store' operation ('regions_min_addr_write_ln151', detector_solid/abs_solid_detector.cpp:151) of variable 'regions_min_load', detector_solid/abs_solid_detector.cpp:151 on array 'regions_min' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_VITIS_LOOP_150_2' (loop 'VITIS_LOOP_150_2'): Unable to schedule 'store' operation ('regions_min_addr_11_write_ln151', detector_solid/abs_solid_detector.cpp:151) of variable 'regions_min_load_7', detector_solid/abs_solid_detector.cpp:151 on array 'regions_min' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'regions_min'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 6, loop 'VITIS_LOOP_150_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 596.145 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 596.145 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 597.633 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 597.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'main' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.69 seconds. CPU system time: 0 seconds. Elapsed time: 0.7 seconds; current allocated memory: 597.633 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 597.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_VITIS_LOOP_26_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'insert_point_Pipeline_VITIS_LOOP_26_1' pipeline 'VITIS_LOOP_26_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_VITIS_LOOP_26_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.68 seconds. CPU system time: 0 seconds. Elapsed time: 0.68 seconds; current allocated memory: 599.062 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_VITIS_LOOP_69_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'insert_point_Pipeline_VITIS_LOOP_69_1' pipeline 'VITIS_LOOP_69_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
