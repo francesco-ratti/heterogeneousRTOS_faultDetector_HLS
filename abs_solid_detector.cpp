@@ -6,8 +6,8 @@
 int MODE = ABS_DETECTOR_TEST;
 
 region_t regions[MAX_TASKS][MAX_REGIONS]; //regions from the distribution
-int n_regions = 0;
-int aov_dims[MAX_TASKS];
+unsigned short n_regions[MAX_TASKS];
+unsigned short aov_dims[MAX_TASKS];
 
 float thresh=THRESH;
 float data_key[MAX_TASKS][MAX_AOV_DIM]; // key
@@ -22,6 +22,14 @@ bool is_valid(int taskId, float val[MAX_AOV_DIM]){
 }
 
 void init() {
+	for (int i=0; i < MAX_TASKS; i++) {
+		n_regions[i]=0;
+		for (int j=0; j<MAX_AOV_DIM; j++) {
+			data_key[i][j]=0;
+			data[i][j]=0;
+		}
+	}
+
 	//dummy init TODO
 	for (int i=0; i < MAX_TASKS; i++) {
 		aov_dims[i]=5;
@@ -31,7 +39,7 @@ void init() {
 int find_region(int taskId, float d[MAX_AOV_DIM]){
 	int idx = -1;
 	float score = -1;
-	for(int i=0; i < n_regions; i++){
+	for(int i=0; i < n_regions[taskId]; i++){
 		bool is_idx = true;
 		float tmp_score = 0;
 		float dist = 0;
@@ -127,7 +135,7 @@ float score_region(int taskId, region_t * r1, region_t * r2){
 
 int find_closest_region(int taskId, int idx, float * score){
 	int id = -1;
-	for(int i=0; i < n_regions; i++){
+	for(int i=0; i < n_regions[taskId]; i++){
 		if(i == idx) continue;
 		//printf("score [%d,%d]:", idx, i);
 		float sc = score_region(taskId, &(regions[taskId][idx]), &(regions[taskId][i]));
@@ -179,20 +187,20 @@ void insert_point(int taskId, float d[MAX_AOV_DIM], bool is_accept){
 
 	//create a new node.
 	for(int i=0; i < aov_dims[taskId]; i++){
-		regions[taskId][n_regions].min[i] = regions[taskId][n_regions].max[i] = regions[taskId][n_regions].center[i] = d[i];
+		regions[taskId][n_regions[taskId]].min[i] = regions[taskId][n_regions[taskId]].max[i] = regions[taskId][n_regions[taskId]].center[i] = d[i];
 	}
-	n_regions++;
+	n_regions[taskId]++;
 
-	update_train_regions(taskId, n_regions-1,d, is_accept);
+	update_train_regions(taskId, (n_regions[taskId])-1,d, is_accept);
 	//add region
 	//if we're full of space, make room for another region.
-	if(n_regions == MAX_REGIONS){ //if we're full.
+	if(n_regions[taskId] == MAX_REGIONS){ //if we're full.
 		//find the region with the most similar dynamics that isn't
 		//completely obstructed by another region.
 		int merge_1=-1;
 		int merge_2=-1;
 		float score = 0;
-		for(int i=0; i < n_regions; i++){
+		for(int i=0; i < n_regions[taskId]; i++){
 			float tmp_score=0;
 			int tmp_other = find_closest_region(taskId, i, &tmp_score);
 			if(merge_1 < 0 || tmp_score > score){
@@ -202,7 +210,7 @@ void insert_point(int taskId, float d[MAX_AOV_DIM], bool is_accept){
 			}
 		}
 		merge_regions(taskId, merge_1, merge_2);
-		n_regions--;
+		n_regions[taskId]--;
 	}
 }
 
