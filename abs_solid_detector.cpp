@@ -5,11 +5,12 @@
 
 int MODE = ABS_DETECTOR_TEST;
 
-region_t regions[MAX_TASKS][MAX_REGIONS]; //regions from the distribution
 unsigned short n_regions[MAX_TASKS];
-unsigned short aov_dims[MAX_TASKS];
+region_t regions[MAX_TASKS][MAX_REGIONS]; //regions from the distribution
 
 float thresh=THRESH;
+
+unsigned short aov_dims[MAX_TASKS];
 float data_key[MAX_TASKS][MAX_AOV_DIM]; // key
 float data[MAX_TASKS][MAX_AOV_DIM]; // result
 
@@ -25,8 +26,13 @@ void init() {
 	for (int i=0; i < MAX_TASKS; i++) {
 		n_regions[i]=0;
 		for (int j=0; j<MAX_AOV_DIM; j++) {
-			data_key[i][j]=0;
-			data[i][j]=0;
+			data_key[i][j]=0.0;
+			data[i][j]=0.0;
+		}
+		for (int k=0; k<MAX_REGIONS; k++) {
+			regions[i][k].center=0.0;
+			regions[i][k].max=0.0;
+			regions[i][k].min=0.0;
 		}
 	}
 
