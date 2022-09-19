@@ -1,18 +1,35 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [{
-          "functionName": "main",
+      "directive": [
+        {
+          "functionName": "run",
           "label": "",
           "functionLabel": "",
           "id": "1",
-          "sourceFile": "\/home\/francesco\/workspace\/detector_solid\/solution1\/csynth.tcl",
-          "sourceLine": "16",
+          "sourceFile": "\/home\/francesco\/workspace\/detector_solid\/solution1\/directives.tcl",
+          "sourceLine": "6",
           "pragma": {
             "name": "TOP",
             "option": [{
                 "name": "name",
-                "value": "main"
+                "value": "run"
               }]
           }
-        }]
+        },
+        {
+          "functionName": "run",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/francesco\/workspace\/detector_solid\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "run"
+              }]
+          }
+        }
+      ]
     }]}

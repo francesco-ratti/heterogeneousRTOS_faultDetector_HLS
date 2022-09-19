@@ -1,21 +1,36 @@
 #include "parameters.h"
 #include "region.h"
-
+#include <ap_int.h>
+#include "hls_stream.h"
 #include <math.h>
+#include <string.h> // memcpy
 
-int MODE = ABS_DETECTOR_TEST;
+//#define ABS_DETECTOR_TEST 0
+//#define ABS_DETECTOR_TRAIN 1
+//#define ABS_DETECTOR_KEY 2
+//#define ABS_DETECTOR_LOG 3
 
-unsigned short n_regions[MAX_TASKS];
-region_t regions[MAX_TASKS][MAX_REGIONS]; //regions from the distribution
+//int MODE = ABS_DETECTOR_TEST;
 
-float thresh=THRESH;
+ap_int<16> n_regions[MAX_CHECKS];
 
-unsigned short aov_dims[MAX_TASKS];
-float data_key[MAX_TASKS][MAX_AOV_DIM]; // key
-float data[MAX_TASKS][MAX_AOV_DIM]; // result
+region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
+
+const float thresh=THRESH;
+
+unsigned short aov_dims[MAX_CHECKS];
+float data_key[MAX_AOV_DIM]; // key
+float data[MAX_CHECKS][MAX_AOV_DIM]; // result
+
+
 
 bool is_valid(int taskId, float val[MAX_AOV_DIM]){
+#pragma HLS inline
+
 	for(int i=0; i < aov_dims[taskId]; i++){
+#pragma HLS unroll
+
+//#pragma HLS PIPELINE II=1
 		if(isnan(val[i]) || val[i] == INFINITY || val[i] == -INFINITY)
 			return false;
 	}
@@ -23,21 +38,22 @@ bool is_valid(int taskId, float val[MAX_AOV_DIM]){
 }
 
 void init() {
-	for (int i=0; i < MAX_TASKS; i++) {
+	for (int i=0; i < MAX_CHECKS; i++) {
 		n_regions[i]=0;
 		for (int j=0; j<MAX_AOV_DIM; j++) {
-			data_key[i][j]=0.0;
+
+			//data_key[i][j]=0.0;
 			data[i][j]=0.0;
 		}
-		for (int k=0; k<MAX_REGIONS; k++) {
-			regions[i][k].center=0.0;
-			regions[i][k].max=0.0;
-			regions[i][k].min=0.0;
-		}
+		//		for (int k=0; k<MAX_REGIONS; k++) {
+		//			regions[i][k].center=0.0;
+		//			regions[i][k].max=0.0;
+		//			regions[i][k].min=0.0;
+		//		}
 	}
 
 	//dummy init TODO
-	for (int i=0; i < MAX_TASKS; i++) {
+	for (int i=0; i < MAX_CHECKS; i++) {
 		aov_dims[i]=5;
 	}//__________
 }
@@ -45,12 +61,14 @@ void init() {
 int find_region(int taskId, float d[MAX_AOV_DIM]){
 	int idx = -1;
 	float score = -1;
-	for(int i=0; i < n_regions[taskId]; i++){
+	for(int i=0; i < MAX_REGIONS; i++){
 		bool is_idx = true;
 		float tmp_score = 0;
 		float dist = 0;
 		float area = 0;
-		for(int j=0; j < aov_dims[taskId]; j++){
+		for(int j=0; j < MAX_AOV_DIM; j++){
+			//#pragma HLS PIPELINE II=1
+#pragma HLS unroll
 			//compute the distance and scale.
 			float ldist = (d[j] - regions[taskId][i].center[j]);
 			float hdist = (regions[taskId][i].max[j] - regions[taskId][i].center[j]);
@@ -65,8 +83,8 @@ int find_region(int taskId, float d[MAX_AOV_DIM]){
 		//used to just be smallest area.
 		tmp_score = 1/area;
 		if(is_idx && (idx < 0 || tmp_score > score)){
-				idx = i;
-				score = tmp_score;
+			idx = i;
+			score = tmp_score;
 		}
 	}
 	return idx;
@@ -77,9 +95,9 @@ void update_train_regions(int taskId, int id, float val[MAX_AOV_DIM], bool is_ac
 	//TODO for logging
 
 	//forget behavior
-//	for(int i=0; i < n_regions; i++){
-//		regions[i]->stats.update_accuracy_rate(id == i, is_acc);
-//	}
+	//	for(int i=0; i < n_regions; i++){
+	//		regions[i]->stats.update_accuracy_rate(id == i, is_acc);
+	//	}
 	//we do not have a region.
 
 	//this->env->update_accuracy_rate(id < 0, false);
@@ -95,9 +113,9 @@ void update_train_regions(int taskId, int id, float val[MAX_AOV_DIM], bool is_ac
 	}
 }
 
-bool compare(int taskId){
+bool compare(int taskId, float data_key[MAX_AOV_DIM]){
 	for(int i=0; i < aov_dims[taskId]; i++){
-		if(fabs(data_key[taskId][i] - data[taskId][i]) > thresh){
+		if(fabs(data_key[i] - data[taskId][i]) > thresh){
 			return false;
 		}
 	}
@@ -166,10 +184,11 @@ void merge_regions(int taskId, int id1, int id2){
 		regions[taskId][id1].center[i] = (regions[taskId][id1].max[i] + regions[taskId][id1].min[i])/2.0;
 	}
 	//TODO for logs
-//	regions[id1].stats.merge(&(regions[id2].stats));
+	//	regions[id1].stats.merge(&(regions[id2].stats));
 
 	//move everything over
 	for(int i=id2; i < MAX_REGIONS-1; i++){
+		//			#pragma HLS PIPELINE II=16
 		regions[taskId][i] = regions[taskId][i+1];
 	}
 }
@@ -231,56 +250,167 @@ void insert_point(int taskId, float d[MAX_AOV_DIM], bool is_accept){
 //
 //}
 
-bool test_point(int taskId, float d[MAX_AOV_DIM]){
-	int id = find_region(taskId, d); // find the closest scoring info.
-	//printf("test: %f grp:%d score:%f\n", d[0], id, score);
-	//printf("score: %f\n", score);
-	if(!is_valid(taskId, d) || id < 0){
-		//TODO for logging
-		//		this->update_test_regions(-1,false);
-		return false;
-	}
-	else{
-		//TODO for logging
-		//this->update_test_regions(id,true);
-		return true;
-	}
-}
+//bool test_point(int taskId, float d[MAX_AOV_DIM]){
+//	int id = find_region(taskId, d); // find the closest scoring info.
+//	//printf("test: %f grp:%d score:%f\n", d[0], id, score);
+//	//printf("score: %f\n", score);
+//	if(!is_valid(taskId, d) || id < 0){
+//		//TODO for logging
+//		//		this->update_test_regions(-1,false);
+//		return false;
+//	}
+//	else{
+//		//TODO for logging
+//		//this->update_test_regions(id,true);
+//		return true;
+//	}
+//}
 
 bool test(int taskId){
-	if(MODE ==  ABS_DETECTOR_KEY) return true;
-	bool res =  test_point(taskId, data[taskId]);
-	//update running statistics
-	//printf("test: %f %s -> pct-rej:%f\n", this->data[0], res ? "accept" : "reject", this->stats.n_rej/this->stats.n_total_test);
-	return res;
+	//if(MODE ==  ABS_DETECTOR_KEY) return true;
+	//	bool res =  test_point(taskId, inputData);//data[taskId]);
+	//	//update running statistics
+	//	//printf("test: %f %s -> pct-rej:%f\n", this->data[0], res ? "accept" : "reject", this->stats.n_rej/this->stats.n_total_test);
+	//	return res;
+
+	//from test_point
+
+	int id = find_region(taskId, data[taskId]); // find the closest scoring info.
+	//printf("test: %f grp:%d score:%f\n", d[0], id, score);
+	//printf("score: %f\n", score);
+	//	if(!is_valid(taskId, inputData) || id < 0){
+	//		//TODO for logging
+	//		//		this->update_test_regions(-1,false);
+	//		return false;
+	//	}
+	//	else{
+	//		//TODO for logging
+	//		//this->update_test_regions(id,true);
+	//		return true;
+	//	}
+
+	return !(!is_valid(taskId, data[taskId]) || id < 0);
+
 }
 
-bool train(int taskId){
-	if(MODE ==  ABS_DETECTOR_KEY) return true;
-	bool corr = compare(taskId);
+bool train(int taskId, float inputData[MAX_AOV_DIM]){
+	//if(MODE ==  ABS_DETECTOR_KEY) return true;
+	bool corr = compare(taskId, inputData);
 	//printf("train: %f = %f : %s pct_fp:%f\n", this->data[0], this->data_key[0], corr ? "same":"not same", this->stats.n_false/this->stats.n_total_train);
 	//insert the training point
 	insert_point(taskId, data[taskId], corr);
-	if(!corr) insert_point(taskId, data_key[taskId],true);
+	if(!corr) insert_point(taskId, inputData, true);//data_key[taskId],true);
 	return true;
 }
 
-bool run(){
-	int taskId=1;
+#define COMMAND_INIT 1
+#define COMMAND_TEST 2
+#define COMMAND_TRAIN 3
 
-			if(MODE == ABS_DETECTOR_TEST){
-				return test(taskId);
-			}
-			else if(MODE == ABS_DETECTOR_TRAIN){
-				return train(taskId);
-			}
-//			else{
-//				this->log();
-				return true;
-//			}
-		}
+#define STATE_UNINITIALISED 0
+#define STATE_READY 1
 
-int main() {
-	init();
-	return run();
+bool state=STATE_UNINITIALISED;
+
+
+struct OutcomeStr {
+	bool outcome;
+	bool isNew;
+};
+
+#include "hls_math.h"
+#define sizeOfInputData sizeof(float)*MAX_AOV_DIM
+#define sizeOfOutcome  ((MAX_CHECKS*sizeof(OutcomeStr)) / 32) + (((MAX_CHECKS*sizeof(OutcomeStr)) % 32) != 0)
+#define SHARED_MEM_SIZE sizeOfInputData*MAX_CHECKS+sizeOfOutcome
+
+struct controlStr {
+	ap_int<2> command;
+	ap_int<16> taskId;
+};
+
+void writeOutcomeInRam(OutcomeStr* outcomeptr, bool outcome) {
+#pragma HLS inline off
+	OutcomeStr out;
+
+	out.isNew=true;
+	out.outcome=outcome;
+
+	memcpy((void*) outcomeptr, (void*) &out, sizeof(out));
+}
+
+//controlStr contr
+//hls::stream<controlStr> &control
+void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_int<16> realTaskId[MAX_CHECKS], ap_int<16> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<16> > &toScheduler) {
+	//	#pragma hls interface s_axilite port=return
+	//#pragma HLS interface axis port = control //bundle=A
+#pragma hls interface s_axilite port=contr
+
+	//#pragma HLS STREAM variable=control depth=1024 type=fifo
+
+#pragma HLS interface s_axilite port = trainedRegions //bundle=A
+#pragma HLS interface s_axilite port = realTaskId //bundle=A
+#pragma HLS interface s_axilite port = n_regions_in //bundle=A
+
+#pragma HLS reset variable=data
+
+#pragma HLS INTERFACE m_axi port=sharedMem
+
+#pragma HLS INTERFACE axis port=toScheduler
+
+#pragma HLS array_partition variable=data complete dim=2 //should be MAX_AOV_DIM
+#pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
+#pragma HLS array_partition variable=data_key complete
+
+	//ap_int<2> command=contr;
+	//ap_int<16> taskId=(contr & 0x11110000) >> 16;
+
+	float * inputDataInRam=(float*) sharedMem;
+	OutcomeStr* outcomeInRam=(OutcomeStr*) (sharedMem+sizeOfInputData*MAX_CHECKS);
+	//	if (state==STATE_UNINITIALISED) {
+	//		//if (command==COMMAND_INIT) {
+	//		memcpy(&regions, trainedRegions, sizeof(regions));
+	memcpy(&n_regions, n_regions_in, sizeof(n_regions));
+	//
+	//		//init();
+	//		state=STATE_READY;
+
+	//		while (true) {
+	//		#pragma HLS PIPELINE II=5
+	//			bool outcome;
+	//			controlStr contr=control.read();
+	//
+	//			if (contr.command==COMMAND_TEST) {
+	//				memcpy((void*) (&(data[contr.taskId])), (void*) inputDataInRam, sizeOfInputData);
+	//				outcome=test(contr.taskId, data[contr.taskId]);
+	//			} else if (contr.command==COMMAND_TRAIN) {
+	//				memcpy((void*) data_key, (void*) inputDataInRam, sizeOfInputData);
+	//				outcome=train(contr.taskId, data_key);
+	//			}
+	//
+	//			outcomeInRam[contr.taskId].outcome=outcome;
+	//			outcomeInRam[contr.taskId].isNew=true;
+	//
+	//			if (!outcome)
+	//				toScheduler.write(realTaskId[contr.taskId]);
+	//		}
+
+	//	}
+	//	else if (state==STATE_READY) {
+	bool outcome;
+	//		controlStr contr=control.read();
+
+	//		if (contr.command==COMMAND_TEST) {
+	memcpy((void*) (&(data[contr.taskId])), (void*) inputDataInRam, sizeOfInputData);
+	outcome=!(!is_valid(contr.taskId, data[contr.taskId]) || find_region(contr.taskId, data[contr.taskId]) < 0);
+
+	//		} else
+	//		if (contr.command==COMMAND_TRAIN) {
+	//			memcpy((void*) data_key, (void*) inputDataInRam, sizeOfInputData);
+	//			outcome=train(contr.taskId, data_key);
+	//	}
+
+	writeOutcomeInRam(&(outcomeInRam[contr.taskId]), outcome);
+	if (!outcome)
+		toScheduler.write(realTaskId[contr.taskId]);
+	//	}
 }
