@@ -4,10 +4,10 @@ set ClockPeriod 20
 set ClockList ap_clk
 set HasVivadoClockPeriod 1
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
-set noPortSwitchingFlag 0
+set noPortSwitchingFlag 1
 set FloatingPointFlag 1
 set FftOrFirFlag 0
 set NbRWValue 0
@@ -44,7 +44,7 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg484:-1
 set SourceFiles {sc {} c ../abs_solid_detector.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile /home/francesco/workspace/detector_solid/solution1/solution1.directive
+set DirectiveFile C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/solution1.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

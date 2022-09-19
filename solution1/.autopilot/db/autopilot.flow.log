@@ -1,28 +1,33 @@
-INFO-FLOW: Workspace /home/francesco/workspace/detector_solid/solution1 opened at Mon Sep 19 17:09:05 CEST 2022
+INFO-FLOW: Workspace C:/Users/franc/OneDrive/Documenti/detector_solid/solution1 opened at Mon Sep 19 22:16:32 +0200 2022
 Execute     ap_set_clock -name default -period 20 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
 Execute     set_part xc7z020-clg484-1 
 Execute       create_platform xc7z020-clg484-1 -board  
-DBG:HLSDevice: Trying to load device library: /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lib/lnx64.o/librdi_hlsvwrap.so
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/francesco/tools/Xilinx/Vivado/2022.1/data/parts/arch.xml
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2021.2\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2021.2/data/parts/arch.xml
 DBG:HLSDevice: init success
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
-Command       create_platform done; 1.36 sec.
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       create_platform done; 1.996 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.315 sec.
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.428 sec.
 Execute       ap_part_info -name xc7z020-clg484-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 1.45 sec.
+Command     set_part done; 2.541 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vitis 
 INFO: [HLS 200-1505] Using flow_target 'vitis'
 Execute     get_config_interface -m_axi_latency 
@@ -54,25 +59,30 @@ Execute     config_interface -m_axi_max_widen_bitwidth=512
 Execute     send_msg_by_id INFO @200-1464@%s config_rtl -register_reset_num=3 
 INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
 Execute     config_rtl -register_reset_num=3 
-Command   open_solution done; 1.46 sec.
+Command   open_solution done; 2.669 sec.
 Execute   set_part xc7z020-clg484-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
 Execute     create_platform xc7z020-clg484-1 -board  
-Execute     source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.205 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.296 sec.
 Execute     ap_part_info -name xc7z020-clg484-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.11 sec.
+Command   set_part done; 0.386 sec.
 Execute   create_clock -period 20 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
 Execute   config_export -format ip_catalog -rtl verilog -vivado_clock 20 
@@ -82,7 +92,6 @@ INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_
 Execute   config_rtl -register_reset_num 3 
 INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
 Execute   source ./detector_solid/solution1/directives.tcl 
-INFO: [HLS 200-1510] Running: source ./detector_solid/solution1/directives.tcl
 Execute     set_directive_top -name run run 
 INFO: [HLS 200-1510] Running: set_directive_top -name run run 
 Execute   csynth_design 
@@ -99,7 +108,7 @@ Execute     get_config_compile -skip_transform
 Execute     get_config_compile -pre_tcl 
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 889.785 MB.
 INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -107,66 +116,83 @@ INFO-FLOW: Handling detector_solid/abs_solid_detector.cpp as C++
 Execute       ap_part_info -name xc7z020-clg484-1 -data info 
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
-Execute       ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang detector_solid/abs_solid_detector.cpp -foptimization-record-file=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot -I /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -hls-platform-db-name=/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.err.log 
-Command       ap_eval done; 0.12 sec.
-INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang detector_solid/abs_solid_detector.cpp -foptimization-record-file=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2021.2/tps/mingw/6.2.0/win64.o/nt -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.cpp.clang.err.log 
+Command       ap_eval done; 0.666 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.7 seconds per iteration
 Execute       set_directive_top run -name=run 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute       list_core -type functional_unit 
 INFO-FLOW: Source syntax check for synthesis
-Execute       ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -hls-platform-db-name=/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/clang.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/clang.err.log 
-Command       ap_eval done; 2.49 sec.
-Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/.systemc_flag 
-INFO-FLOW: exec /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/.systemc_flag -fix-errors /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 2.52 sec.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/clang.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/clang.err.log 
+Command       ap_eval done; 6.248 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 5.053 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
-Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/all.directive.json 
-INFO-FLOW: exec /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/all.directive.json -fix-errors /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 2.77 sec.
-Execute       clang_tidy xilinx-remove-assert -desc remove-assert /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  
-INFO-FLOW: exec /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 2.48 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 5.3 seconds per iteration
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 6.104 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert -desc constantarray_remove-assert C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 7.272 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 13.4 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
-Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.err.log 
-Command         ap_eval done; 4.51 sec.
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
-Command       clang_tidy done; 4.89 sec.
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang-tidy.loop-label.err.log 
+Command         ap_eval done; 9.87 sec.
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 10.783 sec.
 Execute       get_config_dataflow -strict_mode 
-Execute       ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.err.log 
-Command       ap_eval done; 2.39 sec.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.xilinx-dataflow-lawyer.err.log 
+Command       ap_eval done; 5.318 sec.
+WARNING: [HLS 214-107] Since the loop counter is not declared in loop header and/or initialized to '0', the compiler may not successfully process the dataflow loop (detector_solid/abs_solid_detector.cpp:406:29)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:412:22)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:412:28)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:413:19)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:413:39)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:422:16)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:422:30)
+Execute       send_msg_by_id WARNING @200-471@%s%s 7 detector_solid/abs_solid_detector.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 7 issue(s) in file detector_solid/abs_solid_detector.cpp
 Execute       ap_part_info -name xc7z020-clg484-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
-Execute       ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot -I /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.bc -hls-platform-db-name=/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.err.log 
-Command       ap_eval done; 2.43 sec.
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 20.04 seconds. CPU system time: 0.94 seconds. Elapsed time: 20.32 seconds; current allocated memory: 460.613 MB.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.bc -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.pp.0.cpp.clang.err.log 
+Command       ap_eval done; 6.168 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 48.308 seconds; current allocated memory: 1.073 GB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
-Execute       run_link_or_opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.g.bc"  
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/francesco/workspace/detector_solid/solution1/.autopilot/db/abs_solid_detector.g.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+Execute       run_link_or_opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.g.bc"  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/abs_solid_detector.g.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+Command         ap_eval done; 0.106 sec.
 INFO-FLOW: 
-Execute       run_link_or_opt -opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+Command       run_link_or_opt done; 0.112 sec.
+Execute       run_link_or_opt -opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
 INFO-FLOW: 
 INFO-FLOW: Linking math bc lib
-Execute       run_link_or_opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc 
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
-Command         ap_eval done; 2.18 sec.
+Execute       run_link_or_opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libhlsmc++_39.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 4.072 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 2.18 sec.
-Execute       run_link_or_opt -opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=run -reflow-float-conversion 
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=run -reflow-float-conversion -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
-Command         ap_eval done; 0.76 sec.
+Command       run_link_or_opt done; 4.075 sec.
+Execute       run_link_or_opt -opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=run -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=run -reflow-float-conversion -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.695 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.76 sec.
-Execute       run_link_or_opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc 
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+Command       run_link_or_opt done; 1.702 sec.
+Execute       run_link_or_opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2021.2/win64/lib/libfloatconversion_39.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+Command         ap_eval done; 0.182 sec.
 INFO-FLOW: 
-Execute       run_link_or_opt -opt -out /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=run 
-Execute         ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=run -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+Command       run_link_or_opt done; 0.186 sec.
+Execute       run_link_or_opt -opt -out C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=run 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+Command         ap_eval done; 0.122 sec.
 INFO-FLOW: 
+Command       run_link_or_opt done; 0.126 sec.
 Execute       get_solution -flow_target 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_interface -default_slave_interface 
@@ -194,60 +220,126 @@ Execute       get_config_interface -m_axi_max_read_burst_length
 Execute       get_config_interface -m_axi_max_write_burst_length 
 Execute       get_config_interface -s_axilite_data64 
 Execute       get_config_compile -instruction_warning_threshold 
-Execute       get_config_compile -pipeline_loops 
 Execute       get_config_interface -m_axi_alignment_byte_size 
 Execute       get_config_compile -pragma_strict_mode 
 Execute       get_config_compile -pipeline_style 
-Execute       get_config_dataflow -strict_mode 
 Execute       get_config_array_partition -throughput_driven 
 Execute       send_msg_by_id INFO @200-777@%s Vitis 
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 Execute       is_m_axi_addr64 
-Execute       get_clock_period -ns -default 
 INFO-FLOW: Doing LTO.
-Execute       ap_eval exec -ignorestderr /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=run -mllvm -hls-db-dir -mllvm /home/francesco/workspace/detector_solid/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/../../../kernel.xml -mllvm -top-io-mapping-info=/home/francesco/workspace/detector_solid/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=true -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=64 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=512 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -assume-maxi-align=64 -mllvm -no-unaligned-maxi-accesses=false -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -enable-reflow-vitis-flow-setting=true -x ir /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 > /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
-Command       ap_eval done; 0.26 sec.
-INFO: [HLS 214-131] Inlining function 'is_valid(int, float*)' into 'run(controlStr, REGION_T (*) [16], ap_int<16>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<16>, 0>&)' (detector_solid/abs_solid_detector.cpp:404:13)
-INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'run(controlStr, REGION_T (*) [16], ap_int<16>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<16>, 0>&)' (detector_solid/abs_solid_detector.cpp:343:0)
-INFO: [HLS 214-178] Inlining function 'find_region(int, float*)' into 'run(controlStr, REGION_T (*) [16], ap_int<16>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<16>, 0>&)' (detector_solid/abs_solid_detector.cpp:343:0)
-INFO: [HLS 214-248] Applying array_partition to 'regions.center': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:17:0)
-INFO: [HLS 214-248] Applying array_partition to 'regions.max': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:17:0)
-INFO: [HLS 214-248] Applying array_partition to 'regions.min': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:17:0)
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2021.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=run -mllvm -hls-db-dir -mllvm C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/../../../kernel.xml -mllvm -top-io-mapping-info=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=true -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=64 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=512 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshhold=200000 -mllvm -assume-maxi-align=64 -mllvm -no-unaligned-maxi-accesses=false -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-disaggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -enable-reflow-vitis-flow-setting=true -x ir C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 1.374 sec.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+WARNING: [HLS 214-273] In function 'ap_int_base<16, true>::operator long long() const', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region is not suggested (C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587:0)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::operator long long() const' into 'read_test(hls::stream<controlStr, 0>&, float (*) [8], float*, controlStr&)' (detector_solid/abs_solid_detector.cpp:365:14)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<16>(ap_int<16> const&)' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&)' (detector_solid/abs_solid_detector.cpp:358:21)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::operator long long() const' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&)' (detector_solid/abs_solid_detector.cpp:359:30)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::operator long long() const' into 'run(hls::stream<controlStr, 0>&, REGION_T (*) [16], ap_int<8>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<8>, 0>&)' (detector_solid/abs_solid_detector.cpp:413:24)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::operator long long() const' into 'run(hls::stream<controlStr, 0>&, REGION_T (*) [16], ap_int<8>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<8>, 0>&)' (detector_solid/abs_solid_detector.cpp:413:47)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:359:2)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (detector_solid/abs_solid_detector.cpp:359:2) in function 'writeOutcome' completely with a factor of 1 (detector_solid/abs_solid_detector.cpp:349:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_65_1' (detector_solid/abs_solid_detector.cpp:65:19) in function 'find_region' completely with a factor of 16 (detector_solid/abs_solid_detector.cpp:62:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_72_2' (detector_solid/abs_solid_detector.cpp:72:20) in function 'find_region' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:62:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_31_1' (detector_solid/abs_solid_detector.cpp:31:19) in function 'is_valid' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:29:0)
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float*)' (detector_solid/abs_solid_detector.cpp:29:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float*)' into 'run_test(bool&, float*, REGION_T*)' (detector_solid/abs_solid_detector.cpp:368:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:402:27)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:402:25)
+INFO: [HLS 214-248] Applying array_partition to 'regions': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:24:0)
 INFO: [HLS 214-248] Applying array_partition to 'data': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:23:0)
-INFO: [HLS 214-354] Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int<16>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<16>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:343:0)
-INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i16.s_struct.ap_int<16>s' into 'run(controlStr, REGION_T (*) [16], ap_int<16>*, ap_int<16>*, ap_int<32>*, hls::stream<ap_int<16>, 0>&)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9)
-INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: copying raw kernel.xml: /home/francesco/workspace/detector_solid/solution1/.autopilot/db/../../../kernel.xml -> /home/francesco/workspace/detector_solid/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.14 seconds. CPU system time: 0.31 seconds. Elapsed time: 3.44 seconds; current allocated memory: 461.082 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.082 MB.
+INFO: [HLS 214-241] Aggregating maxi variable 'realTaskId' with compact=none mode in 8-bits (detector_solid/abs_solid_detector.cpp:374:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int<8>s' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&) (.1)' (C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/hls_stream_39.h:173:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i16.s_struct.OutcomeStrs' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&) (.1)'
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: copying raw kernel.xml: C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/../../../kernel.xml -> C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 8.825 seconds; current allocated memory: 1.073 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 1.073 GB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
-Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top run -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.0.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 470.152 MB.
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top run -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.0.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.734 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.814 seconds; current allocated memory: 1.073 GB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
-Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.1.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.1.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.485 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
-Execute         transform -syn-check /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 481.012 MB.
+Execute         transform -syn-check C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform done; 0.172 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.67 seconds; current allocated memory: 1.073 GB.
 INFO-FLOW: Compiler optimizing ...
-INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.g.1.bc to /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.g.1.bc to C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
-Execute         transform -hls -tmp /home/francesco/workspace/detector_solid/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.1.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'run' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'run' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_64_1' (detector_solid/abs_solid_detector.cpp:64) in function 'run' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_64_1' (detector_solid/abs_solid_detector.cpp:64) in function 'run' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_69_2' (detector_solid/abs_solid_detector.cpp:65) in function 'run' completely with a factor of 0.
+Execute         transform -hls -tmp C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.1.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-102] Partitioning array 'regions_9.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_9.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_9.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_8.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_8.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_8.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_7.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_7.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_7.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_6.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_6.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_6.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_5.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_5.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_5.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_4.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_4.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_4.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_3.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_3.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_3.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_2.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_2.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_2.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_15.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_15.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_15.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_14.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_14.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_14.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_13.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_13.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_13.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_12.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_12.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_12.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_11.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_11.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_11.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_10.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_10.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_10.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_1.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_1.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_1.0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_0.2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_0.1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'regions_0.0' in dimension 2 automatically.
+WARNING: [XFORM 203-713] Infinite loop inside a dataflow region in function 'run'(detector_solid/abs_solid_detector.cpp:409) is a deprecated feature.
+Please use bounded or variable bound loops instead.
+INFO: [XFORM 203-712] Applying dataflow to function 'run' (detector_solid/abs_solid_detector.cpp:385:20), detected/extracted 3 process function(s): 
+	 'read_test'
+	 'run_test'
+	 'writeOutcome'.
+Command         transform done; 2.448 sec.
 INFO-FLOW: Presyn 2...
-Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 514.398 MB.
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:62:23) to (detector_solid/abs_solid_detector.cpp:93:2) in function 'find_region'... converting 31 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'find_region' (detector_solid/abs_solid_detector.cpp:62)...28 expression(s) balanced.
+Command         transform done; 0.278 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.734 seconds; current allocated memory: 1.073 GB.
 Execute         get_config_compile -enable_auto_rewind 
 Execute         get_config_compile -enable_loop_extract 
 INFO-FLOW: Building ssdm...
-Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.2.bc -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' 
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation2 -deadargelim -globaldce -mem2reg -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.2.bc -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-561] 'VITIS_LOOP_406_2' (detector_solid/abs_solid_detector.cpp:409:7) in function 'run' is an infinite loop.
 INFO: [HLS 200-472] Inferring partial write operation for 'data_0' 
 INFO: [HLS 200-472] Inferring partial write operation for 'data_1' 
 INFO: [HLS 200-472] Inferring partial write operation for 'data_2' 
@@ -256,11 +348,14 @@ INFO: [HLS 200-472] Inferring partial write operation for 'data_4'
 INFO: [HLS 200-472] Inferring partial write operation for 'data_5' 
 INFO: [HLS 200-472] Inferring partial write operation for 'data_6' 
 INFO: [HLS 200-472] Inferring partial write operation for 'data_7' 
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 546.781 MB.
+WARNING: [HLS 200-1449] Process writeOutcome has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+Command         transform done; 0.449 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.454 seconds; current allocated memory: 1.073 GB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 0.34 sec.
-Command     elaborate done; 24.1 sec.
-Execute     ap_eval exec zip -j /home/francesco/workspace/detector_solid/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command       opt_and_import_c done; 4.697 sec.
+Command     elaborate done; 61.871 sec.
+Execute     ap_eval exec zip -j C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command     ap_eval done; 0.153 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -268,161 +363,169 @@ INFO: [HLS 200-10] Synthesizing 'run' ...
 Execute       ap_set_top_model run 
 Execute       get_model_list run -filter all-wo-channel -topdown 
 Execute       preproc_iomode -model run 
-WARNING: [SYN 201-506] An incorrect offset '8192' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '262144'.
-Execute       preproc_iomode -model writeOutcomeInRam 
-Execute       preproc_iomode -model run_Pipeline_VITIS_LOOP_64_1 
-Execute       preproc_iomode -model run_Pipeline_2 
-Execute       preproc_iomode -model run_Pipeline_1 
+Execute       preproc_iomode -model writeOutcome 
+Execute       preproc_iomode -model run_test 
+Execute       preproc_iomode -model find_region 
+Execute       preproc_iomode -model read_test 
 Execute       get_model_list run -filter all-wo-channel 
-INFO-FLOW: Model list for configure: run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
-INFO-FLOW: Configuring Module : run_Pipeline_1 ...
-Execute       set_default_model run_Pipeline_1 
-Execute       apply_spec_resource_limit run_Pipeline_1 
-INFO-FLOW: Configuring Module : run_Pipeline_2 ...
-Execute       set_default_model run_Pipeline_2 
-Execute       apply_spec_resource_limit run_Pipeline_2 
-INFO-FLOW: Configuring Module : run_Pipeline_VITIS_LOOP_64_1 ...
-Execute       set_default_model run_Pipeline_VITIS_LOOP_64_1 
-Execute       apply_spec_resource_limit run_Pipeline_VITIS_LOOP_64_1 
-INFO-FLOW: Configuring Module : writeOutcomeInRam ...
-Execute       set_default_model writeOutcomeInRam 
-Execute       apply_spec_resource_limit writeOutcomeInRam 
+INFO-FLOW: Model list for configure: read_test find_region run_test writeOutcome run
+INFO-FLOW: Configuring Module : read_test ...
+Execute       set_default_model read_test 
+Execute       apply_spec_resource_limit read_test 
+INFO-FLOW: Configuring Module : find_region ...
+Execute       set_default_model find_region 
+Execute       apply_spec_resource_limit find_region 
+INFO-FLOW: Configuring Module : run_test ...
+Execute       set_default_model run_test 
+Execute       apply_spec_resource_limit run_test 
+INFO-FLOW: Configuring Module : writeOutcome ...
+Execute       set_default_model writeOutcome 
+Execute       apply_spec_resource_limit writeOutcome 
 INFO-FLOW: Configuring Module : run ...
 Execute       set_default_model run 
 Execute       apply_spec_resource_limit run 
-INFO-FLOW: Model list for preprocess: run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
-INFO-FLOW: Preprocessing Module: run_Pipeline_1 ...
-Execute       set_default_model run_Pipeline_1 
-Execute       cdfg_preprocess -model run_Pipeline_1 
-Execute       rtl_gen_preprocess run_Pipeline_1 
-INFO-FLOW: Preprocessing Module: run_Pipeline_2 ...
-Execute       set_default_model run_Pipeline_2 
-Execute       cdfg_preprocess -model run_Pipeline_2 
-Execute       rtl_gen_preprocess run_Pipeline_2 
-INFO-FLOW: Preprocessing Module: run_Pipeline_VITIS_LOOP_64_1 ...
-Execute       set_default_model run_Pipeline_VITIS_LOOP_64_1 
-Execute       cdfg_preprocess -model run_Pipeline_VITIS_LOOP_64_1 
-Execute       rtl_gen_preprocess run_Pipeline_VITIS_LOOP_64_1 
-INFO-FLOW: Preprocessing Module: writeOutcomeInRam ...
-Execute       set_default_model writeOutcomeInRam 
-Execute       cdfg_preprocess -model writeOutcomeInRam 
-Execute       rtl_gen_preprocess writeOutcomeInRam 
+INFO-FLOW: Model list for preprocess: read_test find_region run_test writeOutcome run
+INFO-FLOW: Preprocessing Module: read_test ...
+Execute       set_default_model read_test 
+Execute       cdfg_preprocess -model read_test 
+Execute       rtl_gen_preprocess read_test 
+INFO-FLOW: Preprocessing Module: find_region ...
+Execute       set_default_model find_region 
+Execute       cdfg_preprocess -model find_region 
+Execute       rtl_gen_preprocess find_region 
+INFO-FLOW: Preprocessing Module: run_test ...
+Execute       set_default_model run_test 
+Execute       cdfg_preprocess -model run_test 
+Execute       rtl_gen_preprocess run_test 
+INFO-FLOW: Preprocessing Module: writeOutcome ...
+Execute       set_default_model writeOutcome 
+Execute       cdfg_preprocess -model writeOutcome 
+Execute       rtl_gen_preprocess writeOutcome 
 INFO-FLOW: Preprocessing Module: run ...
 Execute       set_default_model run 
 Execute       cdfg_preprocess -model run 
 Execute       rtl_gen_preprocess run 
-INFO-FLOW: Model list for synthesis: run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
+INFO-FLOW: Model list for synthesis: read_test find_region run_test writeOutcome run
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_1' 
+INFO: [HLS 200-42] -- Implementing module 'read_test' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model run_Pipeline_1 
-Execute       schedule -model run_Pipeline_1 
+Execute       set_default_model read_test 
+Execute       schedule -model read_test 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 547.324 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.verbose.sched.rpt 
+Command       schedule done; 0.251 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.488 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.sched.adb -f 
-INFO-FLOW: Finish scheduling run_Pipeline_1.
-Execute       set_default_model run_Pipeline_1 
-Execute       bind -model run_Pipeline_1 
+Command       syn_report done; 0.282 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.sched.adb -f 
+INFO-FLOW: Finish scheduling read_test.
+Execute       set_default_model read_test 
+Execute       bind -model read_test 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 547.324 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.verbose.bind.rpt 
+Command       bind done; 0.208 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.525 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.bind.adb -f 
-INFO-FLOW: Finish binding run_Pipeline_1.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.bind.adb -f 
+INFO-FLOW: Finish binding read_test.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_2' 
+INFO: [HLS 200-42] -- Implementing module 'find_region' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model run_Pipeline_2 
-Execute       schedule -model run_Pipeline_2 
+Execute       set_default_model find_region 
+Execute       schedule -model find_region 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 547.957 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.verbose.sched.rpt 
+Command       schedule done; 0.229 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.414 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.sched.adb -f 
-INFO-FLOW: Finish scheduling run_Pipeline_2.
-Execute       set_default_model run_Pipeline_2 
-Execute       bind -model run_Pipeline_2 
+Command       syn_report done; 0.258 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.sched.adb -f 
+INFO-FLOW: Finish scheduling find_region.
+Execute       set_default_model find_region 
+Execute       bind -model find_region 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 547.957 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.verbose.bind.rpt 
+Command       bind done; 0.185 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.521 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.bind.adb -f 
-INFO-FLOW: Finish binding run_Pipeline_2.
+Command       syn_report done; 0.507 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.bind.adb -f 
+INFO-FLOW: Finish binding find_region.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_VITIS_LOOP_64_1' 
+INFO: [HLS 200-42] -- Implementing module 'run_test' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model run_Pipeline_VITIS_LOOP_64_1 
-Execute       schedule -model run_Pipeline_VITIS_LOOP_64_1 
+Execute       set_default_model run_test 
+Execute       schedule -model run_test 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_64_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_64_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 548.164 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.verbose.sched.rpt 
+Command       schedule done; 0.199 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.824 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.sched.adb -f 
-INFO-FLOW: Finish scheduling run_Pipeline_VITIS_LOOP_64_1.
-Execute       set_default_model run_Pipeline_VITIS_LOOP_64_1 
-Execute       bind -model run_Pipeline_VITIS_LOOP_64_1 
+Command       syn_report done; 0.214 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.sched.adb -f 
+INFO-FLOW: Finish scheduling run_test.
+Execute       set_default_model run_test 
+Execute       bind -model run_test 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 548.164 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.verbose.bind.rpt 
+Command       bind done; 0.298 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.577 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.bind.adb -f 
-INFO-FLOW: Finish binding run_Pipeline_VITIS_LOOP_64_1.
+Command       syn_report done; 0.666 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.bind.adb -f 
+INFO-FLOW: Finish binding run_test.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'writeOutcomeInRam' 
+INFO: [HLS 200-42] -- Implementing module 'writeOutcome' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model writeOutcomeInRam 
-Execute       schedule -model writeOutcomeInRam 
+Execute       set_default_model writeOutcome 
+Execute       schedule -model writeOutcome 
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'writeOutcome'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 2, Depth = 71, function 'writeOutcome'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 548.410 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.verbose.sched.rpt 
+Command       schedule done; 0.228 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.012 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.13 sec.
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.sched.adb -f 
-INFO-FLOW: Finish scheduling writeOutcomeInRam.
-Execute       set_default_model writeOutcomeInRam 
-Execute       bind -model writeOutcomeInRam 
+Command       syn_report done; 0.321 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.sched.adb -f 
+INFO-FLOW: Finish scheduling writeOutcome.
+Execute       set_default_model writeOutcome 
+Execute       bind -model writeOutcome 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 548.410 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.verbose.bind.rpt 
+Command       bind done; 0.223 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.568 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.bind.adb -f 
-INFO-FLOW: Finish binding writeOutcomeInRam.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.bind.adb -f 
+INFO-FLOW: Finish binding writeOutcome.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'run' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -430,12 +533,14 @@ Execute       set_default_model run
 Execute       schedule -model run 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 549.309 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.verbose.sched.rpt 
+WARNING: [HLS 200-1020] Increasing the depth of FIFO contr_taskId_V_channel (from read_test_U0 to writeOutcome_U0) to 3 to improve performance and/or avoid deadlocks.
+Command       schedule done; 0.226 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.391 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.14 sec.
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.sched.adb -f 
+Command       syn_report done; 0.387 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.sched.adb -f 
 INFO-FLOW: Finish scheduling run.
 Execute       set_default_model run 
 Execute       bind -model run 
@@ -444,175 +549,181 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.11 sec.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 549.309 MB.
-Execute       syn_report -verbosereport -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.verbose.bind.rpt 
+Command       bind done; 0.5 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.908 seconds; current allocated memory: 1.073 GB.
+Execute       syn_report -verbosereport -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.bind.adb -f 
+Command       syn_report done; 0.765 sec.
+Execute       db_write -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.bind.adb -f 
 INFO-FLOW: Finish binding run.
 Execute       get_model_list run -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
-Execute       rtl_gen_preprocess run_Pipeline_1 
-Execute       rtl_gen_preprocess run_Pipeline_2 
-Execute       rtl_gen_preprocess run_Pipeline_VITIS_LOOP_64_1 
-Execute       rtl_gen_preprocess writeOutcomeInRam 
+Execute       rtl_gen_preprocess read_test 
+Execute       rtl_gen_preprocess find_region 
+Execute       rtl_gen_preprocess run_test 
+Execute       rtl_gen_preprocess writeOutcome 
 Execute       rtl_gen_preprocess run 
-INFO-FLOW: Model list for RTL generation: run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
+INFO-FLOW: Model list for RTL generation: read_test find_region run_test writeOutcome run
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_1' 
+INFO: [HLS 200-10] -- Generating RTL for module 'read_test' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model run_Pipeline_1 -top_prefix run_ -sub_prefix run_ -mg_file /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.compgen.tcl 
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_1' pipeline 'Loop 1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 549.316 MB.
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       gen_rtl run_Pipeline_1 -style xilinx -f -lang vhdl -o /home/francesco/workspace/detector_solid/solution1/syn/vhdl/run_run_Pipeline_1 
-Execute       gen_rtl run_Pipeline_1 -style xilinx -f -lang vlog -o /home/francesco/workspace/detector_solid/solution1/syn/verilog/run_run_Pipeline_1 
-Execute       syn_report -csynth -model run_Pipeline_1 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_1_csynth.rpt 
+Execute       create_rtl_model read_test -top_prefix run_ -sub_prefix run_ -mg_file C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.943 seconds; current allocated memory: 1.073 GB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       gen_rtl read_test -style xilinx -f -lang vhdl -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/vhdl/run_read_test 
+Execute       gen_rtl read_test -style xilinx -f -lang vlog -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/verilog/run_read_test 
+Execute       syn_report -csynth -model read_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/read_test_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model run_Pipeline_1 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_1_csynth.xml 
+Execute       syn_report -rtlxml -model read_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/read_test_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model run_Pipeline_1 -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.verbose.rpt 
+Execute       syn_report -verbosereport -model read_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model run_Pipeline_1 -f -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.adb 
-Execute       db_write -model run_Pipeline_1 -bindview -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info run_Pipeline_1 -p /home/francesco/workspace/detector_solid/solution1/.autopilot/db -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1 
+Command       syn_report done; 0.104 sec.
+Execute       db_write -model read_test -f -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.adb 
+Execute       db_write -model read_test -bindview -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info read_test -p C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_2' 
+INFO: [HLS 200-10] -- Generating RTL for module 'find_region' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model run_Pipeline_2 -top_prefix run_ -sub_prefix run_ -mg_file /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.compgen.tcl 
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_2' pipeline 'Loop 1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 550.258 MB.
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       gen_rtl run_Pipeline_2 -style xilinx -f -lang vhdl -o /home/francesco/workspace/detector_solid/solution1/syn/vhdl/run_run_Pipeline_2 
-Execute       gen_rtl run_Pipeline_2 -style xilinx -f -lang vlog -o /home/francesco/workspace/detector_solid/solution1/syn/verilog/run_run_Pipeline_2 
-Execute       syn_report -csynth -model run_Pipeline_2 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_2_csynth.rpt 
+Execute       create_rtl_model find_region -top_prefix run_ -sub_prefix run_ -mg_file C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'find_region'.
+Command       create_rtl_model done; 0.115 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.572 seconds; current allocated memory: 1.073 GB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       gen_rtl find_region -style xilinx -f -lang vhdl -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/vhdl/run_find_region 
+Execute       gen_rtl find_region -style xilinx -f -lang vlog -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/verilog/run_find_region 
+Execute       syn_report -csynth -model find_region -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/find_region_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model run_Pipeline_2 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_2_csynth.xml 
+Command       syn_report done; 0.456 sec.
+Execute       syn_report -rtlxml -model find_region -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/find_region_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model run_Pipeline_2 -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.verbose.rpt 
+Command       syn_report done; 0.136 sec.
+Execute       syn_report -verbosereport -model find_region -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model run_Pipeline_2 -f -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.adb 
-Execute       db_write -model run_Pipeline_2 -bindview -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info run_Pipeline_2 -p /home/francesco/workspace/detector_solid/solution1/.autopilot/db -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2 
+Command       syn_report done; 0.638 sec.
+Execute       db_write -model find_region -f -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.adb 
+Command       db_write done; 0.188 sec.
+Execute       db_write -model find_region -bindview -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info find_region -p C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_VITIS_LOOP_64_1' 
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model run_Pipeline_VITIS_LOOP_64_1 -top_prefix run_ -sub_prefix run_ -mg_file /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.compgen.tcl 
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_VITIS_LOOP_64_1' pipeline 'VITIS_LOOP_64_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_VITIS_LOOP_64_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 551.660 MB.
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       gen_rtl run_Pipeline_VITIS_LOOP_64_1 -style xilinx -f -lang vhdl -o /home/francesco/workspace/detector_solid/solution1/syn/vhdl/run_run_Pipeline_VITIS_LOOP_64_1 
-Execute       gen_rtl run_Pipeline_VITIS_LOOP_64_1 -style xilinx -f -lang vlog -o /home/francesco/workspace/detector_solid/solution1/syn/verilog/run_run_Pipeline_VITIS_LOOP_64_1 
-Execute       syn_report -csynth -model run_Pipeline_VITIS_LOOP_64_1 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_VITIS_LOOP_64_1_csynth.rpt 
+Execute       create_rtl_model run_test -top_prefix run_ -sub_prefix run_ -mg_file C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 1.943 seconds; current allocated memory: 1.073 GB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       gen_rtl run_test -style xilinx -f -lang vhdl -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/vhdl/run_run_test 
+Execute       gen_rtl run_test -style xilinx -f -lang vlog -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/verilog/run_run_test 
+Execute       syn_report -csynth -model run_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/run_test_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model run_Pipeline_VITIS_LOOP_64_1 -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_Pipeline_VITIS_LOOP_64_1_csynth.xml 
+Command       syn_report done; 0.17 sec.
+Execute       syn_report -rtlxml -model run_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/run_test_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model run_Pipeline_VITIS_LOOP_64_1 -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.verbose.rpt 
+Execute       syn_report -verbosereport -model run_test -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model run_Pipeline_VITIS_LOOP_64_1 -f -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.adb 
-Execute       db_write -model run_Pipeline_VITIS_LOOP_64_1 -bindview -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info run_Pipeline_VITIS_LOOP_64_1 -p /home/francesco/workspace/detector_solid/solution1/.autopilot/db -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1 
+Command       syn_report done; 0.769 sec.
+Execute       db_write -model run_test -f -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.adb 
+Command       db_write done; 0.117 sec.
+Execute       db_write -model run_test -bindview -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info run_test -p C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'writeOutcomeInRam' 
+INFO: [HLS 200-10] -- Generating RTL for module 'writeOutcome' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model writeOutcomeInRam -top_prefix run_ -sub_prefix run_ -mg_file /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.compgen.tcl 
-INFO: [RTGEN 206-100] Finished creating RTL model for 'writeOutcomeInRam'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 553.457 MB.
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       gen_rtl writeOutcomeInRam -style xilinx -f -lang vhdl -o /home/francesco/workspace/detector_solid/solution1/syn/vhdl/run_writeOutcomeInRam 
-Execute       gen_rtl writeOutcomeInRam -style xilinx -f -lang vlog -o /home/francesco/workspace/detector_solid/solution1/syn/verilog/run_writeOutcomeInRam 
-Execute       syn_report -csynth -model writeOutcomeInRam -o /home/francesco/workspace/detector_solid/solution1/syn/report/writeOutcomeInRam_csynth.rpt 
+Execute       create_rtl_model writeOutcome -top_prefix run_ -sub_prefix run_ -mg_file C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'writeOutcome' pipeline 'writeOutcome' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'writeOutcome'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.557 seconds; current allocated memory: 1.073 GB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       gen_rtl writeOutcome -style xilinx -f -lang vhdl -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/vhdl/run_writeOutcome 
+Execute       gen_rtl writeOutcome -style xilinx -f -lang vlog -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/verilog/run_writeOutcome 
+Execute       syn_report -csynth -model writeOutcome -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/writeOutcome_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model writeOutcomeInRam -o /home/francesco/workspace/detector_solid/solution1/syn/report/writeOutcomeInRam_csynth.xml 
+Execute       syn_report -rtlxml -model writeOutcome -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/writeOutcome_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model writeOutcomeInRam -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.verbose.rpt 
+Execute       syn_report -verbosereport -model writeOutcome -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model writeOutcomeInRam -f -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.adb 
-Execute       db_write -model writeOutcomeInRam -bindview -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info writeOutcomeInRam -p /home/francesco/workspace/detector_solid/solution1/.autopilot/db -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam 
+Command       syn_report done; 0.116 sec.
+Execute       db_write -model writeOutcome -f -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.adb 
+Execute       db_write -model writeOutcome -bindview -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info writeOutcome -p C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'run' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model run -top_prefix  -sub_prefix run_ -mg_file /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
+Execute       create_rtl_model run -top_prefix  -sub_prefix run_ -mg_file C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
 WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
 INFO: [RTGEN 206-500] Setting interface mode on port 'run/gmem' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'run/contr' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'run/trainedRegions' to 's_axilite & ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'run/realTaskId' to 's_axilite & ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'run/n_regions_in' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'run/control' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'run/trainedRegions' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'run/realTaskId' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'run/n_regions_in' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'run/sharedMem' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'run/toScheduler' to 'axis' (register, both mode).
 INFO: [RTGEN 206-500] Setting interface mode on function 'run' to 's_axilite & ap_ctrl_chain'.
-WARNING: [RTGEN 206-101] Global array 'data_0' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_4' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_5' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_6' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global array 'data_7' will not be exposed as RTL port.
-INFO: [RTGEN 206-100] Bundling port 'contr', 'sharedMem', 'realTaskId', 'n_regions_in' and 'trainedRegions' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'trainedRegions', 'realTaskId', 'n_regions_in', 'sharedMem' and 'ap_local_deadlock' to AXI-Lite port control_r.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'run'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 556.711 MB.
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       gen_rtl run -istop -style xilinx -f -lang vhdl -o /home/francesco/workspace/detector_solid/solution1/syn/vhdl/run 
-Execute       gen_rtl run -istop -style xilinx -f -lang vlog -o /home/francesco/workspace/detector_solid/solution1/syn/verilog/run 
-Execute       syn_report -csynth -model run -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_csynth.rpt 
+Command       create_rtl_model done; 0.225 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.64 seconds; current allocated memory: 1.073 GB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       gen_rtl run -istop -style xilinx -f -lang vhdl -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/vhdl/run 
+Command       gen_rtl done; 0.124 sec.
+Execute       gen_rtl run -istop -style xilinx -f -lang vlog -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/verilog/run 
+Execute       syn_report -csynth -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/run_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model run -o /home/francesco/workspace/detector_solid/solution1/syn/report/run_csynth.xml 
+Execute       syn_report -rtlxml -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/run_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model run -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.verbose.rpt 
+Execute       syn_report -verbosereport -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model run -f -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.adb 
-Execute       db_write -model run -bindview -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info run -p /home/francesco/workspace/detector_solid/solution1/.autopilot/db -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run 
-Execute       export_constraint_db -f -tool general -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.constraint.tcl 
-Execute       syn_report -designview -model run -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.design.xml 
-Execute       syn_report -csynthDesign -model run -o /home/francesco/workspace/detector_solid/solution1/syn/report/csynth.rpt 
+Command       syn_report done; 0.74 sec.
+Execute       db_write -model run -f -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.adb 
+Execute       db_write -model run -bindview -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info run -p C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run 
+Execute       export_constraint_db -f -tool general -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.constraint.tcl 
+Execute       syn_report -designview -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.design.xml 
+Command       syn_report done; 0.599 sec.
+Execute       syn_report -csynthDesign -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
 Execute       get_config_rtl -disable_wave_debug 
-Execute       syn_report -wcfg -model run -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_dataflow_ana.wcfg 
-Execute       syn_report -protoinst -model run -o /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.protoinst 
+Execute       syn_report -wcfg -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model run -o C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.protoinst 
 Execute       get_config_debug -directory 
 Execute       sc_get_clocks run 
 Execute       get_config_export -vivado_clock 
@@ -620,58 +731,55 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       sc_get_portdomain run 
-INFO-FLOW: Model list for RTL component generation: run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
-INFO-FLOW: Handling components in module [run_Pipeline_1] ... 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.compgen.tcl 
-INFO-FLOW: Found component run_flow_control_loop_pipe_sequential_init.
-INFO-FLOW: Append model run_flow_control_loop_pipe_sequential_init
-INFO-FLOW: Handling components in module [run_Pipeline_2] ... 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.compgen.tcl 
-INFO-FLOW: Found component run_run_Pipeline_2_data_0_RAM_AUTO_0R0W.
-INFO-FLOW: Append model run_run_Pipeline_2_data_0_RAM_AUTO_0R0W
-INFO-FLOW: Found component run_flow_control_loop_pipe_sequential_init.
-INFO-FLOW: Append model run_flow_control_loop_pipe_sequential_init
-INFO-FLOW: Handling components in module [run_Pipeline_VITIS_LOOP_64_1] ... 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.compgen.tcl 
+INFO-FLOW: Model list for RTL component generation: read_test find_region run_test writeOutcome run
+INFO-FLOW: Handling components in module [read_test] ... 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.compgen.tcl 
+INFO-FLOW: Handling components in module [find_region] ... 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.compgen.tcl 
 INFO-FLOW: Found component run_fcmp_32ns_32ns_1_2_no_dsp_1.
 INFO-FLOW: Append model run_fcmp_32ns_32ns_1_2_no_dsp_1
-INFO-FLOW: Found component run_flow_control_loop_pipe_sequential_init.
-INFO-FLOW: Append model run_flow_control_loop_pipe_sequential_init
-INFO-FLOW: Handling components in module [writeOutcomeInRam] ... 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.compgen.tcl 
+INFO-FLOW: Handling components in module [run_test] ... 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.compgen.tcl 
+INFO-FLOW: Handling components in module [writeOutcome] ... 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.compgen.tcl 
 INFO-FLOW: Handling components in module [run] ... 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
-INFO-FLOW: Found component run_n_regions_V_RAM_AUTO_1R1W.
-INFO-FLOW: Append model run_n_regions_V_RAM_AUTO_1R1W
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
+INFO-FLOW: Found component run_data_0_RAM_AUTO_1R1W_memcore.
+INFO-FLOW: Append model run_data_0_RAM_AUTO_1R1W_memcore
+INFO-FLOW: Found component run_data_0_RAM_AUTO_1R1W.
+INFO-FLOW: Append model run_data_0_RAM_AUTO_1R1W
+INFO-FLOW: Found component run_fifo_w16_d2_S.
+INFO-FLOW: Append model run_fifo_w16_d2_S
+INFO-FLOW: Found component run_fifo_w16_d3_S.
+INFO-FLOW: Append model run_fifo_w16_d3_S
+INFO-FLOW: Found component run_fifo_w1_d2_S.
+INFO-FLOW: Append model run_fifo_w1_d2_S
+INFO-FLOW: Found component run_control_r_s_axi.
+INFO-FLOW: Append model run_control_r_s_axi
 INFO-FLOW: Found component run_gmem_m_axi.
 INFO-FLOW: Append model run_gmem_m_axi
-INFO-FLOW: Found component run_control_s_axi.
-INFO-FLOW: Append model run_control_s_axi
-INFO-FLOW: Found component run_regslice_both.
-INFO-FLOW: Append model run_regslice_both
-INFO-FLOW: Append model run_Pipeline_1
-INFO-FLOW: Append model run_Pipeline_2
-INFO-FLOW: Append model run_Pipeline_VITIS_LOOP_64_1
-INFO-FLOW: Append model writeOutcomeInRam
+INFO-FLOW: Append model read_test
+INFO-FLOW: Append model find_region
+INFO-FLOW: Append model run_test
+INFO-FLOW: Append model writeOutcome
 INFO-FLOW: Append model run
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: run_flow_control_loop_pipe_sequential_init run_run_Pipeline_2_data_0_RAM_AUTO_0R0W run_flow_control_loop_pipe_sequential_init run_fcmp_32ns_32ns_1_2_no_dsp_1 run_flow_control_loop_pipe_sequential_init run_n_regions_V_RAM_AUTO_1R1W run_gmem_m_axi run_control_s_axi run_regslice_both run_Pipeline_1 run_Pipeline_2 run_Pipeline_VITIS_LOOP_64_1 writeOutcomeInRam run
-INFO-FLOW: Generating /home/francesco/workspace/detector_solid/solution1/.autopilot/db/autopilot.rtl.models.txt file...
-INFO-FLOW: To file: write model run_flow_control_loop_pipe_sequential_init
-INFO-FLOW: To file: write model run_run_Pipeline_2_data_0_RAM_AUTO_0R0W
-INFO-FLOW: To file: write model run_flow_control_loop_pipe_sequential_init
+INFO-FLOW: All models in this session: run_fcmp_32ns_32ns_1_2_no_dsp_1 run_data_0_RAM_AUTO_1R1W_memcore run_data_0_RAM_AUTO_1R1W run_fifo_w16_d2_S run_fifo_w16_d3_S run_fifo_w1_d2_S run_control_r_s_axi run_gmem_m_axi read_test find_region run_test writeOutcome run
+INFO-FLOW: Generating C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/autopilot.rtl.models.txt file...
 INFO-FLOW: To file: write model run_fcmp_32ns_32ns_1_2_no_dsp_1
-INFO-FLOW: To file: write model run_flow_control_loop_pipe_sequential_init
-INFO-FLOW: To file: write model run_n_regions_V_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model run_data_0_RAM_AUTO_1R1W_memcore
+INFO-FLOW: To file: write model run_data_0_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model run_fifo_w16_d2_S
+INFO-FLOW: To file: write model run_fifo_w16_d3_S
+INFO-FLOW: To file: write model run_fifo_w1_d2_S
+INFO-FLOW: To file: write model run_control_r_s_axi
 INFO-FLOW: To file: write model run_gmem_m_axi
-INFO-FLOW: To file: write model run_control_s_axi
-INFO-FLOW: To file: write model run_regslice_both
-INFO-FLOW: To file: write model run_Pipeline_1
-INFO-FLOW: To file: write model run_Pipeline_2
-INFO-FLOW: To file: write model run_Pipeline_VITIS_LOOP_64_1
-INFO-FLOW: To file: write model writeOutcomeInRam
+INFO-FLOW: To file: write model read_test
+INFO-FLOW: To file: write model find_region
+INFO-FLOW: To file: write model run_test
+INFO-FLOW: To file: write model writeOutcome
 INFO-FLOW: To file: write model run
-INFO-FLOW: Generating /home/francesco/workspace/detector_solid/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Generating C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
 INFO-FLOW: Finished generating RTL model list.
 
 
@@ -684,63 +792,78 @@ Execute       get_config_export -ipname
 Execute       get_config_export -xo 
 Execute       get_config_export -format 
 Execute       get_config_rtl -module_auto_prefix 
-INFO-FLOW: DBG:PUTS: read_platform_lib /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/common.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/APCoreGen.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/op.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/op_simcore.gen 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/generic/autopilot/interface.gen 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
-Execute         source /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.124 sec.
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.184 sec.
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=20 (was NA)
-INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/francesco/workspace/detector_solid/solution1/.autopilot/db/vhdl' dstVlogDir='/home/francesco/workspace/detector_solid/solution1/.autopilot/db/vlog' tclDir='/home/francesco/workspace/detector_solid/solution1/.autopilot/db' modelList='run_flow_control_loop_pipe_sequential_init
-run_run_Pipeline_2_data_0_RAM_AUTO_0R0W
-run_flow_control_loop_pipe_sequential_init
-run_fcmp_32ns_32ns_1_2_no_dsp_1
-run_flow_control_loop_pipe_sequential_init
-run_n_regions_V_RAM_AUTO_1R1W
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/vhdl' dstVlogDir='C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/vlog' tclDir='C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db' modelList='run_fcmp_32ns_32ns_1_2_no_dsp_1
+run_data_0_RAM_AUTO_1R1W_memcore
+run_data_0_RAM_AUTO_1R1W
+run_fifo_w16_d2_S
+run_fifo_w16_d3_S
+run_fifo_w1_d2_S
+run_control_r_s_axi
 run_gmem_m_axi
-run_control_s_axi
-run_regslice_both
-run_Pipeline_1
-run_Pipeline_2
-run_Pipeline_VITIS_LOOP_64_1
-writeOutcomeInRam
+read_test
+find_region
+run_test
+writeOutcome
 run
 ' expOnly='0'
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.compgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.compgen.tcl 
-INFO: [RTMG 210-278] Implementing memory 'run_run_Pipeline_2_data_0_RAM_AUTO_0R0W_ram (RAM)' using auto RAMs with reset.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.compgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.compgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.compgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.compgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
+Execute         send_msg_by_id INFO @200-741@%s run_data_0_RAM_AUTO_1R1W_memcore 
+INFO: [HLS 200-741] Implementing PIPO run_data_0_RAM_AUTO_1R1W_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'run_data_0_RAM_AUTO_1R1W_memcore_ram (RAM)' using auto RAMs with reset.
 Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.compgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.compgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.tcl 
-INFO: [RTMG 210-278] Implementing memory 'run_n_regions_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
 Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute         source ./control.slave.tcl 
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 561.719 MB.
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='run_' outfile=''
+INFO: [RTMG 210-285] Implementing FIFO 'contr_taskId_V_U(run_fifo_w16_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'contr_taskId_V_channel_U(run_fifo_w16_d3_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'error_U(run_fifo_w1_d2_S)' using Shift Registers.
+Execute         source ./control_r.slave.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command       ap_source done; 0.451 sec.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.113 seconds; current allocated memory: 1.073 GB.
+INFO-FLOW: DBG:PROC: ::AP::create_csynth_xml bind_adapter_nodes_var='bind_adapter_nodes' bind_report_dict_var='bind_report_dict' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name find_region
+INFO-FLOW: No bind nodes found for module_name run_test
 INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml config info
 Execute       get_config_op mul -impl 
@@ -837,7 +960,6 @@ Execute       get_solution -flow_target
 Execute       get_config_array_partition -complete_threshold 
 Execute       get_config_array_partition -throughput_driven 
 Execute       get_config_compile -enable_auto_rewind 
-Execute       get_config_compile -ignore_long_run_time 
 Execute       get_config_compile -name_max_length 
 Execute       get_config_compile -no_signed_zeros 
 Execute       get_config_compile -pipeline_loops 
@@ -856,6 +978,7 @@ Execute       get_config_dataflow -strict_stable_sync
 Execute       get_config_dataflow -task_level_fifo_depth 
 Execute       get_config_debug -directory 
 Execute       get_config_debug -enable 
+Execute       get_config_export -deadlock_detection 
 Execute       get_config_export -description 
 Execute       get_config_export -display_name 
 Execute       get_config_export -format 
@@ -895,13 +1018,10 @@ Execute       get_config_interface -m_axi_num_read_outstanding
 Execute       get_config_interface -m_axi_num_write_outstanding 
 Execute       get_config_interface -m_axi_offset 
 Execute       get_config_interface -register_io 
-Execute       get_config_interface -s_axilite_auto_restart_counter 
 Execute       get_config_interface -s_axilite_data64 
-Execute       get_config_interface -s_axilite_interrupt_mode 
 Execute       get_config_interface -s_axilite_mailbox 
 Execute       get_config_interface -s_axilite_status_regs 
 Execute       get_config_interface -s_axilite_sw_reset 
-Execute       get_config_rtl -deadlock_detection 
 Execute       get_config_rtl -header 
 Execute       get_config_rtl -kernel_profile 
 Execute       get_config_rtl -module_auto_prefix 
@@ -914,49 +1034,43 @@ Execute       get_config_rtl -reset_async
 Execute       get_config_rtl -reset_level 
 Execute       get_config_schedule -enable_dsp_full_reg 
 Execute       get_config_unroll -tripcount_threshold 
-INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Done: create_csynth_xml config info time: 0.3 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml write xml
 INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
-INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/francesco/workspace/detector_solid/solution1/syn/report/csynth.xml
-INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='run_flow_control_loop_pipe_sequential_init
-run_run_Pipeline_2_data_0_RAM_AUTO_0R0W
-run_flow_control_loop_pipe_sequential_init
-run_fcmp_32ns_32ns_1_2_no_dsp_1
-run_flow_control_loop_pipe_sequential_init
-run_n_regions_V_RAM_AUTO_1R1W
+INFO-FLOW: DBG:PUTS:       create_csynth_xml wrote csynth_xml=C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='run_fcmp_32ns_32ns_1_2_no_dsp_1
+run_data_0_RAM_AUTO_1R1W_memcore
+run_data_0_RAM_AUTO_1R1W
+run_fifo_w16_d2_S
+run_fifo_w16_d3_S
+run_fifo_w1_d2_S
+run_control_r_s_axi
 run_gmem_m_axi
-run_control_s_axi
-run_regslice_both
-run_Pipeline_1
-run_Pipeline_2
-run_Pipeline_VITIS_LOOP_64_1
-writeOutcomeInRam
+read_test
+find_region
+run_test
+writeOutcome
 run
 ' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_solution -flow_target 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/top-io-be.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
-Execute       get_config_interface -s_axilite_interrupt_mode 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.compgen.dataonly.tcl 
 Execute       get_config_export -format 
-Execute       get_config_export -vendor 
-Execute       get_config_export -library 
-Execute       get_config_export -version 
-Execute       get_config_export -ipname 
-Execute       get_config_export -taxonomy 
-Execute       get_config_export -description 
-Execute       get_config_export -display_name 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_1.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_2.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run_Pipeline_VITIS_LOOP_64_1.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/writeOutcomeInRam.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.tbgen.tcl 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/read_test.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/find_region.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run_test.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/writeOutcome.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.tbgen.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
 Execute       get_solution -flow_target 
@@ -964,27 +1078,32 @@ Execute       get_config_rtl -kernel_profile
 Execute       get_config_rtl -kernel_profile 
 Execute       get_config_rtl -stall_sig_gen 
 Execute       get_config_rtl -profile 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/run.constraint.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/run.constraint.tcl 
 Execute       sc_get_clocks run 
-Execute       source /home/francesco/workspace/detector_solid/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_export -ip_xdc_file 
 Execute       get_config_export -ip_xdc_ooc_file 
 Execute       get_config_debug -directory 
-Execute       source /home/francesco/workspace/detector_solid/solution1/impl/misc/run_fcmp_32ns_32ns_1_2_no_dsp_1_ip.tcl 
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME control_s_axi_U SOURCE {} VARIABLE {} MODULE run LOOP {} BUNDLEDNAME control DSP 0 BRAM 2 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} MODULE run LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 0 URAM 0}} report_dict {TOPINST run MODULE2INSTS {run run run_Pipeline_1 grp_run_Pipeline_1_fu_202 run_Pipeline_VITIS_LOOP_64_1 grp_run_Pipeline_VITIS_LOOP_64_1_fu_210 run_Pipeline_2 grp_run_Pipeline_2_fu_217 writeOutcomeInRam grp_writeOutcomeInRam_fu_239} INST2MODULE {run run grp_run_Pipeline_1_fu_202 run_Pipeline_1 grp_run_Pipeline_VITIS_LOOP_64_1_fu_210 run_Pipeline_VITIS_LOOP_64_1 grp_run_Pipeline_2_fu_217 run_Pipeline_2 grp_writeOutcomeInRam_fu_239 writeOutcomeInRam} INSTDATA {run {DEPTH 1 CHILDREN {grp_run_Pipeline_1_fu_202 grp_run_Pipeline_VITIS_LOOP_64_1_fu_210 grp_run_Pipeline_2_fu_217 grp_writeOutcomeInRam_fu_239}} grp_run_Pipeline_1_fu_202 {DEPTH 2 CHILDREN {}} grp_run_Pipeline_VITIS_LOOP_64_1_fu_210 {DEPTH 2 CHILDREN {}} grp_run_Pipeline_2_fu_217 {DEPTH 2 CHILDREN {}} grp_writeOutcomeInRam_fu_239 {DEPTH 2 CHILDREN {}}} MODULEDATA {run_Pipeline_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_42_fu_85_p2 SOURCE {} VARIABLE empty_42 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} run_Pipeline_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_38_fu_219_p2 SOURCE {} VARIABLE empty_38 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_0_U SOURCE {} VARIABLE data_0 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_1_U SOURCE {} VARIABLE data_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_2_U SOURCE {} VARIABLE data_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_3_U SOURCE {} VARIABLE data_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_4_U SOURCE {} VARIABLE data_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_5_U SOURCE {} VARIABLE data_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_6_U SOURCE {} VARIABLE data_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME data_7_U SOURCE {} VARIABLE data_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}}} AREA {DSP 0 BRAM 8 URAM 0}} run_Pipeline_VITIS_LOOP_64_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln64_fu_97_p2 SOURCE detector_solid/abs_solid_detector.cpp:64 VARIABLE add_ln64 LOOP VITIS_LOOP_64_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} writeOutcomeInRam {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_94_p2 SOURCE detector_solid/abs_solid_detector.cpp:331 VARIABLE empty LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_33_fu_171_p2 SOURCE detector_solid/abs_solid_detector.cpp:331 VARIABLE empty_33 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} run {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln412_1_fu_314_p2 SOURCE detector_solid/abs_solid_detector.cpp:412 VARIABLE add_ln412_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln412_fu_324_p2 SOURCE detector_solid/abs_solid_detector.cpp:412 VARIABLE add_ln412 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME n_regions_V_U SOURCE {} VARIABLE n_regions_V LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage ram_1p}}} AREA {DSP 0 BRAM 11 URAM 0}}}}'
-INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
-INFO-FLOW: Running: gen_csynth_sec_pragma
-INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
-INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
-INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.58 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.6 seconds; current allocated memory: 570.516 MB.
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_faddfsub_32ns_32ns_32_4_full_dsp_1_ip.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_fcmp_32ns_32ns_1_2_no_dsp_1_ip.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_fdiv_32ns_32ns_32_9_no_dsp_1_ip.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_fmul_32ns_32ns_32_2_max_dsp_1_ip.tcl 
+Execute       source C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/impl/misc/run_fsub_32ns_32ns_32_4_full_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::AP::add_csynth_report_sections bind_adapter_nodes='{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME control_r_s_axi_U SOURCE {} VARIABLE {} MODULE run LOOP {} BUNDLEDNAME control_r DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} MODULE run LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 30 URAM 0}' bind_report_dict='TOP run DATA {run {DEPTH 1 CHILDREN {read_test run_test writeOutcome} BINDINFO {{BINDTYPE op ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME contr_taskId_V_U SOURCE detector_solid/abs_solid_detector.cpp:412 VARIABLE contr_taskId_V LOOP VITIS_LOOP_406_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op fifo}} {BINDTYPE op ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME contr_taskId_V_channel_U SOURCE detector_solid/abs_solid_detector.cpp:412 VARIABLE contr_taskId_V_channel LOOP VITIS_LOOP_406_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op fifo}} {BINDTYPE op ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME error_U SOURCE detector_solid/abs_solid_detector.cpp:413 VARIABLE error LOOP VITIS_LOOP_406_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op fifo}}} AREA {DSP 0 BRAM 38 URAM 0}} read_test {DEPTH 2 CHILDREN {} BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_29_fu_304_p2 SOURCE {} VARIABLE empty_29 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} run_test {DEPTH 2 CHILDREN find_region AREA {DSP 0 BRAM 0 URAM 0}} find_region {DEPTH 3 CHILDREN {} AREA {DSP 0 BRAM 0 URAM 0}} writeOutcome {DEPTH 2 CHILDREN {} BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln359_1_fu_146_p2 SOURCE detector_solid/abs_solid_detector.cpp:359 VARIABLE add_ln359_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln359_fu_156_p2 SOURCE detector_solid/abs_solid_detector.cpp:359 VARIABLE add_ln359 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_162_p2 SOURCE detector_solid/abs_solid_detector.cpp:359 VARIABLE empty LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}}}'
+INFO-FLOW: DBG:PUTS:       update_csynth_reports json2reportxml
+INFO-FLOW: Running: gen_csynth_pragma_report_xml
+INFO-FLOW: Done: gen_csynth_pragma_report_xml time: 0.2 seconds per iteration
+INFO-FLOW: DBG:PUTS:       update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:       update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 2.526 seconds; current allocated memory: 1.073 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for run.
 INFO: [VLOG 209-307] Generating Verilog RTL for run.
 Execute       syn_report -model run -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
-Command     autosyn done; 2.34 sec.
-Command   csynth_design done; 26.48 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 25.82 seconds. CPU system time: 1.33 seconds. Elapsed time: 26.48 seconds; current allocated memory: -920.109 MB.
-Command ap_source done; 28.06 sec.
+Command     autosyn done; 17.648 sec.
+Command   csynth_design done; 79.701 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 24 seconds. CPU system time: 3 seconds. Elapsed time: 79.701 seconds; current allocated memory: 215.688 MB.
+Command ap_source done; 82.922 sec.
 Execute cleanup_all 

@@ -1,67 +1,63 @@
 # This script segment is generated automatically by AutoPilot
 
 set axilite_register_dict [dict create]
-set port_control {
-contr { 
+set port_control_r {
+trainedRegions { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
+}
+realTaskId { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 28
+	offset_end 39
+}
+n_regions_in { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 40
+	offset_end 51
 }
 sharedMem { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 35
+	offset 52
+	offset_end 63
 }
-realTaskId { 
-	dir I
-	width 16
-	depth 128
-	mode ap_memory
-	offset 256
-	offset_end 511
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
+ap_start {
+	mailbox_input_ctrl 0
+	mailbox_output_ctrl 0
+	auto_restart_enabled 1
+	auto_restart_counter_num 0
+	auto_restart_counter_offset 16
+	auto_restart_counter_size 32
 }
-n_regions_in { 
-	dir I
-	width 16
-	depth 128
-	mode ap_memory
-	offset 512
-	offset_end 767
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
-}
-ap_start { }
 ap_done { }
 ap_ready { }
 ap_continue { }
 ap_idle { }
-trainedRegions { 
-	dir X
-	width 32
-	depth 49152
-	mode ap_memory
-	offset 262144
-	offset_end 524287
-	core_op ram_1p
-	core_impl auto
-	core_latency 3
-	byte_write 0
+ap_local_deadlock { 
+	dir O
+	width 1
+	depth 1
+	mode ap_none
+	offset -1
+	offset_end -1
 }
 interrupt {
+    ap_local_deadlock 5
 }
 }
-dict set axilite_register_dict control $port_control
+dict set axilite_register_dict control_r $port_control_r
 
 
