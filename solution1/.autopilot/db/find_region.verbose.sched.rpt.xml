@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'find_region'" level="0">
-<item name = "Date">Mon Sep 19 22:17:38 2022
+<item name = "Date">Mon Sep 19 22:55:10 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)</item>
 <item name = "Project">detector_solid</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2, 2, 40.000 ns, 40.000 ns, 2, 2, no</column>
+<column name="">9, 9, 0.180 us, 0.180 us, 8, 8, yes</column>
 </table>
 </item>
 <item name = "Detail">

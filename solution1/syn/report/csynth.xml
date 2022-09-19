@@ -19,30 +19,21 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>undef</Best-caseLatency>
-            <Average-caseLatency>undef</Average-caseLatency>
-            <Worst-caseLatency>undef</Worst-caseLatency>
-            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
-            <Interval-min>undef</Interval-min>
-            <Interval-max>undef</Interval-max>
+            <Best-caseLatency>1</Best-caseLatency>
+            <Average-caseLatency>77</Average-caseLatency>
+            <Worst-caseLatency>153</Worst-caseLatency>
+            <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>1.540 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>3.060 us</Worst-caseRealTimeLatency>
+            <Interval-min>2</Interval-min>
+            <Interval-max>154</Interval-max>
         </SummaryOfOverallLatency>
-        <SummaryOfLoopLatency>
-            <VITIS_LOOP_406_2>
-                <TripCount>undef</TripCount>
-                <Latency>undef</Latency>
-                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-                <DataflowPipelineThroughput>81</DataflowPipelineThroughput>
-                <InstanceList/>
-            </VITIS_LOOP_406_2>
-        </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>38</BRAM_18K>
-            <FF>5122</FF>
-            <LUT>5500</LUT>
+            <BRAM_18K>12</BRAM_18K>
+            <FF>6483</FF>
+            <LUT>5464</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -56,8 +47,8 @@
     </AreaEstimates>
     <InterfaceSummary>
         <RtlPorts>
-            <name>s_axi_control_r_AWVALID</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_AWVALID</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -67,8 +58,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_AWREADY</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_AWREADY</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -78,19 +69,19 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_AWADDR</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_AWADDR</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>6</Bits>
+            <Bits>7</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WVALID</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_WVALID</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -100,8 +91,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WREADY</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_WREADY</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -111,8 +102,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WDATA</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_WDATA</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -122,8 +113,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WSTRB</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_WSTRB</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -133,8 +124,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARVALID</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_ARVALID</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -144,8 +135,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARREADY</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_ARREADY</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -155,19 +146,19 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARADDR</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_ARADDR</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>6</Bits>
+            <Bits>7</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RVALID</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_RVALID</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -177,8 +168,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RREADY</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_RREADY</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -188,8 +179,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RDATA</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_RDATA</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -199,8 +190,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RRESP</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_RRESP</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -210,8 +201,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BVALID</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_BVALID</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -221,8 +212,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BREADY</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_BREADY</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
@@ -232,8 +223,8 @@
             <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BRESP</name>
-            <Object>control_r</Object>
+            <name>s_axi_control_BRESP</name>
+            <Object>control</Object>
             <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
@@ -474,7 +465,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -486,7 +477,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>32</Bits>
+            <Bits>4</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -714,7 +705,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -827,42 +818,6 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
-            <name>control_TDATA</name>
-            <Object>control</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>32</Bits>
-            <Attribute>data</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
-            <name>control_TVALID</name>
-            <Object>control</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>control</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
-            <name>control_TREADY</name>
-            <Object>control</Object>
-            <Type>pointer</Type>
-            <Scope/>
-            <IOProtocol>axis</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>control</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
-        <RtlPorts>
             <name>toScheduler_TDATA</name>
             <Object>toScheduler</Object>
             <Type>pointer</Type>
@@ -900,82 +855,82 @@
         </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
-        <TopModule MAX_DEPTH="3">
+        <TopModule MAX_DEPTH="4">
             <ModuleName>run</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>read_test_U0</InstName>
-                    <ModuleName>read_test</ModuleName>
+                    <InstName>grp_runAfterInit_fu_112</InstName>
+                    <ModuleName>runAfterInit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>104</ID>
-                    <BindInstances>empty_29_fu_304_p2</BindInstances>
-                </Instance>
-                <Instance>
-                    <InstName>run_test_U0</InstName>
-                    <ModuleName>run_test</ModuleName>
-                    <IsCompInst>true</IsCompInst>
-                    <ID>129</ID>
+                    <ID>112</ID>
                     <InstancesList>
                         <Instance>
-                            <InstName>grp_find_region_fu_166</InstName>
-                            <ModuleName>find_region</ModuleName>
+                            <InstName>entry_proc_U0</InstName>
+                            <ModuleName>entry_proc</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>166</ID>
+                            <ID>108</ID>
+                        </Instance>
+                        <Instance>
+                            <InstName>read_test_U0</InstName>
+                            <ModuleName>read_test</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>115</ID>
+                            <BindInstances>empty_30_fu_327_p2 empty_32_fu_353_p2 empty_34_fu_378_p2 empty_36_fu_403_p2 empty_38_fu_428_p2 empty_40_fu_453_p2 empty_42_fu_478_p2</BindInstances>
+                        </Instance>
+                        <Instance>
+                            <InstName>run_test_U0</InstName>
+                            <ModuleName>run_test</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>141</ID>
+                            <InstancesList>
+                                <Instance>
+                                    <InstName>grp_find_region_fu_196</InstName>
+                                    <ModuleName>find_region</ModuleName>
+                                    <IsCompInst>true</IsCompInst>
+                                    <ID>196</ID>
+                                </Instance>
+                            </InstancesList>
+                        </Instance>
+                        <Instance>
+                            <InstName>writeOutcome_U0</InstName>
+                            <ModuleName>writeOutcome</ModuleName>
+                            <IsCompInst>true</IsCompInst>
+                            <ID>163</ID>
+                            <BindInstances>add_ln358_fu_150_p2 empty_fu_156_p2</BindInstances>
                         </Instance>
                     </InstancesList>
-                </Instance>
-                <Instance>
-                    <InstName>writeOutcome_U0</InstName>
-                    <ModuleName>writeOutcome</ModuleName>
-                    <IsCompInst>true</IsCompInst>
-                    <ID>150</ID>
-                    <BindInstances>add_ln359_1_fu_146_p2 add_ln359_fu_156_p2 empty_fu_162_p2</BindInstances>
+                    <BindInstances>outcomeInRam_c_U contr_taskId_c_U contr_taskId_c11_channel_U error_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>contr_taskId_V_U contr_taskId_V_channel_U error_U</BindInstances>
+            <BindInstances>outcomeInRam_fu_149_p2</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>read_test</Name>
-            <Loops>
-                <Loop1/>
-            </Loops>
+            <Name>entry_proc</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
-                    <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.634</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>80</Best-caseLatency>
-                    <Average-caseLatency>80</Average-caseLatency>
-                    <Worst-caseLatency>80</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.600 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.600 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.600 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>80</PipelineInitiationInterval>
+                    <Best-caseLatency>0</Best-caseLatency>
+                    <Average-caseLatency>0</Average-caseLatency>
+                    <Worst-caseLatency>0</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>0</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <Loop1>
-                        <Name>Loop 1</Name>
-                        <TripCount>8</TripCount>
-                        <Latency>8</Latency>
-                        <AbsoluteTimeLatency>0.160 us</AbsoluteTimeLatency>
-                        <IterationLatency>1</IterationLatency>
-                        <PipelineDepth>1</PipelineDepth>
-                        <PipelineType>no</PipelineType>
-                        <InstanceList/>
-                    </Loop1>
-                </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>662</FF>
+                    <FF>2</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>433</LUT>
+                    <LUT>20</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -989,8 +944,55 @@
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
+        </Module>
+        <Module>
+            <Name>read_test</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>20.00</TargetClockPeriod>
+                    <ClockUncertainty>5.40</ClockUncertainty>
+                    <TargetInitiationInterval>8</TargetInitiationInterval>
+                    <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>78</Best-caseLatency>
+                    <Average-caseLatency>78</Average-caseLatency>
+                    <Worst-caseLatency>78</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.560 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.560 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.560 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>8</PipelineInitiationInterval>
+                    <PipelineDepth>79</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>899</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>689</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="empty_29_fu_304_p2" SOURCE="" URAM="0" VARIABLE="empty_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_30_fu_327_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_32_fu_353_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_34_fu_378_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_36_fu_403_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_38_fu_428_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_40_fu_453_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_42_fu_478_p2" SOURCE="C:/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:587" URAM="0" VARIABLE="empty_42"/>
             </BindNodes>
         </Module>
         <Module>
@@ -999,27 +1001,29 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
+                    <TargetInitiationInterval>8</TargetInitiationInterval>
                     <EstimatedClockPeriod>14.098</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2</Best-caseLatency>
-                    <Average-caseLatency>2</Average-caseLatency>
-                    <Worst-caseLatency>2</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>40.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>40.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>40.000 ns</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
+                    <Best-caseLatency>9</Best-caseLatency>
+                    <Average-caseLatency>9</Average-caseLatency>
+                    <Worst-caseLatency>9</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>8</PipelineInitiationInterval>
+                    <PipelineDepth>10</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>15</FF>
+                    <FF>258</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>441</LUT>
+                    <LUT>613</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1038,27 +1042,29 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
+                    <TargetInitiationInterval>8</TargetInitiationInterval>
                     <EstimatedClockPeriod>14.098</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>4</Best-caseLatency>
-                    <Average-caseLatency>22</Average-caseLatency>
-                    <Worst-caseLatency>28</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>80.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.440 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.560 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>4 ~ 28</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
+                    <Best-caseLatency>35</Best-caseLatency>
+                    <Average-caseLatency>35</Average-caseLatency>
+                    <Worst-caseLatency>35</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.700 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.700 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.700 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>8</PipelineInitiationInterval>
+                    <PipelineDepth>36</PipelineDepth>
+                    <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>368</FF>
+                    <FF>1841</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>1013</LUT>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>1808</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>1</UTIL_LUT>
+                    <UTIL_LUT>3</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1077,7 +1083,7 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
-                    <TargetInitiationInterval>2</TargetInitiationInterval>
+                    <TargetInitiationInterval>8</TargetInitiationInterval>
                     <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
@@ -1087,19 +1093,19 @@
                     <Best-caseRealTimeLatency>1.400 us</Best-caseRealTimeLatency>
                     <Average-caseRealTimeLatency>1.400 us</Average-caseRealTimeLatency>
                     <Worst-caseRealTimeLatency>1.400 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2</PipelineInitiationInterval>
+                    <PipelineInitiationInterval>8</PipelineInitiationInterval>
                     <PipelineDepth>71</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>528</FF>
+                    <FF>257</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>1312</LUT>
+                    <LUT>401</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>2</UTIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1112,16 +1118,12 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln359_1_fu_146_p2" SOURCE="detector_solid/abs_solid_detector.cpp:359" URAM="0" VARIABLE="add_ln359_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln359_fu_156_p2" SOURCE="detector_solid/abs_solid_detector.cpp:359" URAM="0" VARIABLE="add_ln359"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_162_p2" SOURCE="detector_solid/abs_solid_detector.cpp:359" URAM="0" VARIABLE="empty"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln358_fu_150_p2" SOURCE="detector_solid/abs_solid_detector.cpp:358" URAM="0" VARIABLE="add_ln358"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_156_p2" SOURCE="detector_solid/abs_solid_detector.cpp:358" URAM="0" VARIABLE="empty"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>run</Name>
-            <Loops>
-                <VITIS_LOOP_406_2/>
-            </Loops>
+            <Name>runAfterInit</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>20.00</TargetClockPeriod>
@@ -1129,41 +1131,71 @@
                     <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>undef</Best-caseLatency>
-                    <Average-caseLatency>undef</Average-caseLatency>
-                    <Worst-caseLatency>undef</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
+                    <Best-caseLatency>150</Best-caseLatency>
+                    <Average-caseLatency>150</Average-caseLatency>
+                    <Worst-caseLatency>150</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>3.000 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>3.000 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.000 us</Worst-caseRealTimeLatency>
+                    <DataflowPipelineThroughput>8</DataflowPipelineThroughput>
+                    <PipelineInitiationInterval>8</PipelineInitiationInterval>
+                    <PipelineType>dataflow</PipelineType>
                 </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <VITIS_LOOP_406_2>
-                        <Name>VITIS_LOOP_406_2</Name>
-                        <TripCount>undef</TripCount>
-                        <Latency>undef</Latency>
-                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-                        <DataflowPipelineThroughput>81</DataflowPipelineThroughput>
-                        <PipelineDepth>undef</PipelineDepth>
-                        <PipelineType>dataflow</PipelineType>
-                        <InstanceList>
-                            <Instance>read_test_U0</Instance>
-                            <Instance>run_test_U0</Instance>
-                            <Instance>writeOutcome_U0</Instance>
-                        </InstanceList>
-                    </VITIS_LOOP_406_2>
-                </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>38</BRAM_18K>
+                    <BRAM_18K>8</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>13</UTIL_BRAM>
-                    <FF>5122</FF>
+                    <UTIL_BRAM>2</UTIL_BRAM>
+                    <FF>5454</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>4</UTIL_FF>
-                    <LUT>5500</LUT>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>4108</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>7</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="outcomeInRam_c_U" SOURCE="" URAM="0" VARIABLE="outcomeInRam_c"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="contr_taskId_c_U" SOURCE="" URAM="0" VARIABLE="contr_taskId_c"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="contr_taskId_c11_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:380" URAM="0" VARIABLE="contr_taskId_c11_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:381" URAM="0" VARIABLE="error"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>run</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>20.00</TargetClockPeriod>
+                    <ClockUncertainty>5.40</ClockUncertainty>
+                    <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1</Best-caseLatency>
+                    <Average-caseLatency>77</Average-caseLatency>
+                    <Worst-caseLatency>153</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.540 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>3.060 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2 ~ 154</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>12</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>4</UTIL_BRAM>
+                    <FF>6483</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>6</UTIL_FF>
+                    <LUT>5464</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>10</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1175,9 +1207,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="VITIS_LOOP_406_2" OPTYPE="fifo" PRAGMA="" RTLNAME="contr_taskId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:412" URAM="0" VARIABLE="contr_taskId_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="VITIS_LOOP_406_2" OPTYPE="fifo" PRAGMA="" RTLNAME="contr_taskId_V_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:412" URAM="0" VARIABLE="contr_taskId_V_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="VITIS_LOOP_406_2" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:413" URAM="0" VARIABLE="error"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="outcomeInRam_fu_149_p2" SOURCE="detector_solid/abs_solid_detector.cpp:413" URAM="0" VARIABLE="outcomeInRam"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -1186,37 +1216,37 @@
         <config_export vivado_clock="20"/>
     </UserConfigCommands>
     <Args>
-        <Arg ArgName="control" index="0" direction="in" srcType="stream&lt;controlStr, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="contr" index="0" direction="in" srcType="controlStr" srcSize="32">
             <hwRefs>
-                <hwRef type="interface" interface="control" name="" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="contr" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="trainedRegions" index="1" direction="inout" srcType="REGION_T*" srcSize="768">
             <hwRefs>
                 <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="inout"/>
-                <hwRef type="register" interface="s_axi_control_r" name="trainedRegions_1" usage="address" direction="in"/>
-                <hwRef type="register" interface="s_axi_control_r" name="trainedRegions_2" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegions_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegions_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="realTaskId" index="2" direction="inout" srcType="ap_int&lt;8&gt;*" srcSize="8">
             <hwRefs>
                 <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="inout"/>
-                <hwRef type="register" interface="s_axi_control_r" name="realTaskId_1" usage="address" direction="in"/>
-                <hwRef type="register" interface="s_axi_control_r" name="realTaskId_2" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="realTaskId_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="realTaskId_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="n_regions_in" index="3" direction="inout" srcType="ap_int&lt;16&gt;*" srcSize="16">
             <hwRefs>
                 <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="inout"/>
-                <hwRef type="register" interface="s_axi_control_r" name="n_regions_in_1" usage="address" direction="in"/>
-                <hwRef type="register" interface="s_axi_control_r" name="n_regions_in_2" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="n_regions_in_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="n_regions_in_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="sharedMem" index="4" direction="inout" srcType="ap_int&lt;32&gt;*" srcSize="32">
             <hwRefs>
                 <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="inout"/>
-                <hwRef type="register" interface="s_axi_control_r" name="sharedMem_1" usage="address" direction="in"/>
-                <hwRef type="register" interface="s_axi_control_r" name="sharedMem_2" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="sharedMem_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="sharedMem_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="toScheduler" index="5" direction="out" srcType="stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;" srcSize="8">
@@ -1226,25 +1256,25 @@
         </Arg>
     </Args>
     <Interfaces>
-        <Interface InterfaceName="s_axi_control_r" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_control_r_" paramPrefix="C_S_AXI_CONTROL_R_">
+        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="7" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
             <ports>
-                <port>s_axi_control_r_ARADDR</port>
-                <port>s_axi_control_r_ARREADY</port>
-                <port>s_axi_control_r_ARVALID</port>
-                <port>s_axi_control_r_AWADDR</port>
-                <port>s_axi_control_r_AWREADY</port>
-                <port>s_axi_control_r_AWVALID</port>
-                <port>s_axi_control_r_BREADY</port>
-                <port>s_axi_control_r_BRESP</port>
-                <port>s_axi_control_r_BVALID</port>
-                <port>s_axi_control_r_RDATA</port>
-                <port>s_axi_control_r_RREADY</port>
-                <port>s_axi_control_r_RRESP</port>
-                <port>s_axi_control_r_RVALID</port>
-                <port>s_axi_control_r_WDATA</port>
-                <port>s_axi_control_r_WREADY</port>
-                <port>s_axi_control_r_WSTRB</port>
-                <port>s_axi_control_r_WVALID</port>
+                <port>s_axi_control_ARADDR</port>
+                <port>s_axi_control_ARREADY</port>
+                <port>s_axi_control_ARVALID</port>
+                <port>s_axi_control_AWADDR</port>
+                <port>s_axi_control_AWREADY</port>
+                <port>s_axi_control_AWVALID</port>
+                <port>s_axi_control_BREADY</port>
+                <port>s_axi_control_BRESP</port>
+                <port>s_axi_control_BVALID</port>
+                <port>s_axi_control_RDATA</port>
+                <port>s_axi_control_RREADY</port>
+                <port>s_axi_control_RRESP</port>
+                <port>s_axi_control_RVALID</port>
+                <port>s_axi_control_WDATA</port>
+                <port>s_axi_control_WREADY</port>
+                <port>s_axi_control_WSTRB</port>
+                <port>s_axi_control_WVALID</port>
             </ports>
             <registers>
                 <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
@@ -1285,57 +1315,63 @@
                         <field offset="6" width="26" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x10" name="trainedRegions_1" access="W" description="Data signal of trainedRegions" range="32">
+                <register offset="0x10" name="contr" access="W" description="Data signal of contr" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="contr" access="W" description="Bit 31 to 0 of contr"/>
+                    </fields>
+                </register>
+                <register offset="0x18" name="trainedRegions_1" access="W" description="Data signal of trainedRegions" range="32">
                     <fields>
                         <field offset="0" width="32" name="trainedRegions" access="W" description="Bit 31 to 0 of trainedRegions"/>
                     </fields>
                 </register>
-                <register offset="0x14" name="trainedRegions_2" access="W" description="Data signal of trainedRegions" range="32">
+                <register offset="0x1c" name="trainedRegions_2" access="W" description="Data signal of trainedRegions" range="32">
                     <fields>
                         <field offset="0" width="32" name="trainedRegions" access="W" description="Bit 63 to 32 of trainedRegions"/>
                     </fields>
                 </register>
-                <register offset="0x1c" name="realTaskId_1" access="W" description="Data signal of realTaskId" range="32">
+                <register offset="0x24" name="realTaskId_1" access="W" description="Data signal of realTaskId" range="32">
                     <fields>
                         <field offset="0" width="32" name="realTaskId" access="W" description="Bit 31 to 0 of realTaskId"/>
                     </fields>
                 </register>
-                <register offset="0x20" name="realTaskId_2" access="W" description="Data signal of realTaskId" range="32">
+                <register offset="0x28" name="realTaskId_2" access="W" description="Data signal of realTaskId" range="32">
                     <fields>
                         <field offset="0" width="32" name="realTaskId" access="W" description="Bit 63 to 32 of realTaskId"/>
                     </fields>
                 </register>
-                <register offset="0x28" name="n_regions_in_1" access="W" description="Data signal of n_regions_in" range="32">
+                <register offset="0x30" name="n_regions_in_1" access="W" description="Data signal of n_regions_in" range="32">
                     <fields>
                         <field offset="0" width="32" name="n_regions_in" access="W" description="Bit 31 to 0 of n_regions_in"/>
                     </fields>
                 </register>
-                <register offset="0x2c" name="n_regions_in_2" access="W" description="Data signal of n_regions_in" range="32">
+                <register offset="0x34" name="n_regions_in_2" access="W" description="Data signal of n_regions_in" range="32">
                     <fields>
                         <field offset="0" width="32" name="n_regions_in" access="W" description="Bit 63 to 32 of n_regions_in"/>
                     </fields>
                 </register>
-                <register offset="0x34" name="sharedMem_1" access="W" description="Data signal of sharedMem" range="32">
+                <register offset="0x3c" name="sharedMem_1" access="W" description="Data signal of sharedMem" range="32">
                     <fields>
                         <field offset="0" width="32" name="sharedMem" access="W" description="Bit 31 to 0 of sharedMem"/>
                     </fields>
                 </register>
-                <register offset="0x38" name="sharedMem_2" access="W" description="Data signal of sharedMem" range="32">
+                <register offset="0x40" name="sharedMem_2" access="W" description="Data signal of sharedMem" range="32">
                     <fields>
                         <field offset="0" width="32" name="sharedMem" access="W" description="Bit 63 to 32 of sharedMem"/>
                     </fields>
                 </register>
             </registers>
             <constraints>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="trainedRegions"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="realTaskId"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="n_regions_in"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52" argName="sharedMem"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="contr"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24" argName="trainedRegions"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="36" argName="realTaskId"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="48" argName="n_regions_in"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="60" argName="sharedMem"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
             <busParams>
-                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control_r:m_axi_gmem:control:toScheduler</busParam>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:m_axi_gmem:toScheduler</busParam>
                 <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
             </busParams>
             <portMaps>
@@ -1367,7 +1403,7 @@
                 <port>interrupt</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="m_axi_gmem" type="axi4full" busTypeName="aximm" mode="master" dataWidth="256" addrWidth="64" portPrefix="m_axi_gmem_" paramPrefix="C_M_AXI_GMEM_" preferredUsageValue="MEMORY">
+        <Interface InterfaceName="m_axi_gmem" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="64" portPrefix="m_axi_gmem_" paramPrefix="C_M_AXI_GMEM_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
@@ -1428,23 +1464,13 @@
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="trainedRegions"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="768" final_bitwidth="256" argName="trainedRegions"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="768" final_bitwidth="32" argName="trainedRegions"/>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="realTaskId"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="8" final_bitwidth="256" argName="realTaskId"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="8" final_bitwidth="32" argName="realTaskId"/>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="n_regions_in"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="256" argName="n_regions_in"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="32" argName="n_regions_in"/>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="sharedMem"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="256" argName="sharedMem"/>
-            </constraints>
-        </Interface>
-        <Interface InterfaceName="control" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="32" portPrefix="control_">
-            <ports>
-                <port>control_TDATA</port>
-                <port>control_TREADY</port>
-                <port>control_TVALID</port>
-            </ports>
-            <constraints>
-                <constraint constraint_type="pragma interface" mode="axis" register_option="1" register_mode="both" argName="control"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="32" argName="sharedMem"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="toScheduler" type="axi4stream" busTypeName="axis" mode="master" dataWidth="8" portPrefix="toScheduler_">
@@ -1463,36 +1489,36 @@
             <item name="M_AXI">
                 <table isCollapsed="0">
                     <keys size="12">Interface, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
-                    <column name="m_axi_gmem">768 -&gt; 256, 64, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=30</column>
+                    <column name="m_axi_gmem">768 -&gt; 32, 64, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=4</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
                 <table isCollapsed="0">
                     <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
-                    <column name="s_axi_control_r">32, 6, 16, 0</column>
+                    <column name="s_axi_control">32, 7, 16, 0</column>
                 </table>
             </item>
             <item name="S_AXILITE Registers">
                 <table isCollapsed="0">
                     <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
-                    <column name="s_axi_control_r">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART</column>
-                    <column name="s_axi_control_r">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
-                    <column name="s_axi_control_r">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN</column>
-                    <column name="s_axi_control_r">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST</column>
-                    <column name="s_axi_control_r">trainedRegions_1, 0x10, 32, W, Data signal of trainedRegions, </column>
-                    <column name="s_axi_control_r">trainedRegions_2, 0x14, 32, W, Data signal of trainedRegions, </column>
-                    <column name="s_axi_control_r">realTaskId_1, 0x1c, 32, W, Data signal of realTaskId, </column>
-                    <column name="s_axi_control_r">realTaskId_2, 0x20, 32, W, Data signal of realTaskId, </column>
-                    <column name="s_axi_control_r">n_regions_in_1, 0x28, 32, W, Data signal of n_regions_in, </column>
-                    <column name="s_axi_control_r">n_regions_in_2, 0x2c, 32, W, Data signal of n_regions_in, </column>
-                    <column name="s_axi_control_r">sharedMem_1, 0x34, 32, W, Data signal of sharedMem, </column>
-                    <column name="s_axi_control_r">sharedMem_2, 0x38, 32, W, Data signal of sharedMem, </column>
+                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART</column>
+                    <column name="s_axi_control">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN</column>
+                    <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST</column>
+                    <column name="s_axi_control">contr, 0x10, 32, W, Data signal of contr, </column>
+                    <column name="s_axi_control">trainedRegions_1, 0x18, 32, W, Data signal of trainedRegions, </column>
+                    <column name="s_axi_control">trainedRegions_2, 0x1c, 32, W, Data signal of trainedRegions, </column>
+                    <column name="s_axi_control">realTaskId_1, 0x24, 32, W, Data signal of realTaskId, </column>
+                    <column name="s_axi_control">realTaskId_2, 0x28, 32, W, Data signal of realTaskId, </column>
+                    <column name="s_axi_control">n_regions_in_1, 0x30, 32, W, Data signal of n_regions_in, </column>
+                    <column name="s_axi_control">n_regions_in_2, 0x34, 32, W, Data signal of n_regions_in, </column>
+                    <column name="s_axi_control">sharedMem_1, 0x3c, 32, W, Data signal of sharedMem, </column>
+                    <column name="s_axi_control">sharedMem_2, 0x40, 32, W, Data signal of sharedMem, </column>
                 </table>
             </item>
             <item name="AXIS">
                 <table isCollapsed="0">
                     <keys size="5">Interface, Register Mode, TDATA, TREADY, TVALID</keys>
-                    <column name="control">both, 32, 1, 1</column>
                     <column name="toScheduler">both, 8, 1, 1</column>
                 </table>
             </item>
@@ -1512,7 +1538,7 @@
             <item name="Top Function Arguments">
                 <table isCollapsed="1">
                     <keys size="3">Argument, Direction, Datatype</keys>
-                    <column name="control">in, stream&lt;controlStr 0&gt;&amp;</column>
+                    <column name="contr">in, controlStr</column>
                     <column name="trainedRegions">inout, REGION_T*</column>
                     <column name="realTaskId">inout, ap_int&lt;8&gt;*</column>
                     <column name="n_regions_in">inout, ap_int&lt;16&gt;*</column>
@@ -1523,19 +1549,19 @@
             <item name="SW-to-HW Mapping">
                 <table isCollapsed="1">
                     <keys size="5">Argument, HW Interface, HW Type, HW Usage, HW Info</keys>
-                    <column name="control">control, interface, , </column>
+                    <column name="contr">s_axi_control, register, , name=contr offset=0x10 range=32</column>
                     <column name="trainedRegions">m_axi_gmem, interface, , </column>
-                    <column name="trainedRegions">s_axi_control_r, register, offset, name=trainedRegions_1 offset=0x10 range=32</column>
-                    <column name="trainedRegions">s_axi_control_r, register, offset, name=trainedRegions_2 offset=0x14 range=32</column>
+                    <column name="trainedRegions">s_axi_control, register, offset, name=trainedRegions_1 offset=0x18 range=32</column>
+                    <column name="trainedRegions">s_axi_control, register, offset, name=trainedRegions_2 offset=0x1c range=32</column>
                     <column name="realTaskId">m_axi_gmem, interface, , </column>
-                    <column name="realTaskId">s_axi_control_r, register, offset, name=realTaskId_1 offset=0x1c range=32</column>
-                    <column name="realTaskId">s_axi_control_r, register, offset, name=realTaskId_2 offset=0x20 range=32</column>
+                    <column name="realTaskId">s_axi_control, register, offset, name=realTaskId_1 offset=0x24 range=32</column>
+                    <column name="realTaskId">s_axi_control, register, offset, name=realTaskId_2 offset=0x28 range=32</column>
                     <column name="n_regions_in">m_axi_gmem, interface, , </column>
-                    <column name="n_regions_in">s_axi_control_r, register, offset, name=n_regions_in_1 offset=0x28 range=32</column>
-                    <column name="n_regions_in">s_axi_control_r, register, offset, name=n_regions_in_2 offset=0x2c range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, offset, name=n_regions_in_1 offset=0x30 range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, offset, name=n_regions_in_2 offset=0x34 range=32</column>
                     <column name="sharedMem">m_axi_gmem, interface, , </column>
-                    <column name="sharedMem">s_axi_control_r, register, offset, name=sharedMem_1 offset=0x34 range=32</column>
-                    <column name="sharedMem">s_axi_control_r, register, offset, name=sharedMem_2 offset=0x38 range=32</column>
+                    <column name="sharedMem">s_axi_control, register, offset, name=sharedMem_1 offset=0x3c range=32</column>
+                    <column name="sharedMem">s_axi_control, register, offset, name=sharedMem_2 offset=0x40 range=32</column>
                     <column name="toScheduler">toScheduler, interface, , </column>
                 </table>
             </item>
@@ -1548,18 +1574,20 @@
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:32" status="valid" parentFunction="is_valid" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:66" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:74" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:350" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=2"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:381" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:382" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realTaskId"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:383" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:384" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:385" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:387" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:389" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:390" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:393" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:401" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
-        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:408" status="valid" parentFunction="run" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:349" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:362" status="valid" parentFunction="read_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:368" status="valid" parentFunction="run_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:373" status="valid" parentFunction="runafterinit" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:398" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:399" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realTaskId"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:400" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:401" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:402" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:404" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:406" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:407" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:410" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:419" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
     </PragmaReport>
 </profile>
 

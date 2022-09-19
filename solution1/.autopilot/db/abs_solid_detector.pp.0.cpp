@@ -8839,10 +8839,17 @@ int find_region(float d[8], region_t regions[16]){
  }
  return idx;
 }
-# 334 "detector_solid/abs_solid_detector.cpp"
+# 331 "detector_solid/abs_solid_detector.cpp"
+int state=0;
+
 struct OutcomeStr {
  bool error;
  bool isNew;
+};
+
+struct controlStr {
+ ap_int<2> command;
+ ap_int<16> taskId;
 };
 
 
@@ -26782,18 +26789,13 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 340 "detector_solid/abs_solid_detector.cpp" 2
+# 344 "detector_solid/abs_solid_detector.cpp" 2
 
 
 
-
-struct controlStr {
- ap_int<2> command;
- ap_int<16> taskId;
-};
 
 void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> taskId, bool error, hls::stream< ap_int<8>> &toScheduler) {
-#pragma HLS PIPELINE II=2
+#pragma HLS PIPELINE II=8
 
  OutcomeStr out;
 
@@ -26805,26 +26807,37 @@ void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> taskId, bool error, hls::st
  memcpy((void*) &(outcomeptr[taskId]), (void*) &out, sizeof(out));
 }
 
+void read_test(float dest[16][8], float* inputDataInRam, controlStr &contr) {
+#pragma HLS PIPELINE II=8
 
-void read_test(hls::stream<controlStr> &control, float dest[16][8], float* inputDataInRam, controlStr &contr) {
- contr=control.read();
  memcpy(dest[contr.taskId], inputDataInRam, sizeof(float)*8);
 }
 
 void run_test(bool &error, float data[8], region_t regions[16]) {
+#pragma HLS PIPELINE II=8
  error = ( !is_valid(data) || find_region(data, regions) < 0 ) ;
+}
+
+void runAfterInit(float * inputDataInRam, controlStr &contr, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler) {
+#pragma HLS dataflow
+
+
+
+
+ bool error;
+
+ read_test(data, inputDataInRam, contr);
+ run_test(error, data[contr.taskId], regions[contr.taskId]);
+# 390 "detector_solid/abs_solid_detector.cpp"
+ writeOutcome(outcomeInRam, contr.taskId, error, toScheduler);
 }
 
 
 
-__attribute__((sdx_kernel("run", 0))) void run(hls::stream<controlStr> &control, region_t trainedRegions[128][16], ap_int<8> realTaskId[128], ap_int<16> n_regions_in[128], ap_int<32> sharedMem[sizeof(float)*8*128 +((128*sizeof(OutcomeStr)) / 32) + (((128*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {_ssdm_SpecArrayDimSize(trainedRegions, 128);_ssdm_SpecArrayDimSize(realTaskId, 128);_ssdm_SpecArrayDimSize(n_regions_in, 128);_ssdm_SpecArrayDimSize(sharedMem, 4104);
+
+__attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[128][16], ap_int<8> realTaskId[128], ap_int<16> n_regions_in[128], ap_int<32> sharedMem[sizeof(float)*8*128 +((128*sizeof(OutcomeStr)) / 32) + (((128*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {_ssdm_SpecArrayDimSize(trainedRegions, 128);_ssdm_SpecArrayDimSize(realTaskId, 128);_ssdm_SpecArrayDimSize(n_regions_in, 128);_ssdm_SpecArrayDimSize(sharedMem, 4104);
 #pragma HLSDIRECTIVE TOP name=run
-# 374 "detector_solid/abs_solid_detector.cpp"
-
-
-
-
-
+# 396 "detector_solid/abs_solid_detector.cpp"
 
 
 #pragma HLS interface s_axilite port = trainedRegions
@@ -26845,22 +26858,16 @@ __attribute__((sdx_kernel("run", 0))) void run(hls::stream<controlStr> &control,
  OutcomeStr* outcomeInRam=(OutcomeStr*) (sharedMem+sizeof(float)*8*128);
 
 
+ if (state==0) {
 
- VITIS_LOOP_400_1: for (size_t i=0; i<sizeof(regions); i++) {
+  VITIS_LOOP_418_1: for (size_t i=0; i<sizeof(regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) regions) [i] = ((const char*) trainedRegions) [i];
- }
+  }
 
+  state=1;
 
- VITIS_LOOP_406_2: for (;;) {
-
-#pragma HLS dataflow
- bool error;
-  controlStr contr;
-
-  read_test(control, data, inputDataInRam, contr);
-  run_test(error, data[contr.taskId], regions[contr.taskId]);
-# 422 "detector_solid/abs_solid_detector.cpp"
-  writeOutcome(outcomeInRam, contr.taskId, error, toScheduler);
+ } else if (state==1) {
+  runAfterInit(inputDataInRam, contr, outcomeInRam, toScheduler);
  }
 }

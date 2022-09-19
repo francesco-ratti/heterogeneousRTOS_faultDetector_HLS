@@ -38,12 +38,12 @@ typedef uint64_t u64;
 #else
 typedef struct {
     u16 DeviceId;
-    u32 Control_r_BaseAddress;
+    u32 Control_BaseAddress;
 } XRun_Config;
 #endif
 
 typedef struct {
-    u64 Control_r_BaseAddress;
+    u64 Control_BaseAddress;
     u32 IsReady;
 } XRun;
 
@@ -88,6 +88,8 @@ void XRun_Continue(XRun *InstancePtr);
 void XRun_EnableAutoRestart(XRun *InstancePtr);
 void XRun_DisableAutoRestart(XRun *InstancePtr);
 
+void XRun_Set_contr(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_contr(XRun *InstancePtr);
 void XRun_Set_trainedRegions(XRun *InstancePtr, u64 Data);
 u64 XRun_Get_trainedRegions(XRun *InstancePtr);
 void XRun_Set_realTaskId(XRun *InstancePtr, u64 Data);

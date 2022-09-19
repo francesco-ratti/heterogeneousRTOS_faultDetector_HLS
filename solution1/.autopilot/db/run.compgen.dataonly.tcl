@@ -1,38 +1,46 @@
 # This script segment is generated automatically by AutoPilot
 
 set axilite_register_dict [dict create]
-set port_control_r {
+set port_control {
+contr { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 23
+}
 trainedRegions { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 16
-	offset_end 27
+	offset 24
+	offset_end 35
 }
 realTaskId { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 28
-	offset_end 39
+	offset 36
+	offset_end 47
 }
 n_regions_in { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 51
+	offset 48
+	offset_end 59
 }
 sharedMem { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 52
-	offset_end 63
+	offset 60
+	offset_end 71
 }
 ap_start {
 	mailbox_input_ctrl 0
@@ -58,6 +66,6 @@ interrupt {
     ap_local_deadlock 5
 }
 }
-dict set axilite_register_dict control_r $port_control_r
+dict set axilite_register_dict control $port_control
 
 

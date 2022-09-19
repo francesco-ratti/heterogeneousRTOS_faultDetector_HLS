@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run'" level="0">
-<item name = "Date">Mon Sep 19 22:17:42 2022
+<item name = "Date">Mon Sep 19 22:55:18 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)</item>
 <item name = "Project">detector_solid</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, no</column>
+<column name="">1, 153, 20.000 ns, 3.060 us, 2, 154, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,6 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_406_2">?, ?, 158 ~ 182, -, -, ?, no</column>
 </table>
 </item>
 </section>

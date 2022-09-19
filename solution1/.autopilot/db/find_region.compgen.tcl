@@ -16,7 +16,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 29 \
+    id 17 \
     name d_read \
     type other \
     dir I \
@@ -31,7 +31,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 30 \
+    id 18 \
     name d_read_23 \
     type other \
     dir I \
@@ -46,7 +46,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 31 \
+    id 19 \
     name d_read_24 \
     type other \
     dir I \
@@ -61,7 +61,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 32 \
+    id 20 \
     name d_read_25 \
     type other \
     dir I \
@@ -76,7 +76,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 33 \
+    id 21 \
     name d_read_26 \
     type other \
     dir I \
@@ -91,7 +91,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 34 \
+    id 22 \
     name d_read_27 \
     type other \
     dir I \
@@ -106,7 +106,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 35 \
+    id 23 \
     name d_read_28 \
     type other \
     dir I \
@@ -121,7 +121,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 36 \
+    id 24 \
     name d_read_29 \
     type other \
     dir I \
@@ -198,6 +198,26 @@ eval "cg_default_interface_gen_reset { \
 }"
 } else {
 puts "@W \[IMPL-114\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
+}
+}
+
+
+# Adapter definition:
+set PortName ap_ce
+set DataWd 1 
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc cg_default_interface_gen_ce] == "cg_default_interface_gen_ce"} {
+eval "cg_default_interface_gen_ce { \
+    id -5 \
+    name ${PortName} \
+    reset_level 1 \
+    sync_rst true \
+    corename apif_ap_ce \
+    data_wd ${DataWd} \
+    op interface \
+}"
+} else {
+puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
 }
 }
 

@@ -11,42 +11,35 @@
 <TopModelName>read_test</TopModelName>
 <TargetClockPeriod>20.00</TargetClockPeriod>
 <ClockUncertainty>5.40</ClockUncertainty>
+<TargetInitiationInterval>8</TargetInitiationInterval>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
 <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>80</Best-caseLatency>
-<Average-caseLatency>80</Average-caseLatency>
-<Worst-caseLatency>80</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.600 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.600 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.600 us</Worst-caseRealTimeLatency>
-<Interval-min>80</Interval-min>
-<Interval-max>80</Interval-max>
+<Best-caseLatency>78</Best-caseLatency>
+<Average-caseLatency>78</Average-caseLatency>
+<Worst-caseLatency>78</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.560 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.560 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.560 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>8</PipelineInitiationInterval>
+<PipelineDepth>79</PipelineDepth>
+<Interval-min>8</Interval-min>
+<Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<Loop1>
-<TripCount>8</TripCount>
-<Latency>8</Latency>
-<AbsoluteTimeLatency>160</AbsoluteTimeLatency>
-<IterationLatency>1</IterationLatency>
-<InstanceList>
-</InstanceList>
-</Loop1>
-</SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>662</FF>
-<LUT>433</LUT>
+<FF>899</FF>
+<LUT>689</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -139,7 +132,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>ap_return_0</name>
+<name>ap_return</name>
 <Object>read_test</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -148,50 +141,6 @@
 <Dir>out</Dir>
 <Bits>16</Bits>
 <Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>ap_return_1</name>
-<Object>read_test</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>16</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>control_TDATA</name>
-<Object>control</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>32</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>control_TVALID</name>
-<Object>control</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>control_TREADY</name>
-<Object>control</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWVALID</name>
@@ -366,7 +315,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>256</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -377,7 +326,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>4</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -586,7 +535,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>256</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -708,6 +657,17 @@
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>64</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>p_read</name>
+<Object>p_read</Object>
+<Type>scalar</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>16</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

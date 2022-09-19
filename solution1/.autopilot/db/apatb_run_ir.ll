@@ -3,7 +3,6 @@ source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-%"class.hls::stream<controlStr, 0>" = type { %struct.controlStr }
 %struct.controlStr = type { %"struct.ap_int<2>", %"struct.ap_int<16>" }
 %"struct.ap_int<2>" = type { %"struct.ap_int_base<2, true>" }
 %"struct.ap_int_base<2, true>" = type { %"struct.ssdm_int<2, true>" }
@@ -24,10 +23,8 @@ target triple = "fpga64-xilinx-none"
 declare void @llvm.sideeffect() #0
 
 ; Function Attrs: noinline
-define void @apatb_run_ir(%"class.hls::stream<controlStr, 0>"* %control, [16 x %struct.REGION_T]* %trainedRegions, %"struct.ap_int<8>"* %realTaskId, %"struct.ap_int<16>"* %n_regions_in, %"struct.ap_int<32>"* %sharedMem, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler) local_unnamed_addr #1 {
+define void @apatb_run_ir(%struct.controlStr* nocapture readonly %contr, [16 x %struct.REGION_T]* %trainedRegions, %"struct.ap_int<8>"* %realTaskId, %"struct.ap_int<16>"* %n_regions_in, %"struct.ap_int<32>"* %sharedMem, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler) local_unnamed_addr #1 {
 entry:
-  %control_copy = alloca %"class.hls::stream<controlStr, 0>", align 512
-  call void @llvm.sideeffect() #0 [ "stream_interface"(%"class.hls::stream<controlStr, 0>"* %control_copy) ]
   %malloccall = tail call i8* @malloc(i64 196608)
   %trainedRegions_copy = bitcast i8* %malloccall to [128 x [16 x %struct.REGION_T]]*
   %realTaskId_copy = alloca [128 x i8], align 512
@@ -40,13 +37,13 @@ entry:
   %1 = bitcast %"struct.ap_int<8>"* %realTaskId to [128 x %"struct.ap_int<8>"]*
   %2 = bitcast %"struct.ap_int<16>"* %n_regions_in to [128 x %"struct.ap_int<16>"]*
   %3 = bitcast %"struct.ap_int<32>"* %sharedMem to [4104 x %"struct.ap_int<32>"]*
-  call fastcc void @copy_in(%"class.hls::stream<controlStr, 0>"* %control, %"class.hls::stream<controlStr, 0>"* nonnull align 512 %control_copy, [128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x i8]* nonnull align 512 %realTaskId_copy, [128 x %"struct.ap_int<16>"]* %2, [128 x %"struct.ap_int<16>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
+  call fastcc void @copy_in([128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x i8]* nonnull align 512 %realTaskId_copy, [128 x %"struct.ap_int<16>"]* %2, [128 x %"struct.ap_int<16>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
   %4 = getelementptr inbounds [128 x [16 x %struct.REGION_T]], [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, i32 0, i32 0
   %5 = getelementptr [128 x i8], [128 x i8]* %realTaskId_copy, i32 0, i32 0
   %6 = getelementptr inbounds [128 x %"struct.ap_int<16>"], [128 x %"struct.ap_int<16>"]* %n_regions_in_copy, i32 0, i32 0
   %7 = getelementptr inbounds [4104 x %"struct.ap_int<32>"], [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, i32 0, i32 0
-  call void @apatb_run_hw(%"class.hls::stream<controlStr, 0>"* %control_copy, [16 x %struct.REGION_T]* %4, i8* %5, %"struct.ap_int<16>"* %6, %"struct.ap_int<32>"* %7, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy)
-  call fastcc void @copy_out(%"class.hls::stream<controlStr, 0>"* %control, %"class.hls::stream<controlStr, 0>"* nonnull align 512 %control_copy, [128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x i8]* nonnull align 512 %realTaskId_copy, [128 x %"struct.ap_int<16>"]* %2, [128 x %"struct.ap_int<16>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
+  call void @apatb_run_hw(%struct.controlStr* %contr, [16 x %struct.REGION_T]* %4, i8* %5, %"struct.ap_int<16>"* %6, %"struct.ap_int<32>"* %7, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy)
+  call fastcc void @copy_out([128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x i8]* nonnull align 512 %realTaskId_copy, [128 x %"struct.ap_int<16>"]* %2, [128 x %"struct.ap_int<16>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   ret void
@@ -55,60 +52,18 @@ entry:
 declare noalias i8* @malloc(i64) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @copy_in(%"class.hls::stream<controlStr, 0>"*, %"class.hls::stream<controlStr, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed", [128 x [16 x %struct.REGION_T]]* readonly, [128 x [16 x %struct.REGION_T]]* noalias, [128 x %"struct.ap_int<8>"]* readonly, [128 x i8]* noalias align 512, [128 x %"struct.ap_int<16>"]* readonly, [128 x %"struct.ap_int<16>"]* noalias align 512, [4104 x %"struct.ap_int<32>"]* readonly, [4104 x %"struct.ap_int<32>"]* noalias, %"class.hls::stream<ap_int<8>, 0>"*, %"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed") unnamed_addr #2 {
+define internal fastcc void @copy_in([128 x [16 x %struct.REGION_T]]* readonly, [128 x [16 x %struct.REGION_T]]* noalias, [128 x %"struct.ap_int<8>"]* readonly, [128 x i8]* noalias align 512, [128 x %"struct.ap_int<16>"]* readonly, [128 x %"struct.ap_int<16>"]* noalias align 512, [4104 x %"struct.ap_int<32>"]* readonly, [4104 x %"struct.ap_int<32>"]* noalias, %"class.hls::stream<ap_int<8>, 0>"*, %"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed") unnamed_addr #2 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<controlStr, 0>"(%"class.hls::stream<controlStr, 0>"* align 512 %1, %"class.hls::stream<controlStr, 0>"* %0)
-  call fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* %3, [128 x [16 x %struct.REGION_T]]* %2)
-  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>"([128 x i8]* align 512 %5, [128 x %"struct.ap_int<8>"]* %4)
-  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* align 512 %7, [128 x %"struct.ap_int<16>"]* %6)
-  call fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* %9, [4104 x %"struct.ap_int<32>"]* %8)
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* align 512 %11, %"class.hls::stream<ap_int<8>, 0>"* %10)
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<controlStr, 0>"(%"class.hls::stream<controlStr, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<controlStr, 0>"* noalias "fpga.caller.interfaces"="layout_transformed") unnamed_addr #3 {
-entry:
-  %2 = icmp eq %"class.hls::stream<controlStr, 0>"* %0, null
-  %3 = icmp eq %"class.hls::stream<controlStr, 0>"* %1, null
-  %4 = or i1 %2, %3
-  br i1 %4, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  call fastcc void @"streamcpy_hls.p0class.hls::stream<controlStr, 0>"(%"class.hls::stream<controlStr, 0>"* nonnull align 512 %0, %"class.hls::stream<controlStr, 0>"* nonnull %1)
-  br label %ret
-
-ret:                                              ; preds = %copy, %entry
-  ret void
-}
-
-; Function Attrs: argmemonly noinline
-define internal fastcc void @"streamcpy_hls.p0class.hls::stream<controlStr, 0>"(%"class.hls::stream<controlStr, 0>"* noalias nocapture align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<controlStr, 0>"* noalias nocapture "fpga.caller.interfaces"="layout_transformed") unnamed_addr #4 {
-entry:
-  %2 = alloca %"class.hls::stream<controlStr, 0>"
-  br label %empty
-
-empty:                                            ; preds = %push, %entry
-  %3 = bitcast %"class.hls::stream<controlStr, 0>"* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_4(i8* %3)
-  br i1 %4, label %push, label %ret
-
-push:                                             ; preds = %empty
-  %5 = bitcast %"class.hls::stream<controlStr, 0>"* %2 to i8*
-  %6 = bitcast %"class.hls::stream<controlStr, 0>"* %1 to i8*
-  call void @fpga_fifo_pop_4(i8* %5, i8* %6)
-  %7 = load volatile %"class.hls::stream<controlStr, 0>", %"class.hls::stream<controlStr, 0>"* %2
-  %8 = bitcast %"class.hls::stream<controlStr, 0>"* %2 to i8*
-  %9 = bitcast %"class.hls::stream<controlStr, 0>"* %0 to i8*
-  call void @fpga_fifo_push_4(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !5
-
-ret:                                              ; preds = %empty
+  call fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* %1, [128 x [16 x %struct.REGION_T]]* %0)
+  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>"([128 x i8]* align 512 %3, [128 x %"struct.ap_int<8>"]* %2)
+  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* align 512 %5, [128 x %"struct.ap_int<16>"]* %4)
+  call fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* %7, [4104 x %"struct.ap_int<32>"]* %6)
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* align 512 %9, %"class.hls::stream<ap_int<8>, 0>"* %8)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* noalias, [128 x [16 x %struct.REGION_T]]* noalias readonly) unnamed_addr #5 {
+define internal fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* noalias, [128 x [16 x %struct.REGION_T]]* noalias readonly) unnamed_addr #3 {
 entry:
   %2 = icmp eq [128 x [16 x %struct.REGION_T]]* %0, null
   %3 = icmp eq [128 x [16 x %struct.REGION_T]]* %1, null
@@ -177,7 +132,7 @@ ret:                                              ; preds = %for.loop.split, %en
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>"([128 x i8]* noalias align 512, [128 x %"struct.ap_int<8>"]* noalias readonly) unnamed_addr #5 {
+define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>"([128 x i8]* noalias align 512, [128 x %"struct.ap_int<8>"]* noalias readonly) unnamed_addr #3 {
 entry:
   %2 = icmp eq [128 x i8]* %0, null
   %3 = icmp eq [128 x %"struct.ap_int<8>"]* %1, null
@@ -202,7 +157,7 @@ ret:                                              ; preds = %for.loop, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* noalias align 512, [128 x %"struct.ap_int<16>"]* noalias readonly) unnamed_addr #5 {
+define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* noalias align 512, [128 x %"struct.ap_int<16>"]* noalias readonly) unnamed_addr #3 {
 entry:
   %2 = icmp eq [128 x %"struct.ap_int<16>"]* %0, null
   %3 = icmp eq [128 x %"struct.ap_int<16>"]* %1, null
@@ -227,7 +182,7 @@ ret:                                              ; preds = %for.loop, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* noalias, [4104 x %"struct.ap_int<32>"]* noalias readonly) unnamed_addr #5 {
+define internal fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* noalias, [4104 x %"struct.ap_int<32>"]* noalias readonly) unnamed_addr #3 {
 entry:
   %2 = icmp eq [4104 x %"struct.ap_int<32>"]* %0, null
   %3 = icmp eq [4104 x %"struct.ap_int<32>"]* %1, null
@@ -252,7 +207,7 @@ ret:                                              ; preds = %for.loop, %entry
 }
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<ap_int<8>, 0>"* noalias "fpga.caller.interfaces"="layout_transformed") unnamed_addr #3 {
+define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<ap_int<8>, 0>"* noalias "fpga.caller.interfaces"="layout_transformed") unnamed_addr #4 {
 entry:
   %2 = icmp eq %"class.hls::stream<ap_int<8>, 0>"* %0, null
   %3 = icmp eq %"class.hls::stream<ap_int<8>, 0>"* %1, null
@@ -268,7 +223,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @"streamcpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* noalias nocapture align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<ap_int<8>, 0>"* noalias nocapture "fpga.caller.interfaces"="layout_transformed") unnamed_addr #4 {
+define internal fastcc void @"streamcpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* noalias nocapture align 512 "fpga.caller.interfaces"="layout_transformed", %"class.hls::stream<ap_int<8>, 0>"* noalias nocapture "fpga.caller.interfaces"="layout_transformed") unnamed_addr #5 {
 entry:
   %2 = alloca %"class.hls::stream<ap_int<8>, 0>"
   br label %empty
@@ -286,28 +241,27 @@ push:                                             ; preds = %empty
   %8 = bitcast %"class.hls::stream<ap_int<8>, 0>"* %2 to i8*
   %9 = bitcast %"class.hls::stream<ap_int<8>, 0>"* %0 to i8*
   call void @fpga_fifo_push_1(i8* %8, i8* %9)
-  br label %empty, !llvm.loop !7
+  br label %empty, !llvm.loop !5
 
 ret:                                              ; preds = %empty
   ret void
 }
 
 ; Function Attrs: argmemonly noinline
-define internal fastcc void @copy_out(%"class.hls::stream<controlStr, 0>"*, %"class.hls::stream<controlStr, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed", [128 x [16 x %struct.REGION_T]]*, [128 x [16 x %struct.REGION_T]]* noalias readonly, [128 x %"struct.ap_int<8>"]*, [128 x i8]* noalias readonly align 512, [128 x %"struct.ap_int<16>"]*, [128 x %"struct.ap_int<16>"]* noalias readonly align 512, [4104 x %"struct.ap_int<32>"]*, [4104 x %"struct.ap_int<32>"]* noalias readonly, %"class.hls::stream<ap_int<8>, 0>"*, %"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed") unnamed_addr #6 {
+define internal fastcc void @copy_out([128 x [16 x %struct.REGION_T]]*, [128 x [16 x %struct.REGION_T]]* noalias readonly, [128 x %"struct.ap_int<8>"]*, [128 x i8]* noalias readonly align 512, [128 x %"struct.ap_int<16>"]*, [128 x %"struct.ap_int<16>"]* noalias readonly align 512, [4104 x %"struct.ap_int<32>"]*, [4104 x %"struct.ap_int<32>"]* noalias readonly, %"class.hls::stream<ap_int<8>, 0>"*, %"class.hls::stream<ap_int<8>, 0>"* noalias align 512 "fpga.caller.interfaces"="layout_transformed") unnamed_addr #6 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<controlStr, 0>"(%"class.hls::stream<controlStr, 0>"* %0, %"class.hls::stream<controlStr, 0>"* align 512 %1)
-  call fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* %2, [128 x [16 x %struct.REGION_T]]* %3)
-  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>.21"([128 x %"struct.ap_int<8>"]* %4, [128 x i8]* align 512 %5)
-  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* %6, [128 x %"struct.ap_int<16>"]* align 512 %7)
-  call fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* %8, [4104 x %"struct.ap_int<32>"]* %9)
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* %10, %"class.hls::stream<ap_int<8>, 0>"* align 512 %11)
+  call fastcc void @onebyonecpy_hls.p0a128a16struct.REGION_T([128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %1)
+  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>.28"([128 x %"struct.ap_int<8>"]* %2, [128 x i8]* align 512 %3)
+  call fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<16>"([128 x %"struct.ap_int<16>"]* %4, [128 x %"struct.ap_int<16>"]* align 512 %5)
+  call fastcc void @"onebyonecpy_hls.p0a4104struct.ap_int<32>"([4104 x %"struct.ap_int<32>"]* %6, [4104 x %"struct.ap_int<32>"]* %7)
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<ap_int<8>, 0>"(%"class.hls::stream<ap_int<8>, 0>"* %8, %"class.hls::stream<ap_int<8>, 0>"* align 512 %9)
   ret void
 }
 
 declare void @free(i8*) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>.21"([128 x %"struct.ap_int<8>"]* noalias, [128 x i8]* noalias readonly align 512) unnamed_addr #5 {
+define internal fastcc void @"onebyonecpy_hls.p0a128struct.ap_int<8>.28"([128 x %"struct.ap_int<8>"]* noalias, [128 x i8]* noalias readonly align 512) unnamed_addr #3 {
 entry:
   %2 = icmp eq [128 x %"struct.ap_int<8>"]* %0, null
   %3 = icmp eq [128 x i8]* %1, null
@@ -331,45 +285,39 @@ ret:                                              ; preds = %for.loop, %entry
   ret void
 }
 
-declare void @apatb_run_hw(%"class.hls::stream<controlStr, 0>"*, [16 x %struct.REGION_T]*, i8*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*)
+declare void @apatb_run_hw(%struct.controlStr*, [16 x %struct.REGION_T]*, i8*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*)
 
-define void @run_hw_stub_wrapper(%"class.hls::stream<controlStr, 0>"*, [16 x %struct.REGION_T]*, i8*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*) #7 {
+define void @run_hw_stub_wrapper(%struct.controlStr*, [16 x %struct.REGION_T]*, i8*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*) #7 {
 entry:
   %6 = alloca [128 x %"struct.ap_int<8>"]
   %7 = bitcast [16 x %struct.REGION_T]* %1 to [128 x [16 x %struct.REGION_T]]*
   %8 = bitcast i8* %2 to [128 x i8]*
   %9 = bitcast %"struct.ap_int<16>"* %3 to [128 x %"struct.ap_int<16>"]*
   %10 = bitcast %"struct.ap_int<32>"* %4 to [4104 x %"struct.ap_int<32>"]*
-  call void @copy_out(%"class.hls::stream<controlStr, 0>"* null, %"class.hls::stream<controlStr, 0>"* %0, [128 x [16 x %struct.REGION_T]]* null, [128 x [16 x %struct.REGION_T]]* %7, [128 x %"struct.ap_int<8>"]* %6, [128 x i8]* %8, [128 x %"struct.ap_int<16>"]* null, [128 x %"struct.ap_int<16>"]* %9, [4104 x %"struct.ap_int<32>"]* null, [4104 x %"struct.ap_int<32>"]* %10, %"class.hls::stream<ap_int<8>, 0>"* null, %"class.hls::stream<ap_int<8>, 0>"* %5)
+  call void @copy_out([128 x [16 x %struct.REGION_T]]* null, [128 x [16 x %struct.REGION_T]]* %7, [128 x %"struct.ap_int<8>"]* %6, [128 x i8]* %8, [128 x %"struct.ap_int<16>"]* null, [128 x %"struct.ap_int<16>"]* %9, [4104 x %"struct.ap_int<32>"]* null, [4104 x %"struct.ap_int<32>"]* %10, %"class.hls::stream<ap_int<8>, 0>"* null, %"class.hls::stream<ap_int<8>, 0>"* %5)
   %11 = bitcast [128 x [16 x %struct.REGION_T]]* %7 to [16 x %struct.REGION_T]*
   %12 = bitcast [128 x %"struct.ap_int<8>"]* %6 to %"struct.ap_int<8>"*
   %13 = bitcast [128 x %"struct.ap_int<16>"]* %9 to %"struct.ap_int<16>"*
   %14 = bitcast [4104 x %"struct.ap_int<32>"]* %10 to %"struct.ap_int<32>"*
-  call void @run_hw_stub(%"class.hls::stream<controlStr, 0>"* %0, [16 x %struct.REGION_T]* %11, %"struct.ap_int<8>"* %12, %"struct.ap_int<16>"* %13, %"struct.ap_int<32>"* %14, %"class.hls::stream<ap_int<8>, 0>"* %5)
-  call void @copy_in(%"class.hls::stream<controlStr, 0>"* null, %"class.hls::stream<controlStr, 0>"* %0, [128 x [16 x %struct.REGION_T]]* null, [128 x [16 x %struct.REGION_T]]* %7, [128 x %"struct.ap_int<8>"]* %6, [128 x i8]* %8, [128 x %"struct.ap_int<16>"]* null, [128 x %"struct.ap_int<16>"]* %9, [4104 x %"struct.ap_int<32>"]* null, [4104 x %"struct.ap_int<32>"]* %10, %"class.hls::stream<ap_int<8>, 0>"* null, %"class.hls::stream<ap_int<8>, 0>"* %5)
+  call void @run_hw_stub(%struct.controlStr* %0, [16 x %struct.REGION_T]* %11, %"struct.ap_int<8>"* %12, %"struct.ap_int<16>"* %13, %"struct.ap_int<32>"* %14, %"class.hls::stream<ap_int<8>, 0>"* %5)
+  call void @copy_in([128 x [16 x %struct.REGION_T]]* null, [128 x [16 x %struct.REGION_T]]* %7, [128 x %"struct.ap_int<8>"]* %6, [128 x i8]* %8, [128 x %"struct.ap_int<16>"]* null, [128 x %"struct.ap_int<16>"]* %9, [4104 x %"struct.ap_int<32>"]* null, [4104 x %"struct.ap_int<32>"]* %10, %"class.hls::stream<ap_int<8>, 0>"* null, %"class.hls::stream<ap_int<8>, 0>"* %5)
   ret void
 }
 
-declare void @run_hw_stub(%"class.hls::stream<controlStr, 0>"*, [16 x %struct.REGION_T]*, %"struct.ap_int<8>"*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*)
-
-declare i1 @fpga_fifo_not_empty_4(i8*)
+declare void @run_hw_stub(%struct.controlStr*, [16 x %struct.REGION_T]*, %"struct.ap_int<8>"*, %"struct.ap_int<16>"*, %"struct.ap_int<32>"*, %"class.hls::stream<ap_int<8>, 0>"*)
 
 declare i1 @fpga_fifo_not_empty_1(i8*)
 
-declare void @fpga_fifo_pop_4(i8*, i8*)
-
 declare void @fpga_fifo_pop_1(i8*, i8*)
-
-declare void @fpga_fifo_push_4(i8*, i8*)
 
 declare void @fpga_fifo_push_1(i8*, i8*)
 
 attributes #0 = { inaccessiblememonly nounwind }
 attributes #1 = { noinline "fpga.wrapper.func"="wrapper" }
 attributes #2 = { argmemonly noinline "fpga.wrapper.func"="copyin" }
-attributes #3 = { argmemonly noinline "fpga.wrapper.func"="onebyonecpy_hls" }
-attributes #4 = { argmemonly noinline "fpga.wrapper.func"="streamcpy_hls" }
-attributes #5 = { argmemonly noinline norecurse "fpga.wrapper.func"="onebyonecpy_hls" }
+attributes #3 = { argmemonly noinline norecurse "fpga.wrapper.func"="onebyonecpy_hls" }
+attributes #4 = { argmemonly noinline "fpga.wrapper.func"="onebyonecpy_hls" }
+attributes #5 = { argmemonly noinline "fpga.wrapper.func"="streamcpy_hls" }
 attributes #6 = { argmemonly noinline "fpga.wrapper.func"="copyout" }
 attributes #7 = { "fpga.wrapper.func"="stub" }
 
@@ -385,4 +333,3 @@ attributes #7 = { "fpga.wrapper.func"="stub" }
 !4 = !{}
 !5 = distinct !{!5, !6}
 !6 = !{!"llvm.loop.rotate.disable"}
-!7 = distinct !{!7, !6}
