@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2021.2</Version>
+<Version>2022.1</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -23,21 +23,21 @@
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>1</Best-caseLatency>
-<Average-caseLatency>77</Average-caseLatency>
-<Worst-caseLatency>153</Worst-caseLatency>
+<Average-caseLatency>75</Average-caseLatency>
+<Worst-caseLatency>148</Worst-caseLatency>
 <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.540 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>3.060 us</Worst-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.500 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.960 us</Worst-caseRealTimeLatency>
 <Interval-min>2</Interval-min>
-<Interval-max>154</Interval-max>
+<Interval-max>149</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>12</BRAM_18K>
-<FF>6483</FF>
-<LUT>5464</LUT>
+<BRAM_18K>8</BRAM_18K>
+<FF>6491</FF>
+<LUT>7582</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
@@ -54,7 +54,7 @@
 <RtlPorts>
 <name>s_axi_control_AWVALID</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -65,7 +65,7 @@
 <RtlPorts>
 <name>s_axi_control_AWREADY</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -76,10 +76,10 @@
 <RtlPorts>
 <name>s_axi_control_AWADDR</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>19</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -87,7 +87,7 @@
 <RtlPorts>
 <name>s_axi_control_WVALID</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -98,7 +98,7 @@
 <RtlPorts>
 <name>s_axi_control_WREADY</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -109,7 +109,7 @@
 <RtlPorts>
 <name>s_axi_control_WDATA</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>32</Bits>
@@ -120,7 +120,7 @@
 <RtlPorts>
 <name>s_axi_control_WSTRB</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>4</Bits>
@@ -131,7 +131,7 @@
 <RtlPorts>
 <name>s_axi_control_ARVALID</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -142,7 +142,7 @@
 <RtlPorts>
 <name>s_axi_control_ARREADY</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -153,10 +153,10 @@
 <RtlPorts>
 <name>s_axi_control_ARADDR</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>19</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -164,7 +164,7 @@
 <RtlPorts>
 <name>s_axi_control_RVALID</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -175,7 +175,7 @@
 <RtlPorts>
 <name>s_axi_control_RREADY</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -186,7 +186,7 @@
 <RtlPorts>
 <name>s_axi_control_RDATA</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>32</Bits>
@@ -197,7 +197,7 @@
 <RtlPorts>
 <name>s_axi_control_RRESP</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>2</Bits>
@@ -208,7 +208,7 @@
 <RtlPorts>
 <name>s_axi_control_BVALID</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -219,7 +219,7 @@
 <RtlPorts>
 <name>s_axi_control_BREADY</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -230,24 +230,13 @@
 <RtlPorts>
 <name>s_axi_control_BRESP</name>
 <Object>control</Object>
-<Type>scalar</Type>
+<Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>ap_local_block</name>
-<Object>run</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
 <name>ap_clk</name>
@@ -470,7 +459,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -482,7 +471,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>4</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -710,7 +699,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>

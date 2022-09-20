@@ -1,6 +1,7 @@
 // ==============================================================
-// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+// Tool Version Limit: 2022.04
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 #ifndef XRUN_H
 #define XRUN_H
@@ -38,7 +39,7 @@ typedef uint64_t u64;
 #else
 typedef struct {
     u16 DeviceId;
-    u32 Control_BaseAddress;
+    u64 Control_BaseAddress;
 } XRun_Config;
 #endif
 
@@ -90,14 +91,35 @@ void XRun_DisableAutoRestart(XRun *InstancePtr);
 
 void XRun_Set_contr(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_contr(XRun *InstancePtr);
-void XRun_Set_trainedRegions(XRun *InstancePtr, u64 Data);
-u64 XRun_Get_trainedRegions(XRun *InstancePtr);
-void XRun_Set_realTaskId(XRun *InstancePtr, u64 Data);
-u64 XRun_Get_realTaskId(XRun *InstancePtr);
-void XRun_Set_n_regions_in(XRun *InstancePtr, u64 Data);
-u64 XRun_Get_n_regions_in(XRun *InstancePtr);
 void XRun_Set_sharedMem(XRun *InstancePtr, u64 Data);
 u64 XRun_Get_sharedMem(XRun *InstancePtr);
+u32 XRun_Get_realTaskId_BaseAddress(XRun *InstancePtr);
+u32 XRun_Get_realTaskId_HighAddress(XRun *InstancePtr);
+u32 XRun_Get_realTaskId_TotalBytes(XRun *InstancePtr);
+u32 XRun_Get_realTaskId_BitWidth(XRun *InstancePtr);
+u32 XRun_Get_realTaskId_Depth(XRun *InstancePtr);
+u32 XRun_Write_realTaskId_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Read_realTaskId_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Write_realTaskId_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Read_realTaskId_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Get_n_regions_in_BaseAddress(XRun *InstancePtr);
+u32 XRun_Get_n_regions_in_HighAddress(XRun *InstancePtr);
+u32 XRun_Get_n_regions_in_TotalBytes(XRun *InstancePtr);
+u32 XRun_Get_n_regions_in_BitWidth(XRun *InstancePtr);
+u32 XRun_Get_n_regions_in_Depth(XRun *InstancePtr);
+u32 XRun_Write_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Read_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Write_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Read_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Get_trainedRegions_BaseAddress(XRun *InstancePtr);
+u32 XRun_Get_trainedRegions_HighAddress(XRun *InstancePtr);
+u32 XRun_Get_trainedRegions_TotalBytes(XRun *InstancePtr);
+u32 XRun_Get_trainedRegions_BitWidth(XRun *InstancePtr);
+u32 XRun_Get_trainedRegions_Depth(XRun *InstancePtr);
+u32 XRun_Write_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Read_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Write_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Read_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 
 void XRun_InterruptGlobalEnable(XRun *InstancePtr);
 void XRun_InterruptGlobalDisable(XRun *InstancePtr);

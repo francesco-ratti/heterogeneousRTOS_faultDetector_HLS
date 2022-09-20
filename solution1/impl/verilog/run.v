@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="run_run,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=14.600000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=11,HLS_SYN_DSP=0,HLS_SYN_FF=4243,HLS_SYN_LUT=6076,HLS_VERSION=2022_1}" *)
+(* CORE_GENERATION_INFO="run_run,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=20.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=14.600000,HLS_SYN_LAT=75,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=6491,HLS_SYN_LUT=7582,HLS_VERSION=2022_1}" *)
 
 module run (
         ap_clk,
@@ -80,82 +80,10 @@ module run (
         interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 76'd1;
-parameter    ap_ST_fsm_state2 = 76'd2;
-parameter    ap_ST_fsm_state3 = 76'd4;
-parameter    ap_ST_fsm_state4 = 76'd8;
-parameter    ap_ST_fsm_state5 = 76'd16;
-parameter    ap_ST_fsm_state6 = 76'd32;
-parameter    ap_ST_fsm_state7 = 76'd64;
-parameter    ap_ST_fsm_state8 = 76'd128;
-parameter    ap_ST_fsm_state9 = 76'd256;
-parameter    ap_ST_fsm_state10 = 76'd512;
-parameter    ap_ST_fsm_state11 = 76'd1024;
-parameter    ap_ST_fsm_state12 = 76'd2048;
-parameter    ap_ST_fsm_state13 = 76'd4096;
-parameter    ap_ST_fsm_state14 = 76'd8192;
-parameter    ap_ST_fsm_state15 = 76'd16384;
-parameter    ap_ST_fsm_state16 = 76'd32768;
-parameter    ap_ST_fsm_state17 = 76'd65536;
-parameter    ap_ST_fsm_state18 = 76'd131072;
-parameter    ap_ST_fsm_state19 = 76'd262144;
-parameter    ap_ST_fsm_state20 = 76'd524288;
-parameter    ap_ST_fsm_state21 = 76'd1048576;
-parameter    ap_ST_fsm_state22 = 76'd2097152;
-parameter    ap_ST_fsm_state23 = 76'd4194304;
-parameter    ap_ST_fsm_state24 = 76'd8388608;
-parameter    ap_ST_fsm_state25 = 76'd16777216;
-parameter    ap_ST_fsm_state26 = 76'd33554432;
-parameter    ap_ST_fsm_state27 = 76'd67108864;
-parameter    ap_ST_fsm_state28 = 76'd134217728;
-parameter    ap_ST_fsm_state29 = 76'd268435456;
-parameter    ap_ST_fsm_state30 = 76'd536870912;
-parameter    ap_ST_fsm_state31 = 76'd1073741824;
-parameter    ap_ST_fsm_state32 = 76'd2147483648;
-parameter    ap_ST_fsm_state33 = 76'd4294967296;
-parameter    ap_ST_fsm_state34 = 76'd8589934592;
-parameter    ap_ST_fsm_state35 = 76'd17179869184;
-parameter    ap_ST_fsm_state36 = 76'd34359738368;
-parameter    ap_ST_fsm_state37 = 76'd68719476736;
-parameter    ap_ST_fsm_state38 = 76'd137438953472;
-parameter    ap_ST_fsm_state39 = 76'd274877906944;
-parameter    ap_ST_fsm_state40 = 76'd549755813888;
-parameter    ap_ST_fsm_state41 = 76'd1099511627776;
-parameter    ap_ST_fsm_state42 = 76'd2199023255552;
-parameter    ap_ST_fsm_state43 = 76'd4398046511104;
-parameter    ap_ST_fsm_state44 = 76'd8796093022208;
-parameter    ap_ST_fsm_state45 = 76'd17592186044416;
-parameter    ap_ST_fsm_state46 = 76'd35184372088832;
-parameter    ap_ST_fsm_state47 = 76'd70368744177664;
-parameter    ap_ST_fsm_state48 = 76'd140737488355328;
-parameter    ap_ST_fsm_state49 = 76'd281474976710656;
-parameter    ap_ST_fsm_state50 = 76'd562949953421312;
-parameter    ap_ST_fsm_state51 = 76'd1125899906842624;
-parameter    ap_ST_fsm_state52 = 76'd2251799813685248;
-parameter    ap_ST_fsm_state53 = 76'd4503599627370496;
-parameter    ap_ST_fsm_state54 = 76'd9007199254740992;
-parameter    ap_ST_fsm_state55 = 76'd18014398509481984;
-parameter    ap_ST_fsm_state56 = 76'd36028797018963968;
-parameter    ap_ST_fsm_state57 = 76'd72057594037927936;
-parameter    ap_ST_fsm_state58 = 76'd144115188075855872;
-parameter    ap_ST_fsm_state59 = 76'd288230376151711744;
-parameter    ap_ST_fsm_state60 = 76'd576460752303423488;
-parameter    ap_ST_fsm_state61 = 76'd1152921504606846976;
-parameter    ap_ST_fsm_state62 = 76'd2305843009213693952;
-parameter    ap_ST_fsm_state63 = 76'd4611686018427387904;
-parameter    ap_ST_fsm_state64 = 76'd9223372036854775808;
-parameter    ap_ST_fsm_state65 = 76'd18446744073709551616;
-parameter    ap_ST_fsm_state66 = 76'd36893488147419103232;
-parameter    ap_ST_fsm_state67 = 76'd73786976294838206464;
-parameter    ap_ST_fsm_state68 = 76'd147573952589676412928;
-parameter    ap_ST_fsm_state69 = 76'd295147905179352825856;
-parameter    ap_ST_fsm_state70 = 76'd590295810358705651712;
-parameter    ap_ST_fsm_state71 = 76'd1180591620717411303424;
-parameter    ap_ST_fsm_state72 = 76'd2361183241434822606848;
-parameter    ap_ST_fsm_state73 = 76'd4722366482869645213696;
-parameter    ap_ST_fsm_state74 = 76'd9444732965739290427392;
-parameter    ap_ST_fsm_state75 = 76'd18889465931478580854784;
-parameter    ap_ST_fsm_state76 = 76'd37778931862957161709568;
+parameter    ap_ST_fsm_state1 = 4'd1;
+parameter    ap_ST_fsm_state2 = 4'd2;
+parameter    ap_ST_fsm_state3 = 4'd4;
+parameter    ap_ST_fsm_state4 = 4'd8;
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 19;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -224,7 +152,7 @@ output   m_axi_gmem_BREADY;
 input  [1:0] m_axi_gmem_BRESP;
 input  [C_M_AXI_GMEM_ID_WIDTH - 1:0] m_axi_gmem_BID;
 input  [C_M_AXI_GMEM_BUSER_WIDTH - 1:0] m_axi_gmem_BUSER;
-output  [15:0] toScheduler_TDATA;
+output  [7:0] toScheduler_TDATA;
 output   toScheduler_TVALID;
 input   toScheduler_TREADY;
 input   s_axi_control_AWVALID;
@@ -254,99 +182,56 @@ reg    ap_done;
 wire    ap_continue;
 reg    ap_done_reg;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [75:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
 wire   [31:0] contr;
-wire   [6:0] realTaskId_address0;
-reg    realTaskId_ce0;
-wire   [15:0] realTaskId_q0;
-wire   [15:0] n_regions_in_q0;
 wire   [63:0] sharedMem;
-reg   [6:0] n_regions_V_address0;
-reg    n_regions_V_ce0;
-reg    n_regions_V_we0;
-wire   [15:0] n_regions_V_q0;
-reg    gmem_blk_n_AR;
-wire    ap_CS_fsm_state2;
-reg    gmem_blk_n_R;
-wire    ap_CS_fsm_state72;
-reg    toScheduler_TDATA_blk_n;
-wire    ap_CS_fsm_state75;
-wire    ap_CS_fsm_state76;
-reg   [0:0] tmp_reg_398;
-reg   [63:0] sharedMem_read_reg_346;
-reg   [58:0] trunc_ln_reg_357;
-wire   [63:0] zext_ln587_fu_277_p1;
-reg   [63:0] zext_ln587_reg_368;
-wire    ap_CS_fsm_state69;
-reg   [6:0] contr_taskId_V_cast_reg_373;
-wire   [63:0] add_ln412_fu_324_p2;
-reg   [63:0] add_ln412_reg_383;
-reg   [15:0] n_regions_V_load_reg_388;
-wire    ap_CS_fsm_state70;
-reg   [255:0] gmem_addr_read_reg_393;
-wire   [0:0] tmp_fu_332_p3;
-wire   [0:0] outcome_fu_340_p2;
-reg   [0:0] outcome_reg_402;
-wire    ap_CS_fsm_state74;
-wire    grp_run_Pipeline_1_fu_202_ap_start;
-wire    grp_run_Pipeline_1_fu_202_ap_done;
-wire    grp_run_Pipeline_1_fu_202_ap_idle;
-wire    grp_run_Pipeline_1_fu_202_ap_ready;
-wire   [6:0] grp_run_Pipeline_1_fu_202_n_regions_in_address0;
-wire    grp_run_Pipeline_1_fu_202_n_regions_in_ce0;
-wire   [6:0] grp_run_Pipeline_1_fu_202_n_regions_V_address0;
-wire    grp_run_Pipeline_1_fu_202_n_regions_V_ce0;
-wire    grp_run_Pipeline_1_fu_202_n_regions_V_we0;
-wire   [15:0] grp_run_Pipeline_1_fu_202_n_regions_V_d0;
-wire    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start;
-wire    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_done;
-wire    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_idle;
-wire    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_ready;
-wire   [31:0] grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out;
-wire    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out_ap_vld;
-wire    grp_run_Pipeline_2_fu_217_ap_start;
-wire    grp_run_Pipeline_2_fu_217_ap_done;
-wire    grp_run_Pipeline_2_fu_217_ap_idle;
-wire    grp_run_Pipeline_2_fu_217_ap_ready;
-wire    grp_writeOutcomeInRam_fu_239_ap_start;
-wire    grp_writeOutcomeInRam_fu_239_ap_done;
-wire    grp_writeOutcomeInRam_fu_239_ap_idle;
-wire    grp_writeOutcomeInRam_fu_239_ap_ready;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWVALID;
-wire   [63:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWADDR;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWID;
-wire   [31:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWLEN;
-wire   [2:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWSIZE;
-wire   [1:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWBURST;
-wire   [1:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWLOCK;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWCACHE;
-wire   [2:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWPROT;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWQOS;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWREGION;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWUSER;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_WVALID;
-wire   [255:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_WDATA;
-wire   [31:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_WSTRB;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_WLAST;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_WID;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_WUSER;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARVALID;
-wire   [63:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARADDR;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARID;
-wire   [31:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARLEN;
-wire   [2:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARSIZE;
-wire   [1:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARBURST;
-wire   [1:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARLOCK;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARCACHE;
-wire   [2:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARPROT;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARQOS;
-wire   [3:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARREGION;
-wire   [0:0] grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARUSER;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_RREADY;
-wire    grp_writeOutcomeInRam_fu_239_m_axi_gmem_BREADY;
-wire    grp_writeOutcomeInRam_fu_239_outcome;
+reg   [0:0] fsmstate;
+reg   [63:0] sharedMem_read_reg_175;
+reg   [15:0] contr_taskId_V_reg_180;
+wire   [63:0] outcomeInRam_fu_159_p2;
+reg   [63:0] outcomeInRam_reg_185;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_AWVALID;
+wire   [63:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWADDR;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWID;
+wire   [31:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWLEN;
+wire   [2:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWBURST;
+wire   [1:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWPROT;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWQOS;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWREGION;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_AWUSER;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_WVALID;
+wire   [255:0] grp_runTestAfterInit_fu_122_m_axi_gmem_WDATA;
+wire   [31:0] grp_runTestAfterInit_fu_122_m_axi_gmem_WSTRB;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_WLAST;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_WID;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_WUSER;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_ARVALID;
+wire   [63:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARADDR;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARID;
+wire   [31:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARLEN;
+wire   [2:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARBURST;
+wire   [1:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARPROT;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARQOS;
+wire   [3:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARREGION;
+wire   [0:0] grp_runTestAfterInit_fu_122_m_axi_gmem_ARUSER;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_RREADY;
+wire    grp_runTestAfterInit_fu_122_m_axi_gmem_BREADY;
+wire   [7:0] grp_runTestAfterInit_fu_122_toScheduler_TDATA;
+wire    grp_runTestAfterInit_fu_122_ap_start;
+wire    grp_runTestAfterInit_fu_122_toScheduler_TVALID;
+wire    grp_runTestAfterInit_fu_122_toScheduler_TREADY;
+wire    grp_runTestAfterInit_fu_122_ap_done;
+wire    grp_runTestAfterInit_fu_122_ap_ready;
+wire    grp_runTestAfterInit_fu_122_ap_idle;
+reg    grp_runTestAfterInit_fu_122_ap_continue;
 reg    gmem_AWVALID;
 wire    gmem_AWREADY;
 reg    gmem_WVALID;
@@ -359,104 +244,23 @@ wire   [255:0] gmem_RDATA;
 wire   [8:0] gmem_RFIFONUM;
 wire    gmem_BVALID;
 reg    gmem_BREADY;
-reg    grp_run_Pipeline_1_fu_202_ap_start_reg;
-reg    ap_block_state1_ignore_call35;
-reg    grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg;
-wire    ap_CS_fsm_state71;
-reg    grp_run_Pipeline_2_fu_217_ap_start_reg;
-reg   [75:0] ap_NS_fsm;
-wire    ap_NS_fsm_state73;
-reg    grp_writeOutcomeInRam_fu_239_ap_start_reg;
-wire    ap_CS_fsm_state73;
-wire   [63:0] sext_ln403_fu_257_p1;
+reg    grp_runTestAfterInit_fu_122_ap_start_reg;
+wire    ap_CS_fsm_state2;
+wire    ap_CS_fsm_state3;
+wire    ap_sync_grp_runTestAfterInit_fu_122_ap_ready;
+wire    ap_sync_grp_runTestAfterInit_fu_122_ap_done;
+reg    ap_block_state3_on_subcall_done;
+reg    ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready;
+reg    ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done;
 reg    ap_block_state1;
-reg    ap_block_state74_on_subcall_done;
-wire   [15:0] contr_taskId_V_fu_267_p4;
-wire   [15:0] tmp_4_fu_292_p4;
-wire   [16:0] shl_ln_fu_302_p3;
-wire  signed [17:0] sext_ln412_fu_310_p1;
-wire   [17:0] add_ln412_1_fu_314_p2;
-wire  signed [63:0] sext_ln412_1_fu_320_p1;
+wire   [0:0] fsmstate_load_load_fu_165_p1;
+wire    ap_CS_fsm_state4;
 wire    regslice_both_toScheduler_U_apdone_blk;
-reg    ap_block_state76;
-reg    ap_block_state76_io;
+reg   [3:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
-reg    ap_ST_fsm_state2_blk;
-wire    ap_ST_fsm_state3_blk;
-wire    ap_ST_fsm_state4_blk;
-wire    ap_ST_fsm_state5_blk;
-wire    ap_ST_fsm_state6_blk;
-wire    ap_ST_fsm_state7_blk;
-wire    ap_ST_fsm_state8_blk;
-wire    ap_ST_fsm_state9_blk;
-wire    ap_ST_fsm_state10_blk;
-wire    ap_ST_fsm_state11_blk;
-wire    ap_ST_fsm_state12_blk;
-wire    ap_ST_fsm_state13_blk;
-wire    ap_ST_fsm_state14_blk;
-wire    ap_ST_fsm_state15_blk;
-wire    ap_ST_fsm_state16_blk;
-wire    ap_ST_fsm_state17_blk;
-wire    ap_ST_fsm_state18_blk;
-wire    ap_ST_fsm_state19_blk;
-wire    ap_ST_fsm_state20_blk;
-wire    ap_ST_fsm_state21_blk;
-wire    ap_ST_fsm_state22_blk;
-wire    ap_ST_fsm_state23_blk;
-wire    ap_ST_fsm_state24_blk;
-wire    ap_ST_fsm_state25_blk;
-wire    ap_ST_fsm_state26_blk;
-wire    ap_ST_fsm_state27_blk;
-wire    ap_ST_fsm_state28_blk;
-wire    ap_ST_fsm_state29_blk;
-wire    ap_ST_fsm_state30_blk;
-wire    ap_ST_fsm_state31_blk;
-wire    ap_ST_fsm_state32_blk;
-wire    ap_ST_fsm_state33_blk;
-wire    ap_ST_fsm_state34_blk;
-wire    ap_ST_fsm_state35_blk;
-wire    ap_ST_fsm_state36_blk;
-wire    ap_ST_fsm_state37_blk;
-wire    ap_ST_fsm_state38_blk;
-wire    ap_ST_fsm_state39_blk;
-wire    ap_ST_fsm_state40_blk;
-wire    ap_ST_fsm_state41_blk;
-wire    ap_ST_fsm_state42_blk;
-wire    ap_ST_fsm_state43_blk;
-wire    ap_ST_fsm_state44_blk;
-wire    ap_ST_fsm_state45_blk;
-wire    ap_ST_fsm_state46_blk;
-wire    ap_ST_fsm_state47_blk;
-wire    ap_ST_fsm_state48_blk;
-wire    ap_ST_fsm_state49_blk;
-wire    ap_ST_fsm_state50_blk;
-wire    ap_ST_fsm_state51_blk;
-wire    ap_ST_fsm_state52_blk;
-wire    ap_ST_fsm_state53_blk;
-wire    ap_ST_fsm_state54_blk;
-wire    ap_ST_fsm_state55_blk;
-wire    ap_ST_fsm_state56_blk;
-wire    ap_ST_fsm_state57_blk;
-wire    ap_ST_fsm_state58_blk;
-wire    ap_ST_fsm_state59_blk;
-wire    ap_ST_fsm_state60_blk;
-wire    ap_ST_fsm_state61_blk;
-wire    ap_ST_fsm_state62_blk;
-wire    ap_ST_fsm_state63_blk;
-wire    ap_ST_fsm_state64_blk;
-wire    ap_ST_fsm_state65_blk;
-wire    ap_ST_fsm_state66_blk;
-wire    ap_ST_fsm_state67_blk;
-wire    ap_ST_fsm_state68_blk;
-wire    ap_ST_fsm_state69_blk;
-wire    ap_ST_fsm_state70_blk;
-reg    ap_ST_fsm_state71_blk;
-reg    ap_ST_fsm_state72_blk;
-wire    ap_ST_fsm_state73_blk;
-reg    ap_ST_fsm_state74_blk;
-reg    ap_ST_fsm_state75_blk;
-reg    ap_ST_fsm_state76_blk;
-reg    toScheduler_TVALID_int_regslice;
+wire    ap_ST_fsm_state2_blk;
+reg    ap_ST_fsm_state3_blk;
+reg    ap_ST_fsm_state4_blk;
 wire    toScheduler_TREADY_int_regslice;
 wire    regslice_both_toScheduler_U_vld_out;
 wire    ap_ce_reg;
@@ -467,121 +271,76 @@ initial begin
 #0 ap_rst_reg_1 = 1'b1;
 #0 ap_rst_n_inv = 1'b1;
 #0 ap_done_reg = 1'b0;
-#0 ap_CS_fsm = 76'd1;
-#0 grp_run_Pipeline_1_fu_202_ap_start_reg = 1'b0;
-#0 grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg = 1'b0;
-#0 grp_run_Pipeline_2_fu_217_ap_start_reg = 1'b0;
-#0 grp_writeOutcomeInRam_fu_239_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 4'd1;
+#0 fsmstate = 1'd0;
+#0 grp_runTestAfterInit_fu_122_ap_start_reg = 1'b0;
+#0 ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready = 1'b0;
+#0 ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done = 1'b0;
 end
 
-run_n_regions_V_RAM_AUTO_1R1W #(
-    .DataWidth( 16 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-n_regions_V_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .address0(n_regions_V_address0),
-    .ce0(n_regions_V_ce0),
-    .we0(n_regions_V_we0),
-    .d0(grp_run_Pipeline_1_fu_202_n_regions_V_d0),
-    .q0(n_regions_V_q0)
-);
-
-run_run_Pipeline_1 grp_run_Pipeline_1_fu_202(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_run_Pipeline_1_fu_202_ap_start),
-    .ap_done(grp_run_Pipeline_1_fu_202_ap_done),
-    .ap_idle(grp_run_Pipeline_1_fu_202_ap_idle),
-    .ap_ready(grp_run_Pipeline_1_fu_202_ap_ready),
-    .n_regions_in_address0(grp_run_Pipeline_1_fu_202_n_regions_in_address0),
-    .n_regions_in_ce0(grp_run_Pipeline_1_fu_202_n_regions_in_ce0),
-    .n_regions_in_q0(n_regions_in_q0),
-    .n_regions_V_address0(grp_run_Pipeline_1_fu_202_n_regions_V_address0),
-    .n_regions_V_ce0(grp_run_Pipeline_1_fu_202_n_regions_V_ce0),
-    .n_regions_V_we0(grp_run_Pipeline_1_fu_202_n_regions_V_we0),
-    .n_regions_V_d0(grp_run_Pipeline_1_fu_202_n_regions_V_d0)
-);
-
-run_run_Pipeline_VITIS_LOOP_64_1 grp_run_Pipeline_VITIS_LOOP_64_1_fu_210(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start),
-    .ap_done(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_done),
-    .ap_idle(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_idle),
-    .ap_ready(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_ready),
-    .sext_ln64(n_regions_V_load_reg_388),
-    .idx_out(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out),
-    .idx_out_ap_vld(grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out_ap_vld)
-);
-
-run_run_Pipeline_2 grp_run_Pipeline_2_fu_217(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_run_Pipeline_2_fu_217_ap_start),
-    .ap_done(grp_run_Pipeline_2_fu_217_ap_done),
-    .ap_idle(grp_run_Pipeline_2_fu_217_ap_idle),
-    .ap_ready(grp_run_Pipeline_2_fu_217_ap_ready),
-    .gmem_load(gmem_addr_read_reg_393),
-    .zext_ln587(contr_taskId_V_cast_reg_373)
-);
-
-run_writeOutcomeInRam grp_writeOutcomeInRam_fu_239(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_writeOutcomeInRam_fu_239_ap_start),
-    .ap_done(grp_writeOutcomeInRam_fu_239_ap_done),
-    .ap_idle(grp_writeOutcomeInRam_fu_239_ap_idle),
-    .ap_ready(grp_writeOutcomeInRam_fu_239_ap_ready),
-    .m_axi_gmem_AWVALID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWVALID),
+run_runTestAfterInit grp_runTestAfterInit_fu_122(
+    .m_axi_gmem_AWVALID(grp_runTestAfterInit_fu_122_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(gmem_AWREADY),
-    .m_axi_gmem_AWADDR(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(grp_runTestAfterInit_fu_122_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_runTestAfterInit_fu_122_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_runTestAfterInit_fu_122_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_runTestAfterInit_fu_122_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_runTestAfterInit_fu_122_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_runTestAfterInit_fu_122_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_runTestAfterInit_fu_122_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_runTestAfterInit_fu_122_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_runTestAfterInit_fu_122_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_runTestAfterInit_fu_122_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_runTestAfterInit_fu_122_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_runTestAfterInit_fu_122_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(gmem_WREADY),
-    .m_axi_gmem_WDATA(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARVALID),
-    .m_axi_gmem_ARREADY(1'b0),
-    .m_axi_gmem_ARADDR(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(grp_writeOutcomeInRam_fu_239_m_axi_gmem_ARUSER),
-    .m_axi_gmem_RVALID(1'b0),
-    .m_axi_gmem_RREADY(grp_writeOutcomeInRam_fu_239_m_axi_gmem_RREADY),
-    .m_axi_gmem_RDATA(256'd0),
+    .m_axi_gmem_WDATA(grp_runTestAfterInit_fu_122_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_runTestAfterInit_fu_122_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_runTestAfterInit_fu_122_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_runTestAfterInit_fu_122_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_runTestAfterInit_fu_122_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_runTestAfterInit_fu_122_m_axi_gmem_ARVALID),
+    .m_axi_gmem_ARREADY(gmem_ARREADY),
+    .m_axi_gmem_ARADDR(grp_runTestAfterInit_fu_122_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_runTestAfterInit_fu_122_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_runTestAfterInit_fu_122_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_runTestAfterInit_fu_122_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_runTestAfterInit_fu_122_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_runTestAfterInit_fu_122_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_runTestAfterInit_fu_122_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_runTestAfterInit_fu_122_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_runTestAfterInit_fu_122_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_runTestAfterInit_fu_122_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_runTestAfterInit_fu_122_m_axi_gmem_ARUSER),
+    .m_axi_gmem_RVALID(gmem_RVALID),
+    .m_axi_gmem_RREADY(grp_runTestAfterInit_fu_122_m_axi_gmem_RREADY),
+    .m_axi_gmem_RDATA(gmem_RDATA),
     .m_axi_gmem_RLAST(1'b0),
     .m_axi_gmem_RID(1'd0),
-    .m_axi_gmem_RFIFONUM(9'd0),
+    .m_axi_gmem_RFIFONUM(gmem_RFIFONUM),
     .m_axi_gmem_RUSER(1'd0),
     .m_axi_gmem_RRESP(2'd0),
     .m_axi_gmem_BVALID(gmem_BVALID),
-    .m_axi_gmem_BREADY(grp_writeOutcomeInRam_fu_239_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(grp_runTestAfterInit_fu_122_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(2'd0),
     .m_axi_gmem_BID(1'd0),
     .m_axi_gmem_BUSER(1'd0),
-    .outcomeptr(add_ln412_reg_383),
-    .outcome(grp_writeOutcomeInRam_fu_239_outcome)
+    .inputDataInRam(sharedMem_read_reg_175),
+    .taskId(contr_taskId_V_reg_180),
+    .outcomeInRam(outcomeInRam_reg_185),
+    .toScheduler_TDATA(grp_runTestAfterInit_fu_122_toScheduler_TDATA),
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .outcomeInRam_ap_vld(1'b1),
+    .ap_start(grp_runTestAfterInit_fu_122_ap_start),
+    .inputDataInRam_ap_vld(1'b1),
+    .taskId_ap_vld(1'b1),
+    .toScheduler_TVALID(grp_runTestAfterInit_fu_122_toScheduler_TVALID),
+    .toScheduler_TREADY(grp_runTestAfterInit_fu_122_toScheduler_TREADY),
+    .ap_done(grp_runTestAfterInit_fu_122_ap_done),
+    .ap_ready(grp_runTestAfterInit_fu_122_ap_ready),
+    .ap_idle(grp_runTestAfterInit_fu_122_ap_idle),
+    .ap_continue(grp_runTestAfterInit_fu_122_ap_continue)
 );
 
 run_control_s_axi #(
@@ -610,12 +369,6 @@ control_s_axi_U(
     .ACLK_EN(1'b1),
     .contr(contr),
     .sharedMem(sharedMem),
-    .realTaskId_address0(realTaskId_address0),
-    .realTaskId_ce0(realTaskId_ce0),
-    .realTaskId_q0(realTaskId_q0),
-    .n_regions_in_address0(grp_run_Pipeline_1_fu_202_n_regions_in_address0),
-    .n_regions_in_ce0(grp_run_Pipeline_1_fu_202_n_regions_in_ce0),
-    .n_regions_in_q0(n_regions_in_q0),
     .ap_start(ap_start),
     .interrupt(interrupt),
     .ap_ready(ap_ready),
@@ -696,31 +449,31 @@ gmem_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(gmem_ARVALID),
     .I_ARREADY(gmem_ARREADY),
-    .I_ARADDR(sext_ln403_fu_257_p1),
-    .I_ARLEN(32'd1),
+    .I_ARADDR(grp_runTestAfterInit_fu_122_m_axi_gmem_ARADDR),
+    .I_ARLEN(grp_runTestAfterInit_fu_122_m_axi_gmem_ARLEN),
     .I_RVALID(gmem_RVALID),
     .I_RREADY(gmem_RREADY),
     .I_RDATA(gmem_RDATA),
     .I_RFIFONUM(gmem_RFIFONUM),
     .I_AWVALID(gmem_AWVALID),
     .I_AWREADY(gmem_AWREADY),
-    .I_AWADDR(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWADDR),
-    .I_AWLEN(grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWLEN),
+    .I_AWADDR(grp_runTestAfterInit_fu_122_m_axi_gmem_AWADDR),
+    .I_AWLEN(grp_runTestAfterInit_fu_122_m_axi_gmem_AWLEN),
     .I_WVALID(gmem_WVALID),
     .I_WREADY(gmem_WREADY),
-    .I_WDATA(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WDATA),
-    .I_WSTRB(grp_writeOutcomeInRam_fu_239_m_axi_gmem_WSTRB),
+    .I_WDATA(grp_runTestAfterInit_fu_122_m_axi_gmem_WDATA),
+    .I_WSTRB(grp_runTestAfterInit_fu_122_m_axi_gmem_WSTRB),
     .I_BVALID(gmem_BVALID),
     .I_BREADY(gmem_BREADY)
 );
 
 run_regslice_both #(
-    .DataWidth( 16 ))
+    .DataWidth( 8 ))
 regslice_both_toScheduler_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .data_in(realTaskId_q0),
-    .vld_in(toScheduler_TVALID_int_regslice),
+    .data_in(grp_runTestAfterInit_fu_122_toScheduler_TDATA),
+    .vld_in(grp_runTestAfterInit_fu_122_toScheduler_TVALID),
     .ack_in(toScheduler_TREADY_int_regslice),
     .data_out(toScheduler_TDATA),
     .vld_out(regslice_both_toScheduler_U_vld_out),
@@ -742,7 +495,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if ((~((1'b1 == ap_block_state76_io) | (regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0))) & (1'b1 == ap_CS_fsm_state76))) begin
+        end else if (((regslice_both_toScheduler_U_apdone_blk == 1'b0) & (1'b1 == ap_CS_fsm_state4))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -750,48 +503,36 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_run_Pipeline_1_fu_202_ap_start_reg <= 1'b0;
+        ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done <= 1'b0;
     end else begin
-        if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
-            grp_run_Pipeline_1_fu_202_ap_start_reg <= 1'b1;
-        end else if ((grp_run_Pipeline_1_fu_202_ap_ready == 1'b1)) begin
-            grp_run_Pipeline_1_fu_202_ap_start_reg <= 1'b0;
+        if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
+            ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done <= 1'b0;
+        end else if ((grp_runTestAfterInit_fu_122_ap_done == 1'b1)) begin
+            ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_run_Pipeline_2_fu_217_ap_start_reg <= 1'b0;
+        ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready <= 1'b0;
     end else begin
-        if (((1'b1 == ap_NS_fsm_state73) & (1'b1 == ap_CS_fsm_state72))) begin
-            grp_run_Pipeline_2_fu_217_ap_start_reg <= 1'b1;
-        end else if ((grp_run_Pipeline_2_fu_217_ap_ready == 1'b1)) begin
-            grp_run_Pipeline_2_fu_217_ap_start_reg <= 1'b0;
+        if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
+            ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready <= 1'b0;
+        end else if ((grp_runTestAfterInit_fu_122_ap_ready == 1'b1)) begin
+            ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg <= 1'b0;
+        grp_runTestAfterInit_fu_122_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state70)) begin
-            grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg <= 1'b1;
-        end else if ((grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_ready == 1'b1)) begin
-            grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        grp_writeOutcomeInRam_fu_239_ap_start_reg <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_CS_fsm_state73)) begin
-            grp_writeOutcomeInRam_fu_239_ap_start_reg <= 1'b1;
-        end else if ((grp_writeOutcomeInRam_fu_239_ap_ready == 1'b1)) begin
-            grp_writeOutcomeInRam_fu_239_ap_start_reg <= 1'b0;
+        if (((1'b1 == ap_CS_fsm_state2) | ((ap_sync_grp_runTestAfterInit_fu_122_ap_ready == 1'b0) & (1'b1 == ap_CS_fsm_state3)))) begin
+            grp_runTestAfterInit_fu_122_ap_start_reg <= 1'b1;
+        end else if ((grp_runTestAfterInit_fu_122_ap_ready == 1'b1)) begin
+            grp_runTestAfterInit_fu_122_ap_start_reg <= 1'b0;
         end
     end
 end
@@ -809,53 +550,18 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state69)) begin
-        add_ln412_reg_383 <= add_ln412_fu_324_p2;
-        contr_taskId_V_cast_reg_373 <= {{contr[22:16]}};
-        zext_ln587_reg_368[15 : 0] <= zext_ln587_fu_277_p1[15 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state72)) begin
-        gmem_addr_read_reg_393 <= gmem_RDATA;
-        outcome_reg_402 <= outcome_fu_340_p2;
-        tmp_reg_398 <= grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out[32'd31];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state70)) begin
-        n_regions_V_load_reg_388 <= n_regions_V_q0;
-    end
-end
-
-always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        sharedMem_read_reg_346 <= sharedMem;
-        trunc_ln_reg_357 <= {{sharedMem[63:5]}};
+        contr_taskId_V_reg_180 <= {{contr[31:16]}};
+        outcomeInRam_reg_185 <= outcomeInRam_fu_159_p2;
+        sharedMem_read_reg_175 <= sharedMem;
     end
 end
 
-assign ap_ST_fsm_state10_blk = 1'b0;
-
-assign ap_ST_fsm_state11_blk = 1'b0;
-
-assign ap_ST_fsm_state12_blk = 1'b0;
-
-assign ap_ST_fsm_state13_blk = 1'b0;
-
-assign ap_ST_fsm_state14_blk = 1'b0;
-
-assign ap_ST_fsm_state15_blk = 1'b0;
-
-assign ap_ST_fsm_state16_blk = 1'b0;
-
-assign ap_ST_fsm_state17_blk = 1'b0;
-
-assign ap_ST_fsm_state18_blk = 1'b0;
-
-assign ap_ST_fsm_state19_blk = 1'b0;
+always @ (posedge ap_clk) begin
+    if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (fsmstate_load_load_fu_165_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state1))) begin
+        fsmstate <= 1'd1;
+    end
+end
 
 always @ (*) begin
     if (((ap_done_reg == 1'b1) | (ap_start == 1'b0))) begin
@@ -865,174 +571,26 @@ always @ (*) begin
     end
 end
 
-assign ap_ST_fsm_state20_blk = 1'b0;
-
-assign ap_ST_fsm_state21_blk = 1'b0;
-
-assign ap_ST_fsm_state22_blk = 1'b0;
-
-assign ap_ST_fsm_state23_blk = 1'b0;
-
-assign ap_ST_fsm_state24_blk = 1'b0;
-
-assign ap_ST_fsm_state25_blk = 1'b0;
-
-assign ap_ST_fsm_state26_blk = 1'b0;
-
-assign ap_ST_fsm_state27_blk = 1'b0;
-
-assign ap_ST_fsm_state28_blk = 1'b0;
-
-assign ap_ST_fsm_state29_blk = 1'b0;
+assign ap_ST_fsm_state2_blk = 1'b0;
 
 always @ (*) begin
-    if (((gmem_ARREADY == 1'b0) | (grp_run_Pipeline_1_fu_202_ap_done == 1'b0))) begin
-        ap_ST_fsm_state2_blk = 1'b1;
+    if ((1'b1 == ap_block_state3_on_subcall_done)) begin
+        ap_ST_fsm_state3_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state2_blk = 1'b0;
-    end
-end
-
-assign ap_ST_fsm_state30_blk = 1'b0;
-
-assign ap_ST_fsm_state31_blk = 1'b0;
-
-assign ap_ST_fsm_state32_blk = 1'b0;
-
-assign ap_ST_fsm_state33_blk = 1'b0;
-
-assign ap_ST_fsm_state34_blk = 1'b0;
-
-assign ap_ST_fsm_state35_blk = 1'b0;
-
-assign ap_ST_fsm_state36_blk = 1'b0;
-
-assign ap_ST_fsm_state37_blk = 1'b0;
-
-assign ap_ST_fsm_state38_blk = 1'b0;
-
-assign ap_ST_fsm_state39_blk = 1'b0;
-
-assign ap_ST_fsm_state3_blk = 1'b0;
-
-assign ap_ST_fsm_state40_blk = 1'b0;
-
-assign ap_ST_fsm_state41_blk = 1'b0;
-
-assign ap_ST_fsm_state42_blk = 1'b0;
-
-assign ap_ST_fsm_state43_blk = 1'b0;
-
-assign ap_ST_fsm_state44_blk = 1'b0;
-
-assign ap_ST_fsm_state45_blk = 1'b0;
-
-assign ap_ST_fsm_state46_blk = 1'b0;
-
-assign ap_ST_fsm_state47_blk = 1'b0;
-
-assign ap_ST_fsm_state48_blk = 1'b0;
-
-assign ap_ST_fsm_state49_blk = 1'b0;
-
-assign ap_ST_fsm_state4_blk = 1'b0;
-
-assign ap_ST_fsm_state50_blk = 1'b0;
-
-assign ap_ST_fsm_state51_blk = 1'b0;
-
-assign ap_ST_fsm_state52_blk = 1'b0;
-
-assign ap_ST_fsm_state53_blk = 1'b0;
-
-assign ap_ST_fsm_state54_blk = 1'b0;
-
-assign ap_ST_fsm_state55_blk = 1'b0;
-
-assign ap_ST_fsm_state56_blk = 1'b0;
-
-assign ap_ST_fsm_state57_blk = 1'b0;
-
-assign ap_ST_fsm_state58_blk = 1'b0;
-
-assign ap_ST_fsm_state59_blk = 1'b0;
-
-assign ap_ST_fsm_state5_blk = 1'b0;
-
-assign ap_ST_fsm_state60_blk = 1'b0;
-
-assign ap_ST_fsm_state61_blk = 1'b0;
-
-assign ap_ST_fsm_state62_blk = 1'b0;
-
-assign ap_ST_fsm_state63_blk = 1'b0;
-
-assign ap_ST_fsm_state64_blk = 1'b0;
-
-assign ap_ST_fsm_state65_blk = 1'b0;
-
-assign ap_ST_fsm_state66_blk = 1'b0;
-
-assign ap_ST_fsm_state67_blk = 1'b0;
-
-assign ap_ST_fsm_state68_blk = 1'b0;
-
-assign ap_ST_fsm_state69_blk = 1'b0;
-
-assign ap_ST_fsm_state6_blk = 1'b0;
-
-assign ap_ST_fsm_state70_blk = 1'b0;
-
-always @ (*) begin
-    if ((grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_done == 1'b0)) begin
-        ap_ST_fsm_state71_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state71_blk = 1'b0;
+        ap_ST_fsm_state3_blk = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((gmem_RVALID == 1'b0)) begin
-        ap_ST_fsm_state72_blk = 1'b1;
+    if ((regslice_both_toScheduler_U_apdone_blk == 1'b1)) begin
+        ap_ST_fsm_state4_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state72_blk = 1'b0;
-    end
-end
-
-assign ap_ST_fsm_state73_blk = 1'b0;
-
-always @ (*) begin
-    if ((1'b1 == ap_block_state74_on_subcall_done)) begin
-        ap_ST_fsm_state74_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state74_blk = 1'b0;
+        ap_ST_fsm_state4_blk = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((toScheduler_TREADY_int_regslice == 1'b0)) begin
-        ap_ST_fsm_state75_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state75_blk = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_block_state76_io) | (regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0)))) begin
-        ap_ST_fsm_state76_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state76_blk = 1'b0;
-    end
-end
-
-assign ap_ST_fsm_state7_blk = 1'b0;
-
-assign ap_ST_fsm_state8_blk = 1'b0;
-
-assign ap_ST_fsm_state9_blk = 1'b0;
-
-always @ (*) begin
-    if ((~((1'b1 == ap_block_state76_io) | (regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0))) & (1'b1 == ap_CS_fsm_state76))) begin
+    if (((regslice_both_toScheduler_U_apdone_blk == 1'b0) & (1'b1 == ap_CS_fsm_state4))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -1040,7 +598,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -1048,7 +606,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((1'b1 == ap_block_state76_io) | (regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0))) & (1'b1 == ap_CS_fsm_state76))) begin
+    if (((regslice_both_toScheduler_U_apdone_blk == 1'b0) & (1'b1 == ap_CS_fsm_state4))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1056,371 +614,79 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((gmem_ARREADY == 1'b0) | (grp_run_Pipeline_1_fu_202_ap_done == 1'b0)) & (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARVALID = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_ARVALID = grp_runTestAfterInit_fu_122_m_axi_gmem_ARVALID;
     end else begin
         gmem_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state74))) begin
-        gmem_AWVALID = grp_writeOutcomeInRam_fu_239_m_axi_gmem_AWVALID;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_AWVALID = grp_runTestAfterInit_fu_122_m_axi_gmem_AWVALID;
     end else begin
         gmem_AWVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state74))) begin
-        gmem_BREADY = grp_writeOutcomeInRam_fu_239_m_axi_gmem_BREADY;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_BREADY = grp_runTestAfterInit_fu_122_m_axi_gmem_BREADY;
     end else begin
         gmem_BREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((gmem_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state72))) begin
-        gmem_RREADY = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_RREADY = grp_runTestAfterInit_fu_122_m_axi_gmem_RREADY;
     end else begin
         gmem_RREADY = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state74))) begin
-        gmem_WVALID = grp_writeOutcomeInRam_fu_239_m_axi_gmem_WVALID;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_WVALID = grp_runTestAfterInit_fu_122_m_axi_gmem_WVALID;
     end else begin
         gmem_WVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        gmem_blk_n_AR = m_axi_gmem_ARREADY;
+    if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
+        grp_runTestAfterInit_fu_122_ap_continue = 1'b1;
     end else begin
-        gmem_blk_n_AR = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state72)) begin
-        gmem_blk_n_R = m_axi_gmem_RVALID;
-    end else begin
-        gmem_blk_n_R = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state69)) begin
-        n_regions_V_address0 = zext_ln587_fu_277_p1;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        n_regions_V_address0 = grp_run_Pipeline_1_fu_202_n_regions_V_address0;
-    end else begin
-        n_regions_V_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state69)) begin
-        n_regions_V_ce0 = 1'b1;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        n_regions_V_ce0 = grp_run_Pipeline_1_fu_202_n_regions_V_ce0;
-    end else begin
-        n_regions_V_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        n_regions_V_we0 = grp_run_Pipeline_1_fu_202_n_regions_V_we0;
-    end else begin
-        n_regions_V_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b0 == ap_block_state74_on_subcall_done) & (1'b1 == ap_CS_fsm_state74))) begin
-        realTaskId_ce0 = 1'b1;
-    end else begin
-        realTaskId_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) | ((tmp_reg_398 == 1'd1) & (1'b1 == ap_CS_fsm_state76)))) begin
-        toScheduler_TDATA_blk_n = toScheduler_TREADY_int_regslice;
-    end else begin
-        toScheduler_TDATA_blk_n = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) & (toScheduler_TREADY_int_regslice == 1'b1))) begin
-        toScheduler_TVALID_int_regslice = 1'b1;
-    end else begin
-        toScheduler_TVALID_int_regslice = 1'b0;
+        grp_runTestAfterInit_fu_122_ap_continue = 1'b0;
     end
 end
 
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
+            if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (fsmstate_load_load_fu_165_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state1))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (fsmstate_load_load_fu_165_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if ((~((gmem_ARREADY == 1'b0) | (grp_run_Pipeline_1_fu_202_ap_done == 1'b0)) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end
+            ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
+            if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
         end
         ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
-        end
-        ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state6;
-        end
-        ap_ST_fsm_state6 : begin
-            ap_NS_fsm = ap_ST_fsm_state7;
-        end
-        ap_ST_fsm_state7 : begin
-            ap_NS_fsm = ap_ST_fsm_state8;
-        end
-        ap_ST_fsm_state8 : begin
-            ap_NS_fsm = ap_ST_fsm_state9;
-        end
-        ap_ST_fsm_state9 : begin
-            ap_NS_fsm = ap_ST_fsm_state10;
-        end
-        ap_ST_fsm_state10 : begin
-            ap_NS_fsm = ap_ST_fsm_state11;
-        end
-        ap_ST_fsm_state11 : begin
-            ap_NS_fsm = ap_ST_fsm_state12;
-        end
-        ap_ST_fsm_state12 : begin
-            ap_NS_fsm = ap_ST_fsm_state13;
-        end
-        ap_ST_fsm_state13 : begin
-            ap_NS_fsm = ap_ST_fsm_state14;
-        end
-        ap_ST_fsm_state14 : begin
-            ap_NS_fsm = ap_ST_fsm_state15;
-        end
-        ap_ST_fsm_state15 : begin
-            ap_NS_fsm = ap_ST_fsm_state16;
-        end
-        ap_ST_fsm_state16 : begin
-            ap_NS_fsm = ap_ST_fsm_state17;
-        end
-        ap_ST_fsm_state17 : begin
-            ap_NS_fsm = ap_ST_fsm_state18;
-        end
-        ap_ST_fsm_state18 : begin
-            ap_NS_fsm = ap_ST_fsm_state19;
-        end
-        ap_ST_fsm_state19 : begin
-            ap_NS_fsm = ap_ST_fsm_state20;
-        end
-        ap_ST_fsm_state20 : begin
-            ap_NS_fsm = ap_ST_fsm_state21;
-        end
-        ap_ST_fsm_state21 : begin
-            ap_NS_fsm = ap_ST_fsm_state22;
-        end
-        ap_ST_fsm_state22 : begin
-            ap_NS_fsm = ap_ST_fsm_state23;
-        end
-        ap_ST_fsm_state23 : begin
-            ap_NS_fsm = ap_ST_fsm_state24;
-        end
-        ap_ST_fsm_state24 : begin
-            ap_NS_fsm = ap_ST_fsm_state25;
-        end
-        ap_ST_fsm_state25 : begin
-            ap_NS_fsm = ap_ST_fsm_state26;
-        end
-        ap_ST_fsm_state26 : begin
-            ap_NS_fsm = ap_ST_fsm_state27;
-        end
-        ap_ST_fsm_state27 : begin
-            ap_NS_fsm = ap_ST_fsm_state28;
-        end
-        ap_ST_fsm_state28 : begin
-            ap_NS_fsm = ap_ST_fsm_state29;
-        end
-        ap_ST_fsm_state29 : begin
-            ap_NS_fsm = ap_ST_fsm_state30;
-        end
-        ap_ST_fsm_state30 : begin
-            ap_NS_fsm = ap_ST_fsm_state31;
-        end
-        ap_ST_fsm_state31 : begin
-            ap_NS_fsm = ap_ST_fsm_state32;
-        end
-        ap_ST_fsm_state32 : begin
-            ap_NS_fsm = ap_ST_fsm_state33;
-        end
-        ap_ST_fsm_state33 : begin
-            ap_NS_fsm = ap_ST_fsm_state34;
-        end
-        ap_ST_fsm_state34 : begin
-            ap_NS_fsm = ap_ST_fsm_state35;
-        end
-        ap_ST_fsm_state35 : begin
-            ap_NS_fsm = ap_ST_fsm_state36;
-        end
-        ap_ST_fsm_state36 : begin
-            ap_NS_fsm = ap_ST_fsm_state37;
-        end
-        ap_ST_fsm_state37 : begin
-            ap_NS_fsm = ap_ST_fsm_state38;
-        end
-        ap_ST_fsm_state38 : begin
-            ap_NS_fsm = ap_ST_fsm_state39;
-        end
-        ap_ST_fsm_state39 : begin
-            ap_NS_fsm = ap_ST_fsm_state40;
-        end
-        ap_ST_fsm_state40 : begin
-            ap_NS_fsm = ap_ST_fsm_state41;
-        end
-        ap_ST_fsm_state41 : begin
-            ap_NS_fsm = ap_ST_fsm_state42;
-        end
-        ap_ST_fsm_state42 : begin
-            ap_NS_fsm = ap_ST_fsm_state43;
-        end
-        ap_ST_fsm_state43 : begin
-            ap_NS_fsm = ap_ST_fsm_state44;
-        end
-        ap_ST_fsm_state44 : begin
-            ap_NS_fsm = ap_ST_fsm_state45;
-        end
-        ap_ST_fsm_state45 : begin
-            ap_NS_fsm = ap_ST_fsm_state46;
-        end
-        ap_ST_fsm_state46 : begin
-            ap_NS_fsm = ap_ST_fsm_state47;
-        end
-        ap_ST_fsm_state47 : begin
-            ap_NS_fsm = ap_ST_fsm_state48;
-        end
-        ap_ST_fsm_state48 : begin
-            ap_NS_fsm = ap_ST_fsm_state49;
-        end
-        ap_ST_fsm_state49 : begin
-            ap_NS_fsm = ap_ST_fsm_state50;
-        end
-        ap_ST_fsm_state50 : begin
-            ap_NS_fsm = ap_ST_fsm_state51;
-        end
-        ap_ST_fsm_state51 : begin
-            ap_NS_fsm = ap_ST_fsm_state52;
-        end
-        ap_ST_fsm_state52 : begin
-            ap_NS_fsm = ap_ST_fsm_state53;
-        end
-        ap_ST_fsm_state53 : begin
-            ap_NS_fsm = ap_ST_fsm_state54;
-        end
-        ap_ST_fsm_state54 : begin
-            ap_NS_fsm = ap_ST_fsm_state55;
-        end
-        ap_ST_fsm_state55 : begin
-            ap_NS_fsm = ap_ST_fsm_state56;
-        end
-        ap_ST_fsm_state56 : begin
-            ap_NS_fsm = ap_ST_fsm_state57;
-        end
-        ap_ST_fsm_state57 : begin
-            ap_NS_fsm = ap_ST_fsm_state58;
-        end
-        ap_ST_fsm_state58 : begin
-            ap_NS_fsm = ap_ST_fsm_state59;
-        end
-        ap_ST_fsm_state59 : begin
-            ap_NS_fsm = ap_ST_fsm_state60;
-        end
-        ap_ST_fsm_state60 : begin
-            ap_NS_fsm = ap_ST_fsm_state61;
-        end
-        ap_ST_fsm_state61 : begin
-            ap_NS_fsm = ap_ST_fsm_state62;
-        end
-        ap_ST_fsm_state62 : begin
-            ap_NS_fsm = ap_ST_fsm_state63;
-        end
-        ap_ST_fsm_state63 : begin
-            ap_NS_fsm = ap_ST_fsm_state64;
-        end
-        ap_ST_fsm_state64 : begin
-            ap_NS_fsm = ap_ST_fsm_state65;
-        end
-        ap_ST_fsm_state65 : begin
-            ap_NS_fsm = ap_ST_fsm_state66;
-        end
-        ap_ST_fsm_state66 : begin
-            ap_NS_fsm = ap_ST_fsm_state67;
-        end
-        ap_ST_fsm_state67 : begin
-            ap_NS_fsm = ap_ST_fsm_state68;
-        end
-        ap_ST_fsm_state68 : begin
-            ap_NS_fsm = ap_ST_fsm_state69;
-        end
-        ap_ST_fsm_state69 : begin
-            ap_NS_fsm = ap_ST_fsm_state70;
-        end
-        ap_ST_fsm_state70 : begin
-            ap_NS_fsm = ap_ST_fsm_state71;
-        end
-        ap_ST_fsm_state71 : begin
-            if (((grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state71))) begin
-                ap_NS_fsm = ap_ST_fsm_state72;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state71;
-            end
-        end
-        ap_ST_fsm_state72 : begin
-            if (((gmem_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state72))) begin
-                ap_NS_fsm = ap_ST_fsm_state73;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state72;
-            end
-        end
-        ap_ST_fsm_state73 : begin
-            ap_NS_fsm = ap_ST_fsm_state74;
-        end
-        ap_ST_fsm_state74 : begin
-            if (((1'b0 == ap_block_state74_on_subcall_done) & (tmp_reg_398 == 1'd0) & (1'b1 == ap_CS_fsm_state74))) begin
-                ap_NS_fsm = ap_ST_fsm_state76;
-            end else if (((1'b0 == ap_block_state74_on_subcall_done) & (tmp_reg_398 == 1'd1) & (1'b1 == ap_CS_fsm_state74))) begin
-                ap_NS_fsm = ap_ST_fsm_state75;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state74;
-            end
-        end
-        ap_ST_fsm_state75 : begin
-            if (((1'b1 == ap_CS_fsm_state75) & (toScheduler_TREADY_int_regslice == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state76;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state75;
-            end
-        end
-        ap_ST_fsm_state76 : begin
-            if ((~((1'b1 == ap_block_state76_io) | (regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0))) & (1'b1 == ap_CS_fsm_state76))) begin
+            if (((regslice_both_toScheduler_U_apdone_blk == 1'b0) & (1'b1 == ap_CS_fsm_state4))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state76;
+                ap_NS_fsm = ap_ST_fsm_state4;
             end
         end
         default : begin
@@ -1429,86 +695,34 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln412_1_fu_314_p2 = ($signed(sext_ln412_fu_310_p1) + $signed(18'd16384));
-
-assign add_ln412_fu_324_p2 = ($signed(sext_ln412_1_fu_320_p1) + $signed(sharedMem_read_reg_346));
-
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_state69 = ap_CS_fsm[32'd68];
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
-assign ap_CS_fsm_state70 = ap_CS_fsm[32'd69];
-
-assign ap_CS_fsm_state71 = ap_CS_fsm[32'd70];
-
-assign ap_CS_fsm_state72 = ap_CS_fsm[32'd71];
-
-assign ap_CS_fsm_state73 = ap_CS_fsm[32'd72];
-
-assign ap_CS_fsm_state74 = ap_CS_fsm[32'd73];
-
-assign ap_CS_fsm_state75 = ap_CS_fsm[32'd74];
-
-assign ap_CS_fsm_state76 = ap_CS_fsm[32'd75];
-
-assign ap_NS_fsm_state73 = ap_NS_fsm[32'd72];
+assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 always @ (*) begin
     ap_block_state1 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0));
 end
 
 always @ (*) begin
-    ap_block_state1_ignore_call35 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0));
+    ap_block_state3_on_subcall_done = ((ap_sync_grp_runTestAfterInit_fu_122_ap_ready & ap_sync_grp_runTestAfterInit_fu_122_ap_done) == 1'b0);
 end
 
-always @ (*) begin
-    ap_block_state74_on_subcall_done = ((grp_writeOutcomeInRam_fu_239_ap_done == 1'b0) | (grp_run_Pipeline_2_fu_217_ap_done == 1'b0));
-end
+assign ap_sync_grp_runTestAfterInit_fu_122_ap_done = (grp_runTestAfterInit_fu_122_ap_done | ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done);
 
-always @ (*) begin
-    ap_block_state76 = ((regslice_both_toScheduler_U_apdone_blk == 1'b1) | ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0)));
-end
+assign ap_sync_grp_runTestAfterInit_fu_122_ap_ready = (grp_runTestAfterInit_fu_122_ap_ready | ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready);
 
-always @ (*) begin
-    ap_block_state76_io = ((tmp_reg_398 == 1'd1) & (toScheduler_TREADY_int_regslice == 1'b0));
-end
+assign fsmstate_load_load_fu_165_p1 = fsmstate;
 
-assign contr_taskId_V_fu_267_p4 = {{contr[31:16]}};
+assign grp_runTestAfterInit_fu_122_ap_start = grp_runTestAfterInit_fu_122_ap_start_reg;
 
-assign grp_run_Pipeline_1_fu_202_ap_start = grp_run_Pipeline_1_fu_202_ap_start_reg;
+assign grp_runTestAfterInit_fu_122_toScheduler_TREADY = (toScheduler_TREADY_int_regslice & ap_CS_fsm_state3);
 
-assign grp_run_Pipeline_2_fu_217_ap_start = grp_run_Pipeline_2_fu_217_ap_start_reg;
-
-assign grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start = grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_ap_start_reg;
-
-assign grp_writeOutcomeInRam_fu_239_ap_start = grp_writeOutcomeInRam_fu_239_ap_start_reg;
-
-assign grp_writeOutcomeInRam_fu_239_outcome = outcome_reg_402;
-
-assign outcome_fu_340_p2 = (tmp_fu_332_p3 ^ 1'd1);
-
-assign realTaskId_address0 = zext_ln587_reg_368;
-
-assign sext_ln403_fu_257_p1 = $signed(trunc_ln_reg_357);
-
-assign sext_ln412_1_fu_320_p1 = $signed(add_ln412_1_fu_314_p2);
-
-assign sext_ln412_fu_310_p1 = $signed(shl_ln_fu_302_p3);
-
-assign shl_ln_fu_302_p3 = {{tmp_4_fu_292_p4}, {1'd0}};
-
-assign tmp_4_fu_292_p4 = {{contr[31:16]}};
-
-assign tmp_fu_332_p3 = grp_run_Pipeline_VITIS_LOOP_64_1_fu_210_idx_out[32'd31];
+assign outcomeInRam_fu_159_p2 = (sharedMem + 64'd16384);
 
 assign toScheduler_TVALID = regslice_both_toScheduler_U_vld_out;
-
-assign zext_ln587_fu_277_p1 = contr_taskId_V_fu_267_p4;
-
-always @ (posedge ap_clk) begin
-    zext_ln587_reg_368[63:16] <= 48'b000000000000000000000000000000000000000000000000;
-end
 
 endmodule //run

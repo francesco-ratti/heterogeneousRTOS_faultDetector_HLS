@@ -12,16 +12,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 6 \
-    name data_0 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_0 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data \
     op interface \
-    ports { data_0_address0 { O 7 vector } data_0_ce0 { O 1 bit } data_0_we0 { O 1 bit } data_0_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_0'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data'"
 }
 }
 
@@ -31,16 +31,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 7 \
-    name data_1 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_1 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1 \
     op interface \
-    ports { data_1_address0 { O 7 vector } data_1_ce0 { O 1 bit } data_1_we0 { O 1 bit } data_1_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_1'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1'"
 }
 }
 
@@ -50,16 +50,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 8 \
-    name data_2 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_2 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2 \
     op interface \
-    ports { data_2_address0 { O 7 vector } data_2_ce0 { O 1 bit } data_2_we0 { O 1 bit } data_2_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_2'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2'"
 }
 }
 
@@ -69,16 +69,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 9 \
-    name data_3 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_3 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3 \
     op interface \
-    ports { data_3_address0 { O 7 vector } data_3_ce0 { O 1 bit } data_3_we0 { O 1 bit } data_3_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_3'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3'"
 }
 }
 
@@ -88,16 +88,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 10 \
-    name data_4 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_4 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4 \
     op interface \
-    ports { data_4_address0 { O 7 vector } data_4_ce0 { O 1 bit } data_4_we0 { O 1 bit } data_4_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_4'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4'"
 }
 }
 
@@ -107,16 +107,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 11 \
-    name data_5 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_5 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5 \
     op interface \
-    ports { data_5_address0 { O 7 vector } data_5_ce0 { O 1 bit } data_5_we0 { O 1 bit } data_5_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_5'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5'"
 }
 }
 
@@ -126,16 +126,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 12 \
-    name data_6 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_6 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6 \
     op interface \
-    ports { data_6_address0 { O 7 vector } data_6_ce0 { O 1 bit } data_6_we0 { O 1 bit } data_6_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_6'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6'"
 }
 }
 
@@ -145,16 +145,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 13 \
-    name data_7 \
+    name run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_7 \
+    corename run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7 \
     op interface \
-    ports { data_7_address0 { O 7 vector } data_7_ce0 { O 1 bit } data_7_we0 { O 1 bit } data_7_d0 { O 32 vector } } \
+    ports { run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_address0 { O 7 vector } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0 { O 1 bit } run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_d0 { O 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_7'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7'"
 }
 }
 
@@ -170,7 +170,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_gmem \
     op interface \
-    ports { m_axi_gmem_AWVALID { O 1 bit } m_axi_gmem_AWREADY { I 1 bit } m_axi_gmem_AWADDR { O 64 vector } m_axi_gmem_AWID { O 1 vector } m_axi_gmem_AWLEN { O 32 vector } m_axi_gmem_AWSIZE { O 3 vector } m_axi_gmem_AWBURST { O 2 vector } m_axi_gmem_AWLOCK { O 2 vector } m_axi_gmem_AWCACHE { O 4 vector } m_axi_gmem_AWPROT { O 3 vector } m_axi_gmem_AWQOS { O 4 vector } m_axi_gmem_AWREGION { O 4 vector } m_axi_gmem_AWUSER { O 1 vector } m_axi_gmem_WVALID { O 1 bit } m_axi_gmem_WREADY { I 1 bit } m_axi_gmem_WDATA { O 32 vector } m_axi_gmem_WSTRB { O 4 vector } m_axi_gmem_WLAST { O 1 bit } m_axi_gmem_WID { O 1 vector } m_axi_gmem_WUSER { O 1 vector } m_axi_gmem_ARVALID { O 1 bit } m_axi_gmem_ARREADY { I 1 bit } m_axi_gmem_ARADDR { O 64 vector } m_axi_gmem_ARID { O 1 vector } m_axi_gmem_ARLEN { O 32 vector } m_axi_gmem_ARSIZE { O 3 vector } m_axi_gmem_ARBURST { O 2 vector } m_axi_gmem_ARLOCK { O 2 vector } m_axi_gmem_ARCACHE { O 4 vector } m_axi_gmem_ARPROT { O 3 vector } m_axi_gmem_ARQOS { O 4 vector } m_axi_gmem_ARREGION { O 4 vector } m_axi_gmem_ARUSER { O 1 vector } m_axi_gmem_RVALID { I 1 bit } m_axi_gmem_RREADY { O 1 bit } m_axi_gmem_RDATA { I 32 vector } m_axi_gmem_RLAST { I 1 bit } m_axi_gmem_RID { I 1 vector } m_axi_gmem_RFIFONUM { I 9 vector } m_axi_gmem_RUSER { I 1 vector } m_axi_gmem_RRESP { I 2 vector } m_axi_gmem_BVALID { I 1 bit } m_axi_gmem_BREADY { O 1 bit } m_axi_gmem_BRESP { I 2 vector } m_axi_gmem_BID { I 1 vector } m_axi_gmem_BUSER { I 1 vector } } \
+    ports { m_axi_gmem_AWVALID { O 1 bit } m_axi_gmem_AWREADY { I 1 bit } m_axi_gmem_AWADDR { O 64 vector } m_axi_gmem_AWID { O 1 vector } m_axi_gmem_AWLEN { O 32 vector } m_axi_gmem_AWSIZE { O 3 vector } m_axi_gmem_AWBURST { O 2 vector } m_axi_gmem_AWLOCK { O 2 vector } m_axi_gmem_AWCACHE { O 4 vector } m_axi_gmem_AWPROT { O 3 vector } m_axi_gmem_AWQOS { O 4 vector } m_axi_gmem_AWREGION { O 4 vector } m_axi_gmem_AWUSER { O 1 vector } m_axi_gmem_WVALID { O 1 bit } m_axi_gmem_WREADY { I 1 bit } m_axi_gmem_WDATA { O 256 vector } m_axi_gmem_WSTRB { O 32 vector } m_axi_gmem_WLAST { O 1 bit } m_axi_gmem_WID { O 1 vector } m_axi_gmem_WUSER { O 1 vector } m_axi_gmem_ARVALID { O 1 bit } m_axi_gmem_ARREADY { I 1 bit } m_axi_gmem_ARADDR { O 64 vector } m_axi_gmem_ARID { O 1 vector } m_axi_gmem_ARLEN { O 32 vector } m_axi_gmem_ARSIZE { O 3 vector } m_axi_gmem_ARBURST { O 2 vector } m_axi_gmem_ARLOCK { O 2 vector } m_axi_gmem_ARCACHE { O 4 vector } m_axi_gmem_ARPROT { O 3 vector } m_axi_gmem_ARQOS { O 4 vector } m_axi_gmem_ARREGION { O 4 vector } m_axi_gmem_ARUSER { O 1 vector } m_axi_gmem_RVALID { I 1 bit } m_axi_gmem_RREADY { O 1 bit } m_axi_gmem_RDATA { I 256 vector } m_axi_gmem_RLAST { I 1 bit } m_axi_gmem_RID { I 1 vector } m_axi_gmem_RFIFONUM { I 9 vector } m_axi_gmem_RUSER { I 1 vector } m_axi_gmem_RRESP { I 2 vector } m_axi_gmem_BVALID { I 1 bit } m_axi_gmem_BREADY { O 1 bit } m_axi_gmem_BRESP { I 2 vector } m_axi_gmem_BID { I 1 vector } m_axi_gmem_BUSER { I 1 vector } } \
 } "
 }
 
@@ -193,14 +193,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 5 \
-    name p_read \
+    name taskId \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read \
+    corename dc_taskId \
     op interface \
-    ports { p_read { I 16 vector } } \
+    ports { taskId { I 16 vector } } \
 } "
 }
 

@@ -10,7 +10,7 @@ contr {
 	offset 16
 	offset_end 23
 }
-trainedRegions { 
+sharedMem { 
 	dir I
 	width 64
 	depth 1
@@ -19,51 +19,47 @@ trainedRegions {
 	offset_end 35
 }
 realTaskId { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 36
-	offset_end 47
+	dir X
+	width 8
+	depth 128
+	mode ap_memory
+	offset 128
+	offset_end 255
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
 n_regions_in { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 48
-	offset_end 59
+	dir X
+	width 16
+	depth 128
+	mode ap_memory
+	offset 256
+	offset_end 511
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
-sharedMem { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 60
-	offset_end 71
-}
-ap_start {
-	mailbox_input_ctrl 0
-	mailbox_output_ctrl 0
-	auto_restart_enabled 1
-	auto_restart_counter_num 0
-	auto_restart_counter_offset 16
-	auto_restart_counter_size 32
-}
+ap_start { }
 ap_done { }
 ap_ready { }
 ap_continue { }
 ap_idle { }
-ap_local_deadlock { 
-	dir O
-	width 1
-	depth 1
-	mode ap_none
-	offset -1
-	offset_end -1
+trainedRegions { 
+	dir X
+	width 32
+	depth 49152
+	mode ap_memory
+	offset 262144
+	offset_end 524287
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
 interrupt {
-    ap_local_deadlock 5
 }
 }
 dict set axilite_register_dict control $port_control

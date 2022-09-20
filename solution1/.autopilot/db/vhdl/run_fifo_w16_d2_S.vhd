@@ -1,6 +1,7 @@
 -- ==============================================================
--- Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
--- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-- Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+-- Tool Version Limit: 2022.04
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- ==============================================================
 
 library IEEE;
@@ -21,7 +22,6 @@ entity run_fifo_w16_d2_S_shiftReg is
 end run_fifo_w16_d2_S_shiftReg;
 
 architecture rtl of run_fifo_w16_d2_S_shiftReg is
---constant DEPTH_WIDTH: integer := 16;
 type SRL_ARRAY is array (0 to DEPTH-1) of std_logic_vector(DATA_WIDTH-1 downto 0);
 signal SRL_SIG : SRL_ARRAY;
 
@@ -53,6 +53,8 @@ entity run_fifo_w16_d2_S is
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
+        if_num_data_valid : OUT STD_LOGIC_VECTOR(ADDR_WIDTH downto 0);
+        if_fifo_cap : out std_logic_vector(ADDR_WIDTH downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_read : IN STD_LOGIC;
@@ -101,16 +103,16 @@ begin
             else
                 if ((if_read and if_read_ce) = '1' and internal_empty_n = '1') and 
                    ((if_write and if_write_ce) = '0' or internal_full_n = '0') then
-                    mOutPtr <= mOutPtr - conv_std_logic_vector(1, 2);
-                    if (mOutPtr = conv_std_logic_vector(0, 2)) then 
+                    mOutPtr <= mOutPtr - 1;
+                    if (unsigned(mOutPtr) = 0) then 
                         internal_empty_n <= '0';
                     end if;
                     internal_full_n <= '1';
                 elsif ((if_read and if_read_ce) = '0' or internal_empty_n = '0') and 
                    ((if_write and if_write_ce) = '1' and internal_full_n = '1') then
-                    mOutPtr <= mOutPtr + conv_std_logic_vector(1, 2);
+                    mOutPtr <= mOutPtr + 1;
                     internal_empty_n <= '1';
-                    if (mOutPtr = conv_std_logic_vector(DEPTH, 2) - conv_std_logic_vector(2, 2)) then 
+                    if (unsigned(mOutPtr) = DEPTH - 2) then 
                         internal_full_n <= '0';
                     end if;
                 end if;
@@ -120,6 +122,12 @@ begin
 
     shiftReg_addr <= (others => '0') when mOutPtr(ADDR_WIDTH) = '1' else mOutPtr(ADDR_WIDTH-1 downto 0);
     shiftReg_ce <= (if_write and if_write_ce) and internal_full_n;
+
+    -- if_num_data_valid and fifo capacity
+    if_fifo_cap <= conv_std_logic_vector(DEPTH, ADDR_WIDTH + 1);
+    process (mOutPtr ) begin
+        if_num_data_valid <= mOutPtr + 1;
+    end process;
 
     U_run_fifo_w16_d2_S_shiftReg : run_fifo_w16_d2_S_shiftReg
     generic map (

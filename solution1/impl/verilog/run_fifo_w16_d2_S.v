@@ -1,6 +1,7 @@
 // ==============================================================
-// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+// Tool Version Limit: 2022.04
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
 `timescale 1 ns / 1 ps
@@ -42,6 +43,8 @@ endmodule
 module run_fifo_w16_d2_S (
     clk,
     reset,
+    if_num_data_valid,
+    if_fifo_cap,
     if_empty_n,
     if_read_ce,
     if_read,
@@ -61,6 +64,8 @@ input reset;
 output if_empty_n;
 input if_read_ce;
 input if_read;
+output wire [ADDR_WIDTH:0] if_num_data_valid;
+output wire [ADDR_WIDTH:0] if_fifo_cap;
 output[DATA_WIDTH - 1:0] if_dout;
 output if_full_n;
 input if_write_ce;
@@ -108,6 +113,8 @@ end
 
 assign shiftReg_addr = mOutPtr[ADDR_WIDTH] == 1'b0 ? mOutPtr[ADDR_WIDTH-1:0]:{ADDR_WIDTH{1'b0}};
 assign shiftReg_ce = (if_write & if_write_ce) & internal_full_n;
+assign if_num_data_valid = mOutPtr + 1'b1;
+assign if_fifo_cap = DEPTH;
 
 run_fifo_w16_d2_S_shiftReg 
 #(

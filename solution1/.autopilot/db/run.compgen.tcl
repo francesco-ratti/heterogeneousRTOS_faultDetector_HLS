@@ -1,5 +1,11 @@
 # This script segment is generated automatically by AutoPilot
 
+set name run_gmem_m_axi
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -17,7 +23,7 @@ contr {
 	offset 16
 	offset_end 23
 }
-trainedRegions { 
+sharedMem { 
 	dir I
 	width 64
 	depth 1
@@ -26,51 +32,47 @@ trainedRegions {
 	offset_end 35
 }
 realTaskId { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 36
-	offset_end 47
+	dir X
+	width 8
+	depth 128
+	mode ap_memory
+	offset 128
+	offset_end 255
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
 n_regions_in { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 48
-	offset_end 59
+	dir X
+	width 16
+	depth 128
+	mode ap_memory
+	offset 256
+	offset_end 511
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
-sharedMem { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 60
-	offset_end 71
-}
-ap_start {
-	mailbox_input_ctrl 0
-	mailbox_output_ctrl 0
-	auto_restart_enabled 1
-	auto_restart_counter_num 0
-	auto_restart_counter_offset 16
-	auto_restart_counter_size 32
-}
+ap_start { }
 ap_done { }
 ap_ready { }
 ap_continue { }
 ap_idle { }
-ap_local_deadlock { 
-	dir O
-	width 1
-	depth 1
-	mode ap_none
-	offset -1
-	offset_end -1
+trainedRegions { 
+	dir X
+	width 32
+	depth 49152
+	mode ap_memory
+	offset 262144
+	offset_end 524287
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
 }
 interrupt {
-    ap_local_deadlock 5
 }
 }
 dict set axilite_register_dict control $port_control
@@ -85,9 +87,11 @@ if {${::AESL::PGuard_simmodel_gen}} {
 			name run_control_s_axi \
 			ports {$port_control} \
 			op interface \
-			interrupt_mode none \
+			interrupt_clear_mode COR \
+			interrupt_trigger_type default \
 			is_flushable 0 \
 			is_datawidth64 0 \
+			is_addrwidth64 1 \
 		} "
 	} else {
 		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control'"
@@ -96,27 +100,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler run_control_s_axi BINDTYPE interface TYPE interface_s_axilite
-}
-
-# Native M_AXI:
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
-eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 55 \
-    corename {m_axi} \
-    op interface \
-    delay_budget 14.6 \ 
-    is_flushable 0 \ 
-    mem_style block \ 
-    name {run_gmem_m_axi} \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find AXI interface model in the library. Ignored generation of AXI interface for 'gmem'"
-}
-}
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler run_gmem_m_axi BINDTYPE interface TYPE interface_m_axi
 }
 
 # Native AXIS:

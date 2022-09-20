@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2021.2</Version>
+<Version>2022.1</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -23,14 +23,14 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>78</Best-caseLatency>
-<Average-caseLatency>78</Average-caseLatency>
-<Worst-caseLatency>78</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.560 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.560 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.560 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>71</Best-caseLatency>
+<Average-caseLatency>71</Average-caseLatency>
+<Worst-caseLatency>71</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.420 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.420 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.420 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>8</PipelineInitiationInterval>
-<PipelineDepth>79</PipelineDepth>
+<PipelineDepth>72</PipelineDepth>
 <Interval-min>8</Interval-min>
 <Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
@@ -38,8 +38,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>899</FF>
-<LUT>689</LUT>
+<FF>441</FF>
+<LUT>163</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -315,7 +315,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -326,7 +326,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>4</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -535,7 +535,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -660,8 +660,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_read</name>
-<Object>p_read</Object>
+<name>taskId</name>
+<Object>taskId</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -671,8 +671,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_0_address0</name>
-<Object>data_0</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -682,8 +682,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_0_ce0</name>
-<Object>data_0</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -693,8 +693,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_0_we0</name>
-<Object>data_0</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -704,8 +704,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_0_d0</name>
-<Object>data_0</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -715,8 +715,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_1_address0</name>
-<Object>data_1</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -726,8 +726,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_1_ce0</name>
-<Object>data_1</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -737,8 +737,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_1_we0</name>
-<Object>data_1</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -748,8 +748,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_1_d0</name>
-<Object>data_1</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -759,8 +759,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_2_address0</name>
-<Object>data_2</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -770,8 +770,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_2_ce0</name>
-<Object>data_2</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -781,8 +781,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_2_we0</name>
-<Object>data_2</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -792,8 +792,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_2_d0</name>
-<Object>data_2</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -803,8 +803,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_3_address0</name>
-<Object>data_3</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -814,8 +814,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_3_ce0</name>
-<Object>data_3</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -825,8 +825,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_3_we0</name>
-<Object>data_3</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -836,8 +836,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_3_d0</name>
-<Object>data_3</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -847,8 +847,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_4_address0</name>
-<Object>data_4</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -858,8 +858,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_4_ce0</name>
-<Object>data_4</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -869,8 +869,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_4_we0</name>
-<Object>data_4</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -880,8 +880,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_4_d0</name>
-<Object>data_4</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -891,8 +891,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_5_address0</name>
-<Object>data_5</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -902,8 +902,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_5_ce0</name>
-<Object>data_5</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -913,8 +913,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_5_we0</name>
-<Object>data_5</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -924,8 +924,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_5_d0</name>
-<Object>data_5</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -935,8 +935,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_6_address0</name>
-<Object>data_6</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -946,8 +946,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_6_ce0</name>
-<Object>data_6</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -957,8 +957,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_6_we0</name>
-<Object>data_6</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -968,8 +968,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_6_d0</name>
-<Object>data_6</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -979,8 +979,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_7_address0</name>
-<Object>data_7</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_address0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -990,8 +990,8 @@
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_7_ce0</name>
-<Object>data_7</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -1001,8 +1001,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_7_we0</name>
-<Object>data_7</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
@@ -1012,8 +1012,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>data_7_d0</name>
-<Object>data_7</Object>
+<name>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_d0</name>
+<Object>run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7</Object>
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>

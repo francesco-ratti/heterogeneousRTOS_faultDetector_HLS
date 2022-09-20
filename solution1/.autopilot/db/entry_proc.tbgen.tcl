@@ -9,6 +9,7 @@ set isOneStateSeq 1
 set ProfileFlag 0
 set StallSigGenFlag 0
 set isEnableWaveformDebug 1
+set hasInterrupt 0
 set C_modelName {entry_proc}
 set C_modelType { void 0 }
 set C_modelArgList {
@@ -19,7 +20,7 @@ set C_modelArgMapList {[
 	{ "Name" : "outcomeInRam", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
  	{ "Name" : "outcomeInRam_c", "interface" : "fifo", "bitwidth" : 64, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 11
+set portNum 13
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -30,6 +31,8 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ outcomeInRam sc_in sc_lv 64 signal 0 } 
 	{ outcomeInRam_c_din sc_out sc_lv 64 signal 1 } 
+	{ outcomeInRam_c_num_data_valid sc_in sc_lv 5 signal 1 } 
+	{ outcomeInRam_c_fifo_cap sc_in sc_lv 5 signal 1 } 
 	{ outcomeInRam_c_full_n sc_in sc_logic 1 signal 1 } 
 	{ outcomeInRam_c_write sc_out sc_logic 1 signal 1 } 
 }
@@ -43,6 +46,8 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "outcomeInRam", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "outcomeInRam", "role": "default" }} , 
  	{ "name": "outcomeInRam_c_din", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "outcomeInRam_c", "role": "din" }} , 
+ 	{ "name": "outcomeInRam_c_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "outcomeInRam_c", "role": "num_data_valid" }} , 
+ 	{ "name": "outcomeInRam_c_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "outcomeInRam_c", "role": "fifo_cap" }} , 
  	{ "name": "outcomeInRam_c_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "outcomeInRam_c", "role": "full_n" }} , 
  	{ "name": "outcomeInRam_c_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "outcomeInRam_c", "role": "write" }}  ]}
 
@@ -63,7 +68,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "outcomeInRam", "Type" : "None", "Direction" : "I"},
-			{"Name" : "outcomeInRam_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "16", "DependentChanType" : "2",
+			{"Name" : "outcomeInRam_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "14", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "outcomeInRam_c_blk_n", "Type" : "RtlSignal"}]}]}]}
 
@@ -85,5 +90,5 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	outcomeInRam { ap_none {  { outcomeInRam in_data 0 64 } } }
-	outcomeInRam_c { ap_fifo {  { outcomeInRam_c_din fifo_data 1 64 }  { outcomeInRam_c_full_n fifo_status 0 1 }  { outcomeInRam_c_write fifo_update 1 1 } } }
+	outcomeInRam_c { ap_fifo {  { outcomeInRam_c_din fifo_port_we 1 64 }  { outcomeInRam_c_num_data_valid fifo_status_num_data_valid 0 5 }  { outcomeInRam_c_fifo_cap fifo_update 0 5 }  { outcomeInRam_c_full_n fifo_status 0 1 }  { outcomeInRam_c_write fifo_data 1 1 } } }
 }

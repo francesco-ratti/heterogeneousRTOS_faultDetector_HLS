@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2021.2</Version>
+<Version>2022.1</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -23,14 +23,14 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>70</Best-caseLatency>
-<Average-caseLatency>70</Average-caseLatency>
-<Worst-caseLatency>70</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.400 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.400 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.400 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>72</Best-caseLatency>
+<Average-caseLatency>72</Average-caseLatency>
+<Worst-caseLatency>72</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.440 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.440 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.440 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>8</PipelineInitiationInterval>
-<PipelineDepth>71</PipelineDepth>
+<PipelineDepth>73</PipelineDepth>
 <Interval-min>8</Interval-min>
 <Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
@@ -38,8 +38,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>257</FF>
-<LUT>401</LUT>
+<FF>846</FF>
+<LUT>2463</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -126,39 +126,6 @@
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>toScheduler_TREADY</name>
-<Object>toScheduler</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>control</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>toScheduler_TDATA</name>
-<Object>toScheduler</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>8</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>toScheduler_TVALID</name>
-<Object>toScheduler</Object>
-<Type>pointer</Type>
-<Scope></Scope>
-<IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -337,7 +304,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -348,7 +315,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>4</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -557,7 +524,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>256</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -682,6 +649,28 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
+<name>outcomeInRam_num_data_valid</name>
+<Object>outcomeInRam</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>5</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>outcomeInRam_fifo_cap</name>
+<Object>outcomeInRam</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>5</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
 <name>outcomeInRam_empty_n</name>
 <Object>outcomeInRam</Object>
 <Type>pointer</Type>
@@ -704,8 +693,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>contr_taskId_dout</name>
-<Object>contr_taskId</Object>
+<name>taskId_dout</name>
+<Object>taskId</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -715,8 +704,30 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>contr_taskId_empty_n</name>
-<Object>contr_taskId</Object>
+<name>taskId_num_data_valid</name>
+<Object>taskId</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>taskId_fifo_cap</name>
+<Object>taskId</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>unknown</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>taskId_empty_n</name>
+<Object>taskId</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -726,8 +737,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>contr_taskId_read</name>
-<Object>contr_taskId</Object>
+<name>taskId_read</name>
+<Object>taskId</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -746,6 +757,39 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>toScheduler_TDATA</name>
+<Object>toScheduler</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>toScheduler_TVALID</name>
+<Object>toScheduler</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>toScheduler_TREADY</name>
+<Object>toScheduler</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
 </RtlPorts>
 </InterfaceSummary>
 

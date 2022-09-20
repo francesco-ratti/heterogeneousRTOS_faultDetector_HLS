@@ -44,7 +44,7 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg484:-1
 set SourceFiles {sc {} c ../abs_solid_detector.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile C:/Users/franc/OneDrive/Documenti/detector_solid/solution1/solution1.directive
+set DirectiveFile /home/francesco/workspace/detector_solid/solution1/solution1.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

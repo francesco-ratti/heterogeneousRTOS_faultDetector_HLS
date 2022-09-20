@@ -3,9 +3,9 @@
 ================================================================
 == Vitis HLS Report for 'run'
 ================================================================
-* Date:           Mon Sep 19 22:55:26 2022
+* Date:           Wed Sep 21 00:46:55 2022
 
-* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
 * Solution:       solution1 (Vitis Kernel Flow Target)
 * Product family: zynq
@@ -29,17 +29,17 @@
     |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
     |   min   |   max   |    min    |    max   | min | max |   Type  |
     +---------+---------+-----------+----------+-----+-----+---------+
-    |        1|      153|  20.000 ns|  3.060 us|    2|  154|       no|
+    |        1|      148|  20.000 ns|  2.960 us|    2|  149|       no|
     +---------+---------+-----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
-        +-------------------------+--------------+---------+---------+----------+----------+-----+-----+----------+
-        |                         |              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
-        |         Instance        |    Module    |   min   |   max   |    min   |    max   | min | max |   Type   |
-        +-------------------------+--------------+---------+---------+----------+----------+-----+-----+----------+
-        |grp_runAfterInit_fu_112  |runAfterInit  |      150|      150|  3.000 us|  3.000 us|    8|    8|  dataflow|
-        +-------------------------+--------------+---------+---------+----------+----------+-----+-----+----------+
+        +-----------------------------+------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                             |                  |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |           Instance          |      Module      |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +-----------------------------+------------------+---------+---------+----------+----------+-----+-----+----------+
+        |grp_runTestAfterInit_fu_122  |runTestAfterInit  |      145|      145|  2.900 us|  2.900 us|    8|    8|  dataflow|
+        +-----------------------------+------------------+---------+---------+----------+----------+-----+-----+----------+
 
         * Loop: 
         N/A
@@ -56,29 +56,29 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     79|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |       12|    -|    6327|   5306|    0|
+|Instance         |        8|    -|    6335|   7424|    0|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|     79|    -|
 |Register         |        -|    -|     156|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |       12|    0|    6483|   5464|    0|
+|Total            |        8|    0|    6491|   7582|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        4|    0|       6|     10|    0|
+|Utilization (%)  |        2|    0|       6|     14|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------+---------------+---------+----+------+------+-----+
-    |         Instance        |     Module    | BRAM_18K| DSP|  FF  |  LUT | URAM|
-    +-------------------------+---------------+---------+----+------+------+-----+
-    |control_s_axi_U          |control_s_axi  |        0|   0|   361|   618|    0|
-    |gmem_m_axi_U             |gmem_m_axi     |        4|   0|   512|   580|    0|
-    |grp_runAfterInit_fu_112  |runAfterInit   |        8|   0|  5454|  4108|    0|
-    +-------------------------+---------------+---------+----+------+------+-----+
-    |Total                    |               |       12|   0|  6327|  5306|    0|
-    +-------------------------+---------------+---------+----+------+------+-----+
+    +-----------------------------+------------------+---------+----+------+------+-----+
+    |           Instance          |      Module      | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +-----------------------------+------------------+---------+----+------+------+-----+
+    |control_s_axi_U              |control_s_axi     |        0|   0|   378|   445|    0|
+    |gmem_m_axi_U                 |gmem_m_axi        |        0|   0|  1087|  1790|    0|
+    |grp_runTestAfterInit_fu_122  |runTestAfterInit  |        8|   0|  4870|  5189|    0|
+    +-----------------------------+------------------+---------+----+------+------+-----+
+    |Total                        |                  |        8|   0|  6335|  7424|    0|
+    +-----------------------------+------------------+---------+----+------+------+-----+
 
     * DSP: 
     N/A
@@ -90,17 +90,17 @@
     N/A
 
     * Expression: 
-    +--------------------------------------------+----------+----+---+----+------------+------------+
-    |                Variable Name               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +--------------------------------------------+----------+----+---+----+------------+------------+
-    |outcomeInRam_fu_149_p2                      |         +|   0|  0|  71|          64|          15|
-    |grp_runAfterInit_fu_112_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
-    |ap_block_state1                             |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runAfterInit_fu_112_ap_done     |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runAfterInit_fu_112_ap_ready    |        or|   0|  0|   2|           1|           1|
-    +--------------------------------------------+----------+----+---+----+------------+------------+
-    |Total                                       |          |   0|  0|  79|          68|          19|
-    +--------------------------------------------+----------+----+---+----+------------+------------+
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |                  Variable Name                 | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |outcomeInRam_fu_159_p2                          |         +|   0|  0|  71|          64|          15|
+    |grp_runTestAfterInit_fu_122_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
+    |ap_block_state1                                 |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_122_ap_done     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_122_ap_ready    |        or|   0|  0|   2|           1|           1|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                           |          |   0|  0|  79|          68|          19|
+    +------------------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +--------------+----+-----------+-----+-----------+
@@ -118,24 +118,24 @@
     +--------------+----+-----------+-----+-----------+
 
     * Register: 
-    +----------------------------------------------+----+----+-----+-----------+
-    |                     Name                     | FF | LUT| Bits| Const Bits|
-    +----------------------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                                     |   4|   0|    4|          0|
-    |ap_done_reg                                   |   1|   0|    1|          0|
-    |ap_rst_n_inv                                  |   1|   0|    1|          0|
-    |ap_rst_reg_1                                  |   1|   0|    1|          0|
-    |ap_rst_reg_2                                  |   1|   0|    1|          0|
-    |ap_sync_reg_grp_runAfterInit_fu_112_ap_done   |   1|   0|    1|          0|
-    |ap_sync_reg_grp_runAfterInit_fu_112_ap_ready  |   1|   0|    1|          0|
-    |contr_taskId_V_reg_170                        |  16|   0|   16|          0|
-    |grp_runAfterInit_fu_112_ap_start_reg          |   1|   0|    1|          0|
-    |outcomeInRam_reg_175                          |  64|   0|   64|          0|
-    |sharedMem_read_reg_165                        |  64|   0|   64|          0|
-    |state                                         |   1|   0|    1|          0|
-    +----------------------------------------------+----+----+-----+-----------+
-    |Total                                         | 156|   0|  156|          0|
-    +----------------------------------------------+----+----+-----+-----------+
+    +--------------------------------------------------+----+----+-----+-----------+
+    |                       Name                       | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                         |   4|   0|    4|          0|
+    |ap_done_reg                                       |   1|   0|    1|          0|
+    |ap_rst_n_inv                                      |   1|   0|    1|          0|
+    |ap_rst_reg_1                                      |   1|   0|    1|          0|
+    |ap_rst_reg_2                                      |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_122_ap_done   |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_122_ap_ready  |   1|   0|    1|          0|
+    |contr_taskId_V_reg_180                            |  16|   0|   16|          0|
+    |fsmstate                                          |   1|   0|    1|          0|
+    |grp_runTestAfterInit_fu_122_ap_start_reg          |   1|   0|    1|          0|
+    |outcomeInRam_reg_185                              |  64|   0|   64|          0|
+    |sharedMem_read_reg_175                            |  64|   0|   64|          0|
+    +--------------------------------------------------+----+----+-----+-----------+
+    |Total                                             | 156|   0|  156|          0|
+    +--------------------------------------------------+----+----+-----+-----------+
 
 
 
@@ -146,24 +146,23 @@
 +-----------------------+-----+-----+---------------+--------------+--------------+
 |       RTL Ports       | Dir | Bits|    Protocol   | Source Object|    C Type    |
 +-----------------------+-----+-----+---------------+--------------+--------------+
-|s_axi_control_AWVALID  |   in|    1|          s_axi|       control|        scalar|
-|s_axi_control_AWREADY  |  out|    1|          s_axi|       control|        scalar|
-|s_axi_control_AWADDR   |   in|    7|          s_axi|       control|        scalar|
-|s_axi_control_WVALID   |   in|    1|          s_axi|       control|        scalar|
-|s_axi_control_WREADY   |  out|    1|          s_axi|       control|        scalar|
-|s_axi_control_WDATA    |   in|   32|          s_axi|       control|        scalar|
-|s_axi_control_WSTRB    |   in|    4|          s_axi|       control|        scalar|
-|s_axi_control_ARVALID  |   in|    1|          s_axi|       control|        scalar|
-|s_axi_control_ARREADY  |  out|    1|          s_axi|       control|        scalar|
-|s_axi_control_ARADDR   |   in|    7|          s_axi|       control|        scalar|
-|s_axi_control_RVALID   |  out|    1|          s_axi|       control|        scalar|
-|s_axi_control_RREADY   |   in|    1|          s_axi|       control|        scalar|
-|s_axi_control_RDATA    |  out|   32|          s_axi|       control|        scalar|
-|s_axi_control_RRESP    |  out|    2|          s_axi|       control|        scalar|
-|s_axi_control_BVALID   |  out|    1|          s_axi|       control|        scalar|
-|s_axi_control_BREADY   |   in|    1|          s_axi|       control|        scalar|
-|s_axi_control_BRESP    |  out|    2|          s_axi|       control|        scalar|
-|ap_local_block         |  out|    1|  ap_ctrl_chain|           run|  return value|
+|s_axi_control_AWVALID  |   in|    1|          s_axi|       control|         array|
+|s_axi_control_AWREADY  |  out|    1|          s_axi|       control|         array|
+|s_axi_control_AWADDR   |   in|   19|          s_axi|       control|         array|
+|s_axi_control_WVALID   |   in|    1|          s_axi|       control|         array|
+|s_axi_control_WREADY   |  out|    1|          s_axi|       control|         array|
+|s_axi_control_WDATA    |   in|   32|          s_axi|       control|         array|
+|s_axi_control_WSTRB    |   in|    4|          s_axi|       control|         array|
+|s_axi_control_ARVALID  |   in|    1|          s_axi|       control|         array|
+|s_axi_control_ARREADY  |  out|    1|          s_axi|       control|         array|
+|s_axi_control_ARADDR   |   in|   19|          s_axi|       control|         array|
+|s_axi_control_RVALID   |  out|    1|          s_axi|       control|         array|
+|s_axi_control_RREADY   |   in|    1|          s_axi|       control|         array|
+|s_axi_control_RDATA    |  out|   32|          s_axi|       control|         array|
+|s_axi_control_RRESP    |  out|    2|          s_axi|       control|         array|
+|s_axi_control_BVALID   |  out|    1|          s_axi|       control|         array|
+|s_axi_control_BREADY   |   in|    1|          s_axi|       control|         array|
+|s_axi_control_BRESP    |  out|    2|          s_axi|       control|         array|
 |ap_clk                 |   in|    1|  ap_ctrl_chain|           run|  return value|
 |ap_rst_n               |   in|    1|  ap_ctrl_chain|           run|  return value|
 |interrupt              |  out|    1|  ap_ctrl_chain|           run|  return value|
@@ -182,8 +181,8 @@
 |m_axi_gmem_AWUSER      |  out|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_WVALID      |  out|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_WREADY      |   in|    1|          m_axi|          gmem|       pointer|
-|m_axi_gmem_WDATA       |  out|   32|          m_axi|          gmem|       pointer|
-|m_axi_gmem_WSTRB       |  out|    4|          m_axi|          gmem|       pointer|
+|m_axi_gmem_WDATA       |  out|  256|          m_axi|          gmem|       pointer|
+|m_axi_gmem_WSTRB       |  out|   32|          m_axi|          gmem|       pointer|
 |m_axi_gmem_WLAST       |  out|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_WID         |  out|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_WUSER       |  out|    1|          m_axi|          gmem|       pointer|
@@ -202,7 +201,7 @@
 |m_axi_gmem_ARUSER      |  out|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_RVALID      |   in|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_RREADY      |  out|    1|          m_axi|          gmem|       pointer|
-|m_axi_gmem_RDATA       |   in|   32|          m_axi|          gmem|       pointer|
+|m_axi_gmem_RDATA       |   in|  256|          m_axi|          gmem|       pointer|
 |m_axi_gmem_RLAST       |   in|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_RID         |   in|    1|          m_axi|          gmem|       pointer|
 |m_axi_gmem_RUSER       |   in|    1|          m_axi|          gmem|       pointer|

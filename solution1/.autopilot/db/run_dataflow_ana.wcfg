@@ -37,22 +37,22 @@
          <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxWaveData.Cycles</obj_property>
          <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxWaveData.OutStanding</obj_property>
          <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxTooltipData</obj_property>
-         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/grp_runAfterInit_fu_112_activity">
-            <obj_property name="label">grp_runAfterInit_fu_112_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/grp_runTestAfterInit_fu_122_activity">
+            <obj_property name="label">grp_runTestAfterInit_fu_122_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_runAfterInit_fu_112_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_runAfterInit_fu_112_activity</obj_property>
+            <obj_property name="ElementShortName">grp_runTestAfterInit_fu_122_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_runTestAfterInit_fu_122_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/grp_runAfterInit_fu_112_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/grp_runAfterInit_fu_112_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/grp_runAfterInit_fu_112_activity.dataflowTxTooltipData</obj_property>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/entry_proc_U0_activity">
+            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/grp_runTestAfterInit_fu_122_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/grp_runTestAfterInit_fu_122_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/grp_runTestAfterInit_fu_122_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/entry_proc_U0_activity">
                <obj_property name="label">entry_proc_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -64,11 +64,11 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/entry_proc_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/entry_proc_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/entry_proc_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/entry_proc_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/entry_proc_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/entry_proc_U0_activity.dataflowTxTooltipData</obj_property>
             </wvobject>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/read_test_U0_activity">
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/read_test_U0_activity">
                <obj_property name="label">read_test_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -80,11 +80,11 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/read_test_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/read_test_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/read_test_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/read_test_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/read_test_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/read_test_U0_activity.dataflowTxTooltipData</obj_property>
             </wvobject>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/run_test_U0_activity">
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_test_U0_activity">
                <obj_property name="label">run_test_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -96,27 +96,27 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/run_test_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/run_test_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/run_test_U0_activity.dataflowTxTooltipData</obj_property>
-               <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/grp_find_region_fu_196_activity">
-                  <obj_property name="label">grp_find_region_fu_196_activity</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_test_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_test_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_test_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/grp_find_region_fu_198_activity">
+                  <obj_property name="label">grp_find_region_fu_198_activity</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
                   <obj_property name="UseFullPath">true</obj_property>
-                  <obj_property name="ElementShortName">grp_find_region_fu_196_activity</obj_property>
-                  <obj_property name="ObjectShortName">grp_find_region_fu_196_activity</obj_property>
+                  <obj_property name="ElementShortName">grp_find_region_fu_198_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_find_region_fu_198_activity</obj_property>
                   <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                   <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                   <obj_property name="UseCustomSignalColor">true</obj_property>
                   <obj_property name="CustomSignalColor">turquoise</obj_property>
                   <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-                  <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/grp_find_region_fu_196_activity.dataflowTxWaveData.Cycles</obj_property>
-                  <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/grp_find_region_fu_196_activity.dataflowTxWaveData.OutStanding</obj_property>
-                  <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/grp_find_region_fu_196_activity.dataflowTxTooltipData</obj_property>
+                  <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/grp_find_region_fu_198_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/grp_find_region_fu_198_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/grp_find_region_fu_198_activity.dataflowTxTooltipData</obj_property>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/writeOutcome_U0_activity">
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/writeOutcome_U0_activity">
                <obj_property name="label">writeOutcome_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
@@ -128,9 +128,9 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/writeOutcome_U0_activity.dataflowTxTooltipData</obj_property>
             </wvobject>
          </wvobject>
       </wvobject>
@@ -142,9 +142,9 @@
    <wvobject type="group" fp_name="AESL_inst_run_group">
       <obj_property name="label">AESL_inst_run</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/grp_runAfterInit_fu_112_activity">
-         <obj_property name="ElementShortName">grp_runAfterInit_fu_112_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_runAfterInit_fu_112_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/grp_runTestAfterInit_fu_122_activity">
+         <obj_property name="ElementShortName">grp_runTestAfterInit_fu_122_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_runTestAfterInit_fu_122_activity</obj_property>
       </wvobject>
       <wvobject type="group" fp_name="AESL_inst_run_Handshake_group">
          <obj_property name="label">Block-level handshake</obj_property>
@@ -166,41 +166,41 @@
             <obj_property name="ObjectShortName">ap_continue</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_runAfterInit_fu_112_group">
-         <obj_property name="label">grp_runAfterInit_fu_112</obj_property>
+      <wvobject type="group" fp_name="grp_runTestAfterInit_fu_122_group">
+         <obj_property name="label">grp_runTestAfterInit_fu_122</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/entry_proc_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/entry_proc_U0_activity">
             <obj_property name="ElementShortName">entry_proc_U0_activity</obj_property>
             <obj_property name="ObjectShortName">entry_proc_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/read_test_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/read_test_U0_activity">
             <obj_property name="ElementShortName">read_test_U0_activity</obj_property>
             <obj_property name="ObjectShortName">read_test_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/run_test_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_test_U0_activity">
             <obj_property name="ElementShortName">run_test_U0_activity</obj_property>
             <obj_property name="ObjectShortName">run_test_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/writeOutcome_U0_activity">
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/writeOutcome_U0_activity">
             <obj_property name="ElementShortName">writeOutcome_U0_activity</obj_property>
             <obj_property name="ObjectShortName">writeOutcome_U0_activity</obj_property>
          </wvobject>
-         <wvobject type="group" fp_name="grp_runAfterInit_fu_112_Handshake_group">
+         <wvobject type="group" fp_name="grp_runTestAfterInit_fu_122_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/ap_start">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/ap_done">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/ap_continue">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/ap_continue">
                <obj_property name="ElementShortName">ap_continue</obj_property>
                <obj_property name="ObjectShortName">ap_continue</obj_property>
             </wvobject>
@@ -215,19 +215,19 @@
             <wvobject type="group" fp_name="entry_proc_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
@@ -238,17 +238,17 @@
                <wvobject type="group" fp_name="outcomeInRam_c_group">
                   <obj_property name="label">outcomeInRam_c(outcomeInRam_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/outcomeInRam_c_blk_n">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/outcomeInRam_c_blk_n">
                      <obj_property name="ElementShortName">outcomeInRam_c_blk_n</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_c_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/outcomeInRam_c_din">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/outcomeInRam_c_din">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/outcomeInRam_c_full_n">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/outcomeInRam_c_full_n">
                      <obj_property name="ElementShortName">outcomeInRam_c_full_n</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_c_full_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/entry_proc_U0/outcomeInRam_c_write">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/entry_proc_U0/outcomeInRam_c_write">
                      <obj_property name="ElementShortName">outcomeInRam_c_write</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_c_write</obj_property>
                   </wvobject>
@@ -265,19 +265,19 @@
             <wvobject type="group" fp_name="read_test_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
@@ -285,224 +285,224 @@
             <wvobject type="group" fp_name="read_test_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="data_0_group">
-                  <obj_property name="label">data_0(data_0_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_0_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_0_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_0_ce0">
-                     <obj_property name="ElementShortName">data_0_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_0_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_0_we0">
-                     <obj_property name="ElementShortName">data_0_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_0_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_1_group">
-                  <obj_property name="label">data_1(data_1_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_1_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_1_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_1_ce0">
-                     <obj_property name="ElementShortName">data_1_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_1_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_1_we0">
-                     <obj_property name="ElementShortName">data_1_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_1_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_2_group">
-                  <obj_property name="label">data_2(data_2_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_2_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_2_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_2_ce0">
-                     <obj_property name="ElementShortName">data_2_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_2_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_2_we0">
-                     <obj_property name="ElementShortName">data_2_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_2_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_3_group">
-                  <obj_property name="label">data_3(data_3_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_3_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_3_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_3_ce0">
-                     <obj_property name="ElementShortName">data_3_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_3_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_3_we0">
-                     <obj_property name="ElementShortName">data_3_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_3_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_4_group">
-                  <obj_property name="label">data_4(data_4_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_4_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_4_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_4_ce0">
-                     <obj_property name="ElementShortName">data_4_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_4_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_4_we0">
-                     <obj_property name="ElementShortName">data_4_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_4_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_5_group">
-                  <obj_property name="label">data_5(data_5_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_5_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_5_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_5_ce0">
-                     <obj_property name="ElementShortName">data_5_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_5_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_5_we0">
-                     <obj_property name="ElementShortName">data_5_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_5_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_6_group">
-                  <obj_property name="label">data_6(data_6_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_6_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_6_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_6_ce0">
-                     <obj_property name="ElementShortName">data_6_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_6_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_6_we0">
-                     <obj_property name="ElementShortName">data_6_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_6_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_7_group">
-                  <obj_property name="label">data_7(data_7_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_7_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_7_d0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_d0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_7_ce0">
-                     <obj_property name="ElementShortName">data_7_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_7_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/data_7_we0">
-                     <obj_property name="ElementShortName">data_7_we0</obj_property>
-                     <obj_property name="ObjectShortName">data_7_we0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                      <obj_property name="label">ap_done(i_write)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/read_test_U0/ap_continue">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/read_test_U0/ap_continue">
                      <obj_property name="ElementShortName">ap_continue</obj_property>
                      <obj_property name="ObjectShortName">ap_continue</obj_property>
                      <obj_property name="label">ap_continue(i_full_n)</obj_property>
@@ -514,151 +514,151 @@
          <wvobject type="group" fp_name="run_test_U0_group">
             <obj_property name="label">run_test_U0</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/grp_find_region_fu_196_activity">
-               <obj_property name="ElementShortName">grp_find_region_fu_196_activity</obj_property>
-               <obj_property name="ObjectShortName">grp_find_region_fu_196_activity</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/grp_find_region_fu_198_activity">
+               <obj_property name="ElementShortName">grp_find_region_fu_198_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_find_region_fu_198_activity</obj_property>
             </wvobject>
             <wvobject type="group" fp_name="run_test_U0_Input_group">
                <obj_property name="label">Input Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="data_0_group">
-                  <obj_property name="label">data_0(data_0_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_0_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_0_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_0_ce0">
-                     <obj_property name="ElementShortName">data_0_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_0_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_1_group">
-                  <obj_property name="label">data_1(data_1_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_1_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_1_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_1_ce0">
-                     <obj_property name="ElementShortName">data_1_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_1_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_2_group">
-                  <obj_property name="label">data_2(data_2_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_2_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_2_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_2_ce0">
-                     <obj_property name="ElementShortName">data_2_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_2_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_3_group">
-                  <obj_property name="label">data_3(data_3_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_3_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_3_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_3_ce0">
-                     <obj_property name="ElementShortName">data_3_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_3_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_4_group">
-                  <obj_property name="label">data_4(data_4_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_4_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_4_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_4_ce0">
-                     <obj_property name="ElementShortName">data_4_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_4_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_5_group">
-                  <obj_property name="label">data_5(data_5_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_5_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_5_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_5_ce0">
-                     <obj_property name="ElementShortName">data_5_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_5_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_6_group">
-                  <obj_property name="label">data_6(data_6_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_6_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_6_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_6_ce0">
-                     <obj_property name="ElementShortName">data_6_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_6_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="data_7_group">
-                  <obj_property name="label">data_7(data_7_U, PIPO)</obj_property>
+               <wvobject type="group" fp_name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_group">
+                  <obj_property name="label">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_U, PIPO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_7_address0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_address0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_7_q0">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_q0">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/data_7_ce0">
-                     <obj_property name="ElementShortName">data_7_ce0</obj_property>
-                     <obj_property name="ObjectShortName">data_7_ce0</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0">
+                     <obj_property name="ElementShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0</obj_property>
+                     <obj_property name="ObjectShortName">run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                      <obj_property name="label">ap_ready(t_read)</obj_property>
@@ -669,19 +669,19 @@
             <wvobject type="group" fp_name="run_test_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
@@ -689,40 +689,40 @@
             <wvobject type="group" fp_name="run_test_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="contr_taskId_c_group">
-                  <obj_property name="label">contr_taskId_c(contr_taskId_c_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="taskId_c_group">
+                  <obj_property name="label">taskId_c(taskId_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/contr_taskId_c_blk_n">
-                     <obj_property name="ElementShortName">contr_taskId_c_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_c_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/taskId_c_blk_n">
+                     <obj_property name="ElementShortName">taskId_c_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">taskId_c_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/contr_taskId_c_din">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/taskId_c_din">
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/contr_taskId_c_full_n">
-                     <obj_property name="ElementShortName">contr_taskId_c_full_n</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_c_full_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/taskId_c_full_n">
+                     <obj_property name="ElementShortName">taskId_c_full_n</obj_property>
+                     <obj_property name="ObjectShortName">taskId_c_full_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/contr_taskId_c_write">
-                     <obj_property name="ElementShortName">contr_taskId_c_write</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_c_write</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/taskId_c_write">
+                     <obj_property name="ElementShortName">taskId_c_write</obj_property>
+                     <obj_property name="ObjectShortName">taskId_c_write</obj_property>
                   </wvobject>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="grp_find_region_fu_196_group">
-               <obj_property name="label">grp_find_region_fu_196</obj_property>
+            <wvobject type="group" fp_name="grp_find_region_fu_198_group">
+               <obj_property name="label">grp_find_region_fu_198</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="group" fp_name="grp_find_region_fu_196_Handshake_group">
+               <wvobject type="group" fp_name="grp_find_region_fu_198_Handshake_group">
                   <obj_property name="label">Block-level handshake</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/ap_start">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/ap_start">
                      <obj_property name="ElementShortName">ap_start</obj_property>
                      <obj_property name="ObjectShortName">ap_start</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/ap_ready">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
                      <obj_property name="ObjectShortName">ap_ready</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/run_test_U0/grp_find_region_fu_196/ap_done">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/run_test_U0/grp_find_region_fu_198/ap_done">
                      <obj_property name="ElementShortName">ap_done</obj_property>
                      <obj_property name="ObjectShortName">ap_done</obj_property>
                   </wvobject>
@@ -738,60 +738,60 @@
                <wvobject type="group" fp_name="outcomeInRam_group">
                   <obj_property name="label">outcomeInRam(outcomeInRam_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/outcomeInRam_blk_n">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/outcomeInRam_blk_n">
                      <obj_property name="ElementShortName">outcomeInRam_blk_n</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/outcomeInRam_dout">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/outcomeInRam_dout">
                      <obj_property name="ElementShortName">outcomeInRam_dout[63:0]</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_dout[63:0]</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/outcomeInRam_empty_n">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/outcomeInRam_empty_n">
                      <obj_property name="ElementShortName">outcomeInRam_empty_n</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_empty_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/outcomeInRam_read">
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/outcomeInRam_read">
                      <obj_property name="ElementShortName">outcomeInRam_read</obj_property>
                      <obj_property name="ObjectShortName">outcomeInRam_read</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="contr_taskId_group">
-                  <obj_property name="label">contr_taskId(contr_taskId_c_U, FIFO)</obj_property>
+               <wvobject type="group" fp_name="taskId_group">
+                  <obj_property name="label">taskId(taskId_c_U, FIFO)</obj_property>
                   <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/contr_taskId_blk_n">
-                     <obj_property name="ElementShortName">contr_taskId_blk_n</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_blk_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/taskId_blk_n">
+                     <obj_property name="ElementShortName">taskId_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">taskId_blk_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/contr_taskId_dout">
-                     <obj_property name="ElementShortName">contr_taskId_dout[15:0]</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_dout[15:0]</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/taskId_dout">
+                     <obj_property name="ElementShortName">taskId_dout[15:0]</obj_property>
+                     <obj_property name="ObjectShortName">taskId_dout[15:0]</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/contr_taskId_empty_n">
-                     <obj_property name="ElementShortName">contr_taskId_empty_n</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_empty_n</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/taskId_empty_n">
+                     <obj_property name="ElementShortName">taskId_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">taskId_empty_n</obj_property>
                   </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/contr_taskId_read">
-                     <obj_property name="ElementShortName">contr_taskId_read</obj_property>
-                     <obj_property name="ObjectShortName">contr_taskId_read</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/taskId_read">
+                     <obj_property name="ElementShortName">taskId_read</obj_property>
+                     <obj_property name="ObjectShortName">taskId_read</obj_property>
                   </wvobject>
                </wvobject>
             </wvobject>
             <wvobject type="group" fp_name="writeOutcome_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runAfterInit_fu_112/writeOutcome_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_122/writeOutcome_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>

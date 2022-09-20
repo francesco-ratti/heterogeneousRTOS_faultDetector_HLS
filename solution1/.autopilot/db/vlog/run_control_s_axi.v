@@ -1,11 +1,12 @@
 // ==============================================================
-// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+// Tool Version Limit: 2022.04
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1ns/1ps
 module run_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 19,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -30,92 +31,94 @@ module run_control_s_axi
     input  wire                          RREADY,
     output wire                          interrupt,
     output wire [31:0]                   contr,
-    output wire [63:0]                   trainedRegions,
-    output wire [63:0]                   realTaskId,
-    output wire [63:0]                   n_regions_in,
     output wire [63:0]                   sharedMem,
+    input  wire [6:0]                    realTaskId_address0,
+    input  wire                          realTaskId_ce0,
+    input  wire                          realTaskId_we0,
+    input  wire [7:0]                    realTaskId_d0,
+    input  wire [6:0]                    n_regions_in_address0,
+    input  wire                          n_regions_in_ce0,
+    input  wire                          n_regions_in_we0,
+    input  wire [15:0]                   n_regions_in_d0,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
     output wire                          ap_continue,
     input  wire                          ap_idle,
-    input  wire [0:0]                    ap_local_deadlock
+    input  wire [15:0]                   trainedRegions_address0,
+    input  wire                          trainedRegions_ce0,
+    input  wire                          trainedRegions_we0,
+    input  wire [31:0]                   trainedRegions_d0
 );
 //------------------------Address Info-------------------
-// 0x00 : Control signals
-//        bit 0  - ap_start (Read/Write/COH)
-//        bit 1  - ap_done (Read)
-//        bit 2  - ap_idle (Read)
-//        bit 3  - ap_ready (Read/COR)
-//        bit 4  - ap_continue (Read/Write/SC)
-//        bit 7  - auto_restart (Read/Write)
-//        others - reserved
-// 0x04 : Global Interrupt Enable Register
-//        bit 0  - Global Interrupt Enable (Read/Write)
-//        others - reserved
-// 0x08 : IP Interrupt Enable Register (Read/Write)
-//        bit 0 - enable ap_done interrupt (Read/Write)
-//        bit 1 - enable ap_ready interrupt (Read/Write)
-//        bit 5 - enable ap_local_deadlock interrupt (Read/Write)
-//        others - reserved
-// 0x0c : IP Interrupt Status Register (Read/TOW)
-//        bit 0 - ap_done (COR/TOW)
-//        bit 1 - ap_ready (COR/TOW)
-//        bit 5 - ap_local_deadlock (COR/TOW)
-//        others - reserved
-// 0x10 : Data signal of contr
-//        bit 31~0 - contr[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of trainedRegions
-//        bit 31~0 - trainedRegions[31:0] (Read/Write)
-// 0x1c : Data signal of trainedRegions
-//        bit 31~0 - trainedRegions[63:32] (Read/Write)
-// 0x20 : reserved
-// 0x24 : Data signal of realTaskId
-//        bit 31~0 - realTaskId[31:0] (Read/Write)
-// 0x28 : Data signal of realTaskId
-//        bit 31~0 - realTaskId[63:32] (Read/Write)
-// 0x2c : reserved
-// 0x30 : Data signal of n_regions_in
-//        bit 31~0 - n_regions_in[31:0] (Read/Write)
-// 0x34 : Data signal of n_regions_in
-//        bit 31~0 - n_regions_in[63:32] (Read/Write)
-// 0x38 : reserved
-// 0x3c : Data signal of sharedMem
-//        bit 31~0 - sharedMem[31:0] (Read/Write)
-// 0x40 : Data signal of sharedMem
-//        bit 31~0 - sharedMem[63:32] (Read/Write)
-// 0x44 : reserved
+// 0x00000 : Control signals
+//           bit 0  - ap_start (Read/Write/COH)
+//           bit 1  - ap_done (Read)
+//           bit 2  - ap_idle (Read)
+//           bit 3  - ap_ready (Read/COR)
+//           bit 4  - ap_continue (Read/Write/SC)
+//           bit 7  - auto_restart (Read/Write)
+//           bit 9  - interrupt (Read)
+//           others - reserved
+// 0x00004 : Global Interrupt Enable Register
+//           bit 0  - Global Interrupt Enable (Read/Write)
+//           others - reserved
+// 0x00008 : IP Interrupt Enable Register (Read/Write)
+//           bit 0 - enable ap_done interrupt (Read/Write)
+//           bit 1 - enable ap_ready interrupt (Read/Write)
+//           others - reserved
+// 0x0000c : IP Interrupt Status Register (Read/COR)
+//           bit 0 - ap_done (Read/COR)
+//           bit 1 - ap_ready (Read/COR)
+//           others - reserved
+// 0x00010 : Data signal of contr
+//           bit 31~0 - contr[31:0] (Read/Write)
+// 0x00014 : reserved
+// 0x00018 : Data signal of sharedMem
+//           bit 31~0 - sharedMem[31:0] (Read/Write)
+// 0x0001c : Data signal of sharedMem
+//           bit 31~0 - sharedMem[63:32] (Read/Write)
+// 0x00020 : reserved
+// 0x00080 ~
+// 0x000ff : Memory 'realTaskId' (128 * 8b)
+//           Word n : bit [ 7: 0] - realTaskId[4n]
+//                    bit [15: 8] - realTaskId[4n+1]
+//                    bit [23:16] - realTaskId[4n+2]
+//                    bit [31:24] - realTaskId[4n+3]
+// 0x00100 ~
+// 0x001ff : Memory 'n_regions_in' (128 * 16b)
+//           Word n : bit [15: 0] - n_regions_in[2n]
+//                    bit [31:16] - n_regions_in[2n+1]
+// 0x40000 ~
+// 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
+//           Word n : bit [31:0] - trainedRegions[n]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL               = 7'h00,
-    ADDR_GIE                   = 7'h04,
-    ADDR_IER                   = 7'h08,
-    ADDR_ISR                   = 7'h0c,
-    ADDR_CONTR_DATA_0          = 7'h10,
-    ADDR_CONTR_CTRL            = 7'h14,
-    ADDR_TRAINEDREGIONS_DATA_0 = 7'h18,
-    ADDR_TRAINEDREGIONS_DATA_1 = 7'h1c,
-    ADDR_TRAINEDREGIONS_CTRL   = 7'h20,
-    ADDR_REALTASKID_DATA_0     = 7'h24,
-    ADDR_REALTASKID_DATA_1     = 7'h28,
-    ADDR_REALTASKID_CTRL       = 7'h2c,
-    ADDR_N_REGIONS_IN_DATA_0   = 7'h30,
-    ADDR_N_REGIONS_IN_DATA_1   = 7'h34,
-    ADDR_N_REGIONS_IN_CTRL     = 7'h38,
-    ADDR_SHAREDMEM_DATA_0      = 7'h3c,
-    ADDR_SHAREDMEM_DATA_1      = 7'h40,
-    ADDR_SHAREDMEM_CTRL        = 7'h44,
-    WRIDLE                     = 2'd0,
-    WRDATA                     = 2'd1,
-    WRRESP                     = 2'd2,
-    WRRESET                    = 2'd3,
-    RDIDLE                     = 2'd0,
-    RDDATA                     = 2'd1,
-    RDRESET                    = 2'd2,
-    ADDR_BITS                = 7;
+    ADDR_AP_CTRL             = 19'h00000,
+    ADDR_GIE                 = 19'h00004,
+    ADDR_IER                 = 19'h00008,
+    ADDR_ISR                 = 19'h0000c,
+    ADDR_CONTR_DATA_0        = 19'h00010,
+    ADDR_CONTR_CTRL          = 19'h00014,
+    ADDR_SHAREDMEM_DATA_0    = 19'h00018,
+    ADDR_SHAREDMEM_DATA_1    = 19'h0001c,
+    ADDR_SHAREDMEM_CTRL      = 19'h00020,
+    ADDR_REALTASKID_BASE     = 19'h00080,
+    ADDR_REALTASKID_HIGH     = 19'h000ff,
+    ADDR_N_REGIONS_IN_BASE   = 19'h00100,
+    ADDR_N_REGIONS_IN_HIGH   = 19'h001ff,
+    ADDR_TRAINEDREGIONS_BASE = 19'h40000,
+    ADDR_TRAINEDREGIONS_HIGH = 19'h7ffff,
+    WRIDLE                   = 2'd0,
+    WRDATA                   = 2'd1,
+    WRRESP                   = 2'd2,
+    WRRESET                  = 2'd3,
+    RDIDLE                   = 2'd0,
+    RDDATA                   = 2'd1,
+    RDRESET                  = 2'd2,
+    ADDR_BITS                = 19;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -138,24 +141,124 @@ localparam
     wire                          task_ap_done;
     reg                           int_task_ap_done = 1'b0;
     reg                           int_ap_start = 1'b0;
+    reg                           int_interrupt = 1'b0;
     reg                           int_auto_restart = 1'b0;
     reg                           auto_restart_status = 1'b0;
     reg                           auto_restart_done = 1'b0;
     reg                           int_gie = 1'b0;
-    reg  [5:0]                    int_ier = 6'b0;
-    reg  [5:0]                    int_isr = 6'b0;
+    reg  [1:0]                    int_ier = 2'b0;
+    reg  [1:0]                    int_isr = 2'b0;
     reg  [31:0]                   int_contr = 'b0;
-    reg  [63:0]                   int_trainedRegions = 'b0;
-    reg  [63:0]                   int_realTaskId = 'b0;
-    reg  [63:0]                   int_n_regions_in = 'b0;
     reg  [63:0]                   int_sharedMem = 'b0;
+    // memory signals
+    wire [4:0]                    int_realTaskId_address0;
+    wire                          int_realTaskId_ce0;
+    wire [3:0]                    int_realTaskId_be0;
+    wire [31:0]                   int_realTaskId_d0;
+    wire [31:0]                   int_realTaskId_q0;
+    wire [4:0]                    int_realTaskId_address1;
+    wire                          int_realTaskId_ce1;
+    wire                          int_realTaskId_we1;
+    wire [3:0]                    int_realTaskId_be1;
+    wire [31:0]                   int_realTaskId_d1;
+    wire [31:0]                   int_realTaskId_q1;
+    reg                           int_realTaskId_read;
+    reg                           int_realTaskId_write;
+    reg  [1:0]                    int_realTaskId_shift0;
+    wire [5:0]                    int_n_regions_in_address0;
+    wire                          int_n_regions_in_ce0;
+    wire [3:0]                    int_n_regions_in_be0;
+    wire [31:0]                   int_n_regions_in_d0;
+    wire [31:0]                   int_n_regions_in_q0;
+    wire [5:0]                    int_n_regions_in_address1;
+    wire                          int_n_regions_in_ce1;
+    wire                          int_n_regions_in_we1;
+    wire [3:0]                    int_n_regions_in_be1;
+    wire [31:0]                   int_n_regions_in_d1;
+    wire [31:0]                   int_n_regions_in_q1;
+    reg                           int_n_regions_in_read;
+    reg                           int_n_regions_in_write;
+    reg  [0:0]                    int_n_regions_in_shift0;
+    wire [15:0]                   int_trainedRegions_address0;
+    wire                          int_trainedRegions_ce0;
+    wire [3:0]                    int_trainedRegions_be0;
+    wire [31:0]                   int_trainedRegions_d0;
+    wire [31:0]                   int_trainedRegions_q0;
+    wire [15:0]                   int_trainedRegions_address1;
+    wire                          int_trainedRegions_ce1;
+    wire                          int_trainedRegions_we1;
+    wire [3:0]                    int_trainedRegions_be1;
+    wire [31:0]                   int_trainedRegions_d1;
+    wire [31:0]                   int_trainedRegions_q1;
+    reg                           int_trainedRegions_read;
+    reg                           int_trainedRegions_write;
 
 //------------------------Instantiation------------------
+// int_realTaskId
+run_control_s_axi_ram #(
+    .MEM_STYLE ( "auto" ),
+    .MEM_TYPE  ( "T2P" ),
+    .BYTES     ( 4 ),
+    .DEPTH     ( 32 )
+) int_realTaskId (
+    .clk0      ( ACLK ),
+    .address0  ( int_realTaskId_address0 ),
+    .ce0       ( int_realTaskId_ce0 ),
+    .we0       ( int_realTaskId_be0 ),
+    .d0        ( int_realTaskId_d0 ),
+    .q0        ( int_realTaskId_q0 ),
+    .clk1      ( ACLK ),
+    .address1  ( int_realTaskId_address1 ),
+    .ce1       ( int_realTaskId_ce1 ),
+    .we1       ( int_realTaskId_be1 ),
+    .d1        ( int_realTaskId_d1 ),
+    .q1        ( int_realTaskId_q1 )
+);
+// int_n_regions_in
+run_control_s_axi_ram #(
+    .MEM_STYLE ( "auto" ),
+    .MEM_TYPE  ( "T2P" ),
+    .BYTES     ( 4 ),
+    .DEPTH     ( 64 )
+) int_n_regions_in (
+    .clk0      ( ACLK ),
+    .address0  ( int_n_regions_in_address0 ),
+    .ce0       ( int_n_regions_in_ce0 ),
+    .we0       ( int_n_regions_in_be0 ),
+    .d0        ( int_n_regions_in_d0 ),
+    .q0        ( int_n_regions_in_q0 ),
+    .clk1      ( ACLK ),
+    .address1  ( int_n_regions_in_address1 ),
+    .ce1       ( int_n_regions_in_ce1 ),
+    .we1       ( int_n_regions_in_be1 ),
+    .d1        ( int_n_regions_in_d1 ),
+    .q1        ( int_n_regions_in_q1 )
+);
+// int_trainedRegions
+run_control_s_axi_ram #(
+    .MEM_STYLE ( "auto" ),
+    .MEM_TYPE  ( "T2P" ),
+    .BYTES     ( 4 ),
+    .DEPTH     ( 49152 )
+) int_trainedRegions (
+    .clk0      ( ACLK ),
+    .address0  ( int_trainedRegions_address0 ),
+    .ce0       ( int_trainedRegions_ce0 ),
+    .we0       ( int_trainedRegions_be0 ),
+    .d0        ( int_trainedRegions_d0 ),
+    .q0        ( int_trainedRegions_q0 ),
+    .clk1      ( ACLK ),
+    .address1  ( int_trainedRegions_address1 ),
+    .ce1       ( int_trainedRegions_ce1 ),
+    .we1       ( int_trainedRegions_be1 ),
+    .d1        ( int_trainedRegions_d1 ),
+    .q1        ( int_trainedRegions_q1 )
+);
 
 
 //------------------------AXI write fsm------------------
 assign AWREADY = (wstate == WRIDLE);
-assign WREADY  = (wstate == WRDATA);
+assign WREADY  = (wstate == WRDATA) && (!ar_hs);
 assign BRESP   = 2'b00;  // OKAY
 assign BVALID  = (wstate == WRRESP);
 assign wmask   = { {8{WSTRB[3]}}, {8{WSTRB[2]}}, {8{WSTRB[1]}}, {8{WSTRB[0]}} };
@@ -179,7 +282,7 @@ always @(*) begin
             else
                 wnext = WRIDLE;
         WRDATA:
-            if (WVALID)
+            if (w_hs)
                 wnext = WRRESP;
             else
                 wnext = WRDATA;
@@ -205,7 +308,7 @@ end
 assign ARREADY = (rstate == RDIDLE);
 assign RDATA   = rdata;
 assign RRESP   = 2'b00;  // OKAY
-assign RVALID  = (rstate == RDDATA);
+assign RVALID  = (rstate == RDDATA) & !int_realTaskId_read & !int_n_regions_in_read & !int_trainedRegions_read;
 assign ar_hs   = ARVALID & ARREADY;
 assign raddr   = ARADDR[ADDR_BITS-1:0];
 
@@ -248,6 +351,7 @@ always @(posedge ACLK) begin
                     rdata[3] <= int_ap_ready;
                     rdata[4] <= int_ap_continue;
                     rdata[7] <= int_auto_restart;
+                    rdata[9] <= int_interrupt;
                 end
                 ADDR_GIE: begin
                     rdata <= int_gie;
@@ -261,24 +365,6 @@ always @(posedge ACLK) begin
                 ADDR_CONTR_DATA_0: begin
                     rdata <= int_contr[31:0];
                 end
-                ADDR_TRAINEDREGIONS_DATA_0: begin
-                    rdata <= int_trainedRegions[31:0];
-                end
-                ADDR_TRAINEDREGIONS_DATA_1: begin
-                    rdata <= int_trainedRegions[63:32];
-                end
-                ADDR_REALTASKID_DATA_0: begin
-                    rdata <= int_realTaskId[31:0];
-                end
-                ADDR_REALTASKID_DATA_1: begin
-                    rdata <= int_realTaskId[63:32];
-                end
-                ADDR_N_REGIONS_IN_DATA_0: begin
-                    rdata <= int_n_regions_in[31:0];
-                end
-                ADDR_N_REGIONS_IN_DATA_1: begin
-                    rdata <= int_n_regions_in[63:32];
-                end
                 ADDR_SHAREDMEM_DATA_0: begin
                     rdata <= int_sharedMem[31:0];
                 end
@@ -287,21 +373,39 @@ always @(posedge ACLK) begin
                 end
             endcase
         end
+        else if (int_realTaskId_read) begin
+            rdata <= int_realTaskId_q1;
+        end
+        else if (int_n_regions_in_read) begin
+            rdata <= int_n_regions_in_q1;
+        end
+        else if (int_trainedRegions_read) begin
+            rdata <= int_trainedRegions_q1;
+        end
     end
 end
 
 
 //------------------------Register logic-----------------
-assign interrupt      = int_gie & (|int_isr);
-assign ap_start       = int_ap_start;
-assign task_ap_done   = (ap_done && !auto_restart_status) || auto_restart_done;
-assign task_ap_ready  = ap_ready && !int_auto_restart;
-assign ap_continue    = int_ap_continue || auto_restart_status;
-assign contr          = int_contr;
-assign trainedRegions = int_trainedRegions;
-assign realTaskId     = int_realTaskId;
-assign n_regions_in   = int_n_regions_in;
-assign sharedMem      = int_sharedMem;
+assign interrupt     = int_interrupt;
+assign ap_start      = int_ap_start;
+assign task_ap_done  = (ap_done && !auto_restart_status) || auto_restart_done;
+assign task_ap_ready = ap_ready && !int_auto_restart;
+assign ap_continue   = int_ap_continue || auto_restart_status;
+assign contr         = int_contr;
+assign sharedMem     = int_sharedMem;
+// int_interrupt
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrupt <= 1'b0;
+    else if (ACLK_EN) begin
+        if (int_gie && (|int_isr))
+            int_interrupt <= 1'b1;
+        else
+            int_interrupt <= 1'b0;
+    end
+end
+
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -328,7 +432,7 @@ always @(posedge ACLK) begin
     if (ARESET)
         int_task_ap_done <= 1'b0;
     else if (ACLK_EN) begin
-            int_task_ap_done <= task_ap_done;
+            int_task_ap_done <= task_ap_done && !int_ap_continue;
     end
 end
 
@@ -415,7 +519,7 @@ always @(posedge ACLK) begin
         int_ier <= 1'b0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_IER && WSTRB[0])
-            int_ier <= WDATA[5:0];
+            int_ier <= WDATA[1:0];
     end
 end
 
@@ -426,8 +530,8 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (int_ier[0] & ap_done)
             int_isr[0] <= 1'b1;
-        else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
-            int_isr[0] <= int_isr[0] ^ WDATA[0]; // toggle on write
+        else if (ar_hs && raddr == ADDR_ISR)
+            int_isr[0] <= 1'b0; // clear on read
     end
 end
 
@@ -438,20 +542,8 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (int_ier[1] & ap_ready)
             int_isr[1] <= 1'b1;
-        else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
-            int_isr[1] <= int_isr[1] ^ WDATA[1]; // toggle on write
-    end
-end
-
-// int_isr[5]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_isr[5] <= 1'b0;
-    else if (ACLK_EN) begin
-        if (int_ier[5] & ap_local_deadlock)
-            int_isr[5] <= 1'b1;
-        else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
-            int_isr[5] <= int_isr[5] ^ WDATA[5]; // toggle on write
+        else if (ar_hs && raddr == ADDR_ISR)
+            int_isr[1] <= 1'b0; // clear on read
     end
 end
 
@@ -462,66 +554,6 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_CONTR_DATA_0)
             int_contr[31:0] <= (WDATA[31:0] & wmask) | (int_contr[31:0] & ~wmask);
-    end
-end
-
-// int_trainedRegions[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trainedRegions[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TRAINEDREGIONS_DATA_0)
-            int_trainedRegions[31:0] <= (WDATA[31:0] & wmask) | (int_trainedRegions[31:0] & ~wmask);
-    end
-end
-
-// int_trainedRegions[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trainedRegions[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TRAINEDREGIONS_DATA_1)
-            int_trainedRegions[63:32] <= (WDATA[31:0] & wmask) | (int_trainedRegions[63:32] & ~wmask);
-    end
-end
-
-// int_realTaskId[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_realTaskId[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_REALTASKID_DATA_0)
-            int_realTaskId[31:0] <= (WDATA[31:0] & wmask) | (int_realTaskId[31:0] & ~wmask);
-    end
-end
-
-// int_realTaskId[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_realTaskId[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_REALTASKID_DATA_1)
-            int_realTaskId[63:32] <= (WDATA[31:0] & wmask) | (int_realTaskId[63:32] & ~wmask);
-    end
-end
-
-// int_n_regions_in[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_n_regions_in[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_N_REGIONS_IN_DATA_0)
-            int_n_regions_in[31:0] <= (WDATA[31:0] & wmask) | (int_n_regions_in[31:0] & ~wmask);
-    end
-end
-
-// int_n_regions_in[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_n_regions_in[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_N_REGIONS_IN_DATA_1)
-            int_n_regions_in[63:32] <= (WDATA[31:0] & wmask) | (int_n_regions_in[63:32] & ~wmask);
     end
 end
 
@@ -545,7 +577,239 @@ always @(posedge ACLK) begin
     end
 end
 
+//synthesis translate_off
+always @(posedge ACLK) begin
+    if (ACLK_EN) begin
+        if (int_gie & ~int_isr[0] & int_ier[0] & ap_done)
+            $display ("// Interrupt Monitor : interrupt for ap_done detected @ \"%0t\"", $time);
+        if (int_gie & ~int_isr[1] & int_ier[1] & ap_ready)
+            $display ("// Interrupt Monitor : interrupt for ap_ready detected @ \"%0t\"", $time);
+    end
+end
+//synthesis translate_on
 
 //------------------------Memory logic-------------------
+// realTaskId
+assign int_realTaskId_address0     = realTaskId_address0 >> 2;
+assign int_realTaskId_ce0          = realTaskId_ce0;
+assign int_realTaskId_address1     = ar_hs? raddr[6:2] : waddr[6:2];
+assign int_realTaskId_ce1          = ar_hs | (int_realTaskId_write & WVALID);
+assign int_realTaskId_we1          = int_realTaskId_write & w_hs;
+assign int_realTaskId_be1          = int_realTaskId_we1 ? WSTRB : 'b0;
+assign int_realTaskId_d1           = WDATA;
+// n_regions_in
+assign int_n_regions_in_address0   = n_regions_in_address0 >> 1;
+assign int_n_regions_in_ce0        = n_regions_in_ce0;
+assign int_n_regions_in_address1   = ar_hs? raddr[7:2] : waddr[7:2];
+assign int_n_regions_in_ce1        = ar_hs | (int_n_regions_in_write & WVALID);
+assign int_n_regions_in_we1        = int_n_regions_in_write & w_hs;
+assign int_n_regions_in_be1        = int_n_regions_in_we1 ? WSTRB : 'b0;
+assign int_n_regions_in_d1         = WDATA;
+// trainedRegions
+assign int_trainedRegions_address0 = trainedRegions_address0;
+assign int_trainedRegions_ce0      = trainedRegions_ce0;
+assign int_trainedRegions_address1 = ar_hs? raddr[17:2] : waddr[17:2];
+assign int_trainedRegions_ce1      = ar_hs | (int_trainedRegions_write & WVALID);
+assign int_trainedRegions_we1      = int_trainedRegions_write & w_hs;
+assign int_trainedRegions_be1      = int_trainedRegions_we1 ? WSTRB : 'b0;
+assign int_trainedRegions_d1       = WDATA;
+// int_realTaskId_read
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_realTaskId_read <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ar_hs && raddr >= ADDR_REALTASKID_BASE && raddr <= ADDR_REALTASKID_HIGH)
+            int_realTaskId_read <= 1'b1;
+        else
+            int_realTaskId_read <= 1'b0;
+    end
+end
+
+// int_realTaskId_write
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_realTaskId_write <= 1'b0;
+    else if (ACLK_EN) begin
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_REALTASKID_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_REALTASKID_HIGH)
+            int_realTaskId_write <= 1'b1;
+        else if (w_hs)
+            int_realTaskId_write <= 1'b0;
+    end
+end
+
+// int_realTaskId_shift0
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_realTaskId_shift0 <= 1'b0;
+    else if (ACLK_EN) begin
+        if (realTaskId_ce0)
+            int_realTaskId_shift0 <= realTaskId_address0[1:0];
+    end
+end
+
+// int_n_regions_in_read
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_n_regions_in_read <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ar_hs && raddr >= ADDR_N_REGIONS_IN_BASE && raddr <= ADDR_N_REGIONS_IN_HIGH)
+            int_n_regions_in_read <= 1'b1;
+        else
+            int_n_regions_in_read <= 1'b0;
+    end
+end
+
+// int_n_regions_in_write
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_n_regions_in_write <= 1'b0;
+    else if (ACLK_EN) begin
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_N_REGIONS_IN_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_N_REGIONS_IN_HIGH)
+            int_n_regions_in_write <= 1'b1;
+        else if (w_hs)
+            int_n_regions_in_write <= 1'b0;
+    end
+end
+
+// int_n_regions_in_shift0
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_n_regions_in_shift0 <= 1'b0;
+    else if (ACLK_EN) begin
+        if (n_regions_in_ce0)
+            int_n_regions_in_shift0 <= n_regions_in_address0[0];
+    end
+end
+
+// int_trainedRegions_read
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trainedRegions_read <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ar_hs && raddr >= ADDR_TRAINEDREGIONS_BASE && raddr <= ADDR_TRAINEDREGIONS_HIGH)
+            int_trainedRegions_read <= 1'b1;
+        else
+            int_trainedRegions_read <= 1'b0;
+    end
+end
+
+// int_trainedRegions_write
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trainedRegions_write <= 1'b0;
+    else if (ACLK_EN) begin
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_TRAINEDREGIONS_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_TRAINEDREGIONS_HIGH)
+            int_trainedRegions_write <= 1'b1;
+        else if (w_hs)
+            int_trainedRegions_write <= 1'b0;
+    end
+end
+
 
 endmodule
+
+
+`timescale 1ns/1ps
+
+module run_control_s_axi_ram
+#(parameter
+    MEM_STYLE = "auto",
+    MEM_TYPE  = "S2P",
+    BYTES  = 4,
+    DEPTH  = 256,
+    AWIDTH = log2(DEPTH)
+) (
+    input  wire               clk0,
+    input  wire [AWIDTH-1:0]  address0,
+    input  wire               ce0,
+    input  wire [BYTES-1:0]   we0,
+    input  wire [BYTES*8-1:0] d0,
+    output reg  [BYTES*8-1:0] q0,
+    input  wire               clk1,
+    input  wire [AWIDTH-1:0]  address1,
+    input  wire               ce1,
+    input  wire [BYTES-1:0]   we1,
+    input  wire [BYTES*8-1:0] d1,
+    output reg  [BYTES*8-1:0] q1
+);
+//------------------------ Parameters -------------------
+localparam
+    BYTE_WIDTH = 8,
+    PORT0 = (MEM_TYPE == "S2P") ? "WO" : ((MEM_TYPE == "2P") ? "RO" : "RW"),
+    PORT1 = (MEM_TYPE == "S2P") ? "RO" : "RW";
+//------------------------Local signal-------------------
+(* ram_style = MEM_STYLE*)
+reg  [BYTES*8-1:0] mem[0:DEPTH-1];
+wire re0, re1;
+//------------------------Task and function--------------
+function integer log2;
+    input integer x;
+    integer n, m;
+begin
+    n = 1;
+    m = 2;
+    while (m < x) begin
+        n = n + 1;
+        m = m * 2;
+    end
+    log2 = n;
+end
+endfunction
+//------------------------Body---------------------------
+generate
+    if (MEM_STYLE == "hls_ultra" && PORT0 == "RW") begin
+        assign re0 = ce0 & ~|we0;
+    end else begin
+        assign re0 = ce0;
+    end
+endgenerate
+
+generate
+    if (MEM_STYLE == "hls_ultra" && PORT1 == "RW") begin
+        assign re1 = ce1 & ~|we1;
+    end else begin
+        assign re1 = ce1;
+    end
+endgenerate
+
+// read port 0
+generate if (PORT0 != "WO") begin
+    always @(posedge clk0) begin
+        if (re0) q0 <= mem[address0];
+    end
+end
+endgenerate
+
+// read port 1
+generate if (PORT1 != "WO") begin
+    always @(posedge clk1) begin
+        if (re1) q1 <= mem[address1];
+    end
+end
+endgenerate
+
+integer i;
+// write port 0
+generate if (PORT0 != "RO") begin
+    always @(posedge clk0) begin
+        if (ce0)
+        for (i = 0; i < BYTES; i = i + 1)
+            if (we0[i])
+                mem[address0][i*BYTE_WIDTH +: BYTE_WIDTH] <= d0[i*BYTE_WIDTH +: BYTE_WIDTH];
+    end
+end
+endgenerate
+
+// write port 1
+generate if (PORT1 != "RO") begin
+    always @(posedge clk1) begin
+        if (ce1)
+        for (i = 0; i < BYTES; i = i + 1)
+            if (we1[i])
+                mem[address1][i*BYTE_WIDTH +: BYTE_WIDTH] <= d1[i*BYTE_WIDTH +: BYTE_WIDTH];
+    end
+end
+endgenerate
+
+endmodule
+

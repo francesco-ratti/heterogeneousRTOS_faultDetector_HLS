@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_outcomeInRam_c \
     op interface \
-    ports { outcomeInRam_c_din { O 64 vector } outcomeInRam_c_full_n { I 1 bit } outcomeInRam_c_write { O 1 bit } } \
+    ports { outcomeInRam_c_din { O 64 vector } outcomeInRam_c_num_data_valid { I 5 vector } outcomeInRam_c_fifo_cap { I 5 vector } outcomeInRam_c_full_n { I 1 bit } outcomeInRam_c_write { O 1 bit } } \
 } "
 }
 

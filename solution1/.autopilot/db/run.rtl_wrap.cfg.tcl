@@ -17,7 +17,7 @@ set DataType "int"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "trainedRegions"
-set BitWidth "64"
+set BitWidth "32"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"
@@ -29,7 +29,7 @@ set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "realTaskId"
-set BitWidth "64"
+set BitWidth "8"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"
@@ -41,7 +41,7 @@ set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "n_regions_in"
-set BitWidth "64"
+set BitWidth "16"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"
