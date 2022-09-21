@@ -16,8 +16,8 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="128"/>
         </hw>
       </arg>
-      <arg id="3" access_type="" src_name="n_regions_in" src_type="ap_int&lt;16&gt;*" src_isptr="1" src_bitwidth="16" src_size_or_depth="128">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="16" hw_size_or_depth="128" hw_kernel_support="true">
+      <arg id="3" access_type="r" src_name="n_regions_in" src_type="ap_int&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="128">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="128" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="256"/>
         </hw>
       </arg>

@@ -3,15 +3,15 @@
 // Tool Version Limit: 2022.04
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
-#ifndef run_fifo_w16_d2_S_HH_
-#define run_fifo_w16_d2_S_HH_
+#ifndef run_fifo_w8_d10_S_HH_
+#define run_fifo_w8_d10_S_HH_
 
 #include <systemc>
 using namespace std;
-SC_MODULE(run_fifo_w16_d2_S) {
-    static const unsigned int DATA_WIDTH = 16;
-    static const unsigned int ADDR_WIDTH = 2;
-    static const unsigned int run_fifo_w16_d2_S_depth = 3;
+SC_MODULE(run_fifo_w8_d10_S) {
+    static const unsigned int DATA_WIDTH = 8;
+    static const unsigned int ADDR_WIDTH = 4;
+    static const unsigned int run_fifo_w8_d10_S_depth = 11;
     sc_core::sc_in_clk clk;
     sc_core::sc_in< sc_dt::sc_logic > reset;
     sc_core::sc_out< sc_dt::sc_logic > if_empty_n;
@@ -27,14 +27,14 @@ SC_MODULE(run_fifo_w16_d2_S) {
     sc_core::sc_signal< sc_dt::sc_logic > internal_empty_n;
     sc_core::sc_signal< sc_dt::sc_logic > internal_full_n;
 
-    sc_core::sc_signal< sc_dt::sc_lv<DATA_WIDTH> >  mStorage[run_fifo_w16_d2_S_depth];
+    sc_core::sc_signal< sc_dt::sc_lv<DATA_WIDTH> >  mStorage[run_fifo_w8_d10_S_depth];
     sc_core::sc_signal< sc_dt::sc_uint<ADDR_WIDTH> > mInPtr;
     sc_core::sc_signal< sc_dt::sc_uint<ADDR_WIDTH> > mOutPtr;
     sc_core::sc_signal< sc_dt::sc_uint<1> > mFlag_nEF_hint;
 
     sc_core::sc_trace_file* mTrace;
 
-    SC_CTOR(run_fifo_w16_d2_S) : mTrace(0) {
+    SC_CTOR(run_fifo_w8_d10_S) : mTrace(0) {
         const char* dump_vcd = std::getenv("AP_WRITE_VCD");
         if (dump_vcd && string(dump_vcd) == "1") {
         std::string tracefn = "sc_trace_" +  std::string(name());
@@ -63,7 +63,7 @@ SC_MODULE(run_fifo_w16_d2_S) {
 
         SC_METHOD(proc_dout);
         sensitive << mOutPtr;
-        for (unsigned i = 0; i < run_fifo_w16_d2_S_depth; i++) {
+        for (unsigned i = 0; i < run_fifo_w8_d10_S_depth; i++) {
             sensitive << mStorage[i];
         }
 
@@ -75,7 +75,7 @@ SC_MODULE(run_fifo_w16_d2_S) {
         
     }
 
-    ~run_fifo_w16_d2_S() {
+    ~run_fifo_w8_d10_S() {
         if (mTrace) sc_core::sc_close_vcd_trace_file(mTrace);
     }
 
@@ -95,7 +95,7 @@ SC_MODULE(run_fifo_w16_d2_S) {
                && if_read.read() == sc_dt::SC_LOGIC_1 
                && internal_empty_n.read() == sc_dt::SC_LOGIC_1) {
                 sc_dt::sc_uint<ADDR_WIDTH> ptr;
-                if (mOutPtr.read().to_uint() == (run_fifo_w16_d2_S_depth-1)) {
+                if (mOutPtr.read().to_uint() == (run_fifo_w8_d10_S_depth-1)) {
                     ptr = 0;
                     mFlag_nEF_hint.write(~mFlag_nEF_hint.read());
                 }
@@ -103,7 +103,7 @@ SC_MODULE(run_fifo_w16_d2_S) {
                     ptr = mOutPtr.read();
                     ptr++;
                 }
-                assert(ptr.to_uint() < run_fifo_w16_d2_S_depth);
+                assert(ptr.to_uint() < run_fifo_w8_d10_S_depth);
                 mOutPtr.write(ptr);
             }
             if (if_write_ce.read() == sc_dt::SC_LOGIC_1
@@ -112,12 +112,12 @@ SC_MODULE(run_fifo_w16_d2_S) {
                 sc_dt::sc_uint<ADDR_WIDTH> ptr;
                 ptr = mInPtr.read();
                 mStorage[ptr.to_uint()].write(if_din.read());
-                if (ptr.to_uint() == (run_fifo_w16_d2_S_depth-1)) {
+                if (ptr.to_uint() == (run_fifo_w8_d10_S_depth-1)) {
                     ptr = 0;
                     mFlag_nEF_hint.write(~mFlag_nEF_hint.read());
                 } else {
                     ptr++;
-                    assert(ptr.to_uint() < run_fifo_w16_d2_S_depth);
+                    assert(ptr.to_uint() < run_fifo_w8_d10_S_depth);
                 }
                 mInPtr.write(ptr);
             }
@@ -126,7 +126,7 @@ SC_MODULE(run_fifo_w16_d2_S) {
 
     void proc_dout() {
         sc_dt::sc_uint<ADDR_WIDTH> ptr = mOutPtr.read();
-        if (ptr.to_uint() > run_fifo_w16_d2_S_depth) {
+        if (ptr.to_uint() > run_fifo_w8_d10_S_depth) {
             if_dout.write(sc_dt::sc_lv<DATA_WIDTH>());
         } 
         else {
@@ -153,4 +153,4 @@ SC_MODULE(run_fifo_w16_d2_S) {
 
 };
 
-#endif //run_fifo_w16_d2_S_HH_
+#endif //run_fifo_w8_d10_S_HH_

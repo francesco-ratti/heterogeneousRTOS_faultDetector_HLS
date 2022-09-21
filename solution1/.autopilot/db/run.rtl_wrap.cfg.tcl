@@ -41,7 +41,7 @@ set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "n_regions_in"
-set BitWidth "16"
+set BitWidth "8"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"

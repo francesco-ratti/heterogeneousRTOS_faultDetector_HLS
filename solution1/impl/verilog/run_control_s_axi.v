@@ -38,8 +38,7 @@ module run_control_s_axi
     input  wire [7:0]                    realTaskId_d0,
     input  wire [6:0]                    n_regions_in_address0,
     input  wire                          n_regions_in_ce0,
-    input  wire                          n_regions_in_we0,
-    input  wire [15:0]                   n_regions_in_d0,
+    output wire [7:0]                    n_regions_in_q0,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -86,9 +85,11 @@ module run_control_s_axi
 //                    bit [23:16] - realTaskId[4n+2]
 //                    bit [31:24] - realTaskId[4n+3]
 // 0x00100 ~
-// 0x001ff : Memory 'n_regions_in' (128 * 16b)
-//           Word n : bit [15: 0] - n_regions_in[2n]
-//                    bit [31:16] - n_regions_in[2n+1]
+// 0x0017f : Memory 'n_regions_in' (128 * 8b)
+//           Word n : bit [ 7: 0] - n_regions_in[4n]
+//                    bit [15: 8] - n_regions_in[4n+1]
+//                    bit [23:16] - n_regions_in[4n+2]
+//                    bit [31:24] - n_regions_in[4n+3]
 // 0x40000 ~
 // 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
 //           Word n : bit [31:0] - trainedRegions[n]
@@ -108,7 +109,7 @@ localparam
     ADDR_REALTASKID_BASE     = 19'h00080,
     ADDR_REALTASKID_HIGH     = 19'h000ff,
     ADDR_N_REGIONS_IN_BASE   = 19'h00100,
-    ADDR_N_REGIONS_IN_HIGH   = 19'h001ff,
+    ADDR_N_REGIONS_IN_HIGH   = 19'h0017f,
     ADDR_TRAINEDREGIONS_BASE = 19'h40000,
     ADDR_TRAINEDREGIONS_HIGH = 19'h7ffff,
     WRIDLE                   = 2'd0,
@@ -165,12 +166,10 @@ localparam
     reg                           int_realTaskId_read;
     reg                           int_realTaskId_write;
     reg  [1:0]                    int_realTaskId_shift0;
-    wire [5:0]                    int_n_regions_in_address0;
+    wire [4:0]                    int_n_regions_in_address0;
     wire                          int_n_regions_in_ce0;
-    wire [3:0]                    int_n_regions_in_be0;
-    wire [31:0]                   int_n_regions_in_d0;
     wire [31:0]                   int_n_regions_in_q0;
-    wire [5:0]                    int_n_regions_in_address1;
+    wire [4:0]                    int_n_regions_in_address1;
     wire                          int_n_regions_in_ce1;
     wire                          int_n_regions_in_we1;
     wire [3:0]                    int_n_regions_in_be1;
@@ -178,7 +177,7 @@ localparam
     wire [31:0]                   int_n_regions_in_q1;
     reg                           int_n_regions_in_read;
     reg                           int_n_regions_in_write;
-    reg  [0:0]                    int_n_regions_in_shift0;
+    reg  [1:0]                    int_n_regions_in_shift0;
     wire [15:0]                   int_trainedRegions_address0;
     wire                          int_trainedRegions_ce0;
     wire [3:0]                    int_trainedRegions_be0;
@@ -217,15 +216,15 @@ run_control_s_axi_ram #(
 // int_n_regions_in
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
-    .MEM_TYPE  ( "T2P" ),
+    .MEM_TYPE  ( "2P" ),
     .BYTES     ( 4 ),
-    .DEPTH     ( 64 )
+    .DEPTH     ( 32 )
 ) int_n_regions_in (
     .clk0      ( ACLK ),
     .address0  ( int_n_regions_in_address0 ),
     .ce0       ( int_n_regions_in_ce0 ),
-    .we0       ( int_n_regions_in_be0 ),
-    .d0        ( int_n_regions_in_d0 ),
+    .we0       ( {4{1'b0}} ),
+    .d0        ( {8{1'b0}} ),
     .q0        ( int_n_regions_in_q0 ),
     .clk1      ( ACLK ),
     .address1  ( int_n_regions_in_address1 ),
@@ -598,9 +597,10 @@ assign int_realTaskId_we1          = int_realTaskId_write & w_hs;
 assign int_realTaskId_be1          = int_realTaskId_we1 ? WSTRB : 'b0;
 assign int_realTaskId_d1           = WDATA;
 // n_regions_in
-assign int_n_regions_in_address0   = n_regions_in_address0 >> 1;
+assign int_n_regions_in_address0   = n_regions_in_address0 >> 2;
 assign int_n_regions_in_ce0        = n_regions_in_ce0;
-assign int_n_regions_in_address1   = ar_hs? raddr[7:2] : waddr[7:2];
+assign n_regions_in_q0             = int_n_regions_in_q0 >> (int_n_regions_in_shift0 * 8);
+assign int_n_regions_in_address1   = ar_hs? raddr[6:2] : waddr[6:2];
 assign int_n_regions_in_ce1        = ar_hs | (int_n_regions_in_write & WVALID);
 assign int_n_regions_in_we1        = int_n_regions_in_write & w_hs;
 assign int_n_regions_in_be1        = int_n_regions_in_we1 ? WSTRB : 'b0;
@@ -677,7 +677,7 @@ always @(posedge ACLK) begin
         int_n_regions_in_shift0 <= 1'b0;
     else if (ACLK_EN) begin
         if (n_regions_in_ce0)
-            int_n_regions_in_shift0 <= n_regions_in_address0[0];
+            int_n_regions_in_shift0 <= n_regions_in_address0[1:0];
     end
 end
 

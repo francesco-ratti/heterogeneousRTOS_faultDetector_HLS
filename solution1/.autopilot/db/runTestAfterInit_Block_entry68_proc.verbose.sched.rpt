@@ -1,0 +1,122 @@
+
+
+================================================================
+== Vitis HLS Report for 'runTestAfterInit_Block_entry68_proc'
+================================================================
+* Date:           Wed Sep 21 14:53:07 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        detector_solid
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  20.00 ns|  3.634 ns|     5.40 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  20.000 ns|  20.000 ns|    1|    1|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.63>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%taskId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %taskId" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 3 'read' 'taskId_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (3.63ns)   --->   "%write_ln376 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %taskId_c16, i16 %taskId_read" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 4 'write' 'write_ln376' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%zext_ln587 = zext i16 %taskId_read"   --->   Operation 5 'zext' 'zext_ln587' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 6 'getelementptr' 'n_regions_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 7 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %taskId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specreset_ln376 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 9 'specreset' 'specreset_ln376' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 10 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln346 = ret i8 %n_regions_V_load" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 11 'ret' 'ret_ln346' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 5.4ns.
+
+ <State 1>: 3.63ns
+The critical path consists of the following:
+	wire read operation ('taskId_read', detector_solid/abs_solid_detector.cpp:376) on port 'taskId' (detector_solid/abs_solid_detector.cpp:376) [5]  (0 ns)
+	fifo write operation ('write_ln376', detector_solid/abs_solid_detector.cpp:376) on port 'taskId_c16' (detector_solid/abs_solid_detector.cpp:376) [6]  (3.63 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('n_regions_V_load', detector_solid/abs_solid_detector.cpp:346) on array 'n_regions_V' [10]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

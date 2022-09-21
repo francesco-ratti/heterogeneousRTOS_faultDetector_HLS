@@ -13,6 +13,7 @@ set hasInterrupt 0
 set C_modelName {find_region}
 set C_modelType { int 5 }
 set C_modelArgList {
+	{ n_regions int 8 regular  }
 	{ d_read float 32 regular  }
 	{ d_read_23 float 32 regular  }
 	{ d_read_24 float 32 regular  }
@@ -23,7 +24,8 @@ set C_modelArgList {
 	{ d_read_29 float 32 regular  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "d_read", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
+	{ "Name" : "n_regions", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "d_read", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "d_read_23", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "d_read_24", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "d_read_25", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
@@ -33,7 +35,7 @@ set C_modelArgMapList {[
  	{ "Name" : "d_read_29", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 5} ]}
 # RTL Port declarations: 
-set portNum 16
+set portNum 17
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -42,14 +44,15 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ ap_ce sc_in sc_logic 1 ce -1 } 
-	{ d_read sc_in sc_lv 32 signal 0 } 
-	{ d_read_23 sc_in sc_lv 32 signal 1 } 
-	{ d_read_24 sc_in sc_lv 32 signal 2 } 
-	{ d_read_25 sc_in sc_lv 32 signal 3 } 
-	{ d_read_26 sc_in sc_lv 32 signal 4 } 
-	{ d_read_27 sc_in sc_lv 32 signal 5 } 
-	{ d_read_28 sc_in sc_lv 32 signal 6 } 
-	{ d_read_29 sc_in sc_lv 32 signal 7 } 
+	{ n_regions sc_in sc_lv 8 signal 0 } 
+	{ d_read sc_in sc_lv 32 signal 1 } 
+	{ d_read_23 sc_in sc_lv 32 signal 2 } 
+	{ d_read_24 sc_in sc_lv 32 signal 3 } 
+	{ d_read_25 sc_in sc_lv 32 signal 4 } 
+	{ d_read_26 sc_in sc_lv 32 signal 5 } 
+	{ d_read_27 sc_in sc_lv 32 signal 6 } 
+	{ d_read_28 sc_in sc_lv 32 signal 7 } 
+	{ d_read_29 sc_in sc_lv 32 signal 8 } 
 	{ ap_return sc_out sc_lv 5 signal -1 } 
 }
 set NewPortList {[ 
@@ -60,6 +63,7 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "ap_ce", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "ce", "bundle":{"name": "ap_ce", "role": "default" }} , 
+ 	{ "name": "n_regions", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions", "role": "default" }} , 
  	{ "name": "d_read", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_read", "role": "default" }} , 
  	{ "name": "d_read_23", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_read_23", "role": "default" }} , 
  	{ "name": "d_read_24", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "d_read_24", "role": "default" }} , 
@@ -86,6 +90,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
+			{"Name" : "n_regions", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_23", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_24", "Type" : "None", "Direction" : "I"},
@@ -94,12 +99,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "d_read_27", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_28", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_29", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U14", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U15", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U17", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U18", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	find_region {
+		n_regions {Type I LastRead 0 FirstWrite -1}
 		d_read {Type I LastRead 0 FirstWrite -1}
 		d_read_23 {Type I LastRead 1 FirstWrite -1}
 		d_read_24 {Type I LastRead 2 FirstWrite -1}
@@ -121,6 +127,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
+	n_regions { ap_none {  { n_regions in_data 0 8 } } }
 	d_read { ap_none {  { d_read in_data 0 32 } } }
 	d_read_23 { ap_none {  { d_read_23 in_data 0 32 } } }
 	d_read_24 { ap_none {  { d_read_24 in_data 0 32 } } }

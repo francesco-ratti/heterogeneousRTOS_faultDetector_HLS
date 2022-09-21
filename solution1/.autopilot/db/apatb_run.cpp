@@ -330,7 +330,6 @@ void set_string(std::string list, std::string* class_list) {
 
 struct __cosim_s4__ { char data[4]; };
 struct __cosim_s1__ { char data[1]; };
-struct __cosim_s2__ { char data[2]; };
 struct __cosim_s32__ { char data[32]; };
 extern "C" void run_hw_stub_wrapper(__cosim_s4__*, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
 
@@ -529,10 +528,10 @@ unsigned __xlx_offset_byte_param_n_regions_in = 0;
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_n_regions_in, 'b');
-transaction<16> tr(128);
-  __xlx_offset_byte_param_n_regions_in = 0*2;
+transaction<8> tr(128);
+  __xlx_offset_byte_param_n_regions_in = 0*1;
   if (__xlx_apatb_param_n_regions_in) {
-tr.import<2>((char*)__xlx_apatb_param_n_regions_in, 128, 0);
+tr.import<1>((char*)__xlx_apatb_param_n_regions_in, 128, 0);
   }
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, tr.p, tr.tbytes);
 }
@@ -543,11 +542,11 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, tr.p, tr.tbytes);
 {
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, begin_str(AESL_transaction));
 {
-  __xlx_offset_byte_param_n_regions_in = 0*2;
+  __xlx_offset_byte_param_n_regions_in = 0*1;
 if (__xlx_apatb_param_n_regions_in) {
 for (size_t i = 0; i < 128; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_n_regions_in + i * 2;
-std::string s = formatData(pos, 16);
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_n_regions_in + i * 1;
+std::string s = formatData(pos, 8);
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, s);
 }
 }

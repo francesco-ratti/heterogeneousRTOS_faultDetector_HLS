@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Wed Sep 21 00:46:55 2022
+    * Date:           Wed Sep 21 14:53:13 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution1 (Vitis Kernel Flow Target)
@@ -15,18 +15,20 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +----------------------+------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+------------+-----+
-    |        Modules       | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |        |    |           |            |     |
-    |        & Loops       | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  | DSP|     FF    |     LUT    | URAM|
-    +----------------------+------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+------------+-----+
-    |+ run                 |     -|   0.00|      148|  2.960e+03|         -|      149|     -|        no|  8 (2%)|   -|  6491 (6%)|  7582 (14%)|    -|
-    | + runTestAfterInit*  |     -|   0.00|      145|  2.900e+03|         -|        8|     -|  dataflow|  8 (2%)|   -|  4870 (4%)|   5189 (9%)|    -|
-    |  + entry_proc        |     -|  10.97|        0|      0.000|         -|        0|     -|        no|       -|   -|    2 (~0%)|    20 (~0%)|    -|
-    |  + read_test         |     -|   0.00|       71|  1.420e+03|         -|        8|     -|       yes|       -|   -|  441 (~0%)|   163 (~0%)|    -|
-    |  + run_test          |     -|   0.50|       28|    560.000|         -|        8|     -|       yes|       -|   -|  1126 (1%)|   1354 (2%)|    -|
-    |   + find_region      |     -|   0.50|        9|    180.000|         -|        8|     -|       yes|       -|   -|  258 (~0%)|    613 (1%)|    -|
-    |  + writeOutcome      |     -|   0.00|       72|  1.440e+03|         -|        8|     -|       yes|       -|   -|  846 (~0%)|   2463 (4%)|    -|
-    +----------------------+------+-------+---------+-----------+----------+---------+------+----------+--------+----+-----------+------------+-----+
+    +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |                 Modules                 | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |            |     |
+    |                 & Loops                 | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
+    +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |+ run                                    |     -|   0.00|      148|  2.960e+03|         -|      149|     -|        no|  10 (3%)|   -|  6626 (6%)|  7956 (14%)|    -|
+    | + runTestAfterInit*                     |     -|   0.00|      145|  2.900e+03|         -|        8|     -|  dataflow|   8 (2%)|   -|  4865 (4%)|  5445 (10%)|    -|
+    |  + entry_proc                           |     -|  10.97|        0|      0.000|         -|        0|     -|        no|        -|   -|    2 (~0%)|    20 (~0%)|    -|
+    |  + read_test                            |     -|   0.00|       71|  1.420e+03|         -|        8|     -|       yes|        -|   -|  345 (~0%)|   122 (~0%)|    -|
+    |  + runTestAfterInit_Block_entry68_proc  |     -|  10.97|        1|     20.000|         -|        1|     -|        no|        -|   -|    3 (~0%)|    34 (~0%)|    -|
+    |  + run_test                             |     -|   2.27|       27|    540.000|         -|        8|     -|       yes|        -|   -|  1115 (1%)|   1551 (2%)|    -|
+    |   + find_region                         |     -|   2.27|        9|    180.000|         -|        8|     -|       yes|        -|   -|  295 (~0%)|    833 (1%)|    -|
+    |  + writeOutcome                         |     -|   0.00|       72|  1.440e+03|         -|        8|     -|       yes|        -|   -|  846 (~0%)|   2463 (4%)|    -|
+    | o VITIS_LOOP_393_2                      |     -|  14.60|       16|    320.000|         2|        -|     8|        no|        -|   -|          -|           -|    -|
+    +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
 
 
 ================================================================
@@ -41,11 +43,11 @@
 +------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
-+---------------+------------+---------------+--------+----------+
-| Interface     | Data Width | Address Width | Offset | Register |
-+---------------+------------+---------------+--------+----------+
-| s_axi_control | 32         | 19            | 16     | 0        |
-+---------------+------------+---------------+--------+----------+
++---------------+------------+---------------+--------+----------+-------------------+
+| Interface     | Data Width | Address Width | Offset | Register | Resource Estimate |
++---------------+------------+---------------+--------+----------+-------------------+
+| s_axi_control | 32         | 19            | 16     | 0        | BRAM=1            |
++---------------+------------+---------------+--------+----------+-------------------+
 
 * S_AXILITE Registers
 +---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
@@ -88,7 +90,7 @@
 | contr          | in        | controlStr            |
 | trainedRegions | unused    | REGION_T*             |
 | realTaskId     | unused    | ap_int<8>*            |
-| n_regions_in   | unused    | ap_int<16>*           |
+| n_regions_in   | in        | ap_int<8>*            |
 | sharedMem      | inout     | ap_int<32>*           |
 | toScheduler    | out       | stream<ap_int<8>, 0>& |
 +----------------+-----------+-----------------------+
@@ -100,7 +102,7 @@
 | contr          | s_axi_control | register  |          | name=contr offset=0x10 range=32                |
 | trainedRegions | s_axi_control | memory    |          | name=trainedRegions offset=262144 range=262144 |
 | realTaskId     | s_axi_control | memory    |          | name=realTaskId offset=128 range=128           |
-| n_regions_in   | s_axi_control | memory    |          | name=n_regions_in offset=256 range=256         |
+| n_regions_in   | s_axi_control | memory    |          | name=n_regions_in offset=256 range=128         |
 | sharedMem      | m_axi_gmem    | interface |          |                                                |
 | sharedMem      | s_axi_control | register  | offset   | name=sharedMem_1 offset=0x18 range=32          |
 | sharedMem      | s_axi_control | register  | offset   | name=sharedMem_2 offset=0x1c range=32          |
@@ -118,20 +120,21 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+--------------------------+-----+--------+--------------------+------+--------+---------+
-| Name                     | DSP | Pragma | Variable           | Op   | Impl   | Latency |
-+--------------------------+-----+--------+--------------------+------+--------+---------+
-| + run                    | 0   |        |                    |      |        |         |
-|   outcomeInRam_fu_159_p2 | -   |        | outcomeInRam       | add  | fabric | 0       |
-|  + runTestAfterInit      | 0   |        |                    |      |        |         |
-|    taskId_c12_channel_U  | -   |        | taskId_c12_channel | fifo | srl    | 0       |
-|    error_U               | -   |        | error              | fifo | srl    | 0       |
-|   + writeOutcome         | 0   |        |                    |      |        |         |
-|     empty_29_fu_165_p2   | -   |        | empty_29           | add  | fabric | 0       |
-|     empty_30_fu_171_p2   | -   |        | empty_30           | add  | fabric | 0       |
-|     empty_31_fu_177_p2   | -   |        | empty_31           | add  | fabric | 0       |
-|     empty_36_fu_251_p2   | -   |        | empty_36           | add  | fabric | 0       |
-+--------------------------+-----+--------+--------------------+------+--------+---------+
++-----------------------------------+-----+--------+------------------------------+------+--------+---------+
+| Name                              | DSP | Pragma | Variable                     | Op   | Impl   | Latency |
++-----------------------------------+-----+--------+------------------------------+------+--------+---------+
+| + run                             | 0   |        |                              |      |        |         |
+|   outcomeInRam_fu_306_p2          | -   |        | outcomeInRam                 | add  | fabric | 0       |
+|   i_2_fu_335_p2                   | -   |        | i_2                          | add  | fabric | 0       |
+|  + runTestAfterInit               | 0   |        |                              |      |        |         |
+|    n_regions_V_load_loc_channel_U | -   |        | n_regions_V_load_loc_channel | fifo | srl    | 0       |
+|    error_U                        | -   |        | error                        | fifo | srl    | 0       |
+|   + writeOutcome                  | 0   |        |                              |      |        |         |
+|     empty_33_fu_165_p2            | -   |        | empty_33                     | add  | fabric | 0       |
+|     empty_34_fu_171_p2            | -   |        | empty_34                     | add  | fabric | 0       |
+|     empty_35_fu_177_p2            | -   |        | empty_35                     | add  | fabric | 0       |
+|     empty_40_fu_251_p2            | -   |        | empty_40                     | add  | fabric | 0       |
++-----------------------------------+-----+--------+------------------------------+------+--------+---------+
 
 
 ================================================================
@@ -140,9 +143,11 @@
 +---------------------+------+------+--------+----------------+---------+------+---------+
 | Name                | BRAM | URAM | Pragma | Variable       | Storage | Impl | Latency |
 +---------------------+------+------+--------+----------------+---------+------+---------+
-| + run               | 8    | 0    |        |                |         |      |         |
+| + run               | 10   | 0    |        |                |         |      |         |
+|   n_regions_V_U     | 1    | -    |        | n_regions_V    | ram_1p  | auto | 1       |
 |  + runTestAfterInit | 8    | 0    |        |                |         |      |         |
 |    outcomeInRam_c_U | -    | -    |        | outcomeInRam_c | fifo    | srl  | 0       |
+|    taskId_c16_U     | -    | -    |        | taskId_c16     | fifo    | srl  | 0       |
 |    taskId_c_U       | -    | -    |        | taskId_c       | fifo    | srl  | 0       |
 +---------------------+------+------+--------+----------------+---------+------+---------+
 
@@ -154,24 +159,26 @@
 +-----------------+---------------------------------+---------------------------------------------------------------+
 | Type            | Options                         | Location                                                      |
 +-----------------+---------------------------------+---------------------------------------------------------------+
+| unroll          |                                 | detector_solid/abs_solid_detector.cpp:38 in find_region       |
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:49 in find_region       |
-| unroll          |                                 | detector_solid/abs_solid_detector.cpp:57 in find_region       |
-| unroll          |                                 | detector_solid/abs_solid_detector.cpp:83 in is_valid          |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:303 in writeoutcome     |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:316 in read_test        |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:321 in run_test         |
-| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:326 in runtestafterinit |
-| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:351 in run              |
-| interface       | s_axilite port = realTaskId     | detector_solid/abs_solid_detector.cpp:352 in run              |
-| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:353 in run              |
-| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:354 in run, sharedMem   |
-| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:355 in run, toScheduler |
-| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:361 in run, data        |
-| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:362 in run, n_regions   |
-| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:364 in run, data        |
-| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:365 in run, regions     |
-| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:366 in run, data_key    |
-| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:375 in run              |
+| unroll          |                                 | detector_solid/abs_solid_detector.cpp:75 in is_valid          |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:315 in writeoutcome     |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:328 in read_test        |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:333 in run_test         |
+| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:338 in runtestafterinit |
+| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:363 in run              |
+| interface       | s_axilite port = realTaskId     | detector_solid/abs_solid_detector.cpp:364 in run              |
+| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:365 in run              |
+| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:366 in run, sharedMem   |
+| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:367 in run, toScheduler |
+| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:374 in run, data        |
+| reset           | variable=regions                | detector_solid/abs_solid_detector.cpp:375 in run, regions     |
+| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:376 in run, n_regions   |
+| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:378 in run, data        |
+| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:379 in run, regions     |
+| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:380 in run, data_key    |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:389 in run              |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:394 in run              |
 +-----------------+---------------------------------+---------------------------------------------------------------+
 
 

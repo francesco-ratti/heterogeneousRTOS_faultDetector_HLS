@@ -31,15 +31,15 @@ realTaskId {
 	byte_write 0
 }
 n_regions_in { 
-	dir X
-	width 16
+	dir I
+	width 8
 	depth 128
 	mode ap_memory
 	offset 256
-	offset_end 511
+	offset_end 383
 	core_op ram_1p
 	core_impl auto
-	core_latency 3
+	core_latency 1
 	byte_write 0
 }
 ap_start { }

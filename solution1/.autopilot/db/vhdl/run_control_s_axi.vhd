@@ -41,8 +41,7 @@ port (
     realTaskId_d0         :in   STD_LOGIC_VECTOR(7 downto 0);
     n_regions_in_address0 :in   STD_LOGIC_VECTOR(6 downto 0);
     n_regions_in_ce0      :in   STD_LOGIC;
-    n_regions_in_we0      :in   STD_LOGIC;
-    n_regions_in_d0       :in   STD_LOGIC_VECTOR(15 downto 0);
+    n_regions_in_q0       :out  STD_LOGIC_VECTOR(7 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -91,9 +90,11 @@ end entity run_control_s_axi;
 --                    bit [23:16] - realTaskId[4n+2]
 --                    bit [31:24] - realTaskId[4n+3]
 -- 0x00100 ~
--- 0x001ff : Memory 'n_regions_in' (128 * 16b)
---           Word n : bit [15: 0] - n_regions_in[2n]
---                    bit [31:16] - n_regions_in[2n+1]
+-- 0x0017f : Memory 'n_regions_in' (128 * 8b)
+--           Word n : bit [ 7: 0] - n_regions_in[4n]
+--                    bit [15: 8] - n_regions_in[4n+1]
+--                    bit [23:16] - n_regions_in[4n+2]
+--                    bit [31:24] - n_regions_in[4n+3]
 -- 0x40000 ~
 -- 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
 --           Word n : bit [31:0] - trainedRegions[n]
@@ -116,7 +117,7 @@ architecture behave of run_control_s_axi is
     constant ADDR_REALTASKID_BASE     : INTEGER := 16#00080#;
     constant ADDR_REALTASKID_HIGH     : INTEGER := 16#000ff#;
     constant ADDR_N_REGIONS_IN_BASE   : INTEGER := 16#00100#;
-    constant ADDR_N_REGIONS_IN_HIGH   : INTEGER := 16#001ff#;
+    constant ADDR_N_REGIONS_IN_HIGH   : INTEGER := 16#0017f#;
     constant ADDR_TRAINEDREGIONS_BASE : INTEGER := 16#40000#;
     constant ADDR_TRAINEDREGIONS_HIGH : INTEGER := 16#7ffff#;
     constant ADDR_BITS         : INTEGER := 19;
@@ -165,12 +166,10 @@ architecture behave of run_control_s_axi is
     signal int_realTaskId_read : STD_LOGIC;
     signal int_realTaskId_write : STD_LOGIC;
     signal int_realTaskId_shift0 : UNSIGNED(1 downto 0);
-    signal int_n_regions_in_address0 : UNSIGNED(5 downto 0);
+    signal int_n_regions_in_address0 : UNSIGNED(4 downto 0);
     signal int_n_regions_in_ce0 : STD_LOGIC;
-    signal int_n_regions_in_be0 : UNSIGNED(3 downto 0);
-    signal int_n_regions_in_d0 : UNSIGNED(31 downto 0);
     signal int_n_regions_in_q0 : UNSIGNED(31 downto 0);
-    signal int_n_regions_in_address1 : UNSIGNED(5 downto 0);
+    signal int_n_regions_in_address1 : UNSIGNED(4 downto 0);
     signal int_n_regions_in_ce1 : STD_LOGIC;
     signal int_n_regions_in_we1 : STD_LOGIC;
     signal int_n_regions_in_be1 : UNSIGNED(3 downto 0);
@@ -178,7 +177,7 @@ architecture behave of run_control_s_axi is
     signal int_n_regions_in_q1 : UNSIGNED(31 downto 0);
     signal int_n_regions_in_read : STD_LOGIC;
     signal int_n_regions_in_write : STD_LOGIC;
-    signal int_n_regions_in_shift0 : UNSIGNED(0 downto 0);
+    signal int_n_regions_in_shift0 : UNSIGNED(1 downto 0);
     signal int_trainedRegions_address0 : UNSIGNED(15 downto 0);
     signal int_trainedRegions_ce0 : STD_LOGIC;
     signal int_trainedRegions_be0 : UNSIGNED(3 downto 0);
@@ -254,16 +253,16 @@ port map (
 int_n_regions_in : run_control_s_axi_ram
 generic map (
      MEM_STYLE => "auto",
-     MEM_TYPE  => "T2P",
+     MEM_TYPE  => "2P",
      BYTES     => 4,
-     DEPTH     => 64,
-     AWIDTH    => log2(64))
+     DEPTH     => 32,
+     AWIDTH    => log2(32))
 port map (
      clk0      => ACLK,
      address0  => int_n_regions_in_address0,
      ce0       => int_n_regions_in_ce0,
-     we0       => int_n_regions_in_be0,
-     d0        => int_n_regions_in_d0,
+     we0       => (others=>'0'),
+     d0        => (others=>'0'),
      q0        => int_n_regions_in_q0,
      clk1      => ACLK,
      address1  => int_n_regions_in_address1,
@@ -690,9 +689,10 @@ port map (
     int_realTaskId_be1   <= UNSIGNED(WSTRB) when int_realTaskId_we1 = '1' else (others=>'0');
     int_realTaskId_d1    <= UNSIGNED(WDATA);
     -- n_regions_in
-    int_n_regions_in_address0 <= SHIFT_RIGHT(UNSIGNED(n_regions_in_address0), 1)(5 downto 0);
+    int_n_regions_in_address0 <= SHIFT_RIGHT(UNSIGNED(n_regions_in_address0), 2)(4 downto 0);
     int_n_regions_in_ce0 <= n_regions_in_ce0;
-    int_n_regions_in_address1 <= raddr(7 downto 2) when ar_hs = '1' else waddr(7 downto 2);
+    n_regions_in_q0      <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_n_regions_in_q0, TO_INTEGER(int_n_regions_in_shift0) * 8)(7 downto 0));
+    int_n_regions_in_address1 <= raddr(6 downto 2) when ar_hs = '1' else waddr(6 downto 2);
     int_n_regions_in_ce1 <= '1' when ar_hs = '1' or (int_n_regions_in_write = '1' and WVALID  = '1') else '0';
     int_n_regions_in_we1 <= '1' when int_n_regions_in_write = '1' and w_hs = '1' else '0';
     int_n_regions_in_be1 <= UNSIGNED(WSTRB) when int_n_regions_in_we1 = '1' else (others=>'0');
@@ -786,7 +786,7 @@ port map (
                 int_n_regions_in_shift0 <= (others=>'0');
             elsif (ACLK_EN = '1') then
                 if (n_regions_in_ce0 = '1') then
-                    int_n_regions_in_shift0 <= UNSIGNED(n_regions_in_address0(0 downto 0));
+                    int_n_regions_in_shift0 <= UNSIGNED(n_regions_in_address0(1 downto 0));
                 end if;
             end if;
         end if;

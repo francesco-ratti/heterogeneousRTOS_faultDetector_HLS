@@ -33,9 +33,11 @@
 //                    bit [23:16] - realTaskId[4n+2]
 //                    bit [31:24] - realTaskId[4n+3]
 // 0x00100 ~
-// 0x001ff : Memory 'n_regions_in' (128 * 16b)
-//           Word n : bit [15: 0] - n_regions_in[2n]
-//                    bit [31:16] - n_regions_in[2n+1]
+// 0x0017f : Memory 'n_regions_in' (128 * 8b)
+//           Word n : bit [ 7: 0] - n_regions_in[4n]
+//                    bit [15: 8] - n_regions_in[4n+1]
+//                    bit [23:16] - n_regions_in[4n+2]
+//                    bit [31:24] - n_regions_in[4n+3]
 // 0x40000 ~
 // 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
 //           Word n : bit [31:0] - trainedRegions[n]
@@ -54,8 +56,8 @@
 #define CONTROL_WIDTH_REALTASKID         8
 #define CONTROL_DEPTH_REALTASKID         128
 #define CONTROL_ADDR_N_REGIONS_IN_BASE   0x00100
-#define CONTROL_ADDR_N_REGIONS_IN_HIGH   0x001ff
-#define CONTROL_WIDTH_N_REGIONS_IN       16
+#define CONTROL_ADDR_N_REGIONS_IN_HIGH   0x0017f
+#define CONTROL_WIDTH_N_REGIONS_IN       8
 #define CONTROL_DEPTH_N_REGIONS_IN       128
 #define CONTROL_ADDR_TRAINEDREGIONS_BASE 0x40000
 #define CONTROL_ADDR_TRAINEDREGIONS_HIGH 0x7ffff

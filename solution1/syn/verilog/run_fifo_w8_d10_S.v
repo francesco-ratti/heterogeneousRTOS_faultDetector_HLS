@@ -6,16 +6,16 @@
 
 `timescale 1 ns / 1 ps
 
-module run_fifo_w16_d2_S_shiftReg (
+module run_fifo_w8_d10_S_shiftReg (
     clk,
     data,
     ce,
     a,
     q);
 
-parameter DATA_WIDTH = 32'd16;
-parameter ADDR_WIDTH = 32'd1;
-parameter DEPTH = 2'd2;
+parameter DATA_WIDTH = 32'd8;
+parameter ADDR_WIDTH = 32'd4;
+parameter DEPTH = 5'd10;
 
 input clk;
 input [DATA_WIDTH-1:0] data;
@@ -40,7 +40,7 @@ assign q = SRL_SIG[a];
 
 endmodule
 
-module run_fifo_w16_d2_S (
+module run_fifo_w8_d10_S (
     clk,
     reset,
     if_num_data_valid,
@@ -55,9 +55,9 @@ module run_fifo_w16_d2_S (
     if_din);
 
 parameter MEM_STYLE   = "shiftreg";
-parameter DATA_WIDTH  = 32'd16;
-parameter ADDR_WIDTH  = 32'd1;
-parameter DEPTH       = 2'd2;
+parameter DATA_WIDTH  = 32'd8;
+parameter ADDR_WIDTH  = 32'd4;
+parameter DEPTH       = 5'd10;
 
 input clk;
 input reset;
@@ -95,17 +95,17 @@ always @ (posedge clk) begin
         if (((if_read & if_read_ce) == 1 & internal_empty_n == 1) && 
             ((if_write & if_write_ce) == 0 | internal_full_n == 0))
         begin
-            mOutPtr <= mOutPtr - 2'd1;
-            if (mOutPtr == 2'd0)
+            mOutPtr <= mOutPtr - 5'd1;
+            if (mOutPtr == 5'd0)
                 internal_empty_n <= 1'b0;
             internal_full_n <= 1'b1;
         end 
         else if (((if_read & if_read_ce) == 0 | internal_empty_n == 0) && 
             ((if_write & if_write_ce) == 1 & internal_full_n == 1))
         begin
-            mOutPtr <= mOutPtr + 2'd1;
+            mOutPtr <= mOutPtr + 5'd1;
             internal_empty_n <= 1'b1;
-            if (mOutPtr == DEPTH - 2'd2)
+            if (mOutPtr == DEPTH - 5'd2)
                 internal_full_n <= 1'b0;
         end 
     end
@@ -116,12 +116,12 @@ assign shiftReg_ce = (if_write & if_write_ce) & internal_full_n;
 assign if_num_data_valid = mOutPtr + 1'b1;
 assign if_fifo_cap = DEPTH;
 
-run_fifo_w16_d2_S_shiftReg 
+run_fifo_w8_d10_S_shiftReg 
 #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
     .DEPTH(DEPTH))
-U_run_fifo_w16_d2_S_ram (
+U_run_fifo_w8_d10_S_ram (
     .clk(clk),
     .data(shiftReg_data),
     .ce(shiftReg_ce),

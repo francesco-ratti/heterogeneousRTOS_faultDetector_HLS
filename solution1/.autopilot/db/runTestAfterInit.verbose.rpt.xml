@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTestAfterInit'" level="0">
-<item name = "Date">Wed Sep 21 00:46:54 2022
+<item name = "Date">Wed Sep 21 14:53:12 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -33,7 +33,8 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="entry_proc_U0">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="read_test_U0">read_test, 71, 71, 1.420 us, 1.420 us, 8, 8, yes</column>
-<column name="run_test_U0">run_test, 28, 28, 0.560 us, 0.560 us, 8, 8, yes</column>
+<column name="runTestAfterInit_Block_entry68_proc_U0">runTestAfterInit_Block_entry68_proc, 1, 1, 20.000 ns, 20.000 ns, 1, 1, no</column>
+<column name="run_test_U0">run_test, 27, 27, 0.540 us, 0.540 us, 8, 8, yes</column>
 <column name="writeOutcome_U0">writeOutcome, 72, 72, 1.440 us, 1.440 us, 8, 8, yes</column>
 </table>
 </item>
@@ -52,13 +53,13 @@
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 52, -</column>
-<column name="FIFO">-, -, 396, 270, -</column>
-<column name="Instance">-, -, 2415, 4000, -</column>
+<column name="FIFO">-, -, 495, 336, -</column>
+<column name="Instance">-, -, 2311, 4190, -</column>
 <column name="Memory">8, -, 2048, 768, 0</column>
 <column name="Multiplexer">-, -, -, 99, -</column>
 <column name="Register">-, -, 11, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">2, 0, 4, 9, 0</specialColumn>
+<specialColumn name="Utilization (%)">2, 0, 4, 10, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -66,8 +67,9 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="entry_proc_U0">entry_proc, 0, 0, 2, 20, 0</column>
-<column name="read_test_U0">read_test, 0, 0, 441, 163, 0</column>
-<column name="run_test_U0">run_test, 0, 0, 1126, 1354, 0</column>
+<column name="read_test_U0">read_test, 0, 0, 345, 122, 0</column>
+<column name="runTestAfterInit_Block_entry68_proc_U0">runTestAfterInit_Block_entry68_proc, 0, 0, 3, 34, 0</column>
+<column name="run_test_U0">run_test, 0, 0, 1115, 1551, 0</column>
 <column name="writeOutcome_U0">writeOutcome, 0, 0, 846, 2463, 0</column>
 </table>
 </item>
@@ -90,8 +92,9 @@
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
 <column name="error_U">0, 99, 0, -, 2, 1, 2</column>
+<column name="n_regions_V_load_loc_channel_U">0, 99, 0, -, 10, 8, 80</column>
 <column name="outcomeInRam_c_U">0, 99, 0, -, 14, 64, 896</column>
-<column name="taskId_c12_channel_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="taskId_c16_U">0, 99, 0, -, 10, 16, 160</column>
 <column name="taskId_c_U">0, 99, 0, -, 5, 16, 80</column>
 </table>
 </item>
@@ -105,12 +108,12 @@
 <column name="ap_channel_done_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_taskId_c12_channel">and, 0, 0, 2, 1, 1</column>
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_ready">and, 0, 0, 2, 1, 1</column>
 <column name="entry_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="read_test_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
 <column name="read_test_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="runTestAfterInit_Block_entry68_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="run_test_U0_ap_start">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1">or, 0, 0, 2, 1, 1</column>
@@ -120,9 +123,9 @@
 <column name="ap_sync_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_taskId_c12_channel">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_entry_proc_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_read_test_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_runTestAfterInit_Block_entry68_proc_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -135,9 +138,9 @@
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_taskId_c12_channel">9, 2, 1, 2</column>
 <column name="ap_sync_reg_entry_proc_U0_ap_ready">9, 2, 1, 2</column>
 <column name="ap_sync_reg_read_test_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_runTestAfterInit_Block_entry68_proc_U0_ap_ready">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -150,9 +153,9 @@
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_taskId_c12_channel">1, 0, 1, 0</column>
 <column name="ap_sync_reg_entry_proc_U0_ap_ready">1, 0, 1, 0</column>
 <column name="ap_sync_reg_read_test_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_runTestAfterInit_Block_entry68_proc_U0_ap_ready">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -217,6 +220,16 @@
 <column name="toScheduler_TDATA">out, 8, axis, toScheduler, pointer</column>
 <column name="toScheduler_TVALID">out, 1, axis, toScheduler, pointer</column>
 <column name="toScheduler_TREADY">in, 1, axis, toScheduler, pointer</column>
+<column name="n_regions_V_address0">out, 7, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_ce0">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_d0">out, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_q0">in, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_we0">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_address1">out, 7, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_ce1">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_d1">out, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_q1">in, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_we1">out, 1, ap_memory, n_regions_V, array</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>

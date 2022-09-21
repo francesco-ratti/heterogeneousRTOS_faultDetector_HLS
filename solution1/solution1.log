@@ -9420,3 +9420,445 @@ INFO: [RTMG 210-285] Implementing FIFO 'taskId_c_U(run_fifo_w16_d5_S)' using Shi
 INFO: [RTMG 210-285] Implementing FIFO 'error_U(run_fifo_w1_d2_S)' using Shift Registers.
 INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.9 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.92 seconds; current allocated memory: 597.848 MB.
 INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.61 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.64 seconds; current allocated memory: 607.820 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=20
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog -vivado_clock 20 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: source ./detector_solid/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name run run 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:346:35)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file detector_solid/abs_solid_detector.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 19.59 seconds. CPU system time: 0.94 seconds. Elapsed time: 20.18 seconds; current allocated memory: 460.508 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:322:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_37_1' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:37:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_46_2' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:46:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_74_1' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:74:19)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:329:2)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (detector_solid/abs_solid_detector.cpp:322:2) in function 'writeOutcome' completely with a factor of 1 (detector_solid/abs_solid_detector.cpp:314:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_37_1' (detector_solid/abs_solid_detector.cpp:37:19) in function 'find_region' completely with a factor of 16 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_46_2' (detector_solid/abs_solid_detector.cpp:46:20) in function 'find_region' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_74_1' (detector_solid/abs_solid_detector.cpp:74:19) in function 'is_valid' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:72:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (detector_solid/abs_solid_detector.cpp:329:2) in function 'read_test' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:327:0)
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float*)' (detector_solid/abs_solid_detector.cpp:72:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float*)' into 'run_test(bool&, REGION_T*, ap_int<8>, float*)' (detector_solid/abs_solid_detector.cpp:332:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:390:27)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:390:25)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:371:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE4data': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:370:0)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (detector_solid/abs_solid_detector.cpp:390:2)
+INFO: [HLS 214-354] Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int<8>*, ap_int<8>*, ap_int<32>*, hls::stream<ap_int<8>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:361:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int<8>s' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&) (.1)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.77 seconds. CPU system time: 0.39 seconds. Elapsed time: 4.38 seconds; current allocated memory: 461.402 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.402 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 471.898 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 484.586 MB.
+INFO: [XFORM 203-602] Inlining function 'find_region' into 'run_test8' (detector_solid/abs_solid_detector.cpp:334) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTestAfterInit' (detector_solid/abs_solid_detector.cpp:343:1), detected/extracted 4 process function(s): 
+	 'entry_proc'
+	 'read_test'
+	 'run_test8'
+	 'writeOutcome'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (detector_solid/abs_solid_detector.cpp:346:2) in function 'run_test8'... converting 10 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.4 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 520.430 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.7' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 557.102 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'run' ...
+WARNING: [SYN 201-506] An incorrect offset '8192' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '262144'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.06 seconds; current allocated memory: 557.469 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 557.508 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'read_test'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 72, function 'read_test'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 558.734 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 558.734 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'run_test8'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 1, Depth = 1, function 'run_test8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 558.734 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 558.734 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'writeOutcome'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 73, function 'writeOutcome'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 559.664 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 559.664 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO start_for_writeOutcome_U0 (from entry_proc_U0 to writeOutcome_U0) to 11 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO outcomeInRam_c (from entry_proc_U0 to writeOutcome_U0) to 11 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 560.410 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.47 seconds; current allocated memory: 560.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 561.664 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 561.664 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 561.664 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_RAM_AUTO_0R0W' to 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_RAM_Abkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_RAM_AUTO_0R0W' to 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_RAM_Acud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_RAM_AUTO_0R0W' to 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_RAM_AdEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_RAM_AUTO_0R0W' to 'read_test_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_RAM_AeOg' due to the length limit 80
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=20
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog -vivado_clock 20 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: source ./detector_solid/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name run run 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+WARNING: [HLS 207-5176] sizeof on array function parameter will return size of 'ap_int<8> *' instead of 'ap_int<8> [128]' (detector_solid/abs_solid_detector.cpp:393:28)
+INFO: [HLS 207-62] declared here (detector_solid/abs_solid_detector.cpp:361:99)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:346:35)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file detector_solid/abs_solid_detector.cpp
+WARNING: [HLS 207-5176] sizeof on array function parameter will return size of 'ap_int<8> *' instead of 'ap_int<8> [128]' (detector_solid/abs_solid_detector.cpp:393:46)
+INFO: [HLS 207-62] declared here (detector_solid/abs_solid_detector.cpp:361:137)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 19.65 seconds. CPU system time: 0.81 seconds. Elapsed time: 19.83 seconds; current allocated memory: 460.555 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:322:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_37_1' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:37:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_46_2' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:46:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_74_1' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:74:19)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:329:2)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (detector_solid/abs_solid_detector.cpp:322:2) in function 'writeOutcome' completely with a factor of 1 (detector_solid/abs_solid_detector.cpp:314:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_37_1' (detector_solid/abs_solid_detector.cpp:37:19) in function 'find_region' completely with a factor of 16 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_46_2' (detector_solid/abs_solid_detector.cpp:46:20) in function 'find_region' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_74_1' (detector_solid/abs_solid_detector.cpp:74:19) in function 'is_valid' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:72:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (detector_solid/abs_solid_detector.cpp:329:2) in function 'read_test' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:327:0)
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float*)' (detector_solid/abs_solid_detector.cpp:72:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float*)' into 'run_test(bool&, REGION_T*, ap_int<8>, float*)' (detector_solid/abs_solid_detector.cpp:332:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:390:27)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:390:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:395:29)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:371:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE4data': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:370:0)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (detector_solid/abs_solid_detector.cpp:390:2)
+INFO: [HLS 214-354] Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int<8>*, ap_int<8>*, ap_int<32>*, hls::stream<ap_int<8>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:361:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_int<8>s' into 'writeOutcome(OutcomeStr*, ap_int<16>, bool, hls::stream<ap_int<8>, 0>&) (.1)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.75 seconds. CPU system time: 0.31 seconds. Elapsed time: 4.06 seconds; current allocated memory: 461.414 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.414 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 472.090 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 484.836 MB.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTestAfterInit' (detector_solid/abs_solid_detector.cpp:343:1), detected/extracted 5 process function(s): 
+	 'entry_proc'
+	 'read_test'
+	 'runTestAfterInit_Block_entry68_proc'
+	 'run_test'
+	 'writeOutcome'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:34:66) to (detector_solid/abs_solid_detector.cpp:62:25) in function 'find_region'... converting 46 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'find_region' (detector_solid/abs_solid_detector.cpp:34)...28 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.65 seconds; current allocated memory: 522.953 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' (detector_solid/abs_solid_detector.cpp:395:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.7' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data.1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)data' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 580.023 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'run' ...
+WARNING: [SYN 201-506] An incorrect offset '8192' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '262144'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 580.551 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 580.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'read_test'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 72, function 'read_test'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 581.770 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 581.770 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit_Block_entry68_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 582.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 582.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'find_region' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'find_region'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 10, function 'find_region'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 585.180 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 585.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'run_test'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 28, function 'run_test'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 585.180 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 585.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'writeOutcome'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 8, Final II = 8, Depth = 73, function 'writeOutcome'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.45 seconds. CPU system time: 0 seconds. Elapsed time: 0.45 seconds; current allocated memory: 585.629 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 585.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO outcomeInRam_c (from entry_proc_U0 to writeOutcome_U0) to 14 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_c16 (from runTestAfterInit_Block_entry68_proc_U0 to run_test_U0) to 10 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO n_regions_V_load_loc_channel (from runTestAfterInit_Block_entry68_proc_U0 to run_test_U0) to 10 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_c (from run_test_U0 to writeOutcome_U0) to 5 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 586.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.67 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.67 seconds; current allocated memory: 586.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 587.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 587.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.33 seconds. CPU system time: 0 seconds. Elapsed time: 0.33 seconds; current allocated memory: 587.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'read_test' pipeline 'read_test' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 588.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit_Block_entry68_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit_Block_entry68_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 590.141 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'find_region' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'find_region' pipeline 'find_region' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'find_region'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 592.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_test' pipeline 'run_test' pipeline type 'function pipeline'
+WARNING: [RTGEN 206-101] RTL name 'fcmp_32ns_32ns_1_2_no_dsp_1' is changed to 'fcmp_32ns_32ns_1_2_no_dsp_1_x' due to conflict.
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1_x': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.68 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.68 seconds; current allocated memory: 597.605 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'writeOutcome' pipeline 'writeOutcome' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'writeOutcome'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.64 seconds; current allocated memory: 601.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_RAM_AUTO_1R1W' to 'runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ibs' due to the length limit 80
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 604.281 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'run/gmem' to 'm_axi'.

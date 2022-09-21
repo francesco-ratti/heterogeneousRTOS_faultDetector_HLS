@@ -65,40 +65,39 @@ port (
     m_axi_gmem_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_gmem_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     inputDataInRam : IN STD_LOGIC_VECTOR (63 downto 0);
-    taskId : IN STD_LOGIC_VECTOR (15 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0 : OUT STD_LOGIC;
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (15 downto 0) );
+    taskId : IN STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_we0 : OUT STD_LOGIC;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_d0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
 end;
 
 
@@ -140,7 +139,6 @@ architecture behav of run_read_test is
     constant ap_const_lv32_DF : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011011111";
     constant ap_const_lv32_E0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011100000";
     constant ap_const_lv32_FF : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011111111";
-    constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
 
 attribute shreg_extract : string;
     signal ap_CS_fsm : STD_LOGIC_VECTOR (7 downto 0) := "00000001";
@@ -187,26 +185,17 @@ attribute shreg_extract : string;
     signal ap_block_state57_pp0_stage0_iter7 : BOOLEAN;
     signal ap_block_state65_pp0_stage0_iter8 : BOOLEAN;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
-    signal taskId_read_reg_384 : STD_LOGIC_VECTOR (15 downto 0);
+    signal taskId_read_reg_380 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_block_pp0_stage7_11001 : BOOLEAN;
-    signal taskId_read_reg_384_pp0_iter1_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter2_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter3_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter4_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter5_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter6_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal taskId_read_reg_384_pp0_iter7_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal empty_fu_257_p1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388 : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter1_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter2_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter3_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter4_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter5_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter6_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_reg_388_pp0_iter7_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal empty_42_fu_261_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal empty_42_reg_393 : STD_LOGIC_VECTOR (31 downto 0);
+    signal taskId_read_reg_380_pp0_iter1_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter2_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter3_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter4_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter5_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter6_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal taskId_read_reg_380_pp0_iter7_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal empty_fu_257_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal empty_reg_385 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_block_state7_pp0_stage6_iter0 : BOOLEAN;
     signal ap_block_state15_pp0_stage6_iter1 : BOOLEAN;
     signal ap_block_state23_pp0_stage6_iter2 : BOOLEAN;
@@ -217,19 +206,18 @@ attribute shreg_extract : string;
     signal ap_block_state63_pp0_stage6_iter7 : BOOLEAN;
     signal ap_block_state71_pp0_stage6_iter8 : BOOLEAN;
     signal ap_block_pp0_stage6_11001 : BOOLEAN;
-    signal p_cast2_i_i_reg_398 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast4_i_i_reg_403 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast6_i_i_reg_408 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast8_i_i_reg_413 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast10_i_i_reg_418 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast12_i_i_reg_423 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_cast13_i_i_reg_428 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast2_i_i_i_reg_390 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast4_i_i_i_reg_395 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast6_i_i_i_reg_400 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast8_i_i_i_reg_405 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast10_i_i_i_reg_410 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast12_i_i_i_reg_415 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_cast13_i_i_i_reg_420 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_enable_reg_pp0_iter0_reg : STD_LOGIC := '0';
-    signal zext_ln587_fu_335_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal zext_ln587_fu_331_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_block_pp0_stage7 : BOOLEAN;
-    signal p_cast_cast_i_i_fu_246_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal p_cast_i_i_fu_236_p4 : STD_LOGIC_VECTOR (58 downto 0);
-    signal ap_return_preg : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
+    signal p_cast_cast_i_i_i_fu_246_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal p_cast_i_i_i_fu_236_p4 : STD_LOGIC_VECTOR (58 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (7 downto 0);
     signal ap_block_pp0_stage0_subdone : BOOLEAN;
     signal ap_idle_pp0_1to8 : STD_LOGIC;
@@ -448,32 +436,18 @@ begin
         end if;
     end process;
 
-
-    ap_return_preg_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst = '1') then
-                ap_return_preg <= ap_const_lv16_0;
-            else
-                if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-                    ap_return_preg <= taskId_read_reg_384_pp0_iter7_reg;
-                end if; 
-            end if;
-        end if;
-    end process;
-
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage6_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage6))) then
-                empty_42_reg_393 <= empty_42_fu_261_p1;
-                p_cast10_i_i_reg_418 <= m_axi_gmem_RDATA(191 downto 160);
-                p_cast12_i_i_reg_423 <= m_axi_gmem_RDATA(223 downto 192);
-                p_cast13_i_i_reg_428 <= m_axi_gmem_RDATA(255 downto 224);
-                p_cast2_i_i_reg_398 <= m_axi_gmem_RDATA(63 downto 32);
-                p_cast4_i_i_reg_403 <= m_axi_gmem_RDATA(95 downto 64);
-                p_cast6_i_i_reg_408 <= m_axi_gmem_RDATA(127 downto 96);
-                p_cast8_i_i_reg_413 <= m_axi_gmem_RDATA(159 downto 128);
+                empty_reg_385 <= empty_fu_257_p1;
+                p_cast10_i_i_i_reg_410 <= m_axi_gmem_RDATA(191 downto 160);
+                p_cast12_i_i_i_reg_415 <= m_axi_gmem_RDATA(223 downto 192);
+                p_cast13_i_i_i_reg_420 <= m_axi_gmem_RDATA(255 downto 224);
+                p_cast2_i_i_i_reg_390 <= m_axi_gmem_RDATA(63 downto 32);
+                p_cast4_i_i_i_reg_395 <= m_axi_gmem_RDATA(95 downto 64);
+                p_cast6_i_i_i_reg_400 <= m_axi_gmem_RDATA(127 downto 96);
+                p_cast8_i_i_i_reg_405 <= m_axi_gmem_RDATA(159 downto 128);
             end if;
         end if;
     end process;
@@ -481,22 +455,14 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then
-                empty_reg_388 <= empty_fu_257_p1;
-                empty_reg_388_pp0_iter1_reg <= empty_reg_388;
-                empty_reg_388_pp0_iter2_reg <= empty_reg_388_pp0_iter1_reg;
-                empty_reg_388_pp0_iter3_reg <= empty_reg_388_pp0_iter2_reg;
-                empty_reg_388_pp0_iter4_reg <= empty_reg_388_pp0_iter3_reg;
-                empty_reg_388_pp0_iter5_reg <= empty_reg_388_pp0_iter4_reg;
-                empty_reg_388_pp0_iter6_reg <= empty_reg_388_pp0_iter5_reg;
-                empty_reg_388_pp0_iter7_reg <= empty_reg_388_pp0_iter6_reg;
-                taskId_read_reg_384 <= taskId;
-                taskId_read_reg_384_pp0_iter1_reg <= taskId_read_reg_384;
-                taskId_read_reg_384_pp0_iter2_reg <= taskId_read_reg_384_pp0_iter1_reg;
-                taskId_read_reg_384_pp0_iter3_reg <= taskId_read_reg_384_pp0_iter2_reg;
-                taskId_read_reg_384_pp0_iter4_reg <= taskId_read_reg_384_pp0_iter3_reg;
-                taskId_read_reg_384_pp0_iter5_reg <= taskId_read_reg_384_pp0_iter4_reg;
-                taskId_read_reg_384_pp0_iter6_reg <= taskId_read_reg_384_pp0_iter5_reg;
-                taskId_read_reg_384_pp0_iter7_reg <= taskId_read_reg_384_pp0_iter6_reg;
+                taskId_read_reg_380 <= taskId;
+                taskId_read_reg_380_pp0_iter1_reg <= taskId_read_reg_380;
+                taskId_read_reg_380_pp0_iter2_reg <= taskId_read_reg_380_pp0_iter1_reg;
+                taskId_read_reg_380_pp0_iter3_reg <= taskId_read_reg_380_pp0_iter2_reg;
+                taskId_read_reg_380_pp0_iter4_reg <= taskId_read_reg_380_pp0_iter3_reg;
+                taskId_read_reg_380_pp0_iter5_reg <= taskId_read_reg_380_pp0_iter4_reg;
+                taskId_read_reg_380_pp0_iter6_reg <= taskId_read_reg_380_pp0_iter5_reg;
+                taskId_read_reg_380_pp0_iter7_reg <= taskId_read_reg_380_pp0_iter6_reg;
             end if;
         end if;
     end process;
@@ -756,18 +722,7 @@ begin
         end if; 
     end process;
 
-
-    ap_return_assign_proc : process(ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001, taskId_read_reg_384_pp0_iter7_reg, ap_return_preg)
-    begin
-        if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            ap_return <= taskId_read_reg_384_pp0_iter7_reg;
-        else 
-            ap_return <= ap_return_preg;
-        end if; 
-    end process;
-
-    empty_42_fu_261_p1 <= m_axi_gmem_RDATA(32 - 1 downto 0);
-    empty_fu_257_p1 <= taskId(7 - 1 downto 0);
+    empty_fu_257_p1 <= m_axi_gmem_RDATA(32 - 1 downto 0);
 
     gmem_blk_n_AR_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter0, m_axi_gmem_ARREADY, ap_done_reg, ap_block_pp0_stage0)
     begin
@@ -788,7 +743,7 @@ begin
         end if; 
     end process;
 
-    m_axi_gmem_ARADDR <= p_cast_cast_i_i_fu_246_p1;
+    m_axi_gmem_ARADDR <= p_cast_cast_i_i_i_fu_246_p1;
     m_axi_gmem_ARBURST <= ap_const_lv2_0;
     m_axi_gmem_ARCACHE <= ap_const_lv4_0;
     m_axi_gmem_ARID <= ap_const_lv1_0;
@@ -838,184 +793,184 @@ begin
     m_axi_gmem_WSTRB <= ap_const_lv32_0;
     m_axi_gmem_WUSER <= ap_const_lv1_0;
     m_axi_gmem_WVALID <= ap_const_logic_0;
-        p_cast_cast_i_i_fu_246_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(p_cast_i_i_fu_236_p4),64));
+        p_cast_cast_i_i_i_fu_246_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(p_cast_i_i_i_fu_236_p4),64));
 
-    p_cast_i_i_fu_236_p4 <= inputDataInRam(63 downto 5);
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    p_cast_i_i_i_fu_236_p4 <= inputDataInRam(63 downto 5);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_d0 <= p_cast2_i_i_reg_398;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_d0 <= p_cast12_i_i_i_reg_415;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_1_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_d0 <= p_cast4_i_i_reg_403;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_d0 <= p_cast10_i_i_i_reg_410;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_2_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_d0 <= p_cast6_i_i_reg_408;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_d0 <= p_cast8_i_i_i_reg_405;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_3_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_d0 <= p_cast8_i_i_reg_413;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_d0 <= p_cast6_i_i_i_reg_400;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_4_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_d0 <= p_cast10_i_i_reg_418;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_d0 <= p_cast4_i_i_i_reg_395;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_5_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_d0 <= p_cast12_i_i_reg_423;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_d0 <= p_cast2_i_i_i_reg_390;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_6_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_d0 <= p_cast13_i_i_reg_428;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_d0 <= empty_reg_385;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_7_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_address0 <= zext_ln587_fu_335_p1(7 - 1 downto 0);
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_address0 <= zext_ln587_fu_331_p1(7 - 1 downto 0);
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_ce0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_d0 <= empty_42_reg_393;
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_d0 <= p_cast13_i_i_i_reg_420;
 
-    run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
+    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_we0_assign_proc : process(ap_enable_reg_pp0_iter8, ap_CS_fsm_pp0_stage7, ap_block_pp0_stage7_11001)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_enable_reg_pp0_iter8 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0 <= ap_const_logic_1;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_we0 <= ap_const_logic_1;
         else 
-            run_controlStr_REGION_T_16_ap_int_8_ap_int_16_ap_int_32_stream_ap_int_8_0_data_we0 <= ap_const_logic_0;
+            run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    zext_ln587_fu_335_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_reg_388_pp0_iter7_reg),64));
+    zext_ln587_fu_331_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(taskId_read_reg_380_pp0_iter7_reg),64));
 end behav;
