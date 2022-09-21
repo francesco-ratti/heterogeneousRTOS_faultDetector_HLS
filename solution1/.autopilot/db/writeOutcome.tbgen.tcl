@@ -15,18 +15,20 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ gmem int 256 regular {axi_master 1}  }
 	{ outcomeInRam int 64 regular {fifo 0}  }
-	{ taskId int 16 regular {fifo 0}  }
+	{ checkId int 16 regular {fifo 0}  }
+	{ taskId int 8 regular {fifo 0}  }
 	{ p_read int 1 regular  }
 	{ toScheduler int 8 regular {axi_s 1 volatile  { toScheduler Data } }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 256, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "sharedMem","offset": { "type": "dynamic","port_name": "sharedMem","bundle": "control"},"direction": "READWRITE"}]}]} , 
  	{ "Name" : "outcomeInRam", "interface" : "fifo", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "taskId", "interface" : "fifo", "bitwidth" : 16, "direction" : "READONLY"} , 
+ 	{ "Name" : "checkId", "interface" : "fifo", "bitwidth" : 16, "direction" : "READONLY"} , 
+ 	{ "Name" : "taskId", "interface" : "fifo", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
  	{ "Name" : "toScheduler", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 67
+set portNum 72
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -86,15 +88,20 @@ set portList {
 	{ outcomeInRam_fifo_cap sc_in sc_lv 5 signal 1 } 
 	{ outcomeInRam_empty_n sc_in sc_logic 1 signal 1 } 
 	{ outcomeInRam_read sc_out sc_logic 1 signal 1 } 
-	{ taskId_dout sc_in sc_lv 16 signal 2 } 
-	{ taskId_num_data_valid sc_in sc_lv 4 signal 2 } 
-	{ taskId_fifo_cap sc_in sc_lv 4 signal 2 } 
-	{ taskId_empty_n sc_in sc_logic 1 signal 2 } 
-	{ taskId_read sc_out sc_logic 1 signal 2 } 
-	{ p_read sc_in sc_lv 1 signal 3 } 
-	{ toScheduler_TDATA sc_out sc_lv 8 signal 4 } 
-	{ toScheduler_TVALID sc_out sc_logic 1 outvld 4 } 
-	{ toScheduler_TREADY sc_in sc_logic 1 outacc 4 } 
+	{ checkId_dout sc_in sc_lv 16 signal 2 } 
+	{ checkId_num_data_valid sc_in sc_lv 4 signal 2 } 
+	{ checkId_fifo_cap sc_in sc_lv 4 signal 2 } 
+	{ checkId_empty_n sc_in sc_logic 1 signal 2 } 
+	{ checkId_read sc_out sc_logic 1 signal 2 } 
+	{ taskId_dout sc_in sc_lv 8 signal 3 } 
+	{ taskId_num_data_valid sc_in sc_lv 5 signal 3 } 
+	{ taskId_fifo_cap sc_in sc_lv 5 signal 3 } 
+	{ taskId_empty_n sc_in sc_logic 1 signal 3 } 
+	{ taskId_read sc_out sc_logic 1 signal 3 } 
+	{ p_read sc_in sc_lv 1 signal 4 } 
+	{ toScheduler_TDATA sc_out sc_lv 8 signal 5 } 
+	{ toScheduler_TVALID sc_out sc_logic 1 outvld 5 } 
+	{ toScheduler_TREADY sc_in sc_logic 1 outacc 5 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -155,9 +162,14 @@ set NewPortList {[
  	{ "name": "outcomeInRam_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "outcomeInRam", "role": "fifo_cap" }} , 
  	{ "name": "outcomeInRam_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "outcomeInRam", "role": "empty_n" }} , 
  	{ "name": "outcomeInRam_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "outcomeInRam", "role": "read" }} , 
- 	{ "name": "taskId_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "taskId", "role": "dout" }} , 
- 	{ "name": "taskId_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "taskId", "role": "num_data_valid" }} , 
- 	{ "name": "taskId_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "taskId", "role": "fifo_cap" }} , 
+ 	{ "name": "checkId_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "checkId", "role": "dout" }} , 
+ 	{ "name": "checkId_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "checkId", "role": "num_data_valid" }} , 
+ 	{ "name": "checkId_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "checkId", "role": "fifo_cap" }} , 
+ 	{ "name": "checkId_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId", "role": "empty_n" }} , 
+ 	{ "name": "checkId_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId", "role": "read" }} , 
+ 	{ "name": "taskId_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "taskId", "role": "dout" }} , 
+ 	{ "name": "taskId_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "taskId", "role": "num_data_valid" }} , 
+ 	{ "name": "taskId_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "taskId", "role": "fifo_cap" }} , 
  	{ "name": "taskId_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "taskId", "role": "empty_n" }} , 
  	{ "name": "taskId_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "taskId", "role": "read" }} , 
  	{ "name": "p_read", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "p_read", "role": "default" }} , 
@@ -189,7 +201,10 @@ set RtlHierarchyInfo {[
 			{"Name" : "outcomeInRam", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "14", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "outcomeInRam_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "taskId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "5", "DependentChanType" : "2",
+			{"Name" : "checkId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "5", "DependentChanType" : "2",
+				"BlockSignal" : [
+					{"Name" : "checkId_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "taskId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "14", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "taskId_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "2", "DependentChanType" : "1"},
@@ -202,8 +217,9 @@ set ArgLastReadFirstWriteLatency {
 	writeOutcome {
 		gmem {Type O LastRead 5 FirstWrite 2}
 		outcomeInRam {Type I LastRead 0 FirstWrite -1}
+		checkId {Type I LastRead 0 FirstWrite -1}
 		taskId {Type I LastRead 0 FirstWrite -1}
-		p_read {Type I LastRead 0 FirstWrite -1}
+		p_read {Type I LastRead 1 FirstWrite -1}
 		toScheduler {Type O LastRead -1 FirstWrite 65}}}
 
 set hasDtUnsupportedChannel 0
@@ -220,7 +236,8 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem_AWVALID VALID 1 1 }  { m_axi_gmem_AWREADY READY 0 1 }  { m_axi_gmem_AWADDR ADDR 1 64 }  { m_axi_gmem_AWID ID 1 1 }  { m_axi_gmem_AWLEN SIZE 1 32 }  { m_axi_gmem_AWSIZE BURST 1 3 }  { m_axi_gmem_AWBURST LOCK 1 2 }  { m_axi_gmem_AWLOCK CACHE 1 2 }  { m_axi_gmem_AWCACHE PROT 1 4 }  { m_axi_gmem_AWPROT QOS 1 3 }  { m_axi_gmem_AWQOS REGION 1 4 }  { m_axi_gmem_AWREGION USER 1 4 }  { m_axi_gmem_AWUSER DATA 1 1 }  { m_axi_gmem_WVALID VALID 1 1 }  { m_axi_gmem_WREADY READY 0 1 }  { m_axi_gmem_WDATA FIFONUM 1 256 }  { m_axi_gmem_WSTRB STRB 1 32 }  { m_axi_gmem_WLAST LAST 1 1 }  { m_axi_gmem_WID ID 1 1 }  { m_axi_gmem_WUSER DATA 1 1 }  { m_axi_gmem_ARVALID VALID 1 1 }  { m_axi_gmem_ARREADY READY 0 1 }  { m_axi_gmem_ARADDR ADDR 1 64 }  { m_axi_gmem_ARID ID 1 1 }  { m_axi_gmem_ARLEN SIZE 1 32 }  { m_axi_gmem_ARSIZE BURST 1 3 }  { m_axi_gmem_ARBURST LOCK 1 2 }  { m_axi_gmem_ARLOCK CACHE 1 2 }  { m_axi_gmem_ARCACHE PROT 1 4 }  { m_axi_gmem_ARPROT QOS 1 3 }  { m_axi_gmem_ARQOS REGION 1 4 }  { m_axi_gmem_ARREGION USER 1 4 }  { m_axi_gmem_ARUSER DATA 1 1 }  { m_axi_gmem_RVALID VALID 0 1 }  { m_axi_gmem_RREADY READY 1 1 }  { m_axi_gmem_RDATA FIFONUM 0 256 }  { m_axi_gmem_RLAST LAST 0 1 }  { m_axi_gmem_RID ID 0 1 }  { m_axi_gmem_RFIFONUM LEN 0 9 }  { m_axi_gmem_RUSER DATA 0 1 }  { m_axi_gmem_RRESP RESP 0 2 }  { m_axi_gmem_BVALID VALID 0 1 }  { m_axi_gmem_BREADY READY 1 1 }  { m_axi_gmem_BRESP RESP 0 2 }  { m_axi_gmem_BID ID 0 1 }  { m_axi_gmem_BUSER DATA 0 1 } } }
 	outcomeInRam { ap_fifo {  { outcomeInRam_dout fifo_port_we 0 64 }  { outcomeInRam_num_data_valid fifo_status_num_data_valid 0 5 }  { outcomeInRam_fifo_cap fifo_update 0 5 }  { outcomeInRam_empty_n fifo_status 0 1 }  { outcomeInRam_read fifo_data 1 1 } } }
-	taskId { ap_fifo {  { taskId_dout fifo_port_we 0 16 }  { taskId_num_data_valid fifo_status_num_data_valid 0 4 }  { taskId_fifo_cap fifo_update 0 4 }  { taskId_empty_n fifo_status 0 1 }  { taskId_read fifo_data 1 1 } } }
+	checkId { ap_fifo {  { checkId_dout fifo_port_we 0 16 }  { checkId_num_data_valid fifo_status_num_data_valid 0 4 }  { checkId_fifo_cap fifo_update 0 4 }  { checkId_empty_n fifo_status 0 1 }  { checkId_read fifo_data 1 1 } } }
+	taskId { ap_fifo {  { taskId_dout fifo_port_we 0 8 }  { taskId_num_data_valid fifo_status_num_data_valid 0 5 }  { taskId_fifo_cap fifo_update 0 5 }  { taskId_empty_n fifo_status 0 1 }  { taskId_read fifo_data 1 1 } } }
 	p_read { ap_none {  { p_read in_data 0 1 } } }
 	toScheduler { axis {  { toScheduler_TDATA out_data 1 8 }  { toScheduler_TVALID out_vld 1 1 }  { toScheduler_TREADY out_acc 0 1 } } }
 }

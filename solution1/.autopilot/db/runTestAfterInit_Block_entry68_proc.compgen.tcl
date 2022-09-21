@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 16 \
+    id 18 \
     name n_regions_V \
     reset_level 1 \
     sync_rst true \
@@ -29,30 +29,30 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 14 \
-    name taskId \
+    id 16 \
+    name checkId \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_taskId \
+    corename dc_checkId \
     op interface \
-    ports { taskId { I 16 vector } } \
+    ports { checkId { I 16 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 15 \
-    name taskId_c16 \
+    id 17 \
+    name checkId_c16 \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_taskId_c16 \
+    corename dc_checkId_c16 \
     op interface \
-    ports { taskId_c16_din { O 16 vector } taskId_c16_num_data_valid { I 5 vector } taskId_c16_fifo_cap { I 5 vector } taskId_c16_full_n { I 1 bit } taskId_c16_write { O 1 bit } } \
+    ports { checkId_c16_din { O 16 vector } checkId_c16_num_data_valid { I 5 vector } checkId_c16_fifo_cap { I 5 vector } checkId_c16_full_n { I 1 bit } checkId_c16_write { O 1 bit } } \
 } "
 }
 

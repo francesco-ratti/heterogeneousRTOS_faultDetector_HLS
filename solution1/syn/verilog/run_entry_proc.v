@@ -15,6 +15,12 @@ module run_entry_proc (
         ap_continue,
         ap_idle,
         ap_ready,
+        taskId,
+        taskId_c_din,
+        taskId_c_num_data_valid,
+        taskId_c_fifo_cap,
+        taskId_c_full_n,
+        taskId_c_write,
         outcomeInRam,
         outcomeInRam_c_din,
         outcomeInRam_c_num_data_valid,
@@ -32,6 +38,12 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
+input  [7:0] taskId;
+output  [7:0] taskId_c_din;
+input  [4:0] taskId_c_num_data_valid;
+input  [4:0] taskId_c_fifo_cap;
+input   taskId_c_full_n;
+output   taskId_c_write;
 input  [63:0] outcomeInRam;
 output  [63:0] outcomeInRam_c_din;
 input  [4:0] outcomeInRam_c_num_data_valid;
@@ -42,11 +54,13 @@ output   outcomeInRam_c_write;
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
+reg taskId_c_write;
 reg outcomeInRam_c_write;
 
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
+reg    taskId_c_blk_n;
 reg    outcomeInRam_c_blk_n;
 reg    ap_block_state1;
 reg   [0:0] ap_NS_fsm;
@@ -73,14 +87,14 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        end else if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
             ap_done_reg <= 1'b1;
         end
     end
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1))) begin
+    if (((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1))) begin
         ap_ST_fsm_state1_blk = 1'b1;
     end else begin
         ap_ST_fsm_state1_blk = 1'b0;
@@ -88,7 +102,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -104,7 +118,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -120,10 +134,26 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
         outcomeInRam_c_write = 1'b1;
     end else begin
         outcomeInRam_c_write = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        taskId_c_blk_n = taskId_c_full_n;
+    end else begin
+        taskId_c_blk_n = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((~((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        taskId_c_write = 1'b1;
+    end else begin
+        taskId_c_write = 1'b0;
     end
 end
 
@@ -141,9 +171,11 @@ end
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 always @ (*) begin
-    ap_block_state1 = ((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (ap_done_reg == 1'b1));
+    ap_block_state1 = ((ap_start == 1'b0) | (outcomeInRam_c_full_n == 1'b0) | (taskId_c_full_n == 1'b0) | (ap_done_reg == 1'b1));
 end
 
 assign outcomeInRam_c_din = outcomeInRam;
+
+assign taskId_c_din = taskId;
 
 endmodule //run_entry_proc

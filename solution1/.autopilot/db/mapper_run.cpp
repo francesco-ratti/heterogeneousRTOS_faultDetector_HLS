@@ -182,11 +182,12 @@ class AESL_RUNTIME_BC {
 };
 unsigned int ap_apatb_toScheduler_cap_bc;
 static AESL_RUNTIME_BC __xlx_toScheduler_V_size_Reader("../tv/stream_size/stream_size_out_toScheduler.dat");
-struct __cosim_s4__ { char data[4]; };
+struct __cosim_s6__ { char data[6]; };
 struct __cosim_s1__ { char data[1]; };
+struct __cosim_s4__ { char data[4]; };
 struct __cosim_s32__ { char data[32]; };
-extern "C" void run(__cosim_s32__*, __cosim_s4__, int*, char*, char*, int, __cosim_s1__*);
-extern "C" void apatb_run_hw(__cosim_s4__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realTaskId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void run(__cosim_s32__*, __cosim_s6__, int*, char*, char*, int, __cosim_s1__*);
+extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realcheckId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
   // Collect __xlx_sharedMem__tmp_vec
   vector<sc_bv<256> >__xlx_sharedMem__tmp_vec;
   for (int j = 0, e = 513; j != e; ++j) {
@@ -252,17 +253,17 @@ extern "C" void apatb_run_hw(__cosim_s4__* __xlx_apatb_param_contr, volatile voi
   for (int i = 0; i < __xlx_trainedRegions__tmp_vec.size(); ++i) {
     __xlx_trainedRegions__input_buffer[i] = __xlx_trainedRegions__tmp_vec[i].range(31, 0).to_uint64();
   }
-  // Collect __xlx_realTaskId__tmp_vec
-  vector<sc_bv<8> >__xlx_realTaskId__tmp_vec;
+  // Collect __xlx_realcheckId__tmp_vec
+  vector<sc_bv<8> >__xlx_realcheckId__tmp_vec;
   for (int j = 0, e = 128; j != e; ++j) {
-    __xlx_realTaskId__tmp_vec.push_back(((char*)__xlx_apatb_param_realTaskId)[j]);
+    __xlx_realcheckId__tmp_vec.push_back(((char*)__xlx_apatb_param_realcheckId)[j]);
   }
-  int __xlx_size_param_realTaskId = 128;
-  int __xlx_offset_param_realTaskId = 0;
-  int __xlx_offset_byte_param_realTaskId = 0*1;
-  char* __xlx_realTaskId__input_buffer= new char[__xlx_realTaskId__tmp_vec.size()];
-  for (int i = 0; i < __xlx_realTaskId__tmp_vec.size(); ++i) {
-    __xlx_realTaskId__input_buffer[i] = __xlx_realTaskId__tmp_vec[i].range(7, 0).to_uint64();
+  int __xlx_size_param_realcheckId = 128;
+  int __xlx_offset_param_realcheckId = 0;
+  int __xlx_offset_byte_param_realcheckId = 0*1;
+  char* __xlx_realcheckId__input_buffer= new char[__xlx_realcheckId__tmp_vec.size()];
+  for (int i = 0; i < __xlx_realcheckId__tmp_vec.size(); ++i) {
+    __xlx_realcheckId__input_buffer[i] = __xlx_realcheckId__tmp_vec[i].range(7, 0).to_uint64();
   }
   // Collect __xlx_n_regions_in__tmp_vec
   vector<sc_bv<8> >__xlx_n_regions_in__tmp_vec;
@@ -281,7 +282,7 @@ extern "C" void apatb_run_hw(__cosim_s4__* __xlx_apatb_param_contr, volatile voi
   __cosim_s1__* __xlx_toScheduler_input_buffer= new __cosim_s1__[ap_apatb_toScheduler_cap_bc];
 auto* stoScheduler = bcsim::createStream((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler);
   // DUT call
-  run(__xlx_sharedMem__input_buffer, *__xlx_apatb_param_contr, __xlx_trainedRegions__input_buffer, __xlx_realTaskId__input_buffer, __xlx_n_regions_in__input_buffer, __xlx_offset_byte_param_sharedMem, stoScheduler->data<__cosim_s1__>());
+  run(__xlx_sharedMem__input_buffer, *__xlx_apatb_param_contr, __xlx_trainedRegions__input_buffer, __xlx_realcheckId__input_buffer, __xlx_n_regions_in__input_buffer, __xlx_offset_byte_param_sharedMem, stoScheduler->data<__cosim_s1__>());
 // print __xlx_apatb_param_sharedMem
   sc_bv<256>*__xlx_sharedMem_output_buffer = new sc_bv<256>[__xlx_size_param_sharedMem];
   for (int i = 0; i < __xlx_size_param_sharedMem; ++i) {
@@ -336,13 +337,13 @@ auto* stoScheduler = bcsim::createStream((hls::stream<__cosim_s1__>*)__xlx_apatb
     ((char*)__xlx_apatb_param_trainedRegions)[i*4+2] = __xlx_trainedRegions_output_buffer[i].range(23, 16).to_uint();
     ((char*)__xlx_apatb_param_trainedRegions)[i*4+3] = __xlx_trainedRegions_output_buffer[i].range(31, 24).to_uint();
   }
-// print __xlx_apatb_param_realTaskId
-  sc_bv<8>*__xlx_realTaskId_output_buffer = new sc_bv<8>[__xlx_size_param_realTaskId];
-  for (int i = 0; i < __xlx_size_param_realTaskId; ++i) {
-    __xlx_realTaskId_output_buffer[i] = __xlx_realTaskId__input_buffer[i+__xlx_offset_param_realTaskId];
+// print __xlx_apatb_param_realcheckId
+  sc_bv<8>*__xlx_realcheckId_output_buffer = new sc_bv<8>[__xlx_size_param_realcheckId];
+  for (int i = 0; i < __xlx_size_param_realcheckId; ++i) {
+    __xlx_realcheckId_output_buffer[i] = __xlx_realcheckId__input_buffer[i+__xlx_offset_param_realcheckId];
   }
-  for (int i = 0; i < __xlx_size_param_realTaskId; ++i) {
-    ((char*)__xlx_apatb_param_realTaskId)[i] = __xlx_realTaskId_output_buffer[i].to_uint();
+  for (int i = 0; i < __xlx_size_param_realcheckId; ++i) {
+    ((char*)__xlx_apatb_param_realcheckId)[i] = __xlx_realcheckId_output_buffer[i].to_uint();
   }
 // print __xlx_apatb_param_n_regions_in
   sc_bv<8>*__xlx_n_regions_in_output_buffer = new sc_bv<8>[__xlx_size_param_n_regions_in];

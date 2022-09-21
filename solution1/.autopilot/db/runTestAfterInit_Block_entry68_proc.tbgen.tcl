@@ -13,13 +13,13 @@ set hasInterrupt 0
 set C_modelName {runTestAfterInit_Block_entry68_proc}
 set C_modelType { int 8 }
 set C_modelArgList {
-	{ taskId int 16 regular  }
-	{ taskId_c16 int 16 regular {fifo 1}  }
+	{ checkId int 16 regular  }
+	{ checkId_c16 int 16 regular {fifo 1}  }
 	{ n_regions_V int 8 regular {array 128 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "taskId", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
- 	{ "Name" : "taskId_c16", "interface" : "fifo", "bitwidth" : 16, "direction" : "WRITEONLY"} , 
+	{ "Name" : "checkId", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
+ 	{ "Name" : "checkId_c16", "interface" : "fifo", "bitwidth" : 16, "direction" : "WRITEONLY"} , 
  	{ "Name" : "n_regions_V", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 8} ]}
 # RTL Port declarations: 
@@ -32,12 +32,12 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ taskId sc_in sc_lv 16 signal 0 } 
-	{ taskId_c16_din sc_out sc_lv 16 signal 1 } 
-	{ taskId_c16_num_data_valid sc_in sc_lv 5 signal 1 } 
-	{ taskId_c16_fifo_cap sc_in sc_lv 5 signal 1 } 
-	{ taskId_c16_full_n sc_in sc_logic 1 signal 1 } 
-	{ taskId_c16_write sc_out sc_logic 1 signal 1 } 
+	{ checkId sc_in sc_lv 16 signal 0 } 
+	{ checkId_c16_din sc_out sc_lv 16 signal 1 } 
+	{ checkId_c16_num_data_valid sc_in sc_lv 5 signal 1 } 
+	{ checkId_c16_fifo_cap sc_in sc_lv 5 signal 1 } 
+	{ checkId_c16_full_n sc_in sc_logic 1 signal 1 } 
+	{ checkId_c16_write sc_out sc_logic 1 signal 1 } 
 	{ n_regions_V_address0 sc_out sc_lv 7 signal 2 } 
 	{ n_regions_V_ce0 sc_out sc_logic 1 signal 2 } 
 	{ n_regions_V_q0 sc_in sc_lv 8 signal 2 } 
@@ -51,12 +51,12 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "taskId", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "taskId", "role": "default" }} , 
- 	{ "name": "taskId_c16_din", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "taskId_c16", "role": "din" }} , 
- 	{ "name": "taskId_c16_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "taskId_c16", "role": "num_data_valid" }} , 
- 	{ "name": "taskId_c16_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "taskId_c16", "role": "fifo_cap" }} , 
- 	{ "name": "taskId_c16_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "taskId_c16", "role": "full_n" }} , 
- 	{ "name": "taskId_c16_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "taskId_c16", "role": "write" }} , 
+ 	{ "name": "checkId", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "checkId", "role": "default" }} , 
+ 	{ "name": "checkId_c16_din", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "checkId_c16", "role": "din" }} , 
+ 	{ "name": "checkId_c16_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "checkId_c16", "role": "num_data_valid" }} , 
+ 	{ "name": "checkId_c16_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "checkId_c16", "role": "fifo_cap" }} , 
+ 	{ "name": "checkId_c16_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId_c16", "role": "full_n" }} , 
+ 	{ "name": "checkId_c16_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId_c16", "role": "write" }} , 
  	{ "name": "n_regions_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address0" }} , 
  	{ "name": "n_regions_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "n_regions_V", "role": "ce0" }} , 
  	{ "name": "n_regions_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "q0" }} , 
@@ -78,17 +78,17 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "taskId", "Type" : "None", "Direction" : "I"},
-			{"Name" : "taskId_c16", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "10", "DependentChanType" : "2",
+			{"Name" : "checkId", "Type" : "None", "Direction" : "I"},
+			{"Name" : "checkId_c16", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "10", "DependentChanType" : "2",
 				"BlockSignal" : [
-					{"Name" : "taskId_c16_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "checkId_c16_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	runTestAfterInit_Block_entry68_proc {
-		taskId {Type I LastRead 0 FirstWrite -1}
-		taskId_c16 {Type O LastRead -1 FirstWrite 0}
+		checkId {Type I LastRead 0 FirstWrite -1}
+		checkId_c16 {Type O LastRead -1 FirstWrite 0}
 		n_regions_V {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -102,7 +102,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	taskId { ap_none {  { taskId in_data 0 16 } } }
-	taskId_c16 { ap_fifo {  { taskId_c16_din fifo_port_we 1 16 }  { taskId_c16_num_data_valid fifo_status_num_data_valid 0 5 }  { taskId_c16_fifo_cap fifo_update 0 5 }  { taskId_c16_full_n fifo_status 0 1 }  { taskId_c16_write fifo_data 1 1 } } }
+	checkId { ap_none {  { checkId in_data 0 16 } } }
+	checkId_c16 { ap_fifo {  { checkId_c16_din fifo_port_we 1 16 }  { checkId_c16_num_data_valid fifo_status_num_data_valid 0 5 }  { checkId_c16_fifo_cap fifo_update 0 5 }  { checkId_c16_full_n fifo_status 0 1 }  { checkId_c16_write fifo_data 1 1 } } }
 	n_regions_V { ap_memory {  { n_regions_V_address0 mem_address 1 7 }  { n_regions_V_ce0 mem_ce 1 1 }  { n_regions_V_q0 in_data 0 8 } } }
 }

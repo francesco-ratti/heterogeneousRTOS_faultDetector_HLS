@@ -140,8 +140,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId</name>
-<Object>taskId</Object>
+<name>checkId</name>
+<Object>checkId</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -151,8 +151,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId_c16_din</name>
-<Object>taskId_c16</Object>
+<name>checkId_c16_din</name>
+<Object>checkId_c16</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -162,8 +162,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId_c16_num_data_valid</name>
-<Object>taskId_c16</Object>
+<name>checkId_c16_num_data_valid</name>
+<Object>checkId_c16</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -173,8 +173,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId_c16_fifo_cap</name>
-<Object>taskId_c16</Object>
+<name>checkId_c16_fifo_cap</name>
+<Object>checkId_c16</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -184,8 +184,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId_c16_full_n</name>
-<Object>taskId_c16</Object>
+<name>checkId_c16_full_n</name>
+<Object>checkId_c16</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -195,8 +195,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>taskId_c16_write</name>
-<Object>taskId_c16</Object>
+<name>checkId_c16_write</name>
+<Object>checkId_c16</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>

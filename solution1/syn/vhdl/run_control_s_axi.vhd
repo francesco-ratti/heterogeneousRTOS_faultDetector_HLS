@@ -33,12 +33,12 @@ port (
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
-    contr                 :out  STD_LOGIC_VECTOR(31 downto 0);
+    contr                 :out  STD_LOGIC_VECTOR(47 downto 0);
     sharedMem             :out  STD_LOGIC_VECTOR(63 downto 0);
-    realTaskId_address0   :in   STD_LOGIC_VECTOR(6 downto 0);
-    realTaskId_ce0        :in   STD_LOGIC;
-    realTaskId_we0        :in   STD_LOGIC;
-    realTaskId_d0         :in   STD_LOGIC_VECTOR(7 downto 0);
+    realcheckId_address0  :in   STD_LOGIC_VECTOR(6 downto 0);
+    realcheckId_ce0       :in   STD_LOGIC;
+    realcheckId_we0       :in   STD_LOGIC;
+    realcheckId_d0        :in   STD_LOGIC_VECTOR(7 downto 0);
     n_regions_in_address0 :in   STD_LOGIC_VECTOR(6 downto 0);
     n_regions_in_ce0      :in   STD_LOGIC;
     n_regions_in_q0       :out  STD_LOGIC_VECTOR(7 downto 0);
@@ -77,18 +77,21 @@ end entity run_control_s_axi;
 --           others - reserved
 -- 0x00010 : Data signal of contr
 --           bit 31~0 - contr[31:0] (Read/Write)
--- 0x00014 : reserved
--- 0x00018 : Data signal of sharedMem
---           bit 31~0 - sharedMem[31:0] (Read/Write)
+-- 0x00014 : Data signal of contr
+--           bit 15~0 - contr[47:32] (Read/Write)
+--           others   - reserved
+-- 0x00018 : reserved
 -- 0x0001c : Data signal of sharedMem
+--           bit 31~0 - sharedMem[31:0] (Read/Write)
+-- 0x00020 : Data signal of sharedMem
 --           bit 31~0 - sharedMem[63:32] (Read/Write)
--- 0x00020 : reserved
+-- 0x00024 : reserved
 -- 0x00080 ~
--- 0x000ff : Memory 'realTaskId' (128 * 8b)
---           Word n : bit [ 7: 0] - realTaskId[4n]
---                    bit [15: 8] - realTaskId[4n+1]
---                    bit [23:16] - realTaskId[4n+2]
---                    bit [31:24] - realTaskId[4n+3]
+-- 0x000ff : Memory 'realcheckId' (128 * 8b)
+--           Word n : bit [ 7: 0] - realcheckId[4n]
+--                    bit [15: 8] - realcheckId[4n+1]
+--                    bit [23:16] - realcheckId[4n+2]
+--                    bit [31:24] - realcheckId[4n+3]
 -- 0x00100 ~
 -- 0x0017f : Memory 'n_regions_in' (128 * 8b)
 --           Word n : bit [ 7: 0] - n_regions_in[4n]
@@ -110,12 +113,13 @@ architecture behave of run_control_s_axi is
     constant ADDR_IER                 : INTEGER := 16#00008#;
     constant ADDR_ISR                 : INTEGER := 16#0000c#;
     constant ADDR_CONTR_DATA_0        : INTEGER := 16#00010#;
-    constant ADDR_CONTR_CTRL          : INTEGER := 16#00014#;
-    constant ADDR_SHAREDMEM_DATA_0    : INTEGER := 16#00018#;
-    constant ADDR_SHAREDMEM_DATA_1    : INTEGER := 16#0001c#;
-    constant ADDR_SHAREDMEM_CTRL      : INTEGER := 16#00020#;
-    constant ADDR_REALTASKID_BASE     : INTEGER := 16#00080#;
-    constant ADDR_REALTASKID_HIGH     : INTEGER := 16#000ff#;
+    constant ADDR_CONTR_DATA_1        : INTEGER := 16#00014#;
+    constant ADDR_CONTR_CTRL          : INTEGER := 16#00018#;
+    constant ADDR_SHAREDMEM_DATA_0    : INTEGER := 16#0001c#;
+    constant ADDR_SHAREDMEM_DATA_1    : INTEGER := 16#00020#;
+    constant ADDR_SHAREDMEM_CTRL      : INTEGER := 16#00024#;
+    constant ADDR_REALCHECKID_BASE    : INTEGER := 16#00080#;
+    constant ADDR_REALCHECKID_HIGH    : INTEGER := 16#000ff#;
     constant ADDR_N_REGIONS_IN_BASE   : INTEGER := 16#00100#;
     constant ADDR_N_REGIONS_IN_HIGH   : INTEGER := 16#0017f#;
     constant ADDR_TRAINEDREGIONS_BASE : INTEGER := 16#40000#;
@@ -149,23 +153,23 @@ architecture behave of run_control_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_contr           : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_contr           : UNSIGNED(47 downto 0) := (others => '0');
     signal int_sharedMem       : UNSIGNED(63 downto 0) := (others => '0');
     -- memory signals
-    signal int_realTaskId_address0 : UNSIGNED(4 downto 0);
-    signal int_realTaskId_ce0  : STD_LOGIC;
-    signal int_realTaskId_be0  : UNSIGNED(3 downto 0);
-    signal int_realTaskId_d0   : UNSIGNED(31 downto 0);
-    signal int_realTaskId_q0   : UNSIGNED(31 downto 0);
-    signal int_realTaskId_address1 : UNSIGNED(4 downto 0);
-    signal int_realTaskId_ce1  : STD_LOGIC;
-    signal int_realTaskId_we1  : STD_LOGIC;
-    signal int_realTaskId_be1  : UNSIGNED(3 downto 0);
-    signal int_realTaskId_d1   : UNSIGNED(31 downto 0);
-    signal int_realTaskId_q1   : UNSIGNED(31 downto 0);
-    signal int_realTaskId_read : STD_LOGIC;
-    signal int_realTaskId_write : STD_LOGIC;
-    signal int_realTaskId_shift0 : UNSIGNED(1 downto 0);
+    signal int_realcheckId_address0 : UNSIGNED(4 downto 0);
+    signal int_realcheckId_ce0 : STD_LOGIC;
+    signal int_realcheckId_be0 : UNSIGNED(3 downto 0);
+    signal int_realcheckId_d0  : UNSIGNED(31 downto 0);
+    signal int_realcheckId_q0  : UNSIGNED(31 downto 0);
+    signal int_realcheckId_address1 : UNSIGNED(4 downto 0);
+    signal int_realcheckId_ce1 : STD_LOGIC;
+    signal int_realcheckId_we1 : STD_LOGIC;
+    signal int_realcheckId_be1 : UNSIGNED(3 downto 0);
+    signal int_realcheckId_d1  : UNSIGNED(31 downto 0);
+    signal int_realcheckId_q1  : UNSIGNED(31 downto 0);
+    signal int_realcheckId_read : STD_LOGIC;
+    signal int_realcheckId_write : STD_LOGIC;
+    signal int_realcheckId_shift0 : UNSIGNED(1 downto 0);
     signal int_n_regions_in_address0 : UNSIGNED(4 downto 0);
     signal int_n_regions_in_ce0 : STD_LOGIC;
     signal int_n_regions_in_q0 : UNSIGNED(31 downto 0);
@@ -228,8 +232,8 @@ architecture behave of run_control_s_axi is
 
 begin
 -- ----------------------- Instantiation------------------
--- int_realTaskId
-int_realTaskId : run_control_s_axi_ram
+-- int_realcheckId
+int_realcheckId : run_control_s_axi_ram
 generic map (
      MEM_STYLE => "auto",
      MEM_TYPE  => "T2P",
@@ -238,17 +242,17 @@ generic map (
      AWIDTH    => log2(32))
 port map (
      clk0      => ACLK,
-     address0  => int_realTaskId_address0,
-     ce0       => int_realTaskId_ce0,
-     we0       => int_realTaskId_be0,
-     d0        => int_realTaskId_d0,
-     q0        => int_realTaskId_q0,
+     address0  => int_realcheckId_address0,
+     ce0       => int_realcheckId_ce0,
+     we0       => int_realcheckId_be0,
+     d0        => int_realcheckId_d0,
+     q0        => int_realcheckId_q0,
      clk1      => ACLK,
-     address1  => int_realTaskId_address1,
-     ce1       => int_realTaskId_ce1,
-     we1       => int_realTaskId_be1,
-     d1        => int_realTaskId_d1,
-     q1        => int_realTaskId_q1);
+     address1  => int_realcheckId_address1,
+     ce1       => int_realcheckId_ce1,
+     we1       => int_realcheckId_be1,
+     d1        => int_realcheckId_d1,
+     q1        => int_realcheckId_q1);
 -- int_n_regions_in
 int_n_regions_in : run_control_s_axi_ram
 generic map (
@@ -358,7 +362,7 @@ port map (
     ARREADY <= ARREADY_t;
     RDATA   <= STD_LOGIC_VECTOR(rdata_data);
     RRESP   <= "00";  -- OKAY
-    RVALID_t  <= '1' when (rstate = rddata) and (int_realTaskId_read = '0') and (int_n_regions_in_read = '0') and (int_trainedRegions_read = '0') else '0';
+    RVALID_t  <= '1' when (rstate = rddata) and (int_realcheckId_read = '0') and (int_n_regions_in_read = '0') and (int_trainedRegions_read = '0') else '0';
     RVALID    <= RVALID_t;
     ar_hs   <= ARVALID and ARREADY_t;
     raddr   <= UNSIGNED(ARADDR(ADDR_BITS-1 downto 0));
@@ -418,6 +422,8 @@ port map (
                         rdata_data(1 downto 0) <= int_isr;
                     when ADDR_CONTR_DATA_0 =>
                         rdata_data <= RESIZE(int_contr(31 downto 0), 32);
+                    when ADDR_CONTR_DATA_1 =>
+                        rdata_data <= RESIZE(int_contr(47 downto 32), 32);
                     when ADDR_SHAREDMEM_DATA_0 =>
                         rdata_data <= RESIZE(int_sharedMem(31 downto 0), 32);
                     when ADDR_SHAREDMEM_DATA_1 =>
@@ -425,8 +431,8 @@ port map (
                     when others =>
                         NULL;
                     end case;
-                elsif (int_realTaskId_read = '1') then
-                    rdata_data <= int_realTaskId_q1;
+                elsif (int_realcheckId_read = '1') then
+                    rdata_data <= int_realcheckId_q1;
                 elsif (int_n_regions_in_read = '1') then
                     rdata_data <= int_n_regions_in_q1;
                 elsif (int_trainedRegions_read = '1') then
@@ -660,6 +666,17 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_CONTR_DATA_1) then
+                    int_contr(47 downto 32) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_contr(47 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_SHAREDMEM_DATA_0) then
                     int_sharedMem(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_sharedMem(31 downto 0));
                 end if;
@@ -680,14 +697,14 @@ port map (
 
 
 -- ----------------------- Memory logic ------------------
-    -- realTaskId
-    int_realTaskId_address0 <= SHIFT_RIGHT(UNSIGNED(realTaskId_address0), 2)(4 downto 0);
-    int_realTaskId_ce0   <= realTaskId_ce0;
-    int_realTaskId_address1 <= raddr(6 downto 2) when ar_hs = '1' else waddr(6 downto 2);
-    int_realTaskId_ce1   <= '1' when ar_hs = '1' or (int_realTaskId_write = '1' and WVALID  = '1') else '0';
-    int_realTaskId_we1   <= '1' when int_realTaskId_write = '1' and w_hs = '1' else '0';
-    int_realTaskId_be1   <= UNSIGNED(WSTRB) when int_realTaskId_we1 = '1' else (others=>'0');
-    int_realTaskId_d1    <= UNSIGNED(WDATA);
+    -- realcheckId
+    int_realcheckId_address0 <= SHIFT_RIGHT(UNSIGNED(realcheckId_address0), 2)(4 downto 0);
+    int_realcheckId_ce0  <= realcheckId_ce0;
+    int_realcheckId_address1 <= raddr(6 downto 2) when ar_hs = '1' else waddr(6 downto 2);
+    int_realcheckId_ce1  <= '1' when ar_hs = '1' or (int_realcheckId_write = '1' and WVALID  = '1') else '0';
+    int_realcheckId_we1  <= '1' when int_realcheckId_write = '1' and w_hs = '1' else '0';
+    int_realcheckId_be1  <= UNSIGNED(WSTRB) when int_realcheckId_we1 = '1' else (others=>'0');
+    int_realcheckId_d1   <= UNSIGNED(WDATA);
     -- n_regions_in
     int_n_regions_in_address0 <= SHIFT_RIGHT(UNSIGNED(n_regions_in_address0), 2)(4 downto 0);
     int_n_regions_in_ce0 <= n_regions_in_ce0;
@@ -710,12 +727,12 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_realTaskId_read <= '0';
+                int_realcheckId_read <= '0';
             elsif (ACLK_EN = '1') then
-                if (ar_hs = '1' and raddr >= ADDR_REALTASKID_BASE and raddr <= ADDR_REALTASKID_HIGH) then
-                    int_realTaskId_read <= '1';
+                if (ar_hs = '1' and raddr >= ADDR_REALCHECKID_BASE and raddr <= ADDR_REALCHECKID_HIGH) then
+                    int_realcheckId_read <= '1';
                 else
-                    int_realTaskId_read <= '0';
+                    int_realcheckId_read <= '0';
                 end if;
             end if;
         end if;
@@ -725,12 +742,12 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_realTaskId_write <= '0';
+                int_realcheckId_write <= '0';
             elsif (ACLK_EN = '1') then
-                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_REALTASKID_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_REALTASKID_HIGH) then
-                    int_realTaskId_write <= '1';
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_REALCHECKID_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_REALCHECKID_HIGH) then
+                    int_realcheckId_write <= '1';
                 elsif (w_hs = '1') then
-                    int_realTaskId_write <= '0';
+                    int_realcheckId_write <= '0';
                 end if;
             end if;
         end if;
@@ -740,10 +757,10 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_realTaskId_shift0 <= (others=>'0');
+                int_realcheckId_shift0 <= (others=>'0');
             elsif (ACLK_EN = '1') then
-                if (realTaskId_ce0 = '1') then
-                    int_realTaskId_shift0 <= UNSIGNED(realTaskId_address0(1 downto 0));
+                if (realcheckId_ce0 = '1') then
+                    int_realcheckId_shift0 <= UNSIGNED(realcheckId_address0(1 downto 0));
                 end if;
             end if;
         end if;

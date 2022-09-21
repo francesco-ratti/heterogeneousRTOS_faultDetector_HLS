@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Wed Sep 21 14:53:13 2022
+    * Date:           Wed Sep 21 16:40:38 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution1 (Vitis Kernel Flow Target)
@@ -19,15 +19,15 @@
     |                 Modules                 | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |            |     |
     |                 & Loops                 | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
     +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
-    |+ run                                    |     -|   0.00|      148|  2.960e+03|         -|      149|     -|        no|  10 (3%)|   -|  6626 (6%)|  7956 (14%)|    -|
-    | + runTestAfterInit*                     |     -|   0.00|      145|  2.900e+03|         -|        8|     -|  dataflow|   8 (2%)|   -|  4865 (4%)|  5445 (10%)|    -|
-    |  + entry_proc                           |     -|  10.97|        0|      0.000|         -|        0|     -|        no|        -|   -|    2 (~0%)|    20 (~0%)|    -|
+    |+ run                                    |     -|   0.00|      258|  5.160e+03|         -|      259|     -|        no|  10 (3%)|   -|  6757 (6%)|  8077 (15%)|    -|
+    | + runTestAfterInit*                     |     -|   0.00|      145|  2.900e+03|         -|        8|     -|  dataflow|   8 (2%)|   -|  4964 (4%)|  5530 (10%)|    -|
+    |  + entry_proc                           |     -|  10.97|        0|      0.000|         -|        0|     -|        no|        -|   -|    2 (~0%)|    29 (~0%)|    -|
     |  + read_test                            |     -|   0.00|       71|  1.420e+03|         -|        8|     -|       yes|        -|   -|  345 (~0%)|   122 (~0%)|    -|
     |  + runTestAfterInit_Block_entry68_proc  |     -|  10.97|        1|     20.000|         -|        1|     -|        no|        -|   -|    3 (~0%)|    34 (~0%)|    -|
     |  + run_test                             |     -|   2.27|       27|    540.000|         -|        8|     -|       yes|        -|   -|  1115 (1%)|   1551 (2%)|    -|
     |   + find_region                         |     -|   2.27|        9|    180.000|         -|        8|     -|       yes|        -|   -|  295 (~0%)|    833 (1%)|    -|
-    |  + writeOutcome                         |     -|   0.00|       72|  1.440e+03|         -|        8|     -|       yes|        -|   -|  846 (~0%)|   2463 (4%)|    -|
-    | o VITIS_LOOP_393_2                      |     -|  14.60|       16|    320.000|         2|        -|     8|        no|        -|   -|          -|           -|    -|
+    |  + writeOutcome                         |     -|   0.00|       72|  1.440e+03|         -|        8|     -|       yes|        -|   -|  846 (~0%)|   2472 (4%)|    -|
+    | o VITIS_LOOP_395_2                      |     -|  14.60|      256|  5.120e+03|         2|        -|   128|        no|        -|   -|          -|           -|    -|
     +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
 
 
@@ -57,9 +57,10 @@
 | s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
 | s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
 | s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
-| s_axi_control | contr       | 0x10   | 32    | W      | Data signal of contr             |                                                                                    |
-| s_axi_control | sharedMem_1 | 0x18   | 32    | W      | Data signal of sharedMem         |                                                                                    |
-| s_axi_control | sharedMem_2 | 0x1c   | 32    | W      | Data signal of sharedMem         |                                                                                    |
+| s_axi_control | contr_1     | 0x10   | 32    | W      | Data signal of contr             |                                                                                    |
+| s_axi_control | contr_2     | 0x14   | 32    | W      | Data signal of contr             |                                                                                    |
+| s_axi_control | sharedMem_1 | 0x1c   | 32    | W      | Data signal of sharedMem         |                                                                                    |
+| s_axi_control | sharedMem_2 | 0x20   | 32    | W      | Data signal of sharedMem         |                                                                                    |
 +---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
 
 * AXIS
@@ -89,7 +90,7 @@
 +----------------+-----------+-----------------------+
 | contr          | in        | controlStr            |
 | trainedRegions | unused    | REGION_T*             |
-| realTaskId     | unused    | ap_int<8>*            |
+| realcheckId    | unused    | ap_int<8>*            |
 | n_regions_in   | in        | ap_int<8>*            |
 | sharedMem      | inout     | ap_int<32>*           |
 | toScheduler    | out       | stream<ap_int<8>, 0>& |
@@ -99,13 +100,14 @@
 +----------------+---------------+-----------+----------+------------------------------------------------+
 | Argument       | HW Interface  | HW Type   | HW Usage | HW Info                                        |
 +----------------+---------------+-----------+----------+------------------------------------------------+
-| contr          | s_axi_control | register  |          | name=contr offset=0x10 range=32                |
+| contr          | s_axi_control | register  |          | name=contr_1 offset=0x10 range=32              |
+| contr          | s_axi_control | register  |          | name=contr_2 offset=0x14 range=32              |
 | trainedRegions | s_axi_control | memory    |          | name=trainedRegions offset=262144 range=262144 |
-| realTaskId     | s_axi_control | memory    |          | name=realTaskId offset=128 range=128           |
+| realcheckId    | s_axi_control | memory    |          | name=realcheckId offset=128 range=128          |
 | n_regions_in   | s_axi_control | memory    |          | name=n_regions_in offset=256 range=128         |
 | sharedMem      | m_axi_gmem    | interface |          |                                                |
-| sharedMem      | s_axi_control | register  | offset   | name=sharedMem_1 offset=0x18 range=32          |
-| sharedMem      | s_axi_control | register  | offset   | name=sharedMem_2 offset=0x1c range=32          |
+| sharedMem      | s_axi_control | register  | offset   | name=sharedMem_1 offset=0x1c range=32          |
+| sharedMem      | s_axi_control | register  | offset   | name=sharedMem_2 offset=0x20 range=32          |
 | toScheduler    | toScheduler   | interface |          |                                                |
 +----------------+---------------+-----------+----------+------------------------------------------------+
 
@@ -124,16 +126,16 @@
 | Name                              | DSP | Pragma | Variable                     | Op   | Impl   | Latency |
 +-----------------------------------+-----+--------+------------------------------+------+--------+---------+
 | + run                             | 0   |        |                              |      |        |         |
-|   outcomeInRam_fu_306_p2          | -   |        | outcomeInRam                 | add  | fabric | 0       |
-|   i_2_fu_335_p2                   | -   |        | i_2                          | add  | fabric | 0       |
+|   outcomeInRam_fu_323_p2          | -   |        | outcomeInRam                 | add  | fabric | 0       |
+|   i_2_fu_352_p2                   | -   |        | i_2                          | add  | fabric | 0       |
 |  + runTestAfterInit               | 0   |        |                              |      |        |         |
 |    n_regions_V_load_loc_channel_U | -   |        | n_regions_V_load_loc_channel | fifo | srl    | 0       |
 |    error_U                        | -   |        | error                        | fifo | srl    | 0       |
 |   + writeOutcome                  | 0   |        |                              |      |        |         |
-|     empty_33_fu_165_p2            | -   |        | empty_33                     | add  | fabric | 0       |
-|     empty_34_fu_171_p2            | -   |        | empty_34                     | add  | fabric | 0       |
-|     empty_35_fu_177_p2            | -   |        | empty_35                     | add  | fabric | 0       |
-|     empty_40_fu_251_p2            | -   |        | empty_40                     | add  | fabric | 0       |
+|     empty_36_fu_175_p2            | -   |        | empty_36                     | add  | fabric | 0       |
+|     empty_37_fu_181_p2            | -   |        | empty_37                     | add  | fabric | 0       |
+|     empty_38_fu_187_p2            | -   |        | empty_38                     | add  | fabric | 0       |
+|     empty_43_fu_258_p2            | -   |        | empty_43                     | add  | fabric | 0       |
 +-----------------------------------+-----+--------+------------------------------+------+--------+---------+
 
 
@@ -147,7 +149,8 @@
 |   n_regions_V_U     | 1    | -    |        | n_regions_V    | ram_1p  | auto | 1       |
 |  + runTestAfterInit | 8    | 0    |        |                |         |      |         |
 |    outcomeInRam_c_U | -    | -    |        | outcomeInRam_c | fifo    | srl  | 0       |
-|    taskId_c16_U     | -    | -    |        | taskId_c16     | fifo    | srl  | 0       |
+|    checkId_c16_U    | -    | -    |        | checkId_c16    | fifo    | srl  | 0       |
+|    checkId_c_U      | -    | -    |        | checkId_c      | fifo    | srl  | 0       |
 |    taskId_c_U       | -    | -    |        | taskId_c       | fifo    | srl  | 0       |
 +---------------------+------+------+--------+----------------+---------+------+---------+
 
@@ -162,23 +165,23 @@
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:38 in find_region       |
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:49 in find_region       |
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:75 in is_valid          |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:315 in writeoutcome     |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:328 in read_test        |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:333 in run_test         |
-| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:338 in runtestafterinit |
-| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:363 in run              |
-| interface       | s_axilite port = realTaskId     | detector_solid/abs_solid_detector.cpp:364 in run              |
-| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:365 in run              |
-| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:366 in run, sharedMem   |
-| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:367 in run, toScheduler |
-| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:374 in run, data        |
-| reset           | variable=regions                | detector_solid/abs_solid_detector.cpp:375 in run, regions     |
-| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:376 in run, n_regions   |
-| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:378 in run, data        |
-| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:379 in run, regions     |
-| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:380 in run, data_key    |
-| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:389 in run              |
-| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:394 in run              |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:316 in writeoutcome     |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:329 in read_test        |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:334 in run_test         |
+| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:339 in runtestafterinit |
+| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:365 in run              |
+| interface       | s_axilite port = realcheckId    | detector_solid/abs_solid_detector.cpp:366 in run              |
+| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:367 in run              |
+| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:368 in run, sharedMem   |
+| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:369 in run, toScheduler |
+| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:376 in run, data        |
+| reset           | variable=regions                | detector_solid/abs_solid_detector.cpp:377 in run, regions     |
+| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:378 in run, n_regions   |
+| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:380 in run, data        |
+| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:381 in run, regions     |
+| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:382 in run, data_key    |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:391 in run              |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:396 in run              |
 +-----------------+---------------------------------+---------------------------------------------------------------+
 
 

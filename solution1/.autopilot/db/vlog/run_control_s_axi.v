@@ -30,12 +30,12 @@ module run_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
-    output wire [31:0]                   contr,
+    output wire [47:0]                   contr,
     output wire [63:0]                   sharedMem,
-    input  wire [6:0]                    realTaskId_address0,
-    input  wire                          realTaskId_ce0,
-    input  wire                          realTaskId_we0,
-    input  wire [7:0]                    realTaskId_d0,
+    input  wire [6:0]                    realcheckId_address0,
+    input  wire                          realcheckId_ce0,
+    input  wire                          realcheckId_we0,
+    input  wire [7:0]                    realcheckId_d0,
     input  wire [6:0]                    n_regions_in_address0,
     input  wire                          n_regions_in_ce0,
     output wire [7:0]                    n_regions_in_q0,
@@ -72,18 +72,21 @@ module run_control_s_axi
 //           others - reserved
 // 0x00010 : Data signal of contr
 //           bit 31~0 - contr[31:0] (Read/Write)
-// 0x00014 : reserved
-// 0x00018 : Data signal of sharedMem
-//           bit 31~0 - sharedMem[31:0] (Read/Write)
+// 0x00014 : Data signal of contr
+//           bit 15~0 - contr[47:32] (Read/Write)
+//           others   - reserved
+// 0x00018 : reserved
 // 0x0001c : Data signal of sharedMem
+//           bit 31~0 - sharedMem[31:0] (Read/Write)
+// 0x00020 : Data signal of sharedMem
 //           bit 31~0 - sharedMem[63:32] (Read/Write)
-// 0x00020 : reserved
+// 0x00024 : reserved
 // 0x00080 ~
-// 0x000ff : Memory 'realTaskId' (128 * 8b)
-//           Word n : bit [ 7: 0] - realTaskId[4n]
-//                    bit [15: 8] - realTaskId[4n+1]
-//                    bit [23:16] - realTaskId[4n+2]
-//                    bit [31:24] - realTaskId[4n+3]
+// 0x000ff : Memory 'realcheckId' (128 * 8b)
+//           Word n : bit [ 7: 0] - realcheckId[4n]
+//                    bit [15: 8] - realcheckId[4n+1]
+//                    bit [23:16] - realcheckId[4n+2]
+//                    bit [31:24] - realcheckId[4n+3]
 // 0x00100 ~
 // 0x0017f : Memory 'n_regions_in' (128 * 8b)
 //           Word n : bit [ 7: 0] - n_regions_in[4n]
@@ -102,12 +105,13 @@ localparam
     ADDR_IER                 = 19'h00008,
     ADDR_ISR                 = 19'h0000c,
     ADDR_CONTR_DATA_0        = 19'h00010,
-    ADDR_CONTR_CTRL          = 19'h00014,
-    ADDR_SHAREDMEM_DATA_0    = 19'h00018,
-    ADDR_SHAREDMEM_DATA_1    = 19'h0001c,
-    ADDR_SHAREDMEM_CTRL      = 19'h00020,
-    ADDR_REALTASKID_BASE     = 19'h00080,
-    ADDR_REALTASKID_HIGH     = 19'h000ff,
+    ADDR_CONTR_DATA_1        = 19'h00014,
+    ADDR_CONTR_CTRL          = 19'h00018,
+    ADDR_SHAREDMEM_DATA_0    = 19'h0001c,
+    ADDR_SHAREDMEM_DATA_1    = 19'h00020,
+    ADDR_SHAREDMEM_CTRL      = 19'h00024,
+    ADDR_REALCHECKID_BASE    = 19'h00080,
+    ADDR_REALCHECKID_HIGH    = 19'h000ff,
     ADDR_N_REGIONS_IN_BASE   = 19'h00100,
     ADDR_N_REGIONS_IN_HIGH   = 19'h0017f,
     ADDR_TRAINEDREGIONS_BASE = 19'h40000,
@@ -149,23 +153,23 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [31:0]                   int_contr = 'b0;
+    reg  [47:0]                   int_contr = 'b0;
     reg  [63:0]                   int_sharedMem = 'b0;
     // memory signals
-    wire [4:0]                    int_realTaskId_address0;
-    wire                          int_realTaskId_ce0;
-    wire [3:0]                    int_realTaskId_be0;
-    wire [31:0]                   int_realTaskId_d0;
-    wire [31:0]                   int_realTaskId_q0;
-    wire [4:0]                    int_realTaskId_address1;
-    wire                          int_realTaskId_ce1;
-    wire                          int_realTaskId_we1;
-    wire [3:0]                    int_realTaskId_be1;
-    wire [31:0]                   int_realTaskId_d1;
-    wire [31:0]                   int_realTaskId_q1;
-    reg                           int_realTaskId_read;
-    reg                           int_realTaskId_write;
-    reg  [1:0]                    int_realTaskId_shift0;
+    wire [4:0]                    int_realcheckId_address0;
+    wire                          int_realcheckId_ce0;
+    wire [3:0]                    int_realcheckId_be0;
+    wire [31:0]                   int_realcheckId_d0;
+    wire [31:0]                   int_realcheckId_q0;
+    wire [4:0]                    int_realcheckId_address1;
+    wire                          int_realcheckId_ce1;
+    wire                          int_realcheckId_we1;
+    wire [3:0]                    int_realcheckId_be1;
+    wire [31:0]                   int_realcheckId_d1;
+    wire [31:0]                   int_realcheckId_q1;
+    reg                           int_realcheckId_read;
+    reg                           int_realcheckId_write;
+    reg  [1:0]                    int_realcheckId_shift0;
     wire [4:0]                    int_n_regions_in_address0;
     wire                          int_n_regions_in_ce0;
     wire [31:0]                   int_n_regions_in_q0;
@@ -193,25 +197,25 @@ localparam
     reg                           int_trainedRegions_write;
 
 //------------------------Instantiation------------------
-// int_realTaskId
+// int_realcheckId
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
     .MEM_TYPE  ( "T2P" ),
     .BYTES     ( 4 ),
     .DEPTH     ( 32 )
-) int_realTaskId (
+) int_realcheckId (
     .clk0      ( ACLK ),
-    .address0  ( int_realTaskId_address0 ),
-    .ce0       ( int_realTaskId_ce0 ),
-    .we0       ( int_realTaskId_be0 ),
-    .d0        ( int_realTaskId_d0 ),
-    .q0        ( int_realTaskId_q0 ),
+    .address0  ( int_realcheckId_address0 ),
+    .ce0       ( int_realcheckId_ce0 ),
+    .we0       ( int_realcheckId_be0 ),
+    .d0        ( int_realcheckId_d0 ),
+    .q0        ( int_realcheckId_q0 ),
     .clk1      ( ACLK ),
-    .address1  ( int_realTaskId_address1 ),
-    .ce1       ( int_realTaskId_ce1 ),
-    .we1       ( int_realTaskId_be1 ),
-    .d1        ( int_realTaskId_d1 ),
-    .q1        ( int_realTaskId_q1 )
+    .address1  ( int_realcheckId_address1 ),
+    .ce1       ( int_realcheckId_ce1 ),
+    .we1       ( int_realcheckId_be1 ),
+    .d1        ( int_realcheckId_d1 ),
+    .q1        ( int_realcheckId_q1 )
 );
 // int_n_regions_in
 run_control_s_axi_ram #(
@@ -307,7 +311,7 @@ end
 assign ARREADY = (rstate == RDIDLE);
 assign RDATA   = rdata;
 assign RRESP   = 2'b00;  // OKAY
-assign RVALID  = (rstate == RDDATA) & !int_realTaskId_read & !int_n_regions_in_read & !int_trainedRegions_read;
+assign RVALID  = (rstate == RDDATA) & !int_realcheckId_read & !int_n_regions_in_read & !int_trainedRegions_read;
 assign ar_hs   = ARVALID & ARREADY;
 assign raddr   = ARADDR[ADDR_BITS-1:0];
 
@@ -364,6 +368,9 @@ always @(posedge ACLK) begin
                 ADDR_CONTR_DATA_0: begin
                     rdata <= int_contr[31:0];
                 end
+                ADDR_CONTR_DATA_1: begin
+                    rdata <= int_contr[47:32];
+                end
                 ADDR_SHAREDMEM_DATA_0: begin
                     rdata <= int_sharedMem[31:0];
                 end
@@ -372,8 +379,8 @@ always @(posedge ACLK) begin
                 end
             endcase
         end
-        else if (int_realTaskId_read) begin
-            rdata <= int_realTaskId_q1;
+        else if (int_realcheckId_read) begin
+            rdata <= int_realcheckId_q1;
         end
         else if (int_n_regions_in_read) begin
             rdata <= int_n_regions_in_q1;
@@ -556,6 +563,16 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_contr[47:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_contr[47:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_CONTR_DATA_1)
+            int_contr[47:32] <= (WDATA[31:0] & wmask) | (int_contr[47:32] & ~wmask);
+    end
+end
+
 // int_sharedMem[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -588,14 +605,14 @@ end
 //synthesis translate_on
 
 //------------------------Memory logic-------------------
-// realTaskId
-assign int_realTaskId_address0     = realTaskId_address0 >> 2;
-assign int_realTaskId_ce0          = realTaskId_ce0;
-assign int_realTaskId_address1     = ar_hs? raddr[6:2] : waddr[6:2];
-assign int_realTaskId_ce1          = ar_hs | (int_realTaskId_write & WVALID);
-assign int_realTaskId_we1          = int_realTaskId_write & w_hs;
-assign int_realTaskId_be1          = int_realTaskId_we1 ? WSTRB : 'b0;
-assign int_realTaskId_d1           = WDATA;
+// realcheckId
+assign int_realcheckId_address0    = realcheckId_address0 >> 2;
+assign int_realcheckId_ce0         = realcheckId_ce0;
+assign int_realcheckId_address1    = ar_hs? raddr[6:2] : waddr[6:2];
+assign int_realcheckId_ce1         = ar_hs | (int_realcheckId_write & WVALID);
+assign int_realcheckId_we1         = int_realcheckId_write & w_hs;
+assign int_realcheckId_be1         = int_realcheckId_we1 ? WSTRB : 'b0;
+assign int_realcheckId_d1          = WDATA;
 // n_regions_in
 assign int_n_regions_in_address0   = n_regions_in_address0 >> 2;
 assign int_n_regions_in_ce0        = n_regions_in_ce0;
@@ -613,37 +630,37 @@ assign int_trainedRegions_ce1      = ar_hs | (int_trainedRegions_write & WVALID)
 assign int_trainedRegions_we1      = int_trainedRegions_write & w_hs;
 assign int_trainedRegions_be1      = int_trainedRegions_we1 ? WSTRB : 'b0;
 assign int_trainedRegions_d1       = WDATA;
-// int_realTaskId_read
+// int_realcheckId_read
 always @(posedge ACLK) begin
     if (ARESET)
-        int_realTaskId_read <= 1'b0;
+        int_realcheckId_read <= 1'b0;
     else if (ACLK_EN) begin
-        if (ar_hs && raddr >= ADDR_REALTASKID_BASE && raddr <= ADDR_REALTASKID_HIGH)
-            int_realTaskId_read <= 1'b1;
+        if (ar_hs && raddr >= ADDR_REALCHECKID_BASE && raddr <= ADDR_REALCHECKID_HIGH)
+            int_realcheckId_read <= 1'b1;
         else
-            int_realTaskId_read <= 1'b0;
+            int_realcheckId_read <= 1'b0;
     end
 end
 
-// int_realTaskId_write
+// int_realcheckId_write
 always @(posedge ACLK) begin
     if (ARESET)
-        int_realTaskId_write <= 1'b0;
+        int_realcheckId_write <= 1'b0;
     else if (ACLK_EN) begin
-        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_REALTASKID_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_REALTASKID_HIGH)
-            int_realTaskId_write <= 1'b1;
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_REALCHECKID_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_REALCHECKID_HIGH)
+            int_realcheckId_write <= 1'b1;
         else if (w_hs)
-            int_realTaskId_write <= 1'b0;
+            int_realcheckId_write <= 1'b0;
     end
 end
 
-// int_realTaskId_shift0
+// int_realcheckId_shift0
 always @(posedge ACLK) begin
     if (ARESET)
-        int_realTaskId_shift0 <= 1'b0;
+        int_realcheckId_shift0 <= 1'b0;
     else if (ACLK_EN) begin
-        if (realTaskId_ce0)
-            int_realTaskId_shift0 <= realTaskId_address0[1:0];
+        if (realcheckId_ce0)
+            int_realcheckId_shift0 <= realcheckId_address0[1:0];
     end
 end
 

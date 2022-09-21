@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_test'" level="0">
-<item name = "Date">Wed Sep 21 14:53:10 2022
+<item name = "Date">Wed Sep 21 16:40:35 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -104,6 +104,7 @@
 <column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter7">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter8">1, 0, 1, 0</column>
+<column name="checkId_read_reg_380">7, 0, 7, 0</column>
 <column name="empty_reg_385">32, 0, 32, 0</column>
 <column name="p_cast10_i_i_i_reg_410">32, 0, 32, 0</column>
 <column name="p_cast12_i_i_i_reg_415">32, 0, 32, 0</column>
@@ -112,8 +113,7 @@
 <column name="p_cast4_i_i_i_reg_395">32, 0, 32, 0</column>
 <column name="p_cast6_i_i_i_reg_400">32, 0, 32, 0</column>
 <column name="p_cast8_i_i_i_reg_405">32, 0, 32, 0</column>
-<column name="taskId_read_reg_380">7, 0, 7, 0</column>
-<column name="taskId_read_reg_380">64, 32, 7, 0</column>
+<column name="checkId_read_reg_380">64, 32, 7, 0</column>
 </table>
 </item>
 </section>
@@ -177,7 +177,7 @@
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
 <column name="inputDataInRam">in, 64, ap_none, inputDataInRam, scalar</column>
-<column name="taskId">in, 7, ap_none, taskId, scalar</column>
+<column name="checkId">in, 7, ap_none, checkId, scalar</column>
 <column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0">out, 7, ap_memory, run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7, array</column>
 <column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0">out, 1, ap_memory, run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7, array</column>
 <column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0">out, 1, ap_memory, run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7, array</column>

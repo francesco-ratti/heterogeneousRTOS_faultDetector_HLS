@@ -395,7 +395,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fcmp_32ns_32ns_1_2_no_dsp_1_U17 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U19 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -411,7 +411,7 @@ begin
         opcode => grp_fu_187_opcode,
         dout => grp_fu_187_p2);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U18 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U20 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,

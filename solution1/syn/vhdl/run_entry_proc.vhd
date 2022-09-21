@@ -18,6 +18,12 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
+    taskId : IN STD_LOGIC_VECTOR (7 downto 0);
+    taskId_c_din : OUT STD_LOGIC_VECTOR (7 downto 0);
+    taskId_c_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
+    taskId_c_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
+    taskId_c_full_n : IN STD_LOGIC;
+    taskId_c_write : OUT STD_LOGIC;
     outcomeInRam : IN STD_LOGIC_VECTOR (63 downto 0);
     outcomeInRam_c_din : OUT STD_LOGIC_VECTOR (63 downto 0);
     outcomeInRam_c_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
@@ -41,6 +47,7 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
+    signal taskId_c_blk_n : STD_LOGIC;
     signal outcomeInRam_c_blk_n : STD_LOGIC;
     signal ap_block_state1 : BOOLEAN;
     signal ap_NS_fsm : STD_LOGIC_VECTOR (0 downto 0);
@@ -73,7 +80,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+                elsif ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -81,7 +88,7 @@ begin
     end process;
 
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, outcomeInRam_c_full_n)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -92,9 +99,9 @@ begin
     end process;
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
 
-    ap_ST_fsm_state1_blk_assign_proc : process(ap_start, ap_done_reg, outcomeInRam_c_full_n)
+    ap_ST_fsm_state1_blk_assign_proc : process(ap_start, ap_done_reg, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
-        if (((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) then 
+        if (((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) then 
             ap_ST_fsm_state1_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state1_blk <= ap_const_logic_0;
@@ -102,15 +109,15 @@ begin
     end process;
 
 
-    ap_block_state1_assign_proc : process(ap_start, ap_done_reg, outcomeInRam_c_full_n)
+    ap_block_state1_assign_proc : process(ap_start, ap_done_reg, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
-                ap_block_state1 <= ((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1));
+                ap_block_state1 <= ((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1));
     end process;
 
 
-    ap_done_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, outcomeInRam_c_full_n)
+    ap_done_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
-        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -128,9 +135,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, outcomeInRam_c_full_n)
+    ap_ready_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
-        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -149,12 +156,33 @@ begin
 
     outcomeInRam_c_din <= outcomeInRam;
 
-    outcomeInRam_c_write_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, outcomeInRam_c_full_n)
+    outcomeInRam_c_write_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, taskId_c_full_n, outcomeInRam_c_full_n)
     begin
-        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
             outcomeInRam_c_write <= ap_const_logic_1;
         else 
             outcomeInRam_c_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    taskId_c_blk_n_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, taskId_c_full_n)
+    begin
+        if ((not(((ap_start = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+            taskId_c_blk_n <= taskId_c_full_n;
+        else 
+            taskId_c_blk_n <= ap_const_logic_1;
+        end if; 
+    end process;
+
+    taskId_c_din <= taskId;
+
+    taskId_c_write_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, taskId_c_full_n, outcomeInRam_c_full_n)
+    begin
+        if ((not(((ap_start = ap_const_logic_0) or (outcomeInRam_c_full_n = ap_const_logic_0) or (taskId_c_full_n = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+            taskId_c_write <= ap_const_logic_1;
+        else 
+            taskId_c_write <= ap_const_logic_0;
         end if; 
     end process;
 

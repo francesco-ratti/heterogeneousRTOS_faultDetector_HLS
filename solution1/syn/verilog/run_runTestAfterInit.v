@@ -56,6 +56,7 @@ module run_runTestAfterInit (
         m_axi_gmem_BUSER,
         inputDataInRam,
         taskId,
+        checkId,
         outcomeInRam,
         toScheduler_TDATA,
         n_regions_V_address0,
@@ -70,10 +71,11 @@ module run_runTestAfterInit (
         n_regions_V_we1,
         ap_clk,
         ap_rst,
+        taskId_ap_vld,
         outcomeInRam_ap_vld,
         ap_start,
         inputDataInRam_ap_vld,
-        taskId_ap_vld,
+        checkId_ap_vld,
         toScheduler_TVALID,
         toScheduler_TREADY,
         ap_done,
@@ -130,7 +132,8 @@ input  [1:0] m_axi_gmem_BRESP;
 input  [0:0] m_axi_gmem_BID;
 input  [0:0] m_axi_gmem_BUSER;
 input  [63:0] inputDataInRam;
-input  [15:0] taskId;
+input  [7:0] taskId;
+input  [15:0] checkId;
 input  [63:0] outcomeInRam;
 output  [7:0] toScheduler_TDATA;
 output  [6:0] n_regions_V_address0;
@@ -145,10 +148,11 @@ input  [7:0] n_regions_V_q1;
 output   n_regions_V_we1;
 input   ap_clk;
 input   ap_rst;
+input   taskId_ap_vld;
 input   outcomeInRam_ap_vld;
 input   ap_start;
 input   inputDataInRam_ap_vld;
-input   taskId_ap_vld;
+input   checkId_ap_vld;
 output   toScheduler_TVALID;
 input   toScheduler_TREADY;
 output   ap_done;
@@ -161,6 +165,8 @@ wire    entry_proc_U0_ap_done;
 wire    entry_proc_U0_ap_continue;
 wire    entry_proc_U0_ap_idle;
 wire    entry_proc_U0_ap_ready;
+wire   [7:0] entry_proc_U0_taskId_c_din;
+wire    entry_proc_U0_taskId_c_write;
 wire   [63:0] entry_proc_U0_outcomeInRam_c_din;
 wire    entry_proc_U0_outcomeInRam_c_write;
 wire    read_test_U0_ap_start;
@@ -200,7 +206,7 @@ wire   [3:0] read_test_U0_m_axi_gmem_ARREGION;
 wire   [0:0] read_test_U0_m_axi_gmem_ARUSER;
 wire    read_test_U0_m_axi_gmem_RREADY;
 wire    read_test_U0_m_axi_gmem_BREADY;
-wire   [6:0] read_test_U0_taskId;
+wire   [6:0] read_test_U0_checkId;
 wire   [6:0] read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0;
 wire    read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0;
 wire    read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0;
@@ -270,8 +276,8 @@ wire    runTestAfterInit_Block_entry68_proc_U0_ap_done;
 wire    runTestAfterInit_Block_entry68_proc_U0_ap_continue;
 wire    runTestAfterInit_Block_entry68_proc_U0_ap_idle;
 wire    runTestAfterInit_Block_entry68_proc_U0_ap_ready;
-wire   [15:0] runTestAfterInit_Block_entry68_proc_U0_taskId_c16_din;
-wire    runTestAfterInit_Block_entry68_proc_U0_taskId_c16_write;
+wire   [15:0] runTestAfterInit_Block_entry68_proc_U0_checkId_c16_din;
+wire    runTestAfterInit_Block_entry68_proc_U0_checkId_c16_write;
 wire   [6:0] runTestAfterInit_Block_entry68_proc_U0_n_regions_V_address0;
 wire    runTestAfterInit_Block_entry68_proc_U0_n_regions_V_ce0;
 wire   [7:0] runTestAfterInit_Block_entry68_proc_U0_ap_return;
@@ -281,9 +287,9 @@ wire    run_test_U0_ap_done;
 wire    run_test_U0_ap_continue;
 wire    run_test_U0_ap_idle;
 wire    run_test_U0_ap_ready;
-wire    run_test_U0_taskId_read;
-wire   [15:0] run_test_U0_taskId_c_din;
-wire    run_test_U0_taskId_c_write;
+wire    run_test_U0_checkId_read;
+wire   [15:0] run_test_U0_checkId_c_din;
+wire    run_test_U0_checkId_c_write;
 wire   [6:0] run_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0;
 wire    run_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0;
 wire   [6:0] run_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_address0;
@@ -340,6 +346,7 @@ wire   [0:0] writeOutcome_U0_m_axi_gmem_ARUSER;
 wire    writeOutcome_U0_m_axi_gmem_RREADY;
 wire    writeOutcome_U0_m_axi_gmem_BREADY;
 wire    writeOutcome_U0_outcomeInRam_read;
+wire    writeOutcome_U0_checkId_read;
 wire    writeOutcome_U0_taskId_read;
 wire   [7:0] writeOutcome_U0_toScheduler_TDATA;
 wire    writeOutcome_U0_toScheduler_TVALID;
@@ -375,25 +382,30 @@ wire   [31:0] run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_i_q0;
 wire   [31:0] run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_t_q0;
 wire    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_i_full_n;
 wire    run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_t_empty_n;
+wire    taskId_c_full_n;
+wire   [7:0] taskId_c_dout;
+wire   [4:0] taskId_c_num_data_valid;
+wire   [4:0] taskId_c_fifo_cap;
+wire    taskId_c_empty_n;
 wire    outcomeInRam_c_full_n;
 wire   [63:0] outcomeInRam_c_dout;
 wire   [4:0] outcomeInRam_c_num_data_valid;
 wire   [4:0] outcomeInRam_c_fifo_cap;
 wire    outcomeInRam_c_empty_n;
-wire    taskId_c16_full_n;
-wire   [15:0] taskId_c16_dout;
-wire   [4:0] taskId_c16_num_data_valid;
-wire   [4:0] taskId_c16_fifo_cap;
-wire    taskId_c16_empty_n;
+wire    checkId_c16_full_n;
+wire   [15:0] checkId_c16_dout;
+wire   [4:0] checkId_c16_num_data_valid;
+wire   [4:0] checkId_c16_fifo_cap;
+wire    checkId_c16_empty_n;
 wire   [7:0] n_regions_V_load_loc_channel_dout;
 wire   [4:0] n_regions_V_load_loc_channel_num_data_valid;
 wire   [4:0] n_regions_V_load_loc_channel_fifo_cap;
 wire    n_regions_V_load_loc_channel_empty_n;
-wire    taskId_c_full_n;
-wire   [15:0] taskId_c_dout;
-wire   [3:0] taskId_c_num_data_valid;
-wire   [3:0] taskId_c_fifo_cap;
-wire    taskId_c_empty_n;
+wire    checkId_c_full_n;
+wire   [15:0] checkId_c_dout;
+wire   [3:0] checkId_c_num_data_valid;
+wire   [3:0] checkId_c_fifo_cap;
+wire    checkId_c_empty_n;
 wire   [0:0] error_dout;
 wire   [1:0] error_num_data_valid;
 wire   [1:0] error_fifo_cap;
@@ -430,6 +442,12 @@ run_entry_proc entry_proc_U0(
     .ap_continue(entry_proc_U0_ap_continue),
     .ap_idle(entry_proc_U0_ap_idle),
     .ap_ready(entry_proc_U0_ap_ready),
+    .taskId(taskId),
+    .taskId_c_din(entry_proc_U0_taskId_c_din),
+    .taskId_c_num_data_valid(taskId_c_num_data_valid),
+    .taskId_c_fifo_cap(taskId_c_fifo_cap),
+    .taskId_c_full_n(taskId_c_full_n),
+    .taskId_c_write(entry_proc_U0_taskId_c_write),
     .outcomeInRam(outcomeInRam),
     .outcomeInRam_c_din(entry_proc_U0_outcomeInRam_c_din),
     .outcomeInRam_c_num_data_valid(outcomeInRam_c_num_data_valid),
@@ -493,7 +511,7 @@ run_read_test read_test_U0(
     .m_axi_gmem_BID(1'd0),
     .m_axi_gmem_BUSER(1'd0),
     .inputDataInRam(inputDataInRam),
-    .taskId(read_test_U0_taskId),
+    .checkId(read_test_U0_checkId),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0(read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0(read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0(read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0),
@@ -536,12 +554,12 @@ run_runTestAfterInit_Block_entry68_proc runTestAfterInit_Block_entry68_proc_U0(
     .ap_continue(runTestAfterInit_Block_entry68_proc_U0_ap_continue),
     .ap_idle(runTestAfterInit_Block_entry68_proc_U0_ap_idle),
     .ap_ready(runTestAfterInit_Block_entry68_proc_U0_ap_ready),
-    .taskId(taskId),
-    .taskId_c16_din(runTestAfterInit_Block_entry68_proc_U0_taskId_c16_din),
-    .taskId_c16_num_data_valid(taskId_c16_num_data_valid),
-    .taskId_c16_fifo_cap(taskId_c16_fifo_cap),
-    .taskId_c16_full_n(taskId_c16_full_n),
-    .taskId_c16_write(runTestAfterInit_Block_entry68_proc_U0_taskId_c16_write),
+    .checkId(checkId),
+    .checkId_c16_din(runTestAfterInit_Block_entry68_proc_U0_checkId_c16_din),
+    .checkId_c16_num_data_valid(checkId_c16_num_data_valid),
+    .checkId_c16_fifo_cap(checkId_c16_fifo_cap),
+    .checkId_c16_full_n(checkId_c16_full_n),
+    .checkId_c16_write(runTestAfterInit_Block_entry68_proc_U0_checkId_c16_write),
     .n_regions_V_address0(runTestAfterInit_Block_entry68_proc_U0_n_regions_V_address0),
     .n_regions_V_ce0(runTestAfterInit_Block_entry68_proc_U0_n_regions_V_ce0),
     .n_regions_V_q0(n_regions_V_q0),
@@ -556,17 +574,17 @@ run_run_test run_test_U0(
     .ap_continue(run_test_U0_ap_continue),
     .ap_idle(run_test_U0_ap_idle),
     .ap_ready(run_test_U0_ap_ready),
-    .taskId_dout(taskId_c16_dout),
-    .taskId_num_data_valid(taskId_c16_num_data_valid),
-    .taskId_fifo_cap(taskId_c16_fifo_cap),
-    .taskId_empty_n(taskId_c16_empty_n),
-    .taskId_read(run_test_U0_taskId_read),
+    .checkId_dout(checkId_c16_dout),
+    .checkId_num_data_valid(checkId_c16_num_data_valid),
+    .checkId_fifo_cap(checkId_c16_fifo_cap),
+    .checkId_empty_n(checkId_c16_empty_n),
+    .checkId_read(run_test_U0_checkId_read),
     .p_read1(n_regions_V_load_loc_channel_dout),
-    .taskId_c_din(run_test_U0_taskId_c_din),
-    .taskId_c_num_data_valid(taskId_c_num_data_valid),
-    .taskId_c_fifo_cap(taskId_c_fifo_cap),
-    .taskId_c_full_n(taskId_c_full_n),
-    .taskId_c_write(run_test_U0_taskId_c_write),
+    .checkId_c_din(run_test_U0_checkId_c_din),
+    .checkId_c_num_data_valid(checkId_c_num_data_valid),
+    .checkId_c_fifo_cap(checkId_c_fifo_cap),
+    .checkId_c_full_n(checkId_c_full_n),
+    .checkId_c_write(run_test_U0_checkId_c_write),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0(run_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0(run_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0),
     .run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_q0(run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_t_q0),
@@ -653,6 +671,11 @@ run_writeOutcome writeOutcome_U0(
     .outcomeInRam_fifo_cap(outcomeInRam_c_fifo_cap),
     .outcomeInRam_empty_n(outcomeInRam_c_empty_n),
     .outcomeInRam_read(writeOutcome_U0_outcomeInRam_read),
+    .checkId_dout(checkId_c_dout),
+    .checkId_num_data_valid(checkId_c_num_data_valid),
+    .checkId_fifo_cap(checkId_c_fifo_cap),
+    .checkId_empty_n(checkId_c_empty_n),
+    .checkId_read(writeOutcome_U0_checkId_read),
     .taskId_dout(taskId_c_dout),
     .taskId_num_data_valid(taskId_c_num_data_valid),
     .taskId_fifo_cap(taskId_c_fifo_cap),
@@ -864,6 +887,21 @@ run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_U(
     .t_read(run_test_U0_ap_ready)
 );
 
+run_fifo_w8_d14_S taskId_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(entry_proc_U0_taskId_c_din),
+    .if_full_n(taskId_c_full_n),
+    .if_write(entry_proc_U0_taskId_c_write),
+    .if_dout(taskId_c_dout),
+    .if_num_data_valid(taskId_c_num_data_valid),
+    .if_fifo_cap(taskId_c_fifo_cap),
+    .if_empty_n(taskId_c_empty_n),
+    .if_read(writeOutcome_U0_taskId_read)
+);
+
 run_fifo_w64_d14_S outcomeInRam_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
@@ -879,19 +917,19 @@ run_fifo_w64_d14_S outcomeInRam_c_U(
     .if_read(writeOutcome_U0_outcomeInRam_read)
 );
 
-run_fifo_w16_d10_S taskId_c16_U(
+run_fifo_w16_d10_S checkId_c16_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runTestAfterInit_Block_entry68_proc_U0_taskId_c16_din),
-    .if_full_n(taskId_c16_full_n),
-    .if_write(runTestAfterInit_Block_entry68_proc_U0_taskId_c16_write),
-    .if_dout(taskId_c16_dout),
-    .if_num_data_valid(taskId_c16_num_data_valid),
-    .if_fifo_cap(taskId_c16_fifo_cap),
-    .if_empty_n(taskId_c16_empty_n),
-    .if_read(run_test_U0_taskId_read)
+    .if_din(runTestAfterInit_Block_entry68_proc_U0_checkId_c16_din),
+    .if_full_n(checkId_c16_full_n),
+    .if_write(runTestAfterInit_Block_entry68_proc_U0_checkId_c16_write),
+    .if_dout(checkId_c16_dout),
+    .if_num_data_valid(checkId_c16_num_data_valid),
+    .if_fifo_cap(checkId_c16_fifo_cap),
+    .if_empty_n(checkId_c16_empty_n),
+    .if_read(run_test_U0_checkId_read)
 );
 
 run_fifo_w8_d10_S n_regions_V_load_loc_channel_U(
@@ -909,19 +947,19 @@ run_fifo_w8_d10_S n_regions_V_load_loc_channel_U(
     .if_read(run_test_U0_ap_ready)
 );
 
-run_fifo_w16_d5_S taskId_c_U(
+run_fifo_w16_d5_S checkId_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(run_test_U0_taskId_c_din),
-    .if_full_n(taskId_c_full_n),
-    .if_write(run_test_U0_taskId_c_write),
-    .if_dout(taskId_c_dout),
-    .if_num_data_valid(taskId_c_num_data_valid),
-    .if_fifo_cap(taskId_c_fifo_cap),
-    .if_empty_n(taskId_c_empty_n),
-    .if_read(writeOutcome_U0_taskId_read)
+    .if_din(run_test_U0_checkId_c_din),
+    .if_full_n(checkId_c_full_n),
+    .if_write(run_test_U0_checkId_c_write),
+    .if_dout(checkId_c_dout),
+    .if_num_data_valid(checkId_c_num_data_valid),
+    .if_fifo_cap(checkId_c_fifo_cap),
+    .if_empty_n(checkId_c_empty_n),
+    .if_read(writeOutcome_U0_checkId_read)
 );
 
 run_fifo_w1_d2_S error_U(
@@ -1205,6 +1243,8 @@ assign read_test_U0_ap_continue = (ap_sync_channel_write_run_controlStr_REGION_T
 
 assign read_test_U0_ap_start = ((ap_sync_reg_read_test_U0_ap_ready ^ 1'b1) & ap_start);
 
+assign read_test_U0_checkId = {{checkId[(7 - 16'd1):0]}};
+
 assign read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_full_n = run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_i_full_n;
 
 assign read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_full_n = run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_i_full_n;
@@ -1220,8 +1260,6 @@ assign read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_
 assign read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_full_n = run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_i_full_n;
 
 assign read_test_U0_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_full_n = run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_i_full_n;
-
-assign read_test_U0_taskId = {{taskId[(7 - 16'd1):0]}};
 
 assign runTestAfterInit_Block_entry68_proc_U0_ap_continue = n_regions_V_load_loc_channel_full_n;
 

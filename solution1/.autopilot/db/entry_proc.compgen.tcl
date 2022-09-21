@@ -11,6 +11,36 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1 \
+    name taskId \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_taskId \
+    op interface \
+    ports { taskId { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 2 \
+    name taskId_c \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_taskId_c \
+    op interface \
+    ports { taskId_c_din { O 8 vector } taskId_c_num_data_valid { I 5 vector } taskId_c_fifo_cap { I 5 vector } taskId_c_full_n { I 1 bit } taskId_c_write { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 3 \
     name outcomeInRam \
     type other \
     dir I \
@@ -25,7 +55,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 2 \
+    id 4 \
     name outcomeInRam_c \
     type fifo \
     dir O \

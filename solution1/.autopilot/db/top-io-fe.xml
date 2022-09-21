@@ -1,8 +1,8 @@
 <root versionMajor = "1" versionMinor = "5">
   <kernel src_name="run" language="c" hwCtrl="ap_ctrl_chain" mem_layout="fpga64-xilinx-none">
     <args>
-      <arg id="0" access_type="r" src_name="contr" src_type="controlStr" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="true">
+      <arg id="0" access_type="r" src_name="contr" src_type="controlStr" src_isptr="1" src_bitwidth="48" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="48" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16"/>
         </hw>
       </arg>
@@ -11,7 +11,7 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="8192"/>
         </hw>
       </arg>
-      <arg id="2" access_type="" src_name="realTaskId" src_type="ap_int&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="128">
+      <arg id="2" access_type="" src_name="realcheckId" src_type="ap_int&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="128">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="128" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="128"/>
         </hw>
@@ -27,7 +27,7 @@
           <constraint constraint_type="bitwidth" orig_bitwidth="32" final_bitwidth="256"/>
         </hw>
         <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="256" hw_size_or_depth="0" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24"/>
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28"/>
         </hw>
       </arg>
       <arg id="5" access_type="w" src_name="toScheduler" src_type="stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">

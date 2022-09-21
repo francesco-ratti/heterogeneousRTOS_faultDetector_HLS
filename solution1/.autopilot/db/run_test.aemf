@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663764792128">
-  <ports id="1" name="taskId" type="PortType" coreName="FIFO_SRL" coreId="3621216858" bitwidth="16" iftype="IfTypeRom">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663771237377">
+  <ports id="1" name="checkId" type="PortType" coreName="FIFO_SRL" coreId="3621216858" bitwidth="16" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="2" name="p_read1" type="PortType" coreId="38" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="taskId_c" type="PortType" coreName="FIFO_SRL" coreId="48" bitwidth="16" direction="DirOut" iftype="IfTypeRom">
+  <ports id="3" name="checkId_c" type="PortType" coreName="FIFO_SRL" coreId="48" bitwidth="16" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="4" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" type="PortType" coreName="RAM" coreId="48" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
@@ -18,19 +18,19 @@
   <ports id="6" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" type="PortType" coreName="RAM" coreId="98" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="7" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" type="PortType" coreName="RAM" coreId="771434656" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
+  <ports id="7" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" type="PortType" coreName="RAM" coreId="544434464" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="8" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" type="PortType" coreName="RAM" coreId="771274720" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
+  <ports id="8" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" type="PortType" coreName="RAM" coreId="2650762016" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="9" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" type="PortType" coreName="RAM" coreId="771298304" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
+  <ports id="9" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" type="PortType" coreName="RAM" coreId="2649091056" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="10" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" type="PortType" coreName="RAM" coreId="770082992" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
+  <ports id="10" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" type="PortType" coreName="RAM" coreId="2651018448" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="11" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" type="PortType" coreName="RAM" coreId="1" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
+  <ports id="11" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" type="PortType" coreName="RAM" coreId="0" bitwidth="32" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
   <ports id="21" name="ap_return" direction="DirOut">
@@ -260,16 +260,16 @@
         <dataInputObjs>p_read1</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="taskId_read" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="1" m_clusterGroupNumber="-1">
-        <dataInputObjs>taskId</dataInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="checkId_read" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <dataInputObjs>checkId</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="taskId_c_write_ln0" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" opcode="write" m_display="0" m_delay="3.63" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="checkId_c_write_ln0" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" opcode="write" m_display="0" m_delay="3.63" m_topoIndex="2" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>taskId_c</dataOutputObjs>
+        <dataOutputObjs>checkId_c</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="zext_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln72_fu_257_p1" coreId="771928576" contextFuncName="is_valid" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="zext_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln72_fu_257_p1" coreId="0" contextFuncName="is_valid" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -281,49 +281,49 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771360240" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="30" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="770087296" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2649082400" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3647527408" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1691095772" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1713398048" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1691779317" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771665712" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1691779190" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1953394531" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="20" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771856432" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="48" contextFuncName="is_valid" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
@@ -346,25 +346,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="cmp_i_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="cmp_i_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="13" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="bitcast_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_fu_269_p1" coreId="771872664" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="2.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="bitcast_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_fu_269_p1" coreId="272" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="2.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="tmp_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_1_fu_272_p4" coreId="771873312" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="tmp_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_1_fu_272_p4" coreId="2651013536" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="trunc_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_fu_282_p1" coreId="0" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="2.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="trunc_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_fu_282_p1" coreId="2651029768" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="2.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -387,13 +387,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="14" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="tmp_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="tmp_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="15" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -417,7 +417,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3666870750" contextFuncName="is_valid" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2651023904" contextFuncName="is_valid" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.i.i</controlInputObjs>
@@ -445,25 +445,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="cmp_i17_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="cmp_i17_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="bitcast_ln77_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_1_fu_322_p1" coreId="143" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="4.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="bitcast_ln77_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_1_fu_322_p1" coreId="1597059121" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="4.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_fu_325_p4" coreId="771902576" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="4.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_fu_325_p4" coreId="1914708525" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="4.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln77_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_1_fu_335_p1" coreId="771923664" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln77_1" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_1_fu_335_p1" coreId="2020173413" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -486,13 +486,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="tmp_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="tmp_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="28" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="tmp_7" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="tmp_7" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="29" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -516,7 +516,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771856432" contextFuncName="is_valid" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650969040" contextFuncName="is_valid" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.1.i.i</controlInputObjs>
@@ -543,25 +543,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="cmp_i18_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="cmp_i18_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="41" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="bitcast_ln77_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_2_fu_375_p1" coreId="771856432" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="bitcast_ln77_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_2_fu_375_p1" coreId="1730890410" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="tmp_8" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_8_fu_378_p4" coreId="771886480" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="tmp_8" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_8_fu_378_p4" coreId="0" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="trunc_ln77_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_2_fu_388_p1" coreId="1599294536" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="trunc_ln77_2" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_2_fu_388_p1" coreId="2650976960" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -584,13 +584,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="tmp_9" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="tmp_9" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="42" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="tmp_s" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="tmp_s" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="43" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -614,7 +614,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771895776" contextFuncName="is_valid" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650976192" contextFuncName="is_valid" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.2.i.i</controlInputObjs>
@@ -641,19 +641,19 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="cmp_i19_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="cmp_i19_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="56" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="bitcast_ln77_3" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_3_fu_428_p1" coreId="771888800" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="8.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="bitcast_ln77_3" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_3_fu_428_p1" coreId="0" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="8.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="tmp_3" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_3_fu_431_p4" coreId="0" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="tmp_3" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_3_fu_431_p4" coreId="2650995968" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -682,13 +682,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="tmp_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="tmp_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="57" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="tmp_10" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="tmp_10" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="58" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -712,7 +712,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1702064225" contextFuncName="is_valid" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2651007168" contextFuncName="is_valid" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.3.i.i</controlInputObjs>
@@ -739,25 +739,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="cmp_i20_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="cmp_i20_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="70" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="bitcast_ln77_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_4_fu_481_p1" coreId="608" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="11.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="bitcast_ln77_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_4_fu_481_p1" coreId="1730861283" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="11.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="tmp_11" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_11_fu_484_p4" coreId="771921296" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="11.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="tmp_11" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_11_fu_484_p4" coreId="2651012304" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="11.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="trunc_ln77_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_4_fu_494_p1" coreId="771922488" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="11.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="trunc_ln77_4" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_4_fu_494_p1" coreId="0" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="11.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -780,13 +780,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="tmp_12" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="71" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="tmp_12" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="71" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="104" name="tmp_13" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="72" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="104" name="tmp_13" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="10.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="72" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -810,7 +810,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771932272" contextFuncName="is_valid" opcode="br" nodeLabel="11.0" m_display="0" m_topoIndex="82" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1730839846" contextFuncName="is_valid" opcode="br" nodeLabel="11.0" m_display="0" m_topoIndex="82" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.4.i.i</controlInputObjs>
@@ -837,25 +837,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="cmp_i21_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="84" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="cmp_i21_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="84" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="bitcast_ln77_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_5_fu_534_p1" coreId="232" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="13.0" m_display="0" m_topoIndex="87" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="bitcast_ln77_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_5_fu_534_p1" coreId="0" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="13.0" m_display="0" m_topoIndex="87" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="tmp_14" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_14_fu_537_p4" coreId="3667013917" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="13.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="tmp_14" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_14_fu_537_p4" coreId="176" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="13.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="trunc_ln77_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_5_fu_547_p1" coreId="3667014349" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="13.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="trunc_ln77_5" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_5_fu_547_p1" coreId="2650897456" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="13.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -878,13 +878,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="tmp_15" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="85" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="tmp_15" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="85" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="tmp_16" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="86" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="tmp_16" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="12.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="86" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -908,7 +908,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="123" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771816240" contextFuncName="is_valid" opcode="br" nodeLabel="13.0" m_display="0" m_topoIndex="96" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="123" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650907152" contextFuncName="is_valid" opcode="br" nodeLabel="13.0" m_display="0" m_topoIndex="96" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.5.i.i</controlInputObjs>
@@ -935,25 +935,25 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="126" name="cmp_i22_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="98" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="126" name="cmp_i22_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="98" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="127" name="bitcast_ln77_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_6_fu_587_p1" coreId="3667126496" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="15.0" m_display="0" m_topoIndex="101" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="127" name="bitcast_ln77_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_6_fu_587_p1" coreId="577" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="15.0" m_display="0" m_topoIndex="101" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="tmp_17" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_17_fu_590_p4" coreId="0" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="15.0" m_display="0" m_topoIndex="102" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="tmp_17" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_17_fu_590_p4" coreId="2650912528" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="15.0" m_display="0" m_topoIndex="102" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="129" name="trunc_ln77_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_6_fu_600_p1" coreId="771822304" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="15.0" m_display="0" m_topoIndex="103" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="129" name="trunc_ln77_6" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln77_6_fu_600_p1" coreId="2650913632" contextFuncName="is_valid" bitwidth="23" opcode="trunc" nodeLabel="15.0" m_display="0" m_topoIndex="103" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -976,13 +976,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="133" name="tmp_18" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="99" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="133" name="tmp_18" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="99" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="134" name="tmp_19" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="100" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="134" name="tmp_19" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="14.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="100" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -1006,7 +1006,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="138" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="is_valid" opcode="br" nodeLabel="15.0" m_display="0" m_topoIndex="110" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="138" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650923520" contextFuncName="is_valid" opcode="br" nodeLabel="15.0" m_display="0" m_topoIndex="110" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.6.i.i</controlInputObjs>
@@ -1033,19 +1033,19 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="141" name="cmp_i23_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U29" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="112" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="141" name="cmp_i23_i_i" lineNumber="612" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="isnan" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="112" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" linenumber="612" fileDirectory="/home/francesco/workspace" functionName="isnan"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="bitcast_ln77_7" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_7_fu_640_p1" coreId="771836032" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="17.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="bitcast_ln77_7" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln77_7_fu_640_p1" coreId="256" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" nodeLabel="17.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="143" name="tmp_20" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_20_fu_643_p4" coreId="771838536" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="17.0" m_display="0" m_topoIndex="116" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="143" name="tmp_20" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_20_fu_643_p4" coreId="0" contextFuncName="is_valid" bitwidth="8" opcode="partselect" nodeLabel="17.0" m_display="0" m_topoIndex="116" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1074,13 +1074,13 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="148" name="tmp_21" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U30" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="113" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="148" name="tmp_21" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U32" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="113" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="149" name="tmp_22" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U31" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="114" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="149" name="tmp_22" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_x_U33" coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLabel="16.0" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="114" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -1104,7 +1104,7 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="770082992" contextFuncName="is_valid" opcode="br" nodeLabel="17.0" m_display="0" m_topoIndex="124" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="br_ln77" lineNumber="77" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="48" contextFuncName="is_valid" opcode="br" nodeLabel="17.0" m_display="0" m_topoIndex="124" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="77" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>lor.rhs.i</controlInputObjs>
@@ -1122,9 +1122,9 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>run_test.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="tmp_i" lineNumber="334" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_find_region_fu_208" coreId="480" contextFuncName="run_test" bitwidth="5" opcode="call" nodeLabel="18.0" nodeLatency="9" m_display="0" m_delay="5.43" m_topoIndex="125" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="334" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="tmp_i" lineNumber="335" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_find_region_fu_208" coreId="2650941296" contextFuncName="run_test" bitwidth="5" opcode="call" nodeLabel="18.0" nodeLatency="9" m_display="0" m_delay="5.43" m_topoIndex="125" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="335" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1137,21 +1137,21 @@
         <dataOutputObjs>bitselect</dataOutputObjs>
         <constName>find_region</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="156" name="tmp_23" lineNumber="334" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="ap_phi_mux_error_write_assign_phi_fu_201_p4" coreId="0" contextFuncName="run_test" bitwidth="1" opcode="bitselect" nodeLabel="27.0" m_display="0" m_topoIndex="127" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="334" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="156" name="tmp_23" lineNumber="335" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="ap_phi_mux_error_write_assign_phi_fu_201_p4" coreId="2650688176" contextFuncName="run_test" bitwidth="1" opcode="bitselect" nodeLabel="27.0" m_display="0" m_topoIndex="127" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="335" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
         <dataInputObjs>call</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="br_ln334" lineNumber="334" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771852544" contextFuncName="run_test" opcode="br" nodeLabel="27.0" m_display="0" m_delay="1.58" m_topoIndex="128" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="334" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="br_ln335" lineNumber="335" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="run_test" opcode="br" nodeLabel="27.0" m_display="0" m_delay="1.58" m_topoIndex="128" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="335" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
         <controlInputObjs>run_test.exit</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>334</validLinenumbers>
-        <validLinenumbers>346</validLinenumbers>
+        <validLinenumbers>335</validLinenumbers>
+        <validLinenumbers>348</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="160" name="_Z8is_validPf.exit.i" type="BlockType">
@@ -1173,7 +1173,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>run_test.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="br_ln0" coreId="771854448" opcode="br" nodeLabel="26.0" m_display="0" m_delay="1.58" m_topoIndex="126" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="br_ln0" coreId="2650945696" opcode="br" nodeLabel="26.0" m_display="0" m_delay="1.58" m_topoIndex="126" m_clusterGroupNumber="-1">
         <controlInputObjs>run_test.exit</controlInputObjs>
       </node_objs>
     </basic_blocks>
@@ -1182,23 +1182,23 @@
       <controlInputObjs>_Z8is_validPf.exit.i</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="error_write_assign" lineNumber="334" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="run_test" bitwidth="1" opcode="phi" nodeLabel="27.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="334" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="error_write_assign" lineNumber="335" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="run_test" bitwidth="1" opcode="phi" nodeLabel="27.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="335" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
         <dataInputObjs>bitselect</dataInputObjs>
         <dataOutputObjs>ret</dataOutputObjs>
         <controlInputObjs>_Z8is_validPf.exit.i</controlInputObjs>
         <controlInputObjs>lor.rhs.i</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="162" name="_ln346" lineNumber="346" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="771858896" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="27.0" m_display="0" m_topoIndex="130" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="162" name="_ln348" lineNumber="348" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650688176" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="27.0" m_display="0" m_topoIndex="130" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>ap_return</dataOutputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>334</validLinenumbers>
-        <validLinenumbers>346</validLinenumbers>
+        <validLinenumbers>335</validLinenumbers>
+        <validLinenumbers>348</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
@@ -1593,11 +1593,11 @@
   <ioNodes realName="write_ln0_write_fu_86">
     <nodeIds>24</nodeIds>
   </ioNodes>
-  <ioNodes realName="taskId_read_read_fu_80">
-    <nodeIds>22</nodeIds>
-  </ioNodes>
   <ioNodes realName="p_read_read_fu_94">
     <nodeIds>21</nodeIds>
+  </ioNodes>
+  <ioNodes realName="checkId_read_read_fu_80">
+    <nodeIds>22</nodeIds>
   </ioNodes>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data">
     <nodeIds>140</nodeIds>
@@ -1623,6 +1623,16 @@
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">
     <nodeIds>35</nodeIds>
   </memoryPorts>
+  <ioPorts name="checkId">
+    <contents name="read">
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="checkId_c">
+    <contents name="write">
+      <nodeIds>24</nodeIds>
+    </contents>
+  </ioPorts>
   <ioPorts name="p_read1">
     <contents name="read">
       <nodeIds>21</nodeIds>
@@ -1666,16 +1676,6 @@
   <ioPorts name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7(p0)">
     <contents name="load">
       <nodeIds>35</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="taskId">
-    <contents name="read">
-      <nodeIds>22</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="taskId_c">
-    <contents name="write">
-      <nodeIds>24</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="ap_return">

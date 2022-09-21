@@ -631,10 +631,10 @@ entry:16 %gmem_load_i_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i256P1A, i64 %gme
 
 <Node id="12" bw="7" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-entry:0 %taskId_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %taskId
+entry:0 %checkId_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %checkId
 
 ]]></Node>
-<StgValue><ssdm name="taskId_read"/></StgValue>
+<StgValue><ssdm name="checkId_read"/></StgValue>
 </operation>
 
 <operation id="85" st_id="8" stage="63" lat="70">
@@ -1918,7 +1918,7 @@ entry:32 %p_cast13_i_i_i = partselect i32 @_ssdm_op_PartSelect.i32.i256.i32.i32,
 
 <Node id="14" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %gmem, void @empty_10, i32 0, i32 0, void @empty_9, i32 64, i32 0, void @empty, void @empty_17, void @empty_9, i32 16, i32 16, i32 16, i32 16, void @empty_9, void @empty_9, i32 4294967295, i32 0
+entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %gmem, void @empty_10, i32 0, i32 0, void @empty_9, i32 64, i32 0, void @empty, void @empty_8, void @empty_9, i32 16, i32 16, i32 16, i32 16, void @empty_9, void @empty_9, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -1933,10 +1933,10 @@ entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %g
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:3 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7, i64 1, void @empty_9
+entry:3 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="159" st_id="72" stage="1" lat="1">
@@ -1948,10 +1948,10 @@ entry:3 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="16" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:4 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6, i64 1, void @empty_9
+entry:4 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="160" st_id="72" stage="1" lat="1">
@@ -1963,10 +1963,10 @@ entry:4 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:5 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5, i64 1, void @empty_9
+entry:5 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="161" st_id="72" stage="1" lat="1">
@@ -1978,10 +1978,10 @@ entry:5 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="18" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:6 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4, i64 1, void @empty_9
+entry:6 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="162" st_id="72" stage="1" lat="1">
@@ -1993,10 +1993,10 @@ entry:6 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:7 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3, i64 1, void @empty_9
+entry:7 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="163" st_id="72" stage="1" lat="1">
@@ -2008,10 +2008,10 @@ entry:7 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="20" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:8 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2, i64 1, void @empty_9
+entry:8 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="164" st_id="72" stage="1" lat="1">
@@ -2023,10 +2023,10 @@ entry:8 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:9 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1, i64 1, void @empty_9
+entry:9 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="165" st_id="72" stage="1" lat="1">
@@ -2038,10 +2038,10 @@ entry:9 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_control
 
 <Node id="22" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-entry:10 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data, i64 1, void @empty_9
+entry:10 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, void @run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln374"/></StgValue>
+<StgValue><ssdm name="specreset_ln376"/></StgValue>
 </operation>
 
 <operation id="166" st_id="72" stage="1" lat="1">
@@ -2053,10 +2053,10 @@ entry:10 %specreset_ln374 = specreset void @_ssdm_op_SpecReset, void @run_contro
 
 <Node id="23" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-entry:11 %specpipeline_ln327 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_9
+entry:11 %specpipeline_ln328 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specpipeline_ln327"/></StgValue>
+<StgValue><ssdm name="specpipeline_ln328"/></StgValue>
 </operation>
 
 <operation id="167" st_id="72" stage="1" lat="1">
@@ -2068,7 +2068,7 @@ entry:11 %specpipeline_ln327 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, 
 
 <Node id="24" bw="64" op_0_bw="7">
 <![CDATA[
-entry:12 %zext_ln587 = zext i7 %taskId_read
+entry:12 %zext_ln587 = zext i7 %checkId_read
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln587"/></StgValue>
@@ -2083,10 +2083,10 @@ entry:12 %zext_ln587 = zext i7 %taskId_read
 
 <Node id="31" bw="32" op_0_bw="32">
 <![CDATA[
-entry:19 %empty_48 = bitcast i32 %empty
+entry:19 %empty_52 = bitcast i32 %empty
 
 ]]></Node>
-<StgValue><ssdm name="empty_48"/></StgValue>
+<StgValue><ssdm name="empty_52"/></StgValue>
 </operation>
 
 <operation id="169" st_id="72" stage="1" lat="1">
@@ -2098,10 +2098,10 @@ entry:19 %empty_48 = bitcast i32 %empty
 
 <Node id="33" bw="32" op_0_bw="32">
 <![CDATA[
-entry:21 %empty_49 = bitcast i32 %p_cast2_i_i_i
+entry:21 %empty_53 = bitcast i32 %p_cast2_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_49"/></StgValue>
+<StgValue><ssdm name="empty_53"/></StgValue>
 </operation>
 
 <operation id="170" st_id="72" stage="1" lat="1">
@@ -2113,10 +2113,10 @@ entry:21 %empty_49 = bitcast i32 %p_cast2_i_i_i
 
 <Node id="35" bw="32" op_0_bw="32">
 <![CDATA[
-entry:23 %empty_50 = bitcast i32 %p_cast4_i_i_i
+entry:23 %empty_54 = bitcast i32 %p_cast4_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_50"/></StgValue>
+<StgValue><ssdm name="empty_54"/></StgValue>
 </operation>
 
 <operation id="171" st_id="72" stage="1" lat="1">
@@ -2128,10 +2128,10 @@ entry:23 %empty_50 = bitcast i32 %p_cast4_i_i_i
 
 <Node id="37" bw="32" op_0_bw="32">
 <![CDATA[
-entry:25 %empty_51 = bitcast i32 %p_cast6_i_i_i
+entry:25 %empty_55 = bitcast i32 %p_cast6_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_51"/></StgValue>
+<StgValue><ssdm name="empty_55"/></StgValue>
 </operation>
 
 <operation id="172" st_id="72" stage="1" lat="1">
@@ -2143,10 +2143,10 @@ entry:25 %empty_51 = bitcast i32 %p_cast6_i_i_i
 
 <Node id="39" bw="32" op_0_bw="32">
 <![CDATA[
-entry:27 %empty_52 = bitcast i32 %p_cast8_i_i_i
+entry:27 %empty_56 = bitcast i32 %p_cast8_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_52"/></StgValue>
+<StgValue><ssdm name="empty_56"/></StgValue>
 </operation>
 
 <operation id="173" st_id="72" stage="1" lat="1">
@@ -2158,10 +2158,10 @@ entry:27 %empty_52 = bitcast i32 %p_cast8_i_i_i
 
 <Node id="41" bw="32" op_0_bw="32">
 <![CDATA[
-entry:29 %empty_53 = bitcast i32 %p_cast10_i_i_i
+entry:29 %empty_57 = bitcast i32 %p_cast10_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_53"/></StgValue>
+<StgValue><ssdm name="empty_57"/></StgValue>
 </operation>
 
 <operation id="174" st_id="72" stage="1" lat="1">
@@ -2173,10 +2173,10 @@ entry:29 %empty_53 = bitcast i32 %p_cast10_i_i_i
 
 <Node id="43" bw="32" op_0_bw="32">
 <![CDATA[
-entry:31 %empty_54 = bitcast i32 %p_cast12_i_i_i
+entry:31 %empty_58 = bitcast i32 %p_cast12_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_54"/></StgValue>
+<StgValue><ssdm name="empty_58"/></StgValue>
 </operation>
 
 <operation id="175" st_id="72" stage="1" lat="1">
@@ -2188,10 +2188,10 @@ entry:31 %empty_54 = bitcast i32 %p_cast12_i_i_i
 
 <Node id="45" bw="32" op_0_bw="32">
 <![CDATA[
-entry:33 %empty_55 = bitcast i32 %p_cast13_i_i_i
+entry:33 %empty_59 = bitcast i32 %p_cast13_i_i_i
 
 ]]></Node>
-<StgValue><ssdm name="empty_55"/></StgValue>
+<StgValue><ssdm name="empty_59"/></StgValue>
 </operation>
 
 <operation id="176" st_id="72" stage="1" lat="1">
@@ -2218,10 +2218,10 @@ entry:34 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr = g
 
 <Node id="47" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:35 %store_ln345 = store i32 %empty_48, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr
+entry:35 %store_ln347 = store i32 %empty_52, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="178" st_id="72" stage="1" lat="1">
@@ -2248,10 +2248,10 @@ entry:36 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr = g
 
 <Node id="49" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:37 %store_ln345 = store i32 %empty_49, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr
+entry:37 %store_ln347 = store i32 %empty_53, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="180" st_id="72" stage="1" lat="1">
@@ -2278,10 +2278,10 @@ entry:38 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr = g
 
 <Node id="51" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:39 %store_ln345 = store i32 %empty_50, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr
+entry:39 %store_ln347 = store i32 %empty_54, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="182" st_id="72" stage="1" lat="1">
@@ -2308,10 +2308,10 @@ entry:40 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr = g
 
 <Node id="53" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:41 %store_ln345 = store i32 %empty_51, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr
+entry:41 %store_ln347 = store i32 %empty_55, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="184" st_id="72" stage="1" lat="1">
@@ -2338,10 +2338,10 @@ entry:42 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr = g
 
 <Node id="55" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:43 %store_ln345 = store i32 %empty_52, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr
+entry:43 %store_ln347 = store i32 %empty_56, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="186" st_id="72" stage="1" lat="1">
@@ -2368,10 +2368,10 @@ entry:44 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr = g
 
 <Node id="57" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:45 %store_ln345 = store i32 %empty_53, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr
+entry:45 %store_ln347 = store i32 %empty_57, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="188" st_id="72" stage="1" lat="1">
@@ -2398,10 +2398,10 @@ entry:46 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr = g
 
 <Node id="59" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:47 %store_ln345 = store i32 %empty_54, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr
+entry:47 %store_ln347 = store i32 %empty_58, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="190" st_id="72" stage="1" lat="1">
@@ -2428,10 +2428,10 @@ entry:48 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr = get
 
 <Node id="61" bw="0" op_0_bw="32" op_1_bw="7">
 <![CDATA[
-entry:49 %store_ln345 = store i32 %empty_55, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr
+entry:49 %store_ln347 = store i32 %empty_59, i7 %run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr
 
 ]]></Node>
-<StgValue><ssdm name="store_ln345"/></StgValue>
+<StgValue><ssdm name="store_ln347"/></StgValue>
 </operation>
 
 <operation id="192" st_id="72" stage="1" lat="1">
@@ -2443,10 +2443,10 @@ entry:49 %store_ln345 = store i32 %empty_55, i7 %run_controlStr_REGION_T_16_ap_i
 
 <Node id="62" bw="0">
 <![CDATA[
-entry:50 %ret_ln345 = ret
+entry:50 %ret_ln347 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln345"/></StgValue>
+<StgValue><ssdm name="ret_ln347"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -2459,8 +2459,8 @@ entry:50 %ret_ln345 = ret
 <port id="337" name="inputDataInRam" dir="0" iftype="0">
 <core>NULL</core><StgValue><ssdm name="inputDataInRam"/></StgValue>
 </port>
-<port id="338" name="taskId" dir="0" iftype="0">
-<core>NULL</core><StgValue><ssdm name="taskId"/></StgValue>
+<port id="338" name="checkId" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="checkId"/></StgValue>
 </port>
 <port id="339" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" dir="1" iftype="1">
 <core>RAM</core><StgValue><ssdm name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7"/><MemPortTyVec>0 3 </MemPortTyVec>
@@ -2558,9 +2558,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="382" from="StgValue_363" to="gmem_load_i_req" fromId="363" toId="83">
 </dataflow>
-<dataflow id="384" from="_ssdm_op_Read.ap_auto.i7" to="taskId_read" fromId="383" toId="84">
+<dataflow id="384" from="_ssdm_op_Read.ap_auto.i7" to="checkId_read" fromId="383" toId="84">
 </dataflow>
-<dataflow id="385" from="taskId" to="taskId_read" fromId="338" toId="84">
+<dataflow id="385" from="checkId" to="checkId_read" fromId="338" toId="84">
 </dataflow>
 <dataflow id="386" from="_ssdm_op_ReadReq.m_axi.i256P1A" to="gmem_load_i_req" fromId="360" toId="85">
 </dataflow>
@@ -3020,7 +3020,7 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="634" from="empty" to="specinterface_ln0" fromId="633" toId="157">
 </dataflow>
-<dataflow id="636" from="empty_17" to="specinterface_ln0" fromId="635" toId="157">
+<dataflow id="636" from="empty_8" to="specinterface_ln0" fromId="635" toId="157">
 </dataflow>
 <dataflow id="637" from="empty_9" to="specinterface_ln0" fromId="629" toId="157">
 </dataflow>
@@ -3040,99 +3040,99 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="647" from="StgValue_626" to="specinterface_ln0" fromId="626" toId="157">
 </dataflow>
-<dataflow id="649" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="158">
+<dataflow id="649" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="158">
 </dataflow>
-<dataflow id="651" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" to="specreset_ln374" fromId="650" toId="158">
+<dataflow id="651" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" to="specreset_ln376" fromId="650" toId="158">
 </dataflow>
-<dataflow id="653" from="StgValue_652" to="specreset_ln374" fromId="652" toId="158">
+<dataflow id="653" from="StgValue_652" to="specreset_ln376" fromId="652" toId="158">
 </dataflow>
-<dataflow id="654" from="empty_9" to="specreset_ln374" fromId="629" toId="158">
+<dataflow id="654" from="empty_9" to="specreset_ln376" fromId="629" toId="158">
 </dataflow>
-<dataflow id="655" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="159">
+<dataflow id="655" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="159">
 </dataflow>
-<dataflow id="657" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" to="specreset_ln374" fromId="656" toId="159">
+<dataflow id="657" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" to="specreset_ln376" fromId="656" toId="159">
 </dataflow>
-<dataflow id="658" from="StgValue_652" to="specreset_ln374" fromId="652" toId="159">
+<dataflow id="658" from="StgValue_652" to="specreset_ln376" fromId="652" toId="159">
 </dataflow>
-<dataflow id="659" from="empty_9" to="specreset_ln374" fromId="629" toId="159">
+<dataflow id="659" from="empty_9" to="specreset_ln376" fromId="629" toId="159">
 </dataflow>
-<dataflow id="660" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="160">
+<dataflow id="660" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="160">
 </dataflow>
-<dataflow id="662" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" to="specreset_ln374" fromId="661" toId="160">
+<dataflow id="662" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" to="specreset_ln376" fromId="661" toId="160">
 </dataflow>
-<dataflow id="663" from="StgValue_652" to="specreset_ln374" fromId="652" toId="160">
+<dataflow id="663" from="StgValue_652" to="specreset_ln376" fromId="652" toId="160">
 </dataflow>
-<dataflow id="664" from="empty_9" to="specreset_ln374" fromId="629" toId="160">
+<dataflow id="664" from="empty_9" to="specreset_ln376" fromId="629" toId="160">
 </dataflow>
-<dataflow id="665" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="161">
+<dataflow id="665" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="161">
 </dataflow>
-<dataflow id="667" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" to="specreset_ln374" fromId="666" toId="161">
+<dataflow id="667" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" to="specreset_ln376" fromId="666" toId="161">
 </dataflow>
-<dataflow id="668" from="StgValue_652" to="specreset_ln374" fromId="652" toId="161">
+<dataflow id="668" from="StgValue_652" to="specreset_ln376" fromId="652" toId="161">
 </dataflow>
-<dataflow id="669" from="empty_9" to="specreset_ln374" fromId="629" toId="161">
+<dataflow id="669" from="empty_9" to="specreset_ln376" fromId="629" toId="161">
 </dataflow>
-<dataflow id="670" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="162">
+<dataflow id="670" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="162">
 </dataflow>
-<dataflow id="672" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" to="specreset_ln374" fromId="671" toId="162">
+<dataflow id="672" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" to="specreset_ln376" fromId="671" toId="162">
 </dataflow>
-<dataflow id="673" from="StgValue_652" to="specreset_ln374" fromId="652" toId="162">
+<dataflow id="673" from="StgValue_652" to="specreset_ln376" fromId="652" toId="162">
 </dataflow>
-<dataflow id="674" from="empty_9" to="specreset_ln374" fromId="629" toId="162">
+<dataflow id="674" from="empty_9" to="specreset_ln376" fromId="629" toId="162">
 </dataflow>
-<dataflow id="675" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="163">
+<dataflow id="675" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="163">
 </dataflow>
-<dataflow id="677" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" to="specreset_ln374" fromId="676" toId="163">
+<dataflow id="677" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" to="specreset_ln376" fromId="676" toId="163">
 </dataflow>
-<dataflow id="678" from="StgValue_652" to="specreset_ln374" fromId="652" toId="163">
+<dataflow id="678" from="StgValue_652" to="specreset_ln376" fromId="652" toId="163">
 </dataflow>
-<dataflow id="679" from="empty_9" to="specreset_ln374" fromId="629" toId="163">
+<dataflow id="679" from="empty_9" to="specreset_ln376" fromId="629" toId="163">
 </dataflow>
-<dataflow id="680" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="164">
+<dataflow id="680" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="164">
 </dataflow>
-<dataflow id="682" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" to="specreset_ln374" fromId="681" toId="164">
+<dataflow id="682" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" to="specreset_ln376" fromId="681" toId="164">
 </dataflow>
-<dataflow id="683" from="StgValue_652" to="specreset_ln374" fromId="652" toId="164">
+<dataflow id="683" from="StgValue_652" to="specreset_ln376" fromId="652" toId="164">
 </dataflow>
-<dataflow id="684" from="empty_9" to="specreset_ln374" fromId="629" toId="164">
+<dataflow id="684" from="empty_9" to="specreset_ln376" fromId="629" toId="164">
 </dataflow>
-<dataflow id="685" from="_ssdm_op_SpecReset" to="specreset_ln374" fromId="648" toId="165">
+<dataflow id="685" from="_ssdm_op_SpecReset" to="specreset_ln376" fromId="648" toId="165">
 </dataflow>
-<dataflow id="687" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" to="specreset_ln374" fromId="686" toId="165">
+<dataflow id="687" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" to="specreset_ln376" fromId="686" toId="165">
 </dataflow>
-<dataflow id="688" from="StgValue_652" to="specreset_ln374" fromId="652" toId="165">
+<dataflow id="688" from="StgValue_652" to="specreset_ln376" fromId="652" toId="165">
 </dataflow>
-<dataflow id="689" from="empty_9" to="specreset_ln374" fromId="629" toId="165">
+<dataflow id="689" from="empty_9" to="specreset_ln376" fromId="629" toId="165">
 </dataflow>
-<dataflow id="691" from="_ssdm_op_SpecPipeline" to="specpipeline_ln327" fromId="690" toId="166">
+<dataflow id="691" from="_ssdm_op_SpecPipeline" to="specpipeline_ln328" fromId="690" toId="166">
 </dataflow>
-<dataflow id="693" from="StgValue_692" to="specpipeline_ln327" fromId="692" toId="166">
+<dataflow id="693" from="StgValue_692" to="specpipeline_ln328" fromId="692" toId="166">
 </dataflow>
-<dataflow id="694" from="StgValue_626" to="specpipeline_ln327" fromId="626" toId="166">
+<dataflow id="694" from="StgValue_626" to="specpipeline_ln328" fromId="626" toId="166">
 </dataflow>
-<dataflow id="695" from="StgValue_626" to="specpipeline_ln327" fromId="626" toId="166">
+<dataflow id="695" from="StgValue_626" to="specpipeline_ln328" fromId="626" toId="166">
 </dataflow>
-<dataflow id="696" from="StgValue_626" to="specpipeline_ln327" fromId="626" toId="166">
+<dataflow id="696" from="StgValue_626" to="specpipeline_ln328" fromId="626" toId="166">
 </dataflow>
-<dataflow id="697" from="empty_9" to="specpipeline_ln327" fromId="629" toId="166">
+<dataflow id="697" from="empty_9" to="specpipeline_ln328" fromId="629" toId="166">
 </dataflow>
-<dataflow id="698" from="taskId_read" to="zext_ln587" fromId="84" toId="167">
+<dataflow id="698" from="checkId_read" to="zext_ln587" fromId="84" toId="167">
 </dataflow>
-<dataflow id="699" from="empty" to="empty_48" fromId="149" toId="168">
+<dataflow id="699" from="empty" to="empty_52" fromId="149" toId="168">
 </dataflow>
-<dataflow id="700" from="p_cast2_i_i_i" to="empty_49" fromId="150" toId="169">
+<dataflow id="700" from="p_cast2_i_i_i" to="empty_53" fromId="150" toId="169">
 </dataflow>
-<dataflow id="701" from="p_cast4_i_i_i" to="empty_50" fromId="151" toId="170">
+<dataflow id="701" from="p_cast4_i_i_i" to="empty_54" fromId="151" toId="170">
 </dataflow>
-<dataflow id="702" from="p_cast6_i_i_i" to="empty_51" fromId="152" toId="171">
+<dataflow id="702" from="p_cast6_i_i_i" to="empty_55" fromId="152" toId="171">
 </dataflow>
-<dataflow id="703" from="p_cast8_i_i_i" to="empty_52" fromId="153" toId="172">
+<dataflow id="703" from="p_cast8_i_i_i" to="empty_56" fromId="153" toId="172">
 </dataflow>
-<dataflow id="704" from="p_cast10_i_i_i" to="empty_53" fromId="154" toId="173">
+<dataflow id="704" from="p_cast10_i_i_i" to="empty_57" fromId="154" toId="173">
 </dataflow>
-<dataflow id="705" from="p_cast12_i_i_i" to="empty_54" fromId="155" toId="174">
+<dataflow id="705" from="p_cast12_i_i_i" to="empty_58" fromId="155" toId="174">
 </dataflow>
-<dataflow id="706" from="p_cast13_i_i_i" to="empty_55" fromId="156" toId="175">
+<dataflow id="706" from="p_cast13_i_i_i" to="empty_59" fromId="156" toId="175">
 </dataflow>
 <dataflow id="707" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" fromId="339" toId="176">
 </dataflow>
@@ -3140,9 +3140,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="710" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" fromId="167" toId="176">
 </dataflow>
-<dataflow id="711" from="empty_48" to="store_ln345" fromId="168" toId="177">
+<dataflow id="711" from="empty_52" to="store_ln347" fromId="168" toId="177">
 </dataflow>
-<dataflow id="712" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" to="store_ln345" fromId="176" toId="177">
+<dataflow id="712" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" to="store_ln347" fromId="176" toId="177">
 </dataflow>
 <dataflow id="713" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" fromId="340" toId="178">
 </dataflow>
@@ -3150,9 +3150,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="715" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" fromId="167" toId="178">
 </dataflow>
-<dataflow id="716" from="empty_49" to="store_ln345" fromId="169" toId="179">
+<dataflow id="716" from="empty_53" to="store_ln347" fromId="169" toId="179">
 </dataflow>
-<dataflow id="717" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" to="store_ln345" fromId="178" toId="179">
+<dataflow id="717" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" to="store_ln347" fromId="178" toId="179">
 </dataflow>
 <dataflow id="718" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" fromId="341" toId="180">
 </dataflow>
@@ -3160,9 +3160,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="720" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" fromId="167" toId="180">
 </dataflow>
-<dataflow id="721" from="empty_50" to="store_ln345" fromId="170" toId="181">
+<dataflow id="721" from="empty_54" to="store_ln347" fromId="170" toId="181">
 </dataflow>
-<dataflow id="722" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" to="store_ln345" fromId="180" toId="181">
+<dataflow id="722" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" to="store_ln347" fromId="180" toId="181">
 </dataflow>
 <dataflow id="723" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" fromId="342" toId="182">
 </dataflow>
@@ -3170,9 +3170,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="725" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" fromId="167" toId="182">
 </dataflow>
-<dataflow id="726" from="empty_51" to="store_ln345" fromId="171" toId="183">
+<dataflow id="726" from="empty_55" to="store_ln347" fromId="171" toId="183">
 </dataflow>
-<dataflow id="727" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" to="store_ln345" fromId="182" toId="183">
+<dataflow id="727" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" to="store_ln347" fromId="182" toId="183">
 </dataflow>
 <dataflow id="728" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" fromId="343" toId="184">
 </dataflow>
@@ -3180,9 +3180,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="730" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" fromId="167" toId="184">
 </dataflow>
-<dataflow id="731" from="empty_52" to="store_ln345" fromId="172" toId="185">
+<dataflow id="731" from="empty_56" to="store_ln347" fromId="172" toId="185">
 </dataflow>
-<dataflow id="732" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" to="store_ln345" fromId="184" toId="185">
+<dataflow id="732" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" to="store_ln347" fromId="184" toId="185">
 </dataflow>
 <dataflow id="733" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" fromId="344" toId="186">
 </dataflow>
@@ -3190,9 +3190,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="735" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" fromId="167" toId="186">
 </dataflow>
-<dataflow id="736" from="empty_53" to="store_ln345" fromId="173" toId="187">
+<dataflow id="736" from="empty_57" to="store_ln347" fromId="173" toId="187">
 </dataflow>
-<dataflow id="737" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" to="store_ln345" fromId="186" toId="187">
+<dataflow id="737" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" to="store_ln347" fromId="186" toId="187">
 </dataflow>
 <dataflow id="738" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" fromId="345" toId="188">
 </dataflow>
@@ -3200,9 +3200,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="740" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" fromId="167" toId="188">
 </dataflow>
-<dataflow id="741" from="empty_54" to="store_ln345" fromId="174" toId="189">
+<dataflow id="741" from="empty_58" to="store_ln347" fromId="174" toId="189">
 </dataflow>
-<dataflow id="742" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" to="store_ln345" fromId="188" toId="189">
+<dataflow id="742" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" to="store_ln347" fromId="188" toId="189">
 </dataflow>
 <dataflow id="743" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" fromId="346" toId="190">
 </dataflow>
@@ -3210,9 +3210,9 @@ entry:50 %ret_ln345 = ret
 </dataflow>
 <dataflow id="745" from="zext_ln587" to="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" fromId="167" toId="190">
 </dataflow>
-<dataflow id="746" from="empty_55" to="store_ln345" fromId="175" toId="191">
+<dataflow id="746" from="empty_59" to="store_ln347" fromId="175" toId="191">
 </dataflow>
-<dataflow id="747" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" to="store_ln345" fromId="190" toId="191">
+<dataflow id="747" from="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" to="store_ln347" fromId="190" toId="191">
 </dataflow>
 </dataflows>
 

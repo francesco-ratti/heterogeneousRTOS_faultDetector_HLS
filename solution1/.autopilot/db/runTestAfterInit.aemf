@@ -1,136 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663764792820">
-  <ports id="1" name="gmem" type="PortType" coreId="3621216858" bitwidth="256" direction="DirInOut" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663771238077">
+  <ports id="1" name="gmem" type="PortType" coreId="0" bitwidth="256" direction="DirInOut" iftype="IfTypeFifo">
     <dataInputObjs>call</dataInputObjs>
     <dataInputObjs>call</dataInputObjs>
     <dataOutputObjs>call</dataOutputObjs>
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="2" name="inputDataInRam" type="PortType" coreId="1868785011" bitwidth="64">
+  <ports id="2" name="inputDataInRam" type="PortType" coreId="2651728176" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="taskId" type="PortType" coreId="1936018748" bitwidth="16">
+  <ports id="3" name="taskId" type="PortType" coreId="574449505" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="outcomeInRam" type="PortType" coreId="539107901" bitwidth="64">
+  <ports id="4" name="checkId" type="PortType" coreId="757935405" bitwidth="16">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="toScheduler" type="PortType" coreId="1735289196" bitwidth="8" direction="DirOut">
+  <ports id="5" name="outcomeInRam" type="PortType" coreId="1919252069" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="toScheduler" type="PortType" coreId="539119430" bitwidth="8" direction="DirOut">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="14" name="n_regions_V" type="PortType" coreName="RAM" coreId="1970238309" bitwidth="8" iftype="IfTypeRegister" arraysize="128">
+  <ports id="15" name="n_regions_V" type="PortType" coreName="RAM" coreId="1313423963" bitwidth="8" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <edges id="49" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="52" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="54" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="55" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="62" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="66" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="68" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="69" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="70" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="71" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="72" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="73" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="74" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="75" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="76" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
-  <edges id="80" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
-  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="84" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="85" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="88" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="89" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="90" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="92" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@ports.4"/>
-  <edges id="93" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
-  <edges id="94" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="95" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="96" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="97" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="98" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="99" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="100" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="101" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="286" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="287" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="288" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="289" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="290" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="291" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="292" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="-66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@ports.0"/>
-  <edges id="-88" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@ports.0"/>
-  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="734" RegionName="runTestAfterInit">
-    <basic_blocks id="46" name="runTestAfterInit" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="outcomeInRam_read" coreId="469828099" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+  <edges id="54" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="57" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="60" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="62" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="71" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="72" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="74" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="77" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="80" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="81" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="82" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="83" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="84" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="85" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="86" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="87" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="90" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="94" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="95" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="96" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="99" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="101" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="103" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@ports.5"/>
+  <edges id="105" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="106" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="107" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="108" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="109" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="110" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="111" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="112" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="113" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="327" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="328" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="329" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="330" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="331" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="332" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="333" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="-77" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@ports.0"/>
+  <edges id="-99" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@ports.0"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="754" RegionName="runTestAfterInit">
+    <basic_blocks id="51" name="runTestAfterInit" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="outcomeInRam_read" coreId="757935405" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <dataInputObjs>outcomeInRam</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="taskId_read" coreId="1769239916" bitwidth="16" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
-        <dataInputObjs>taskId</dataInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="checkId_read" coreId="1734439968" bitwidth="16" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <dataInputObjs>checkId</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="inputDataInRam_read" coreId="1397508130" bitwidth="64" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="taskId_read" coreId="1734439968" bitwidth="8" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <dataInputObjs>taskId</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="inputDataInRam_read" coreId="1145981250" bitwidth="64" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <dataInputObjs>inputDataInRam</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="empty" coreId="757935405" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty" coreId="1769234802" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="outcomeInRam_c" rtlName="outcomeInRam_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="64" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="outcomeInRam_c" rtlName="outcomeInRam_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="64" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <dataOutputObjs>call</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="taskId_c16" rtlName="taskId_c16_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="checkId_c16" rtlName="checkId_c16_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
         <dataOutputObjs>call</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="taskId_c" rtlName="taskId_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="checkId_c" rtlName="checkId_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
         <dataOutputObjs>call</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="_ln0" rtlName="entry_proc_U0" coreId="1596993585" opcode="call" m_display="0" m_delay="3.63" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="taskId_c" rtlName="taskId_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="_ln0" rtlName="entry_proc_U0" coreId="757935405" opcode="call" m_display="0" m_delay="3.63" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <constName>entry_proc</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_test_U0" coreId="539111022" contextFuncName="runTestAfterInit" opcode="call" nodeLatency="71" m_display="0" m_delay="14.6" m_topoIndex="9" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_test_U0" coreId="151666223" contextFuncName="runTestAfterInit" opcode="call" nodeLatency="71" m_display="0" m_delay="14.6" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>gmem</dataOutputObjs>
         <constName>read_test</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="n_regions_V_load_loc_channel" rtlName="n_regions_V_load_loc_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="8" opcode="call" nodeLatency="1" m_display="0" m_delay="3.63" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="n_regions_V_load_loc_channel" rtlName="n_regions_V_load_loc_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="8" opcode="call" nodeLatency="1" m_display="0" m_delay="3.63" m_topoIndex="12" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>n_regions_V</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>runTestAfterInit_Block_entry68_proc</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="error" lineNumber="346" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="error_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="1" opcode="call" nodeLabel="72.0" nodeLatency="27" m_display="0" m_delay="3.63" m_topoIndex="11" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="346" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="error" lineNumber="348" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="error_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="1" opcode="call" nodeLabel="72.0" nodeLatency="27" m_display="0" m_delay="3.63" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>call</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>run_test</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="_ln355" lineNumber="355" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="171847458" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="104.0" nodeLatency="72" m_display="0" m_delay="3.63" m_topoIndex="12" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="355" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="_ln357" lineNumber="357" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="1852793701" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="104.0" nodeLatency="72" m_display="0" m_delay="6.78" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="357" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>gmem</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>call</dataInputObjs>
@@ -138,14 +157,14 @@
         <dataOutputObjs>gmem</dataOutputObjs>
         <constName>writeOutcome</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="_ln356" lineNumber="356" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="909523295" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="176.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="356" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="_ln358" lineNumber="358" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="840979276" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="176.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="358" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>345</validLinenumbers>
-        <validLinenumbers>346</validLinenumbers>
-        <validLinenumbers>355</validLinenumbers>
-        <validLinenumbers>356</validLinenumbers>
+        <validLinenumbers>347</validLinenumbers>
+        <validLinenumbers>348</validLinenumbers>
+        <validLinenumbers>357</validLinenumbers>
+        <validLinenumbers>358</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
@@ -326,662 +345,675 @@
   <ScheduleInfo time="174"/>
   <ScheduleInfo time="175"/>
   <ScheduleInfo time="176"/>
-  <regnodes realName="empty_reg_203">
+  <regnodes realName="checkId_c_reg_240">
+    <nodeIds>27</nodeIds>
+  </regnodes>
+  <regnodes realName="taskId_c_reg_246">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="checkId_read_reg_218">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="outcomeInRam_c_reg_228">
+    <nodeIds>21</nodeIds>
+  </regnodes>
+  <regnodes realName="checkId_c16_reg_234">
+    <nodeIds>24</nodeIds>
+  </regnodes>
+  <regnodes realName="n_regions_V_load_loc_channel_reg_252">
+    <nodeIds>47</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_reg_223">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="error_reg_257">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <expressionNodes realName="checkId_c16_fu_98">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcomeInRam_c_fu_94">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_fu_213">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="checkId_c_fu_102">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="taskId_c_fu_106">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_read_test_fu_144">
+    <nodeIds>46</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="call_ln0_entry_proc_fu_134">
+    <nodeIds>45</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_run_test_fu_178">
+    <nodeIds>48</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_runTestAfterInit_Block_entry68_proc_fu_169">
+    <nodeIds>47</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_writeOutcome_fu_201">
+    <nodeIds>49</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="taskId_read_read_fu_122">
     <nodeIds>18</nodeIds>
-  </regnodes>
-  <regnodes realName="error_reg_231">
-    <nodeIds>43</nodeIds>
-  </regnodes>
-  <regnodes realName="n_regions_V_load_loc_channel_reg_226">
-    <nodeIds>42</nodeIds>
-  </regnodes>
-  <regnodes realName="taskId_c16_reg_214">
-    <nodeIds>22</nodeIds>
-  </regnodes>
-  <regnodes realName="taskId_c_reg_220">
-    <nodeIds>25</nodeIds>
-  </regnodes>
-  <regnodes realName="outcomeInRam_c_reg_208">
-    <nodeIds>19</nodeIds>
-  </regnodes>
-  <regnodes realName="taskId_read_reg_198">
-    <nodeIds>16</nodeIds>
-  </regnodes>
-  <expressionNodes realName="taskId_c16_fu_92">
-    <nodeIds>22</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcomeInRam_c_fu_88">
-    <nodeIds>19</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="taskId_c_fu_96">
-    <nodeIds>25</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_fu_193">
-    <nodeIds>18</nodeIds>
-  </expressionNodes>
-  <moduleNodes realName="grp_runTestAfterInit_Block_entry68_proc_fu_150">
-    <nodeIds>42</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_writeOutcome_fu_182">
-    <nodeIds>44</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_run_test_fu_159">
-    <nodeIds>43</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="call_ln0_entry_proc_fu_118">
-    <nodeIds>40</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_read_test_fu_125">
-    <nodeIds>41</nodeIds>
-  </moduleNodes>
-  <ioNodes realName="inputDataInRam_read_read_fu_112">
+  </ioNodes>
+  <ioNodes realName="checkId_read_read_fu_116">
     <nodeIds>17</nodeIds>
   </ioNodes>
-  <ioNodes realName="taskId_read_read_fu_106">
+  <ioNodes realName="outcomeInRam_read_read_fu_110">
     <nodeIds>16</nodeIds>
   </ioNodes>
-  <ioNodes realName="outcomeInRam_read_read_fu_100">
-    <nodeIds>15</nodeIds>
+  <ioNodes realName="inputDataInRam_read_read_fu_128">
+    <nodeIds>19</nodeIds>
   </ioNodes>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" portID="100">
-    <nodeIds>41</nodeIds>
-    <nodeIds>43</nodeIds>
+    <nodeIds>46</nodeIds>
+    <nodeIds>48</nodeIds>
   </memoryPorts>
-  <ioPorts name="gmem">
-    <contents name="call">
-      <nodeIds>41</nodeIds>
-      <nodeIds>44</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="inputDataInRam">
+  <ioPorts name="checkId">
     <contents name="read">
       <nodeIds>17</nodeIds>
     </contents>
   </ioPorts>
-  <ioPorts name="outcomeInRam">
-    <contents name="read">
-      <nodeIds>15</nodeIds>
+  <ioPorts name="gmem">
+    <contents name="call">
+      <nodeIds>46</nodeIds>
+      <nodeIds>49</nodeIds>
     </contents>
   </ioPorts>
-  <ioPorts name="taskId">
+  <ioPorts name="inputDataInRam">
+    <contents name="read">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="outcomeInRam">
     <contents name="read">
       <nodeIds>16</nodeIds>
     </contents>
   </ioPorts>
+  <ioPorts name="taskId">
+    <contents name="read">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
   <ioPorts name="toScheduler">
     <contents name="call">
-      <nodeIds>44</nodeIds>
+      <nodeIds>49</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="15" stage="1" latency="1"/>
       <operations id="16" stage="1" latency="1"/>
       <operations id="17" stage="1" latency="1"/>
       <operations id="18" stage="1" latency="1"/>
       <operations id="19" stage="1" latency="1"/>
-      <operations id="22" stage="1" latency="1"/>
-      <operations id="25" stage="1" latency="1"/>
-      <operations id="40" stage="1" latency="1"/>
-      <operations id="41" stage="72" latency="72"/>
-      <operations id="42" stage="2" latency="2"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="72" latency="72"/>
+      <operations id="47" stage="2" latency="2"/>
     </states>
     <states id="2">
-      <operations id="41" stage="71" latency="72"/>
-      <operations id="42" stage="1" latency="2"/>
+      <operations id="46" stage="71" latency="72"/>
+      <operations id="47" stage="1" latency="2"/>
     </states>
     <states id="3">
-      <operations id="41" stage="70" latency="72"/>
+      <operations id="46" stage="70" latency="72"/>
     </states>
     <states id="4">
-      <operations id="41" stage="69" latency="72"/>
+      <operations id="46" stage="69" latency="72"/>
     </states>
     <states id="5">
-      <operations id="41" stage="68" latency="72"/>
+      <operations id="46" stage="68" latency="72"/>
     </states>
     <states id="6">
-      <operations id="41" stage="67" latency="72"/>
+      <operations id="46" stage="67" latency="72"/>
     </states>
     <states id="7">
-      <operations id="41" stage="66" latency="72"/>
+      <operations id="46" stage="66" latency="72"/>
     </states>
     <states id="8">
-      <operations id="41" stage="65" latency="72"/>
+      <operations id="46" stage="65" latency="72"/>
     </states>
     <states id="9">
-      <operations id="41" stage="64" latency="72"/>
+      <operations id="46" stage="64" latency="72"/>
     </states>
     <states id="10">
-      <operations id="41" stage="63" latency="72"/>
+      <operations id="46" stage="63" latency="72"/>
     </states>
     <states id="11">
-      <operations id="41" stage="62" latency="72"/>
+      <operations id="46" stage="62" latency="72"/>
     </states>
     <states id="12">
-      <operations id="41" stage="61" latency="72"/>
+      <operations id="46" stage="61" latency="72"/>
     </states>
     <states id="13">
-      <operations id="41" stage="60" latency="72"/>
+      <operations id="46" stage="60" latency="72"/>
     </states>
     <states id="14">
-      <operations id="41" stage="59" latency="72"/>
+      <operations id="46" stage="59" latency="72"/>
     </states>
     <states id="15">
-      <operations id="41" stage="58" latency="72"/>
+      <operations id="46" stage="58" latency="72"/>
     </states>
     <states id="16">
-      <operations id="41" stage="57" latency="72"/>
+      <operations id="46" stage="57" latency="72"/>
     </states>
     <states id="17">
-      <operations id="41" stage="56" latency="72"/>
+      <operations id="46" stage="56" latency="72"/>
     </states>
     <states id="18">
-      <operations id="41" stage="55" latency="72"/>
+      <operations id="46" stage="55" latency="72"/>
     </states>
     <states id="19">
-      <operations id="41" stage="54" latency="72"/>
+      <operations id="46" stage="54" latency="72"/>
     </states>
     <states id="20">
-      <operations id="41" stage="53" latency="72"/>
+      <operations id="46" stage="53" latency="72"/>
     </states>
     <states id="21">
-      <operations id="41" stage="52" latency="72"/>
+      <operations id="46" stage="52" latency="72"/>
     </states>
     <states id="22">
-      <operations id="41" stage="51" latency="72"/>
+      <operations id="46" stage="51" latency="72"/>
     </states>
     <states id="23">
-      <operations id="41" stage="50" latency="72"/>
+      <operations id="46" stage="50" latency="72"/>
     </states>
     <states id="24">
-      <operations id="41" stage="49" latency="72"/>
+      <operations id="46" stage="49" latency="72"/>
     </states>
     <states id="25">
-      <operations id="41" stage="48" latency="72"/>
+      <operations id="46" stage="48" latency="72"/>
     </states>
     <states id="26">
-      <operations id="41" stage="47" latency="72"/>
+      <operations id="46" stage="47" latency="72"/>
     </states>
     <states id="27">
-      <operations id="41" stage="46" latency="72"/>
+      <operations id="46" stage="46" latency="72"/>
     </states>
     <states id="28">
-      <operations id="41" stage="45" latency="72"/>
+      <operations id="46" stage="45" latency="72"/>
     </states>
     <states id="29">
-      <operations id="41" stage="44" latency="72"/>
+      <operations id="46" stage="44" latency="72"/>
     </states>
     <states id="30">
-      <operations id="41" stage="43" latency="72"/>
+      <operations id="46" stage="43" latency="72"/>
     </states>
     <states id="31">
-      <operations id="41" stage="42" latency="72"/>
+      <operations id="46" stage="42" latency="72"/>
     </states>
     <states id="32">
-      <operations id="41" stage="41" latency="72"/>
+      <operations id="46" stage="41" latency="72"/>
     </states>
     <states id="33">
-      <operations id="41" stage="40" latency="72"/>
+      <operations id="46" stage="40" latency="72"/>
     </states>
     <states id="34">
-      <operations id="41" stage="39" latency="72"/>
+      <operations id="46" stage="39" latency="72"/>
     </states>
     <states id="35">
-      <operations id="41" stage="38" latency="72"/>
+      <operations id="46" stage="38" latency="72"/>
     </states>
     <states id="36">
-      <operations id="41" stage="37" latency="72"/>
+      <operations id="46" stage="37" latency="72"/>
     </states>
     <states id="37">
-      <operations id="41" stage="36" latency="72"/>
+      <operations id="46" stage="36" latency="72"/>
     </states>
     <states id="38">
-      <operations id="41" stage="35" latency="72"/>
+      <operations id="46" stage="35" latency="72"/>
     </states>
     <states id="39">
-      <operations id="41" stage="34" latency="72"/>
+      <operations id="46" stage="34" latency="72"/>
     </states>
     <states id="40">
-      <operations id="41" stage="33" latency="72"/>
+      <operations id="46" stage="33" latency="72"/>
     </states>
     <states id="41">
-      <operations id="41" stage="32" latency="72"/>
+      <operations id="46" stage="32" latency="72"/>
     </states>
     <states id="42">
-      <operations id="41" stage="31" latency="72"/>
+      <operations id="46" stage="31" latency="72"/>
     </states>
     <states id="43">
-      <operations id="41" stage="30" latency="72"/>
+      <operations id="46" stage="30" latency="72"/>
     </states>
     <states id="44">
-      <operations id="41" stage="29" latency="72"/>
+      <operations id="46" stage="29" latency="72"/>
     </states>
     <states id="45">
-      <operations id="41" stage="28" latency="72"/>
+      <operations id="46" stage="28" latency="72"/>
     </states>
     <states id="46">
-      <operations id="41" stage="27" latency="72"/>
+      <operations id="46" stage="27" latency="72"/>
     </states>
     <states id="47">
-      <operations id="41" stage="26" latency="72"/>
+      <operations id="46" stage="26" latency="72"/>
     </states>
     <states id="48">
-      <operations id="41" stage="25" latency="72"/>
+      <operations id="46" stage="25" latency="72"/>
     </states>
     <states id="49">
-      <operations id="41" stage="24" latency="72"/>
+      <operations id="46" stage="24" latency="72"/>
     </states>
     <states id="50">
-      <operations id="41" stage="23" latency="72"/>
+      <operations id="46" stage="23" latency="72"/>
     </states>
     <states id="51">
-      <operations id="41" stage="22" latency="72"/>
+      <operations id="46" stage="22" latency="72"/>
     </states>
     <states id="52">
-      <operations id="41" stage="21" latency="72"/>
+      <operations id="46" stage="21" latency="72"/>
     </states>
     <states id="53">
-      <operations id="41" stage="20" latency="72"/>
+      <operations id="46" stage="20" latency="72"/>
     </states>
     <states id="54">
-      <operations id="41" stage="19" latency="72"/>
+      <operations id="46" stage="19" latency="72"/>
     </states>
     <states id="55">
-      <operations id="41" stage="18" latency="72"/>
+      <operations id="46" stage="18" latency="72"/>
     </states>
     <states id="56">
-      <operations id="41" stage="17" latency="72"/>
+      <operations id="46" stage="17" latency="72"/>
     </states>
     <states id="57">
-      <operations id="41" stage="16" latency="72"/>
+      <operations id="46" stage="16" latency="72"/>
     </states>
     <states id="58">
-      <operations id="41" stage="15" latency="72"/>
+      <operations id="46" stage="15" latency="72"/>
     </states>
     <states id="59">
-      <operations id="41" stage="14" latency="72"/>
+      <operations id="46" stage="14" latency="72"/>
     </states>
     <states id="60">
-      <operations id="41" stage="13" latency="72"/>
+      <operations id="46" stage="13" latency="72"/>
     </states>
     <states id="61">
-      <operations id="41" stage="12" latency="72"/>
+      <operations id="46" stage="12" latency="72"/>
     </states>
     <states id="62">
-      <operations id="41" stage="11" latency="72"/>
+      <operations id="46" stage="11" latency="72"/>
     </states>
     <states id="63">
-      <operations id="41" stage="10" latency="72"/>
+      <operations id="46" stage="10" latency="72"/>
     </states>
     <states id="64">
-      <operations id="41" stage="9" latency="72"/>
+      <operations id="46" stage="9" latency="72"/>
     </states>
     <states id="65">
-      <operations id="41" stage="8" latency="72"/>
+      <operations id="46" stage="8" latency="72"/>
     </states>
     <states id="66">
-      <operations id="41" stage="7" latency="72"/>
+      <operations id="46" stage="7" latency="72"/>
     </states>
     <states id="67">
-      <operations id="41" stage="6" latency="72"/>
+      <operations id="46" stage="6" latency="72"/>
     </states>
     <states id="68">
-      <operations id="41" stage="5" latency="72"/>
+      <operations id="46" stage="5" latency="72"/>
     </states>
     <states id="69">
-      <operations id="41" stage="4" latency="72"/>
+      <operations id="46" stage="4" latency="72"/>
     </states>
     <states id="70">
-      <operations id="41" stage="3" latency="72"/>
+      <operations id="46" stage="3" latency="72"/>
     </states>
     <states id="71">
-      <operations id="41" stage="2" latency="72"/>
+      <operations id="46" stage="2" latency="72"/>
     </states>
     <states id="72">
-      <operations id="41" stage="1" latency="72"/>
+      <operations id="46" stage="1" latency="72"/>
     </states>
     <states id="73">
-      <operations id="43" stage="28" latency="28"/>
+      <operations id="48" stage="28" latency="28"/>
     </states>
     <states id="74">
-      <operations id="43" stage="27" latency="28"/>
+      <operations id="48" stage="27" latency="28"/>
     </states>
     <states id="75">
-      <operations id="43" stage="26" latency="28"/>
+      <operations id="48" stage="26" latency="28"/>
     </states>
     <states id="76">
-      <operations id="43" stage="25" latency="28"/>
+      <operations id="48" stage="25" latency="28"/>
     </states>
     <states id="77">
-      <operations id="43" stage="24" latency="28"/>
+      <operations id="48" stage="24" latency="28"/>
     </states>
     <states id="78">
-      <operations id="43" stage="23" latency="28"/>
+      <operations id="48" stage="23" latency="28"/>
     </states>
     <states id="79">
-      <operations id="43" stage="22" latency="28"/>
+      <operations id="48" stage="22" latency="28"/>
     </states>
     <states id="80">
-      <operations id="43" stage="21" latency="28"/>
+      <operations id="48" stage="21" latency="28"/>
     </states>
     <states id="81">
-      <operations id="43" stage="20" latency="28"/>
+      <operations id="48" stage="20" latency="28"/>
     </states>
     <states id="82">
-      <operations id="43" stage="19" latency="28"/>
+      <operations id="48" stage="19" latency="28"/>
     </states>
     <states id="83">
-      <operations id="43" stage="18" latency="28"/>
+      <operations id="48" stage="18" latency="28"/>
     </states>
     <states id="84">
-      <operations id="43" stage="17" latency="28"/>
+      <operations id="48" stage="17" latency="28"/>
     </states>
     <states id="85">
-      <operations id="43" stage="16" latency="28"/>
+      <operations id="48" stage="16" latency="28"/>
     </states>
     <states id="86">
-      <operations id="43" stage="15" latency="28"/>
+      <operations id="48" stage="15" latency="28"/>
     </states>
     <states id="87">
-      <operations id="43" stage="14" latency="28"/>
+      <operations id="48" stage="14" latency="28"/>
     </states>
     <states id="88">
-      <operations id="43" stage="13" latency="28"/>
+      <operations id="48" stage="13" latency="28"/>
     </states>
     <states id="89">
-      <operations id="43" stage="12" latency="28"/>
+      <operations id="48" stage="12" latency="28"/>
     </states>
     <states id="90">
-      <operations id="43" stage="11" latency="28"/>
+      <operations id="48" stage="11" latency="28"/>
     </states>
     <states id="91">
-      <operations id="43" stage="10" latency="28"/>
+      <operations id="48" stage="10" latency="28"/>
     </states>
     <states id="92">
-      <operations id="43" stage="9" latency="28"/>
+      <operations id="48" stage="9" latency="28"/>
     </states>
     <states id="93">
-      <operations id="43" stage="8" latency="28"/>
+      <operations id="48" stage="8" latency="28"/>
     </states>
     <states id="94">
-      <operations id="43" stage="7" latency="28"/>
+      <operations id="48" stage="7" latency="28"/>
     </states>
     <states id="95">
-      <operations id="43" stage="6" latency="28"/>
+      <operations id="48" stage="6" latency="28"/>
     </states>
     <states id="96">
-      <operations id="43" stage="5" latency="28"/>
+      <operations id="48" stage="5" latency="28"/>
     </states>
     <states id="97">
-      <operations id="43" stage="4" latency="28"/>
+      <operations id="48" stage="4" latency="28"/>
     </states>
     <states id="98">
-      <operations id="43" stage="3" latency="28"/>
+      <operations id="48" stage="3" latency="28"/>
     </states>
     <states id="99">
-      <operations id="43" stage="2" latency="28"/>
+      <operations id="48" stage="2" latency="28"/>
     </states>
     <states id="100">
-      <operations id="43" stage="1" latency="28"/>
+      <operations id="48" stage="1" latency="28"/>
     </states>
     <states id="101"/>
     <states id="102"/>
     <states id="103"/>
     <states id="104"/>
     <states id="105">
-      <operations id="44" stage="73" latency="73"/>
+      <operations id="49" stage="73" latency="73"/>
     </states>
     <states id="106">
-      <operations id="44" stage="72" latency="73"/>
+      <operations id="49" stage="72" latency="73"/>
     </states>
     <states id="107">
-      <operations id="44" stage="71" latency="73"/>
+      <operations id="49" stage="71" latency="73"/>
     </states>
     <states id="108">
-      <operations id="44" stage="70" latency="73"/>
+      <operations id="49" stage="70" latency="73"/>
     </states>
     <states id="109">
-      <operations id="44" stage="69" latency="73"/>
+      <operations id="49" stage="69" latency="73"/>
     </states>
     <states id="110">
-      <operations id="44" stage="68" latency="73"/>
+      <operations id="49" stage="68" latency="73"/>
     </states>
     <states id="111">
-      <operations id="44" stage="67" latency="73"/>
+      <operations id="49" stage="67" latency="73"/>
     </states>
     <states id="112">
-      <operations id="44" stage="66" latency="73"/>
+      <operations id="49" stage="66" latency="73"/>
     </states>
     <states id="113">
-      <operations id="44" stage="65" latency="73"/>
+      <operations id="49" stage="65" latency="73"/>
     </states>
     <states id="114">
-      <operations id="44" stage="64" latency="73"/>
+      <operations id="49" stage="64" latency="73"/>
     </states>
     <states id="115">
-      <operations id="44" stage="63" latency="73"/>
+      <operations id="49" stage="63" latency="73"/>
     </states>
     <states id="116">
-      <operations id="44" stage="62" latency="73"/>
+      <operations id="49" stage="62" latency="73"/>
     </states>
     <states id="117">
-      <operations id="44" stage="61" latency="73"/>
+      <operations id="49" stage="61" latency="73"/>
     </states>
     <states id="118">
-      <operations id="44" stage="60" latency="73"/>
+      <operations id="49" stage="60" latency="73"/>
     </states>
     <states id="119">
-      <operations id="44" stage="59" latency="73"/>
+      <operations id="49" stage="59" latency="73"/>
     </states>
     <states id="120">
-      <operations id="44" stage="58" latency="73"/>
+      <operations id="49" stage="58" latency="73"/>
     </states>
     <states id="121">
-      <operations id="44" stage="57" latency="73"/>
+      <operations id="49" stage="57" latency="73"/>
     </states>
     <states id="122">
-      <operations id="44" stage="56" latency="73"/>
+      <operations id="49" stage="56" latency="73"/>
     </states>
     <states id="123">
-      <operations id="44" stage="55" latency="73"/>
+      <operations id="49" stage="55" latency="73"/>
     </states>
     <states id="124">
-      <operations id="44" stage="54" latency="73"/>
+      <operations id="49" stage="54" latency="73"/>
     </states>
     <states id="125">
-      <operations id="44" stage="53" latency="73"/>
+      <operations id="49" stage="53" latency="73"/>
     </states>
     <states id="126">
-      <operations id="44" stage="52" latency="73"/>
+      <operations id="49" stage="52" latency="73"/>
     </states>
     <states id="127">
-      <operations id="44" stage="51" latency="73"/>
+      <operations id="49" stage="51" latency="73"/>
     </states>
     <states id="128">
-      <operations id="44" stage="50" latency="73"/>
+      <operations id="49" stage="50" latency="73"/>
     </states>
     <states id="129">
-      <operations id="44" stage="49" latency="73"/>
+      <operations id="49" stage="49" latency="73"/>
     </states>
     <states id="130">
-      <operations id="44" stage="48" latency="73"/>
+      <operations id="49" stage="48" latency="73"/>
     </states>
     <states id="131">
-      <operations id="44" stage="47" latency="73"/>
+      <operations id="49" stage="47" latency="73"/>
     </states>
     <states id="132">
-      <operations id="44" stage="46" latency="73"/>
+      <operations id="49" stage="46" latency="73"/>
     </states>
     <states id="133">
-      <operations id="44" stage="45" latency="73"/>
+      <operations id="49" stage="45" latency="73"/>
     </states>
     <states id="134">
-      <operations id="44" stage="44" latency="73"/>
+      <operations id="49" stage="44" latency="73"/>
     </states>
     <states id="135">
-      <operations id="44" stage="43" latency="73"/>
+      <operations id="49" stage="43" latency="73"/>
     </states>
     <states id="136">
-      <operations id="44" stage="42" latency="73"/>
+      <operations id="49" stage="42" latency="73"/>
     </states>
     <states id="137">
-      <operations id="44" stage="41" latency="73"/>
+      <operations id="49" stage="41" latency="73"/>
     </states>
     <states id="138">
-      <operations id="44" stage="40" latency="73"/>
+      <operations id="49" stage="40" latency="73"/>
     </states>
     <states id="139">
-      <operations id="44" stage="39" latency="73"/>
+      <operations id="49" stage="39" latency="73"/>
     </states>
     <states id="140">
-      <operations id="44" stage="38" latency="73"/>
+      <operations id="49" stage="38" latency="73"/>
     </states>
     <states id="141">
-      <operations id="44" stage="37" latency="73"/>
+      <operations id="49" stage="37" latency="73"/>
     </states>
     <states id="142">
-      <operations id="44" stage="36" latency="73"/>
+      <operations id="49" stage="36" latency="73"/>
     </states>
     <states id="143">
-      <operations id="44" stage="35" latency="73"/>
+      <operations id="49" stage="35" latency="73"/>
     </states>
     <states id="144">
-      <operations id="44" stage="34" latency="73"/>
+      <operations id="49" stage="34" latency="73"/>
     </states>
     <states id="145">
-      <operations id="44" stage="33" latency="73"/>
+      <operations id="49" stage="33" latency="73"/>
     </states>
     <states id="146">
-      <operations id="44" stage="32" latency="73"/>
+      <operations id="49" stage="32" latency="73"/>
     </states>
     <states id="147">
-      <operations id="44" stage="31" latency="73"/>
+      <operations id="49" stage="31" latency="73"/>
     </states>
     <states id="148">
-      <operations id="44" stage="30" latency="73"/>
+      <operations id="49" stage="30" latency="73"/>
     </states>
     <states id="149">
-      <operations id="44" stage="29" latency="73"/>
+      <operations id="49" stage="29" latency="73"/>
     </states>
     <states id="150">
-      <operations id="44" stage="28" latency="73"/>
+      <operations id="49" stage="28" latency="73"/>
     </states>
     <states id="151">
-      <operations id="44" stage="27" latency="73"/>
+      <operations id="49" stage="27" latency="73"/>
     </states>
     <states id="152">
-      <operations id="44" stage="26" latency="73"/>
+      <operations id="49" stage="26" latency="73"/>
     </states>
     <states id="153">
-      <operations id="44" stage="25" latency="73"/>
+      <operations id="49" stage="25" latency="73"/>
     </states>
     <states id="154">
-      <operations id="44" stage="24" latency="73"/>
+      <operations id="49" stage="24" latency="73"/>
     </states>
     <states id="155">
-      <operations id="44" stage="23" latency="73"/>
+      <operations id="49" stage="23" latency="73"/>
     </states>
     <states id="156">
-      <operations id="44" stage="22" latency="73"/>
+      <operations id="49" stage="22" latency="73"/>
     </states>
     <states id="157">
-      <operations id="44" stage="21" latency="73"/>
+      <operations id="49" stage="21" latency="73"/>
     </states>
     <states id="158">
-      <operations id="44" stage="20" latency="73"/>
+      <operations id="49" stage="20" latency="73"/>
     </states>
     <states id="159">
-      <operations id="44" stage="19" latency="73"/>
+      <operations id="49" stage="19" latency="73"/>
     </states>
     <states id="160">
-      <operations id="44" stage="18" latency="73"/>
+      <operations id="49" stage="18" latency="73"/>
     </states>
     <states id="161">
-      <operations id="44" stage="17" latency="73"/>
+      <operations id="49" stage="17" latency="73"/>
     </states>
     <states id="162">
-      <operations id="44" stage="16" latency="73"/>
+      <operations id="49" stage="16" latency="73"/>
     </states>
     <states id="163">
-      <operations id="44" stage="15" latency="73"/>
+      <operations id="49" stage="15" latency="73"/>
     </states>
     <states id="164">
-      <operations id="44" stage="14" latency="73"/>
+      <operations id="49" stage="14" latency="73"/>
     </states>
     <states id="165">
-      <operations id="44" stage="13" latency="73"/>
+      <operations id="49" stage="13" latency="73"/>
     </states>
     <states id="166">
-      <operations id="44" stage="12" latency="73"/>
+      <operations id="49" stage="12" latency="73"/>
     </states>
     <states id="167">
-      <operations id="44" stage="11" latency="73"/>
+      <operations id="49" stage="11" latency="73"/>
     </states>
     <states id="168">
-      <operations id="44" stage="10" latency="73"/>
+      <operations id="49" stage="10" latency="73"/>
     </states>
     <states id="169">
-      <operations id="44" stage="9" latency="73"/>
+      <operations id="49" stage="9" latency="73"/>
     </states>
     <states id="170">
-      <operations id="44" stage="8" latency="73"/>
+      <operations id="49" stage="8" latency="73"/>
     </states>
     <states id="171">
-      <operations id="44" stage="7" latency="73"/>
+      <operations id="49" stage="7" latency="73"/>
     </states>
     <states id="172">
-      <operations id="44" stage="6" latency="73"/>
+      <operations id="49" stage="6" latency="73"/>
     </states>
     <states id="173">
-      <operations id="44" stage="5" latency="73"/>
+      <operations id="49" stage="5" latency="73"/>
     </states>
     <states id="174">
-      <operations id="44" stage="4" latency="73"/>
+      <operations id="49" stage="4" latency="73"/>
     </states>
     <states id="175">
-      <operations id="44" stage="3" latency="73"/>
+      <operations id="49" stage="3" latency="73"/>
     </states>
     <states id="176">
-      <operations id="44" stage="2" latency="73"/>
+      <operations id="49" stage="2" latency="73"/>
     </states>
     <states id="177">
-      <operations id="20" stage="1" latency="1"/>
-      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
       <operations id="23" stage="1" latency="1"/>
-      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
       <operations id="26" stage="1" latency="1"/>
-      <operations id="27" stage="1" latency="1"/>
       <operations id="28" stage="1" latency="1"/>
       <operations id="29" stage="1" latency="1"/>
-      <operations id="30" stage="1" latency="1"/>
       <operations id="31" stage="1" latency="1"/>
       <operations id="32" stage="1" latency="1"/>
       <operations id="33" stage="1" latency="1"/>
@@ -991,8 +1023,13 @@
       <operations id="37" stage="1" latency="1"/>
       <operations id="38" stage="1" latency="1"/>
       <operations id="39" stage="1" latency="1"/>
-      <operations id="44" stage="1" latency="73"/>
-      <operations id="45" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="73"/>
+      <operations id="50" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
@@ -1525,177 +1562,191 @@
   </fsm>
   <CFGRegionsRoot>
     <cfgRegions mId="1" mTag="runTestAfterInit" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="145" mMaxLatency="145" mIsDfPipe="true">
-      <basicBlocks>46</basicBlocks>
-      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.4/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.1/@sink.0/@inst">
-        <processe_list name="entry_proc_U0" ssdmobj_id="40">
+      <basicBlocks>51</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.4/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.2/@sink.0/@inst">
+        <processe_list name="entry_proc_U0" ssdmobj_id="45">
           <pins>
-            <port name="outcomeInRam" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_83" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="entry_proc_U0" ssdmobj_id="40" object_id="_89"/>
+            <port name="taskId" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_90" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="entry_proc_U0" ssdmobj_id="45" object_id="_98"/>
+          </pins>
+          <pins>
+            <port name="outcomeInRam" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_92" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="entry_proc_U0" ssdmobj_id="45" object_id="_98"/>
           </pins>
         </processe_list>
-        <processe_list name="read_test_U0" ssdmobj_id="41">
+        <processe_list name="read_test_U0" ssdmobj_id="46">
           <pins>
-            <port name="gmem" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_80" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <port name="gmem" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_88" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </pins>
           <pins>
-            <port name="inputDataInRam" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_81" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <port name="inputDataInRam" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_89" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </pins>
           <pins>
-            <port name="taskId" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_82" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
-          </pins>
-        </processe_list>
-        <processe_list name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="42">
-          <pins>
-            <port name="taskId" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_82" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="42" object_id="_101"/>
-          </pins>
-          <pins>
-            <port name="n_regions_V" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_85" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="42" object_id="_101"/>
+            <port name="checkId" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_91" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </pins>
         </processe_list>
-        <processe_list name="run_test_U0" ssdmobj_id="43"/>
-        <processe_list name="writeOutcome_U0" ssdmobj_id="44">
+        <processe_list name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="47">
           <pins>
-            <port name="gmem" dir="DirOut" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_80" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="44" object_id="_108"/>
+            <port name="checkId" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_91" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="47" object_id="_112"/>
           </pins>
           <pins>
-            <port name="toScheduler" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_84" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="44" object_id="_108"/>
+            <port name="n_regions_V" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_94" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="47" object_id="_112"/>
           </pins>
         </processe_list>
-        <channel_list depth="14" bitwidth="64" suggested_type="2" suggested_depth="14" name="outcomeInRam_c" ssdmobj_id="19">
+        <processe_list name="run_test_U0" ssdmobj_id="48"/>
+        <processe_list name="writeOutcome_U0" ssdmobj_id="49">
+          <pins>
+            <port name="gmem" dir="DirOut" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_88" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
+          </pins>
+          <pins>
+            <port name="toScheduler" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_93" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="14" bitwidth="8" suggested_type="2" suggested_depth="14" name="taskId_c" ssdmobj_id="30">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="entry_proc_U0" ssdmobj_id="40" object_id="_89"/>
+            <inst name="entry_proc_U0" ssdmobj_id="45" object_id="_98"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="44" object_id="_108"/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" ssdmobj_id="6">
+        <channel_list depth="14" bitwidth="64" suggested_type="2" suggested_depth="14" name="outcomeInRam_c" ssdmobj_id="21">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="entry_proc_U0" ssdmobj_id="45" object_id="_98"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" ssdmobj_id="7">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" ssdmobj_id="7">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" ssdmobj_id="8">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" ssdmobj_id="8">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" ssdmobj_id="9">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" ssdmobj_id="9">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" ssdmobj_id="10">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" ssdmobj_id="10">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" ssdmobj_id="11">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" ssdmobj_id="11">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" ssdmobj_id="12">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" ssdmobj_id="12">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" ssdmobj_id="13">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" ssdmobj_id="13">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_test_U0" ssdmobj_id="41" object_id="_93"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="10" bitwidth="16" suggested_type="2" suggested_depth="10" name="taskId_c16" ssdmobj_id="22">
+        <channel_list depth="0" bitwidth="0" type="PIPO" suggested_type="0" suggested_depth="2" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" ssdmobj_id="14">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="42" object_id="_101"/>
+            <inst name="read_test_U0" ssdmobj_id="46" object_id="_104"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="10" bitwidth="8" suggested_type="1" suggested_depth="10" name="n_regions_V_load_loc_channel" ssdmobj_id="42">
+        <channel_list depth="10" bitwidth="16" suggested_type="2" suggested_depth="10" name="checkId_c16" ssdmobj_id="24">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="42" object_id="_101"/>
+            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="47" object_id="_112"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="5" bitwidth="16" suggested_type="2" suggested_depth="5" name="taskId_c" ssdmobj_id="25">
+        <channel_list depth="10" bitwidth="8" suggested_type="1" suggested_depth="10" name="n_regions_V_load_loc_channel" ssdmobj_id="47">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="runTestAfterInit_Block_entry68_proc_U0" ssdmobj_id="47" object_id="_112"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="44" object_id="_108"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </sink>
         </channel_list>
-        <channel_list depth="2" bitwidth="1" suggested_type="1" suggested_depth="2" name="error" ssdmobj_id="43">
+        <channel_list depth="5" bitwidth="16" suggested_type="2" suggested_depth="5" name="checkId_c" ssdmobj_id="27">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="43" object_id="_121"/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="44" object_id="_108"/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="1" suggested_type="1" suggested_depth="2" name="error" ssdmobj_id="48">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="48" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="49" object_id="_119"/>
           </sink>
         </channel_list>
       </mDfPipe>

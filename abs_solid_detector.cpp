@@ -234,7 +234,7 @@ bool is_valid(float val[MAX_AOV_DIM]){
 //	//printf("train: %f = %f : %s pct_fp:%f\n", this->data[0], this->data_key[0], corr ? "same":"not same", this->stats.n_false/this->stats.n_total_train);
 //	//insert the training point
 //	insert_point(regions, n_regions, data, corr);
-//	if(!corr) insert_point(regions, n_regions, inputData, true);//data_key[taskId],true);
+//	if(!corr) insert_point(regions, n_regions, inputData, true);//data_key[checkId],true);
 //	return true;
 //}
 
@@ -303,7 +303,8 @@ struct OutcomeStr {
 
 struct controlStr {
 	ap_int<2> command;
-	ap_int<16> taskId;
+	ap_int<16> checkId;
+	ap_int<8> taskId;
 };
 
 #include "hls_math.h"
@@ -311,7 +312,7 @@ struct controlStr {
 #define sizeOfOutcome  ((MAX_CHECKS*sizeof(OutcomeStr)) / 32) + (((MAX_CHECKS*sizeof(OutcomeStr)) % 32) != 0)
 #define SHARED_MEM_SIZE sizeOfInputData*MAX_CHECKS+sizeOfOutcome
 
-void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> taskId, bool error, hls::stream< ap_int<8>> &toScheduler) {
+void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> checkId, ap_int<8> taskId, bool error, hls::stream< ap_int<8>> &toScheduler) {
 #pragma HLS PIPELINE II=8
 	//#pragma HLS inline off
 	OutcomeStr out;
@@ -319,14 +320,14 @@ void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> taskId, bool error, hls::st
 	out.isNew=true;
 	out.error=error;
 
-	memcpy((void*) &(outcomeptr[taskId]), (void*) &out, sizeof(out));
+	memcpy((void*) &(outcomeptr[checkId]), (void*) &out, sizeof(out));
 	if (error)
 		toScheduler.write(taskId);
 }
 
-void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_int<16> taskId) {
+void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_int<16> checkId) {
 #pragma HLS PIPELINE II=8
-	memcpy(dest[taskId], inputDataInRam, sizeOfInputData);
+	memcpy(dest[checkId], inputDataInRam, sizeOfInputData);
 }
 
 void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
@@ -334,34 +335,35 @@ void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, f
 	error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
 
-void runTestAfterInit(float * inputDataInRam, ap_int<16> taskId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[MAX_CHECKS][MAX_AOV_DIM], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
+void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[MAX_CHECKS][MAX_AOV_DIM], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
 #pragma HLS dataflow
 
 	//run
 	//		for (;;) {
 
 	bool error;
+	//ap_int<8> n_regions_currCheck=n_regions[checkId];
 
-	read_test(data, inputDataInRam, taskId);
-	run_test(error, regions[taskId], n_regions[taskId], data[taskId]);
+	read_test(data, inputDataInRam, checkId);
+	run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
 
 	//		} else
 	//		if (contr.command==COMMAND_TRAIN) {
 	//			memcpy((void*) data_key, (void*) inputDataInRam, sizeOfInputData);
-	//			outcome=train(contr.taskId, data_key);
+	//			outcome=train(contr.checkId, data_key);
 	//	}
 
 	//write
-	writeOutcome(outcomeInRam, taskId, error, toScheduler);
+	writeOutcome(outcomeInRam, checkId, taskId, error, toScheduler);
 }
 
 //controlStr contr
 //hls::stream<controlStr> &control
 
-void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_int<8> realTaskId[MAX_CHECKS], ap_int<8> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<8> > &toScheduler) {
+void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_int<8> realcheckId[MAX_CHECKS], ap_int<8> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<8> > &toScheduler) {
 
 #pragma HLS interface s_axilite port = trainedRegions //bundle=A
-#pragma HLS interface s_axilite port = realTaskId //bundle=A
+#pragma HLS interface s_axilite port = realcheckId //bundle=A
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 #pragma HLS INTERFACE m_axi port=sharedMem
 #pragma HLS INTERFACE axis port=toScheduler
@@ -390,7 +392,7 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 			((char *) regions) [i] = ((const char*) trainedRegions) [i];
 		}
 
-		for (size_t i=0; i<sizeof(n_regions_in); i++) {
+		for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
 			((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
 		}
@@ -399,7 +401,7 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 		fsmstate=STATE_READY;
 
 	} else if (fsmstate==STATE_READY) {
-		runTestAfterInit(inputDataInRam, contr.taskId, outcomeInRam, toScheduler, data, regions, n_regions);
+		runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
 	}
 }
 //}

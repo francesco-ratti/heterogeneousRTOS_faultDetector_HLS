@@ -3,17 +3,17 @@ source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-%struct.controlStr = type { %"struct.ap_int<2>", %"struct.ap_int<16>" }
+%struct.controlStr = type { %"struct.ap_int<2>", %"struct.ap_int<16>", %"struct.ap_int<8>" }
 %"struct.ap_int<2>" = type { %"struct.ap_int_base<2, true>" }
 %"struct.ap_int_base<2, true>" = type { %"struct.ssdm_int<2, true>" }
 %"struct.ssdm_int<2, true>" = type { i2 }
 %"struct.ap_int<16>" = type { %"struct.ap_int_base<16, true>" }
 %"struct.ap_int_base<16, true>" = type { %"struct.ssdm_int<16, true>" }
 %"struct.ssdm_int<16, true>" = type { i16 }
-%struct.REGION_T = type { [8 x float], [8 x float], [8 x float] }
 %"struct.ap_int<8>" = type { %"struct.ap_int_base<8, true>" }
 %"struct.ap_int_base<8, true>" = type { %"struct.ssdm_int<8, true>" }
 %"struct.ssdm_int<8, true>" = type { i8 }
+%struct.REGION_T = type { [8 x float], [8 x float], [8 x float] }
 %"struct.ap_int<32>" = type { %"struct.ap_int_base<32, true>" }
 %"struct.ap_int_base<32, true>" = type { %"struct.ssdm_int<32, true>" }
 %"struct.ssdm_int<32, true>" = type { i32 }
@@ -23,27 +23,27 @@ target triple = "fpga64-xilinx-none"
 declare void @llvm.sideeffect() #0
 
 ; Function Attrs: noinline
-define void @apatb_run_ir(%struct.controlStr* nocapture readonly %contr, [16 x %struct.REGION_T]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %trainedRegions, %"struct.ap_int<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %realTaskId, %"struct.ap_int<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %n_regions_in, %"struct.ap_int<32>"* noalias nocapture nonnull "fpga.decayed.dim.hint"="4104" %sharedMem, %"class.hls::stream<ap_int<8>, 0>"* noalias nocapture nonnull dereferenceable(1) %toScheduler) local_unnamed_addr #1 {
+define void @apatb_run_ir(%struct.controlStr* nocapture readonly %contr, [16 x %struct.REGION_T]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %trainedRegions, %"struct.ap_int<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %realcheckId, %"struct.ap_int<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" %n_regions_in, %"struct.ap_int<32>"* noalias nocapture nonnull "fpga.decayed.dim.hint"="4104" %sharedMem, %"class.hls::stream<ap_int<8>, 0>"* noalias nocapture nonnull dereferenceable(1) %toScheduler) local_unnamed_addr #1 {
 entry:
   %malloccall = tail call i8* @malloc(i64 196608)
   %trainedRegions_copy = bitcast i8* %malloccall to [128 x [16 x %struct.REGION_T]]*
-  %realTaskId_copy = alloca [128 x %"struct.ap_int<8>"], align 512
+  %realcheckId_copy = alloca [128 x %"struct.ap_int<8>"], align 512
   %n_regions_in_copy = alloca [128 x %"struct.ap_int<8>"], align 512
   %malloccall1 = tail call i8* @malloc(i64 16416)
   %sharedMem_copy = bitcast i8* %malloccall1 to [4104 x %"struct.ap_int<32>"]*
   %toScheduler_copy = alloca %"class.hls::stream<ap_int<8>, 0>", align 512
   call void @llvm.sideeffect() #8 [ "stream_interface"(%"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy, i32 0) ]
   %0 = bitcast [16 x %struct.REGION_T]* %trainedRegions to [128 x [16 x %struct.REGION_T]]*
-  %1 = bitcast %"struct.ap_int<8>"* %realTaskId to [128 x %"struct.ap_int<8>"]*
+  %1 = bitcast %"struct.ap_int<8>"* %realcheckId to [128 x %"struct.ap_int<8>"]*
   %2 = bitcast %"struct.ap_int<8>"* %n_regions_in to [128 x %"struct.ap_int<8>"]*
   %3 = bitcast %"struct.ap_int<32>"* %sharedMem to [4104 x %"struct.ap_int<32>"]*
-  call fastcc void @copy_in([128 x [16 x %struct.REGION_T]]* nonnull %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* nonnull %1, [128 x %"struct.ap_int<8>"]* nonnull align 512 %realTaskId_copy, [128 x %"struct.ap_int<8>"]* nonnull %2, [128 x %"struct.ap_int<8>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* nonnull %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* nonnull %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
+  call fastcc void @copy_in([128 x [16 x %struct.REGION_T]]* nonnull %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* nonnull %1, [128 x %"struct.ap_int<8>"]* nonnull align 512 %realcheckId_copy, [128 x %"struct.ap_int<8>"]* nonnull %2, [128 x %"struct.ap_int<8>"]* nonnull align 512 %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* nonnull %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* nonnull %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* nonnull align 512 %toScheduler_copy)
   %4 = getelementptr inbounds [128 x [16 x %struct.REGION_T]], [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, i32 0, i32 0
-  %5 = getelementptr inbounds [128 x %"struct.ap_int<8>"], [128 x %"struct.ap_int<8>"]* %realTaskId_copy, i32 0, i32 0
+  %5 = getelementptr inbounds [128 x %"struct.ap_int<8>"], [128 x %"struct.ap_int<8>"]* %realcheckId_copy, i32 0, i32 0
   %6 = getelementptr inbounds [128 x %"struct.ap_int<8>"], [128 x %"struct.ap_int<8>"]* %n_regions_in_copy, i32 0, i32 0
   %7 = getelementptr inbounds [4104 x %"struct.ap_int<32>"], [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, i32 0, i32 0
   call void @apatb_run_hw(%struct.controlStr* %contr, [16 x %struct.REGION_T]* %4, %"struct.ap_int<8>"* %5, %"struct.ap_int<8>"* %6, %"struct.ap_int<32>"* %7, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy)
-  call void @copy_back([128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x %"struct.ap_int<8>"]* %realTaskId_copy, [128 x %"struct.ap_int<8>"]* %2, [128 x %"struct.ap_int<8>"]* %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy)
+  call void @copy_back([128 x [16 x %struct.REGION_T]]* %0, [128 x [16 x %struct.REGION_T]]* %trainedRegions_copy, [128 x %"struct.ap_int<8>"]* %1, [128 x %"struct.ap_int<8>"]* %realcheckId_copy, [128 x %"struct.ap_int<8>"]* %2, [128 x %"struct.ap_int<8>"]* %n_regions_in_copy, [4104 x %"struct.ap_int<32>"]* %3, [4104 x %"struct.ap_int<32>"]* %sharedMem_copy, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler, %"class.hls::stream<ap_int<8>, 0>"* %toScheduler_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   ret void

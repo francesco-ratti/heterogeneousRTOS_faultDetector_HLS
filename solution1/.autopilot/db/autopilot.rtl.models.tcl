@@ -17,6 +17,7 @@ set SynModuleInfo {
     SUBMODULES {
       {MODELNAME run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb_memcore RTLNAME run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb_memcore BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb RTLNAME run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb BINDTYPE storage TYPE ram IMPL auto LATENCY 2}
+      {MODELNAME run_fifo_w8_d14_S RTLNAME run_fifo_w8_d14_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w64_d14_S RTLNAME run_fifo_w64_d14_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w16_d10_S RTLNAME run_fifo_w16_d10_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w8_d10_S RTLNAME run_fifo_w8_d10_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}

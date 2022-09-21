@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663764790756">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663771236013">
   <ports id="1" name="gmem" type="PortType" coreId="3621216858" bitwidth="256" iftype="IfTypeFifo">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="2" name="inputDataInRam" type="PortType" coreId="768212416" bitwidth="64">
+  <ports id="2" name="inputDataInRam" type="PortType" coreId="1330007625" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="taskId" type="PortType" coreId="1330007625" bitwidth="7">
+  <ports id="3" name="checkId" type="PortType" coreId="2647202880" bitwidth="7">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" type="PortType" coreName="RAM" coreId="768384616" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="4" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7" type="PortType" coreName="RAM" coreId="2647448696" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="5" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" type="PortType" coreName="RAM" coreId="825368659" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="5" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6" type="PortType" coreName="RAM" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="6" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" type="PortType" coreName="RAM" coreId="192" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="6" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5" type="PortType" coreName="RAM" coreId="448" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="7" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" type="PortType" coreName="RAM" coreId="1701407856" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="7" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4" type="PortType" coreName="RAM" coreId="30" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="8" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" type="PortType" coreName="RAM" coreId="768176528" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="8" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3" type="PortType" coreName="RAM" coreId="2647773024" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="9" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" type="PortType" coreName="RAM" coreId="768709104" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="9" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2" type="PortType" coreName="RAM" coreId="2647564240" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="10" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" type="PortType" coreName="RAM" coreId="3646791168" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="10" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1" type="PortType" coreName="RAM" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="11" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" type="PortType" coreName="RAM" coreId="1951624303" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
+  <ports id="11" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data" type="PortType" coreName="RAM" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="128">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
   <edges id="66" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
@@ -93,16 +93,16 @@
   <edges id="258" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
   <regions anchor_node="-1" region_type="8" interval="8" typeName="Pipeline" iiViolation="" id="420" pipe_depth="72" RegionName="read_test">
     <basic_blocks id="63" name="read_test" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="taskId_read" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="7" opcode="read" nodeLabel="7.0" m_display="0" m_delay="3.63" m_topoIndex="6" m_clusterGroupNumber="-1">
-        <dataInputObjs>taskId</dataInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="checkId_read" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="7" opcode="read" nodeLabel="7.0" m_display="0" m_delay="3.63" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <dataInputObjs>checkId</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="inputDataInRam_read" coreId="1586052320" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="inputDataInRam_read" coreId="1852404340" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <dataInputObjs>inputDataInRam</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="zext_ln587" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln587_fu_331_p1" coreId="1586052320" contextFuncName="runTestAfterInit" bitwidth="64" opcode="zext" nodeLabel="71.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="zext_ln587" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln587_fu_331_p1" coreId="2647564240" contextFuncName="runTestAfterInit" bitwidth="64" opcode="zext" nodeLabel="71.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -113,12 +113,12 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_cast_i_i_i" rtlName="p_cast_i_i_i_fu_236_p4" coreId="1852404340" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_cast_i_i_i" rtlName="p_cast_i_i_i_fu_236_p4" coreId="1684630639" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_cast_cast_i_i_i" rtlName="p_cast_cast_i_i_i_fu_246_p1" coreId="0" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_cast_cast_i_i_i" rtlName="p_cast_cast_i_i_i_fu_246_p1" coreId="2647702944" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
@@ -143,178 +143,178 @@
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="empty" rtlName="empty_fu_257_p1" coreId="608" bitwidth="32" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="empty" rtlName="empty_fu_257_p1" coreId="2647815632" bitwidth="32" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="empty_48" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_d0" coreId="768608912" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="empty_52" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_d0" coreId="2647816216" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_cast2_i_i_i" rtlName="p_cast2_i_i_i_reg_390" coreId="3645031825" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_cast2_i_i_i" rtlName="p_cast2_i_i_i_reg_390" coreId="1951624303" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_49" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_d0" coreId="1869898597" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty_53" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_d0" coreId="224" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="p_cast4_i_i_i" rtlName="p_cast4_i_i_i_reg_395" coreId="768613520" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="p_cast4_i_i_i" rtlName="p_cast4_i_i_i_reg_395" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="empty_50" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_d0" coreId="768614104" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="empty_54" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_d0" coreId="2647706688" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="p_cast6_i_i_i" rtlName="p_cast6_i_i_i_reg_400" coreId="768461712" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="p_cast6_i_i_i" rtlName="p_cast6_i_i_i_reg_400" coreId="678327552" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="empty_51" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_d0" coreId="1040" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="empty_55" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_d0" coreId="1868963950" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="p_cast8_i_i_i" rtlName="p_cast8_i_i_i_reg_405" coreId="768603520" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="p_cast8_i_i_i" rtlName="p_cast8_i_i_i_reg_405" coreId="2647699360" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="empty_52" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_d0" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="empty_56" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_d0" coreId="2647792584" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="p_cast10_i_i_i" rtlName="p_cast10_i_i_i_reg_410" coreId="768605072" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="p_cast10_i_i_i" rtlName="p_cast10_i_i_i_reg_410" coreId="2647791680" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="empty_53" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_d0" coreId="1702258035" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="empty_57" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_d0" coreId="33" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="p_cast12_i_i_i" rtlName="p_cast12_i_i_i_reg_415" coreId="572669294" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="p_cast12_i_i_i" rtlName="p_cast12_i_i_i_reg_415" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="empty_54" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_d0" coreId="1598312009" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="empty_58" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_d0" coreId="2647795040" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_cast13_i_i_i" rtlName="p_cast13_i_i_i_reg_420" coreId="774905914" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_cast13_i_i_i" rtlName="p_cast13_i_i_i_reg_420" coreId="2647793976" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="empty_55" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_d0" coreId="572669294" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="empty_59" rtlName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_d0" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="71.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1835365491" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="26" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1869832051" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="28" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1397508187" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2647799016" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="30" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2647802432" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="32" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="34" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="768680616" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="36" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="38" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3645106275" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" bitwidth="7" opcode="getelementptr" nodeLabel="71.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr_write_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="40" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr_write_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="runTestAfterInit" opcode="store" nodeLabel="71.0" m_display="0" m_delay="3.25" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="71.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2647866144" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="71.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>345</validLinenumbers>
+        <validLinenumbers>347</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
@@ -402,11 +402,11 @@
   <regnodes realName="p_cast12_i_i_i_reg_415">
     <nodeIds>42</nodeIds>
   </regnodes>
+  <regnodes realName="checkId_read_reg_380">
+    <nodeIds>12</nodeIds>
+  </regnodes>
   <regnodes realName="p_cast2_i_i_i_reg_390">
     <nodeIds>32</nodeIds>
-  </regnodes>
-  <regnodes realName="taskId_read_reg_380">
-    <nodeIds>12</nodeIds>
   </regnodes>
   <regnodes realName="empty_reg_385">
     <nodeIds>30</nodeIds>
@@ -420,15 +420,6 @@
   <regnodes realName="p_cast8_i_i_i_reg_405">
     <nodeIds>38</nodeIds>
   </regnodes>
-  <expressionNodes realName="empty_49_fu_346">
-    <nodeIds>33</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_53_fu_362">
-    <nodeIds>41</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_48_fu_342">
-    <nodeIds>31</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="p_cast10_i_i_i_fu_301">
     <nodeIds>40</nodeIds>
   </expressionNodes>
@@ -441,20 +432,35 @@
   <expressionNodes realName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr_gep_fu_223">
     <nodeIds>60</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_53_fu_346">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_52_fu_342">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_57_fu_362">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="p_cast13_i_i_i_fu_321">
     <nodeIds>44</nodeIds>
   </expressionNodes>
   <expressionNodes realName="p_cast_cast_i_i_i_fu_246">
     <nodeIds>26</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_54_fu_366">
+  <expressionNodes realName="empty_58_fu_366">
     <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_55_fu_354">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_54_fu_350">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_56_fu_358">
+    <nodeIds>39</nodeIds>
   </expressionNodes>
   <expressionNodes realName="p_cast12_i_i_i_fu_311">
     <nodeIds>42</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_55_fu_370">
-    <nodeIds>45</nodeIds>
   </expressionNodes>
   <expressionNodes realName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr_gep_fu_210">
     <nodeIds>58</nodeIds>
@@ -483,20 +489,14 @@
   <expressionNodes realName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr_gep_fu_145">
     <nodeIds>48</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_59_fu_370">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr_gep_fu_197">
     <nodeIds>56</nodeIds>
   </expressionNodes>
   <expressionNodes realName="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr_gep_fu_158">
     <nodeIds>50</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_50_fu_350">
-    <nodeIds>35</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_51_fu_354">
-    <nodeIds>37</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_52_fu_358">
-    <nodeIds>39</nodeIds>
   </expressionNodes>
   <expressionNodes realName="gmem_addr_fu_250">
     <nodeIds>27</nodeIds>
@@ -510,7 +510,7 @@
   <ioNodes realName="grp_readreq_fu_114">
     <nodeIds>28</nodeIds>
   </ioNodes>
-  <ioNodes realName="taskId_read_read_fu_121">
+  <ioNodes realName="checkId_read_read_fu_121">
     <nodeIds>12</nodeIds>
   </ioNodes>
   <ioNodes realName="inputDataInRam_read_read_fu_108">
@@ -540,6 +540,11 @@
   <memoryPorts dataString="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7">
     <nodeIds>47</nodeIds>
   </memoryPorts>
+  <ioPorts name="checkId">
+    <contents name="read">
+      <nodeIds>12</nodeIds>
+    </contents>
+  </ioPorts>
   <ioPorts name="gmem">
     <contents name="read">
       <nodeIds>29</nodeIds>
@@ -591,11 +596,6 @@
   <ioPorts name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7(p0)">
     <contents name="store">
       <nodeIds>47</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="taskId">
-    <contents name="read">
-      <nodeIds>12</nodeIds>
     </contents>
   </ioPorts>
   <fsm>

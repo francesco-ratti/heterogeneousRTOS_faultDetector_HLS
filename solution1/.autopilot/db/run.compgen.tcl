@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 61
+set ID 66
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -96,21 +96,21 @@ set axilite_register_dict [dict create]
 set port_control {
 contr { 
 	dir I
-	width 32
+	width 48
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
 }
 sharedMem { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 35
+	offset 28
+	offset_end 39
 }
-realTaskId { 
+realcheckId { 
 	dir X
 	width 8
 	depth 128
@@ -161,7 +161,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 62 \
+			id 67 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -185,7 +185,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 64 \
+    id 69 \
     name toScheduler \
     reset_level 0 \
     sync_rst true \
@@ -251,7 +251,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 65
+set ID 70
 set RegSliceName run_regslice_both
 set RegSliceInstName run_regslice_both_U
 set CoreName ap_simcore_run_regslice_both

@@ -25,10 +25,10 @@
 
 <Node id="5" bw="16" op_0_bw="16" op_1_bw="16">
 <![CDATA[
-newFuncRoot:1 %taskId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %taskId
+newFuncRoot:1 %checkId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %checkId
 
 ]]></Node>
-<StgValue><ssdm name="taskId_read"/></StgValue>
+<StgValue><ssdm name="checkId_read"/></StgValue>
 </operation>
 
 <operation id="4" st_id="1" stage="1" lat="1">
@@ -40,10 +40,10 @@ newFuncRoot:1 %taskId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %taskId
 
 <Node id="6" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16">
 <![CDATA[
-newFuncRoot:2 %write_ln376 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %taskId_c16, i16 %taskId_read
+newFuncRoot:2 %write_ln378 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read
 
 ]]></Node>
-<StgValue><ssdm name="write_ln376"/></StgValue>
+<StgValue><ssdm name="write_ln378"/></StgValue>
 </operation>
 
 <operation id="5" st_id="1" stage="1" lat="1">
@@ -55,7 +55,7 @@ newFuncRoot:2 %write_ln376 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %tas
 
 <Node id="8" bw="64" op_0_bw="16">
 <![CDATA[
-newFuncRoot:4 %zext_ln587 = zext i16 %taskId_read
+newFuncRoot:4 %zext_ln587 = zext i16 %checkId_read
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln587"/></StgValue>
@@ -103,7 +103,7 @@ newFuncRoot:6 %n_regions_V_load = load i7 %n_regions_V_addr
 
 <Node id="4" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %taskId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0
+newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %checkId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -118,10 +118,10 @@ newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="7" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-newFuncRoot:3 %specreset_ln376 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9
+newFuncRoot:3 %specreset_ln378 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln376"/></StgValue>
+<StgValue><ssdm name="specreset_ln378"/></StgValue>
 </operation>
 
 <operation id="10" st_id="2" stage="1" lat="2">
@@ -148,10 +148,10 @@ newFuncRoot:6 %n_regions_V_load = load i7 %n_regions_V_addr
 
 <Node id="11" bw="0" op_0_bw="8">
 <![CDATA[
-newFuncRoot:7 %ret_ln346 = ret i8 %n_regions_V_load
+newFuncRoot:7 %ret_ln348 = ret i8 %n_regions_V_load
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln346"/></StgValue>
+<StgValue><ssdm name="ret_ln348"/></StgValue>
 </operation>
 </state>
 </state_list>

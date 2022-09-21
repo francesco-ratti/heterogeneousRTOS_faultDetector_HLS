@@ -16,7 +16,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 20 \
+    id 22 \
     name n_regions \
     type other \
     dir I \
@@ -31,7 +31,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 21 \
+    id 23 \
     name d_read \
     type other \
     dir I \
@@ -46,7 +46,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 22 \
+    id 24 \
     name d_read_23 \
     type other \
     dir I \
@@ -61,7 +61,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 23 \
+    id 25 \
     name d_read_24 \
     type other \
     dir I \
@@ -76,7 +76,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 24 \
+    id 26 \
     name d_read_25 \
     type other \
     dir I \
@@ -91,7 +91,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 25 \
+    id 27 \
     name d_read_26 \
     type other \
     dir I \
@@ -106,7 +106,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 26 \
+    id 28 \
     name d_read_27 \
     type other \
     dir I \
@@ -121,7 +121,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 27 \
+    id 29 \
     name d_read_28 \
     type other \
     dir I \
@@ -136,7 +136,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 28 \
+    id 30 \
     name d_read_29 \
     type other \
     dir I \

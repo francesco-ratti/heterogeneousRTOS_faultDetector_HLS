@@ -62,7 +62,7 @@ module run_read_test (
         m_axi_gmem_BID,
         m_axi_gmem_BUSER,
         inputDataInRam,
-        taskId,
+        checkId,
         run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0,
         run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0,
         run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0,
@@ -160,7 +160,7 @@ input  [1:0] m_axi_gmem_BRESP;
 input  [0:0] m_axi_gmem_BID;
 input  [0:0] m_axi_gmem_BUSER;
 input  [63:0] inputDataInRam;
-input  [6:0] taskId;
+input  [6:0] checkId;
 output  [6:0] run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0;
 output   run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0;
 output   run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0;
@@ -255,15 +255,15 @@ wire    ap_block_state49_pp0_stage0_iter6;
 wire    ap_block_state57_pp0_stage0_iter7;
 wire    ap_block_state65_pp0_stage0_iter8;
 reg    ap_block_pp0_stage0_11001;
-reg   [6:0] taskId_read_reg_380;
+reg   [6:0] checkId_read_reg_380;
 wire    ap_block_pp0_stage7_11001;
-reg   [6:0] taskId_read_reg_380_pp0_iter1_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter2_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter3_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter4_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter5_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter6_reg;
-reg   [6:0] taskId_read_reg_380_pp0_iter7_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter1_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter2_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter3_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter4_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter5_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter6_reg;
+reg   [6:0] checkId_read_reg_380_pp0_iter7_reg;
 wire   [31:0] empty_fu_257_p1;
 reg   [31:0] empty_reg_385;
 wire    ap_block_state7_pp0_stage6_iter0;
@@ -473,6 +473,19 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage7_11001) & (1'b1 == ap_CS_fsm_pp0_stage7))) begin
+        checkId_read_reg_380 <= checkId;
+        checkId_read_reg_380_pp0_iter1_reg <= checkId_read_reg_380;
+        checkId_read_reg_380_pp0_iter2_reg <= checkId_read_reg_380_pp0_iter1_reg;
+        checkId_read_reg_380_pp0_iter3_reg <= checkId_read_reg_380_pp0_iter2_reg;
+        checkId_read_reg_380_pp0_iter4_reg <= checkId_read_reg_380_pp0_iter3_reg;
+        checkId_read_reg_380_pp0_iter5_reg <= checkId_read_reg_380_pp0_iter4_reg;
+        checkId_read_reg_380_pp0_iter6_reg <= checkId_read_reg_380_pp0_iter5_reg;
+        checkId_read_reg_380_pp0_iter7_reg <= checkId_read_reg_380_pp0_iter6_reg;
+    end
+end
+
+always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage6_11001) & (1'b1 == ap_CS_fsm_pp0_stage6))) begin
         empty_reg_385 <= empty_fu_257_p1;
         p_cast10_i_i_i_reg_410 <= {{m_axi_gmem_RDATA[191:160]}};
@@ -482,19 +495,6 @@ always @ (posedge ap_clk) begin
         p_cast4_i_i_i_reg_395 <= {{m_axi_gmem_RDATA[95:64]}};
         p_cast6_i_i_i_reg_400 <= {{m_axi_gmem_RDATA[127:96]}};
         p_cast8_i_i_i_reg_405 <= {{m_axi_gmem_RDATA[159:128]}};
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage7_11001) & (1'b1 == ap_CS_fsm_pp0_stage7))) begin
-        taskId_read_reg_380 <= taskId;
-        taskId_read_reg_380_pp0_iter1_reg <= taskId_read_reg_380;
-        taskId_read_reg_380_pp0_iter2_reg <= taskId_read_reg_380_pp0_iter1_reg;
-        taskId_read_reg_380_pp0_iter3_reg <= taskId_read_reg_380_pp0_iter2_reg;
-        taskId_read_reg_380_pp0_iter4_reg <= taskId_read_reg_380_pp0_iter3_reg;
-        taskId_read_reg_380_pp0_iter5_reg <= taskId_read_reg_380_pp0_iter4_reg;
-        taskId_read_reg_380_pp0_iter6_reg <= taskId_read_reg_380_pp0_iter5_reg;
-        taskId_read_reg_380_pp0_iter7_reg <= taskId_read_reg_380_pp0_iter6_reg;
     end
 end
 
@@ -1076,6 +1076,6 @@ assign run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_address0 = ze
 
 assign run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_d0 = p_cast13_i_i_i_reg_420;
 
-assign zext_ln587_fu_331_p1 = taskId_read_reg_380_pp0_iter7_reg;
+assign zext_ln587_fu_331_p1 = checkId_read_reg_380_pp0_iter7_reg;
 
 endmodule //run_read_test

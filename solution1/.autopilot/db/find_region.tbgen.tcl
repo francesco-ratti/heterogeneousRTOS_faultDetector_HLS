@@ -99,8 +99,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "d_read_27", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_28", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_29", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U17", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U18", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U19", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fcmp_32ns_32ns_1_2_no_dsp_1_U20", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

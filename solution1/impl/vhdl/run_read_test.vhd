@@ -65,7 +65,7 @@ port (
     m_axi_gmem_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_gmem_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     inputDataInRam : IN STD_LOGIC_VECTOR (63 downto 0);
-    taskId : IN STD_LOGIC_VECTOR (6 downto 0);
+    checkId : IN STD_LOGIC_VECTOR (6 downto 0);
     run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
     run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_ce0 : OUT STD_LOGIC;
     run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_we0 : OUT STD_LOGIC;
@@ -185,15 +185,15 @@ attribute shreg_extract : string;
     signal ap_block_state57_pp0_stage0_iter7 : BOOLEAN;
     signal ap_block_state65_pp0_stage0_iter8 : BOOLEAN;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
-    signal taskId_read_reg_380 : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_block_pp0_stage7_11001 : BOOLEAN;
-    signal taskId_read_reg_380_pp0_iter1_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter2_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter3_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter4_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter5_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter6_reg : STD_LOGIC_VECTOR (6 downto 0);
-    signal taskId_read_reg_380_pp0_iter7_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter1_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter2_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter3_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter4_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter5_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter6_reg : STD_LOGIC_VECTOR (6 downto 0);
+    signal checkId_read_reg_380_pp0_iter7_reg : STD_LOGIC_VECTOR (6 downto 0);
     signal empty_fu_257_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal empty_reg_385 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_block_state7_pp0_stage6_iter0 : BOOLEAN;
@@ -439,6 +439,21 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
+            if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then
+                checkId_read_reg_380 <= checkId;
+                checkId_read_reg_380_pp0_iter1_reg <= checkId_read_reg_380;
+                checkId_read_reg_380_pp0_iter2_reg <= checkId_read_reg_380_pp0_iter1_reg;
+                checkId_read_reg_380_pp0_iter3_reg <= checkId_read_reg_380_pp0_iter2_reg;
+                checkId_read_reg_380_pp0_iter4_reg <= checkId_read_reg_380_pp0_iter3_reg;
+                checkId_read_reg_380_pp0_iter5_reg <= checkId_read_reg_380_pp0_iter4_reg;
+                checkId_read_reg_380_pp0_iter6_reg <= checkId_read_reg_380_pp0_iter5_reg;
+                checkId_read_reg_380_pp0_iter7_reg <= checkId_read_reg_380_pp0_iter6_reg;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage6_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage6))) then
                 empty_reg_385 <= empty_fu_257_p1;
                 p_cast10_i_i_i_reg_410 <= m_axi_gmem_RDATA(191 downto 160);
@@ -448,21 +463,6 @@ begin
                 p_cast4_i_i_i_reg_395 <= m_axi_gmem_RDATA(95 downto 64);
                 p_cast6_i_i_i_reg_400 <= m_axi_gmem_RDATA(127 downto 96);
                 p_cast8_i_i_i_reg_405 <= m_axi_gmem_RDATA(159 downto 128);
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_boolean_0 = ap_block_pp0_stage7_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage7))) then
-                taskId_read_reg_380 <= taskId;
-                taskId_read_reg_380_pp0_iter1_reg <= taskId_read_reg_380;
-                taskId_read_reg_380_pp0_iter2_reg <= taskId_read_reg_380_pp0_iter1_reg;
-                taskId_read_reg_380_pp0_iter3_reg <= taskId_read_reg_380_pp0_iter2_reg;
-                taskId_read_reg_380_pp0_iter4_reg <= taskId_read_reg_380_pp0_iter3_reg;
-                taskId_read_reg_380_pp0_iter5_reg <= taskId_read_reg_380_pp0_iter4_reg;
-                taskId_read_reg_380_pp0_iter6_reg <= taskId_read_reg_380_pp0_iter5_reg;
-                taskId_read_reg_380_pp0_iter7_reg <= taskId_read_reg_380_pp0_iter6_reg;
             end if;
         end if;
     end process;
@@ -972,5 +972,5 @@ begin
         end if; 
     end process;
 
-    zext_ln587_fu_331_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(taskId_read_reg_380_pp0_iter7_reg),64));
+    zext_ln587_fu_331_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(checkId_read_reg_380_pp0_iter7_reg),64));
 end behav;

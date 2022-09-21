@@ -352,7 +352,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U17(
+fcmp_32ns_32ns_1_2_no_dsp_1_U19(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_187_p0),
@@ -368,7 +368,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U18(
+fcmp_32ns_32ns_1_2_no_dsp_1_U20(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_193_p0),

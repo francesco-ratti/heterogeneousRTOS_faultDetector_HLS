@@ -22,8 +22,8 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_contr "../tv/cdatafile/c.run.autotvout_contr.dat"
 #define AUTOTB_TVIN_trainedRegions "../tv/cdatafile/c.run.autotvin_trainedRegions.dat"
 #define AUTOTB_TVOUT_trainedRegions "../tv/cdatafile/c.run.autotvout_trainedRegions.dat"
-#define AUTOTB_TVIN_realTaskId "../tv/cdatafile/c.run.autotvin_realTaskId.dat"
-#define AUTOTB_TVOUT_realTaskId "../tv/cdatafile/c.run.autotvout_realTaskId.dat"
+#define AUTOTB_TVIN_realcheckId "../tv/cdatafile/c.run.autotvin_realcheckId.dat"
+#define AUTOTB_TVOUT_realcheckId "../tv/cdatafile/c.run.autotvout_realcheckId.dat"
 #define AUTOTB_TVIN_n_regions_in "../tv/cdatafile/c.run.autotvin_n_regions_in.dat"
 #define AUTOTB_TVOUT_n_regions_in "../tv/cdatafile/c.run.autotvout_n_regions_in.dat"
 #define AUTOTB_TVIN_sharedMem "../tv/cdatafile/c.run.autotvin_sharedMem.dat"
@@ -40,7 +40,7 @@ using namespace sc_dt;
 // tvout file define:
 #define AUTOTB_TVOUT_PC_contr "../tv/rtldatafile/rtl.run.autotvout_contr.dat"
 #define AUTOTB_TVOUT_PC_trainedRegions "../tv/rtldatafile/rtl.run.autotvout_trainedRegions.dat"
-#define AUTOTB_TVOUT_PC_realTaskId "../tv/rtldatafile/rtl.run.autotvout_realTaskId.dat"
+#define AUTOTB_TVOUT_PC_realcheckId "../tv/rtldatafile/rtl.run.autotvout_realcheckId.dat"
 #define AUTOTB_TVOUT_PC_n_regions_in "../tv/rtldatafile/rtl.run.autotvout_n_regions_in.dat"
 #define AUTOTB_TVOUT_PC_sharedMem "../tv/rtldatafile/rtl.run.autotvout_sharedMem.dat"
 #define AUTOTB_TVOUT_PC_toScheduler "../tv/rtldatafile/rtl.run.autotvout_toScheduler.dat"
@@ -276,7 +276,7 @@ INTER_TCL_FILE(const char* name) {
   mName = name; 
   contr_depth = 0;
   trainedRegions_depth = 0;
-  realTaskId_depth = 0;
+  realcheckId_depth = 0;
   n_regions_in_depth = 0;
   sharedMem_depth = 0;
   toScheduler_depth = 0;
@@ -300,7 +300,7 @@ string get_depth_list () {
   stringstream total_list;
   total_list << "{contr " << contr_depth << "}\n";
   total_list << "{trainedRegions " << trainedRegions_depth << "}\n";
-  total_list << "{realTaskId " << realTaskId_depth << "}\n";
+  total_list << "{realcheckId " << realcheckId_depth << "}\n";
   total_list << "{n_regions_in " << n_regions_in_depth << "}\n";
   total_list << "{sharedMem " << sharedMem_depth << "}\n";
   total_list << "{toScheduler " << toScheduler_depth << "}\n";
@@ -316,7 +316,7 @@ void set_string(std::string list, std::string* class_list) {
   public:
     int contr_depth;
     int trainedRegions_depth;
-    int realTaskId_depth;
+    int realcheckId_depth;
     int n_regions_in_depth;
     int sharedMem_depth;
     int toScheduler_depth;
@@ -328,12 +328,13 @@ void set_string(std::string list, std::string* class_list) {
 };
 
 
-struct __cosim_s4__ { char data[4]; };
+struct __cosim_s6__ { char data[6]; };
 struct __cosim_s1__ { char data[1]; };
+struct __cosim_s4__ { char data[4]; };
 struct __cosim_s32__ { char data[32]; };
-extern "C" void run_hw_stub_wrapper(__cosim_s4__*, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
+extern "C" void run_hw_stub_wrapper(__cosim_s6__*, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
 
-extern "C" void apatb_run_hw(__cosim_s4__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realTaskId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realcheckId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -491,36 +492,36 @@ aesl_fh.write(AUTOTB_TVIN_trainedRegions, end_str());
 }
 
 #endif
-unsigned __xlx_offset_byte_param_realTaskId = 0;
+unsigned __xlx_offset_byte_param_realcheckId = 0;
 #ifdef USE_BINARY_TV_FILE
 {
-aesl_fh.touch(AUTOTB_TVIN_realTaskId, 'b');
+aesl_fh.touch(AUTOTB_TVIN_realcheckId, 'b');
 transaction<8> tr(128);
-  __xlx_offset_byte_param_realTaskId = 0*1;
-  if (__xlx_apatb_param_realTaskId) {
-tr.import<1>((char*)__xlx_apatb_param_realTaskId, 128, 0);
+  __xlx_offset_byte_param_realcheckId = 0*1;
+  if (__xlx_apatb_param_realcheckId) {
+tr.import<1>((char*)__xlx_apatb_param_realcheckId, 128, 0);
   }
-aesl_fh.write(AUTOTB_TVIN_realTaskId, tr.p, tr.tbytes);
+aesl_fh.write(AUTOTB_TVIN_realcheckId, tr.p, tr.tbytes);
 }
 
-  tcl_file.set_num(128, &tcl_file.realTaskId_depth);
+  tcl_file.set_num(128, &tcl_file.realcheckId_depth);
 #else
-// print realTaskId Transactions
+// print realcheckId Transactions
 {
-aesl_fh.write(AUTOTB_TVIN_realTaskId, begin_str(AESL_transaction));
+aesl_fh.write(AUTOTB_TVIN_realcheckId, begin_str(AESL_transaction));
 {
-  __xlx_offset_byte_param_realTaskId = 0*1;
-if (__xlx_apatb_param_realTaskId) {
+  __xlx_offset_byte_param_realcheckId = 0*1;
+if (__xlx_apatb_param_realcheckId) {
 for (size_t i = 0; i < 128; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_realTaskId + i * 1;
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_realcheckId + i * 1;
 std::string s = formatData(pos, 8);
-aesl_fh.write(AUTOTB_TVIN_realTaskId, s);
+aesl_fh.write(AUTOTB_TVIN_realcheckId, s);
 }
 }
 }
 
-  tcl_file.set_num(128, &tcl_file.realTaskId_depth);
-aesl_fh.write(AUTOTB_TVIN_realTaskId, end_str());
+  tcl_file.set_num(128, &tcl_file.realcheckId_depth);
+aesl_fh.write(AUTOTB_TVIN_realcheckId, end_str());
 }
 
 #endif
@@ -591,7 +592,7 @@ aesl_fh.write(AUTOTB_TVIN_gmem, end_str());
 aesl_fh.write(AUTOTB_TVIN_contr, begin_str(AESL_transaction));
 {
 auto *pos = (unsigned char*)__xlx_apatb_param_contr;
-aesl_fh.write(AUTOTB_TVIN_contr, formatData(pos, 32));
+aesl_fh.write(AUTOTB_TVIN_contr, formatData(pos, 48));
 }
   tcl_file.set_num(1, &tcl_file.contr_depth);
 aesl_fh.write(AUTOTB_TVIN_contr, end_str());
@@ -609,7 +610,7 @@ aesl_fh.write(AUTOTB_TVIN_sharedMem, end_str());
 }
 
 CodeState = CALL_C_DUT;
-run_hw_stub_wrapper(__xlx_apatb_param_contr, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_realTaskId, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_sharedMem, __xlx_apatb_param_toScheduler);
+run_hw_stub_wrapper(__xlx_apatb_param_contr, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_realcheckId, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_sharedMem, __xlx_apatb_param_toScheduler);
 CodeState = DUMP_OUTPUTS;
 long __xlx_apatb_param_toScheduler_stream_buf_final_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size() - __xlx_apatb_param_toScheduler_stream_buf_size;
 {

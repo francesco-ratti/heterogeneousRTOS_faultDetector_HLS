@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6 \
+    id 8 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7 \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +30,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 7 \
+    id 9 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6 \
     reset_level 1 \
     sync_rst true \
@@ -49,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 8 \
+    id 10 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5 \
     reset_level 1 \
     sync_rst true \
@@ -68,7 +68,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 9 \
+    id 11 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4 \
     reset_level 1 \
     sync_rst true \
@@ -87,7 +87,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 10 \
+    id 12 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3 \
     reset_level 1 \
     sync_rst true \
@@ -106,7 +106,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 11 \
+    id 13 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2 \
     reset_level 1 \
     sync_rst true \
@@ -125,7 +125,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 12 \
+    id 14 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1 \
     reset_level 1 \
     sync_rst true \
@@ -144,7 +144,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 13 \
+    id 15 \
     name run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data \
     reset_level 1 \
     sync_rst true \
@@ -162,7 +162,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 3 \
+    id 5 \
     name gmem \
     type other \
     dir I \
@@ -177,7 +177,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 4 \
+    id 6 \
     name inputDataInRam \
     type other \
     dir I \
@@ -192,15 +192,15 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 5 \
-    name taskId \
+    id 7 \
+    name checkId \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_taskId \
+    corename dc_checkId \
     op interface \
-    ports { taskId { I 7 vector } } \
+    ports { checkId { I 7 vector } } \
 } "
 }
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit_Block_entry68_proc'
 ================================================================
-* Date:           Wed Sep 21 14:53:07 2022
+* Date:           Wed Sep 21 16:40:32 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -76,17 +76,17 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 3.63>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%taskId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %taskId" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 3 'read' 'taskId_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (3.63ns)   --->   "%write_ln376 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %taskId_c16, i16 %taskId_read" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 4 'write' 'write_ln376' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%zext_ln587 = zext i16 %taskId_read"   --->   Operation 5 'zext' 'zext_ln587' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 6 'getelementptr' 'n_regions_V_addr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [2/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 7 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%checkId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %checkId" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 3 'read' 'checkId_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (3.63ns)   --->   "%write_ln378 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 4 'write' 'write_ln378' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%zext_ln587 = zext i16 %checkId_read"   --->   Operation 5 'zext' 'zext_ln587' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 6 'getelementptr' 'n_regions_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 7 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
 
 State 2 <SV = 1> <Delay = 3.25>
-ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %taskId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specreset_ln376 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9" [detector_solid/abs_solid_detector.cpp:376]   --->   Operation 9 'specreset' 'specreset_ln376' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 10 [1/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 10 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln346 = ret i8 %n_regions_V_load" [detector_solid/abs_solid_detector.cpp:346]   --->   Operation 11 'ret' 'ret_ln346' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %checkId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specreset_ln378 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 9 'specreset' 'specreset_ln378' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 10 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln348 = ret i8 %n_regions_V_load" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 11 'ret' 'ret_ln348' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -100,8 +100,8 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ taskId]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ taskId_c16]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ checkId]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ checkId_c16]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
 Port [ n_regions_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
@@ -109,34 +109,34 @@ Port [ n_regions_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1
 
 <LifeTime>
 <method=bitvector/>
-taskId_read       (read         ) [ 000]
-write_ln376       (write        ) [ 000]
+checkId_read      (read         ) [ 000]
+write_ln378       (write        ) [ 000]
 zext_ln587        (zext         ) [ 000]
 n_regions_V_addr  (getelementptr) [ 001]
 specinterface_ln0 (specinterface) [ 000]
-specreset_ln376   (specreset    ) [ 000]
+specreset_ln378   (specreset    ) [ 000]
 n_regions_V_load  (load         ) [ 000]
-ret_ln346         (ret          ) [ 000]
+ret_ln348         (ret          ) [ 000]
 </LifeTime>
 
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="taskId">
+<comp id="0" class="1000" name="checkId">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="taskId"/></StgValue>
+<StgValue><ssdm name="checkId"/></StgValue>
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="taskId_c16">
+<comp id="2" class="1000" name="checkId_c16">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="taskId_c16"/></StgValue>
+<StgValue><ssdm name="checkId_c16"/></StgValue>
 </bind>
 </comp>
 
@@ -276,7 +276,7 @@ ret_ln346         (ret          ) [ 000]
 </bind>
 </comp>
 
-<comp id="34" class="1004" name="taskId_read_read_fu_34">
+<comp id="34" class="1004" name="checkId_read_read_fu_34">
 <pin_list>
 <pin id="35" dir="0" index="0" bw="16" slack="0"/>
 <pin id="36" dir="0" index="1" bw="16" slack="0"/>
@@ -284,11 +284,11 @@ ret_ln346         (ret          ) [ 000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="taskId_read/1 "/>
+<opset="checkId_read/1 "/>
 </bind>
 </comp>
 
-<comp id="40" class="1004" name="write_ln376_write_fu_40">
+<comp id="40" class="1004" name="write_ln378_write_fu_40">
 <pin_list>
 <pin id="41" dir="0" index="0" bw="0" slack="0"/>
 <pin id="42" dir="0" index="1" bw="16" slack="0"/>
@@ -297,7 +297,7 @@ ret_ln346         (ret          ) [ 000]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln376/1 "/>
+<opset="write_ln378/1 "/>
 </bind>
 </comp>
 
@@ -382,16 +382,16 @@ ret_ln346         (ret          ) [ 000]
 
 * FSMD analyzer results:
   - Output states:
-	Port: taskId_c16 | {1 }
+	Port: checkId_c16 | {1 }
  - Input state : 
-	Port: runTestAfterInit_Block_entry68_proc : taskId | {1 }
+	Port: runTestAfterInit_Block_entry68_proc : checkId | {1 }
 	Port: runTestAfterInit_Block_entry68_proc : n_regions_V | {1 2 }
   - Chain level:
 	State 1
 		n_regions_V_addr : 1
 		n_regions_V_load : 2
 	State 2
-		ret_ln346 : 1
+		ret_ln348 : 1
 
 
 ============================================================
@@ -402,9 +402,9 @@ ret_ln346         (ret          ) [ 000]
 |----------|-------------------------|
 | Operation|     Functional Unit     |
 |----------|-------------------------|
-|   read   |  taskId_read_read_fu_34 |
+|   read   | checkId_read_read_fu_34 |
 |----------|-------------------------|
-|   write  | write_ln376_write_fu_40 |
+|   write  | write_ln378_write_fu_40 |
 |----------|-------------------------|
 |   zext   |     zext_ln587_fu_61    |
 |----------|-------------------------|

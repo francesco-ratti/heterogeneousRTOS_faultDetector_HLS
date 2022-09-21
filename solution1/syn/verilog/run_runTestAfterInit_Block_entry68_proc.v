@@ -15,12 +15,12 @@ module run_runTestAfterInit_Block_entry68_proc (
         ap_continue,
         ap_idle,
         ap_ready,
-        taskId,
-        taskId_c16_din,
-        taskId_c16_num_data_valid,
-        taskId_c16_fifo_cap,
-        taskId_c16_full_n,
-        taskId_c16_write,
+        checkId,
+        checkId_c16_din,
+        checkId_c16_num_data_valid,
+        checkId_c16_fifo_cap,
+        checkId_c16_full_n,
+        checkId_c16_write,
         n_regions_V_address0,
         n_regions_V_ce0,
         n_regions_V_q0,
@@ -37,12 +37,12 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-input  [15:0] taskId;
-output  [15:0] taskId_c16_din;
-input  [4:0] taskId_c16_num_data_valid;
-input  [4:0] taskId_c16_fifo_cap;
-input   taskId_c16_full_n;
-output   taskId_c16_write;
+input  [15:0] checkId;
+output  [15:0] checkId_c16_din;
+input  [4:0] checkId_c16_num_data_valid;
+input  [4:0] checkId_c16_fifo_cap;
+input   checkId_c16_full_n;
+output   checkId_c16_write;
 output  [6:0] n_regions_V_address0;
 output   n_regions_V_ce0;
 input  [7:0] n_regions_V_q0;
@@ -51,13 +51,13 @@ output  [7:0] ap_return;
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg taskId_c16_write;
+reg checkId_c16_write;
 reg n_regions_V_ce0;
 
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-reg    taskId_c16_blk_n;
+reg    checkId_c16_blk_n;
 wire   [63:0] zext_ln587_fu_61_p1;
 reg    ap_block_state1;
 wire    ap_CS_fsm_state2;
@@ -93,7 +93,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) | (taskId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1))) begin
+    if (((ap_start == 1'b0) | (checkId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1))) begin
         ap_ST_fsm_state1_blk = 1'b1;
     end else begin
         ap_ST_fsm_state1_blk = 1'b0;
@@ -127,7 +127,23 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((ap_start == 1'b0) | (taskId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+    if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        checkId_c16_blk_n = checkId_c16_full_n;
+    end else begin
+        checkId_c16_blk_n = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((~((ap_start == 1'b0) | (checkId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        checkId_c16_write = 1'b1;
+    end else begin
+        checkId_c16_write = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((~((ap_start == 1'b0) | (checkId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
         n_regions_V_ce0 = 1'b1;
     end else begin
         n_regions_V_ce0 = 1'b0;
@@ -135,25 +151,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        taskId_c16_blk_n = taskId_c16_full_n;
-    end else begin
-        taskId_c16_blk_n = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if ((~((ap_start == 1'b0) | (taskId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        taskId_c16_write = 1'b1;
-    end else begin
-        taskId_c16_write = 1'b0;
-    end
-end
-
-always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if ((~((ap_start == 1'b0) | (taskId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
+            if ((~((ap_start == 1'b0) | (checkId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
@@ -173,15 +173,15 @@ assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
 always @ (*) begin
-    ap_block_state1 = ((ap_start == 1'b0) | (taskId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1));
+    ap_block_state1 = ((ap_start == 1'b0) | (checkId_c16_full_n == 1'b0) | (ap_done_reg == 1'b1));
 end
 
 assign ap_return = n_regions_V_q0;
 
+assign checkId_c16_din = checkId;
+
 assign n_regions_V_address0 = zext_ln587_fu_61_p1;
 
-assign taskId_c16_din = taskId;
-
-assign zext_ln587_fu_61_p1 = taskId;
+assign zext_ln587_fu_61_p1 = checkId;
 
 endmodule //run_runTestAfterInit_Block_entry68_proc
