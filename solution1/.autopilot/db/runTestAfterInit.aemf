@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663771238077">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663772593036">
   <ports id="1" name="gmem" type="PortType" coreId="0" bitwidth="256" direction="DirInOut" iftype="IfTypeFifo">
     <dataInputObjs>call</dataInputObjs>
     <dataInputObjs>call</dataInputObjs>
     <dataOutputObjs>call</dataOutputObjs>
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="2" name="inputDataInRam" type="PortType" coreId="2651728176" bitwidth="64">
+  <ports id="2" name="inputDataInRam" type="PortType" coreId="3526079158" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="taskId" type="PortType" coreId="574449505" bitwidth="8">
+  <ports id="3" name="taskId" type="PortType" coreId="1936028192" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="checkId" type="PortType" coreId="757935405" bitwidth="16">
+  <ports id="4" name="checkId" type="PortType" coreId="1931502951" bitwidth="16">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="outcomeInRam" type="PortType" coreId="1919252069" bitwidth="64">
+  <ports id="5" name="outcomeInRam" type="PortType" coreId="1212371807" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="toScheduler" type="PortType" coreId="539119430" bitwidth="8" direction="DirOut">
+  <ports id="6" name="toScheduler" type="PortType" coreId="1431585108" bitwidth="8" direction="DirOut">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="15" name="n_regions_V" type="PortType" coreName="RAM" coreId="1313423963" bitwidth="8" iftype="IfTypeRegister" arraysize="128">
+  <ports id="15" name="n_regions_V" type="PortType" coreName="RAM" coreId="825046320" bitwidth="8" iftype="IfTypeRegister" arraysize="128">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
   <edges id="54" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
@@ -75,24 +75,24 @@
   <edges id="-99" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@ports.0"/>
   <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="754" RegionName="runTestAfterInit">
     <basic_blocks id="51" name="runTestAfterInit" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="outcomeInRam_read" coreId="757935405" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="outcomeInRam_read" coreId="1918989395" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <dataInputObjs>outcomeInRam</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="checkId_read" coreId="1734439968" bitwidth="16" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="checkId_read" coreId="808525935" bitwidth="16" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
         <dataInputObjs>checkId</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="taskId_read" coreId="1734439968" bitwidth="8" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="taskId_read" coreId="1769239916" bitwidth="8" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
         <dataInputObjs>taskId</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="inputDataInRam_read" coreId="1145981250" bitwidth="64" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="inputDataInRam_read" coreId="574454117" bitwidth="64" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <dataInputObjs>inputDataInRam</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty" coreId="1769234802" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty" coreId="1835627552" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
@@ -116,15 +116,15 @@
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="_ln0" rtlName="entry_proc_U0" coreId="757935405" opcode="call" m_display="0" m_delay="3.63" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="_ln0" rtlName="entry_proc_U0" coreId="1096045407" opcode="call" m_display="0" m_delay="3.63" m_topoIndex="10" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <constName>entry_proc</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="_ln347" lineNumber="347" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_test_U0" coreId="151666223" contextFuncName="runTestAfterInit" opcode="call" nodeLatency="71" m_display="0" m_delay="14.6" m_topoIndex="11" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="347" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="_ln349" lineNumber="349" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_test_U0" coreId="1701273971" contextFuncName="runTestAfterInit" opcode="call" nodeLatency="71" m_display="0" m_delay="14.6" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="349" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
@@ -138,16 +138,16 @@
         <dataOutputObjs>call</dataOutputObjs>
         <constName>runTestAfterInit_Block_entry68_proc</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="error" lineNumber="348" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="error_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="1" opcode="call" nodeLabel="72.0" nodeLatency="27" m_display="0" m_delay="3.63" m_topoIndex="13" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="348" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="error" lineNumber="350" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="error_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="1" opcode="call" nodeLabel="72.0" nodeLatency="27" m_display="0" m_delay="3.63" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="350" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>call</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>run_test</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="_ln357" lineNumber="357" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="1852793701" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="104.0" nodeLatency="72" m_display="0" m_delay="6.78" m_topoIndex="14" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="357" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="_ln359" lineNumber="359" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="1919950848" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="104.0" nodeLatency="72" m_display="0" m_delay="6.78" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="359" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
@@ -157,14 +157,14 @@
         <dataOutputObjs>gmem</dataOutputObjs>
         <constName>writeOutcome</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="_ln358" lineNumber="358" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="840979276" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="176.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="358" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="_ln360" lineNumber="360" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="690384225" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="176.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="360" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>347</validLinenumbers>
-        <validLinenumbers>348</validLinenumbers>
-        <validLinenumbers>357</validLinenumbers>
-        <validLinenumbers>358</validLinenumbers>
+        <validLinenumbers>349</validLinenumbers>
+        <validLinenumbers>350</validLinenumbers>
+        <validLinenumbers>359</validLinenumbers>
+        <validLinenumbers>360</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>

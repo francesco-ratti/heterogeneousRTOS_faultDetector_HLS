@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663771236725">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663772591680">
   <ports id="1" name="n_regions" type="PortType" coreId="3621216858" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="2" name="d_read" type="PortType" originalName="d" coreId="96" bitwidth="32">
+  <ports id="2" name="d_read" type="PortType" originalName="d" coreId="575869152" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="d_read_23" type="PortType" originalName="d" coreId="22" bitwidth="32">
+  <ports id="3" name="d_read_23" type="PortType" originalName="d" coreId="575844240" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="4" name="d_read_24" type="PortType" originalName="d" coreId="85" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="d_read_25" type="PortType" originalName="d" coreId="1690682577" bitwidth="32">
+  <ports id="5" name="d_read_25" type="PortType" originalName="d" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="6" name="d_read_26" type="PortType" originalName="d" coreId="96" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="d_read_27" type="PortType" originalName="d" coreId="2648907232" bitwidth="32">
+  <ports id="7" name="d_read_27" type="PortType" originalName="d" coreId="3524853975" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="8" name="d_read_28" type="PortType" originalName="d" coreId="1071460912" bitwidth="32">
+  <ports id="8" name="d_read_28" type="PortType" originalName="d" coreId="3524861112" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="9" name="d_read_29" type="PortType" originalName="d" coreId="2648907888" bitwidth="32">
+  <ports id="9" name="d_read_29" type="PortType" originalName="d" coreId="576612320" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="19" name="ap_return" direction="DirOut">
@@ -387,42 +387,42 @@
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="d_read_4" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650314144" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="4.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="d_read_4" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576404256" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="4.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>d_read_26</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="d_read_5" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1690836723" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="d_read_5" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="575105488" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>d_read_25</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="d_read_6" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2649569728" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="2.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="d_read_6" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3524502564" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="2.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>d_read_24</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="d_read_7" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="256" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="d_read_7" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="575855936" contextFuncName="find_region" bitwidth="32" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>d_read_23</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="d_read_15" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2649650288" contextFuncName="find_region" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="d_read_15" lineNumber="34" originalName="d" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3523937076" contextFuncName="find_region" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>d_read</dataInputObjs>
         <dataOutputObjs>bitcast</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
         <dataOutputObjs>fcmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="n_regions_read" lineNumber="34" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2649686672" contextFuncName="find_region" bitwidth="8" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="n_regions_read" lineNumber="34" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="575756592" contextFuncName="find_region" bitwidth="8" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="34" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>n_regions</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -448,7 +448,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1692251638" contextFuncName="find_region" opcode="br" m_display="0" m_delay="2.24" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="575605248" contextFuncName="find_region" opcode="br" m_display="0" m_delay="2.24" m_topoIndex="4" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4</controlInputObjs>
@@ -468,19 +468,19 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.3</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="bitcast_ln57" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_fu_219_p1" coreId="2649650288" contextFuncName="find_region" bitwidth="32" opcode="bitcast" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="bitcast_ln57" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_fu_219_p1" coreId="576407248" contextFuncName="find_region" bitwidth="32" opcode="bitcast" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="tmp" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_fu_223_p4" coreId="2650042312" contextFuncName="find_region" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="tmp" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_fu_223_p4" coreId="575605248" contextFuncName="find_region" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="trunc_ln57" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_fu_233_p1" coreId="1690775774" contextFuncName="find_region" bitwidth="23" opcode="trunc" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="trunc_ln57" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_fu_233_p1" coreId="575605248" contextFuncName="find_region" bitwidth="23" opcode="trunc" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -528,19 +528,19 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="bitcast_ln57_1" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_1_fu_255_p1" coreId="2650031584" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="bitcast_ln57_1" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_1_fu_255_p1" coreId="3524847996" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="tmp_24" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_24_fu_259_p4" coreId="1692174453" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="tmp_24" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_24_fu_259_p4" coreId="574752144" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="trunc_ln57_1" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_1_fu_269_p1" coreId="1768318322" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="trunc_ln57_1" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_1_fu_269_p1" coreId="576377808" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -588,19 +588,19 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="bitcast_ln57_2" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_2_fu_300_p1" coreId="2650108288" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="bitcast_ln57_2" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_2_fu_300_p1" coreId="575605248" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp_27" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_27_fu_304_p4" coreId="2650309232" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp_27" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_27_fu_304_p4" coreId="784" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="trunc_ln57_2" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_2_fu_314_p1" coreId="176" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="2.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="trunc_ln57_2" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_2_fu_314_p1" coreId="0" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="2.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -648,19 +648,19 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="bitcast_ln57_3" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_3_fu_351_p1" coreId="1692223049" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="3.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="bitcast_ln57_3" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_3_fu_351_p1" coreId="576620096" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="3.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp_30" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_30_fu_355_p4" coreId="0" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="3.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp_30" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_30_fu_355_p4" coreId="176" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="3.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln57_3" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_3_fu_365_p1" coreId="0" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="3.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln57_3" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_3_fu_365_p1" coreId="64" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="3.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -708,19 +708,19 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="bitcast_ln57_4" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_4_fu_398_p1" coreId="2649650288" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="4.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="bitcast_ln57_4" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_4_fu_398_p1" coreId="576594112" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="4.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="tmp_33" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_33_fu_402_p4" coreId="2650026720" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="4.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="tmp_33" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_33_fu_402_p4" coreId="0" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="4.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="trunc_ln57_4" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_4_fu_412_p1" coreId="2650024016" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="trunc_ln57_4" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_4_fu_412_p1" coreId="576596216" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -768,19 +768,19 @@
         <dataInputObjs>fcmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="bitcast_ln57_5" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_5_fu_479_p1" coreId="2650301888" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="bitcast_ln57_5" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_5_fu_479_p1" coreId="576385656" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="tmp_36" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_36_fu_483_p4" coreId="2650299216" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="69" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="tmp_36" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_36_fu_483_p4" coreId="175" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="69" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="trunc_ln57_5" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_5_fu_493_p1" coreId="608" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="trunc_ln57_5" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_5_fu_493_p1" coreId="576386320" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -803,19 +803,19 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="bitcast_ln57_6" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_6_fu_443_p1" coreId="2650277200" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="5.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="bitcast_ln57_6" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_6_fu_443_p1" coreId="576605744" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="5.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="tmp_37" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_37_fu_447_p4" coreId="2650284576" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="tmp_37" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_37_fu_447_p4" coreId="0" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="trunc_ln57_6" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_6_fu_457_p1" coreId="2650308608" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="5.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="trunc_ln57_6" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_6_fu_457_p1" coreId="0" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="5.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -838,19 +838,19 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bitcast_ln57_7" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_7_fu_549_p1" coreId="0" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="7.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bitcast_ln57_7" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln57_7_fu_549_p1" coreId="39" contextFuncName="find_region" bitwidth="32" opcode="bitcast" nodeLabel="7.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="tmp_38" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_38_fu_553_p4" coreId="2650284592" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="7.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="tmp_38" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_38_fu_553_p4" coreId="1171" contextFuncName="find_region" bitwidth="8" opcode="partselect" nodeLabel="7.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="trunc_ln57_7" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_7_fu_563_p1" coreId="2650306752" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="7.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="trunc_ln57_7" lineNumber="57" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln57_7_fu_563_p1" coreId="42" contextFuncName="find_region" bitwidth="23" opcode="trunc" nodeLabel="7.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="57" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1074,7 +1074,7 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="tmp_39" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_39_fu_691_p4" coreId="1692300986" contextFuncName="operator_ge_8_true" bitwidth="7" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="111" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="tmp_39" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_39_fu_691_p4" coreId="576552048" contextFuncName="operator_ge_8_true" bitwidth="7" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="111" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1077" fileDirectory="/home/francesco/workspace" functionName="operator&amp;gt;=&amp;lt;8, true&amp;gt;"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1098,7 +1098,7 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="125" name="tmp_40" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_40_fu_717_p4" coreId="176" contextFuncName="operator_ge_8_true" bitwidth="6" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="125" name="tmp_40" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_40_fu_717_p4" coreId="0" contextFuncName="operator_ge_8_true" bitwidth="6" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1077" fileDirectory="/home/francesco/workspace" functionName="operator&amp;gt;=&amp;lt;8, true&amp;gt;"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1116,7 +1116,7 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650264912" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="118" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576563376" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="118" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.body4.3</controlInputObjs>
@@ -1149,7 +1149,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="132" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="121" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="132" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="176" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="121" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.4</controlInputObjs>
@@ -1189,12 +1189,12 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="137" name="sext_ln35" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_fu_772_p1" coreId="2650272128" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="125" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="137" name="sext_ln35" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_fu_772_p1" coreId="576570944" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="125" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="138" name="trunc_ln35" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_fu_776_p1" coreId="2650264272" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="126" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="138" name="trunc_ln35" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_fu_776_p1" coreId="576571520" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="126" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1205,7 +1205,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="140" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1691475280" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="128" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="140" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="128" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.5</controlInputObjs>
@@ -1226,7 +1226,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.6</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="zext_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_fu_785_p1" coreId="2650277928" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="zext_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_fu_785_p1" coreId="0" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1239,12 +1239,12 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="144" name="sext_ln35_1" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_1_fu_797_p1" coreId="29" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="131" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="144" name="sext_ln35_1" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_1_fu_797_p1" coreId="576580432" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="131" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="145" name="trunc_ln35_1" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_1_fu_801_p1" coreId="2650280016" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="132" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="145" name="trunc_ln35_1" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_1_fu_801_p1" coreId="576579856" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="132" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1255,7 +1255,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="147" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650287120" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="134" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="147" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576584736" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="134" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.6</controlInputObjs>
@@ -1276,7 +1276,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.7</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="149" name="zext_ln62_1" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_1_fu_810_p1" coreId="2650288560" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="135" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="149" name="zext_ln62_1" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_1_fu_810_p1" coreId="576586512" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="135" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1289,17 +1289,17 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="151" name="sext_ln35_2" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_2_fu_822_p1" coreId="2650290384" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="137" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="151" name="sext_ln35_2" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_2_fu_822_p1" coreId="480" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="137" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="152" name="trunc_ln35_2" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_2_fu_826_p1" coreId="2650277184" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="138" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="152" name="trunc_ln35_2" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_2_fu_826_p1" coreId="0" contextFuncName="find_region" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="138" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="tmp_41" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_41_fu_830_p4" coreId="0" contextFuncName="operator_ge_8_true" bitwidth="5" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="tmp_41" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_41_fu_830_p4" coreId="576590416" contextFuncName="operator_ge_8_true" bitwidth="5" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1077" fileDirectory="/home/francesco/workspace" functionName="operator&amp;gt;=&amp;lt;8, true&amp;gt;"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1311,7 +1311,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1684368242" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="141" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576308480" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="141" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.7</controlInputObjs>
@@ -1332,7 +1332,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.8</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="zext_ln62_2" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_2_fu_845_p1" coreId="576534072" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="142" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="zext_ln62_2" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_2_fu_845_p1" coreId="795109740" contextFuncName="find_region" bitwidth="4" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="142" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1345,7 +1345,7 @@
         <dataOutputObjs>zext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="sext_ln35_3" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_3_fu_857_p1" coreId="2650119456" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="144" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="sext_ln35_3" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="sext_ln35_3_fu_857_p1" coreId="576416816" contextFuncName="find_region" bitwidth="5" opcode="sext" nodeLabel="8.0" m_display="0" m_topoIndex="144" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1363,7 +1363,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1394631781" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="146" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1885414953" contextFuncName="find_region" opcode="br" nodeLabel="8.0" m_display="0" m_delay="2.24" m_topoIndex="146" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.8</controlInputObjs>
@@ -1384,7 +1384,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.9</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="163" name="zext_ln62_3" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_3_fu_911_p1" coreId="1692169258" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="155" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="163" name="zext_ln62_3" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_3_fu_911_p1" coreId="3524878135" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="155" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1397,7 +1397,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="165" name="trunc_ln35_3" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_3_fu_921_p1" coreId="1397508187" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="157" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="165" name="trunc_ln35_3" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_3_fu_921_p1" coreId="1330007625" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="157" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1408,7 +1408,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="167" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2650128432" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="158" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="167" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576425792" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="158" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.9</controlInputObjs>
@@ -1429,7 +1429,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.10</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="169" name="zext_ln62_4" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_4_fu_925_p1" coreId="2650129896" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="159" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="169" name="zext_ln62_4" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_4_fu_925_p1" coreId="576427128" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="159" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1442,7 +1442,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="171" name="trunc_ln35_4" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_4_fu_936_p1" coreId="1936417536" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="161" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="171" name="trunc_ln35_4" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_4_fu_936_p1" coreId="160" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="161" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1453,7 +1453,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="173" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1953394531" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="162" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="173" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1919903264" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="162" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.10</controlInputObjs>
@@ -1474,7 +1474,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.11</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="175" name="zext_ln62_5" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_5_fu_940_p1" coreId="2650135696" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="163" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="175" name="zext_ln62_5" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_5_fu_940_p1" coreId="576433056" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="163" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1487,7 +1487,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="177" name="trunc_ln35_5" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_5_fu_951_p1" coreId="2650138000" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="165" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="177" name="trunc_ln35_5" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_5_fu_951_p1" coreId="576435360" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="165" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1498,7 +1498,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="179" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="790766141" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="166" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="179" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1397508187" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="166" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.11</controlInputObjs>
@@ -1519,7 +1519,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.12</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="181" name="zext_ln62_6" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_6_fu_955_p1" coreId="1881154127" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="167" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="181" name="zext_ln62_6" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_6_fu_955_p1" coreId="808542020" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="167" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1532,7 +1532,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="183" name="trunc_ln35_6" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_6_fu_966_p1" coreId="1818304628" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="169" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="183" name="trunc_ln35_6" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_6_fu_966_p1" coreId="572669294" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="169" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1543,7 +1543,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="185" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1936942413" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="170" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="185" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="757935405" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="170" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.12</controlInputObjs>
@@ -1564,7 +1564,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.13</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="187" name="zext_ln62_7" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_7_fu_970_p1" coreId="1936942450" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="171" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="187" name="zext_ln62_7" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_7_fu_970_p1" coreId="859387487" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="171" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1577,7 +1577,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="189" name="trunc_ln35_7" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_7_fu_981_p1" coreId="1869182049" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="173" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="189" name="trunc_ln35_7" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_7_fu_981_p1" coreId="1915166834" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="173" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1588,7 +1588,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="191" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1952671092" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="174" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="191" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1869635878" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="174" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.13</controlInputObjs>
@@ -1609,7 +1609,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>for.body4.14</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="193" name="zext_ln62_8" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_8_fu_985_p1" coreId="1929405799" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="175" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="193" name="zext_ln62_8" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_8_fu_985_p1" coreId="1701998624" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="175" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1622,7 +1622,7 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="195" name="trunc_ln35_8" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_8_fu_996_p1" coreId="1314214434" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="177" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="195" name="trunc_ln35_8" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_8_fu_996_p1" coreId="788537856" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="177" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1633,7 +1633,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="197" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="580" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="178" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="197" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="788537856" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="178" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body4.14</controlInputObjs>
@@ -1654,7 +1654,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
       <controlOutputObjs>land.lhs.true.15</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="199" name="zext_ln62_9" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_9_fu_1000_p1" coreId="775" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="179" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="199" name="zext_ln62_9" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_9_fu_1000_p1" coreId="0" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="179" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1667,12 +1667,12 @@
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="201" name="trunc_ln35_9" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_9_fu_1011_p1" coreId="1513" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="181" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="201" name="trunc_ln35_9" lineNumber="35" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln35_9_fu_1011_p1" coreId="0" contextFuncName="find_region" bitwidth="4" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="181" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="35" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="202" name="tmp_42" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_42_fu_896_p4" coreId="476" contextFuncName="operator_ge_8_true" bitwidth="4" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="153" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="202" name="tmp_42" lineNumber="1077" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="tmp_42_fu_896_p4" coreId="0" contextFuncName="operator_ge_8_true" bitwidth="4" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="153" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1077" fileDirectory="/home/francesco/workspace" functionName="operator&amp;gt;=&amp;lt;8, true&amp;gt;"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1690,7 +1690,7 @@
         <dataInputObjs>or</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="205" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="52" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="183" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="205" name="br_ln39" lineNumber="39" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="183" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="39" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>land.lhs.true.15</controlInputObjs>
@@ -1710,12 +1710,12 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>UnifiedReturnBlock</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="207" name="zext_ln62_10" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_10_fu_1019_p1" coreId="243" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="184" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="207" name="zext_ln62_10" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="zext_ln62_10_fu_1019_p1" coreId="0" contextFuncName="find_region" bitwidth="5" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="184" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="208" name="br_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="185" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="208" name="br_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576287056" contextFuncName="find_region" opcode="br" nodeLabel="9.0" m_display="0" m_delay="2.24" m_topoIndex="185" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <controlInputObjs>UnifiedReturnBlock</controlInputObjs>
       </node_objs>
@@ -1754,7 +1754,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="210" name="UnifiedRetVal" originalName="idx" coreId="0" bitwidth="5" opcode="phi" nodeLabel="9.0" m_display="0" m_topoIndex="186" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="210" name="UnifiedRetVal" originalName="idx" coreId="640" bitwidth="5" opcode="phi" nodeLabel="9.0" m_display="0" m_topoIndex="186" m_clusterGroupNumber="-1">
         <dataInputObjs>zext</dataInputObjs>
         <dataInputObjs>select</dataInputObjs>
         <dataInputObjs>select</dataInputObjs>
@@ -1787,7 +1787,7 @@
         <controlInputObjs>for.body4.14</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="211" name="_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2649635120" contextFuncName="find_region" opcode="ret" nodeLabel="9.0" m_display="0" m_topoIndex="187" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="211" name="_ln62" lineNumber="62" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="576469616" contextFuncName="find_region" opcode="ret" nodeLabel="9.0" m_display="0" m_topoIndex="187" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="62" fileDirectory="/home/francesco/workspace" functionName="find_region"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>ap_return</dataOutputObjs>

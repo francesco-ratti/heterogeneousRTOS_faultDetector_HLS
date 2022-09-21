@@ -32,14 +32,14 @@
 <Interval-max>259</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_395_2>
+<VITIS_LOOP_397_2>
 <TripCount>128</TripCount>
 <Latency>256</Latency>
 <AbsoluteTimeLatency>5120</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_395_2>
+</VITIS_LOOP_397_2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 

@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Wed Sep 21 16:40:38 2022
+    * Date:           Wed Sep 21 17:03:13 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution1 (Vitis Kernel Flow Target)
@@ -27,7 +27,7 @@
     |  + run_test                             |     -|   2.27|       27|    540.000|         -|        8|     -|       yes|        -|   -|  1115 (1%)|   1551 (2%)|    -|
     |   + find_region                         |     -|   2.27|        9|    180.000|         -|        8|     -|       yes|        -|   -|  295 (~0%)|    833 (1%)|    -|
     |  + writeOutcome                         |     -|   0.00|       72|  1.440e+03|         -|        8|     -|       yes|        -|   -|  846 (~0%)|   2472 (4%)|    -|
-    | o VITIS_LOOP_395_2                      |     -|  14.60|      256|  5.120e+03|         2|        -|   128|        no|        -|   -|          -|           -|    -|
+    | o VITIS_LOOP_397_2                      |     -|  14.60|      256|  5.120e+03|         2|        -|   128|        no|        -|   -|          -|           -|    -|
     +-----------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
 
 
@@ -165,23 +165,23 @@
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:38 in find_region       |
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:49 in find_region       |
 | unroll          |                                 | detector_solid/abs_solid_detector.cpp:75 in is_valid          |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:316 in writeoutcome     |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:329 in read_test        |
-| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:334 in run_test         |
-| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:339 in runtestafterinit |
-| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:365 in run              |
-| interface       | s_axilite port = realcheckId    | detector_solid/abs_solid_detector.cpp:366 in run              |
-| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:367 in run              |
-| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:368 in run, sharedMem   |
-| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:369 in run, toScheduler |
-| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:376 in run, data        |
-| reset           | variable=regions                | detector_solid/abs_solid_detector.cpp:377 in run, regions     |
-| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:378 in run, n_regions   |
-| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:380 in run, data        |
-| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:381 in run, regions     |
-| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:382 in run, data_key    |
-| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:391 in run              |
-| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:396 in run              |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:318 in writeoutcome     |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:331 in read_test        |
+| pipeline        | II=8                            | detector_solid/abs_solid_detector.cpp:336 in run_test         |
+| dataflow        |                                 | detector_solid/abs_solid_detector.cpp:341 in runtestafterinit |
+| interface       | s_axilite port = trainedRegions | detector_solid/abs_solid_detector.cpp:367 in run              |
+| interface       | s_axilite port = realcheckId    | detector_solid/abs_solid_detector.cpp:368 in run              |
+| interface       | s_axilite port = n_regions_in   | detector_solid/abs_solid_detector.cpp:369 in run              |
+| interface       | m_axi port=sharedMem            | detector_solid/abs_solid_detector.cpp:370 in run, sharedMem   |
+| interface       | axis port=toScheduler           | detector_solid/abs_solid_detector.cpp:371 in run, toScheduler |
+| reset           | variable=data                   | detector_solid/abs_solid_detector.cpp:378 in run, data        |
+| reset           | variable=regions                | detector_solid/abs_solid_detector.cpp:379 in run, regions     |
+| reset           | variable=n_regions              | detector_solid/abs_solid_detector.cpp:380 in run, n_regions   |
+| array_partition | variable=data complete dim=2    | detector_solid/abs_solid_detector.cpp:382 in run, data        |
+| array_partition | variable=regions complete dim=2 | detector_solid/abs_solid_detector.cpp:383 in run, regions     |
+| array_partition | variable=data_key complete      | detector_solid/abs_solid_detector.cpp:384 in run, data_key    |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:393 in run              |
+| pipeline        | off                             | detector_solid/abs_solid_detector.cpp:398 in run              |
 +-----------------+---------------------------------+---------------------------------------------------------------+
 
 

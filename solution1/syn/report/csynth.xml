@@ -29,13 +29,13 @@
             <Interval-max>259</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
-            <VITIS_LOOP_395_2>
+            <VITIS_LOOP_397_2>
                 <TripCount>128</TripCount>
                 <Latency>256</Latency>
                 <AbsoluteTimeLatency>5120</AbsoluteTimeLatency>
                 <IterationLatency>2</IterationLatency>
                 <InstanceList/>
-            </VITIS_LOOP_395_2>
+            </VITIS_LOOP_397_2>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
@@ -1202,13 +1202,13 @@
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_c_U" SOURCE="" URAM="0" VARIABLE="checkId_c"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_c_U" SOURCE="" URAM="0" VARIABLE="taskId_c"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="n_regions_V_load_loc_channel_U" SOURCE="" URAM="0" VARIABLE="n_regions_V_load_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:348" URAM="0" VARIABLE="error"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:350" URAM="0" VARIABLE="error"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>run</Name>
             <Loops>
-                <VITIS_LOOP_395_2/>
+                <VITIS_LOOP_397_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1227,8 +1227,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_395_2>
-                        <Name>VITIS_LOOP_395_2</Name>
+                    <VITIS_LOOP_397_2>
+                        <Name>VITIS_LOOP_397_2</Name>
                         <TripCount>128</TripCount>
                         <Latency>256</Latency>
                         <AbsoluteTimeLatency>5.120 us</AbsoluteTimeLatency>
@@ -1236,7 +1236,7 @@
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_395_2>
+                    </VITIS_LOOP_397_2>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -1259,8 +1259,8 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="outcomeInRam_fu_323_p2" SOURCE="detector_solid/abs_solid_detector.cpp:385" URAM="0" VARIABLE="outcomeInRam"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_395_2" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_352_p2" SOURCE="detector_solid/abs_solid_detector.cpp:395" URAM="0" VARIABLE="i_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="outcomeInRam_fu_323_p2" SOURCE="detector_solid/abs_solid_detector.cpp:387" URAM="0" VARIABLE="outcomeInRam"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_397_2" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_352_p2" SOURCE="detector_solid/abs_solid_detector.cpp:397" URAM="0" VARIABLE="i_2"/>
                 <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="n_regions_V_U" SOURCE="" URAM="0" VARIABLE="n_regions_V"/>
             </BindNodes>
         </Module>
@@ -1618,23 +1618,23 @@
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:38" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:49" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:75" status="valid" parentFunction="is_valid" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:316" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:329" status="valid" parentFunction="read_test" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:334" status="valid" parentFunction="run_test" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:339" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:365" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:366" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realcheckId"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:367" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:368" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:369" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:376" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:377" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:378" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:380" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:381" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:382" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:391" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:396" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:318" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:331" status="valid" parentFunction="read_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:336" status="valid" parentFunction="run_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:341" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:367" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:368" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realcheckId"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:369" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:370" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:371" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:378" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:379" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:380" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:382" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:383" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:384" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:393" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:398" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
     </PragmaReport>
 </profile>
 

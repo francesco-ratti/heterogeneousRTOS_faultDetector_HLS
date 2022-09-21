@@ -202,10 +202,10 @@ reg   [15:0] contr_checkId_V_reg_374;
 reg   [7:0] contr_taskId_V_reg_379;
 wire   [63:0] outcomeInRam_fu_323_p2;
 reg   [63:0] outcomeInRam_reg_384;
-wire   [63:0] zext_ln395_fu_341_p1;
-reg   [63:0] zext_ln395_reg_399;
+wire   [63:0] zext_ln397_fu_341_p1;
+reg   [63:0] zext_ln397_reg_399;
 wire    ap_CS_fsm_state2;
-wire   [0:0] icmp_ln395_fu_346_p2;
+wire   [0:0] icmp_ln397_fu_346_p2;
 wire    grp_runTestAfterInit_fu_273_m_axi_gmem_AWVALID;
 wire   [63:0] grp_runTestAfterInit_fu_273_m_axi_gmem_AWADDR;
 wire   [0:0] grp_runTestAfterInit_fu_273_m_axi_gmem_AWID;
@@ -608,7 +608,7 @@ end
 always @ (posedge ap_clk) begin
     if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (fsmstate_load_load_fu_329_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state1))) begin
         i_fu_230 <= 8'd0;
-    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln395_fu_346_p2 == 1'd0))) begin
+    end else if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln397_fu_346_p2 == 1'd0))) begin
         i_fu_230 <= i_2_fu_352_p2;
     end
 end
@@ -623,14 +623,14 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln395_fu_346_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln397_fu_346_p2 == 1'd1))) begin
         fsmstate <= 1'd1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        zext_ln395_reg_399[7 : 0] <= zext_ln395_fu_341_p1[7 : 0];
+        zext_ln397_reg_399[7 : 0] <= zext_ln397_fu_341_p1[7 : 0];
     end
 end
 
@@ -738,7 +738,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        n_regions_V_address0 = zext_ln395_reg_399;
+        n_regions_V_address0 = zext_ln397_reg_399;
     end else if ((1'b1 == ap_CS_fsm_state5)) begin
         n_regions_V_address0 = grp_runTestAfterInit_fu_273_n_regions_V_address0;
     end else begin
@@ -784,7 +784,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln395_fu_346_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state2) & (icmp_ln397_fu_346_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state6;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -848,18 +848,18 @@ assign grp_runTestAfterInit_fu_273_toScheduler_TREADY = (toScheduler_TREADY_int_
 
 assign i_2_fu_352_p2 = (i_fu_230 + 8'd1);
 
-assign icmp_ln395_fu_346_p2 = ((i_fu_230 == 8'd128) ? 1'b1 : 1'b0);
+assign icmp_ln397_fu_346_p2 = ((i_fu_230 == 8'd128) ? 1'b1 : 1'b0);
 
-assign n_regions_in_address0 = zext_ln395_fu_341_p1;
+assign n_regions_in_address0 = zext_ln397_fu_341_p1;
 
 assign outcomeInRam_fu_323_p2 = (sharedMem + 64'd16384);
 
 assign toScheduler_TVALID = regslice_both_toScheduler_U_vld_out;
 
-assign zext_ln395_fu_341_p1 = i_fu_230;
+assign zext_ln397_fu_341_p1 = i_fu_230;
 
 always @ (posedge ap_clk) begin
-    zext_ln395_reg_399[63:8] <= 56'b00000000000000000000000000000000000000000000000000000000;
+    zext_ln397_reg_399[63:8] <= 56'b00000000000000000000000000000000000000000000000000000000;
 end
 
 endmodule //run

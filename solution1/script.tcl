@@ -5,9 +5,9 @@
 ############################################################
 open_project detector_solid
 set_top run
-add_files detector_solid/abs_solid_detector.cpp
-add_files detector_solid/parameters.h
 add_files detector_solid/region.h
+add_files detector_solid/parameters.h
+add_files detector_solid/abs_solid_detector.cpp
 open_solution "solution1" -flow_target vitis
 set_part {xc7z020-clg484-1}
 create_clock -period 20 -name default

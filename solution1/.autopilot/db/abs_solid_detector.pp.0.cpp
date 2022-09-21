@@ -12884,7 +12884,160 @@ bool is_valid(float val[8]){
  }
  return true;
 }
-# 297 "detector_solid/abs_solid_detector.cpp"
+
+void update_train_regions(region_t regions[16], int id, float val[8], bool is_acc){
+# 96 "detector_solid/abs_solid_detector.cpp"
+ if(id < 0 || !is_acc) return;
+
+
+ VITIS_LOOP_99_1: for(int i=0; i < 8; i++) {
+  if(val[i] > regions[id].max[i]) regions[id].max[i] = val[i];
+  else if(val[i] < regions[id].min[i]) regions[id].min[i] = val[i];
+  regions[id].center[i] = (regions[id].max[i] + regions[id].min[i])/2.0;
+ }
+}
+
+bool compare(float data[8], float data_key[8]){
+ VITIS_LOOP_107_1: for(int i=0; i < 8; i++){
+  if(fabs(data_key[i] - data[i]) > thresh){
+   return false;
+  }
+ }
+ return true;
+}
+
+
+
+
+
+
+float score_region(region_t * r1, region_t * r2) {
+ float distance = 0;
+
+ VITIS_LOOP_123_1: for(int j=0; j < 8; j++){
+  float d = (r1->center[j] - r2->center[j]);
+  distance += d*d;
+ }
+ float overlap;
+ overlap=1;
+ VITIS_LOOP_129_2: for(int i=0; i < 8; i++){
+  float d1 = r1->max[i] - r1->min[i];
+  float d2 = r2->max[i] - r2->min[i];
+  float ov;
+  if(r1->min[i] < r2->min[i])
+   ov = d1 - (r2->min[i] - r1->min[i]);
+  else
+   ov = d2 - (r1->min[i] - r2->min[i]);
+  ov = ov < 0 ? 0 : ov;
+  overlap *= ov;
+ }
+ float score=0;
+
+
+ if(overlap > 0) return overlap;
+
+ score -= distance;
+
+ return score;
+}
+
+int find_closest_region(region_t regions[16], ap_int<8> n_regions, int idx, float * score){
+ int id = -1;
+ VITIS_LOOP_152_1: for(int i=0; i < 16; i++){
+  if (i>=n_regions)
+   break;
+  if(i != idx) {
+
+   float sc = score_region(&(regions[idx]), &(regions[i]));
+   if(id < 0 || sc > *score){
+    id = i;
+    *score = sc;
+   }
+  }
+ }
+ return id;
+}
+
+
+void merge_regions(region_t regions[16], int id1, int id2){
+ VITIS_LOOP_169_1: for(int i=0; i < 8; i++){
+  if(regions[id2].min[i] < regions[id1].min[i]){
+   regions[id1].min[i] = regions[id2].min[i];
+  }
+  if(regions[id2].max[i] > regions[id1].max[i]){
+   regions[id1].max[i] = regions[id2].max[i];
+  }
+  regions[id1].center[i] = (regions[id1].max[i] + regions[id1].min[i])/2.0;
+ }
+
+
+
+
+ VITIS_LOOP_182_2: for(int i=id2; i < 16 -1; i++){
+  regions[i] = regions[i+1];
+ }
+}
+
+void insert_point(region_t regions[16], ap_int<8> &n_regions, float d[8], bool is_accept){
+ if(!is_valid(d)) return;
+
+
+
+ int id = find_region(regions, n_regions, d);
+
+ if(id >= 0){
+  update_train_regions(regions, id,d,is_accept);
+  return;
+ }
+ if(!is_accept){
+  update_train_regions(regions, -1,d,is_accept);
+  return;
+ }
+
+
+
+ VITIS_LOOP_205_1: for(int i=0; i < 8; i++){
+  regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
+ }
+ n_regions++;
+
+ update_train_regions(regions, n_regions-1,d, is_accept);
+
+
+ if(n_regions == 16){
+
+
+  int merge_1=-1;
+  int merge_2=-1;
+  float score = 0;
+  VITIS_LOOP_219_2: for(int i=0; i < n_regions; i++){
+   float tmp_score=0;
+   int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
+   if(merge_1 < 0 || tmp_score > score){
+    score = tmp_score;
+    merge_1 = i;
+    merge_2 = tmp_other;
+   }
+  }
+  merge_regions(regions, merge_1, merge_2);
+  n_regions--;
+ }
+}
+
+bool run_train_sw(region_t regions[16], ap_int<8> &n_regions, float data[8], float inputData[8]){
+
+ bool corr = compare(data, inputData);
+
+
+ insert_point(regions, n_regions, data, corr);
+ if(!corr) insert_point(regions, n_regions, inputData, true);
+ return true;
+}
+
+bool run_test_sw(region_t regions[16], ap_int<8> n_regions, float data[8]) {
+ return !( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
+}
+# 299 "detector_solid/abs_solid_detector.cpp"
 int fsmstate=0;
 
 struct OutcomeStr {
@@ -30056,7 +30209,7 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 311 "detector_solid/abs_solid_detector.cpp" 2
+# 313 "detector_solid/abs_solid_detector.cpp" 2
 
 
 
@@ -30095,7 +30248,7 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 
  read_test(data, inputDataInRam, checkId);
  run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
-# 357 "detector_solid/abs_solid_detector.cpp"
+# 359 "detector_solid/abs_solid_detector.cpp"
  writeOutcome(outcomeInRam, checkId, taskId, error, toScheduler);
 }
 
@@ -30105,11 +30258,11 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[128][16], ap_int<8> realcheckId[128], ap_int<8> n_regions_in[128], ap_int<32> sharedMem[sizeof(float)*8*128 +((128*sizeof(OutcomeStr)) / 32) + (((128*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 363 "detector_solid/abs_solid_detector.cpp"
+# 365 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 363 "detector_solid/abs_solid_detector.cpp"
+# 365 "detector_solid/abs_solid_detector.cpp"
 
 
 #pragma HLS interface s_axilite port = trainedRegions
@@ -30137,12 +30290,12 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
  if (fsmstate==0) {
 
-  VITIS_LOOP_390_1: for (size_t i=0; i<sizeof(regions); i++) {
+  VITIS_LOOP_392_1: for (size_t i=0; i<sizeof(regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) regions) [i] = ((const char*) trainedRegions) [i];
   }
 
-  VITIS_LOOP_395_2: for (size_t i=0; i<sizeof(n_regions); i++) {
+  VITIS_LOOP_397_2: for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
   }

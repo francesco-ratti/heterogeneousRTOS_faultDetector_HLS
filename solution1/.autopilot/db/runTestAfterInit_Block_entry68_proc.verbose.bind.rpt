@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit_Block_entry68_proc'
 ================================================================
-* Date:           Wed Sep 21 16:40:32 2022
+* Date:           Wed Sep 21 17:03:07 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -76,17 +76,17 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 3.63>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%checkId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %checkId" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 3 'read' 'checkId_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (3.63ns)   --->   "%write_ln378 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 4 'write' 'write_ln378' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%checkId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %checkId" [detector_solid/abs_solid_detector.cpp:380]   --->   Operation 3 'read' 'checkId_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (3.63ns)   --->   "%write_ln380 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read" [detector_solid/abs_solid_detector.cpp:380]   --->   Operation 4 'write' 'write_ln380' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%zext_ln587 = zext i16 %checkId_read"   --->   Operation 5 'zext' 'zext_ln587' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 6 'getelementptr' 'n_regions_V_addr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [2/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 7 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587" [detector_solid/abs_solid_detector.cpp:350]   --->   Operation 6 'getelementptr' 'n_regions_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:350]   --->   Operation 7 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
 
 State 2 <SV = 1> <Delay = 3.25>
 ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %checkId_c16, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specreset_ln378 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9" [detector_solid/abs_solid_detector.cpp:378]   --->   Operation 9 'specreset' 'specreset_ln378' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 10 [1/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 10 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln348 = ret i8 %n_regions_V_load" [detector_solid/abs_solid_detector.cpp:348]   --->   Operation 11 'ret' 'ret_ln348' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specreset_ln380 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9" [detector_solid/abs_solid_detector.cpp:380]   --->   Operation 9 'specreset' 'specreset_ln380' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/2] (3.25ns)   --->   "%n_regions_V_load = load i7 %n_regions_V_addr" [detector_solid/abs_solid_detector.cpp:350]   --->   Operation 10 'load' 'n_regions_V_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 128> <RAM>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln350 = ret i8 %n_regions_V_load" [detector_solid/abs_solid_detector.cpp:350]   --->   Operation 11 'ret' 'ret_ln350' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -110,13 +110,13 @@ Port [ n_regions_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1
 <LifeTime>
 <method=bitvector/>
 checkId_read      (read         ) [ 000]
-write_ln378       (write        ) [ 000]
+write_ln380       (write        ) [ 000]
 zext_ln587        (zext         ) [ 000]
 n_regions_V_addr  (getelementptr) [ 001]
 specinterface_ln0 (specinterface) [ 000]
-specreset_ln378   (specreset    ) [ 000]
+specreset_ln380   (specreset    ) [ 000]
 n_regions_V_load  (load         ) [ 000]
-ret_ln348         (ret          ) [ 000]
+ret_ln350         (ret          ) [ 000]
 </LifeTime>
 
 <model>
@@ -288,7 +288,7 @@ ret_ln348         (ret          ) [ 000]
 </bind>
 </comp>
 
-<comp id="40" class="1004" name="write_ln378_write_fu_40">
+<comp id="40" class="1004" name="write_ln380_write_fu_40">
 <pin_list>
 <pin id="41" dir="0" index="0" bw="0" slack="0"/>
 <pin id="42" dir="0" index="1" bw="16" slack="0"/>
@@ -297,7 +297,7 @@ ret_ln348         (ret          ) [ 000]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln378/1 "/>
+<opset="write_ln380/1 "/>
 </bind>
 </comp>
 
@@ -391,7 +391,7 @@ ret_ln348         (ret          ) [ 000]
 		n_regions_V_addr : 1
 		n_regions_V_load : 2
 	State 2
-		ret_ln348 : 1
+		ret_ln350 : 1
 
 
 ============================================================
@@ -404,7 +404,7 @@ ret_ln348         (ret          ) [ 000]
 |----------|-------------------------|
 |   read   | checkId_read_read_fu_34 |
 |----------|-------------------------|
-|   write  | write_ln378_write_fu_40 |
+|   write  | write_ln380_write_fu_40 |
 |----------|-------------------------|
 |   zext   |     zext_ln587_fu_61    |
 |----------|-------------------------|
