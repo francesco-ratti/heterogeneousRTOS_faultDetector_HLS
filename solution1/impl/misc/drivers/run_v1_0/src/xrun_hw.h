@@ -35,14 +35,14 @@
 // 0x00020 : Data signal of sharedMem
 //           bit 31~0 - sharedMem[63:32] (Read/Write)
 // 0x00024 : reserved
-// 0x00080 ~
-// 0x000ff : Memory 'realcheckId' (128 * 8b)
+// 0x00040 ~
+// 0x0007f : Memory 'realcheckId' (64 * 8b)
 //           Word n : bit [ 7: 0] - realcheckId[4n]
 //                    bit [15: 8] - realcheckId[4n+1]
 //                    bit [23:16] - realcheckId[4n+2]
 //                    bit [31:24] - realcheckId[4n+3]
-// 0x00100 ~
-// 0x0017f : Memory 'n_regions_in' (128 * 8b)
+// 0x00080 ~
+// 0x000bf : Memory 'n_regions_in' (64 * 8b)
 //           Word n : bit [ 7: 0] - n_regions_in[4n]
 //                    bit [15: 8] - n_regions_in[4n+1]
 //                    bit [23:16] - n_regions_in[4n+2]
@@ -60,14 +60,14 @@
 #define XRUN_CONTROL_BITS_CONTR_DATA          48
 #define XRUN_CONTROL_ADDR_SHAREDMEM_DATA      0x0001c
 #define XRUN_CONTROL_BITS_SHAREDMEM_DATA      64
-#define XRUN_CONTROL_ADDR_REALCHECKID_BASE    0x00080
-#define XRUN_CONTROL_ADDR_REALCHECKID_HIGH    0x000ff
+#define XRUN_CONTROL_ADDR_REALCHECKID_BASE    0x00040
+#define XRUN_CONTROL_ADDR_REALCHECKID_HIGH    0x0007f
 #define XRUN_CONTROL_WIDTH_REALCHECKID        8
-#define XRUN_CONTROL_DEPTH_REALCHECKID        128
-#define XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE   0x00100
-#define XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH   0x0017f
+#define XRUN_CONTROL_DEPTH_REALCHECKID        64
+#define XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE   0x00080
+#define XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH   0x000bf
 #define XRUN_CONTROL_WIDTH_N_REGIONS_IN       8
-#define XRUN_CONTROL_DEPTH_N_REGIONS_IN       128
+#define XRUN_CONTROL_DEPTH_N_REGIONS_IN       64
 #define XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE 0x40000
 #define XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH 0x7ffff
 #define XRUN_CONTROL_WIDTH_TRAINEDREGIONS     32

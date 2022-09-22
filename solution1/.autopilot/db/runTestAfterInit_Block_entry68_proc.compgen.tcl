@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename n_regions_V \
     op interface \
-    ports { n_regions_V_address0 { O 7 vector } n_regions_V_ce0 { O 1 bit } n_regions_V_q0 { I 8 vector } } \
+    ports { n_regions_V_address0 { O 6 vector } n_regions_V_ce0 { O 1 bit } n_regions_V_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'n_regions_V'"

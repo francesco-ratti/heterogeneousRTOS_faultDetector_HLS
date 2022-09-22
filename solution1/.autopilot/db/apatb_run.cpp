@@ -431,17 +431,17 @@ __cosim_s1__ xlx_stream_elt __attribute__ ((aligned));
     } // end post check logic bolck
   #ifdef USE_BINARY_TV_FILE
 {
-transaction<256> tr(513);
+transaction<256> tr(257);
 aesl_fh.read(AUTOTB_TVOUT_PC_gmem, tr.p, tr.tbytes);
 if (little_endian()) { tr.reorder(); }
-tr.send<32>((char*)__xlx_apatb_param_sharedMem, 513, 0);
+tr.send<32>((char*)__xlx_apatb_param_sharedMem, 257, 0);
 }
 #else
 try {
 static PostCheck<256> pc(AUTOTB_TVOUT_PC_gmem);
 pc.psize = 32;
 pc.param = (char*)__xlx_apatb_param_sharedMem;
-pc.depth = 513;
+pc.depth = 257;
 pc.run(AESL_transaction_pc, 0);
 } catch (SimException &e) {
   std::cout << "at line " << e.line << " occurred exception, " << e.msg << "\n";
@@ -496,15 +496,15 @@ unsigned __xlx_offset_byte_param_realcheckId = 0;
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_realcheckId, 'b');
-transaction<8> tr(128);
+transaction<8> tr(64);
   __xlx_offset_byte_param_realcheckId = 0*1;
   if (__xlx_apatb_param_realcheckId) {
-tr.import<1>((char*)__xlx_apatb_param_realcheckId, 128, 0);
+tr.import<1>((char*)__xlx_apatb_param_realcheckId, 64, 0);
   }
 aesl_fh.write(AUTOTB_TVIN_realcheckId, tr.p, tr.tbytes);
 }
 
-  tcl_file.set_num(128, &tcl_file.realcheckId_depth);
+  tcl_file.set_num(64, &tcl_file.realcheckId_depth);
 #else
 // print realcheckId Transactions
 {
@@ -512,7 +512,7 @@ aesl_fh.write(AUTOTB_TVIN_realcheckId, begin_str(AESL_transaction));
 {
   __xlx_offset_byte_param_realcheckId = 0*1;
 if (__xlx_apatb_param_realcheckId) {
-for (size_t i = 0; i < 128; ++i) {
+for (size_t i = 0; i < 64; ++i) {
 unsigned char *pos = (unsigned char*)__xlx_apatb_param_realcheckId + i * 1;
 std::string s = formatData(pos, 8);
 aesl_fh.write(AUTOTB_TVIN_realcheckId, s);
@@ -520,7 +520,7 @@ aesl_fh.write(AUTOTB_TVIN_realcheckId, s);
 }
 }
 
-  tcl_file.set_num(128, &tcl_file.realcheckId_depth);
+  tcl_file.set_num(64, &tcl_file.realcheckId_depth);
 aesl_fh.write(AUTOTB_TVIN_realcheckId, end_str());
 }
 
@@ -529,15 +529,15 @@ unsigned __xlx_offset_byte_param_n_regions_in = 0;
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_n_regions_in, 'b');
-transaction<8> tr(128);
+transaction<8> tr(64);
   __xlx_offset_byte_param_n_regions_in = 0*1;
   if (__xlx_apatb_param_n_regions_in) {
-tr.import<1>((char*)__xlx_apatb_param_n_regions_in, 128, 0);
+tr.import<1>((char*)__xlx_apatb_param_n_regions_in, 64, 0);
   }
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, tr.p, tr.tbytes);
 }
 
-  tcl_file.set_num(128, &tcl_file.n_regions_in_depth);
+  tcl_file.set_num(64, &tcl_file.n_regions_in_depth);
 #else
 // print n_regions_in Transactions
 {
@@ -545,7 +545,7 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, begin_str(AESL_transaction));
 {
   __xlx_offset_byte_param_n_regions_in = 0*1;
 if (__xlx_apatb_param_n_regions_in) {
-for (size_t i = 0; i < 128; ++i) {
+for (size_t i = 0; i < 64; ++i) {
 unsigned char *pos = (unsigned char*)__xlx_apatb_param_n_regions_in + i * 1;
 std::string s = formatData(pos, 8);
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, s);
@@ -553,7 +553,7 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, s);
 }
 }
 
-  tcl_file.set_num(128, &tcl_file.n_regions_in_depth);
+  tcl_file.set_num(64, &tcl_file.n_regions_in_depth);
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 }
 
@@ -563,13 +563,13 @@ long __xlx_apatb_param_toScheduler_stream_buf_size = ((hls::stream<__cosim_s1__>
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_gmem, 'b');
-transaction<256> tr(513);
+transaction<256> tr(257);
 __xlx_offset_byte_param_sharedMem = 0*32;
 if (__xlx_apatb_param_sharedMem) {
-  tr.import<32>((char*)__xlx_apatb_param_sharedMem, 513, 0);
+  tr.import<32>((char*)__xlx_apatb_param_sharedMem, 257, 0);
 }
 aesl_fh.write(AUTOTB_TVIN_gmem, tr.p, tr.tbytes);
-tcl_file.set_num(513, &tcl_file.gmem_depth);
+tcl_file.set_num(257, &tcl_file.gmem_depth);
 }
 #else
 aesl_fh.touch(AUTOTB_TVIN_gmem);
@@ -577,13 +577,13 @@ aesl_fh.touch(AUTOTB_TVIN_gmem);
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
 __xlx_offset_byte_param_sharedMem = 0*32;
 if (__xlx_apatb_param_sharedMem) {
-for (size_t i = 0; i < 513; ++i) {
+for (size_t i = 0; i < 257; ++i) {
 unsigned char *pos = (unsigned char*)__xlx_apatb_param_sharedMem + i * 32;
 std::string s = formatData(pos, 256);
 aesl_fh.write(AUTOTB_TVIN_gmem, s);
 }
 }
-tcl_file.set_num(513, &tcl_file.gmem_depth);
+tcl_file.set_num(257, &tcl_file.gmem_depth);
 aesl_fh.write(AUTOTB_TVIN_gmem, end_str());
 }
 #endif
@@ -641,13 +641,13 @@ aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, end_str());
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVOUT_gmem, 'b');
-transaction<256> tr(513);
+transaction<256> tr(257);
 __xlx_offset_byte_param_sharedMem = 0*32;
 if (__xlx_apatb_param_sharedMem) {
-  tr.import<32>((char*)__xlx_apatb_param_sharedMem, 513, 0);
+  tr.import<32>((char*)__xlx_apatb_param_sharedMem, 257, 0);
 }
 aesl_fh.write(AUTOTB_TVOUT_gmem, tr.p, tr.tbytes);
-tcl_file.set_num(513, &tcl_file.gmem_depth);
+tcl_file.set_num(257, &tcl_file.gmem_depth);
 }
 #else
 aesl_fh.touch(AUTOTB_TVOUT_gmem);
@@ -655,13 +655,13 @@ aesl_fh.touch(AUTOTB_TVOUT_gmem);
 aesl_fh.write(AUTOTB_TVOUT_gmem, begin_str(AESL_transaction));
 __xlx_offset_byte_param_sharedMem = 0*32;
 if (__xlx_apatb_param_sharedMem) {
-for (size_t i = 0; i < 513; ++i) {
+for (size_t i = 0; i < 257; ++i) {
 unsigned char *pos = (unsigned char*)__xlx_apatb_param_sharedMem + i * 32;
 std::string s = formatData(pos, 256);
 aesl_fh.write(AUTOTB_TVOUT_gmem, s);
 }
 }
-tcl_file.set_num(513, &tcl_file.gmem_depth);
+tcl_file.set_num(257, &tcl_file.gmem_depth);
 aesl_fh.write(AUTOTB_TVOUT_gmem, end_str());
 }
 #endif

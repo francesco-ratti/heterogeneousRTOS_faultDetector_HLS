@@ -1,14 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 66
+set ID 68
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
-set AddrRange 128
-set AddrWd 7
+set AddrRange 64
+set AddrWd 6
 set impl_style auto
 set TrueReset 1
 set IsROM 0
@@ -16,7 +16,7 @@ set ROMData { }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
-set DelayBudget 3.254
+set DelayBudget 2.322
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     eval "ap_gen_simcore_mem { \
@@ -113,10 +113,10 @@ sharedMem {
 realcheckId { 
 	dir X
 	width 8
-	depth 128
+	depth 64
 	mode ap_memory
-	offset 128
-	offset_end 255
+	offset 64
+	offset_end 127
 	core_op ram_1p
 	core_impl auto
 	core_latency 3
@@ -125,10 +125,10 @@ realcheckId {
 n_regions_in { 
 	dir I
 	width 8
-	depth 128
+	depth 64
 	mode ap_memory
-	offset 256
-	offset_end 383
+	offset 128
+	offset_end 191
 	core_op ram_1p
 	core_impl auto
 	core_latency 1
@@ -161,7 +161,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 67 \
+			id 69 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -185,7 +185,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 69 \
+    id 71 \
     name toScheduler \
     reset_level 0 \
     sync_rst true \
@@ -251,7 +251,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 70
+set ID 72
 set RegSliceName run_regslice_both
 set RegSliceInstName run_regslice_both_U
 set CoreName ap_simcore_run_regslice_both

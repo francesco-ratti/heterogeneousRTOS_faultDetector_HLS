@@ -190,7 +190,7 @@ extern "C" void run(__cosim_s32__*, __cosim_s6__, int*, char*, char*, int, __cos
 extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realcheckId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
   // Collect __xlx_sharedMem__tmp_vec
   vector<sc_bv<256> >__xlx_sharedMem__tmp_vec;
-  for (int j = 0, e = 513; j != e; ++j) {
+  for (int j = 0, e = 257; j != e; ++j) {
     sc_bv<256> _xlx_tmp_sc;
     _xlx_tmp_sc.range(7, 0) = ((char*)__xlx_apatb_param_sharedMem)[j*32+0];
     _xlx_tmp_sc.range(15, 8) = ((char*)__xlx_apatb_param_sharedMem)[j*32+1];
@@ -226,7 +226,7 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
     _xlx_tmp_sc.range(255, 248) = ((char*)__xlx_apatb_param_sharedMem)[j*32+31];
     __xlx_sharedMem__tmp_vec.push_back(_xlx_tmp_sc);
   }
-  int __xlx_size_param_sharedMem = 513;
+  int __xlx_size_param_sharedMem = 257;
   int __xlx_offset_param_sharedMem = 0;
   int __xlx_offset_byte_param_sharedMem = 0*32;
   __cosim_s32__* __xlx_sharedMem__input_buffer= new __cosim_s32__[__xlx_sharedMem__tmp_vec.size()];
@@ -255,10 +255,10 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
   }
   // Collect __xlx_realcheckId__tmp_vec
   vector<sc_bv<8> >__xlx_realcheckId__tmp_vec;
-  for (int j = 0, e = 128; j != e; ++j) {
+  for (int j = 0, e = 64; j != e; ++j) {
     __xlx_realcheckId__tmp_vec.push_back(((char*)__xlx_apatb_param_realcheckId)[j]);
   }
-  int __xlx_size_param_realcheckId = 128;
+  int __xlx_size_param_realcheckId = 64;
   int __xlx_offset_param_realcheckId = 0;
   int __xlx_offset_byte_param_realcheckId = 0*1;
   char* __xlx_realcheckId__input_buffer= new char[__xlx_realcheckId__tmp_vec.size()];
@@ -267,10 +267,10 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
   }
   // Collect __xlx_n_regions_in__tmp_vec
   vector<sc_bv<8> >__xlx_n_regions_in__tmp_vec;
-  for (int j = 0, e = 128; j != e; ++j) {
+  for (int j = 0, e = 64; j != e; ++j) {
     __xlx_n_regions_in__tmp_vec.push_back(((char*)__xlx_apatb_param_n_regions_in)[j]);
   }
-  int __xlx_size_param_n_regions_in = 128;
+  int __xlx_size_param_n_regions_in = 64;
   int __xlx_offset_param_n_regions_in = 0;
   int __xlx_offset_byte_param_n_regions_in = 0*1;
   char* __xlx_n_regions_in__input_buffer= new char[__xlx_n_regions_in__tmp_vec.size()];

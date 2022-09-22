@@ -40,14 +40,14 @@ output   ap_idle;
 output   ap_ready;
 input  [7:0] taskId;
 output  [7:0] taskId_c_din;
-input  [4:0] taskId_c_num_data_valid;
-input  [4:0] taskId_c_fifo_cap;
+input  [5:0] taskId_c_num_data_valid;
+input  [5:0] taskId_c_fifo_cap;
 input   taskId_c_full_n;
 output   taskId_c_write;
 input  [63:0] outcomeInRam;
 output  [63:0] outcomeInRam_c_din;
-input  [4:0] outcomeInRam_c_num_data_valid;
-input  [4:0] outcomeInRam_c_fifo_cap;
+input  [5:0] outcomeInRam_c_num_data_valid;
+input  [5:0] outcomeInRam_c_fifo_cap;
 input   outcomeInRam_c_full_n;
 output   outcomeInRam_c_write;
 

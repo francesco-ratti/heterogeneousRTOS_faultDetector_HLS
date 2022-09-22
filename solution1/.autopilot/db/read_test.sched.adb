@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573431920</coreId>
+						<coreId>2396336915</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -106,10 +106,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>122</coreId>
+						<coreId>1890727944</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -124,7 +124,7 @@
 					<Obj>
 						<type>1</type>
 						<id>4</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -142,14 +142,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573709696</coreId>
+						<coreId>2785623264</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -160,7 +160,7 @@
 					<Obj>
 						<type>1</type>
 						<id>5</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -178,14 +178,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -196,7 +196,7 @@
 					<Obj>
 						<type>1</type>
 						<id>6</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -221,7 +221,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -232,7 +232,7 @@
 					<Obj>
 						<type>1</type>
 						<id>7</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -250,14 +250,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574093488</coreId>
+						<coreId>1896955824</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -268,7 +268,7 @@
 					<Obj>
 						<type>1</type>
 						<id>8</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -286,14 +286,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>128</coreId>
+						<coreId>1891523952</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -304,7 +304,7 @@
 					<Obj>
 						<type>1</type>
 						<id>9</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -322,14 +322,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1882347968</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -340,7 +340,7 @@
 					<Obj>
 						<type>1</type>
 						<id>10</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -358,14 +358,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1895755328</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -376,7 +376,7 @@
 					<Obj>
 						<type>1</type>
 						<id>11</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -394,14 +394,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>176</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -434,10 +434,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1341910240</coreId>
+						<coreId>2785623264</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -477,7 +477,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1852404340</coreId>
+						<coreId>2785623264</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -505,7 +505,7 @@
 						<name>zext_ln587</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -521,7 +521,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -534,7 +534,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030185332</coreId>
+						<coreId>542329928</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -576,7 +576,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1663593984</coreId>
+						<coreId>1892380096</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>59</bitwidth>
@@ -621,7 +621,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574136576</coreId>
+						<coreId>1883735008</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -663,7 +663,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1634890337</coreId>
+						<coreId>1883735456</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -706,7 +706,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574151264</coreId>
+						<coreId>1899145408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -750,7 +750,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574151720</coreId>
+						<coreId>2384711623</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -794,7 +794,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1411409006</coreId>
+						<coreId>1899145408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -836,7 +836,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2036689696</coreId>
+						<coreId>1883743184</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -878,7 +878,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1952801792</coreId>
+						<coreId>1895777904</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -923,7 +923,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574004864</coreId>
+						<coreId>1895778488</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -965,7 +965,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1819113532</coreId>
+						<coreId>448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1010,7 +1010,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573729872</coreId>
+						<coreId>1702126948</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1052,7 +1052,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1702125923</coreId>
+						<coreId>544</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1097,7 +1097,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574007216</coreId>
+						<coreId>1892381408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1139,7 +1139,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1951624303</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1226,7 +1226,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574001264</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1271,7 +1271,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2073924400</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1313,7 +1313,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574002400</coreId>
+						<coreId>1883739376</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1358,7 +1358,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1717924464</coreId>
+						<coreId>1883740224</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1400,7 +1400,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573774992</coreId>
+						<coreId>1892374904</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1445,7 +1445,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531244602</coreId>
+						<coreId>2392339699</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1469,10 +1469,10 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1488,7 +1488,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1501,10 +1501,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>40</coreId>
+						<coreId>4294967292</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1527,10 +1527,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1546,7 +1546,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1559,7 +1559,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574139624</coreId>
+						<coreId>1895776000</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1584,10 +1584,10 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1603,7 +1603,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1616,10 +1616,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3376</coreId>
+						<coreId>1895776584</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1642,10 +1642,10 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1661,7 +1661,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1674,7 +1674,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574141304</coreId>
+						<coreId>1892360096</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1699,10 +1699,10 @@
 					<Obj>
 						<type>0</type>
 						<id>50</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1718,7 +1718,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1731,10 +1731,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531250635</coreId>
+						<coreId>1884904768</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1757,10 +1757,10 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1776,7 +1776,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1789,7 +1789,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>779251572</coreId>
+						<coreId>1884905616</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1814,10 +1814,10 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1833,7 +1833,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1846,10 +1846,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531250747</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1872,10 +1872,10 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1891,7 +1891,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1904,7 +1904,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573864400</coreId>
+						<coreId>1884908728</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1929,10 +1929,10 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1948,7 +1948,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -1961,10 +1961,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1884908240</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1987,10 +1987,10 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2006,7 +2006,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2019,7 +2019,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574148104</coreId>
+						<coreId>1713403648</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2044,10 +2044,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2063,7 +2063,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2076,10 +2076,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>11968</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -2102,10 +2102,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2121,7 +2121,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2134,7 +2134,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573805360</coreId>
+						<coreId>2393658278</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2159,10 +2159,10 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2178,7 +2178,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2191,10 +2191,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>176</coreId>
+						<coreId>1892375536</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -2217,10 +2217,10 @@
 					<Obj>
 						<type>0</type>
 						<id>59</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2236,7 +2236,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2249,7 +2249,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574097248</coreId>
+						<coreId>1884898568</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2274,10 +2274,10 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2293,7 +2293,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2306,10 +2306,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>176</coreId>
+						<coreId>1952670066</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -2332,10 +2332,10 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr_write_ln349</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_addr_write_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2351,7 +2351,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2364,7 +2364,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574063024</coreId>
+						<coreId>639660655</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2389,10 +2389,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>_ln349</name>
+						<name>_ln371</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>349</lineNumber>
+						<lineNumber>371</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -2408,7 +2408,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>349</second>
+										<second>371</second>
 									</item>
 								</second>
 							</item>
@@ -2421,7 +2421,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574116144</coreId>
+						<coreId>1868769390</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2466,7 +2466,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531239637</coreId>
+						<coreId>1914708526</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2497,7 +2497,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574117792</coreId>
+						<coreId>543649385</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2528,7 +2528,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>784</coreId>
+						<coreId>1768318322</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2559,7 +2559,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574107120</coreId>
+						<coreId>1869833586</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2590,7 +2590,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1634038388</coreId>
+						<coreId>1599293780</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2621,7 +2621,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>574451311</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2652,7 +2652,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1883752128</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2683,7 +2683,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1883752736</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2714,7 +2714,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1951624303</coreId>
+						<coreId>1899145408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2745,7 +2745,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1899145408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2838,7 +2838,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2384517517</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2869,7 +2869,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2384518269</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2900,7 +2900,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1883736592</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2931,7 +2931,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>695492975</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2962,7 +2962,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1883540544</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>

@@ -40,10 +40,10 @@ newFuncRoot:1 %checkId_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %checkId
 
 <Node id="6" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16">
 <![CDATA[
-newFuncRoot:2 %write_ln380 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read
+newFuncRoot:2 %write_ln400 = write void @_ssdm_op_Write.ap_fifo.i16P0A, i16 %checkId_c16, i16 %checkId_read
 
 ]]></Node>
-<StgValue><ssdm name="write_ln380"/></StgValue>
+<StgValue><ssdm name="write_ln400"/></StgValue>
 </operation>
 
 <operation id="5" st_id="1" stage="1" lat="1">
@@ -68,7 +68,7 @@ newFuncRoot:4 %zext_ln587 = zext i16 %checkId_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="7" op_0_bw="8" op_1_bw="64" op_2_bw="64">
+<Node id="9" bw="6" op_0_bw="8" op_1_bw="64" op_2_bw="64">
 <![CDATA[
 newFuncRoot:5 %n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zext_ln587
 
@@ -83,9 +83,9 @@ newFuncRoot:5 %n_regions_V_addr = getelementptr i8 %n_regions_V, i64 0, i64 %zex
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="8" op_0_bw="7">
+<Node id="10" bw="8" op_0_bw="6">
 <![CDATA[
-newFuncRoot:6 %n_regions_V_load = load i7 %n_regions_V_addr
+newFuncRoot:6 %n_regions_V_load = load i6 %n_regions_V_addr
 
 ]]></Node>
 <StgValue><ssdm name="n_regions_V_load"/></StgValue>
@@ -118,10 +118,10 @@ newFuncRoot:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="7" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="64" op_3_bw="0">
 <![CDATA[
-newFuncRoot:3 %specreset_ln380 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_9
+newFuncRoot:3 %specreset_ln400 = specreset void @_ssdm_op_SpecReset, i8 %n_regions_V, i64 1, void @empty_2
 
 ]]></Node>
-<StgValue><ssdm name="specreset_ln380"/></StgValue>
+<StgValue><ssdm name="specreset_ln400"/></StgValue>
 </operation>
 
 <operation id="10" st_id="2" stage="1" lat="2">
@@ -131,9 +131,9 @@ newFuncRoot:3 %specreset_ln380 = specreset void @_ssdm_op_SpecReset, i8 %n_regio
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="8" op_0_bw="7">
+<Node id="10" bw="8" op_0_bw="6">
 <![CDATA[
-newFuncRoot:6 %n_regions_V_load = load i7 %n_regions_V_addr
+newFuncRoot:6 %n_regions_V_load = load i6 %n_regions_V_addr
 
 ]]></Node>
 <StgValue><ssdm name="n_regions_V_load"/></StgValue>
@@ -148,10 +148,10 @@ newFuncRoot:6 %n_regions_V_load = load i7 %n_regions_V_addr
 
 <Node id="11" bw="0" op_0_bw="8">
 <![CDATA[
-newFuncRoot:7 %ret_ln350 = ret i8 %n_regions_V_load
+newFuncRoot:7 %ret_ln372 = ret i8 %n_regions_V_load
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln350"/></StgValue>
+<StgValue><ssdm name="ret_ln372"/></StgValue>
 </operation>
 </state>
 </state_list>

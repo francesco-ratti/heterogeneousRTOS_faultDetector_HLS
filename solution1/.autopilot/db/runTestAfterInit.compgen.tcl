@@ -1,14 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 52
+set ID 54
 set hasByteEnable 0
-set MemName run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb_memcore
+set MemName run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb_memcore
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
-set AddrRange 128
-set AddrWd 7
+set AddrRange 64
+set AddrWd 6
 set impl_style auto
 set TrueReset 1
 set IsROM 0
@@ -49,7 +49,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 set Depth 2
 set FullThresh 0
 set CoreName ap_simcore_mem_df_channel
-set MemName run_runTestAfterInit_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_bkb
+set MemName run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb
 if {${::AESL::PGuard_autocg_gen} || ${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem_df_channel] == "ap_gen_simcore_mem_df_channel"} {
     eval "ap_gen_simcore_mem_df_channel { \
@@ -90,15 +90,15 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 # FIFO definition: 
-set ID 53
-set FifoName run_fifo_w8_d14_S
+set ID 55
+set FifoName run_fifo_w8_d19_S
 set InstName taskId_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set DualClock 0
-set Depth 14
+set Depth 19
 set DataWd 8
-set AddrWd 4
+set AddrWd 5
 set FullThresh 0
 set FanoutToFrp 0
 set FanoutToFrpRdOutII 1
@@ -164,15 +164,15 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 54
-set FifoName run_fifo_w64_d14_S
+set ID 56
+set FifoName run_fifo_w64_d19_S
 set InstName outcomeInRam_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set DualClock 0
-set Depth 14
+set Depth 19
 set DataWd 64
-set AddrWd 4
+set AddrWd 5
 set FullThresh 0
 set FanoutToFrp 0
 set FanoutToFrpRdOutII 1
@@ -238,7 +238,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 55
+set ID 57
 set FifoName run_fifo_w16_d10_S
 set InstName checkId_c16_U
 set CoreName ap_simcore_fifo
@@ -312,7 +312,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 56
+set ID 58
 set FifoName run_fifo_w8_d10_S
 set InstName n_regions_V_load_loc_channel_U
 set CoreName ap_simcore_fifo
@@ -386,15 +386,15 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 57
-set FifoName run_fifo_w16_d5_S
+set ID 59
+set FifoName run_fifo_w16_d10_S
 set InstName checkId_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set DualClock 0
-set Depth 5
+set Depth 10
 set DataWd 16
-set AddrWd 3
+set AddrWd 4
 set FullThresh 0
 set FanoutToFrp 0
 set FanoutToFrpRdOutII 1
@@ -460,7 +460,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 58
+set ID 60
 set FifoName run_fifo_w1_d2_S
 set InstName error_U
 set CoreName ap_simcore_fifo
@@ -544,7 +544,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 64 \
+    id 66 \
     name toScheduler \
     reset_level 1 \
     sync_rst true \
@@ -563,14 +563,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 65 \
+    id 67 \
     name n_regions_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename n_regions_V \
     op interface \
-    ports { n_regions_V_address0 { O 7 vector } n_regions_V_ce0 { O 1 bit } n_regions_V_d0 { O 8 vector } n_regions_V_q0 { I 8 vector } n_regions_V_we0 { O 1 bit } n_regions_V_address1 { O 7 vector } n_regions_V_ce1 { O 1 bit } n_regions_V_d1 { O 8 vector } n_regions_V_q1 { I 8 vector } n_regions_V_we1 { O 1 bit } } \
+    ports { n_regions_V_address0 { O 6 vector } n_regions_V_ce0 { O 1 bit } n_regions_V_d0 { O 8 vector } n_regions_V_q0 { I 8 vector } n_regions_V_we0 { O 1 bit } n_regions_V_address1 { O 6 vector } n_regions_V_ce1 { O 1 bit } n_regions_V_d1 { O 8 vector } n_regions_V_q1 { I 8 vector } n_regions_V_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'n_regions_V'"
@@ -581,7 +581,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 59 \
+    id 61 \
     name gmem \
     type other \
     dir IO \
@@ -596,7 +596,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 60 \
+    id 62 \
     name inputDataInRam \
     type other \
     dir I \
@@ -611,7 +611,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 61 \
+    id 63 \
     name taskId \
     type other \
     dir I \
@@ -626,7 +626,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 62 \
+    id 64 \
     name checkId \
     type other \
     dir I \
@@ -641,7 +641,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 63 \
+    id 65 \
     name outcomeInRam \
     type other \
     dir I \

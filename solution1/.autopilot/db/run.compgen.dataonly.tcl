@@ -21,10 +21,10 @@ sharedMem {
 realcheckId { 
 	dir X
 	width 8
-	depth 128
+	depth 64
 	mode ap_memory
-	offset 128
-	offset_end 255
+	offset 64
+	offset_end 127
 	core_op ram_1p
 	core_impl auto
 	core_latency 3
@@ -33,10 +33,10 @@ realcheckId {
 n_regions_in { 
 	dir I
 	width 8
-	depth 128
+	depth 64
 	mode ap_memory
-	offset 256
-	offset_end 383
+	offset 128
+	offset_end 191
 	core_op ram_1p
 	core_impl auto
 	core_latency 1

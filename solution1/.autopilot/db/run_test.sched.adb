@@ -34,7 +34,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3621216858</coreId>
+						<coreId>38</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -70,7 +70,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>38</coreId>
+						<coreId>48</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -124,43 +124,7 @@
 					<Obj>
 						<type>1</type>
 						<id>4</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>48</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>128</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_5">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>5</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -185,18 +149,18 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
 				</bit_vecs>
 			</item>
-			<item class_id_reference="3" object_id="_6">
+			<item class_id_reference="3" object_id="_5">
 				<Value>
 					<Obj>
 						<type>1</type>
-						<id>6</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5</name>
+						<id>5</id>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -221,7 +185,43 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_6">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>6</id>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1989450432</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -232,7 +232,7 @@
 					<Obj>
 						<type>1</type>
 						<id>7</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -250,14 +250,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576842352</coreId>
+						<coreId>1988768272</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -268,7 +268,7 @@
 					<Obj>
 						<type>1</type>
 						<id>8</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -286,14 +286,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>575399776</coreId>
+						<coreId>1990455888</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -304,7 +304,7 @@
 					<Obj>
 						<type>1</type>
 						<id>9</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -322,14 +322,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576780576</coreId>
+						<coreId>1397508187</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -340,7 +340,7 @@
 					<Obj>
 						<type>1</type>
 						<id>10</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -358,14 +358,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577316528</coreId>
+						<coreId>1989144448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -376,7 +376,7 @@
 					<Obj>
 						<type>1</type>
 						<id>11</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -394,14 +394,14 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577050048</coreId>
+						<coreId>1895654768</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -434,7 +434,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576842352</coreId>
+						<coreId>1835231521</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -477,7 +477,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576833216</coreId>
+						<coreId>1890679008</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -520,7 +520,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525121593</coreId>
+						<coreId>1901853904</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -546,10 +546,10 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>zext_ln72</name>
+						<name>zext_ln90</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -565,7 +565,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -578,7 +578,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576773536</coreId>
+						<coreId>448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -602,10 +602,10 @@
 					<Obj>
 						<type>0</type>
 						<id>26</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -621,7 +621,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -634,10 +634,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1852796513</coreId>
+						<coreId>48</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -660,10 +660,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -679,7 +679,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -692,10 +692,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525656321</coreId>
+						<coreId>219</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -718,10 +718,10 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -737,7 +737,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -750,10 +750,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1145391171</coreId>
+						<coreId>1882262832</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -776,10 +776,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -795,7 +795,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -808,10 +808,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577183552</coreId>
+						<coreId>1990540144</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -834,10 +834,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -853,7 +853,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -866,10 +866,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1989144016</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -892,10 +892,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -911,7 +911,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -924,10 +924,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1819113532</coreId>
+						<coreId>2297011929</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -950,10 +950,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -969,7 +969,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -982,10 +982,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1970230048</coreId>
+						<coreId>1902137520</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1008,10 +1008,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_addr</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>72</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1027,7 +1027,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>72</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -1040,10 +1040,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577311616</coreId>
+						<coreId>1991855408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -1066,10 +1066,10 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1085,7 +1085,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1098,7 +1098,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577330976</coreId>
+						<coreId>1989144704</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1154,7 +1154,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577328784</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1179,10 +1179,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>bitcast_ln77</name>
+						<name>bitcast_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1198,7 +1198,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1211,7 +1211,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577329800</coreId>
+						<coreId>2285827817</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1238,7 +1238,7 @@
 						<name>tmp_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1254,7 +1254,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1267,7 +1267,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577332104</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -1294,10 +1294,10 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>trunc_ln77</name>
+						<name>trunc_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1313,7 +1313,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1326,7 +1326,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577276752</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -1350,10 +1350,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>icmp_ln77</name>
+						<name>icmp_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1369,7 +1369,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1382,7 +1382,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577274272</coreId>
+						<coreId>3</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1407,10 +1407,10 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>icmp_ln77_1</name>
+						<name>icmp_ln95_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1426,7 +1426,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1439,7 +1439,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1986438224</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1464,10 +1464,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>or_ln77</name>
+						<name>or_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1483,7 +1483,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1496,7 +1496,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577289888</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1524,7 +1524,7 @@
 						<name>tmp_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1540,7 +1540,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1553,7 +1553,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577291104</coreId>
+						<coreId>1713398048</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1581,7 +1581,7 @@
 						<name>tmp_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1597,7 +1597,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1610,7 +1610,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577311616</coreId>
+						<coreId>1990507824</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1635,10 +1635,10 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>or_ln77_2</name>
+						<name>or_ln95_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1654,7 +1654,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1667,7 +1667,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577323184</coreId>
+						<coreId>1990456928</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1692,10 +1692,10 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>and_ln77</name>
+						<name>and_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1711,7 +1711,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1724,7 +1724,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577323920</coreId>
+						<coreId>1991918880</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1749,10 +1749,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>or_ln77_1</name>
+						<name>or_ln95_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1768,7 +1768,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1781,7 +1781,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577325360</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1806,10 +1806,10 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1825,7 +1825,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1838,7 +1838,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1991271760</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1864,10 +1864,10 @@
 					<Obj>
 						<type>0</type>
 						<id>50</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1883,7 +1883,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -1896,7 +1896,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576842352</coreId>
+						<coreId>1990555616</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1952,7 +1952,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525786833</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -1977,10 +1977,10 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>bitcast_ln77_1</name>
+						<name>bitcast_ln95_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -1996,7 +1996,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2009,7 +2009,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1918987552</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2036,7 +2036,7 @@
 						<name>tmp</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2052,7 +2052,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2065,7 +2065,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576842352</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -2092,10 +2092,10 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>trunc_ln77_1</name>
+						<name>trunc_ln95_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2111,7 +2111,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2124,7 +2124,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577053088</coreId>
+						<coreId>1990555792</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -2148,10 +2148,10 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>icmp_ln77_2</name>
+						<name>icmp_ln95_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2167,7 +2167,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2180,7 +2180,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577132976</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2205,10 +2205,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>icmp_ln77_3</name>
+						<name>icmp_ln95_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2224,7 +2224,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2237,7 +2237,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1599294536</coreId>
+						<coreId>1397508187</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2262,10 +2262,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>or_ln77_4</name>
+						<name>or_ln95_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2281,7 +2281,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2294,7 +2294,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525626734</coreId>
+						<coreId>1990524064</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2322,7 +2322,7 @@
 						<name>tmp_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2338,7 +2338,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2351,7 +2351,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577171968</coreId>
+						<coreId>1991850800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2379,7 +2379,7 @@
 						<name>tmp_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2395,7 +2395,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2408,7 +2408,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577173360</coreId>
+						<coreId>1991901760</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2433,10 +2433,10 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>or_ln77_6</name>
+						<name>or_ln95_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2452,7 +2452,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2465,7 +2465,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577137280</coreId>
+						<coreId>4294967295</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2490,10 +2490,10 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>and_ln77_1</name>
+						<name>and_ln95_1</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2509,7 +2509,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2522,7 +2522,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577173728</coreId>
+						<coreId>1991902504</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2547,10 +2547,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>or_ln77_3</name>
+						<name>or_ln95_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2566,7 +2566,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2579,7 +2579,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525651760</coreId>
+						<coreId>1990555808</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2604,10 +2604,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2623,7 +2623,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2636,7 +2636,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2294417590</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2662,10 +2662,10 @@
 					<Obj>
 						<type>0</type>
 						<id>65</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2681,7 +2681,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2694,7 +2694,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>608</coreId>
+						<coreId>1397508187</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2750,7 +2750,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577244704</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -2775,10 +2775,10 @@
 					<Obj>
 						<type>0</type>
 						<id>67</id>
-						<name>bitcast_ln77_2</name>
+						<name>bitcast_ln95_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2794,7 +2794,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2807,7 +2807,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>176</coreId>
+						<coreId>1989436336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2834,7 +2834,7 @@
 						<name>tmp_8</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2850,7 +2850,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2863,7 +2863,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577262256</coreId>
+						<coreId>1990504048</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -2890,10 +2890,10 @@
 					<Obj>
 						<type>0</type>
 						<id>69</id>
-						<name>trunc_ln77_2</name>
+						<name>trunc_ln95_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2909,7 +2909,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2922,7 +2922,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525997621</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -2946,10 +2946,10 @@
 					<Obj>
 						<type>0</type>
 						<id>70</id>
-						<name>icmp_ln77_4</name>
+						<name>icmp_ln95_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -2965,7 +2965,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -2978,7 +2978,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>809120819</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3003,10 +3003,10 @@
 					<Obj>
 						<type>0</type>
 						<id>71</id>
-						<name>icmp_ln77_5</name>
+						<name>icmp_ln95_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3022,7 +3022,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3035,7 +3035,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3060,10 +3060,10 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>or_ln77_8</name>
+						<name>or_ln95_8</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3079,7 +3079,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3092,7 +3092,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577268464</coreId>
+						<coreId>1990506800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3120,7 +3120,7 @@
 						<name>tmp_9</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3136,7 +3136,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3149,7 +3149,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577244704</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3177,7 +3177,7 @@
 						<name>tmp_s</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3193,7 +3193,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3206,7 +3206,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577269712</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3231,10 +3231,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>or_ln77_10</name>
+						<name>or_ln95_10</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3250,7 +3250,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3263,7 +3263,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525992231</coreId>
+						<coreId>1991808976</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3288,10 +3288,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>and_ln77_2</name>
+						<name>and_ln95_2</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3307,7 +3307,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3320,7 +3320,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577273448</coreId>
+						<coreId>1991810176</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3345,10 +3345,10 @@
 					<Obj>
 						<type>0</type>
 						<id>77</id>
-						<name>or_ln77_5</name>
+						<name>or_ln95_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3364,7 +3364,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3377,7 +3377,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577274232</coreId>
+						<coreId>1990489232</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3402,10 +3402,10 @@
 					<Obj>
 						<type>0</type>
 						<id>78</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3421,7 +3421,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3434,7 +3434,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577276888</coreId>
+						<coreId>1991494576</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3460,10 +3460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>80</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3479,7 +3479,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3492,7 +3492,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577274784</coreId>
+						<coreId>2295642605</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -3548,7 +3548,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577278168</coreId>
+						<coreId>1990888656</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3573,10 +3573,10 @@
 					<Obj>
 						<type>0</type>
 						<id>82</id>
-						<name>bitcast_ln77_3</name>
+						<name>bitcast_ln95_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3592,7 +3592,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3605,7 +3605,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3526013993</coreId>
+						<coreId>1988739712</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -3632,7 +3632,7 @@
 						<name>tmp_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3648,7 +3648,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3661,7 +3661,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1702258035</coreId>
+						<coreId>1990841008</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -3688,10 +3688,10 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>trunc_ln77_3</name>
+						<name>trunc_ln95_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3707,7 +3707,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3720,7 +3720,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1883490336</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -3744,10 +3744,10 @@
 					<Obj>
 						<type>0</type>
 						<id>85</id>
-						<name>icmp_ln77_6</name>
+						<name>icmp_ln95_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3763,7 +3763,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3776,7 +3776,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>304</coreId>
+						<coreId>1990490176</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3801,10 +3801,10 @@
 					<Obj>
 						<type>0</type>
 						<id>86</id>
-						<name>icmp_ln77_7</name>
+						<name>icmp_ln95_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3820,7 +3820,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3858,10 +3858,10 @@
 					<Obj>
 						<type>0</type>
 						<id>87</id>
-						<name>or_ln77_12</name>
+						<name>or_ln95_12</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3877,7 +3877,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3918,7 +3918,7 @@
 						<name>tmp_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3934,7 +3934,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -3947,7 +3947,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577285328</coreId>
+						<coreId>6775156</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3975,7 +3975,7 @@
 						<name>tmp_10</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -3991,7 +3991,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4004,7 +4004,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577276752</coreId>
+						<coreId>2295375004</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4029,10 +4029,10 @@
 					<Obj>
 						<type>0</type>
 						<id>90</id>
-						<name>or_ln77_14</name>
+						<name>or_ln95_14</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4048,7 +4048,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4061,7 +4061,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574724384</coreId>
+						<coreId>1883487552</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4086,10 +4086,10 @@
 					<Obj>
 						<type>0</type>
 						<id>91</id>
-						<name>and_ln77_3</name>
+						<name>and_ln95_3</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4105,7 +4105,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4118,7 +4118,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3526031277</coreId>
+						<coreId>1991155232</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4143,10 +4143,10 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>or_ln77_7</name>
+						<name>or_ln95_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4162,7 +4162,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4175,7 +4175,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577295848</coreId>
+						<coreId>2295378589</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4200,10 +4200,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4219,7 +4219,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4232,7 +4232,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>27</coreId>
+						<coreId>1991759744</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -4258,10 +4258,10 @@
 					<Obj>
 						<type>0</type>
 						<id>95</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4277,7 +4277,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4290,7 +4290,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1990489232</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -4346,7 +4346,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577299512</coreId>
+						<coreId>1868785011</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4371,10 +4371,10 @@
 					<Obj>
 						<type>0</type>
 						<id>97</id>
-						<name>bitcast_ln77_4</name>
+						<name>bitcast_ln95_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4390,7 +4390,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4403,7 +4403,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577296064</coreId>
+						<coreId>2296277104</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -4430,7 +4430,7 @@
 						<name>tmp_11</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4446,7 +4446,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4459,7 +4459,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577301664</coreId>
+						<coreId>1991837528</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -4486,10 +4486,10 @@
 					<Obj>
 						<type>0</type>
 						<id>99</id>
-						<name>trunc_ln77_4</name>
+						<name>trunc_ln95_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4505,7 +4505,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4518,7 +4518,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>608</coreId>
+						<coreId>1990489232</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -4542,10 +4542,10 @@
 					<Obj>
 						<type>0</type>
 						<id>100</id>
-						<name>icmp_ln77_8</name>
+						<name>icmp_ln95_8</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4561,7 +4561,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4574,7 +4574,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577294400</coreId>
+						<coreId>1991839680</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4599,10 +4599,10 @@
 					<Obj>
 						<type>0</type>
 						<id>101</id>
-						<name>icmp_ln77_9</name>
+						<name>icmp_ln95_9</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4618,7 +4618,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4631,7 +4631,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1991840880</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4656,10 +4656,10 @@
 					<Obj>
 						<type>0</type>
 						<id>102</id>
-						<name>or_ln77_16</name>
+						<name>or_ln95_16</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4675,7 +4675,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4688,7 +4688,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577306096</coreId>
+						<coreId>48</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4716,7 +4716,7 @@
 						<name>tmp_12</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4732,7 +4732,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4745,7 +4745,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577304688</coreId>
+						<coreId>1990509728</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4773,7 +4773,7 @@
 						<name>tmp_13</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4789,7 +4789,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4802,7 +4802,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577308208</coreId>
+						<coreId>2296191942</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4827,10 +4827,10 @@
 					<Obj>
 						<type>0</type>
 						<id>105</id>
-						<name>or_ln77_17</name>
+						<name>or_ln95_17</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4846,7 +4846,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4859,7 +4859,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577296720</coreId>
+						<coreId>2297940647</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4884,10 +4884,10 @@
 					<Obj>
 						<type>0</type>
 						<id>106</id>
-						<name>and_ln77_4</name>
+						<name>and_ln95_4</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4903,7 +4903,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4916,7 +4916,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577321680</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4941,10 +4941,10 @@
 					<Obj>
 						<type>0</type>
 						<id>107</id>
-						<name>or_ln77_9</name>
+						<name>or_ln95_9</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -4960,7 +4960,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -4973,7 +4973,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3526047665</coreId>
+						<coreId>1991933080</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -4998,10 +4998,10 @@
 					<Obj>
 						<type>0</type>
 						<id>108</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5017,7 +5017,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5030,7 +5030,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3526046049</coreId>
+						<coreId>1990509728</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -5056,10 +5056,10 @@
 					<Obj>
 						<type>0</type>
 						<id>110</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5075,7 +5075,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5088,7 +5088,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1991912704</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -5144,7 +5144,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577317048</coreId>
+						<coreId>1990430640</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5169,10 +5169,10 @@
 					<Obj>
 						<type>0</type>
 						<id>112</id>
-						<name>bitcast_ln77_5</name>
+						<name>bitcast_ln95_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5188,7 +5188,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5201,7 +5201,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577318544</coreId>
+						<coreId>1010318317</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -5228,7 +5228,7 @@
 						<name>tmp_14</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5244,7 +5244,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5257,7 +5257,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577316992</coreId>
+						<coreId>1991979568</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -5284,10 +5284,10 @@
 					<Obj>
 						<type>0</type>
 						<id>114</id>
-						<name>trunc_ln77_5</name>
+						<name>trunc_ln95_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5303,7 +5303,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5316,7 +5316,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577320672</coreId>
+						<coreId>2295803779</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -5340,10 +5340,10 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>icmp_ln77_10</name>
+						<name>icmp_ln95_10</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5359,7 +5359,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5372,7 +5372,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1294941194</coreId>
+						<coreId>1991929256</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5397,10 +5397,10 @@
 					<Obj>
 						<type>0</type>
 						<id>116</id>
-						<name>icmp_ln77_11</name>
+						<name>icmp_ln95_11</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5416,7 +5416,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5429,7 +5429,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>573386029</coreId>
+						<coreId>180</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5454,10 +5454,10 @@
 					<Obj>
 						<type>0</type>
 						<id>117</id>
-						<name>or_ln77_18</name>
+						<name>or_ln95_18</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5473,7 +5473,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5486,7 +5486,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1919950882</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5514,7 +5514,7 @@
 						<name>tmp_15</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5530,7 +5530,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5543,7 +5543,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525644803</coreId>
+						<coreId>1990427440</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5571,7 +5571,7 @@
 						<name>tmp_16</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5587,7 +5587,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5600,7 +5600,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525644371</coreId>
+						<coreId>1992007808</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5625,10 +5625,10 @@
 					<Obj>
 						<type>0</type>
 						<id>120</id>
-						<name>or_ln77_19</name>
+						<name>or_ln95_19</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5644,7 +5644,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5682,10 +5682,10 @@
 					<Obj>
 						<type>0</type>
 						<id>121</id>
-						<name>and_ln77_5</name>
+						<name>and_ln95_5</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5701,7 +5701,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5714,7 +5714,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577192104</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5739,10 +5739,10 @@
 					<Obj>
 						<type>0</type>
 						<id>122</id>
-						<name>or_ln77_11</name>
+						<name>or_ln95_11</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5758,7 +5758,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5771,7 +5771,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576842352</coreId>
+						<coreId>2285442905</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5796,10 +5796,10 @@
 					<Obj>
 						<type>0</type>
 						<id>123</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5815,7 +5815,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5828,7 +5828,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577193056</coreId>
+						<coreId>1990492880</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -5854,10 +5854,10 @@
 					<Obj>
 						<type>0</type>
 						<id>125</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5873,7 +5873,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -5886,7 +5886,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2294590411</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -5942,7 +5942,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>48</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -5967,10 +5967,10 @@
 					<Obj>
 						<type>0</type>
 						<id>127</id>
-						<name>bitcast_ln77_6</name>
+						<name>bitcast_ln95_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -5986,7 +5986,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6026,7 +6026,7 @@
 						<name>tmp_17</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6042,7 +6042,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6082,10 +6082,10 @@
 					<Obj>
 						<type>0</type>
 						<id>129</id>
-						<name>trunc_ln77_6</name>
+						<name>trunc_ln95_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6101,7 +6101,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6114,7 +6114,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1990443920</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -6138,10 +6138,10 @@
 					<Obj>
 						<type>0</type>
 						<id>130</id>
-						<name>icmp_ln77_12</name>
+						<name>icmp_ln95_12</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6157,7 +6157,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6170,7 +6170,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1989548816</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6195,10 +6195,10 @@
 					<Obj>
 						<type>0</type>
 						<id>131</id>
-						<name>icmp_ln77_13</name>
+						<name>icmp_ln95_13</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6214,7 +6214,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6227,7 +6227,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2295556800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6252,10 +6252,10 @@
 					<Obj>
 						<type>0</type>
 						<id>132</id>
-						<name>or_ln77_20</name>
+						<name>or_ln95_20</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6271,7 +6271,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6284,7 +6284,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577204032</coreId>
+						<coreId>1991509968</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6312,7 +6312,7 @@
 						<name>tmp_18</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6328,7 +6328,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6341,7 +6341,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577205008</coreId>
+						<coreId>48</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6369,7 +6369,7 @@
 						<name>tmp_19</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6385,7 +6385,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6398,7 +6398,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577205952</coreId>
+						<coreId>1991512112</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6423,10 +6423,10 @@
 					<Obj>
 						<type>0</type>
 						<id>135</id>
-						<name>or_ln77_21</name>
+						<name>or_ln95_21</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6442,7 +6442,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6480,10 +6480,10 @@
 					<Obj>
 						<type>0</type>
 						<id>136</id>
-						<name>and_ln77_6</name>
+						<name>and_ln95_6</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6499,7 +6499,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6512,7 +6512,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525682727</coreId>
+						<coreId>1991514304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6537,10 +6537,10 @@
 					<Obj>
 						<type>0</type>
 						<id>137</id>
-						<name>or_ln77_13</name>
+						<name>or_ln95_13</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6556,7 +6556,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6569,7 +6569,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>576822016</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6594,10 +6594,10 @@
 					<Obj>
 						<type>0</type>
 						<id>138</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6613,7 +6613,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6626,7 +6626,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525663656</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -6652,10 +6652,10 @@
 					<Obj>
 						<type>0</type>
 						<id>140</id>
-						<name>run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_load</name>
+						<name>run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6671,7 +6671,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6740,7 +6740,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525686665</coreId>
+						<coreId>1991869304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6765,10 +6765,10 @@
 					<Obj>
 						<type>0</type>
 						<id>142</id>
-						<name>bitcast_ln77_7</name>
+						<name>bitcast_ln95_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6784,7 +6784,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6797,7 +6797,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577214656</coreId>
+						<coreId>1991870096</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -6824,7 +6824,7 @@
 						<name>tmp_20</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6840,7 +6840,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6853,7 +6853,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577213904</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -6880,10 +6880,10 @@
 					<Obj>
 						<type>0</type>
 						<id>144</id>
-						<name>trunc_ln77_7</name>
+						<name>trunc_ln95_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6899,7 +6899,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6912,7 +6912,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577035184</coreId>
+						<coreId>1991872608</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -6936,10 +6936,10 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>icmp_ln77_14</name>
+						<name>icmp_ln95_14</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -6955,7 +6955,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -6968,7 +6968,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577217600</coreId>
+						<coreId>1991748016</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -6993,10 +6993,10 @@
 					<Obj>
 						<type>0</type>
 						<id>146</id>
-						<name>icmp_ln77_15</name>
+						<name>icmp_ln95_15</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7012,7 +7012,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7025,7 +7025,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577218984</coreId>
+						<coreId>1145981250</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7050,10 +7050,10 @@
 					<Obj>
 						<type>0</type>
 						<id>147</id>
-						<name>or_ln77_22</name>
+						<name>or_ln95_22</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7069,7 +7069,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7082,7 +7082,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1991790656</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7110,7 +7110,7 @@
 						<name>tmp_21</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7126,7 +7126,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7139,7 +7139,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577221672</coreId>
+						<coreId>1991791744</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7167,7 +7167,7 @@
 						<name>tmp_22</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7183,7 +7183,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7196,7 +7196,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3525677819</coreId>
+						<coreId>1991793136</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7221,10 +7221,10 @@
 					<Obj>
 						<type>0</type>
 						<id>150</id>
-						<name>or_ln77_23</name>
+						<name>or_ln95_23</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7240,7 +7240,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7253,7 +7253,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1991748672</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7278,10 +7278,10 @@
 					<Obj>
 						<type>0</type>
 						<id>151</id>
-						<name>and_ln77_7</name>
+						<name>and_ln95_7</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7297,7 +7297,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7310,7 +7310,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577224448</coreId>
+						<coreId>1991850496</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7335,10 +7335,10 @@
 					<Obj>
 						<type>0</type>
 						<id>152</id>
-						<name>or_ln77_15</name>
+						<name>or_ln95_15</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7354,7 +7354,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7367,7 +7367,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>128</coreId>
+						<coreId>2296342304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7392,10 +7392,10 @@
 					<Obj>
 						<type>0</type>
 						<id>153</id>
-						<name>br_ln77</name>
+						<name>br_ln95</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>77</lineNumber>
+						<lineNumber>95</lineNumber>
 						<contextFuncName>is_valid</contextFuncName>
 						<contextNormFuncName>is_valid</contextNormFuncName>
 						<inlineStackInfo>
@@ -7411,7 +7411,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>is_valid</second>
 										</first>
-										<second>77</second>
+										<second>95</second>
 									</item>
 								</second>
 							</item>
@@ -7424,7 +7424,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577225408</coreId>
+						<coreId>1991774344</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -7453,7 +7453,7 @@
 						<name>tmp_i</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>337</lineNumber>
+						<lineNumber>362</lineNumber>
 						<contextFuncName>run_test</contextFuncName>
 						<contextNormFuncName>run_test</contextNormFuncName>
 						<inlineStackInfo>
@@ -7469,14 +7469,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run_test</second>
 										</first>
-										<second>337</second>
+										<second>362</second>
 									</item>
 								</second>
 							</item>
@@ -7489,10 +7489,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>608</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>5</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>10</count>
@@ -7525,7 +7525,7 @@
 						<name>tmp_23</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>337</lineNumber>
+						<lineNumber>362</lineNumber>
 						<contextFuncName>run_test</contextFuncName>
 						<contextNormFuncName>run_test</contextNormFuncName>
 						<inlineStackInfo>
@@ -7541,14 +7541,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run_test</second>
 										</first>
-										<second>337</second>
+										<second>362</second>
 									</item>
 								</second>
 							</item>
@@ -7561,7 +7561,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>20</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7587,10 +7587,10 @@
 					<Obj>
 						<type>0</type>
 						<id>157</id>
-						<name>br_ln337</name>
+						<name>br_ln362</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>337</lineNumber>
+						<lineNumber>362</lineNumber>
 						<contextFuncName>run_test</contextFuncName>
 						<contextNormFuncName>run_test</contextNormFuncName>
 						<inlineStackInfo>
@@ -7606,14 +7606,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run_test</second>
 										</first>
-										<second>337</second>
+										<second>362</second>
 									</item>
 								</second>
 							</item>
@@ -7626,7 +7626,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577230864</coreId>
+						<coreId>784</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -7668,7 +7668,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577232576</coreId>
+						<coreId>2295362257</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -7695,7 +7695,7 @@
 						<name>error_write_assign</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>337</lineNumber>
+						<lineNumber>362</lineNumber>
 						<contextFuncName>run_test</contextFuncName>
 						<contextNormFuncName>run_test</contextNormFuncName>
 						<inlineStackInfo>
@@ -7711,14 +7711,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run_test</second>
 										</first>
-										<second>337</second>
+										<second>362</second>
 									</item>
 								</second>
 							</item>
@@ -7731,7 +7731,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577233832</coreId>
+						<coreId>2536461616</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -7758,10 +7758,10 @@
 					<Obj>
 						<type>0</type>
 						<id>162</id>
-						<name>_ln350</name>
+						<name>_ln372</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>350</lineNumber>
+						<lineNumber>372</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -7777,7 +7777,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 								</second>
 							</item>
@@ -7790,7 +7790,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577261952</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -7836,7 +7836,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577276496</coreId>
+						<coreId>1991496464</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -7867,7 +7867,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1599294536</coreId>
+						<coreId>1869833586</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -7898,7 +7898,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577240896</coreId>
+						<coreId>1986499392</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -7929,7 +7929,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577241640</coreId>
+						<coreId>1986438224</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -7960,7 +7960,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2295348501</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -7991,7 +7991,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577242720</coreId>
+						<coreId>1991726080</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>23</bitwidth>
@@ -8022,7 +8022,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>784</coreId>
+						<coreId>1991727536</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -8084,10 +8084,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577244320</coreId>
+						<coreId>1991728800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>5</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<const_type>6</const_type>
 				<content>&lt;constant:find_region&gt;</content>
@@ -8115,13 +8115,13 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577244320</coreId>
+						<coreId>1991728800</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>4</content>
+				<content>5</content>
 			</item>
 			<item class_id_reference="16" object_id="_152">
 				<Value>
@@ -8146,7 +8146,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>577246688</coreId>
+						<coreId>1991731168</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -8180,7 +8180,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577035504</coreId>
+					<coreId>64</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8236,7 +8236,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577035504</coreId>
+					<coreId>64</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8280,7 +8280,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577176248</coreId>
+					<coreId>1</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8324,7 +8324,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577276408</coreId>
+					<coreId>1986156656</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8368,7 +8368,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577297744</coreId>
+					<coreId>1</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8412,7 +8412,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>3526049585</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8456,7 +8456,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>3525668340</coreId>
+					<coreId>179</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8500,7 +8500,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>0</coreId>
+					<coreId>1819113532</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8544,7 +8544,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>3525701532</coreId>
+					<coreId>1991772952</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8577,7 +8577,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>577232144</coreId>
+					<coreId>48</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -8608,7 +8608,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>3525689742</coreId>
+					<coreId>1113821891</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -10626,11 +10626,11 @@
 				<item>163</item>
 			</basic_blocks>
 			<mII>8</mII>
-			<mDepth>28</mDepth>
+			<mDepth>73</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>27</mMinLatency>
-			<mMaxLatency>27</mMaxLatency>
+			<mMinLatency>72</mMinLatency>
+			<mMaxLatency>72</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -11512,41 +11512,41 @@
 			<first>155</first>
 			<second>
 				<first>18</first>
-				<second>9</second>
+				<second>54</second>
 			</second>
 		</item>
 		<item>
 			<first>156</first>
 			<second>
-				<first>27</first>
+				<first>72</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>157</first>
 			<second>
-				<first>27</first>
+				<first>72</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>159</first>
 			<second>
-				<first>26</first>
+				<first>71</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>161</first>
 			<second>
-				<first>27</first>
+				<first>72</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>162</first>
 			<second>
-				<first>27</first>
+				<first>72</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -11614,21 +11614,21 @@
 			<first>158</first>
 			<second>
 				<first>18</first>
-				<second>27</second>
+				<second>72</second>
 			</second>
 		</item>
 		<item>
 			<first>160</first>
 			<second>
-				<first>26</first>
-				<second>26</second>
+				<first>71</first>
+				<second>71</second>
 			</second>
 		</item>
 		<item>
 			<first>163</first>
 			<second>
-				<first>27</first>
-				<second>27</second>
+				<first>72</first>
+				<second>72</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
@@ -11659,7 +11659,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>8</interval>
-			<pipe_depth>28</pipe_depth>
+			<pipe_depth>73</pipe_depth>
 			<mDBIIViolationVec class_id="34" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>0</item_version>

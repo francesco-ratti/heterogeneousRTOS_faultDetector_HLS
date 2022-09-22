@@ -43,7 +43,7 @@ input  [4:0] checkId_c16_num_data_valid;
 input  [4:0] checkId_c16_fifo_cap;
 input   checkId_c16_full_n;
 output   checkId_c16_write;
-output  [6:0] n_regions_V_address0;
+output  [5:0] n_regions_V_address0;
 output   n_regions_V_ce0;
 input  [7:0] n_regions_V_q0;
 output  [7:0] ap_return;

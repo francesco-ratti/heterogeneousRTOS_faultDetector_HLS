@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome'
 ================================================================
-* Date:           Wed Sep 21 17:03:09 2022
+* Date:           Thu Sep 22 19:07:13 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -153,7 +153,7 @@ IsGatedGlobalClock: 0
 State 1 <SV = 0> <Delay = 10.6>
 ST_1 : Operation 74 [1/1] (3.63ns)   --->   "%outcomeInRam_read = read i64 @_ssdm_op_Read.ap_fifo.i64P0A, i64 %outcomeInRam"   --->   Operation 74 'read' 'outcomeInRam_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 4> <FIFO>
 ST_1 : Operation 75 [1/1] (3.63ns)   --->   "%checkId_read = read i16 @_ssdm_op_Read.ap_fifo.i16P0A, i16 %checkId"   --->   Operation 75 'read' 'checkId_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
-ST_1 : Operation 76 [1/1] (3.63ns)   --->   "%taskId_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %taskId" [detector_solid/abs_solid_detector.cpp:317->detector_solid/abs_solid_detector.cpp:359]   --->   Operation 76 'read' 'taskId_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 4> <FIFO>
+ST_1 : Operation 76 [1/1] (3.63ns)   --->   "%taskId_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %taskId" [detector_solid/abs_solid_detector.cpp:335->detector_solid/abs_solid_detector.cpp:381]   --->   Operation 76 'read' 'taskId_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 4> <FIFO>
 ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i17 @_ssdm_op_BitConcatenate.i17.i16.i1, i16 %checkId_read, i1 0"   --->   Operation 77 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%p_cast7_i = sext i17 %tmp"   --->   Operation 78 'sext' 'p_cast7_i' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%empty = trunc i64 %outcomeInRam_read"   --->   Operation 79 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
@@ -176,7 +176,7 @@ ST_2 : Operation 93 [1/1] (3.14ns)   --->   "%empty_40 = shl i249 %error_cast_i,
 ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%p_cast3_cast_i = sext i59 %p_cast3_i"   --->   Operation 94 'sext' 'p_cast3_cast_i' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i256 %gmem, i64 %p_cast3_cast_i"   --->   Operation 95 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 96 [1/1] (14.6ns)   --->   "%empty_41 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i256, i256 %gmem_addr, i32 1"   --->   Operation 96 'writereq' 'empty_41' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_2 : Operation 97 [1/1] (0.00ns)   --->   "%br_ln326 = br i1 %p_read_1, void %writeOutcome.exit, void %if.then.i" [detector_solid/abs_solid_detector.cpp:326->detector_solid/abs_solid_detector.cpp:359]   --->   Operation 97 'br' 'br_ln326' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "%br_ln344 = br i1 %p_read_1, void %writeOutcome.exit, void %if.then.i" [detector_solid/abs_solid_detector.cpp:344->detector_solid/abs_solid_detector.cpp:381]   --->   Operation 97 'br' 'br_ln344' <Predicate = true> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 14.6>
 ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%p_cast9_i = zext i249 %empty_40"   --->   Operation 98 'zext' 'p_cast9_i' <Predicate = true> <Delay = 0.00>
@@ -443,7 +443,7 @@ State 66 <SV = 65> <Delay = 14.6>
 ST_66 : Operation 233 [6/68] (14.6ns)   --->   "%empty_42 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %gmem_addr"   --->   Operation 233 'writeresp' 'empty_42' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_66 : Operation 234 [8/68] (14.6ns)   --->   "%empty_47 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %gmem_addr_1"   --->   Operation 234 'writeresp' 'empty_47' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_66 : Operation 235 [1/1] (0.00ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.axis.volatile.i8P128A, i8 %toScheduler, i8 %taskId_read" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 235 'write' 'write_ln174' <Predicate = (p_read_1)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
-ST_66 : Operation 236 [1/1] (0.00ns)   --->   "%br_ln327 = br void %writeOutcome.exit" [detector_solid/abs_solid_detector.cpp:327->detector_solid/abs_solid_detector.cpp:359]   --->   Operation 236 'br' 'br_ln327' <Predicate = (p_read_1)> <Delay = 0.00>
+ST_66 : Operation 236 [1/1] (0.00ns)   --->   "%br_ln345 = br void %writeOutcome.exit" [detector_solid/abs_solid_detector.cpp:345->detector_solid/abs_solid_detector.cpp:381]   --->   Operation 236 'br' 'br_ln345' <Predicate = (p_read_1)> <Delay = 0.00>
 
 State 67 <SV = 66> <Delay = 14.6>
 ST_67 : Operation 237 [5/68] (14.6ns)   --->   "%empty_42 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %gmem_addr"   --->   Operation 237 'writeresp' 'empty_42' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
@@ -472,11 +472,11 @@ State 73 <SV = 72> <Delay = 14.6>
 ST_73 : Operation 248 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %outcomeInRam, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 248 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_73 : Operation 249 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %checkId, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 249 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_73 : Operation 250 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %taskId, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 250 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_73 : Operation 251 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %gmem, void @empty_10, i32 0, i32 0, void @empty_9, i32 64, i32 0, void @empty, void @empty_8, void @empty_9, i32 16, i32 16, i32 16, i32 16, void @empty_9, void @empty_9, i32 4294967295, i32 0"   --->   Operation 251 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_73 : Operation 252 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_11, i32 0, i32 0, void @empty_16, i32 0, i32 0, void @empty_9, void @empty_9, void @empty_9, i32 0, i32 0, i32 0, i32 0, void @empty_9, void @empty_9, i32 4294967295, i32 0"   --->   Operation 252 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_73 : Operation 253 [1/1] (0.00ns)   --->   "%specpipeline_ln318 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_9" [detector_solid/abs_solid_detector.cpp:318->detector_solid/abs_solid_detector.cpp:359]   --->   Operation 253 'specpipeline' 'specpipeline_ln318' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 251 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %gmem, void @empty_13, i32 0, i32 0, void @empty_2, i32 64, i32 0, void @empty_3, void @empty_4, void @empty_2, i32 16, i32 16, i32 16, i32 16, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 251 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 252 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_17, i32 0, i32 0, void @empty_8, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 252 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 253 [1/1] (0.00ns)   --->   "%specpipeline_ln336 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_2" [detector_solid/abs_solid_detector.cpp:336->detector_solid/abs_solid_detector.cpp:381]   --->   Operation 253 'specpipeline' 'specpipeline_ln336' <Predicate = true> <Delay = 0.00>
 ST_73 : Operation 254 [1/68] (14.6ns)   --->   "%empty_47 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i256, i256 %gmem_addr_1"   --->   Operation 254 'writeresp' 'empty_47' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_73 : Operation 255 [1/1] (0.00ns)   --->   "%ret_ln359 = ret" [detector_solid/abs_solid_detector.cpp:359]   --->   Operation 255 'ret' 'ret_ln359' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 255 [1/1] (0.00ns)   --->   "%ret_ln381 = ret" [detector_solid/abs_solid_detector.cpp:381]   --->   Operation 255 'ret' 'ret_ln381' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -525,7 +525,7 @@ empty_40           (shl           ) [ 000100000000000000000000000000000000000000
 p_cast3_cast_i     (sext          ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 gmem_addr          (getelementptr ) [ 01111111111111111111111111111111111111111111111111111111111111111111111100]
 empty_41           (writereq      ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln326           (br            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln344           (br            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 p_cast9_i          (zext          ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 write_ln0          (write         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 empty_43           (add           ) [ 00001000000000000000000000000000000000000000000000000000000000000000000000]
@@ -540,16 +540,16 @@ empty_46           (writereq      ) [ 000000000000000000000000000000000000000000
 p_cast11_i         (zext          ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 write_ln0          (write         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 write_ln174        (write         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln327           (br            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln345           (br            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 empty_42           (writeresp     ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0  (specinterface ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0  (specinterface ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0  (specinterface ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0  (specinterface ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0  (specinterface ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-specpipeline_ln318 (specpipeline  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+specpipeline_ln336 (specpipeline  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 empty_47           (writeresp     ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-ret_ln359          (ret           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+ret_ln381          (ret           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 </LifeTime>
 
 <model>
@@ -866,7 +866,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_10"/></StgValue>
+<StgValue><ssdm name="empty_13"/></StgValue>
 </bind>
 </comp>
 
@@ -875,7 +875,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_9"/></StgValue>
+<StgValue><ssdm name="empty_2"/></StgValue>
 </bind>
 </comp>
 
@@ -893,7 +893,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_3"/></StgValue>
 </bind>
 </comp>
 
@@ -902,7 +902,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_8"/></StgValue>
+<StgValue><ssdm name="empty_4"/></StgValue>
 </bind>
 </comp>
 
@@ -911,7 +911,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_11"/></StgValue>
+<StgValue><ssdm name="empty_17"/></StgValue>
 </bind>
 </comp>
 
@@ -920,7 +920,7 @@ ret_ln359          (ret           ) [ 000000000000000000000000000000000000000000
 <pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_16"/></StgValue>
+<StgValue><ssdm name="empty_8"/></StgValue>
 </bind>
 </comp>
 

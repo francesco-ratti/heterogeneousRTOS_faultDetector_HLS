@@ -10,8 +10,8 @@ use ieee.numeric_std.all;
 entity run_n_regions_V_RAM_AUTO_1R1W is
     generic (
         DataWidth    : integer := 8;
-        AddressWidth : integer := 7;
-        AddressRange : integer := 128
+        AddressWidth : integer := 6;
+        AddressRange : integer := 64
     );
     port (
         clk      : in  std_logic;

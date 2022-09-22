@@ -70,7 +70,7 @@
 						<coreName>FIFO_SRL</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574366805</coreId>
+						<coreId>1901214805</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -106,14 +106,14 @@
 						<coreName>RAM</coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>574291216</coreId>
+						<coreId>1895712448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>128</array_size>
+				<array_size>64</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -131,7 +131,7 @@
 						<name>checkId_read</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>380</lineNumber>
+						<lineNumber>400</lineNumber>
 						<contextFuncName>run</contextFuncName>
 						<contextNormFuncName>run</contextNormFuncName>
 						<inlineStackInfo>
@@ -147,7 +147,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run</second>
 										</first>
-										<second>380</second>
+										<second>400</second>
 									</item>
 								</second>
 							</item>
@@ -160,7 +160,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531149216</coreId>
+						<coreId>1895697456</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -185,10 +185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>checkId_c16_write_ln380</name>
+						<name>checkId_c16_write_ln400</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>380</lineNumber>
+						<lineNumber>400</lineNumber>
 						<contextFuncName>run</contextFuncName>
 						<contextNormFuncName>run</contextNormFuncName>
 						<inlineStackInfo>
@@ -204,7 +204,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>run</second>
 										</first>
-										<second>380</second>
+										<second>400</second>
 									</item>
 								</second>
 							</item>
@@ -302,7 +302,7 @@
 						<name>n_regions_V_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>350</lineNumber>
+						<lineNumber>372</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -318,7 +318,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 								</second>
 							</item>
@@ -334,7 +334,7 @@
 						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>6</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -360,7 +360,7 @@
 						<name>n_regions_V_load</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>350</lineNumber>
+						<lineNumber>372</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -376,7 +376,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 								</second>
 							</item>
@@ -404,7 +404,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.25</m_delay>
+				<m_delay>2.32</m_delay>
 				<m_topoIndex>5</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -413,10 +413,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>_ln350</name>
+						<name>_ln372</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>350</lineNumber>
+						<lineNumber>372</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -432,7 +432,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>350</second>
+										<second>372</second>
 									</item>
 								</second>
 							</item>
@@ -445,7 +445,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3531350688</coreId>
+						<coreId>1896581040</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -491,7 +491,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1415532111</coreId>
+						<coreId>1896593648</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -525,7 +525,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>4294967295</coreId>
+					<coreId>448</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -862,7 +862,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln380_write_fu_40</first>
+			<first>write_ln400_write_fu_40</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

@@ -12,8 +12,8 @@ entity run_n_regions_V_RAM_AUTO_1R1W_ram is
     generic(
             MEM_TYPE    : string := "auto"; 
             DataWidth     : integer := 8; 
-            AddressWidth     : integer := 7; 
-            AddressRange    : integer := 128
+            AddressWidth     : integer := 6; 
+            AddressRange    : integer := 64
     ); 
     port (
           address0     : in std_logic_vector(AddressWidth-1 downto 0); 

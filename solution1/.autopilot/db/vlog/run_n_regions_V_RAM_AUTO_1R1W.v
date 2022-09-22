@@ -9,8 +9,8 @@
 module run_n_regions_V_RAM_AUTO_1R1W
 #(parameter
     DataWidth    = 8,
-    AddressWidth = 7,
-    AddressRange = 128
+    AddressWidth = 6,
+    AddressRange = 64
 )(
     input  wire                    clk,
     input  wire                    reset,

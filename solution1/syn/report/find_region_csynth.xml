@@ -19,18 +19,18 @@
 <PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>12.329</EstimatedClockPeriod>
+<EstimatedClockPeriod>14.494</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>9</Best-caseLatency>
-<Average-caseLatency>9</Average-caseLatency>
-<Worst-caseLatency>9</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>54</Best-caseLatency>
+<Average-caseLatency>54</Average-caseLatency>
+<Worst-caseLatency>54</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.080 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.080 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.080 us</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>8</PipelineInitiationInterval>
-<PipelineDepth>10</PipelineDepth>
+<PipelineDepth>55</PipelineDepth>
 <Interval-min>8</Interval-min>
 <Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
@@ -38,8 +38,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>295</FF>
-<LUT>833</LUT>
+<FF>4421</FF>
+<LUT>3787</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -139,7 +139,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>5</Bits>
+<Bits>6</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -165,8 +165,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_23</name>
-<Object>d_read_23</Object>
+<name>d_read_15</name>
+<Object>d_read_15</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -176,8 +176,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_24</name>
-<Object>d_read_24</Object>
+<name>d_read_16</name>
+<Object>d_read_16</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -187,8 +187,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_25</name>
-<Object>d_read_25</Object>
+<name>d_read_17</name>
+<Object>d_read_17</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -198,8 +198,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_26</name>
-<Object>d_read_26</Object>
+<name>d_read_18</name>
+<Object>d_read_18</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -209,8 +209,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_27</name>
-<Object>d_read_27</Object>
+<name>d_read_19</name>
+<Object>d_read_19</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -220,8 +220,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_28</name>
-<Object>d_read_28</Object>
+<name>d_read_20</name>
+<Object>d_read_20</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -231,8 +231,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>d_read_29</name>
-<Object>d_read_29</Object>
+<name>d_read_21</name>
+<Object>d_read_21</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

@@ -19,30 +19,30 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>148</Best-caseLatency>
-            <Average-caseLatency>203</Average-caseLatency>
-            <Worst-caseLatency>258</Worst-caseLatency>
-            <Best-caseRealTimeLatency>2.960 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>4.060 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>5.160 us</Worst-caseRealTimeLatency>
-            <Interval-min>149</Interval-min>
-            <Interval-max>259</Interval-max>
+            <Best-caseLatency>130</Best-caseLatency>
+            <Average-caseLatency>139</Average-caseLatency>
+            <Worst-caseLatency>148</Worst-caseLatency>
+            <Best-caseRealTimeLatency>2.600 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>2.780 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>2.960 us</Worst-caseRealTimeLatency>
+            <Interval-min>131</Interval-min>
+            <Interval-max>149</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
-            <VITIS_LOOP_397_2>
-                <TripCount>128</TripCount>
-                <Latency>256</Latency>
-                <AbsoluteTimeLatency>5120</AbsoluteTimeLatency>
+            <VITIS_LOOP_417_2>
+                <TripCount>64</TripCount>
+                <Latency>128</Latency>
+                <AbsoluteTimeLatency>2560</AbsoluteTimeLatency>
                 <IterationLatency>2</IterationLatency>
                 <InstanceList/>
-            </VITIS_LOOP_397_2>
+            </VITIS_LOOP_417_2>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>10</BRAM_18K>
-            <FF>6757</FF>
-            <LUT>8077</LUT>
+            <BRAM_18K>8</BRAM_18K>
+            <FF>10054</FF>
+            <LUT>10778</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -857,10 +857,10 @@
             <ModuleName>run</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_runTestAfterInit_fu_273</InstName>
+                    <InstName>grp_runTestAfterInit_fu_369</InstName>
                     <ModuleName>runTestAfterInit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>273</ID>
+                    <ID>369</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>entry_proc_U0</InstName>
@@ -905,7 +905,7 @@
                     <BindInstances>outcomeInRam_c_U checkId_c16_U checkId_c_U taskId_c_U n_regions_V_load_loc_channel_U error_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>outcomeInRam_fu_323_p2 i_2_fu_352_p2 n_regions_V_U</BindInstances>
+            <BindInstances>outcomeInRam_fu_419_p2 i_2_fu_448_p2 n_regions_V_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -971,7 +971,7 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>345</FF>
+                    <FF>344</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
                     <LUT>122</LUT>
@@ -1035,28 +1035,28 @@
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
                     <TargetInitiationInterval>8</TargetInitiationInterval>
-                    <EstimatedClockPeriod>12.329</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>14.494</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>9</Best-caseLatency>
-                    <Average-caseLatency>9</Average-caseLatency>
-                    <Worst-caseLatency>9</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.180 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.180 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.180 us</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>54</Best-caseLatency>
+                    <Average-caseLatency>54</Average-caseLatency>
+                    <Worst-caseLatency>54</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.080 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.080 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.080 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>8</PipelineInitiationInterval>
-                    <PipelineDepth>10</PipelineDepth>
+                    <PipelineDepth>55</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>295</FF>
+                    <FF>4421</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>833</LUT>
+                    <UTIL_FF>4</UTIL_FF>
+                    <LUT>3787</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>1</UTIL_LUT>
+                    <UTIL_LUT>7</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1076,28 +1076,28 @@
                     <TargetClockPeriod>20.00</TargetClockPeriod>
                     <ClockUncertainty>5.40</ClockUncertainty>
                     <TargetInitiationInterval>8</TargetInitiationInterval>
-                    <EstimatedClockPeriod>12.329</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>14.494</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>27</Best-caseLatency>
-                    <Average-caseLatency>27</Average-caseLatency>
-                    <Worst-caseLatency>27</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.540 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.540 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.540 us</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>72</Best-caseLatency>
+                    <Average-caseLatency>72</Average-caseLatency>
+                    <Worst-caseLatency>72</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.440 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.440 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.440 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>8</PipelineInitiationInterval>
-                    <PipelineDepth>28</PipelineDepth>
+                    <PipelineDepth>73</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1115</FF>
+                    <FF>5495</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>1</UTIL_FF>
-                    <LUT>1551</LUT>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>4637</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>2</UTIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1182,12 +1182,12 @@
                     <BRAM_18K>8</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>2</UTIL_BRAM>
-                    <FF>4964</FF>
+                    <FF>8319</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>4</UTIL_FF>
-                    <LUT>5530</LUT>
+                    <UTIL_FF>7</UTIL_FF>
+                    <LUT>8240</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>10</UTIL_LUT>
+                    <UTIL_LUT>15</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
@@ -1202,13 +1202,13 @@
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_c_U" SOURCE="" URAM="0" VARIABLE="checkId_c"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_c_U" SOURCE="" URAM="0" VARIABLE="taskId_c"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="n_regions_V_load_loc_channel_U" SOURCE="" URAM="0" VARIABLE="n_regions_V_load_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:350" URAM="0" VARIABLE="error"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:372" URAM="0" VARIABLE="error"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>run</Name>
             <Loops>
-                <VITIS_LOOP_397_2/>
+                <VITIS_LOOP_417_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1217,39 +1217,39 @@
                     <EstimatedClockPeriod>14.600</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>148</Best-caseLatency>
-                    <Average-caseLatency>203</Average-caseLatency>
-                    <Worst-caseLatency>258</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>2.960 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>4.060 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>5.160 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>149 ~ 259</PipelineInitiationInterval>
+                    <Best-caseLatency>130</Best-caseLatency>
+                    <Average-caseLatency>139</Average-caseLatency>
+                    <Worst-caseLatency>148</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.600 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.780 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.960 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>131 ~ 149</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_397_2>
-                        <Name>VITIS_LOOP_397_2</Name>
-                        <TripCount>128</TripCount>
-                        <Latency>256</Latency>
-                        <AbsoluteTimeLatency>5.120 us</AbsoluteTimeLatency>
+                    <VITIS_LOOP_417_2>
+                        <Name>VITIS_LOOP_417_2</Name>
+                        <TripCount>64</TripCount>
+                        <Latency>128</Latency>
+                        <AbsoluteTimeLatency>2.560 us</AbsoluteTimeLatency>
                         <IterationLatency>2</IterationLatency>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_397_2>
+                    </VITIS_LOOP_417_2>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>10</BRAM_18K>
+                    <BRAM_18K>8</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>3</UTIL_BRAM>
-                    <FF>6757</FF>
+                    <UTIL_BRAM>2</UTIL_BRAM>
+                    <FF>10054</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>6</UTIL_FF>
-                    <LUT>8077</LUT>
+                    <UTIL_FF>9</UTIL_FF>
+                    <LUT>10778</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>15</UTIL_LUT>
+                    <UTIL_LUT>20</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
@@ -1259,9 +1259,9 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="outcomeInRam_fu_323_p2" SOURCE="detector_solid/abs_solid_detector.cpp:387" URAM="0" VARIABLE="outcomeInRam"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_397_2" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_352_p2" SOURCE="detector_solid/abs_solid_detector.cpp:397" URAM="0" VARIABLE="i_2"/>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="n_regions_V_U" SOURCE="" URAM="0" VARIABLE="n_regions_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="outcomeInRam_fu_419_p2" SOURCE="detector_solid/abs_solid_detector.cpp:407" URAM="0" VARIABLE="outcomeInRam"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_417_2" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_448_p2" SOURCE="detector_solid/abs_solid_detector.cpp:417" URAM="0" VARIABLE="i_2"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="n_regions_V_U" SOURCE="" URAM="0" VARIABLE="n_regions_V"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -1360,8 +1360,8 @@
                 <port>s_axi_control_WVALID</port>
             </ports>
             <memories>
-                <memorie memorieName="realcheckId" offset="128" range="128"/>
-                <memorie memorieName="n_regions_in" offset="256" range="128"/>
+                <memorie memorieName="realcheckId" offset="64" range="64"/>
+                <memorie memorieName="n_regions_in" offset="128" range="64"/>
                 <memorie memorieName="trainedRegions" offset="262144" range="262144"/>
             </memories>
             <registers>
@@ -1424,8 +1424,8 @@
             <constraints>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="contr"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="8192" argName="trainedRegions"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="128" argName="realcheckId"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="256" argName="n_regions_in"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64" argName="realcheckId"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="128" argName="n_regions_in"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="sharedMem"/>
             </constraints>
         </Interface>
@@ -1548,8 +1548,8 @@
             </item>
             <item name="S_AXILITE Interfaces">
                 <table isCollapsed="0">
-                    <keys size="6">Interface, Data Width, Address Width, Offset, Register, Resource Estimate</keys>
-                    <column name="s_axi_control">32, 19, 16, 0, BRAM=1, , , , </column>
+                    <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
+                    <column name="s_axi_control">32, 19, 16, 0, , , , , </column>
                 </table>
             </item>
             <item name="S_AXILITE Registers">
@@ -1601,8 +1601,8 @@
                     <column name="contr">s_axi_control, register, , name=contr_1 offset=0x10 range=32</column>
                     <column name="contr">s_axi_control, register, , name=contr_2 offset=0x14 range=32</column>
                     <column name="trainedRegions">s_axi_control, memory, , name=trainedRegions offset=262144 range=262144</column>
-                    <column name="realcheckId">s_axi_control, memory, , name=realcheckId offset=128 range=128</column>
-                    <column name="n_regions_in">s_axi_control, memory, , name=n_regions_in offset=256 range=128</column>
+                    <column name="realcheckId">s_axi_control, memory, , name=realcheckId offset=64 range=64</column>
+                    <column name="n_regions_in">s_axi_control, memory, , name=n_regions_in offset=128 range=64</column>
                     <column name="sharedMem">m_axi_gmem, interface, , </column>
                     <column name="sharedMem">s_axi_control, register, offset, name=sharedMem_1 offset=0x1c range=32</column>
                     <column name="sharedMem">s_axi_control, register, offset, name=sharedMem_2 offset=0x20 range=32</column>
@@ -1617,24 +1617,25 @@
     <PragmaReport>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:38" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:49" status="valid" parentFunction="find_region" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:75" status="valid" parentFunction="is_valid" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:318" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:331" status="valid" parentFunction="read_test" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:336" status="valid" parentFunction="run_test" variable="" isDirective="0" options="II=8"/>
-        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:341" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:367" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:368" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realcheckId"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:369" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:370" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:371" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:378" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:379" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:380" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:382" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:383" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:384" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:393" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:398" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
+        <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:75" status="valid" parentFunction="adapt_region_to_point" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="detector_solid/abs_solid_detector.cpp:93" status="valid" parentFunction="is_valid" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:336" status="valid" parentFunction="writeoutcome" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:349" status="valid" parentFunction="read_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:354" status="valid" parentFunction="run_test" variable="" isDirective="0" options="II=8"/>
+        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:366" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:387" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:388" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = realcheckId"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:389" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:390" status="valid" parentFunction="run" variable="sharedMem" isDirective="0" options="m_axi port=sharedMem"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:391" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:398" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:399" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:400" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:402" status="valid" parentFunction="run" variable="data" isDirective="0" options="variable=data complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:403" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:404" status="valid" parentFunction="run" variable="data_key" isDirective="0" options="variable=data_key complete"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:413" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
+        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:418" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
     </PragmaReport>
 </profile>
 

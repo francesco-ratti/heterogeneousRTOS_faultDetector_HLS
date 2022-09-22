@@ -7,8 +7,8 @@
 module run_n_regions_V_RAM_AUTO_1R1W_ram (address0, ce0, d0, we0, q0,  reset,clk);
 
 parameter DataWidth = 8;
-parameter AddressWidth = 7;
-parameter AddressRange = 128;
+parameter AddressWidth = 6;
+parameter AddressRange = 64;
 
 input[AddressWidth-1:0] address0;
 input ce0;

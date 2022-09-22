@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'writeOutcome'" level="0">
-<item name = "Date">Wed Sep 21 17:03:12 2022
+<item name = "Date">Thu Sep 22 19:07:19 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -203,18 +203,18 @@
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
 <column name="outcomeInRam_dout">in, 64, ap_fifo, outcomeInRam, pointer</column>
-<column name="outcomeInRam_num_data_valid">in, 5, ap_fifo, outcomeInRam, pointer</column>
-<column name="outcomeInRam_fifo_cap">in, 5, ap_fifo, outcomeInRam, pointer</column>
+<column name="outcomeInRam_num_data_valid">in, 6, ap_fifo, outcomeInRam, pointer</column>
+<column name="outcomeInRam_fifo_cap">in, 6, ap_fifo, outcomeInRam, pointer</column>
 <column name="outcomeInRam_empty_n">in, 1, ap_fifo, outcomeInRam, pointer</column>
 <column name="outcomeInRam_read">out, 1, ap_fifo, outcomeInRam, pointer</column>
 <column name="checkId_dout">in, 16, ap_fifo, checkId, pointer</column>
-<column name="checkId_num_data_valid">in, 4, ap_fifo, checkId, pointer</column>
-<column name="checkId_fifo_cap">in, 4, ap_fifo, checkId, pointer</column>
+<column name="checkId_num_data_valid">in, 5, ap_fifo, checkId, pointer</column>
+<column name="checkId_fifo_cap">in, 5, ap_fifo, checkId, pointer</column>
 <column name="checkId_empty_n">in, 1, ap_fifo, checkId, pointer</column>
 <column name="checkId_read">out, 1, ap_fifo, checkId, pointer</column>
 <column name="taskId_dout">in, 8, ap_fifo, taskId, pointer</column>
-<column name="taskId_num_data_valid">in, 5, ap_fifo, taskId, pointer</column>
-<column name="taskId_fifo_cap">in, 5, ap_fifo, taskId, pointer</column>
+<column name="taskId_num_data_valid">in, 6, ap_fifo, taskId, pointer</column>
+<column name="taskId_fifo_cap">in, 6, ap_fifo, taskId, pointer</column>
 <column name="taskId_empty_n">in, 1, ap_fifo, taskId, pointer</column>
 <column name="taskId_read">out, 1, ap_fifo, taskId, pointer</column>
 <column name="p_read">in, 1, ap_none, p_read, scalar</column>

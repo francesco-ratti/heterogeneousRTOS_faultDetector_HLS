@@ -68,6 +68,24 @@ int find_region(region_t regions[MAX_REGIONS], ap_int<8> n_regions, float d[MAX_
 }
 
 
+void adapt_region_to_point (region_t &region, float d[MAX_AOV_DIM]) {
+	for(int i=0; i < MAX_AOV_DIM; i++){
+		//compute the distance and scale.
+		//#pragma HLS PIPELINE II=1
+#pragma HLS unroll
+		float distfrommax=abs(d[i] - region.max[i]);
+		float distfrommin=abs(d[i] - region.min[i]);
+		float scale=abs(region.max[i] - region.center[i]);
+
+		if (distfrommax>2*thresh)
+			region.max[i]=region.max[i]-0.01*distfrommax/scale;
+		if (distfrommin>2*thresh)
+			region.min[i]=region.min[i]+0.01*distfrommin/scale;
+		region.center[i]=(region.max[i] + region.min[i])/2.0;
+	}
+}
+
+
 
 bool is_valid(float val[MAX_AOV_DIM]){
 
@@ -334,6 +352,13 @@ void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_int
 
 void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
 #pragma HLS PIPELINE II=8
+	/*int reg=find_region(regions, n_regions, data);
+	error=( !is_valid(data) || reg < 0 ) ;
+
+	if (!error) {
+		adapt_region_to_point(regions[reg], data);
+	}*/
+
 	error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
 

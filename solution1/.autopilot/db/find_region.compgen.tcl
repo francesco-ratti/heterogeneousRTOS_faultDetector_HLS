@@ -16,7 +16,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 22 \
+    id 24 \
     name n_regions \
     type other \
     dir I \
@@ -31,7 +31,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 23 \
+    id 25 \
     name d_read \
     type other \
     dir I \
@@ -46,45 +46,15 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 24 \
-    name d_read_23 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d_read_23 \
-    op interface \
-    ports { d_read_23 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 25 \
-    name d_read_24 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_d_read_24 \
-    op interface \
-    ports { d_read_24 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
     id 26 \
-    name d_read_25 \
+    name d_read_15 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_read_25 \
+    corename dc_d_read_15 \
     op interface \
-    ports { d_read_25 { I 32 vector } } \
+    ports { d_read_15 { I 32 vector } } \
 } "
 }
 
@@ -92,14 +62,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 27 \
-    name d_read_26 \
+    name d_read_16 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_read_26 \
+    corename dc_d_read_16 \
     op interface \
-    ports { d_read_26 { I 32 vector } } \
+    ports { d_read_16 { I 32 vector } } \
 } "
 }
 
@@ -107,14 +77,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 28 \
-    name d_read_27 \
+    name d_read_17 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_read_27 \
+    corename dc_d_read_17 \
     op interface \
-    ports { d_read_27 { I 32 vector } } \
+    ports { d_read_17 { I 32 vector } } \
 } "
 }
 
@@ -122,14 +92,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 29 \
-    name d_read_28 \
+    name d_read_18 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_read_28 \
+    corename dc_d_read_18 \
     op interface \
-    ports { d_read_28 { I 32 vector } } \
+    ports { d_read_18 { I 32 vector } } \
 } "
 }
 
@@ -137,14 +107,44 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 30 \
-    name d_read_29 \
+    name d_read_19 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_d_read_29 \
+    corename dc_d_read_19 \
     op interface \
-    ports { d_read_29 { I 32 vector } } \
+    ports { d_read_19 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 31 \
+    name d_read_20 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_d_read_20 \
+    op interface \
+    ports { d_read_20 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 32 \
+    name d_read_21 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_d_read_21 \
+    op interface \
+    ports { d_read_21 { I 32 vector } } \
 } "
 }
 
@@ -172,7 +172,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 5 vector } } \
+    ports { ap_return { O 6 vector } } \
 } "
 }
 

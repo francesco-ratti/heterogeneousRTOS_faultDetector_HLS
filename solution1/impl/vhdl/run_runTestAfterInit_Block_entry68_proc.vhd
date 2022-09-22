@@ -24,7 +24,7 @@ port (
     checkId_c16_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
     checkId_c16_full_n : IN STD_LOGIC;
     checkId_c16_write : OUT STD_LOGIC;
-    n_regions_V_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
+    n_regions_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     n_regions_V_ce0 : OUT STD_LOGIC;
     n_regions_V_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     ap_return : OUT STD_LOGIC_VECTOR (7 downto 0) );
@@ -177,7 +177,7 @@ begin
         end if; 
     end process;
 
-    n_regions_V_address0 <= zext_ln587_fu_61_p1(7 - 1 downto 0);
+    n_regions_V_address0 <= zext_ln587_fu_61_p1(6 - 1 downto 0);
 
     n_regions_V_ce0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, checkId_c16_full_n)
     begin

@@ -19,7 +19,7 @@ set C_modelArgList {
 	{ checkId int 16 regular  }
 	{ outcomeInRam int 64 regular  }
 	{ toScheduler int 8 regular {axi_s 1 volatile  { toScheduler Data } }  }
-	{ n_regions_V int 8 regular {array 128 { 1 3 } 1 1 } {global 0}  }
+	{ n_regions_V int 8 regular {array 64 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 256, "direction" : "READWRITE", "bitSlice":[ {"cElement": [{"cName": "sharedMem","offset": { "type": "dynamic","port_name": "sharedMem","bundle": "control"},"direction": "READWRITE"}]}]} , 
@@ -83,12 +83,12 @@ set portList {
 	{ checkId sc_in sc_lv 16 signal 3 } 
 	{ outcomeInRam sc_in sc_lv 64 signal 4 } 
 	{ toScheduler_TDATA sc_out sc_lv 8 signal 5 } 
-	{ n_regions_V_address0 sc_out sc_lv 7 signal 6 } 
+	{ n_regions_V_address0 sc_out sc_lv 6 signal 6 } 
 	{ n_regions_V_ce0 sc_out sc_logic 1 signal 6 } 
 	{ n_regions_V_d0 sc_out sc_lv 8 signal 6 } 
 	{ n_regions_V_q0 sc_in sc_lv 8 signal 6 } 
 	{ n_regions_V_we0 sc_out sc_logic 1 signal 6 } 
-	{ n_regions_V_address1 sc_out sc_lv 7 signal 6 } 
+	{ n_regions_V_address1 sc_out sc_lv 6 signal 6 } 
 	{ n_regions_V_ce1 sc_out sc_logic 1 signal 6 } 
 	{ n_regions_V_d1 sc_out sc_lv 8 signal 6 } 
 	{ n_regions_V_q1 sc_in sc_lv 8 signal 6 } 
@@ -159,12 +159,12 @@ set NewPortList {[
  	{ "name": "checkId", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "checkId", "role": "default" }} , 
  	{ "name": "outcomeInRam", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "outcomeInRam", "role": "default" }} , 
  	{ "name": "toScheduler_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "toScheduler", "role": "TDATA" }} , 
- 	{ "name": "n_regions_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address0" }} , 
+ 	{ "name": "n_regions_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address0" }} , 
  	{ "name": "n_regions_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "n_regions_V", "role": "ce0" }} , 
  	{ "name": "n_regions_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "d0" }} , 
  	{ "name": "n_regions_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "q0" }} , 
  	{ "name": "n_regions_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "n_regions_V", "role": "we0" }} , 
- 	{ "name": "n_regions_V_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address1" }} , 
+ 	{ "name": "n_regions_V_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address1" }} , 
  	{ "name": "n_regions_V_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "n_regions_V", "role": "ce1" }} , 
  	{ "name": "n_regions_V_d1", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "d1" }} , 
  	{ "name": "n_regions_V_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "q1" }} , 
@@ -184,7 +184,7 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27"],
 		"CDFG" : "runTestAfterInit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
@@ -203,51 +203,51 @@ set RtlHierarchyInfo {[
 			{"ID" : "2", "Name" : "read_test_U0"},
 			{"ID" : "3", "Name" : "runTestAfterInit_Block_entry68_proc_U0"}],
 		"OutputProcess" : [
-			{"ID" : "11", "Name" : "writeOutcome_U0"}],
+			{"ID" : "13", "Name" : "writeOutcome_U0"}],
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "gmem"},
-					{"ID" : "11", "SubInstance" : "writeOutcome_U0", "Port" : "gmem"}]},
+					{"ID" : "13", "SubInstance" : "writeOutcome_U0", "Port" : "gmem"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "gmem"}]},
 			{"Name" : "inputDataInRam", "Type" : "None", "Direction" : "I"},
 			{"Name" : "taskId", "Type" : "None", "Direction" : "I"},
 			{"Name" : "checkId", "Type" : "None", "Direction" : "I"},
 			{"Name" : "outcomeInRam", "Type" : "None", "Direction" : "I"},
 			{"Name" : "toScheduler", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "11", "SubInstance" : "writeOutcome_U0", "Port" : "toScheduler"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "13", "SubInstance" : "writeOutcome_U0", "Port" : "toScheduler"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "IO",
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data"},
-					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data"}]},
+					{"ID" : "4", "SubInstance" : "run_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data"},
+					{"ID" : "2", "SubInstance" : "read_test_U0", "Port" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "3", "SubInstance" : "runTestAfterInit_Block_entry68_proc_U0", "Port" : "n_regions_V"}]}]},
@@ -267,11 +267,11 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "taskId", "Type" : "None", "Direction" : "I"},
-			{"Name" : "taskId_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["11"], "DependentChan" : "20", "DependentChanDepth" : "14", "DependentChanType" : "2",
+			{"Name" : "taskId_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["13"], "DependentChan" : "22", "DependentChanDepth" : "19", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "taskId_c_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "outcomeInRam", "Type" : "None", "Direction" : "I"},
-			{"Name" : "outcomeInRam_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["11"], "DependentChan" : "21", "DependentChanDepth" : "14", "DependentChanType" : "2",
+			{"Name" : "outcomeInRam_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["13"], "DependentChan" : "23", "DependentChanDepth" : "19", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "outcomeInRam_c_blk_n", "Type" : "RtlSignal"}]}]},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.read_test_U0", "Parent" : "0",
@@ -295,14 +295,14 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "inputDataInRam", "Type" : "None", "Direction" : "I"},
 			{"Name" : "checkId", "Type" : "None", "Direction" : "I"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "12"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "13"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "14"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "15"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "16"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "17"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "18"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "19"}]},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "14"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "15"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "16"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "17"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "18"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "19"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "20"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "21"}]},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.runTestAfterInit_Block_entry68_proc_U0", "Parent" : "0",
 		"CDFG" : "runTestAfterInit_Block_entry68_proc",
 		"Protocol" : "ap_ctrl_hs",
@@ -319,17 +319,17 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "checkId", "Type" : "None", "Direction" : "I"},
-			{"Name" : "checkId_c16", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "22", "DependentChanDepth" : "10", "DependentChanType" : "2",
+			{"Name" : "checkId_c16", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["4"], "DependentChan" : "24", "DependentChanDepth" : "10", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "checkId_c16_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_test_U0", "Parent" : "0", "Child" : ["5", "8", "9", "10"],
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_test_U0", "Parent" : "0", "Child" : ["5", "10", "11", "12"],
 		"CDFG" : "run_test",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "8",
-		"VariableLatency" : "0", "ExactLatency" : "27", "EstimateLatencyMin" : "27", "EstimateLatencyMax" : "27",
+		"VariableLatency" : "0", "ExactLatency" : "72", "EstimateLatencyMin" : "72", "EstimateLatencyMax" : "72",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -338,28 +338,28 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "checkId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["3"], "DependentChan" : "22", "DependentChanDepth" : "10", "DependentChanType" : "2",
+			{"Name" : "checkId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["3"], "DependentChan" : "24", "DependentChanDepth" : "10", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "checkId_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_read1", "Type" : "None", "Direction" : "I", "DependentProc" : ["3"], "DependentChan" : "23", "DependentChanDepth" : "10", "DependentChanType" : "1"},
-			{"Name" : "checkId_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["11"], "DependentChan" : "24", "DependentChanDepth" : "5", "DependentChanType" : "2",
+			{"Name" : "p_read1", "Type" : "None", "Direction" : "I", "DependentProc" : ["3"], "DependentChan" : "25", "DependentChanDepth" : "10", "DependentChanType" : "1"},
+			{"Name" : "checkId_c", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["13"], "DependentChan" : "26", "DependentChanDepth" : "10", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "checkId_c_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "12"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "13"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "14"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "15"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "16"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "17"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "18"},
-			{"Name" : "run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "19"}]},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208", "Parent" : "4", "Child" : ["6", "7"],
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "14"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "15"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "16"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "17"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "18"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "19"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "20"},
+			{"Name" : "run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data", "Type" : "Memory", "Direction" : "I", "DependentProc" : ["2"], "DependentChan" : "21"}]},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208", "Parent" : "4", "Child" : ["6", "7", "8", "9"],
 		"CDFG" : "find_region",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "8",
-		"VariableLatency" : "0", "ExactLatency" : "9", "EstimateLatencyMin" : "9", "EstimateLatencyMax" : "9",
+		"VariableLatency" : "0", "ExactLatency" : "54", "EstimateLatencyMin" : "54", "EstimateLatencyMax" : "54",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "1",
@@ -370,19 +370,21 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "n_regions", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_23", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_24", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_25", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_26", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_27", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_28", "Type" : "None", "Direction" : "I"},
-			{"Name" : "d_read_29", "Type" : "None", "Direction" : "I"}]},
+			{"Name" : "d_read_15", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_16", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_17", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_18", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_19", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_20", "Type" : "None", "Direction" : "I"},
+			{"Name" : "d_read_21", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208.fcmp_32ns_32ns_1_2_no_dsp_1_U19", "Parent" : "5"},
 	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208.fcmp_32ns_32ns_1_2_no_dsp_1_U20", "Parent" : "5"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_x_U31", "Parent" : "4"},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_x_U32", "Parent" : "4"},
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208.fcmp_32ns_32ns_1_2_no_dsp_1_U21", "Parent" : "5"},
+	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_find_region_fu_208.fcmp_32ns_32ns_1_2_no_dsp_1_U22", "Parent" : "5"},
 	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_x_U33", "Parent" : "4"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.writeOutcome_U0", "Parent" : "0",
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_x_U34", "Parent" : "4"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_x_U35", "Parent" : "4"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.writeOutcome_U0", "Parent" : "0",
 		"CDFG" : "writeOutcome",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
@@ -402,33 +404,33 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "outcomeInRam", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["1"], "DependentChan" : "21", "DependentChanDepth" : "14", "DependentChanType" : "2",
+			{"Name" : "outcomeInRam", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["1"], "DependentChan" : "23", "DependentChanDepth" : "19", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "outcomeInRam_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "checkId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["4"], "DependentChan" : "24", "DependentChanDepth" : "5", "DependentChanType" : "2",
+			{"Name" : "checkId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["4"], "DependentChan" : "26", "DependentChanDepth" : "10", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "checkId_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "taskId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["1"], "DependentChan" : "20", "DependentChanDepth" : "14", "DependentChanType" : "2",
+			{"Name" : "taskId", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["1"], "DependentChan" : "22", "DependentChanDepth" : "19", "DependentChanType" : "2",
 				"BlockSignal" : [
 					{"Name" : "taskId_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : ["4"], "DependentChan" : "25", "DependentChanDepth" : "2", "DependentChanType" : "1"},
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : ["4"], "DependentChan" : "27", "DependentChanDepth" : "2", "DependentChanType" : "1"},
 			{"Name" : "toScheduler", "Type" : "Axis", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "toScheduler_TDATA_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7_U", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6_U", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5_U", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4_U", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3_U", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2_U", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1_U", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_U", "Parent" : "0"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.taskId_c_U", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.outcomeInRam_c_U", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.checkId_c16_U", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.n_regions_V_load_loc_channel_U", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.checkId_c_U", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.error_U", "Parent" : "0"}]}
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7_U", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6_U", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5_U", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4_U", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3_U", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2_U", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1_U", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_U", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.taskId_c_U", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.outcomeInRam_c_U", "Parent" : "0"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.checkId_c16_U", "Parent" : "0"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.n_regions_V_load_loc_channel_U", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.checkId_c_U", "Parent" : "0"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.error_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -439,14 +441,14 @@ set ArgLastReadFirstWriteLatency {
 		checkId {Type I LastRead 0 FirstWrite -1}
 		outcomeInRam {Type I LastRead 0 FirstWrite -1}
 		toScheduler {Type O LastRead -1 FirstWrite 65}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1 {Type IO LastRead -1 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1 {Type IO LastRead -1 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data {Type IO LastRead -1 FirstWrite -1}
 		n_regions_V {Type I LastRead 0 FirstWrite -1}}
 	entry_proc {
 		taskId {Type I LastRead 0 FirstWrite -1}
@@ -457,14 +459,14 @@ set ArgLastReadFirstWriteLatency {
 		gmem {Type I LastRead 70 FirstWrite -1}
 		inputDataInRam {Type I LastRead 0 FirstWrite -1}
 		checkId {Type I LastRead 7 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1 {Type O LastRead -1 FirstWrite 71}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data {Type O LastRead -1 FirstWrite 71}}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1 {Type O LastRead -1 FirstWrite 71}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data {Type O LastRead -1 FirstWrite 71}}
 	runTestAfterInit_Block_entry68_proc {
 		checkId {Type I LastRead 0 FirstWrite -1}
 		checkId_c16 {Type O LastRead -1 FirstWrite 0}
@@ -473,24 +475,24 @@ set ArgLastReadFirstWriteLatency {
 		checkId {Type I LastRead 0 FirstWrite -1}
 		p_read1 {Type I LastRead 7 FirstWrite -1}
 		checkId_c {Type O LastRead -1 FirstWrite 0}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_7 {Type I LastRead 0 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_6 {Type I LastRead 2 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_5 {Type I LastRead 4 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_4 {Type I LastRead 6 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_3 {Type I LastRead 8 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_2 {Type I LastRead 11 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_1 {Type I LastRead 13 FirstWrite -1}
-		run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data {Type I LastRead 15 FirstWrite -1}}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_7 {Type I LastRead 0 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_6 {Type I LastRead 2 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_5 {Type I LastRead 4 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_4 {Type I LastRead 6 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_3 {Type I LastRead 8 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_2 {Type I LastRead 11 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_1 {Type I LastRead 13 FirstWrite -1}
+		run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data {Type I LastRead 15 FirstWrite -1}}
 	find_region {
 		n_regions {Type I LastRead 0 FirstWrite -1}
 		d_read {Type I LastRead 0 FirstWrite -1}
-		d_read_23 {Type I LastRead 1 FirstWrite -1}
-		d_read_24 {Type I LastRead 2 FirstWrite -1}
-		d_read_25 {Type I LastRead 3 FirstWrite -1}
-		d_read_26 {Type I LastRead 4 FirstWrite -1}
-		d_read_27 {Type I LastRead 6 FirstWrite -1}
-		d_read_28 {Type I LastRead 5 FirstWrite -1}
-		d_read_29 {Type I LastRead 7 FirstWrite -1}}
+		d_read_15 {Type I LastRead 0 FirstWrite -1}
+		d_read_16 {Type I LastRead 1 FirstWrite -1}
+		d_read_17 {Type I LastRead 2 FirstWrite -1}
+		d_read_18 {Type I LastRead 2 FirstWrite -1}
+		d_read_19 {Type I LastRead 3 FirstWrite -1}
+		d_read_20 {Type I LastRead 0 FirstWrite -1}
+		d_read_21 {Type I LastRead 3 FirstWrite -1}}
 	writeOutcome {
 		gmem {Type O LastRead 5 FirstWrite 2}
 		outcomeInRam {Type I LastRead 0 FirstWrite -1}
@@ -516,5 +518,5 @@ set Spec2ImplPortList {
 	checkId { ap_none {  { checkId in_data 0 16 }  { checkId_ap_vld in_vld 0 1 } } }
 	outcomeInRam { ap_none {  { outcomeInRam in_data 0 64 }  { outcomeInRam_ap_vld in_vld 0 1 } } }
 	toScheduler { axis {  { toScheduler_TDATA out_data 1 8 }  { toScheduler_TVALID out_vld 1 1 }  { toScheduler_TREADY out_acc 0 1 } } }
-	n_regions_V { ap_memory {  { n_regions_V_address0 mem_address 1 7 }  { n_regions_V_ce0 mem_ce 1 1 }  { n_regions_V_d0 mem_din 1 8 }  { n_regions_V_q0 mem_dout 0 8 }  { n_regions_V_we0 mem_we 1 1 }  { n_regions_V_address1 mem_address 1 7 }  { n_regions_V_ce1 mem_ce 1 1 }  { n_regions_V_d1 mem_din 1 8 }  { n_regions_V_q1 mem_dout 0 8 }  { n_regions_V_we1 mem_we 1 1 } } }
+	n_regions_V { ap_memory {  { n_regions_V_address0 mem_address 1 6 }  { n_regions_V_ce0 mem_ce 1 1 }  { n_regions_V_d0 mem_din 1 8 }  { n_regions_V_q0 mem_dout 0 8 }  { n_regions_V_we0 mem_we 1 1 }  { n_regions_V_address1 mem_address 1 6 }  { n_regions_V_ce1 mem_ce 1 1 }  { n_regions_V_d1 mem_din 1 8 }  { n_regions_V_q1 mem_dout 0 8 }  { n_regions_V_we1 mem_we 1 1 } } }
 }

@@ -15,7 +15,7 @@ set C_modelType { int 8 }
 set C_modelArgList {
 	{ checkId int 16 regular  }
 	{ checkId_c16 int 16 regular {fifo 1}  }
-	{ n_regions_V int 8 regular {array 128 { 1 3 } 1 1 } {global 0}  }
+	{ n_regions_V int 8 regular {array 64 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "checkId", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
@@ -38,7 +38,7 @@ set portList {
 	{ checkId_c16_fifo_cap sc_in sc_lv 5 signal 1 } 
 	{ checkId_c16_full_n sc_in sc_logic 1 signal 1 } 
 	{ checkId_c16_write sc_out sc_logic 1 signal 1 } 
-	{ n_regions_V_address0 sc_out sc_lv 7 signal 2 } 
+	{ n_regions_V_address0 sc_out sc_lv 6 signal 2 } 
 	{ n_regions_V_ce0 sc_out sc_logic 1 signal 2 } 
 	{ n_regions_V_q0 sc_in sc_lv 8 signal 2 } 
 	{ ap_return sc_out sc_lv 8 signal -1 } 
@@ -57,7 +57,7 @@ set NewPortList {[
  	{ "name": "checkId_c16_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "checkId_c16", "role": "fifo_cap" }} , 
  	{ "name": "checkId_c16_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId_c16", "role": "full_n" }} , 
  	{ "name": "checkId_c16_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "checkId_c16", "role": "write" }} , 
- 	{ "name": "n_regions_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address0" }} , 
+ 	{ "name": "n_regions_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "n_regions_V", "role": "address0" }} , 
  	{ "name": "n_regions_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "n_regions_V", "role": "ce0" }} , 
  	{ "name": "n_regions_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "n_regions_V", "role": "q0" }} , 
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
@@ -104,5 +104,5 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	checkId { ap_none {  { checkId in_data 0 16 } } }
 	checkId_c16 { ap_fifo {  { checkId_c16_din fifo_port_we 1 16 }  { checkId_c16_num_data_valid fifo_status_num_data_valid 0 5 }  { checkId_c16_fifo_cap fifo_update 0 5 }  { checkId_c16_full_n fifo_status 0 1 }  { checkId_c16_write fifo_data 1 1 } } }
-	n_regions_V { ap_memory {  { n_regions_V_address0 mem_address 1 7 }  { n_regions_V_ce0 mem_ce 1 1 }  { n_regions_V_q0 in_data 0 8 } } }
+	n_regions_V { ap_memory {  { n_regions_V_address0 mem_address 1 6 }  { n_regions_V_ce0 mem_ce 1 1 }  { n_regions_V_q0 in_data 0 8 } } }
 }

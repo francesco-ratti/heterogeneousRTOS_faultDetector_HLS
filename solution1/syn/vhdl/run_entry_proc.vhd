@@ -20,14 +20,14 @@ port (
     ap_ready : OUT STD_LOGIC;
     taskId : IN STD_LOGIC_VECTOR (7 downto 0);
     taskId_c_din : OUT STD_LOGIC_VECTOR (7 downto 0);
-    taskId_c_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-    taskId_c_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
+    taskId_c_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
+    taskId_c_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
     taskId_c_full_n : IN STD_LOGIC;
     taskId_c_write : OUT STD_LOGIC;
     outcomeInRam : IN STD_LOGIC_VECTOR (63 downto 0);
     outcomeInRam_c_din : OUT STD_LOGIC_VECTOR (63 downto 0);
-    outcomeInRam_c_num_data_valid : IN STD_LOGIC_VECTOR (4 downto 0);
-    outcomeInRam_c_fifo_cap : IN STD_LOGIC_VECTOR (4 downto 0);
+    outcomeInRam_c_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
+    outcomeInRam_c_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
     outcomeInRam_c_full_n : IN STD_LOGIC;
     outcomeInRam_c_write : OUT STD_LOGIC );
 end;

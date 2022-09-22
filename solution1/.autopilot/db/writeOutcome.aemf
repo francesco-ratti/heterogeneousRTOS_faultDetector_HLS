@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663772592512">
-  <ports id="1" name="gmem" type="PortType" coreId="577864944" bitwidth="256" direction="DirOut" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1663866439719">
+  <ports id="1" name="gmem" type="PortType" coreId="1988479888" bitwidth="256" direction="DirOut" iftype="IfTypeFifo">
     <dataInputObjs>getelementptr</dataInputObjs>
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
@@ -101,30 +101,30 @@
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="taskId_read" lineNumber="317" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="writeOutcome" bitwidth="8" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="3" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="359" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="317" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="taskId_read" lineNumber="335" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="writeOutcome" bitwidth="8" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="381" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="335" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
         <dataInputObjs>taskId</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp" rtlName="tmp_fu_147_p3" coreId="577435864" bitwidth="17" opcode="bitconcatenate" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp" rtlName="tmp_fu_147_p3" coreId="2296438380" bitwidth="17" opcode="bitconcatenate" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="p_cast7_i" rtlName="p_cast7_i_fu_155_p1" coreId="0" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="p_cast7_i" rtlName="p_cast7_i_fu_155_p1" coreId="1992150704" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <dataInputObjs>bitconcatenate</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="empty" rtlName="empty_fu_159_p1" coreId="0" bitwidth="5" opcode="trunc" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="empty" rtlName="empty_fu_159_p1" coreId="1987456000" bitwidth="5" opcode="trunc" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty_35" rtlName="empty_35_fu_163_p1" coreId="0" bitwidth="4" opcode="trunc" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty_35" rtlName="empty_35_fu_163_p1" coreId="1987518568" bitwidth="4" opcode="trunc" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_cast_i" rtlName="p_cast_i_fu_167_p3" coreId="3526413614" bitwidth="5" opcode="bitconcatenate" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_cast_i" rtlName="p_cast_i_fu_167_p3" coreId="0" bitwidth="5" opcode="bitconcatenate" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <constName>empty</constName>
@@ -140,7 +140,7 @@
         <dataOutputObjs>partselect</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="error_cast_i" rtlName="error_cast_i_fu_223_p1" coreId="577957960" bitwidth="249" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="error_cast_i" rtlName="error_cast_i_fu_223_p1" coreId="1985693152" bitwidth="249" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>shl</dataOutputObjs>
       </node_objs>
@@ -151,7 +151,7 @@
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_cast8_i" rtlName="p_cast8_i_fu_193_p1" coreId="1948279909" bitwidth="32" opcode="zext" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_cast8_i" rtlName="p_cast8_i_fu_193_p1" coreId="1988401504" bitwidth="32" opcode="zext" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>shl</dataOutputObjs>
       </node_objs>
@@ -160,12 +160,12 @@
         <dataOutputObjs>write</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="tmp_2" rtlName="tmp_2_fu_227_p3" coreId="0" bitwidth="8" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="tmp_2" rtlName="tmp_2_fu_227_p3" coreId="1992125616" bitwidth="8" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="p_cast2_i" rtlName="p_cast2_i_fu_234_p1" coreId="578231472" bitwidth="249" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="p_cast2_i" rtlName="p_cast2_i_fu_234_p1" coreId="608" bitwidth="249" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
         <dataInputObjs>bitconcatenate</dataInputObjs>
         <dataOutputObjs>shl</dataOutputObjs>
       </node_objs>
@@ -174,20 +174,20 @@
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="p_cast9_i" rtlName="p_cast9_i_fu_254_p1" coreId="578213552" bitwidth="256" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="p_cast9_i" rtlName="p_cast9_i_fu_254_p1" coreId="1988113320" bitwidth="256" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
         <dataInputObjs>shl</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_cast3_i" rtlName="p_cast3_i_reg_320" coreId="96" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_cast3_i" rtlName="p_cast3_i_reg_320" coreId="2282823175" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="p_cast3_cast_i" rtlName="p_cast3_cast_i_fu_244_p1" coreId="3526423405" bitwidth="64" opcode="sext" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="p_cast3_cast_i" rtlName="p_cast3_cast_i_fu_244_p1" coreId="1987476304" bitwidth="64" opcode="sext" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="gmem_addr" coreId="577085984" bitwidth="256" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="gmem_addr" coreId="1987476832" bitwidth="256" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>gmem</dataOutputObjs>
         <dataOutputObjs>writereq</dataOutputObjs>
@@ -212,7 +212,7 @@
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="p_cast10_i" rtlName="p_cast10_i_fu_263_p1" coreId="578148720" bitwidth="32" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="p_cast10_i" rtlName="p_cast10_i_fu_263_p1" coreId="64" bitwidth="32" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>shl</dataOutputObjs>
       </node_objs>
@@ -221,7 +221,7 @@
         <dataOutputObjs>write</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="tmp_3" rtlName="tmp_3_fu_273_p3" coreId="578155200" bitwidth="8" opcode="bitconcatenate" nodeLabel="3.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="tmp_3" rtlName="tmp_3_fu_273_p3" coreId="1988407296" bitwidth="8" opcode="bitconcatenate" nodeLabel="3.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
         <constName>empty</constName>
@@ -235,20 +235,20 @@
         <dataOutputObjs>zext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_cast11_i" rtlName="p_cast11_i_fu_300_p1" coreId="3526876383" bitwidth="256" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_cast11_i" rtlName="p_cast11_i_fu_300_p1" coreId="304" bitwidth="256" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
         <dataInputObjs>shl</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="p_cast6_i" rtlName="p_cast6_i_reg_325" coreId="7955819" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="p_cast6_i" rtlName="p_cast6_i_reg_325" coreId="1988408752" bitwidth="59" opcode="partselect" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="p_cast6_cast_i" rtlName="p_cast6_cast_i_fu_290_p1" coreId="577952432" bitwidth="64" opcode="sext" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="p_cast6_cast_i" rtlName="p_cast6_cast_i_fu_290_p1" coreId="1952802674" bitwidth="64" opcode="sext" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="gmem_addr_1" coreId="1701076836" bitwidth="256" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="gmem_addr_1" coreId="0" bitwidth="256" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>gmem</dataOutputObjs>
         <dataOutputObjs>writereq</dataOutputObjs>
@@ -267,17 +267,17 @@
       <node_objs xsi:type="cdfg:CdfgNode" id="50" name="empty_47" coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="113" bitwidth="1" opcode="writeresp" nodeLabel="5.0" nodeLatency="67" m_display="0" m_delay="14.6" m_topoIndex="39" m_clusterGroupNumber="-1">
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="br_ln326" lineNumber="326" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1952670054" contextFuncName="writeOutcome" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="359" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="326" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="br_ln344" lineNumber="344" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1892544208" contextFuncName="writeOutcome" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="381" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="344" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
         <dataInputObjs>read</dataInputObjs>
         <controlInputObjs>writeOutcome.exit</controlInputObjs>
         <controlInputObjs>if.then.i</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>317</validLinenumbers>
-        <validLinenumbers>326</validLinenumbers>
-        <validLinenumbers>359</validLinenumbers>
+        <validLinenumbers>335</validLinenumbers>
+        <validLinenumbers>344</validLinenumbers>
+        <validLinenumbers>381</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="55" name="if.then.i" type="BlockType">
@@ -289,17 +289,17 @@
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>toScheduler</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="br_ln327" lineNumber="327" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="578148720" contextFuncName="writeOutcome" opcode="br" nodeLabel="65.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="359" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="327" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="br_ln345" lineNumber="345" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1987457712" contextFuncName="writeOutcome" opcode="br" nodeLabel="65.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="381" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="345" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
         <controlInputObjs>writeOutcome.exit</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h">
         <validLinenumbers>174</validLinenumbers>
       </fileValidLineNumbers>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>327</validLinenumbers>
-        <validLinenumbers>359</validLinenumbers>
+        <validLinenumbers>345</validLinenumbers>
+        <validLinenumbers>381</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="57" name="writeOutcome.exit" type="BlockType">
@@ -307,11 +307,11 @@
       <controlInputObjs>if.then.i</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="_ln359" lineNumber="359" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="72.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="359" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="_ln381" lineNumber="381" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="72.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="381" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-        <validLinenumbers>359</validLinenumbers>
+        <validLinenumbers>381</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
