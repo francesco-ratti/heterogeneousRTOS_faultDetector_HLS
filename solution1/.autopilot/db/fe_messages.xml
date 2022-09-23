@@ -1,5 +1,7 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:397:36" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:447:15" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:456:36" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:472:15" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_ref.h:724:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -24,31 +26,22 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:119:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="update_train_regions" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:141:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="score_region" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:145:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="score_region" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:152:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="score_region" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:176:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="find_closest_region" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=128" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="find_closest_region" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=64" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:198:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="merge_regions" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:182:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="find_closest_region" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:200:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="merge_regions" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:193:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="find_closest_region" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:213:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="merge_regions" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:229:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:267:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="insert_point" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:239:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:295:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="insert_point" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:307:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="insert_point" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/utils/x_hls_utils.h:250:9" msg_body="HLS pragma dump">
@@ -654,20 +647,26 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_hypot_apfixed.h:196:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="hypot_fixed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:356:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:405:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="writeOutcome" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=8" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:369:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:423:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="read_test" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=8" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:379:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:433:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run_test" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=8" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:391:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:445:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runTestAfterInit" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:411:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:448:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runTestAfterInit" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:470:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runTrainAfterInit" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:473:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runTrainAfterInit" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data_key complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution1/csynth.tcl:18:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=run" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
@@ -675,80 +674,56 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=run" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:421:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:485:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = trainedRegions" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:422:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:486:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = realcheckId" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:423:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:487:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:424:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:488:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=sharedMem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:425:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:489:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=toScheduler" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:432:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:433:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:495:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:434:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:496:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:436:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:437:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:498:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:438:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data_key complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:447:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:507:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:452:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:512:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:186:15" msg_body="Inlining function 'score_region(REGION_T const*, REGION_T const*)' into 'find_closest_region(REGION_T const*, ap_int&lt;8&gt;, int, float*)'">
-        <args Callee="score_region(REGION_T const*, REGION_T const*)" Caller="find_closest_region(REGION_T const*, ap_int&lt;8&gt;, int, float*)"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:181:20" msg_body="Loop 'VITIS_LOOP_181_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_181_1"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:265:4" msg_body="Inlining function 'merge_regions(REGION_T*, int, int)' into 'insert_point(REGION_T*, ap_int&lt;8&gt;&amp;, float const*)'">
-        <args Callee="merge_regions(REGION_T*, int, int)" Caller="insert_point(REGION_T*, ap_int&lt;8&gt;&amp;, float const*)"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:192:22" msg_body="Loop 'VITIS_LOOP_192_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_192_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:179:20" msg_body="Loop 'VITIS_LOOP_179_1' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_179_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:259:0" msg_body="Unrolling loop 'VITIS_LOOP_306_4' (detector_solid/abs_solid_detector.cpp:306:22) in function 'insert_point' completely with a factor of 15">
+        <args Factor="15" LoopLoc="detector_solid/abs_solid_detector.cpp:306:22" LoopName="VITIS_LOOP_306_4"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:144:20" msg_body="Loop 'VITIS_LOOP_144_1' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_144_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:259:0" msg_body="Unrolling loop 'VITIS_LOOP_294_3' (detector_solid/abs_solid_detector.cpp:294:22) in function 'insert_point' completely with a factor of 8">
+        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:294:22" LoopName="VITIS_LOOP_294_3"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:151:20" msg_body="Loop 'VITIS_LOOP_151_2' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_151_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:259:0" msg_body="Unrolling loop 'VITIS_LOOP_266_1' (detector_solid/abs_solid_detector.cpp:266:21) in function 'insert_point' completely with a factor of 8">
+        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:266:21" LoopName="VITIS_LOOP_266_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:221:0" msg_body="Unrolling loop 'VITIS_LOOP_212_2' (detector_solid/abs_solid_detector.cpp:212:20) in function 'insert_point' completely with a factor of 15">
-        <args Factor="15" LoopLoc="detector_solid/abs_solid_detector.cpp:212:20" LoopName="VITIS_LOOP_212_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:174:0" msg_body="Unrolling loop 'VITIS_LOOP_181_1' (detector_solid/abs_solid_detector.cpp:181:20) in function 'find_closest_region' completely with a factor of 16">
+        <args Factor="16" LoopLoc="detector_solid/abs_solid_detector.cpp:181:20" LoopName="VITIS_LOOP_181_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:221:0" msg_body="Unrolling loop 'VITIS_LOOP_199_1' (detector_solid/abs_solid_detector.cpp:199:20) in function 'insert_point' completely with a factor of 8">
-        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:199:20" LoopName="VITIS_LOOP_199_1"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:221:0" msg_body="Unrolling loop 'VITIS_LOOP_238_2' (detector_solid/abs_solid_detector.cpp:238:21) in function 'insert_point' completely with a factor of 8">
-        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:238:21" LoopName="VITIS_LOOP_238_2"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:221:0" msg_body="Unrolling loop 'VITIS_LOOP_228_1' (detector_solid/abs_solid_detector.cpp:228:21) in function 'insert_point' completely with a factor of 8">
-        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:228:21" LoopName="VITIS_LOOP_228_1"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:174:0" msg_body="Unrolling loop 'VITIS_LOOP_179_1' (detector_solid/abs_solid_detector.cpp:179:20) in function 'find_closest_region' completely with a factor of 16">
-        <args Factor="16" LoopLoc="detector_solid/abs_solid_detector.cpp:179:20" LoopName="VITIS_LOOP_179_1"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:174:0" msg_body="Unrolling loop 'VITIS_LOOP_151_2' (detector_solid/abs_solid_detector.cpp:151:20) in function 'find_closest_region' completely with a factor of 8">
-        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:151:20" LoopName="VITIS_LOOP_151_2"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:174:0" msg_body="Unrolling loop 'VITIS_LOOP_144_1' (detector_solid/abs_solid_detector.cpp:144:20) in function 'find_closest_region' completely with a factor of 8">
-        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:144:20" LoopName="VITIS_LOOP_144_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:174:0" msg_body="Unrolling loop 'VITIS_LOOP_192_2' (detector_solid/abs_solid_detector.cpp:192:22) in function 'find_closest_region' completely with a factor of 8">
+        <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:192:22" LoopName="VITIS_LOOP_192_2"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:90:0" msg_body="Unrolling loop 'VITIS_LOOP_92_1' (detector_solid/abs_solid_detector.cpp:92:19) in function 'is_valid' completely with a factor of 8">
         <args Factor="8" LoopLoc="detector_solid/abs_solid_detector.cpp:92:19" LoopName="VITIS_LOOP_92_1"/>
@@ -762,23 +737,23 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:90:0" msg_body="Inlining function 'std::isnan(float)' into 'is_valid(float const*)'">
         <args Callee="std::isnan(float)" Caller="is_valid(float const*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:221:0" msg_body="Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_int&lt;8&gt;&amp;, float const*)'">
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:259:0" msg_body="Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_int&lt;8&gt;&amp;, float const*)'">
         <args Callee="is_valid(float const*)" Caller="insert_point(REGION_T*, ap_int&lt;8&gt;&amp;, float const*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:448:27" msg_body="The program may have out of bound array access"/>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:448:25" msg_body="The program may have out of bound array access"/>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:453:29" msg_body="The program may have out of bound array access"/>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:427:0" msg_body="Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE8data_key': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE8data_key"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:429:0" msg_body="Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions': Complete partitioning on dimension 2.">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:508:27" msg_body="The program may have out of bound array access"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:508:25" msg_body="The program may have out of bound array access"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:513:29" msg_body="The program may have out of bound array access"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:491:0" msg_body="Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-356" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:448:2" msg_body="Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer."/>
-    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:419:0" msg_body="Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int&lt;8&gt;*, ap_int&lt;8&gt;*, ap_int&lt;32&gt;*, hls::stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:472:0" msg_body="Applying array_partition to '_ZZ17runTrainAfterInitPf6ap_intILi16EEPA16_8REGION_TPS0_ILi8EEE8data_key': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ17runTrainAfterInitPf6ap_intILi16EEPA16_8REGION_TPS0_ILi8EEE8data_key"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-356" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:508:2" msg_body="Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer."/>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:483:0" msg_body="Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int&lt;8&gt;*, ap_int&lt;8&gt;*, ap_int&lt;32&gt;*, hls::stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
         <args Function="run(controlStr, REGION_T (*) [16], ap_int&lt;8&gt;*, ap_int&lt;8&gt;*, ap_int&lt;32&gt;*, hls::stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:419:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'toScheduler'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:483:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'toScheduler'">
         <args Name="toScheduler"/>
     </msg>
 </xilinx:hls_fe_msgs>
