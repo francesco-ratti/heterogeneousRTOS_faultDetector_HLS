@@ -32,6 +32,8 @@ const float thresh=THRESH;
 
 
 int find_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const float d[MAX_AOV_DIM]){
+#pragma HLS PIPELINE II=8
+
 	int idx = -1;
 	float score = -1;
 	for(int i=0; i < MAX_REGIONS; i++){
@@ -171,65 +173,65 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 //	return score;
 //}
 
-int find_closest_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const int idx, float * score){
-	//#pragma HLS inline
-#pragma HLS PIPELINE II=32
-
-	float bestscore=0.0;
-
-	int id = -1;
-	for(int i=0; i < MAX_REGIONS; i++){
-#pragma HLS unroll
-
-		if (i>=n_regions)
-			break;
-		if(i != idx) {
-			//printf("score [%d,%d]:", idx, i);
-
-			float distance = 0;
-			float overlap=1;
-
-			for(int j=0; j < MAX_AOV_DIM; j++){
-#pragma HLS unroll
-
-
-				float d = (regions[idx].center[j] - regions[i].center[j]);
-				distance += d*d;
-
-
-
-				float d1 = regions[idx].max[j] - regions[idx].min[j];
-				float d2 = regions[i].max[j] - regions[i].min[j];
-				float ov;
-				if(regions[idx].min[j] < regions[i].min[j])
-					ov = d1 - (regions[i].min[j] - regions[idx].min[j]);
-				else
-					ov = d2 - (regions[idx].min[j] - regions[i].min[j]);
-				ov = ov < 0 ? 0 : ov;
-				overlap *= ov;
-			}
-			float sc;
-			//printf("b:%f d:%f o:%f = %f\n", behavior, distance, overlap, score);
-			//if we are overlapping with another group, merge regardless.
-			if(overlap > 0)
-				sc = overlap;
-			else
-				//severely penalize groups where there is an interfering group
-				sc = -distance; //negatively impact behavior.
-
-
-			//					score_region(&(regions[idx]), &(regions[i]));
-
-
-			if(id == -1 || sc > bestscore){
-				id = i;
-				bestscore = sc;
-			}
-		}
-	}
-	*score=bestscore;
-	return id;
-}
+//int find_closest_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const int idx, float * score){
+//	//#pragma HLS inline
+//#pragma HLS PIPELINE II=32
+//
+//	float bestscore=0.0;
+//
+//	int id = -1;
+//	for(int i=0; i < MAX_REGIONS; i++){
+//#pragma HLS unroll
+//
+//		if (i>=n_regions)
+//			break;
+//		if(i != idx) {
+//			//printf("score [%d,%d]:", idx, i);
+//
+//			float distance = 0;
+//			float overlap=1;
+//
+//			for(int j=0; j < MAX_AOV_DIM; j++){
+//#pragma HLS unroll
+//
+//
+//				float d = (regions[idx].center[j] - regions[i].center[j]);
+//				distance += d*d;
+//
+//
+//
+//				float d1 = regions[idx].max[j] - regions[idx].min[j];
+//				float d2 = regions[i].max[j] - regions[i].min[j];
+//				float ov;
+//				if(regions[idx].min[j] < regions[i].min[j])
+//					ov = d1 - (regions[i].min[j] - regions[idx].min[j]);
+//				else
+//					ov = d2 - (regions[idx].min[j] - regions[i].min[j]);
+//				ov = ov < 0 ? 0 : ov;
+//				overlap *= ov;
+//			}
+//			float sc;
+//			//printf("b:%f d:%f o:%f = %f\n", behavior, distance, overlap, score);
+//			//if we are overlapping with another group, merge regardless.
+//			if(overlap > 0)
+//				sc = overlap;
+//			else
+//				//severely penalize groups where there is an interfering group
+//				sc = -distance; //negatively impact behavior.
+//
+//
+//			//					score_region(&(regions[idx]), &(regions[i]));
+//
+//
+//			if(id == -1 || sc > bestscore){
+//				id = i;
+//				bestscore = sc;
+//			}
+//		}
+//	}
+//	*score=bestscore;
+//	return id;
+//}
 
 ////merge r2 into r1
 //void merge_regions(region_t regions[MAX_REGIONS], const int id1, const int id2){
@@ -275,10 +277,75 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 			int merge_2=-1;
 			float score = 0;
 			for(int i=0; i < MAX_REGIONS; i++){
+//#pragma HLS unroll
+//#pragma HLS PIPELINE II=64
+
 				if (i>=n_regions)
 					break;
-				float tmp_score;//=0;
-				int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
+				float tmp_score=0;
+
+
+
+
+				//int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
+
+
+
+				//float bestscore=0.0;
+
+				int tmp_other = -1;
+				for(int k=0; k < MAX_REGIONS; k++){
+//			#pragma HLS unroll
+
+					if (k>=n_regions)
+						break;
+					if(k != i) {
+						//printf("score [%d,%d]:", i, k);
+
+						float distance = 0;
+						float overlap=1;
+
+						for(int j=0; j < MAX_AOV_DIM; j++){
+//			#pragma HLS unroll
+
+
+							float d = (regions[i].center[j] - regions[k].center[j]);
+							distance += d*d;
+
+
+
+							float d1 = regions[i].max[j] - regions[i].min[j];
+							float d2 = regions[k].max[j] - regions[k].min[j];
+							float ov;
+							if(regions[i].min[j] < regions[k].min[j])
+								ov = d1 - (regions[k].min[j] - regions[i].min[j]);
+							else
+								ov = d2 - (regions[i].min[j] - regions[k].min[j]);
+							ov = ov < 0 ? 0 : ov;
+							overlap *= ov;
+						}
+						float sc;
+						//printf("b:%f d:%f o:%f = %f\n", behavior, distance, overlap, score);
+						//if we are overlapping with another group, merge regardless.
+						if(overlap > 0)
+							sc = overlap;
+						else
+							//severely penalize groups where there is an interfering group
+							sc = -distance; //negatively impact behavior.
+
+
+
+						if(tmp_other == -1 || sc > tmp_score){
+							tmp_other = i;
+							tmp_score = sc;
+						}
+					}
+				}
+
+
+
+
+
 				if(merge_1 < 0 || tmp_score > score){
 					score = tmp_score;
 					merge_1 = i;
@@ -288,7 +355,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 			//merge_regions(regions, merge_1, merge_2);
 			//merge regions inlining
 			for(int i=0; i < MAX_AOV_DIM; i++){
-#pragma HLS unroll
+//#pragma HLS unroll
 				if(regions[merge_2].min[i] < regions[merge_1].min[i]){
 					regions[merge_1].min[i] = regions[merge_2].min[i];
 				}
@@ -300,7 +367,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 
 			//move everything over
 			for(int i=0; i < MAX_REGIONS-1; i++){
-#pragma HLS unroll
+//#pragma HLS unroll
 				if (i>=merge_2) {
 					regions[i] = regions[i+1];
 				}
@@ -488,7 +555,9 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 #pragma HLS reset variable=regions
 #pragma HLS reset variable=n_regions
 
-#pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
+#pragma HLS array_partition variable=regions complete //dim=2//cyclic factor=16  //should be MAX_REGIONS
+#pragma HLS array_partition variable=n_regions complete //dim=2//cyclic factor=16  //should be MAX_REGIONS
+
 
 	float * inputDataInRam=(float*) sharedMem;
 	OutcomeStr* outcomeInRam=(OutcomeStr*) (sharedMem+sizeOfInputData*MAX_CHECKS);
