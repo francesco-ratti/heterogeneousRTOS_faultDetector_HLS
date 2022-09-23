@@ -1,5 +1,0 @@
-<VitisHLS:BurstInfo>
-    <burst group="BURST_VERBOSE_PASSED" fe_name="BurstInferredPassed" src_info="detector_solid/abs_solid_detector.cpp:429:2" msg_id="214-116" msg_severity="INFO" msg_body="Sequential read of length 8 has been inferred" OldID="load-store-loop.load.3," ID="inputDataInRamseq" BundleName="gmem" VarName="inputDataInRam" LoopLoc="detector_solid/abs_solid_detector.cpp:429:2" LoopName="anonymous" ParentFunc="read_train(float*, float*)" Length="8" Direction="read"/>
-    <burst group="BURST_VERBOSE_PASSED" fe_name="BurstWidenedPassed" src_info="detector_solid/abs_solid_detector.cpp:429:2" msg_id="214-119" msg_severity="INFO" msg_body="Sequential read of 8 x 32bit words has been widened by 8: 1 x 256bit words" OldID="inputDataInRamseq," ID="wseq" BundleName="gmem" VarName="inputDataInRam" LoopLoc="detector_solid/abs_solid_detector.cpp:429:2" LoopName="anonymous" ParentFunc="read_train(float*, float*)" Length="1" Direction="read"/>
-</VitisHLS:BurstInfo>
-

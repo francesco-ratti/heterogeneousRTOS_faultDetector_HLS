@@ -46,7 +46,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTrainAfterInit_fu_297/insert_point_U0/grp_insert_point_Pipeline_VITIS_LOOP_254_3_fu_14091/grp_find_closest_region_fu_186/grp_find_closest_region_fu_186_activity": {
+				"grp_runTrainAfterInit_fu_297/insert_point_U0/grp_insert_point_Pipeline_VITIS_LOOP_277_2_fu_14091/grp_find_closest_region_fu_186/grp_find_closest_region_fu_186_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -56,7 +56,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTrainAfterInit_fu_297/insert_point_U0/grp_insert_point_Pipeline_VITIS_LOOP_254_3_fu_14091/grp_insert_point_Pipeline_VITIS_LOOP_254_3_fu_14091_activity": {
+				"grp_runTrainAfterInit_fu_297/insert_point_U0/grp_insert_point_Pipeline_VITIS_LOOP_277_2_fu_14091/grp_insert_point_Pipeline_VITIS_LOOP_277_2_fu_14091_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
