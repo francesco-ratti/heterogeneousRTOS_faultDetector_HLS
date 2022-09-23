@@ -21486,3 +21486,140 @@ Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
 Tool Version Limit: 2022.04
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=20
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog -vivado_clock 20 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: source ./detector_solid/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name run run 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (detector_solid/abs_solid_detector.cpp:440:15)
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:449:36)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (detector_solid/abs_solid_detector.cpp:465:15)
+WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file detector_solid/abs_solid_detector.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 19.7 seconds. CPU system time: 0.87 seconds. Elapsed time: 19.98 seconds; current allocated memory: 460.688 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_181_1' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:181:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_192_2' is marked as complete unroll implied by the pipeline pragma (detector_solid/abs_solid_detector.cpp:192:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_302_4' (detector_solid/abs_solid_detector.cpp:302:22) in function 'insert_point' completely with a factor of 15 (detector_solid/abs_solid_detector.cpp:259:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_290_3' (detector_solid/abs_solid_detector.cpp:290:22) in function 'insert_point' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:259:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_264_1' (detector_solid/abs_solid_detector.cpp:264:21) in function 'insert_point' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:259:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_181_1' (detector_solid/abs_solid_detector.cpp:181:20) in function 'find_closest_region' completely with a factor of 16 (detector_solid/abs_solid_detector.cpp:174:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_192_2' (detector_solid/abs_solid_detector.cpp:192:22) in function 'find_closest_region' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:174:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_92_1' (detector_solid/abs_solid_detector.cpp:92:19) in function 'is_valid' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:90:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_37_1' (detector_solid/abs_solid_detector.cpp:37:19) in function 'find_region' completely with a factor of 16 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_46_2' (detector_solid/abs_solid_detector.cpp:46:20) in function 'find_region' completely with a factor of 8 (detector_solid/abs_solid_detector.cpp:34:0)
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float const*)' (detector_solid/abs_solid_detector.cpp:90:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_int<8>&, float const*)' (detector_solid/abs_solid_detector.cpp:259:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:501:27)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:501:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (detector_solid/abs_solid_detector.cpp:506:29)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3run10controlStrPA16_8REGION_TP6ap_intILi8EES5_PS3_ILi32EERN3hls6streamIS4_Li0EEEE7regions': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:484:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ17runTrainAfterInitPf6ap_intILi16EEPA16_8REGION_TPS0_ILi8EEE8data_key': Complete partitioning on dimension 1. (detector_solid/abs_solid_detector.cpp:465:0)
+WARNING: [HLS 214-356] Array transformation on pointer indexing may lead to incorrect bank selection. Use array index instead of pointer. (detector_solid/abs_solid_detector.cpp:501:2)
+INFO: [HLS 214-354] Changing the port bit width of top function 'run(controlStr, REGION_T (*) [16], ap_int<8>*, ap_int<8>*, ap_int<32>*, hls::stream<ap_int<8>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:476:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'toScheduler' (detector_solid/abs_solid_detector.cpp:476:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 10.34 seconds. CPU system time: 0.33 seconds. Elapsed time: 10.66 seconds; current allocated memory: 461.484 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.484 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 11.73 seconds. CPU system time: 0 seconds. Elapsed time: 11.74 seconds; current allocated memory: 490.078 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1.83 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.85 seconds; current allocated memory: 524.383 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'read_train' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_277_2' (detector_solid/abs_solid_detector.cpp:276) in function 'insert_point' automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTrainAfterInit' (detector_solid/abs_solid_detector.cpp:462:1), detected/extracted 3 process function(s): 
+	 'entry_proc'
+	 'read_train'
+	 'insert_point'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (detector_solid/abs_solid_detector.cpp:262:18) in function 'insert_point'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:51:19) to (detector_solid/abs_solid_detector.cpp:39:6) in function 'find_region'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (detector_solid/abs_solid_detector.cpp:231:2) in function 'find_closest_region'... converting 33 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'insert_point' (detector_solid/abs_solid_detector.cpp:95:3)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'find_region' (detector_solid/abs_solid_detector.cpp:35:25)...435 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 38.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 38.17 seconds; current allocated memory: 576.172 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' (detector_solid/abs_solid_detector.cpp:506:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions' (detector_solid/abs_solid_detector.cpp:266:87)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions.1' (detector_solid/abs_solid_detector.cpp:266:56)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions.32' (detector_solid/abs_solid_detector.cpp:266:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions' 
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions.32' (detector_solid/abs_solid_detector.cpp:293:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions.1' (detector_solid/abs_solid_detector.cpp:296:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions' (detector_solid/abs_solid_detector.cpp:298:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'run(controlStr,REGION_T (*)[16],ap_int*,ap_int*,ap_int*,stream&)regions.32' (detector_solid/abs_solid_detector.cpp:305:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions' 
+WARNING: [HLS 200-1450] Process read_train has both a successor and writes an output to its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this output via a successor process.
+WARNING: [HLS 200-1449] Process insert_point has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 11.99 seconds. CPU system time: 0.01 seconds. Elapsed time: 12.02 seconds; current allocated memory: 681.496 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'run' ...
+WARNING: [SYN 201-506] An incorrect offset '4096' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '131072'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.74 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.78 seconds; current allocated memory: 706.812 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 706.852 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_train' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 708.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 708.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'find_region' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.85 seconds. CPU system time: 0.02 seconds. Elapsed time: 6.87 seconds; current allocated memory: 767.734 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 7.75 seconds. CPU system time: 0.01 seconds. Elapsed time: 7.74 seconds; current allocated memory: 767.734 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================

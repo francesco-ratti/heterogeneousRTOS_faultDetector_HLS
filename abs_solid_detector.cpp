@@ -173,7 +173,7 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 
 int find_closest_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const int idx, float * score){
 	//#pragma HLS inline
-#pragma HLS PIPELINE II=8
+#pragma HLS PIPELINE II=32
 
 	float bestscore=0.0;
 
