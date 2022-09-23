@@ -180,13 +180,11 @@ class AESL_RUNTIME_BC {
     fstream file_token;
     string mName;
 };
-unsigned int ap_apatb_toScheduler_cap_bc;
-static AESL_RUNTIME_BC __xlx_toScheduler_V_size_Reader("../tv/stream_size/stream_size_out_toScheduler.dat");
 struct __cosim_s6__ { char data[6]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s4__ { char data[4]; };
 struct __cosim_s32__ { char data[32]; };
-extern "C" void run(__cosim_s32__*, __cosim_s6__, int*, char*, char*, int, __cosim_s1__*);
+extern "C" void run(__cosim_s32__*, __cosim_s6__, int*, char*, char*, int, volatile void *);
 extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_realcheckId, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_sharedMem, volatile void * __xlx_apatb_param_toScheduler) {
   // Collect __xlx_sharedMem__tmp_vec
   vector<sc_bv<256> >__xlx_sharedMem__tmp_vec;
@@ -238,7 +236,7 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
   }
   // Collect __xlx_trainedRegions__tmp_vec
   vector<sc_bv<32> >__xlx_trainedRegions__tmp_vec;
-  for (int j = 0, e = 49152; j != e; ++j) {
+  for (int j = 0, e = 24576; j != e; ++j) {
     sc_bv<32> _xlx_tmp_sc;
     _xlx_tmp_sc.range(7, 0) = ((char*)__xlx_apatb_param_trainedRegions)[j*4+0];
     _xlx_tmp_sc.range(15, 8) = ((char*)__xlx_apatb_param_trainedRegions)[j*4+1];
@@ -246,7 +244,7 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
     _xlx_tmp_sc.range(31, 24) = ((char*)__xlx_apatb_param_trainedRegions)[j*4+3];
     __xlx_trainedRegions__tmp_vec.push_back(_xlx_tmp_sc);
   }
-  int __xlx_size_param_trainedRegions = 49152;
+  int __xlx_size_param_trainedRegions = 24576;
   int __xlx_offset_param_trainedRegions = 0;
   int __xlx_offset_byte_param_trainedRegions = 0*4;
   int* __xlx_trainedRegions__input_buffer= new int[__xlx_trainedRegions__tmp_vec.size()];
@@ -277,12 +275,9 @@ extern "C" void apatb_run_hw(__cosim_s6__* __xlx_apatb_param_contr, volatile voi
   for (int i = 0; i < __xlx_n_regions_in__tmp_vec.size(); ++i) {
     __xlx_n_regions_in__input_buffer[i] = __xlx_n_regions_in__tmp_vec[i].range(7, 0).to_uint64();
   }
-  //Create input buffer for toScheduler
-  ap_apatb_toScheduler_cap_bc = __xlx_toScheduler_V_size_Reader.read_size();
-  __cosim_s1__* __xlx_toScheduler_input_buffer= new __cosim_s1__[ap_apatb_toScheduler_cap_bc];
-auto* stoScheduler = bcsim::createStream((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler);
+auto* stoScheduler = bcsim::createStream(__xlx_apatb_param_toScheduler, 1);
   // DUT call
-  run(__xlx_sharedMem__input_buffer, *__xlx_apatb_param_contr, __xlx_trainedRegions__input_buffer, __xlx_realcheckId__input_buffer, __xlx_n_regions_in__input_buffer, __xlx_offset_byte_param_sharedMem, stoScheduler->data<__cosim_s1__>());
+  run(__xlx_sharedMem__input_buffer, *__xlx_apatb_param_contr, __xlx_trainedRegions__input_buffer, __xlx_realcheckId__input_buffer, __xlx_n_regions_in__input_buffer, __xlx_offset_byte_param_sharedMem, __xlx_apatb_param_toScheduler);
 // print __xlx_apatb_param_sharedMem
   sc_bv<256>*__xlx_sharedMem_output_buffer = new sc_bv<256>[__xlx_size_param_sharedMem];
   for (int i = 0; i < __xlx_size_param_sharedMem; ++i) {
@@ -353,5 +348,4 @@ auto* stoScheduler = bcsim::createStream((hls::stream<__cosim_s1__>*)__xlx_apatb
   for (int i = 0; i < __xlx_size_param_n_regions_in; ++i) {
     ((char*)__xlx_apatb_param_n_regions_in)[i] = __xlx_n_regions_in_output_buffer[i].to_uint();
   }
-stoScheduler->transfer((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler);
 }

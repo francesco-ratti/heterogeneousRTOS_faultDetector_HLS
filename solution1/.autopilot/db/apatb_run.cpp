@@ -30,8 +30,6 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_sharedMem "../tv/cdatafile/c.run.autotvout_sharedMem.dat"
 #define AUTOTB_TVIN_toScheduler "../tv/cdatafile/c.run.autotvin_toScheduler.dat"
 #define AUTOTB_TVOUT_toScheduler "../tv/cdatafile/c.run.autotvout_toScheduler.dat"
-#define WRAPC_STREAM_SIZE_OUT_toScheduler "../tv/stream_size/stream_size_out_toScheduler.dat"
-#define WRAPC_STREAM_EGRESS_STATUS_toScheduler "../tv/stream_size/stream_egress_status_toScheduler.dat"
 #define AUTOTB_TVIN_gmem "../tv/cdatafile/c.run.autotvin_gmem.dat"
 #define AUTOTB_TVOUT_gmem "../tv/cdatafile/c.run.autotvout_gmem.dat"
 
@@ -347,37 +345,7 @@ static AESL_FILE_HANDLER aesl_fh;
     static unsigned AESL_transaction_pc = 0;
     string AESL_token;
     string AESL_num;
-long __xlx_apatb_param_toScheduler_stream_buf_final_size;
 {
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(WRAPC_STREAM_SIZE_OUT_toScheduler);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){__xlx_apatb_param_toScheduler_stream_buf_final_size = atoi(AESL_token.c_str());
-
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  {
       static ifstream rtl_tv_out_file;
       if (!rtl_tv_out_file.is_open()) {
         rtl_tv_out_file.open(AUTOTB_TVOUT_PC_toScheduler);
@@ -396,7 +364,7 @@ long __xlx_apatb_param_toScheduler_stream_buf_final_size;
           exit(1);
         }
         if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          std::vector<sc_bv<8> > toScheduler_pc_buffer;
+          std::vector<sc_bv<8> > toScheduler_pc_buffer(1);
           int i = 0;
           bool has_unknown_value = false;
           rtl_tv_out_file >> AESL_token; //data
@@ -406,7 +374,7 @@ long __xlx_apatb_param_toScheduler_stream_buf_final_size;
   
             // push token into output port buffer
             if (AESL_token != "") {
-              toScheduler_pc_buffer.push_back(AESL_token.c_str());
+              toScheduler_pc_buffer[i] = AESL_token.c_str();;
               i++;
             }
   
@@ -420,34 +388,14 @@ long __xlx_apatb_param_toScheduler_stream_buf_final_size;
                  << endl; 
           }
   
-          if (i > 0) {for (int j = 0, e = i; j != e; ++j) {
-__cosim_s1__ xlx_stream_elt __attribute__ ((aligned));
-((char*)&xlx_stream_elt)[0*1+0] = toScheduler_pc_buffer[j].range(7, 0).to_int64();
-((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->write(xlx_stream_elt);
-}
-}
+          if (i > 0) {{
+		    int i = 0;
+            for (int j = 0, e = 1; j < e; j += 1, ++i) {((char*)__xlx_apatb_param_toScheduler)[j*1+0] = toScheduler_pc_buffer[i].range(7, 0).to_int64();
+}}}
         } // end transaction
       } // end file is good
     } // end post check logic bolck
-  #ifdef USE_BINARY_TV_FILE
-{
-transaction<256> tr(257);
-aesl_fh.read(AUTOTB_TVOUT_PC_gmem, tr.p, tr.tbytes);
-if (little_endian()) { tr.reorder(); }
-tr.send<32>((char*)__xlx_apatb_param_sharedMem, 257, 0);
-}
-#else
-try {
-static PostCheck<256> pc(AUTOTB_TVOUT_PC_gmem);
-pc.psize = 32;
-pc.param = (char*)__xlx_apatb_param_sharedMem;
-pc.depth = 257;
-pc.run(AESL_transaction_pc, 0);
-} catch (SimException &e) {
-  std::cout << "at line " << e.line << " occurred exception, " << e.msg << "\n";
-}
-#endif
-
+  
     AESL_transaction_pc++;
     return ;
   }
@@ -455,23 +403,21 @@ static unsigned AESL_transaction;
 static INTER_TCL_FILE tcl_file(INTER_TCL);
 std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
-aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_toScheduler);
-aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_toScheduler);
 CodeState = DUMP_INPUTS;
 unsigned __xlx_offset_byte_param_sharedMem = 0;
 unsigned __xlx_offset_byte_param_trainedRegions = 0;
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_trainedRegions, 'b');
-transaction<32> tr(49152);
+transaction<32> tr(24576);
   __xlx_offset_byte_param_trainedRegions = 0*4;
   if (__xlx_apatb_param_trainedRegions) {
-tr.import<4>((char*)__xlx_apatb_param_trainedRegions, 49152, 0);
+tr.import<4>((char*)__xlx_apatb_param_trainedRegions, 24576, 0);
   }
 aesl_fh.write(AUTOTB_TVIN_trainedRegions, tr.p, tr.tbytes);
 }
 
-  tcl_file.set_num(49152, &tcl_file.trainedRegions_depth);
+  tcl_file.set_num(24576, &tcl_file.trainedRegions_depth);
 #else
 // print trainedRegions Transactions
 {
@@ -479,7 +425,7 @@ aesl_fh.write(AUTOTB_TVIN_trainedRegions, begin_str(AESL_transaction));
 {
   __xlx_offset_byte_param_trainedRegions = 0*4;
 if (__xlx_apatb_param_trainedRegions) {
-for (size_t i = 0; i < 49152; ++i) {
+for (size_t i = 0; i < 24576; ++i) {
 unsigned char *pos = (unsigned char*)__xlx_apatb_param_trainedRegions + i * 4;
 std::string s = formatData(pos, 32);
 aesl_fh.write(AUTOTB_TVIN_trainedRegions, s);
@@ -487,7 +433,7 @@ aesl_fh.write(AUTOTB_TVIN_trainedRegions, s);
 }
 }
 
-  tcl_file.set_num(49152, &tcl_file.trainedRegions_depth);
+  tcl_file.set_num(24576, &tcl_file.trainedRegions_depth);
 aesl_fh.write(AUTOTB_TVIN_trainedRegions, end_str());
 }
 
@@ -558,8 +504,20 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 }
 
 #endif
-std::vector<__cosim_s1__> __xlx_apatb_param_toScheduler_stream_buf;
-long __xlx_apatb_param_toScheduler_stream_buf_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size();
+// print toScheduler Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_toScheduler, begin_str(AESL_transaction));
+if (__xlx_apatb_param_toScheduler) {
+for (int i = 0; i < 1; ++i) {
+auto *pos = (unsigned char*)__xlx_apatb_param_toScheduler+i*1;
+aesl_fh.write(AUTOTB_TVIN_toScheduler, formatData(pos, 8));
+}
+}
+
+  tcl_file.set_num(1, &tcl_file.toScheduler_depth);
+aesl_fh.write(AUTOTB_TVIN_toScheduler, end_str());
+}
+
 #ifdef USE_BINARY_TV_FILE
 {
 aesl_fh.touch(AUTOTB_TVIN_gmem, 'b');
@@ -612,59 +570,20 @@ aesl_fh.write(AUTOTB_TVIN_sharedMem, end_str());
 CodeState = CALL_C_DUT;
 run_hw_stub_wrapper(__xlx_apatb_param_contr, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_realcheckId, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_sharedMem, __xlx_apatb_param_toScheduler);
 CodeState = DUMP_OUTPUTS;
-long __xlx_apatb_param_toScheduler_stream_buf_final_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size() - __xlx_apatb_param_toScheduler_stream_buf_size;
-{
-  while (!((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->empty())
-    __xlx_apatb_param_toScheduler_stream_buf.push_back(((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->read());
-  for (int i = 0; i < __xlx_apatb_param_toScheduler_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->write(__xlx_apatb_param_toScheduler_stream_buf[i]);
-  }
 // print toScheduler Transactions
 {
 aesl_fh.write(AUTOTB_TVOUT_toScheduler, begin_str(AESL_transaction));
-for (int i = 0; i < __xlx_apatb_param_toScheduler_stream_buf_final_size; ++i) {
-unsigned char *pos = (unsigned char*)(__xlx_apatb_param_toScheduler_stream_buf.data()+__xlx_apatb_param_toScheduler_stream_buf_size+i);
-std::string s(formatData(pos, 8));
-aesl_fh.write(AUTOTB_TVOUT_toScheduler, s);
+if (__xlx_apatb_param_toScheduler) {
+for (int i = 0; i < 1; ++i) {
+auto *pos = (unsigned char*)__xlx_apatb_param_toScheduler+i*1;
+aesl_fh.write(AUTOTB_TVOUT_toScheduler, formatData(pos, 8));
+}
 }
 
-  tcl_file.set_num(__xlx_apatb_param_toScheduler_stream_buf_final_size, &tcl_file.toScheduler_depth);
+  tcl_file.set_num(1, &tcl_file.toScheduler_depth);
 aesl_fh.write(AUTOTB_TVOUT_toScheduler, end_str());
 }
 
-{
-aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, begin_str(AESL_transaction));
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_toScheduler_stream_buf_final_size);
- aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, __xlx_sprintf_buffer.data());
-aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, end_str());
-}
-#ifdef USE_BINARY_TV_FILE
-{
-aesl_fh.touch(AUTOTB_TVOUT_gmem, 'b');
-transaction<256> tr(257);
-__xlx_offset_byte_param_sharedMem = 0*32;
-if (__xlx_apatb_param_sharedMem) {
-  tr.import<32>((char*)__xlx_apatb_param_sharedMem, 257, 0);
-}
-aesl_fh.write(AUTOTB_TVOUT_gmem, tr.p, tr.tbytes);
-tcl_file.set_num(257, &tcl_file.gmem_depth);
-}
-#else
-aesl_fh.touch(AUTOTB_TVOUT_gmem);
-{
-aesl_fh.write(AUTOTB_TVOUT_gmem, begin_str(AESL_transaction));
-__xlx_offset_byte_param_sharedMem = 0*32;
-if (__xlx_apatb_param_sharedMem) {
-for (size_t i = 0; i < 257; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_sharedMem + i * 32;
-std::string s = formatData(pos, 256);
-aesl_fh.write(AUTOTB_TVOUT_gmem, s);
-}
-}
-tcl_file.set_num(257, &tcl_file.gmem_depth);
-aesl_fh.write(AUTOTB_TVOUT_gmem, end_str());
-}
-#endif
 CodeState = DELETE_CHAR_BUFFERS;
 AESL_transaction++;
 tcl_file.set_num(AESL_transaction , &tcl_file.trans_num);

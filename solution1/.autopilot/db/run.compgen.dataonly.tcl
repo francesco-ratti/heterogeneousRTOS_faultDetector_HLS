@@ -50,10 +50,10 @@ ap_idle { }
 trainedRegions { 
 	dir X
 	width 32
-	depth 49152
+	depth 24576
 	mode ap_memory
-	offset 262144
-	offset_end 524287
+	offset 131072
+	offset_end 262143
 	core_op ram_1p
 	core_impl auto
 	core_latency 3

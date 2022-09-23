@@ -6,7 +6,7 @@
 `timescale 1ns/1ps
 module run_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 19,
+    C_S_AXI_ADDR_WIDTH = 18,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -44,7 +44,7 @@ module run_control_s_axi
     input  wire                          ap_ready,
     output wire                          ap_continue,
     input  wire                          ap_idle,
-    input  wire [15:0]                   trainedRegions_address0,
+    input  wire [14:0]                   trainedRegions_address0,
     input  wire                          trainedRegions_ce0,
     input  wire                          trainedRegions_we0,
     input  wire [31:0]                   trainedRegions_d0
@@ -93,29 +93,29 @@ module run_control_s_axi
 //                    bit [15: 8] - n_regions_in[4n+1]
 //                    bit [23:16] - n_regions_in[4n+2]
 //                    bit [31:24] - n_regions_in[4n+3]
-// 0x40000 ~
-// 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
+// 0x20000 ~
+// 0x3ffff : Memory 'trainedRegions' (24576 * 32b)
 //           Word n : bit [31:0] - trainedRegions[n]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL             = 19'h00000,
-    ADDR_GIE                 = 19'h00004,
-    ADDR_IER                 = 19'h00008,
-    ADDR_ISR                 = 19'h0000c,
-    ADDR_CONTR_DATA_0        = 19'h00010,
-    ADDR_CONTR_DATA_1        = 19'h00014,
-    ADDR_CONTR_CTRL          = 19'h00018,
-    ADDR_SHAREDMEM_DATA_0    = 19'h0001c,
-    ADDR_SHAREDMEM_DATA_1    = 19'h00020,
-    ADDR_SHAREDMEM_CTRL      = 19'h00024,
-    ADDR_REALCHECKID_BASE    = 19'h00040,
-    ADDR_REALCHECKID_HIGH    = 19'h0007f,
-    ADDR_N_REGIONS_IN_BASE   = 19'h00080,
-    ADDR_N_REGIONS_IN_HIGH   = 19'h000bf,
-    ADDR_TRAINEDREGIONS_BASE = 19'h40000,
-    ADDR_TRAINEDREGIONS_HIGH = 19'h7ffff,
+    ADDR_AP_CTRL             = 18'h00000,
+    ADDR_GIE                 = 18'h00004,
+    ADDR_IER                 = 18'h00008,
+    ADDR_ISR                 = 18'h0000c,
+    ADDR_CONTR_DATA_0        = 18'h00010,
+    ADDR_CONTR_DATA_1        = 18'h00014,
+    ADDR_CONTR_CTRL          = 18'h00018,
+    ADDR_SHAREDMEM_DATA_0    = 18'h0001c,
+    ADDR_SHAREDMEM_DATA_1    = 18'h00020,
+    ADDR_SHAREDMEM_CTRL      = 18'h00024,
+    ADDR_REALCHECKID_BASE    = 18'h00040,
+    ADDR_REALCHECKID_HIGH    = 18'h0007f,
+    ADDR_N_REGIONS_IN_BASE   = 18'h00080,
+    ADDR_N_REGIONS_IN_HIGH   = 18'h000bf,
+    ADDR_TRAINEDREGIONS_BASE = 18'h20000,
+    ADDR_TRAINEDREGIONS_HIGH = 18'h3ffff,
     WRIDLE                   = 2'd0,
     WRDATA                   = 2'd1,
     WRRESP                   = 2'd2,
@@ -123,7 +123,7 @@ localparam
     RDIDLE                   = 2'd0,
     RDDATA                   = 2'd1,
     RDRESET                  = 2'd2,
-    ADDR_BITS                = 19;
+    ADDR_BITS                = 18;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -182,12 +182,12 @@ localparam
     reg                           int_n_regions_in_read;
     reg                           int_n_regions_in_write;
     reg  [1:0]                    int_n_regions_in_shift0;
-    wire [15:0]                   int_trainedRegions_address0;
+    wire [14:0]                   int_trainedRegions_address0;
     wire                          int_trainedRegions_ce0;
     wire [3:0]                    int_trainedRegions_be0;
     wire [31:0]                   int_trainedRegions_d0;
     wire [31:0]                   int_trainedRegions_q0;
-    wire [15:0]                   int_trainedRegions_address1;
+    wire [14:0]                   int_trainedRegions_address1;
     wire                          int_trainedRegions_ce1;
     wire                          int_trainedRegions_we1;
     wire [3:0]                    int_trainedRegions_be1;
@@ -242,7 +242,7 @@ run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
     .MEM_TYPE  ( "T2P" ),
     .BYTES     ( 4 ),
-    .DEPTH     ( 49152 )
+    .DEPTH     ( 24576 )
 ) int_trainedRegions (
     .clk0      ( ACLK ),
     .address0  ( int_trainedRegions_address0 ),
@@ -625,7 +625,7 @@ assign int_n_regions_in_d1         = WDATA;
 // trainedRegions
 assign int_trainedRegions_address0 = trainedRegions_address0;
 assign int_trainedRegions_ce0      = trainedRegions_ce0;
-assign int_trainedRegions_address1 = ar_hs? raddr[17:2] : waddr[17:2];
+assign int_trainedRegions_address1 = ar_hs? raddr[16:2] : waddr[16:2];
 assign int_trainedRegions_ce1      = ar_hs | (int_trainedRegions_write & WVALID);
 assign int_trainedRegions_we1      = int_trainedRegions_write & w_hs;
 assign int_trainedRegions_be1      = int_trainedRegions_we1 ? WSTRB : 'b0;

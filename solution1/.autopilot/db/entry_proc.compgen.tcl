@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1 \
-    name taskId \
+    name empty \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_taskId \
+    corename dc_empty \
     op interface \
-    ports { taskId { I 8 vector } } \
+    ports { empty { I 6 vector } } \
 } "
 }
 
@@ -26,44 +26,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 2 \
-    name taskId_c \
+    name p_c \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_taskId_c \
+    corename dc_p_c \
     op interface \
-    ports { taskId_c_din { O 8 vector } taskId_c_num_data_valid { I 6 vector } taskId_c_fifo_cap { I 6 vector } taskId_c_full_n { I 1 bit } taskId_c_write { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 3 \
-    name outcomeInRam \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_outcomeInRam \
-    op interface \
-    ports { outcomeInRam { I 64 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 4 \
-    name outcomeInRam_c \
-    type fifo \
-    dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_outcomeInRam_c \
-    op interface \
-    ports { outcomeInRam_c_din { O 64 vector } outcomeInRam_c_num_data_valid { I 6 vector } outcomeInRam_c_fifo_cap { I 6 vector } outcomeInRam_c_full_n { I 1 bit } outcomeInRam_c_write { O 1 bit } } \
+    ports { p_c_din { O 6 vector } p_c_num_data_valid { I 3 vector } p_c_fifo_cap { I 3 vector } p_c_full_n { I 1 bit } p_c_write { O 1 bit } } \
 } "
 }
 

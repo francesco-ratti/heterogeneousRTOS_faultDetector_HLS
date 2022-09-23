@@ -41,8 +41,8 @@
 //                    bit [15: 8] - n_regions_in[4n+1]
 //                    bit [23:16] - n_regions_in[4n+2]
 //                    bit [31:24] - n_regions_in[4n+3]
-// 0x40000 ~
-// 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
+// 0x20000 ~
+// 0x3ffff : Memory 'trainedRegions' (24576 * 32b)
 //           Word n : bit [31:0] - trainedRegions[n]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -62,7 +62,7 @@
 #define CONTROL_ADDR_N_REGIONS_IN_HIGH   0x000bf
 #define CONTROL_WIDTH_N_REGIONS_IN       8
 #define CONTROL_DEPTH_N_REGIONS_IN       64
-#define CONTROL_ADDR_TRAINEDREGIONS_BASE 0x40000
-#define CONTROL_ADDR_TRAINEDREGIONS_HIGH 0x7ffff
+#define CONTROL_ADDR_TRAINEDREGIONS_BASE 0x20000
+#define CONTROL_ADDR_TRAINEDREGIONS_HIGH 0x3ffff
 #define CONTROL_WIDTH_TRAINEDREGIONS     32
-#define CONTROL_DEPTH_TRAINEDREGIONS     49152
+#define CONTROL_DEPTH_TRAINEDREGIONS     24576

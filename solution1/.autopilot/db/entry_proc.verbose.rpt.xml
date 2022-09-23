@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'entry_proc'" level="0">
-<item name = "Date">Thu Sep 22 19:07:16 2022
+<item name = "Date">Fri Sep 23 16:57:00 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -51,7 +51,7 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 27, -</column>
+<column name="Multiplexer">-, -, -, 18, -</column>
 <column name="Register">-, -, 2, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
@@ -83,8 +83,7 @@
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done">9, 2, 1, 2</column>
-<column name="outcomeInRam_c_blk_n">9, 2, 1, 2</column>
-<column name="taskId_c_blk_n">9, 2, 1, 2</column>
+<column name="p_c_blk_n">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -107,18 +106,12 @@
 <column name="ap_continue">in, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, entry_proc, return value</column>
-<column name="taskId">in, 8, ap_none, taskId, scalar</column>
-<column name="taskId_c_din">out, 8, ap_fifo, taskId_c, pointer</column>
-<column name="taskId_c_num_data_valid">in, 6, ap_fifo, taskId_c, pointer</column>
-<column name="taskId_c_fifo_cap">in, 6, ap_fifo, taskId_c, pointer</column>
-<column name="taskId_c_full_n">in, 1, ap_fifo, taskId_c, pointer</column>
-<column name="taskId_c_write">out, 1, ap_fifo, taskId_c, pointer</column>
-<column name="outcomeInRam">in, 64, ap_none, outcomeInRam, scalar</column>
-<column name="outcomeInRam_c_din">out, 64, ap_fifo, outcomeInRam_c, pointer</column>
-<column name="outcomeInRam_c_num_data_valid">in, 6, ap_fifo, outcomeInRam_c, pointer</column>
-<column name="outcomeInRam_c_fifo_cap">in, 6, ap_fifo, outcomeInRam_c, pointer</column>
-<column name="outcomeInRam_c_full_n">in, 1, ap_fifo, outcomeInRam_c, pointer</column>
-<column name="outcomeInRam_c_write">out, 1, ap_fifo, outcomeInRam_c, pointer</column>
+<column name="empty">in, 6, ap_none, empty, scalar</column>
+<column name="p_c_din">out, 6, ap_fifo, p_c, pointer</column>
+<column name="p_c_num_data_valid">in, 3, ap_fifo, p_c, pointer</column>
+<column name="p_c_fifo_cap">in, 3, ap_fifo, p_c, pointer</column>
+<column name="p_c_full_n">in, 1, ap_fifo, p_c, pointer</column>
+<column name="p_c_write">out, 1, ap_fifo, p_c, pointer</column>
 </table>
 </item>
 </section>

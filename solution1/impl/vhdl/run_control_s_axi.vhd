@@ -9,7 +9,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity run_control_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 19;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 18;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     ACLK                  :in   STD_LOGIC;
@@ -47,7 +47,7 @@ port (
     ap_ready              :in   STD_LOGIC;
     ap_continue           :out  STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    trainedRegions_address0 :in   STD_LOGIC_VECTOR(15 downto 0);
+    trainedRegions_address0 :in   STD_LOGIC_VECTOR(14 downto 0);
     trainedRegions_ce0    :in   STD_LOGIC;
     trainedRegions_we0    :in   STD_LOGIC;
     trainedRegions_d0     :in   STD_LOGIC_VECTOR(31 downto 0)
@@ -98,8 +98,8 @@ end entity run_control_s_axi;
 --                    bit [15: 8] - n_regions_in[4n+1]
 --                    bit [23:16] - n_regions_in[4n+2]
 --                    bit [31:24] - n_regions_in[4n+3]
--- 0x40000 ~
--- 0x7ffff : Memory 'trainedRegions' (49152 * 32b)
+-- 0x20000 ~
+-- 0x3ffff : Memory 'trainedRegions' (24576 * 32b)
 --           Word n : bit [31:0] - trainedRegions[n]
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -122,9 +122,9 @@ architecture behave of run_control_s_axi is
     constant ADDR_REALCHECKID_HIGH    : INTEGER := 16#0007f#;
     constant ADDR_N_REGIONS_IN_BASE   : INTEGER := 16#00080#;
     constant ADDR_N_REGIONS_IN_HIGH   : INTEGER := 16#000bf#;
-    constant ADDR_TRAINEDREGIONS_BASE : INTEGER := 16#40000#;
-    constant ADDR_TRAINEDREGIONS_HIGH : INTEGER := 16#7ffff#;
-    constant ADDR_BITS         : INTEGER := 19;
+    constant ADDR_TRAINEDREGIONS_BASE : INTEGER := 16#20000#;
+    constant ADDR_TRAINEDREGIONS_HIGH : INTEGER := 16#3ffff#;
+    constant ADDR_BITS         : INTEGER := 18;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -182,12 +182,12 @@ architecture behave of run_control_s_axi is
     signal int_n_regions_in_read : STD_LOGIC;
     signal int_n_regions_in_write : STD_LOGIC;
     signal int_n_regions_in_shift0 : UNSIGNED(1 downto 0);
-    signal int_trainedRegions_address0 : UNSIGNED(15 downto 0);
+    signal int_trainedRegions_address0 : UNSIGNED(14 downto 0);
     signal int_trainedRegions_ce0 : STD_LOGIC;
     signal int_trainedRegions_be0 : UNSIGNED(3 downto 0);
     signal int_trainedRegions_d0 : UNSIGNED(31 downto 0);
     signal int_trainedRegions_q0 : UNSIGNED(31 downto 0);
-    signal int_trainedRegions_address1 : UNSIGNED(15 downto 0);
+    signal int_trainedRegions_address1 : UNSIGNED(14 downto 0);
     signal int_trainedRegions_ce1 : STD_LOGIC;
     signal int_trainedRegions_we1 : STD_LOGIC;
     signal int_trainedRegions_be1 : UNSIGNED(3 downto 0);
@@ -280,8 +280,8 @@ generic map (
      MEM_STYLE => "auto",
      MEM_TYPE  => "T2P",
      BYTES     => 4,
-     DEPTH     => 49152,
-     AWIDTH    => log2(49152))
+     DEPTH     => 24576,
+     AWIDTH    => log2(24576))
 port map (
      clk0      => ACLK,
      address0  => int_trainedRegions_address0,
@@ -717,7 +717,7 @@ port map (
     -- trainedRegions
     int_trainedRegions_address0 <= UNSIGNED(trainedRegions_address0);
     int_trainedRegions_ce0 <= trainedRegions_ce0;
-    int_trainedRegions_address1 <= raddr(17 downto 2) when ar_hs = '1' else waddr(17 downto 2);
+    int_trainedRegions_address1 <= raddr(16 downto 2) when ar_hs = '1' else waddr(16 downto 2);
     int_trainedRegions_ce1 <= '1' when ar_hs = '1' or (int_trainedRegions_write = '1' and WVALID  = '1') else '0';
     int_trainedRegions_we1 <= '1' when int_trainedRegions_write = '1' and w_hs = '1' else '0';
     int_trainedRegions_be1 <= UNSIGNED(WSTRB) when int_trainedRegions_we1 = '1' else (others=>'0');

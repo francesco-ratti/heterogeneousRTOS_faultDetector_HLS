@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run'" level="0">
-<item name = "Date">Thu Sep 22 19:07:20 2022
+<item name = "Date">Fri Sep 23 16:58:00 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">20.00 ns, 14.600 ns, 5.40 ns</column>
+<column name="ap_clk">20.00 ns, 17.021 ns, 5.40 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">130, 148, 2.600 us, 2.960 us, 131, 149, no</column>
+<column name="">89, 3207, 1.780 us, 64.140 us, 90, 3208, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runTestAfterInit_fu_369">runTestAfterInit, 145, 145, 2.900 us, 2.900 us, 8, 8, dataflow</column>
+<column name="grp_runTrainAfterInit_fu_297">runTrainAfterInit, 86, 3204, 1.720 us, 64.080 us, 82, 3123, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_417_2">128, 128, 2, -, -, 64, no</column>
+<column name="- VITIS_LOOP_451_2">128, 128, 2, -, -, 64, no</column>
 </table>
 </item>
 </section>
@@ -49,14 +49,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 104, -</column>
+<column name="Expression">-, -, 0, 31, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">8, -, 9802, 10514, 0</column>
+<column name="Instance">96, 33, 81593, 94120, 0</column>
 <column name="Memory">0, -, 72, 32, 0</column>
-<column name="Multiplexer">-, -, -, 128, -</column>
-<column name="Register">-, -, 180, -, -</column>
+<column name="Multiplexer">-, -, -, 129, -</column>
+<column name="Register">-, -, 611, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">2, 0, 9, 20, 0</specialColumn>
+<specialColumn name="Utilization (%)">34, 15, 77, 177, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -65,7 +65,7 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 396, 484, 0</column>
 <column name="gmem_m_axi_U">gmem_m_axi, 0, 0, 1087, 1790, 0</column>
-<column name="grp_runTestAfterInit_fu_369">runTestAfterInit, 8, 0, 8319, 8240, 0</column>
+<column name="grp_runTrainAfterInit_fu_297">runTrainAfterInit, 96, 33, 80110, 91846, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -83,13 +83,11 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_2_fu_448_p2">+, 0, 0, 14, 7, 1</column>
-<column name="outcomeInRam_fu_419_p2">+, 0, 0, 71, 64, 14</column>
-<column name="grp_runTestAfterInit_fu_369_toScheduler_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln417_fu_442_p2">icmp, 0, 0, 11, 7, 8</column>
+<column name="i_2_fu_460_p2">+, 0, 0, 14, 7, 1</column>
+<column name="icmp_ln451_fu_454_p2">icmp, 0, 0, 11, 7, 8</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_runTestAfterInit_fu_369_ap_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_runTestAfterInit_fu_369_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_runTrainAfterInit_fu_297_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_runTrainAfterInit_fu_297_ap_ready">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -97,13 +95,12 @@
 <column name="ap_NS_fsm">37, 7, 1, 7</column>
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="gmem_ARVALID">9, 2, 1, 2</column>
-<column name="gmem_AWVALID">9, 2, 1, 2</column>
-<column name="gmem_BREADY">9, 2, 1, 2</column>
 <column name="gmem_RREADY">9, 2, 1, 2</column>
-<column name="gmem_WVALID">9, 2, 1, 2</column>
-<column name="i_fu_326">9, 2, 7, 14</column>
+<column name="i_fu_254">9, 2, 7, 14</column>
 <column name="n_regions_V_address0">14, 3, 6, 18</column>
 <column name="n_regions_V_ce0">14, 3, 1, 3</column>
+<column name="n_regions_V_d0">14, 3, 8, 24</column>
+<column name="n_regions_V_we0">14, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -113,16 +110,31 @@
 <column name="ap_rst_n_inv">1, 0, 1, 0</column>
 <column name="ap_rst_reg_1">1, 0, 1, 0</column>
 <column name="ap_rst_reg_2">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_runTestAfterInit_fu_369_ap_done">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_runTestAfterInit_fu_369_ap_ready">1, 0, 1, 0</column>
-<column name="contr_checkId_V_reg_470">16, 0, 16, 0</column>
-<column name="contr_taskId_V_reg_475">8, 0, 8, 0</column>
+<column name="ap_sync_reg_grp_runTrainAfterInit_fu_297_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_runTrainAfterInit_fu_297_ap_ready">1, 0, 1, 0</column>
 <column name="fsmstate">1, 0, 1, 0</column>
-<column name="grp_runTestAfterInit_fu_369_ap_start_reg">1, 0, 1, 0</column>
-<column name="i_fu_326">7, 0, 7, 0</column>
-<column name="outcomeInRam_reg_480">64, 0, 64, 0</column>
-<column name="sharedMem_read_reg_465">64, 0, 64, 0</column>
-<column name="zext_ln417_reg_495">7, 0, 64, 57</column>
+<column name="fsmstate_load_reg_607">1, 0, 1, 0</column>
+<column name="grp_runTrainAfterInit_fu_297_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_fu_254">7, 0, 7, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_1">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_2">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_3">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_33_copy_fu_246">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_34_copy_fu_242">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_35_copy_fu_238">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_36_copy_fu_234">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_37_copy_fu_230">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_38_copy_fu_226">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_39_copy_fu_222">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_4">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_5">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_6">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_7">32, 0, 32, 0</column>
+<column name="run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_data_key_copyout_fu_250">32, 0, 32, 0</column>
+<column name="sharedMem_read_reg_549">64, 0, 64, 0</column>
+<column name="trunc_ln3_reg_602">6, 0, 6, 0</column>
+<column name="zext_ln451_reg_618">7, 0, 64, 57</column>
 </table>
 </item>
 </section>
@@ -134,14 +146,14 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="s_axi_control_AWVALID">in, 1, s_axi, control, array</column>
 <column name="s_axi_control_AWREADY">out, 1, s_axi, control, array</column>
-<column name="s_axi_control_AWADDR">in, 19, s_axi, control, array</column>
+<column name="s_axi_control_AWADDR">in, 18, s_axi, control, array</column>
 <column name="s_axi_control_WVALID">in, 1, s_axi, control, array</column>
 <column name="s_axi_control_WREADY">out, 1, s_axi, control, array</column>
 <column name="s_axi_control_WDATA">in, 32, s_axi, control, array</column>
 <column name="s_axi_control_WSTRB">in, 4, s_axi, control, array</column>
 <column name="s_axi_control_ARVALID">in, 1, s_axi, control, array</column>
 <column name="s_axi_control_ARREADY">out, 1, s_axi, control, array</column>
-<column name="s_axi_control_ARADDR">in, 19, s_axi, control, array</column>
+<column name="s_axi_control_ARADDR">in, 18, s_axi, control, array</column>
 <column name="s_axi_control_RVALID">out, 1, s_axi, control, array</column>
 <column name="s_axi_control_RREADY">in, 1, s_axi, control, array</column>
 <column name="s_axi_control_RDATA">out, 32, s_axi, control, array</column>
@@ -197,9 +209,9 @@
 <column name="m_axi_gmem_BRESP">in, 2, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
-<column name="toScheduler_TDATA">out, 8, axis, toScheduler, pointer</column>
-<column name="toScheduler_TVALID">out, 1, axis, toScheduler, pointer</column>
-<column name="toScheduler_TREADY">in, 1, axis, toScheduler, pointer</column>
+<column name="toScheduler_TDATA">in, 8, axis, toScheduler, pointer</column>
+<column name="toScheduler_TVALID">in, 1, axis, toScheduler, pointer</column>
+<column name="toScheduler_TREADY">out, 1, axis, toScheduler, pointer</column>
 </table>
 </item>
 </section>

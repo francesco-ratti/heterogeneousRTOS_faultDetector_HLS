@@ -1,27 +1,39 @@
 set SynModuleInfo {
   {SRCNAME entry_proc MODELNAME entry_proc RTLNAME run_entry_proc}
-  {SRCNAME read_test MODELNAME read_test RTLNAME run_read_test}
-  {SRCNAME runTestAfterInit_Block_entry68_proc MODELNAME runTestAfterInit_Block_entry68_proc RTLNAME run_runTestAfterInit_Block_entry68_proc}
+  {SRCNAME read_train MODELNAME read_train RTLNAME run_read_train}
   {SRCNAME find_region MODELNAME find_region RTLNAME run_find_region
     SUBMODULES {
+      {MODELNAME run_fsub_32ns_32ns_32_4_full_dsp_1 RTLNAME run_fsub_32ns_32ns_32_4_full_dsp_1 BINDTYPE op TYPE fsub IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME run_fdiv_32ns_32ns_32_9_no_dsp_1 RTLNAME run_fdiv_32ns_32ns_32_9_no_dsp_1 BINDTYPE op TYPE fdiv IMPL fabric LATENCY 8 ALLOW_PRAGMA 1}
       {MODELNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME run_test MODELNAME run_test RTLNAME run_run_test
+  {SRCNAME find_closest_region MODELNAME find_closest_region RTLNAME run_find_closest_region
     SUBMODULES {
+      {MODELNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1_x RTLNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1_x BINDTYPE op TYPE fsub IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME run_fmul_32ns_32ns_32_2_max_dsp_1_x RTLNAME run_fmul_32ns_32ns_32_2_max_dsp_1_x BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 1 ALLOW_PRAGMA 1}
       {MODELNAME run_fcmp_32ns_32ns_1_2_no_dsp_1_x RTLNAME run_fcmp_32ns_32ns_1_2_no_dsp_1_x BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME run_mux_164_32_1_1 RTLNAME run_mux_164_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME run_mux_154_32_1_1 RTLNAME run_mux_154_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME writeOutcome MODELNAME writeOutcome RTLNAME run_writeOutcome}
-  {SRCNAME runTestAfterInit MODELNAME runTestAfterInit RTLNAME run_runTestAfterInit
+  {SRCNAME insert_point_Pipeline_VITIS_LOOP_254_3 MODELNAME insert_point_Pipeline_VITIS_LOOP_254_3 RTLNAME run_insert_point_Pipeline_VITIS_LOOP_254_3
     SUBMODULES {
-      {MODELNAME run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb_memcore RTLNAME run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb_memcore BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
-      {MODELNAME run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb RTLNAME run_runTestAfterInit_run_controlStr_REGION_T_32_ap_int_ap_int_ap_int_stream_data_bkb BINDTYPE storage TYPE ram IMPL auto LATENCY 2}
-      {MODELNAME run_fifo_w8_d19_S RTLNAME run_fifo_w8_d19_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w64_d19_S RTLNAME run_fifo_w64_d19_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w16_d10_S RTLNAME run_fifo_w16_d10_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w8_d10_S RTLNAME run_fifo_w8_d10_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w1_d2_S RTLNAME run_fifo_w1_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_flow_control_loop_pipe_sequential_init RTLNAME run_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME run_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME insert_point MODELNAME insert_point RTLNAME run_insert_point
+    SUBMODULES {
+      {MODELNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1 RTLNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}
+      {MODELNAME run_fmul_32ns_32ns_32_2_max_dsp_1 RTLNAME run_fmul_32ns_32ns_32_2_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME run_mux_1632_32_1_1 RTLNAME run_mux_1632_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME run_insert_point_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_regions_3bkb RTLNAME run_insert_point_run_controlStr_REGION_T_16_ap_int_ap_int_ap_int_stream_regions_3bkb BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME runTrainAfterInit MODELNAME runTrainAfterInit RTLNAME run_runTrainAfterInit
+    SUBMODULES {
+      {MODELNAME run_fifo_w6_d3_S RTLNAME run_fifo_w6_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w32_d2_S RTLNAME run_fifo_w32_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
     }
   }
   {SRCNAME run MODELNAME run RTLNAME run IS_TOP 1

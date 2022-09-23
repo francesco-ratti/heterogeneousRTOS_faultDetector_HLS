@@ -31,7 +31,7 @@ const float thresh=THRESH;
 //}
 
 
-int find_region(region_t regions[MAX_REGIONS], ap_int<8> n_regions, float d[MAX_AOV_DIM]){
+int find_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const float d[MAX_AOV_DIM]){
 	int idx = -1;
 	float score = -1;
 	for(int i=0; i < MAX_REGIONS; i++){
@@ -67,27 +67,27 @@ int find_region(region_t regions[MAX_REGIONS], ap_int<8> n_regions, float d[MAX_
 	return idx;
 }
 
+//
+//void adapt_region_to_point (region_t &region, float d[MAX_AOV_DIM]) {
+//	for(int i=0; i < MAX_AOV_DIM; i++){
+//		//compute the distance and scale.
+//		//#pragma HLS PIPELINE II=1
+//#pragma HLS unroll
+//		float distfrommax=abs(d[i] - region.max[i]);
+//		float distfrommin=abs(d[i] - region.min[i]);
+//		float scale=abs(region.max[i] - region.center[i]);
+//
+//		if (distfrommax>2*thresh)
+//			region.max[i]=region.max[i]-0.01*distfrommax/scale;
+//		if (distfrommin>2*thresh)
+//			region.min[i]=region.min[i]+0.01*distfrommin/scale;
+//		region.center[i]=(region.max[i] + region.min[i])/2.0;
+//	}
+//}
 
-void adapt_region_to_point (region_t &region, float d[MAX_AOV_DIM]) {
-	for(int i=0; i < MAX_AOV_DIM; i++){
-		//compute the distance and scale.
-		//#pragma HLS PIPELINE II=1
-#pragma HLS unroll
-		float distfrommax=abs(d[i] - region.max[i]);
-		float distfrommin=abs(d[i] - region.min[i]);
-		float scale=abs(region.max[i] - region.center[i]);
-
-		if (distfrommax>2*thresh)
-			region.max[i]=region.max[i]-0.01*distfrommax/scale;
-		if (distfrommin>2*thresh)
-			region.min[i]=region.min[i]+0.01*distfrommin/scale;
-		region.center[i]=(region.max[i] + region.min[i])/2.0;
-	}
-}
 
 
-
-bool is_valid(float val[MAX_AOV_DIM]){
+bool is_valid(const float val[MAX_AOV_DIM]){
 
 	for(int i=0; i < MAX_AOV_DIM; i++){
 #pragma HLS unroll
@@ -98,8 +98,8 @@ bool is_valid(float val[MAX_AOV_DIM]){
 	return true;
 }
 
-void update_train_regions(region_t regions[MAX_REGIONS], int id, float val[MAX_AOV_DIM], bool is_acc){
-
+void update_train_regions(region_t regions[MAX_REGIONS], const int id, const float val[MAX_AOV_DIM] ) {// , bool is_acc){
+#pragma HLS inline
 	//TODO for logging
 
 	//forget behavior
@@ -111,40 +111,46 @@ void update_train_regions(region_t regions[MAX_REGIONS], int id, float val[MAX_A
 	//this->env->update_accuracy_rate(id < 0, false);
 	//this->stats->update_accuracy_rate(is_acc); //is accept, is error
 
-	if(id < 0 || !is_acc) return; //if outside of region, or error.
+	//if(id < 0 || !is_acc) return; //if outside of region, or error.
 	//we have a region
 	//update boundaries to include point.
+
 	for(int i=0; i < MAX_AOV_DIM; i++) {
+#pragma HLS unroll
 		if(val[i] > regions[id].max[i]) regions[id].max[i] = val[i];
 		else if(val[i] < regions[id].min[i]) regions[id].min[i] = val[i];
 		regions[id].center[i] = (regions[id].max[i] + regions[id].min[i])/2.0;
 	}
 }
 
-bool compare(float data[MAX_AOV_DIM], float data_key[MAX_AOV_DIM]){
-	for(int i=0; i < MAX_AOV_DIM; i++){
-		if(fabs(data_key[i] - data[i]) > thresh){
-			return false;
-		}
-	}
-	return true;
-}
+//bool compare(const float data[MAX_AOV_DIM], const float data_key[MAX_AOV_DIM]){
+//	for(int i=0; i < MAX_AOV_DIM; i++){
+//		if(fabs(data_key[i] - data[i]) > thresh){
+//			return false;
+//		}
+//	}
+//	return true;
+//}
 
 //find region, ie find the closest region with similar output, error
 //characteristics, returning score.
 /* We want to merge nearby regions with a good score
  *
  */
-float score_region(region_t * r1, region_t * r2) {
+float score_region(const region_t * r1, const region_t * r2) {
+#pragma HLS inline
 	float distance = 0;
 	//compute the distance
 	for(int j=0; j < MAX_AOV_DIM; j++){
+#pragma HLS unroll
 		float d = (r1->center[j] - r2->center[j]);
 		distance += d*d;
 	}
 	float overlap;
 	overlap=1;
 	for(int i=0; i < MAX_AOV_DIM; i++){
+#pragma HLS unroll
+
 		float d1 = r1->max[i] - r1->min[i];
 		float d2 = r2->max[i] - r2->min[i];
 		float ov;
@@ -165,9 +171,14 @@ float score_region(region_t * r1, region_t * r2) {
 	return score;
 }
 
-int find_closest_region(region_t regions[MAX_REGIONS], ap_int<8> n_regions, int idx, float * score){
+int find_closest_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const int idx, float * score){
+//#pragma HLS inline
+	#pragma HLS PIPELINE II=128
+
 	int id = -1;
 	for(int i=0; i < MAX_REGIONS; i++){
+		//#pragma HLS unroll
+
 		if (i>=n_regions)
 			break;
 		if(i != idx) {
@@ -183,8 +194,11 @@ int find_closest_region(region_t regions[MAX_REGIONS], ap_int<8> n_regions, int 
 }
 
 //merge r2 into r1
-void merge_regions(region_t regions[MAX_REGIONS], int id1, int id2){
+void merge_regions(region_t regions[MAX_REGIONS], const int id1, const int id2){
+#pragma HLS inline
 	for(int i=0; i < MAX_AOV_DIM; i++){
+#pragma HLS unroll
+
 		if(regions[id2].min[i] < regions[id1].min[i]){
 			regions[id1].min[i] = regions[id2].min[i];
 		}
@@ -193,74 +207,80 @@ void merge_regions(region_t regions[MAX_REGIONS], int id1, int id2){
 		}
 		regions[id1].center[i] = (regions[id1].max[i] + regions[id1].min[i])/2.0;
 	}
-	//TODO for logs
-	//	regions[id1].stats.merge(&(regions[id2].stats));
 
 	//move everything over
-	for(int i=id2; i < MAX_REGIONS-1; i++){
-		regions[i] = regions[i+1];
-	}
-}
+	for(int i=0; i < MAX_REGIONS-1; i++){
+		#pragma HLS unroll
 
-void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, float d[MAX_AOV_DIM], bool is_accept){
-	if(!is_valid(d)) return;
-	/*
-	 * try and optimistically find a region the float belongs to
-	 */
-	int id = find_region(regions, n_regions, d);
-	// case: update an existing a group
-	if(id >= 0){
-		update_train_regions(regions, id,d,is_accept); //updates statistics.
-		return;
-	}
-	if(!is_accept){
-		update_train_regions(regions, -1,d,is_accept); //updates statistics.
-		return;
-	}
-	// case: create a new group
-
-	//create a new node.
-	for(int i=0; i < MAX_AOV_DIM; i++){
-		regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
-	}
-	n_regions++;
-
-	update_train_regions(regions, n_regions-1,d, is_accept);
-	//add region
-	//if we're full of space, make room for another region.
-	if(n_regions == MAX_REGIONS){ //if we're full.
-		//find the region with the most similar dynamics that isn't
-		//completely obstructed by another region.
-		int merge_1=-1;
-		int merge_2=-1;
-		float score = 0;
-		for(int i=0; i < n_regions; i++){
-			float tmp_score=0;
-			int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
-			if(merge_1 < 0 || tmp_score > score){
-				score = tmp_score;
-				merge_1 = i;
-				merge_2 = tmp_other;
-			}
+		if (i>=id2) {
+			regions[i] = regions[i+1];
 		}
-		merge_regions(regions, merge_1, merge_2);
-		n_regions--;
 	}
 }
 
-bool run_train_sw(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, float data[MAX_AOV_DIM], float inputData[MAX_AOV_DIM]){
-	//if(MODE ==  ABS_DETECTOR_KEY) return true;
-	bool corr = compare(data, inputData);
-	//printf("train: %f = %f : %s pct_fp:%f\n", this->data[0], this->data_key[0], corr ? "same":"not same", this->stats.n_false/this->stats.n_total_train);
-	//insert the training point
-	insert_point(regions, n_regions, data, corr);
-	if(!corr) insert_point(regions, n_regions, inputData, true);//data_key[checkId],true);
-	return true;
+void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
+	int id = find_region(regions, n_regions, d);
+
+	ap_int<8> n_reg=n_regions;
+
+	if (is_valid(d) && id<0) {
+		//create a new node.
+		for(int i=0; i < MAX_AOV_DIM; i++){
+#pragma HLS unroll
+			regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
+		}
+		n_regions++;
+
+		//update_train_regions(regions, n_regions-1,d);
+		//update train regions inline:
+
+
+		for(int i=0; i < MAX_AOV_DIM; i++) {
+	#pragma HLS unroll
+			regions[n_reg].max[i] = d[i];
+			regions[n_reg].min[i] = d[i];
+			regions[n_reg].center[i] = d[i];
+		}
+
+
+		//add region
+		//if we're full of space, make room for another region.
+		if(n_regions == MAX_REGIONS){ //if we're full.
+			//find the region with the most similar dynamics that isn't
+			//completely obstructed by another region.
+			int merge_1=-1;
+			int merge_2=-1;
+			float score = 0;
+			for(int i=0; i < MAX_REGIONS; i++){
+				if (i>=n_regions)
+					break;
+				float tmp_score=0;
+				int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
+				if(merge_1 < 0 || tmp_score > score){
+					score = tmp_score;
+					merge_1 = i;
+					merge_2 = tmp_other;
+				}
+			}
+			merge_regions(regions, merge_1, merge_2);
+			n_regions--;
+		}
+	}
 }
 
-bool run_test_sw(region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
-	return !( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
-}
+//bool run_train_sw(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, float data[MAX_AOV_DIM], float inputData[MAX_AOV_DIM]){
+//	//if(MODE ==  ABS_DETECTOR_KEY) return true;
+//	bool corr = compare(data, inputData);
+//	//printf("train: %f = %f : %s pct_fp:%f\n", this->data[0], this->data_key[0], corr ? "same":"not same", this->stats.n_false/this->stats.n_total_train);
+//	//insert the training point
+//	insert_point(regions, n_regions, data, corr);
+//	if(!corr) insert_point(regions, n_regions, inputData, true);//data_key[checkId],true);
+//	return true;
+//}
+
+//bool run_test_sw(region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
+//	return !( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
+//}
 
 
 
@@ -350,6 +370,11 @@ void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_int
 	memcpy(dest[checkId], inputDataInRam, sizeOfInputData);
 }
 
+void read_train(float dest[MAX_AOV_DIM], float* inputDataInRam) {
+//#pragma HLS PIPELINE II=64
+	memcpy(dest, inputDataInRam, sizeOfInputData);
+}
+
 void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
 #pragma HLS PIPELINE II=8
 	/*int reg=find_region(regions, n_regions, data);
@@ -370,17 +395,26 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 
 	read_test(data, inputDataInRam, checkId);
 	run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
-
-	//		} else
-	//		if (contr.command==COMMAND_TRAIN) {
-	//			memcpy((void*) data_key, (void*) inputDataInRam, sizeOfInputData);
-	//			outcome=train(contr.checkId, data_key);
-	//	}
-
-	//write
 	writeOutcome(outcomeInRam, checkId, taskId, error, toScheduler);
 }
 
+//void run_train(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, float data_key[MAX_AOV_DIM]) {
+//#pragma HLS PIPELINE II=64
+//	//bool corr = compare(data, data_key);
+//	//insert_point(regions, n_regions, data, corr);
+//	//if(!corr)
+//	//insert_point(regions, n_regions, data_key, true);//data_key[checkId],true);
+//	insert_point(regions, n_regions, data_key);//data_key[checkId],true);
+//}
+
+void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, float data_key[MAX_AOV_DIM], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
+//#pragma HLS dataflow
+	read_train(data_key, inputDataInRam);
+	//run_train(regions[checkId],
+	insert_point(regions[checkId],
+			n_regions[checkId],
+			data_key);
+}
 
 void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_int<8> realcheckId[MAX_CHECKS], ap_int<8> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<8> > &toScheduler) {
 
@@ -423,6 +457,9 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 		fsmstate=STATE_READY;
 
 	} else if (fsmstate==STATE_READY) {
-		runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
+		//if (contr.command==COMMAND_TEST)
+			//runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
+		//else if (contr.command==COMMAND_TRAIN)
+		runTrainAfterInit(inputDataInRam, contr.checkId, data_key, regions, n_regions);
 	}
 }

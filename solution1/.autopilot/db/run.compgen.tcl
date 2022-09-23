@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 68
+set ID 305
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -142,10 +142,10 @@ ap_idle { }
 trainedRegions { 
 	dir X
 	width 32
-	depth 49152
+	depth 24576
 	mode ap_memory
-	offset 262144
-	offset_end 524287
+	offset 131072
+	offset_end 262143
 	core_op ram_1p
 	core_impl auto
 	core_latency 3
@@ -161,7 +161,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 69 \
+			id 306 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -180,25 +180,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler run_control_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 71 \
-    name toScheduler \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { toScheduler_TDATA { O 8 vector } toScheduler_TVALID { O 1 bit } toScheduler_TREADY { I 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'toScheduler'"
-}
-}
-
 
 
 # Adapter definition:
@@ -251,7 +232,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 72
+set ID 308
 set RegSliceName run_regslice_both
 set RegSliceInstName run_regslice_both_U
 set CoreName ap_simcore_run_regslice_both

@@ -18,38 +18,38 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>14.600</EstimatedClockPeriod>
+<EstimatedClockPeriod>17.021</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>130</Best-caseLatency>
-<Average-caseLatency>139</Average-caseLatency>
-<Worst-caseLatency>148</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.600 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.780 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.960 us</Worst-caseRealTimeLatency>
-<Interval-min>131</Interval-min>
-<Interval-max>149</Interval-max>
+<Best-caseLatency>89</Best-caseLatency>
+<Average-caseLatency>608</Average-caseLatency>
+<Worst-caseLatency>3207</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.780 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>12.160 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>64.140 us</Worst-caseRealTimeLatency>
+<Interval-min>90</Interval-min>
+<Interval-max>3208</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_417_2>
+<VITIS_LOOP_451_2>
 <TripCount>64</TripCount>
 <Latency>128</Latency>
 <AbsoluteTimeLatency>2560</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_417_2>
+</VITIS_LOOP_451_2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>8</BRAM_18K>
-<FF>10054</FF>
-<LUT>10778</LUT>
+<BRAM_18K>96</BRAM_18K>
+<DSP>33</DSP>
+<FF>82276</FF>
+<LUT>94312</LUT>
 <URAM>0</URAM>
-<DSP>0</DSP>
 </Resources>
 <AvailableResources>
 <BRAM_18K>280</BRAM_18K>
@@ -89,7 +89,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>19</Bits>
+<Bits>18</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -166,7 +166,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>19</Bits>
+<Bits>18</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -828,7 +828,7 @@
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
-<Dir>out</Dir>
+<Dir>in</Dir>
 <Bits>8</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
@@ -840,7 +840,7 @@
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
-<Dir>out</Dir>
+<Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 <CType>int</CType>
@@ -852,7 +852,7 @@
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
-<Dir>in</Dir>
+<Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 <CType>int</CType>
