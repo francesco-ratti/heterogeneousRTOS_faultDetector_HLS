@@ -32,6 +32,8 @@ const float thresh=THRESH;
 
 
 int find_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, const float d[MAX_AOV_DIM]){
+//	#pragma HLS PIPELINE II=8
+
 	int idx = -1;
 	float score = -1;
 	for(int i=0; i < MAX_REGIONS; i++){
@@ -238,6 +240,8 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 //}
 
 void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
+//#pragma HLS PIPELINE II=256
+
 	int id = find_region(regions, n_regions, d);
 
 	if (is_valid(d) && id<0) {
@@ -269,7 +273,6 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 
 			for(int i=0; i < MAX_REGIONS_FACT; i++){
 				//#pragma HLS unroll
-#pragma HLS PIPELINE II=8
 
 
 
@@ -524,14 +527,15 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 //	insert_point(regions, n_regions, data_key);//data_key[checkId],true);
 //}
 
-void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
-	//#pragma HLS dataflow
+void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, float data_key[MAX_CHECKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
+	#pragma HLS dataflow
 
-	float data_key[MAX_AOV_DIM]; // key
-#pragma HLS array_partition variable=data_key complete
+	//float data_key[MAX_AOV_DIM]; // key
+//#pragma HLS array_partition variable=data_key complete
 
 
 	read_train(data_key, inputDataInRam);
+	//read_test(data_key, inputDataInRam, checkId);
 	//run_train(regions[checkId],
 	insert_point(regions[checkId],
 			n_regions[checkId],
@@ -547,7 +551,7 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 #pragma HLS INTERFACE axis port=toScheduler
 
 
-	static float data_key[MAX_AOV_DIM]; // key
+	static float data_key[MAX_CHECKS];//[MAX_AOV_DIM]; // key
 	static float data[MAX_CHECKS][MAX_AOV_DIM]; // result
 	static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 	static ap_int<8> n_regions[MAX_CHECKS];
@@ -558,7 +562,8 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 
 #pragma HLS array_partition variable=data complete dim=2
 #pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
-#pragma HLS array_partition variable=data_key complete
+#pragma HLS array_partition variable=data_key complete dim=2
+#pragma HLS array_partition variable=n_regions complete
 
 
 	float * inputDataInRam=(float*) sharedMem;
@@ -584,6 +589,6 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 		//if (contr.command==COMMAND_TEST)
 		runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
 		//else if (contr.command==COMMAND_TRAIN)
-		//runTrainAfterInit(inputDataInRam, contr.checkId, regions, n_regions);
+		runTrainAfterInit(inputDataInRam, contr.checkId, data_key, regions, n_regions);
 	}
 }
