@@ -10,6 +10,8 @@
 
 
 #define MAX_REGIONS 16
+#define MAX_REGIONS_FACT 136
+
 
 #define THRESH 1e-10
 

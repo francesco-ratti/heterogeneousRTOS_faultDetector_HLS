@@ -12837,11 +12837,9 @@ extern "C++" const char *basename (const char *__filename)
 const float thresh=1e-10;
 # 34 "detector_solid/abs_solid_detector.cpp"
 int find_region(const region_t regions[16], const ap_int<8> n_regions, const float d[8]){
-#pragma HLS PIPELINE II=8
-
  int idx = -1;
  float score = -1;
- VITIS_LOOP_39_1: for(int i=0; i < 16; i++){
+ VITIS_LOOP_37_1: for(int i=0; i < 16; i++){
 #pragma HLS unroll
  if (i>=n_regions)
    break;
@@ -12850,7 +12848,7 @@ int find_region(const region_t regions[16], const ap_int<8> n_regions, const flo
   float tmp_score = 0;
   float dist = 0;
   float area = 0;
-  VITIS_LOOP_48_2: for(int j=0; j < 8; j++){
+  VITIS_LOOP_46_2: for(int j=0; j < 8; j++){
 
 
 #pragma HLS unroll
@@ -12873,10 +12871,11 @@ int find_region(const region_t regions[16], const ap_int<8> n_regions, const flo
  }
  return idx;
 }
-# 92 "detector_solid/abs_solid_detector.cpp"
+
+
 bool is_valid(const float val[8]){
 
- VITIS_LOOP_94_1: for(int i=0; i < 8; i++){
+ VITIS_LOOP_73_1: for(int i=0; i < 8; i++){
 #pragma HLS unroll
 
  if(isnan(val[i]) || val[i] == (__builtin_inff ()) || val[i] == -(__builtin_inff ()))
@@ -12887,21 +12886,21 @@ bool is_valid(const float val[8]){
 
 void update_train_regions(region_t regions[16], const int id, const float val[8] ) {
 #pragma HLS inline
-# 120 "detector_solid/abs_solid_detector.cpp"
- VITIS_LOOP_120_1: for(int i=0; i < 8; i++) {
+# 99 "detector_solid/abs_solid_detector.cpp"
+ VITIS_LOOP_99_1: for(int i=0; i < 8; i++) {
 #pragma HLS unroll
  if(val[i] > regions[id].max[i]) regions[id].max[i] = val[i];
   else if(val[i] < regions[id].min[i]) regions[id].min[i] = val[i];
   regions[id].center[i] = (regions[id].max[i] + regions[id].min[i])/2.0;
  }
 }
-# 261 "detector_solid/abs_solid_detector.cpp"
+# 240 "detector_solid/abs_solid_detector.cpp"
 void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) {
  int id = find_region(regions, n_regions, d);
 
  if (is_valid(d) && id<0) {
 
-  VITIS_LOOP_266_1: for(int i=0; i < 8; i++){
+  VITIS_LOOP_245_1: for(int i=0; i < 8; i++){
 
    regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
   }
@@ -12914,78 +12913,95 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
    int merge_1=-1;
    int merge_2=-1;
    float score = 0;
-   VITIS_LOOP_279_2: for(int i=0; i < 16; i++){
+
+   int iter=n_regions-1;
+   int iterctr=0;
+
+   int i_real=0;
+   int k_real=n_regions-1;
+
+
+   float tmp_score=0;
+   int tmp_other=-1;
+
+
+   VITIS_LOOP_270_2: for(int i=0; i < 136; i++){
+
+#pragma HLS PIPELINE II=8
+# 292 "detector_solid/abs_solid_detector.cpp"
+ float distance = 0;
+    float overlap=1;
+
+    VITIS_LOOP_295_3: for(int j=0; j < 8; j++){
 
 
 
-    if (i>=n_regions)
-     break;
-    float tmp_score=0;
-# 296 "detector_solid/abs_solid_detector.cpp"
-    int tmp_other = -1;
-    VITIS_LOOP_297_3: for(int k=i+1; k < 16; k++){
-
-
-     if (k>=n_regions)
-      break;
+     float d = (regions[i_real].center[j] - regions[k_real].center[j]);
+     distance += d*d;
 
 
 
-      float distance = 0;
-      float overlap=1;
-
-      VITIS_LOOP_308_4: for(int j=0; j < 8; j++){
-
-
-
-       float d = (regions[i].center[j] - regions[k].center[j]);
-       distance += d*d;
-
-
-
-       float d1 = regions[i].max[j] - regions[i].min[j];
-       float d2 = regions[k].max[j] - regions[k].min[j];
-       float ov;
-       if(regions[i].min[j] < regions[k].min[j])
-        ov = d1 - (regions[k].min[j] - regions[i].min[j]);
-       else
-        ov = d2 - (regions[i].min[j] - regions[k].min[j]);
-       ov = ov < 0 ? 0 : ov;
-       overlap *= ov;
-      }
-      float sc;
+     float d1 = regions[i_real].max[j] - regions[i_real].min[j];
+     float d2 = regions[k_real].max[j] - regions[k_real].min[j];
+     float ov;
+     if(regions[i_real].min[j] < regions[k_real].min[j])
+      ov = d1 - (regions[k_real].min[j] - regions[i_real].min[j]);
+     else
+      ov = d2 - (regions[i_real].min[j] - regions[k_real].min[j]);
+     ov = ov < 0 ? 0 : ov;
+     overlap *= ov;
+    }
+    float sc;
 
 
-      if(overlap > 0)
-       sc = overlap;
-      else
+    if(overlap > 0)
+     sc = overlap;
+    else
 
-       sc = -distance;
+     sc = -distance;
 
 
 
-      if(tmp_other == -1 || sc > tmp_score){
-       tmp_other = i;
-       tmp_score = sc;
-      }
-
+    if(tmp_other == -1 || sc > tmp_score){
+     tmp_other = i_real;
+     tmp_score = sc;
     }
 
 
 
 
 
-    if(merge_1 < 0 || tmp_score > score){
-     score = tmp_score;
-     merge_1 = i;
-     merge_2 = tmp_other;
+    iterctr++;
+
+    if (iterctr==iter) {
+     iterctr=0;
+     i_real++;
+     iter--;
+     k_real=n_regions-1;
+
+
+     if(merge_1 < 0 || tmp_score > score){
+      score = tmp_score;
+      merge_1 = i_real;
+      merge_2 = tmp_other;
+     }
+
+     tmp_score=0;
+     tmp_other = -1;
+
+     if (i_real>=n_regions)
+      break;
+
+    } else {
+     k_real--;
     }
    }
 
 
-   VITIS_LOOP_357_5: for(int i=0; i < 8; i++){
 
-    if(regions[merge_2].min[i] < regions[merge_1].min[i]){
+   VITIS_LOOP_362_4: for(int i=0; i < 8; i++){
+#pragma HLS unroll
+ if(regions[merge_2].min[i] < regions[merge_1].min[i]){
      regions[merge_1].min[i] = regions[merge_2].min[i];
     }
     if(regions[merge_2].max[i] > regions[merge_1].max[i]){
@@ -12995,9 +13011,9 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
    }
 
 
-   VITIS_LOOP_369_6: for(int i=0; i < 16 -1; i++){
-
-    if (i>=merge_2) {
+   VITIS_LOOP_374_5: for(int i=0; i < 16 -1; i++){
+#pragma HLS unroll
+ if (i>=merge_2) {
      regions[i] = regions[i+1];
     }
    }
@@ -13005,7 +13021,7 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
   }
  }
 }
-# 446 "detector_solid/abs_solid_detector.cpp"
+# 451 "detector_solid/abs_solid_detector.cpp"
 int fsmstate=0;
 
 struct OutcomeStr {
@@ -30177,9 +30193,15 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 460 "detector_solid/abs_solid_detector.cpp" 2
+# 465 "detector_solid/abs_solid_detector.cpp" 2
 
 
+
+
+void read_train(float dest[8], float* inputDataInRam) {
+
+ memcpy(dest, inputDataInRam, sizeof(float)*8);
+}
 
 
 void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> checkId, ap_int<8> taskId, bool error, hls::stream< ap_int<8>> &toScheduler) {
@@ -30195,49 +30217,29 @@ void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> checkId, ap_int<8> taskId, 
   toScheduler.write(taskId);
 }
 
-
-
-
-
-
-void read_test(float dest[8], float* inputDataInRam) {
+void read_test(float dest[16][8], float* inputDataInRam, ap_int<16> checkId) {
 #pragma HLS PIPELINE II=8
- memcpy(dest, inputDataInRam, sizeof(float)*8);
-}
-
-void read_train(float dest[8], float* inputDataInRam) {
-
- memcpy(dest, inputDataInRam, sizeof(float)*8);
+ memcpy(dest[checkId], inputDataInRam, sizeof(float)*8);
 }
 
 void run_test(bool &error, region_t regions[16], ap_int<8> n_regions, float data[8]) {
 #pragma HLS PIPELINE II=8
-
-
-
-
-
-
-
  error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
 
-void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, region_t regions[64][16], ap_int<8> n_regions[64]) {
+
+void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[64][8], region_t regions[64][16], ap_int<8> n_regions[64]) {
 #pragma HLS dataflow
-
- float data[8];
-#pragma HLS array_partition variable=data complete
-
 
  bool error;
 
 
-
- read_test(data, inputDataInRam);
- run_test(error, regions[checkId], n_regions[checkId], data);
+ read_test(data, inputDataInRam, checkId);
+ run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
+# 515 "detector_solid/abs_solid_detector.cpp"
  writeOutcome(outcomeInRam, checkId, taskId, error, toScheduler);
 }
-# 529 "detector_solid/abs_solid_detector.cpp"
+# 527 "detector_solid/abs_solid_detector.cpp"
 void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, region_t regions[64][16], ap_int<8> n_regions[64]) {
 
 
@@ -30255,11 +30257,11 @@ void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, region_t regi
 __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[64][16], ap_int<8> realcheckId[64], ap_int<8> n_regions_in[64], ap_int<32> sharedMem[sizeof(float)*8*64 +((64*sizeof(OutcomeStr)) / 32) + (((64*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 543 "detector_solid/abs_solid_detector.cpp"
+# 541 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 543 "detector_solid/abs_solid_detector.cpp"
+# 541 "detector_solid/abs_solid_detector.cpp"
 
 
 #pragma HLS interface s_axilite port = trainedRegions
@@ -30268,15 +30270,19 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 #pragma HLS INTERFACE m_axi port=sharedMem
 #pragma HLS INTERFACE axis port=toScheduler
 
+
+ static float data_key[8];
+ static float data[64][8];
  static region_t regions[64][16];
  static ap_int<8> n_regions[64];
 
-
+#pragma HLS reset variable=data
 #pragma HLS reset variable=regions
 #pragma HLS reset variable=n_regions
 
-#pragma HLS array_partition variable=regions complete
-#pragma HLS array_partition variable=n_regions complete
+#pragma HLS array_partition variable=data complete dim=2
+#pragma HLS array_partition variable=regions complete dim=2
+#pragma HLS array_partition variable=data_key complete
 
 
  float * inputDataInRam=(float*) sharedMem;
@@ -30285,12 +30291,12 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
  if (fsmstate==0) {
 
-  VITIS_LOOP_568_1: for (size_t i=0; i<sizeof(regions); i++) {
+  VITIS_LOOP_570_1: for (size_t i=0; i<sizeof(regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) regions) [i] = ((const char*) trainedRegions) [i];
   }
 
-  VITIS_LOOP_573_2: for (size_t i=0; i<sizeof(n_regions); i++) {
+  VITIS_LOOP_575_2: for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
   }
@@ -30300,8 +30306,8 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
  } else if (fsmstate==1) {
 
+  runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
 
 
-  runTrainAfterInit(inputDataInRam, contr.checkId, regions, n_regions);
  }
 }
