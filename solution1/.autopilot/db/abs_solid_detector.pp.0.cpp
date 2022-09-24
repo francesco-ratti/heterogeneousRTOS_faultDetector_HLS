@@ -12842,8 +12842,8 @@ int find_region(const region_t regions[16], const ap_int<8> n_regions, const flo
  int idx = -1;
  float score = -1;
  VITIS_LOOP_39_1: for(int i=0; i < 16; i++){
-#pragma HLS unroll
- if (i>=n_regions)
+
+  if (i>=n_regions)
    break;
 
   bool is_idx = true;
@@ -12905,8 +12905,8 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
  if (is_valid(d)) {
 
   VITIS_LOOP_249_1: for(int i=0; i < 8; i++){
-
-   regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
+#pragma HLS unroll
+ regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
   }
   n_regions++;
 
@@ -12935,10 +12935,10 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
     float overlap=1;
 
     VITIS_LOOP_298_3: for(int j=0; j < 8; j++){
+#pragma HLS unroll
 
 
-
-     float d = (regions[i_real].center[j] - regions[k_real].center[j]);
+ float d = (regions[i_real].center[j] - regions[k_real].center[j]);
      distance += d*d;
 
 

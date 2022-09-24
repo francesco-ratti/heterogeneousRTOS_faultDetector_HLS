@@ -37,7 +37,7 @@ int find_region(const region_t regions[MAX_REGIONS], const ap_int<8> n_regions, 
 	int idx = -1;
 	float score = -1;
 	for(int i=0; i < MAX_REGIONS; i++){
-#pragma HLS unroll
+//#pragma HLS unroll
 		if (i>=n_regions)
 			break;
 
@@ -247,7 +247,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 	if (is_valid(d)) { //&& id<0) {
 		//create a new node.
 		for(int i=0; i < MAX_AOV_DIM; i++){
-			//#pragma HLS unroll
+			#pragma HLS unroll
 			regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
 		}
 		n_regions++;
@@ -296,7 +296,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 				float overlap=1;
 
 				for(int j=0; j < MAX_AOV_DIM; j++){
-					//#pragma HLS unroll
+					#pragma HLS unroll
 
 
 					float d = (regions[i_real].center[j] - regions[k_real].center[j]);
@@ -476,7 +476,7 @@ void read_train(float dest[MAX_AOV_DIM], float* inputDataInRam) {
 
 
 void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> checkId, ap_int<8> taskId, bool error, hls::stream< ap_int<8>> &toScheduler) {
-#pragma HLS PIPELINE II=8
+//#pragma HLS PIPELINE II=8
 	//#pragma HLS inline off
 	OutcomeStr out;
 
@@ -489,12 +489,12 @@ void writeOutcome(OutcomeStr* outcomeptr, ap_int<16> checkId, ap_int<8> taskId, 
 }
 
 void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_int<16> checkId) {
-#pragma HLS PIPELINE II=8
+//#pragma HLS PIPELINE II=8
 	memcpy(dest[checkId], inputDataInRam, sizeOfInputData);
 }
 
 void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, float data[MAX_AOV_DIM]) {
-#pragma HLS PIPELINE II=8
+//#pragma HLS PIPELINE II=8
 	error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
 
