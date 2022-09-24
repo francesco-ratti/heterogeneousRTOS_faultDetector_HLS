@@ -12902,8 +12902,8 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
  if (is_valid(d) && id<0) {
 
   VITIS_LOOP_266_1: for(int i=0; i < 8; i++){
-#pragma HLS unroll
- regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
+
+   regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
   }
   n_regions++;
 
@@ -12923,12 +12923,12 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
     float tmp_score=0;
 # 296 "detector_solid/abs_solid_detector.cpp"
     int tmp_other = -1;
-    VITIS_LOOP_297_3: for(int k=0; k < 16; k++){
+    VITIS_LOOP_297_3: for(int k=i+1; k < 16; k++){
 
 
      if (k>=n_regions)
       break;
-     if(k != i) {
+
 
 
       float distance = 0;
@@ -12968,7 +12968,7 @@ void insert_point(region_t regions[16], ap_int<8> &n_regions, const float d[8]) 
        tmp_other = i;
        tmp_score = sc;
       }
-     }
+
     }
 
 
@@ -30225,7 +30225,7 @@ void run_test(bool &error, region_t regions[16], ap_int<8> n_regions, float data
 void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, region_t regions[64][16], ap_int<8> n_regions[64]) {
 #pragma HLS dataflow
 
- static float data[8];
+ float data[8];
 #pragma HLS array_partition variable=data complete
 
 
@@ -30239,9 +30239,9 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 }
 # 529 "detector_solid/abs_solid_detector.cpp"
 void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, region_t regions[64][16], ap_int<8> n_regions[64]) {
-#pragma HLS dataflow
 
- static float data_key[8];
+
+ float data_key[8];
 #pragma HLS array_partition variable=data_key complete
 
 

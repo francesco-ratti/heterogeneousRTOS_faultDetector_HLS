@@ -264,7 +264,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 	if (is_valid(d) && id<0) {
 		//create a new node.
 		for(int i=0; i < MAX_AOV_DIM; i++){
-#pragma HLS unroll
+//#pragma HLS unroll
 			regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
 		}
 		n_regions++;
@@ -294,12 +294,12 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 				//float bestscore=0.0;
 
 				int tmp_other = -1;
-				for(int k=0; k < MAX_REGIONS; k++){
+				for(int k=i+1; k < MAX_REGIONS; k++){
 //			#pragma HLS unroll
 
 					if (k>=n_regions)
 						break;
-					if(k != i) {
+					//if(k != i) {
 						//printf("score [%d,%d]:", i, k);
 
 						float distance = 0;
@@ -339,7 +339,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 							tmp_other = i;
 							tmp_score = sc;
 						}
-					}
+					//}
 				}
 
 
@@ -504,7 +504,7 @@ void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, f
 void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
 #pragma HLS dataflow
 
-	static float data[MAX_AOV_DIM]; // result
+	float data[MAX_AOV_DIM]; // result
 #pragma HLS array_partition variable=data complete
 
 
@@ -527,10 +527,10 @@ void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> check
 //}
 
 void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
-#pragma HLS dataflow
+//#pragma HLS dataflow
 
-	static float data_key[MAX_AOV_DIM]; // key
-#pragma HLS array_partition variable=data_key complete
+	float data_key[MAX_AOV_DIM]; // key
+	#pragma HLS array_partition variable=data_key complete
 
 
 	read_train(data_key, inputDataInRam);
