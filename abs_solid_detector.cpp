@@ -242,9 +242,9 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
 //#pragma HLS PIPELINE II=256
 
-	int id = find_region(regions, n_regions, d);
+	//int id = find_region(regions, n_regions, d);
 
-	if (is_valid(d) && id<0) {
+	if (is_valid(d)) { //&& id<0) {
 		//create a new node.
 		for(int i=0; i < MAX_AOV_DIM; i++){
 			//#pragma HLS unroll
@@ -541,6 +541,7 @@ void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, float data_ke
 			n_regions[checkId],
 			data_key);
 }
+bool test=false;
 
 void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_int<8> realcheckId[MAX_CHECKS], ap_int<8> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<8> > &toScheduler) {
 
@@ -570,6 +571,8 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 	OutcomeStr* outcomeInRam=(OutcomeStr*) (sharedMem+sizeOfInputData*MAX_CHECKS);
 
 
+
+
 	if (fsmstate==STATE_UNINITIALISED) {
 
 		for (size_t i=0; i<sizeof(regions); i++) {
@@ -587,8 +590,12 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 
 	} else if (fsmstate==STATE_READY) {
 		//if (contr.command==COMMAND_TEST)
-		runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
+		if (test)
+			runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, outcomeInRam, toScheduler, data, regions, n_regions);
 		//else if (contr.command==COMMAND_TRAIN)
-		runTrainAfterInit(inputDataInRam, contr.checkId, data_key, regions, n_regions);
+		else
+			runTrainAfterInit(inputDataInRam, contr.checkId, data_key, regions, n_regions);
+
+		test=!test;
 	}
 }
