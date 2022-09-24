@@ -30286,9 +30286,9 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 #pragma HLS reset variable=n_regions
 
 #pragma HLS array_partition variable=data complete
-#pragma HLS array_partition variable=regions complete dim=2
+#pragma HLS array_partition variable=regions cyclic factor=16 dim=2
 #pragma HLS array_partition variable=data_key complete
-#pragma HLS array_partition variable=n_regions complete
+#pragma HLS array_partition variable=n_regions cyclic factor=16
 
 
  float * inputDataInRam=(float*) sharedMem;

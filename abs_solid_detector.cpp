@@ -563,9 +563,9 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 #pragma HLS reset variable=n_regions
 
 #pragma HLS array_partition variable=data complete //dim=2
-#pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
+#pragma HLS array_partition variable=regions cyclic factor=16 dim=2//cyclic factor=16  //should be MAX_REGIONS
 #pragma HLS array_partition variable=data_key complete //dim=2
-#pragma HLS array_partition variable=n_regions complete
+#pragma HLS array_partition variable=n_regions cyclic factor=16//complete
 
 
 	float * inputDataInRam=(float*) sharedMem;
