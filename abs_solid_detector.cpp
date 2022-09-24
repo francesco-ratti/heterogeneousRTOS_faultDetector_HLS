@@ -271,7 +271,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_int<8> &n_regions, const flo
 			int tmp_other=-1;
 
 
-			for(int i=0; i < MAX_REGIONS_FACT; i++){
+			for(int i=0; i < MAX_REGIONS_SUMM; i++){
 				//#pragma HLS unroll
 
 
@@ -499,14 +499,15 @@ void run_test(bool &error, region_t regions[MAX_REGIONS], ap_int<8> n_regions, f
 }
 
 
-void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[MAX_CHECKS][MAX_AOV_DIM], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
+void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[MAX_AOV_DIM], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_int<8> n_regions[MAX_CHECKS]) {
 #pragma HLS dataflow
 
 	bool error;
 	//ap_int<8> n_regions_currCheck=n_regions[checkId];
 
-	read_test(data, inputDataInRam, checkId);
-	run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
+	read_train(data, inputDataInRam);
+	//read_test(data, inputDataInRam, checkId);
+	run_test(error, regions[checkId], n_regions[checkId], data);
 
 	//		} else
 	//		if (contr.command==COMMAND_TRAIN) {
@@ -553,7 +554,7 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 
 
 	static float data_key[MAX_CHECKS];//[MAX_AOV_DIM]; // key
-	static float data[MAX_CHECKS][MAX_AOV_DIM]; // result
+	static float data[MAX_CHECKS];//[MAX_AOV_DIM]; // result
 	static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 	static ap_int<8> n_regions[MAX_CHECKS];
 
@@ -561,9 +562,9 @@ void run(controlStr contr, region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_
 #pragma HLS reset variable=regions
 #pragma HLS reset variable=n_regions
 
-#pragma HLS array_partition variable=data complete dim=2
+#pragma HLS array_partition variable=data complete //dim=2
 #pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
-#pragma HLS array_partition variable=data_key complete dim=2
+#pragma HLS array_partition variable=data_key complete //dim=2
 #pragma HLS array_partition variable=n_regions complete
 
 

@@ -30230,18 +30230,19 @@ void run_test(bool &error, region_t regions[16], ap_int<8> n_regions, float data
 }
 
 
-void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[64][8], region_t regions[64][16], ap_int<8> n_regions[64]) {
+void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<16> checkId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[8], region_t regions[64][16], ap_int<8> n_regions[64]) {
 #pragma HLS dataflow
 
  bool error;
 
 
- read_test(data, inputDataInRam, checkId);
- run_test(error, regions[checkId], n_regions[checkId], data[checkId]);
-# 518 "detector_solid/abs_solid_detector.cpp"
+ read_train(data, inputDataInRam);
+
+ run_test(error, regions[checkId], n_regions[checkId], data);
+# 519 "detector_solid/abs_solid_detector.cpp"
  writeOutcome(outcomeInRam, checkId, taskId, error, toScheduler);
 }
-# 530 "detector_solid/abs_solid_detector.cpp"
+# 531 "detector_solid/abs_solid_detector.cpp"
 void runTrainAfterInit(float * inputDataInRam, ap_int<16> checkId, float data_key[64], region_t regions[64][16], ap_int<8> n_regions[64]) {
 #pragma HLS dataflow
 
@@ -30261,11 +30262,11 @@ bool test=false;
 __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[64][16], ap_int<8> realcheckId[64], ap_int<8> n_regions_in[64], ap_int<32> sharedMem[sizeof(float)*8*64 +((64*sizeof(OutcomeStr)) / 32) + (((64*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 546 "detector_solid/abs_solid_detector.cpp"
+# 547 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 546 "detector_solid/abs_solid_detector.cpp"
+# 547 "detector_solid/abs_solid_detector.cpp"
 
 
 #pragma HLS interface s_axilite port = trainedRegions
@@ -30276,7 +30277,7 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
 
  static float data_key[64];
- static float data[64][8];
+ static float data[64];
  static region_t regions[64][16];
  static ap_int<8> n_regions[64];
 
@@ -30284,9 +30285,9 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 #pragma HLS reset variable=regions
 #pragma HLS reset variable=n_regions
 
-#pragma HLS array_partition variable=data complete dim=2
+#pragma HLS array_partition variable=data complete
 #pragma HLS array_partition variable=regions complete dim=2
-#pragma HLS array_partition variable=data_key complete dim=2
+#pragma HLS array_partition variable=data_key complete
 #pragma HLS array_partition variable=n_regions complete
 
 
@@ -30298,12 +30299,12 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
  if (fsmstate==0) {
 
-  VITIS_LOOP_578_1: for (size_t i=0; i<sizeof(regions); i++) {
+  VITIS_LOOP_579_1: for (size_t i=0; i<sizeof(regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) regions) [i] = ((const char*) trainedRegions) [i];
   }
 
-  VITIS_LOOP_583_2: for (size_t i=0; i<sizeof(n_regions); i++) {
+  VITIS_LOOP_584_2: for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
   }
