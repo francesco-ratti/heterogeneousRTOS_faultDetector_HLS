@@ -30202,12 +30202,12 @@ void writeOutcome(bool &errorInTask,
  err.checkId=checkId;
  err.uniId=uniId;
  memcpy((void*) &(err.errorAov), (void*) data, sizeof(float)*8);
+ memcpy(errorDescriptorInRam, &err, sizeof(err));
 
 
  if (error) {
   errorInTask=true;
   toScheduler.write(taskId);
-  memcpy(errorDescriptorInRam, &err, sizeof(err));
  }
 }
 

@@ -500,12 +500,12 @@ void writeOutcome(bool &errorInTask, //OutcomeStr* outcomeptr,
 	err.checkId=checkId;
 	err.uniId=uniId;
 	memcpy((void*) &(err.errorAov), (void*) data, sizeOfInputData);
+	memcpy(errorDescriptorInRam, &err, sizeof(err));
 
 	//memcpy((void*) &(outcomeptr[checkId]), (void*) &out, sizeof(out));
 	if (error) {
 		errorInTask=true;
 		toScheduler.write(taskId);
-		memcpy(errorDescriptorInRam, &err, sizeof(err));
 	}
 }
 
