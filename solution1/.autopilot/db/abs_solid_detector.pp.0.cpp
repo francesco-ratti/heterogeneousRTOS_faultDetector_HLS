@@ -30194,17 +30194,7 @@ namespace hls {
 
 };
 # 477 "detector_solid/abs_solid_detector.cpp" 2
-
-
-
-
-void read_train(float dest[8], float* inputDataInRam) {
-
-
- memcpy(dest, inputDataInRam, sizeof(float)*8);
-}
-
-
+# 488 "detector_solid/abs_solid_detector.cpp"
 void writeOutcome(OutcomeStr* outcomeptr, ap_int<8> checkId, ap_int<8> taskId, ap_int<16> uniId, bool error, hls::stream< ap_int<8>> &toScheduler, errorDescriptorStr* errorDescriptorInRam, float data[8]) {
 
 
@@ -30237,37 +30227,23 @@ void run_test(bool &error, region_t regions[16], ap_int<8> n_regions, float data
 }
 
 
-void runTestAfterInit(float * inputDataInRam, ap_int<8> taskId, ap_int<8> checkId, ap_int<16> uniId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[8], region_t regions[64][16], ap_int<8> n_regions[64], errorDescriptorStr * errorDescriptorInRam) {
+void runTestAfterInit(ap_int<8> taskId, ap_int<8> checkId, ap_int<16> uniId, OutcomeStr* outcomeInRam, hls::stream< ap_int<8> > &toScheduler, float data[8], region_t regions[16], ap_int<8> n_regions, errorDescriptorStr * errorDescriptorInRam) {
 #pragma HLS dataflow
 
  bool error;
 
 
- read_train(data, inputDataInRam);
 
- run_test(error, regions[checkId], n_regions[checkId], data);
+
+ run_test(error, regions, n_regions, data);
 # 537 "detector_solid/abs_solid_detector.cpp"
- writeOutcome(&(outcomeInRam[taskId]), checkId, taskId, uniId, error, toScheduler, &(errorDescriptorInRam[taskId]), data);
+ writeOutcome(outcomeInRam, checkId, taskId, uniId, error, toScheduler, errorDescriptorInRam, data);
 }
-# 549 "detector_solid/abs_solid_detector.cpp"
-void runTrainAfterInit(float * inputDataInRam, ap_int<8> checkId, float data_key[64], region_t regions[64][16], ap_int<8> n_regions[64]) {
-#pragma HLS dataflow
-
-
-
-
-
- read_train(data_key, inputDataInRam);
-
-
- insert_point(regions[checkId],
-   n_regions[checkId],
-   data_key);
-}
+# 563 "detector_solid/abs_solid_detector.cpp"
 bool test=false;
 
 
-__attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[64][16], ap_int<8> n_regions_in[64], ap_int<32> sharedMem[sizeof(float)*8*64 +sizeof(errorDescriptorStr)*16 +((16*sizeof(OutcomeStr)) / 32) + (((16*sizeof(OutcomeStr)) % 32) != 0)], hls::stream< ap_int<8> > &toScheduler) {
+__attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t trainedRegions[64][16], float data[8], float data_key[8], ap_int<8> n_regions_in[64], ap_int<32> sharedMem[sizeof(float)*8 +sizeof(errorDescriptorStr)*16 +sizeof(OutcomeStr)*16], hls::stream< ap_int<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
 # 566 "detector_solid/abs_solid_detector.cpp"
@@ -30279,12 +30255,14 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
 #pragma HLS interface s_axilite port = trainedRegions
 #pragma HLS interface s_axilite port = n_regions_in
+#pragma HLS interface s_axilite port = data
+#pragma HLS interface s_axilite port = data_key
 #pragma HLS INTERFACE m_axi port=sharedMem
 #pragma HLS INTERFACE axis port=toScheduler
 
 
- static float data_key[8];
- static float data[8];
+
+
  static region_t regions[64][16];
  static ap_int<8> n_regions[64];
 
@@ -30304,12 +30282,12 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
 
  if (fsmstate==0) {
 
-  VITIS_LOOP_595_1: for (size_t i=0; i<sizeof(regions); i++) {
+  VITIS_LOOP_597_1: for (size_t i=0; i<sizeof(regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) regions) [i] = ((const char*) trainedRegions) [i];
   }
 
-  VITIS_LOOP_600_2: for (size_t i=0; i<sizeof(n_regions); i++) {
+  VITIS_LOOP_602_2: for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
   }
@@ -30320,10 +30298,12 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, region_t traine
  } else if (fsmstate==1) {
 
   if (test)
-   runTestAfterInit(inputDataInRam, contr.taskId, contr.checkId, contr.uniId, outcomeInRam, toScheduler, data, regions, n_regions, errorDescriptorInRam);
+   runTestAfterInit(contr.taskId, contr.checkId, contr.uniId, &(outcomeInRam[contr.taskId]), toScheduler, data, regions[contr.checkId], n_regions[contr.checkId], &(errorDescriptorInRam[contr.taskId]));
 
   else
-   runTrainAfterInit(inputDataInRam, contr.checkId, data_key, regions, n_regions);
+   insert_point(regions[contr.checkId],
+     n_regions[contr.checkId],
+     data_key);
 
   test=!test;
  }
