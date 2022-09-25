@@ -568,9 +568,9 @@ void runTestAfterInit(bool &errorInTask, ap_int<8> taskId, ap_int<8> checkId, ap
 bool test=false;
 
 
-void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], float data[MAX_AOV_DIM], float data_key[MAX_AOV_DIM], ap_int<8> n_regions_in[MAX_CHECKS], hls::stream< ap_int<8> > &toScheduler, float inputDataInRam[MAX_AOV_DIM], errorDescriptorStr errorDescriptorInRam[MAX_TASKS]) {
+void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], float data[MAX_AOV_DIM], float data_key[MAX_AOV_DIM], ap_int<8> n_regions_in[MAX_CHECKS], hls::stream< ap_int<8> > &toScheduler, errorDescriptorStr errorDescriptorInRam[MAX_TASKS]) {
 
-#pragma HLS interface s_axilite port = trainedRegions //bundle=A
+#pragma HLS interface m_axi port = trainedRegions //bundle=A
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 #pragma HLS interface s_axilite port = errorInTask //bundle=A
 #pragma HLS interface s_axilite port = data //bundle=A
@@ -600,16 +600,24 @@ void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[
 
 	if (fsmstate==STATE_UNINITIALISED) {
 
-		for (size_t i=0; i<sizeof(regions); i++) {
-#pragma HLS PIPELINE off
-			((char *) regions) [i] = ((const char*) trainedRegions) [i];
-		}
+//		for (size_t i=0; i<sizeof(regions); i++) {
+//#pragma HLS PIPELINE off
+//			((char *) regions) [i] = ((const char*) trainedRegions) [i];
+//		}
 
 		for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
 			((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
 		}
-		//memcpy(regions, trainedRegions, sizeof(regions)); vitis tries to optimise it, causing resource violation!
+
+		//memcpy(regions, trainedRegions, sizeof(regions));
+		for (int i=0; i<MAX_CHECKS; i++) {
+#pragma HLS PIPELINE off
+			for (int j=0; j<MAX_REGIONS; j++) {
+	#pragma HLS PIPELINE off
+				regions [i][j] = trainedRegions [i][j];
+			}
+		}
 
 		fsmstate=STATE_READY;
 

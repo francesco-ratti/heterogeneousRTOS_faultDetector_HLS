@@ -30250,7 +30250,7 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTas
 # 571 "detector_solid/abs_solid_detector.cpp"
 
 
-#pragma HLS interface s_axilite port = trainedRegions
+#pragma HLS interface m_axi port = trainedRegions
 #pragma HLS interface s_axilite port = n_regions_in
 #pragma HLS interface s_axilite port = errorInTask
 #pragma HLS interface s_axilite port = data
@@ -30280,16 +30280,24 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTas
 
  if (fsmstate==0) {
 
-  VITIS_LOOP_603_1: for (size_t i=0; i<sizeof(regions); i++) {
-#pragma HLS PIPELINE off
- ((char *) regions) [i] = ((const char*) trainedRegions) [i];
-  }
 
-  VITIS_LOOP_608_2: for (size_t i=0; i<sizeof(n_regions); i++) {
+
+
+
+
+  VITIS_LOOP_608_1: for (size_t i=0; i<sizeof(n_regions); i++) {
 #pragma HLS PIPELINE off
  ((char *) n_regions) [i] = ((const char*) n_regions_in) [i];
   }
 
+
+  VITIS_LOOP_614_2: for (int i=0; i<64; i++) {
+#pragma HLS PIPELINE off
+ VITIS_LOOP_616_3: for (int j=0; j<16; j++) {
+#pragma HLS PIPELINE off
+ regions [i][j] = trainedRegions [i][j];
+   }
+  }
 
   fsmstate=1;
 
