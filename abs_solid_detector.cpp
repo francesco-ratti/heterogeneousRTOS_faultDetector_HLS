@@ -475,8 +475,8 @@ struct errorDescriptorStr {
 
 #include "hls_math.h"
 #define sizeOfInputData sizeof(float)*MAX_AOV_DIM
-#define sizeOfOutcome  ((MAX_TASKS*sizeof(OutcomeStr)) / 32) + (((MAX_TASKS*sizeof(OutcomeStr)) % 32) != 0)
-#define SHARED_MEM_SIZE sizeOfInputData+sizeof(errorDescriptorStr)*MAX_TASKS//+sizeof(OutcomeStr)*MAX_TASKS
+//#define sizeOfOutcome  ((MAX_TASKS*sizeof(OutcomeStr)) / 32) + (((MAX_TASKS*sizeof(OutcomeStr)) % 32) != 0)
+//#define SHARED_MEM_SIZE sizeOfInputData+sizeof(errorDescriptorStr)*MAX_TASKS//+sizeof(OutcomeStr)*MAX_TASKS
 
 //void read_train(float dest[MAX_AOV_DIM], float* inputDataInRam) {
 ////#pragma HLS inline off
@@ -568,14 +568,14 @@ void runTestAfterInit(bool &errorInTask, ap_int<8> taskId, ap_int<8> checkId, ap
 bool test=false;
 
 
-void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], float data[MAX_AOV_DIM], float data_key[MAX_AOV_DIM], ap_int<8> n_regions_in[MAX_CHECKS], ap_int<32> sharedMem[SHARED_MEM_SIZE], hls::stream< ap_int<8> > &toScheduler) {
+void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], float data[MAX_AOV_DIM], float data_key[MAX_AOV_DIM], ap_int<8> n_regions_in[MAX_CHECKS], hls::stream< ap_int<8> > &toScheduler, float inputDataInRam[MAX_AOV_DIM], errorDescriptorStr errorDescriptorInRam[MAX_TASKS]) {
 
 #pragma HLS interface s_axilite port = trainedRegions //bundle=A
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 #pragma HLS interface s_axilite port = errorInTask //bundle=A
 #pragma HLS interface s_axilite port = data //bundle=A
 #pragma HLS interface s_axilite port = data_key //bundle=A
-#pragma HLS INTERFACE m_axi port=sharedMem
+#pragma HLS INTERFACE m_axi port=errorDescriptorInRam offset=slave
 #pragma HLS INTERFACE axis port=toScheduler
 
 
@@ -594,8 +594,8 @@ void run(controlStr contr, bool errorInTask[MAX_TASKS], region_t trainedRegions[
 #pragma HLS array_partition variable=n_regions cyclic factor=16//complete
 
 
-	float * inputDataInRam=(float*) sharedMem;
-	errorDescriptorStr * errorDescriptorInRam=(errorDescriptorStr*) sharedMem+sizeOfInputData*MAX_CHECKS;
+//	float * inputDataInRam=(float*) sharedMem;
+//	errorDescriptorStr * errorDescriptorInRam=(errorDescriptorStr*) sharedMem+sizeOfInputData*MAX_CHECKS;
 	//OutcomeStr* outcomeInRam=(OutcomeStr*) (sharedMem+sizeOfInputData*MAX_CHECKS+sizeof(errorDescriptorStr)*MAX_TASKS);
 
 	if (fsmstate==STATE_UNINITIALISED) {

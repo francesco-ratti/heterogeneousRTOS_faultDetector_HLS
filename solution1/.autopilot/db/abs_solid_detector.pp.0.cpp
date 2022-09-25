@@ -30240,7 +30240,7 @@ void runTestAfterInit(bool &errorInTask, ap_int<8> taskId, ap_int<8> checkId, ap
 bool test=false;
 
 
-__attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTask[16], region_t trainedRegions[64][16], float data[8], float data_key[8], ap_int<8> n_regions_in[64], ap_int<32> sharedMem[sizeof(float)*8 +sizeof(errorDescriptorStr)*16], hls::stream< ap_int<8> > &toScheduler) {
+__attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTask[16], region_t trainedRegions[64][16], float data[8], float data_key[8], ap_int<8> n_regions_in[64], hls::stream< ap_int<8> > &toScheduler, float inputDataInRam[8], errorDescriptorStr errorDescriptorInRam[16]) {
 #line 18 "/home/francesco/workspace/detector_solid/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
 # 571 "detector_solid/abs_solid_detector.cpp"
@@ -30255,7 +30255,7 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTas
 #pragma HLS interface s_axilite port = errorInTask
 #pragma HLS interface s_axilite port = data
 #pragma HLS interface s_axilite port = data_key
-#pragma HLS INTERFACE m_axi port=sharedMem
+#pragma HLS INTERFACE m_axi port=errorDescriptorInRam offset=slave
 #pragma HLS INTERFACE axis port=toScheduler
 
 
@@ -30274,8 +30274,8 @@ __attribute__((sdx_kernel("run", 0))) void run(controlStr contr, bool errorInTas
 #pragma HLS array_partition variable=n_regions cyclic factor=16
 
 
- float * inputDataInRam=(float*) sharedMem;
- errorDescriptorStr * errorDescriptorInRam=(errorDescriptorStr*) sharedMem+sizeof(float)*8*64;
+
+
 
 
  if (fsmstate==0) {
