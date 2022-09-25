@@ -8,10 +8,9 @@
     <args>
     <arg id="0" name="contr" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x6" offset="0x10" size="0x8" type="unsigned long long"/>
     <arg id="1" name="trainedRegions" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x18000" offset="0x1000" size="0x1000" type="REGION_T*"/>
-    <arg id="2" name="realcheckId" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x40" offset="0x40" size="0x40" type="ap_int&lt;8&gt;*"/>
-    <arg id="3" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x40" offset="0x80" size="0x40" type="ap_int&lt;8&gt;*"/>
-    <arg id="4" name="sharedMem" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x1C" size="0x8" type="void*"/>
-      <arg id="5" name="toScheduler" addressQualifier="4" port="TOSCHEDULER" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;" origName="toScheduler" origUse="variable"/>
+    <arg id="2" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x40" offset="0x40" size="0x40" type="ap_int&lt;8&gt;*"/>
+    <arg id="3" name="sharedMem" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x1C" size="0x8" type="void*"/>
+      <arg id="4" name="toScheduler" addressQualifier="4" port="TOSCHEDULER" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;ap_int&lt;8&gt;, 0&gt;&amp;" origName="toScheduler" origUse="variable"/>
     </args>
     <compileWorkGroupSize x="1" y="1" z="1"/>
     <maxWorkGroupSize x="1" y="1" z="1"/>
