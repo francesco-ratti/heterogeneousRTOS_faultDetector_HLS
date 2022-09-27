@@ -48,10 +48,10 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal trunc_ln543_fu_34_p1 : STD_LOGIC_VECTOR (5 downto 0);
-    signal trunc_ln543_reg_68 : STD_LOGIC_VECTOR (5 downto 0);
-    signal trunc_ln543_1_fu_38_p1 : STD_LOGIC_VECTOR (3 downto 0);
-    signal trunc_ln543_1_reg_73 : STD_LOGIC_VECTOR (3 downto 0);
+    signal trunc_ln547_fu_34_p1 : STD_LOGIC_VECTOR (5 downto 0);
+    signal trunc_ln547_reg_68 : STD_LOGIC_VECTOR (5 downto 0);
+    signal trunc_ln547_1_fu_38_p1 : STD_LOGIC_VECTOR (3 downto 0);
+    signal trunc_ln547_1_reg_73 : STD_LOGIC_VECTOR (3 downto 0);
     signal zext_ln587_fu_29_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_block_state1 : BOOLEAN;
     signal ap_CS_fsm_state2 : STD_LOGIC;
@@ -120,7 +120,7 @@ begin
                 ap_return_1_preg <= ap_const_lv6_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-                    ap_return_1_preg <= trunc_ln543_reg_68;
+                    ap_return_1_preg <= trunc_ln547_reg_68;
                 end if; 
             end if;
         end if;
@@ -134,7 +134,7 @@ begin
                 ap_return_2_preg <= ap_const_lv4_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-                    ap_return_2_preg <= trunc_ln543_1_reg_73;
+                    ap_return_2_preg <= trunc_ln547_1_reg_73;
                 end if; 
             end if;
         end if;
@@ -158,8 +158,8 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                trunc_ln543_1_reg_73 <= trunc_ln543_1_fu_38_p1;
-                trunc_ln543_reg_68 <= trunc_ln543_fu_34_p1;
+                trunc_ln547_1_reg_73 <= trunc_ln547_1_fu_38_p1;
+                trunc_ln547_reg_68 <= trunc_ln547_fu_34_p1;
             end if;
         end if;
     end process;
@@ -239,20 +239,20 @@ begin
     end process;
 
 
-    ap_return_1_assign_proc : process(trunc_ln543_reg_68, ap_CS_fsm_state2, ap_return_1_preg)
+    ap_return_1_assign_proc : process(trunc_ln547_reg_68, ap_CS_fsm_state2, ap_return_1_preg)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            ap_return_1 <= trunc_ln543_reg_68;
+            ap_return_1 <= trunc_ln547_reg_68;
         else 
             ap_return_1 <= ap_return_1_preg;
         end if; 
     end process;
 
 
-    ap_return_2_assign_proc : process(trunc_ln543_1_reg_73, ap_CS_fsm_state2, ap_return_2_preg)
+    ap_return_2_assign_proc : process(trunc_ln547_1_reg_73, ap_CS_fsm_state2, ap_return_2_preg)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            ap_return_2 <= trunc_ln543_1_reg_73;
+            ap_return_2 <= trunc_ln547_1_reg_73;
         else 
             ap_return_2 <= ap_return_2_preg;
         end if; 
@@ -279,7 +279,7 @@ begin
         end if; 
     end process;
 
-    trunc_ln543_1_fu_38_p1 <= p_read(4 - 1 downto 0);
-    trunc_ln543_fu_34_p1 <= p_read(6 - 1 downto 0);
+    trunc_ln547_1_fu_38_p1 <= p_read(4 - 1 downto 0);
+    trunc_ln547_fu_34_p1 <= p_read(6 - 1 downto 0);
     zext_ln587_fu_29_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(p_read),64));
 end behav;

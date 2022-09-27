@@ -18,20 +18,18 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    testStream_TDATA : IN STD_LOGIC_VECTOR (319 downto 0);
-    testStream_TVALID : IN STD_LOGIC;
-    testStream_TREADY : OUT STD_LOGIC;
-    ap_return_0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    ap_return_1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    ap_return_2 : OUT STD_LOGIC_VECTOR (15 downto 0);
+    trainStream_TDATA : IN STD_LOGIC_VECTOR (287 downto 0);
+    trainStream_TVALID : IN STD_LOGIC;
+    trainStream_TREADY : OUT STD_LOGIC;
+    ap_return_0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+    ap_return_1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    ap_return_2 : OUT STD_LOGIC_VECTOR (31 downto 0);
     ap_return_3 : OUT STD_LOGIC_VECTOR (31 downto 0);
     ap_return_4 : OUT STD_LOGIC_VECTOR (31 downto 0);
     ap_return_5 : OUT STD_LOGIC_VECTOR (31 downto 0);
     ap_return_6 : OUT STD_LOGIC_VECTOR (31 downto 0);
     ap_return_7 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    ap_return_8 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    ap_return_9 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    ap_return_10 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    ap_return_8 : OUT STD_LOGIC_VECTOR (31 downto 0) );
 end;
 
 
@@ -70,10 +68,8 @@ architecture behav of run_read_train is
     constant ap_const_lv3_5 : STD_LOGIC_VECTOR (2 downto 0) := "101";
     constant ap_const_lv3_6 : STD_LOGIC_VECTOR (2 downto 0) := "110";
     constant ap_const_lv3_7 : STD_LOGIC_VECTOR (2 downto 0) := "111";
-    constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
-    constant ap_const_lv32_F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001111";
-    constant ap_const_lv32_10 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010000";
-    constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
+    constant ap_const_lv32_20 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100000";
+    constant ap_const_lv32_3F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111111";
     constant ap_const_lv32_40 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000000";
     constant ap_const_lv32_5F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001011111";
     constant ap_const_lv32_60 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001100000";
@@ -88,8 +84,6 @@ architecture behav of run_read_train is
     constant ap_const_lv32_FF : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011111111";
     constant ap_const_lv32_100 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100000000";
     constant ap_const_lv32_11F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100011111";
-    constant ap_const_lv32_120 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100100000";
-    constant ap_const_lv32_13F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100111111";
     constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
     constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
 
@@ -100,24 +94,22 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal testStream_TDATA_blk_n : STD_LOGIC;
-    signal tmp_checkId_V_fu_234_p1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal tmp_checkId_V_reg_587 : STD_LOGIC_VECTOR (7 downto 0);
-    signal tmp_taskId_V_reg_592 : STD_LOGIC_VECTOR (7 downto 0);
-    signal tmp_uniId_V_reg_597 : STD_LOGIC_VECTOR (15 downto 0);
-    signal tmp_51_reg_602 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_52_reg_607 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_53_reg_612 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_54_reg_617 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_55_reg_622 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_56_reg_627 : STD_LOGIC_VECTOR (31 downto 0);
-    signal empty_fu_391_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal empty_reg_635 : STD_LOGIC_VECTOR (3 downto 0);
+    signal trainStream_TDATA_blk_n : STD_LOGIC;
+    signal tmp_checkId_V_fu_222_p1 : STD_LOGIC_VECTOR (5 downto 0);
+    signal tmp_checkId_V_reg_545 : STD_LOGIC_VECTOR (5 downto 0);
+    signal tmp_45_reg_550 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_46_reg_555 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_47_reg_560 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_48_reg_565 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_49_reg_570 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_50_reg_575 : STD_LOGIC_VECTOR (31 downto 0);
+    signal empty_fu_359_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal empty_reg_583 : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal exitcond2_fu_385_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal empty_56_fu_397_p1 : STD_LOGIC_VECTOR (2 downto 0);
-    signal empty_56_reg_645 : STD_LOGIC_VECTOR (2 downto 0);
+    signal exitcond1_fu_353_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal empty_53_fu_365_p1 : STD_LOGIC_VECTOR (2 downto 0);
+    signal empty_53_reg_593 : STD_LOGIC_VECTOR (2 downto 0);
     signal contr_AOV_address0 : STD_LOGIC_VECTOR (2 downto 0);
     signal contr_AOV_ce0 : STD_LOGIC;
     signal contr_AOV_we0 : STD_LOGIC;
@@ -133,29 +125,29 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
-    signal loop_index_cast1_fu_380_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal loop_index_fu_106 : STD_LOGIC_VECTOR (3 downto 0);
+    signal loop_index_cast1_fu_348_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal loop_index_fu_94 : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_CS_fsm_state6 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state6 : signal is "none";
     signal ap_block_state1 : BOOLEAN;
-    signal data_c21_0_fu_110 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_1_c22_0_fu_114 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_2_c23_0_fu_118 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_3_c24_0_fu_122 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_4_c25_0_fu_126 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_5_c26_0_fu_130 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_6_c27_0_fu_134 : STD_LOGIC_VECTOR (31 downto 0);
-    signal data_7_c28_0_fu_138 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_fu_268_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_8_fu_283_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_9_fu_353_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_10_fu_357_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_11_fu_361_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_12_fu_365_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_13_fu_369_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal bitcast_ln145_14_fu_373_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_fu_258_p4 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_s_fu_273_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_0_out_0_fu_98 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_1_out_0_fu_102 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_2_out_0_fu_106 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_3_out_0_fu_110 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_4_out_0_fu_114 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_5_out_0_fu_118 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_6_out_0_fu_122 : STD_LOGIC_VECTOR (31 downto 0);
+    signal data_7_out_0_fu_126 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_fu_236_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_1_fu_251_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_2_fu_321_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_3_fu_325_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_4_fu_329_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_5_fu_333_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_6_fu_337_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln145_7_fu_341_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_fu_226_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_s_fu_241_p4 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (5 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -165,7 +157,7 @@ attribute shreg_extract : string;
     signal ap_ST_fsm_state6_blk : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
-    component run_read_train_contr_AOV_RAM_AUTO_1R1W IS
+    component run_read_test_contr_AOV_RAM_AUTO_1R1W IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -187,7 +179,7 @@ attribute shreg_extract : string;
 
 
 begin
-    contr_AOV_U : component run_read_train_contr_AOV_RAM_AUTO_1R1W
+    contr_AOV_U : component run_read_test_contr_AOV_RAM_AUTO_1R1W
     generic map (
         DataWidth => 32,
         AddressRange => 8,
@@ -229,7 +221,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((exitcond2_fu_385_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+                elsif (((exitcond1_fu_353_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -237,85 +229,85 @@ begin
     end process;
 
 
-    loop_index_fu_106_assign_proc : process (ap_clk)
+    loop_index_fu_94_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                loop_index_fu_106 <= ap_const_lv4_0;
+            if ((not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+                loop_index_fu_94 <= ap_const_lv4_0;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-                loop_index_fu_106 <= empty_reg_635;
+                loop_index_fu_94 <= empty_reg_583;
             end if; 
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_1_c22_0_fu_114 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_0) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_0_out_0_fu_98 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_2) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_2_c23_0_fu_118 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_1_out_0_fu_102 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_3) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_3_c24_0_fu_122 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_2) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_2_out_0_fu_106 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_4) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_4_c25_0_fu_126 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_3) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_3_out_0_fu_110 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_5) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_5_c26_0_fu_130 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_4) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_4_out_0_fu_114 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_6) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_6_c27_0_fu_134 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_5) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_5_out_0_fu_118 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_7) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_7_c28_0_fu_138 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_6) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_6_out_0_fu_122 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_56_reg_645 = ap_const_lv3_0) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                data_c21_0_fu_110 <= contr_AOV_q0;
+            if (((empty_53_reg_593 = ap_const_lv3_7) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                data_7_out_0_fu_126 <= contr_AOV_q0;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((exitcond2_fu_385_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
-                empty_56_reg_645 <= empty_56_fu_397_p1;
+            if (((exitcond1_fu_353_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
+                empty_53_reg_593 <= empty_53_fu_365_p1;
             end if;
         end if;
     end process;
@@ -323,7 +315,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state5)) then
-                empty_reg_635 <= empty_fu_391_p2;
+                empty_reg_583 <= empty_fu_359_p2;
             end if;
         end if;
     end process;
@@ -331,24 +323,22 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                tmp_51_reg_602 <= testStream_TDATA(159 downto 128);
-                tmp_52_reg_607 <= testStream_TDATA(191 downto 160);
-                tmp_53_reg_612 <= testStream_TDATA(223 downto 192);
-                tmp_54_reg_617 <= testStream_TDATA(255 downto 224);
-                tmp_55_reg_622 <= testStream_TDATA(287 downto 256);
-                tmp_56_reg_627 <= testStream_TDATA(319 downto 288);
-                tmp_checkId_V_reg_587 <= tmp_checkId_V_fu_234_p1;
-                tmp_taskId_V_reg_592 <= testStream_TDATA(15 downto 8);
-                tmp_uniId_V_reg_597 <= testStream_TDATA(31 downto 16);
+                tmp_45_reg_550 <= trainStream_TDATA(127 downto 96);
+                tmp_46_reg_555 <= trainStream_TDATA(159 downto 128);
+                tmp_47_reg_560 <= trainStream_TDATA(191 downto 160);
+                tmp_48_reg_565 <= trainStream_TDATA(223 downto 192);
+                tmp_49_reg_570 <= trainStream_TDATA(255 downto 224);
+                tmp_50_reg_575 <= trainStream_TDATA(287 downto 256);
+                tmp_checkId_V_reg_545 <= tmp_checkId_V_fu_222_p1;
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, testStream_TVALID, ap_CS_fsm_state5, exitcond2_fu_385_p2)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, trainStream_TVALID, ap_CS_fsm_state5, exitcond1_fu_353_p2)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
-                if ((not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
+                if ((not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
                     ap_NS_fsm <= ap_ST_fsm_state2;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state1;
@@ -360,7 +350,7 @@ begin
             when ap_ST_fsm_state4 => 
                 ap_NS_fsm <= ap_ST_fsm_state5;
             when ap_ST_fsm_state5 => 
-                if (((exitcond2_fu_385_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
+                if (((exitcond1_fu_353_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state6;
@@ -378,9 +368,9 @@ begin
     ap_CS_fsm_state5 <= ap_CS_fsm(4);
     ap_CS_fsm_state6 <= ap_CS_fsm(5);
 
-    ap_ST_fsm_state1_blk_assign_proc : process(ap_start, ap_done_reg, testStream_TVALID)
+    ap_ST_fsm_state1_blk_assign_proc : process(ap_start, ap_done_reg, trainStream_TVALID)
     begin
-        if (((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) then 
+        if (((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) then 
             ap_ST_fsm_state1_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state1_blk <= ap_const_logic_0;
@@ -393,15 +383,15 @@ begin
     ap_ST_fsm_state5_blk <= ap_const_logic_0;
     ap_ST_fsm_state6_blk <= ap_const_logic_0;
 
-    ap_block_state1_assign_proc : process(ap_start, ap_done_reg, testStream_TVALID)
+    ap_block_state1_assign_proc : process(ap_start, ap_done_reg, trainStream_TVALID)
     begin
-                ap_block_state1 <= ((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0));
+                ap_block_state1 <= ((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0));
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state5, exitcond2_fu_385_p2)
+    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state5, exitcond1_fu_353_p2)
     begin
-        if (((exitcond2_fu_385_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+        if (((exitcond1_fu_353_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -419,39 +409,37 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state5, exitcond2_fu_385_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state5, exitcond1_fu_353_p2)
     begin
-        if (((exitcond2_fu_385_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+        if (((exitcond1_fu_353_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    ap_return_0 <= tmp_taskId_V_reg_592;
-    ap_return_1 <= tmp_checkId_V_reg_587;
-    ap_return_10 <= data_7_c28_0_fu_138;
-    ap_return_2 <= tmp_uniId_V_reg_597;
-    ap_return_3 <= data_c21_0_fu_110;
-    ap_return_4 <= data_1_c22_0_fu_114;
-    ap_return_5 <= data_2_c23_0_fu_118;
-    ap_return_6 <= data_3_c24_0_fu_122;
-    ap_return_7 <= data_4_c25_0_fu_126;
-    ap_return_8 <= data_5_c26_0_fu_130;
-    ap_return_9 <= data_6_c27_0_fu_134;
-    bitcast_ln145_10_fu_357_p1 <= tmp_52_reg_607;
-    bitcast_ln145_11_fu_361_p1 <= tmp_53_reg_612;
-    bitcast_ln145_12_fu_365_p1 <= tmp_54_reg_617;
-    bitcast_ln145_13_fu_369_p1 <= tmp_55_reg_622;
-    bitcast_ln145_14_fu_373_p1 <= tmp_56_reg_627;
-    bitcast_ln145_8_fu_283_p1 <= tmp_s_fu_273_p4;
-    bitcast_ln145_9_fu_353_p1 <= tmp_51_reg_602;
-    bitcast_ln145_fu_268_p1 <= tmp_fu_258_p4;
+    ap_return_0 <= tmp_checkId_V_reg_545;
+    ap_return_1 <= data_0_out_0_fu_98;
+    ap_return_2 <= data_1_out_0_fu_102;
+    ap_return_3 <= data_2_out_0_fu_106;
+    ap_return_4 <= data_3_out_0_fu_110;
+    ap_return_5 <= data_4_out_0_fu_114;
+    ap_return_6 <= data_5_out_0_fu_118;
+    ap_return_7 <= data_6_out_0_fu_122;
+    ap_return_8 <= data_7_out_0_fu_126;
+    bitcast_ln145_1_fu_251_p1 <= tmp_s_fu_241_p4;
+    bitcast_ln145_2_fu_321_p1 <= tmp_45_reg_550;
+    bitcast_ln145_3_fu_325_p1 <= tmp_46_reg_555;
+    bitcast_ln145_4_fu_329_p1 <= tmp_47_reg_560;
+    bitcast_ln145_5_fu_333_p1 <= tmp_48_reg_565;
+    bitcast_ln145_6_fu_337_p1 <= tmp_49_reg_570;
+    bitcast_ln145_7_fu_341_p1 <= tmp_50_reg_575;
+    bitcast_ln145_fu_236_p1 <= tmp_fu_226_p4;
 
-    contr_AOV_address0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state5, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, loop_index_cast1_fu_380_p1)
+    contr_AOV_address0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state5, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, loop_index_cast1_fu_348_p1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            contr_AOV_address0 <= loop_index_cast1_fu_380_p1(3 - 1 downto 0);
+            contr_AOV_address0 <= loop_index_cast1_fu_348_p1(3 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
             contr_AOV_address0 <= ap_const_lv64_7(3 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
@@ -482,9 +470,9 @@ begin
     end process;
 
 
-    contr_AOV_ce0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID, ap_CS_fsm_state5, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
+    contr_AOV_ce0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID, ap_CS_fsm_state5, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
             contr_AOV_ce0 <= ap_const_logic_1;
         else 
             contr_AOV_ce0 <= ap_const_logic_0;
@@ -492,9 +480,9 @@ begin
     end process;
 
 
-    contr_AOV_ce1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
+    contr_AOV_ce1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
             contr_AOV_ce1 <= ap_const_logic_1;
         else 
             contr_AOV_ce1 <= ap_const_logic_0;
@@ -502,41 +490,41 @@ begin
     end process;
 
 
-    contr_AOV_d0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, bitcast_ln145_8_fu_283_p1, bitcast_ln145_10_fu_357_p1, bitcast_ln145_12_fu_365_p1, bitcast_ln145_14_fu_373_p1)
+    contr_AOV_d0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, bitcast_ln145_1_fu_251_p1, bitcast_ln145_3_fu_325_p1, bitcast_ln145_5_fu_333_p1, bitcast_ln145_7_fu_341_p1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            contr_AOV_d0 <= bitcast_ln145_14_fu_373_p1;
+            contr_AOV_d0 <= bitcast_ln145_7_fu_341_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            contr_AOV_d0 <= bitcast_ln145_12_fu_365_p1;
+            contr_AOV_d0 <= bitcast_ln145_5_fu_333_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            contr_AOV_d0 <= bitcast_ln145_10_fu_357_p1;
+            contr_AOV_d0 <= bitcast_ln145_3_fu_325_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state1)) then 
-            contr_AOV_d0 <= bitcast_ln145_8_fu_283_p1;
+            contr_AOV_d0 <= bitcast_ln145_1_fu_251_p1;
         else 
             contr_AOV_d0 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    contr_AOV_d1_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, bitcast_ln145_fu_268_p1, bitcast_ln145_9_fu_353_p1, bitcast_ln145_11_fu_361_p1, bitcast_ln145_13_fu_369_p1)
+    contr_AOV_d1_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, bitcast_ln145_fu_236_p1, bitcast_ln145_2_fu_321_p1, bitcast_ln145_4_fu_329_p1, bitcast_ln145_6_fu_337_p1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            contr_AOV_d1 <= bitcast_ln145_13_fu_369_p1;
+            contr_AOV_d1 <= bitcast_ln145_6_fu_337_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            contr_AOV_d1 <= bitcast_ln145_11_fu_361_p1;
+            contr_AOV_d1 <= bitcast_ln145_4_fu_329_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            contr_AOV_d1 <= bitcast_ln145_9_fu_353_p1;
+            contr_AOV_d1 <= bitcast_ln145_2_fu_321_p1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state1)) then 
-            contr_AOV_d1 <= bitcast_ln145_fu_268_p1;
+            contr_AOV_d1 <= bitcast_ln145_fu_236_p1;
         else 
             contr_AOV_d1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    contr_AOV_we0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
+    contr_AOV_we0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
             contr_AOV_we0 <= ap_const_logic_1;
         else 
             contr_AOV_we0 <= ap_const_logic_0;
@@ -544,40 +532,40 @@ begin
     end process;
 
 
-    contr_AOV_we1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
+    contr_AOV_we1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
             contr_AOV_we1 <= ap_const_logic_1;
         else 
             contr_AOV_we1 <= ap_const_logic_0;
         end if; 
     end process;
 
-    empty_56_fu_397_p1 <= loop_index_fu_106(3 - 1 downto 0);
-    empty_fu_391_p2 <= std_logic_vector(unsigned(loop_index_fu_106) + unsigned(ap_const_lv4_1));
-    exitcond2_fu_385_p2 <= "1" when (loop_index_fu_106 = ap_const_lv4_8) else "0";
-    loop_index_cast1_fu_380_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(loop_index_fu_106),64));
+    empty_53_fu_365_p1 <= loop_index_fu_94(3 - 1 downto 0);
+    empty_fu_359_p2 <= std_logic_vector(unsigned(loop_index_fu_94) + unsigned(ap_const_lv4_1));
+    exitcond1_fu_353_p2 <= "1" when (loop_index_fu_94 = ap_const_lv4_8) else "0";
+    loop_index_cast1_fu_348_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(loop_index_fu_94),64));
+    tmp_checkId_V_fu_222_p1 <= trainStream_TDATA(6 - 1 downto 0);
+    tmp_fu_226_p4 <= trainStream_TDATA(63 downto 32);
+    tmp_s_fu_241_p4 <= trainStream_TDATA(95 downto 64);
 
-    testStream_TDATA_blk_n_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID)
+    trainStream_TDATA_blk_n_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID)
     begin
         if ((not(((ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            testStream_TDATA_blk_n <= testStream_TVALID;
+            trainStream_TDATA_blk_n <= trainStream_TVALID;
         else 
-            testStream_TDATA_blk_n <= ap_const_logic_1;
+            trainStream_TDATA_blk_n <= ap_const_logic_1;
         end if; 
     end process;
 
 
-    testStream_TREADY_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, testStream_TVALID)
+    trainStream_TREADY_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, trainStream_TVALID)
     begin
-        if ((not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            testStream_TREADY <= ap_const_logic_1;
+        if ((not(((trainStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+            trainStream_TREADY <= ap_const_logic_1;
         else 
-            testStream_TREADY <= ap_const_logic_0;
+            trainStream_TREADY <= ap_const_logic_0;
         end if; 
     end process;
 
-    tmp_checkId_V_fu_234_p1 <= testStream_TDATA(8 - 1 downto 0);
-    tmp_fu_258_p4 <= testStream_TDATA(95 downto 64);
-    tmp_s_fu_273_p4 <= testStream_TDATA(127 downto 96);
 end behav;

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit'
 ================================================================
-* Date:           Tue Sep 27 18:01:00 2022
+* Date:           Tue Sep 27 19:10:04 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -38,7 +38,7 @@
         |                                          |                                       |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
         |                 Instance                 |                 Module                |   min   |   max   |    min    |    max    | min | max |   Type  |
         +------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |read_train_U0                             |read_train                             |       20|       20|   0.400 us|   0.400 us|   20|   20|       no|
+        |read_test_U0                              |read_test                              |       20|       20|   0.400 us|   0.400 us|   20|   20|       no|
         |runTestAfterInit_Block_entry1012_proc_U0  |runTestAfterInit_Block_entry1012_proc  |        1|        1|  20.000 ns|  20.000 ns|    1|    1|       no|
         |run_test_U0                               |run_test                               |        4|       91|  80.000 ns|   1.820 us|    4|   91|       no|
         |writeOutcome_U0                           |writeOutcome                           |       10|       14|   0.200 us|   0.280 us|   10|   14|       no|
@@ -76,7 +76,7 @@
     +------------------------------------------+---------------------------------------+---------+----+-------+-------+-----+
     |                 Instance                 |                 Module                | BRAM_18K| DSP|   FF  |  LUT  | URAM|
     +------------------------------------------+---------------------------------------+---------+----+-------+-------+-----+
-    |read_train_U0                             |read_train                             |        0|   0|    562|    198|    0|
+    |read_test_U0                              |read_test                              |        0|   0|    562|    198|    0|
     |runTestAfterInit_Block_entry1012_proc_U0  |runTestAfterInit_Block_entry1012_proc  |        0|   0|     39|     61|    0|
     |run_test_U0                               |run_test                               |        0|  56|  22940|  15674|    0|
     |writeOutcome_U0                           |writeOutcome                           |        0|   0|    528|    280|    0|
@@ -143,8 +143,8 @@
     |ap_channel_done_uniId_V                                    |       and|   0|  0|   2|           1|           1|
     |ap_idle                                                    |       and|   0|  0|   2|           1|           1|
     |ap_sync_ready                                              |       and|   0|  0|   2|           1|           1|
-    |read_train_U0_ap_continue                                  |       and|   0|  0|   2|           1|           1|
-    |read_train_U0_ap_start                                     |       and|   0|  0|   2|           1|           1|
+    |read_test_U0_ap_continue                                   |       and|   0|  0|   2|           1|           1|
+    |read_test_U0_ap_start                                      |       and|   0|  0|   2|           1|           1|
     |runTestAfterInit_Block_entry1012_proc_U0_ap_continue       |       and|   0|  0|   2|           1|           1|
     |runTestAfterInit_Block_entry1012_proc_U0_ap_start          |       and|   0|  0|   2|           1|           1|
     |run_test_U0_ap_start                                       |       and|   0|  0|   2|           1|           1|
@@ -164,7 +164,7 @@
     |ap_sync_channel_write_taskId_V_load_cast_loc_channel       |        or|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_taskId_V_load_loc_channel            |        or|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_uniId_V                              |        or|   0|  0|   2|           1|           1|
-    |ap_sync_read_train_U0_ap_ready                             |        or|   0|  0|   2|           1|           1|
+    |ap_sync_read_test_U0_ap_ready                              |        or|   0|  0|   2|           1|           1|
     |ap_sync_runTestAfterInit_Block_entry1012_proc_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
     |ap_sync_run_test_U0_ap_ready                               |        or|   0|  0|   2|           1|           1|
     +-----------------------------------------------------------+----------+----+---+----+------------+------------+
@@ -190,7 +190,7 @@
     |ap_sync_reg_channel_write_taskId_V_load_cast_loc_channel       |   9|          2|    1|          2|
     |ap_sync_reg_channel_write_taskId_V_load_loc_channel            |   9|          2|    1|          2|
     |ap_sync_reg_channel_write_uniId_V                              |   9|          2|    1|          2|
-    |ap_sync_reg_read_train_U0_ap_ready                             |   9|          2|    1|          2|
+    |ap_sync_reg_read_test_U0_ap_ready                              |   9|          2|    1|          2|
     |ap_sync_reg_runTestAfterInit_Block_entry1012_proc_U0_ap_ready  |   9|          2|    1|          2|
     |ap_sync_reg_run_test_U0_ap_ready                               |   9|          2|    1|          2|
     +---------------------------------------------------------------+----+-----------+-----+-----------+
@@ -216,7 +216,7 @@
     |ap_sync_reg_channel_write_taskId_V_load_cast_loc_channel       |  1|   0|    1|          0|
     |ap_sync_reg_channel_write_taskId_V_load_loc_channel            |  1|   0|    1|          0|
     |ap_sync_reg_channel_write_uniId_V                              |  1|   0|    1|          0|
-    |ap_sync_reg_read_train_U0_ap_ready                             |  1|   0|    1|          0|
+    |ap_sync_reg_read_test_U0_ap_ready                              |  1|   0|    1|          0|
     |ap_sync_reg_runTestAfterInit_Block_entry1012_proc_U0_ap_ready  |  1|   0|    1|          0|
     |ap_sync_reg_run_test_U0_ap_ready                               |  1|   0|    1|          0|
     +---------------------------------------------------------------+---+----+-----+-----------+
@@ -232,7 +232,7 @@
 +-----------------------+-----+-----+------------+------------------+--------------+
 |       RTL Ports       | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
 +-----------------------+-----+-----+------------+------------------+--------------+
-|testStream_TDATA       |   in|  320|        axis|        testStream|       pointer|
+|testStream_TDATA       |   in|  288|        axis|        testStream|       pointer|
 |testStream_TVALID      |   in|    1|        axis|        testStream|       pointer|
 |testStream_TREADY      |  out|    1|        axis|        testStream|       pointer|
 |outcomeInRam_address0  |  out|    4|   ap_memory|      outcomeInRam|         array|
@@ -268,6 +268,16 @@
 |regions_d1             |  out|   32|   ap_memory|           regions|         array|
 |regions_q1             |   in|   32|   ap_memory|           regions|         array|
 |regions_we1            |  out|    1|   ap_memory|           regions|         array|
+|regions_1_address0     |  out|    9|   ap_memory|         regions_1|         array|
+|regions_1_ce0          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_d0           |  out|   32|   ap_memory|         regions_1|         array|
+|regions_1_q0           |   in|   32|   ap_memory|         regions_1|         array|
+|regions_1_we0          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_address1     |  out|    9|   ap_memory|         regions_1|         array|
+|regions_1_ce1          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_d1           |  out|   32|   ap_memory|         regions_1|         array|
+|regions_1_q1           |   in|   32|   ap_memory|         regions_1|         array|
+|regions_1_we1          |  out|    1|   ap_memory|         regions_1|         array|
 |regions_2_address0     |  out|    9|   ap_memory|         regions_2|         array|
 |regions_2_ce0          |  out|    1|   ap_memory|         regions_2|         array|
 |regions_2_d0           |  out|   32|   ap_memory|         regions_2|         array|
@@ -728,16 +738,6 @@
 |regions_47_d1          |  out|   32|   ap_memory|        regions_47|         array|
 |regions_47_q1          |   in|   32|   ap_memory|        regions_47|         array|
 |regions_47_we1         |  out|    1|   ap_memory|        regions_47|         array|
-|regions_48_address0    |  out|    9|   ap_memory|        regions_48|         array|
-|regions_48_ce0         |  out|    1|   ap_memory|        regions_48|         array|
-|regions_48_d0          |  out|   32|   ap_memory|        regions_48|         array|
-|regions_48_q0          |   in|   32|   ap_memory|        regions_48|         array|
-|regions_48_we0         |  out|    1|   ap_memory|        regions_48|         array|
-|regions_48_address1    |  out|    9|   ap_memory|        regions_48|         array|
-|regions_48_ce1         |  out|    1|   ap_memory|        regions_48|         array|
-|regions_48_d1          |  out|   32|   ap_memory|        regions_48|         array|
-|regions_48_q1          |   in|   32|   ap_memory|        regions_48|         array|
-|regions_48_we1         |  out|    1|   ap_memory|        regions_48|         array|
 |ap_clk                 |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
 |ap_rst                 |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
 |ap_start               |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|

@@ -37,6 +37,25 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 1313 \
+    name regions_1 \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename regions_1 \
+    op interface \
+    ports { regions_1_address0 { O 9 vector } regions_1_ce0 { O 1 bit } regions_1_we0 { O 1 bit } regions_1_d0 { O 32 vector } regions_1_q0 { I 32 vector } regions_1_address1 { O 9 vector } regions_1_ce1 { O 1 bit } regions_1_we1 { O 1 bit } regions_1_d1 { O 32 vector } regions_1_q1 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_1'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 1314 \
     name regions_2 \
     reset_level 1 \
     sync_rst true \
@@ -55,7 +74,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1314 \
+    id 1315 \
     name regions_3 \
     reset_level 1 \
     sync_rst true \
@@ -74,7 +93,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1315 \
+    id 1316 \
     name regions_4 \
     reset_level 1 \
     sync_rst true \
@@ -93,7 +112,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1316 \
+    id 1317 \
     name regions_5 \
     reset_level 1 \
     sync_rst true \
@@ -112,7 +131,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1317 \
+    id 1318 \
     name regions_6 \
     reset_level 1 \
     sync_rst true \
@@ -131,7 +150,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1318 \
+    id 1319 \
     name regions_7 \
     reset_level 1 \
     sync_rst true \
@@ -150,7 +169,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1319 \
+    id 1320 \
     name regions_8 \
     reset_level 1 \
     sync_rst true \
@@ -169,7 +188,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1320 \
+    id 1321 \
     name regions_9 \
     reset_level 1 \
     sync_rst true \
@@ -188,7 +207,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1321 \
+    id 1322 \
     name regions_10 \
     reset_level 1 \
     sync_rst true \
@@ -207,7 +226,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1322 \
+    id 1323 \
     name regions_11 \
     reset_level 1 \
     sync_rst true \
@@ -226,7 +245,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1323 \
+    id 1324 \
     name regions_12 \
     reset_level 1 \
     sync_rst true \
@@ -245,7 +264,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1324 \
+    id 1325 \
     name regions_13 \
     reset_level 1 \
     sync_rst true \
@@ -264,7 +283,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1325 \
+    id 1326 \
     name regions_14 \
     reset_level 1 \
     sync_rst true \
@@ -283,14 +302,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1326 \
+    id 1327 \
     name regions_15 \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename regions_15 \
     op interface \
-    ports { regions_15_address0 { O 9 vector } regions_15_ce0 { O 1 bit } regions_15_we0 { O 1 bit } regions_15_d0 { O 32 vector } regions_15_q0 { I 32 vector } regions_15_address1 { O 9 vector } regions_15_ce1 { O 1 bit } regions_15_we1 { O 1 bit } regions_15_d1 { O 32 vector } regions_15_q1 { I 32 vector } } \
+    ports { regions_15_address0 { O 9 vector } regions_15_ce0 { O 1 bit } regions_15_we0 { O 1 bit } regions_15_d0 { O 32 vector } regions_15_q0 { I 32 vector } regions_15_address1 { O 9 vector } regions_15_ce1 { O 1 bit } regions_15_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_15'"
@@ -302,14 +321,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1327 \
+    id 1328 \
     name regions_16 \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename regions_16 \
     op interface \
-    ports { regions_16_address0 { O 9 vector } regions_16_ce0 { O 1 bit } regions_16_we0 { O 1 bit } regions_16_d0 { O 32 vector } regions_16_q0 { I 32 vector } regions_16_address1 { O 9 vector } regions_16_ce1 { O 1 bit } regions_16_q1 { I 32 vector } } \
+    ports { regions_16_address0 { O 9 vector } regions_16_ce0 { O 1 bit } regions_16_we0 { O 1 bit } regions_16_d0 { O 32 vector } regions_16_q0 { I 32 vector } regions_16_address1 { O 9 vector } regions_16_ce1 { O 1 bit } regions_16_we1 { O 1 bit } regions_16_d1 { O 32 vector } regions_16_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_16'"
@@ -321,7 +340,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1328 \
+    id 1329 \
     name regions_17 \
     reset_level 1 \
     sync_rst true \
@@ -340,7 +359,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1329 \
+    id 1330 \
     name regions_18 \
     reset_level 1 \
     sync_rst true \
@@ -359,7 +378,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1330 \
+    id 1331 \
     name regions_19 \
     reset_level 1 \
     sync_rst true \
@@ -378,7 +397,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1331 \
+    id 1332 \
     name regions_20 \
     reset_level 1 \
     sync_rst true \
@@ -397,7 +416,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1332 \
+    id 1333 \
     name regions_21 \
     reset_level 1 \
     sync_rst true \
@@ -416,7 +435,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1333 \
+    id 1334 \
     name regions_22 \
     reset_level 1 \
     sync_rst true \
@@ -435,7 +454,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1334 \
+    id 1335 \
     name regions_23 \
     reset_level 1 \
     sync_rst true \
@@ -454,7 +473,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1335 \
+    id 1336 \
     name regions_24 \
     reset_level 1 \
     sync_rst true \
@@ -473,7 +492,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1336 \
+    id 1337 \
     name regions_25 \
     reset_level 1 \
     sync_rst true \
@@ -492,7 +511,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1337 \
+    id 1338 \
     name regions_26 \
     reset_level 1 \
     sync_rst true \
@@ -511,7 +530,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1338 \
+    id 1339 \
     name regions_27 \
     reset_level 1 \
     sync_rst true \
@@ -530,7 +549,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1339 \
+    id 1340 \
     name regions_28 \
     reset_level 1 \
     sync_rst true \
@@ -549,7 +568,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1340 \
+    id 1341 \
     name regions_29 \
     reset_level 1 \
     sync_rst true \
@@ -568,7 +587,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1341 \
+    id 1342 \
     name regions_30 \
     reset_level 1 \
     sync_rst true \
@@ -587,14 +606,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1342 \
+    id 1343 \
     name regions_31 \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename regions_31 \
     op interface \
-    ports { regions_31_address0 { O 9 vector } regions_31_ce0 { O 1 bit } regions_31_we0 { O 1 bit } regions_31_d0 { O 32 vector } regions_31_q0 { I 32 vector } regions_31_address1 { O 9 vector } regions_31_ce1 { O 1 bit } regions_31_we1 { O 1 bit } regions_31_d1 { O 32 vector } regions_31_q1 { I 32 vector } } \
+    ports { regions_31_address0 { O 9 vector } regions_31_ce0 { O 1 bit } regions_31_we0 { O 1 bit } regions_31_d0 { O 32 vector } regions_31_q0 { I 32 vector } regions_31_address1 { O 9 vector } regions_31_ce1 { O 1 bit } regions_31_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_31'"
@@ -606,14 +625,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1343 \
+    id 1344 \
     name regions_32 \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename regions_32 \
     op interface \
-    ports { regions_32_address0 { O 9 vector } regions_32_ce0 { O 1 bit } regions_32_we0 { O 1 bit } regions_32_d0 { O 32 vector } regions_32_q0 { I 32 vector } regions_32_address1 { O 9 vector } regions_32_ce1 { O 1 bit } regions_32_q1 { I 32 vector } } \
+    ports { regions_32_address0 { O 9 vector } regions_32_ce0 { O 1 bit } regions_32_we0 { O 1 bit } regions_32_d0 { O 32 vector } regions_32_q0 { I 32 vector } regions_32_address1 { O 9 vector } regions_32_ce1 { O 1 bit } regions_32_we1 { O 1 bit } regions_32_d1 { O 32 vector } regions_32_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_32'"
@@ -625,7 +644,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1344 \
+    id 1345 \
     name regions_33 \
     reset_level 1 \
     sync_rst true \
@@ -644,7 +663,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1345 \
+    id 1346 \
     name regions_34 \
     reset_level 1 \
     sync_rst true \
@@ -663,7 +682,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1346 \
+    id 1347 \
     name regions_35 \
     reset_level 1 \
     sync_rst true \
@@ -682,7 +701,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1347 \
+    id 1348 \
     name regions_36 \
     reset_level 1 \
     sync_rst true \
@@ -701,7 +720,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1348 \
+    id 1349 \
     name regions_37 \
     reset_level 1 \
     sync_rst true \
@@ -720,7 +739,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1349 \
+    id 1350 \
     name regions_38 \
     reset_level 1 \
     sync_rst true \
@@ -739,7 +758,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1350 \
+    id 1351 \
     name regions_39 \
     reset_level 1 \
     sync_rst true \
@@ -758,7 +777,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1351 \
+    id 1352 \
     name regions_40 \
     reset_level 1 \
     sync_rst true \
@@ -777,7 +796,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1352 \
+    id 1353 \
     name regions_41 \
     reset_level 1 \
     sync_rst true \
@@ -796,7 +815,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1353 \
+    id 1354 \
     name regions_42 \
     reset_level 1 \
     sync_rst true \
@@ -815,7 +834,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1354 \
+    id 1355 \
     name regions_43 \
     reset_level 1 \
     sync_rst true \
@@ -834,7 +853,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1355 \
+    id 1356 \
     name regions_44 \
     reset_level 1 \
     sync_rst true \
@@ -853,7 +872,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1356 \
+    id 1357 \
     name regions_45 \
     reset_level 1 \
     sync_rst true \
@@ -872,7 +891,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1357 \
+    id 1358 \
     name regions_46 \
     reset_level 1 \
     sync_rst true \
@@ -891,36 +910,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1358 \
+    id 1359 \
     name regions_47 \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename regions_47 \
     op interface \
-    ports { regions_47_address0 { O 9 vector } regions_47_ce0 { O 1 bit } regions_47_we0 { O 1 bit } regions_47_d0 { O 32 vector } regions_47_q0 { I 32 vector } regions_47_address1 { O 9 vector } regions_47_ce1 { O 1 bit } regions_47_we1 { O 1 bit } regions_47_d1 { O 32 vector } regions_47_q1 { I 32 vector } } \
+    ports { regions_47_address0 { O 9 vector } regions_47_ce0 { O 1 bit } regions_47_we0 { O 1 bit } regions_47_d0 { O 32 vector } regions_47_q0 { I 32 vector } regions_47_address1 { O 9 vector } regions_47_ce1 { O 1 bit } regions_47_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_47'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 1359 \
-    name regions_48 \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename regions_48 \
-    op interface \
-    ports { regions_48_address0 { O 9 vector } regions_48_ce0 { O 1 bit } regions_48_we0 { O 1 bit } regions_48_d0 { O 32 vector } regions_48_q0 { I 32 vector } regions_48_address1 { O 9 vector } regions_48_ce1 { O 1 bit } regions_48_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_48'"
 }
 }
 

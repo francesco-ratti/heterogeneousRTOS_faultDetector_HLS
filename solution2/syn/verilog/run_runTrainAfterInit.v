@@ -19,6 +19,16 @@ module run_runTrainAfterInit (
         regions_d1,
         regions_q1,
         regions_we1,
+        regions_1_address0,
+        regions_1_ce0,
+        regions_1_d0,
+        regions_1_q0,
+        regions_1_we0,
+        regions_1_address1,
+        regions_1_ce1,
+        regions_1_d1,
+        regions_1_q1,
+        regions_1_we1,
         regions_2_address0,
         regions_2_ce0,
         regions_2_d0,
@@ -479,16 +489,6 @@ module run_runTrainAfterInit (
         regions_47_d1,
         regions_47_q1,
         regions_47_we1,
-        regions_48_address0,
-        regions_48_ce0,
-        regions_48_d0,
-        regions_48_q0,
-        regions_48_we0,
-        regions_48_address1,
-        regions_48_ce1,
-        regions_48_d1,
-        regions_48_q1,
-        regions_48_we1,
         n_regions_V_address0,
         n_regions_V_ce0,
         n_regions_V_d0,
@@ -511,7 +511,7 @@ module run_runTrainAfterInit (
 );
 
 
-input  [319:0] trainStream_TDATA;
+input  [287:0] trainStream_TDATA;
 output  [8:0] regions_address0;
 output   regions_ce0;
 output  [31:0] regions_d0;
@@ -522,6 +522,16 @@ output   regions_ce1;
 output  [31:0] regions_d1;
 input  [31:0] regions_q1;
 output   regions_we1;
+output  [8:0] regions_1_address0;
+output   regions_1_ce0;
+output  [31:0] regions_1_d0;
+input  [31:0] regions_1_q0;
+output   regions_1_we0;
+output  [8:0] regions_1_address1;
+output   regions_1_ce1;
+output  [31:0] regions_1_d1;
+input  [31:0] regions_1_q1;
+output   regions_1_we1;
 output  [8:0] regions_2_address0;
 output   regions_2_ce0;
 output  [31:0] regions_2_d0;
@@ -982,16 +992,6 @@ output   regions_47_ce1;
 output  [31:0] regions_47_d1;
 input  [31:0] regions_47_q1;
 output   regions_47_we1;
-output  [8:0] regions_48_address0;
-output   regions_48_ce0;
-output  [31:0] regions_48_d0;
-input  [31:0] regions_48_q0;
-output   regions_48_we0;
-output  [8:0] regions_48_address1;
-output   regions_48_ce1;
-output  [31:0] regions_48_d1;
-input  [31:0] regions_48_q1;
-output   regions_48_we1;
 output  [5:0] n_regions_V_address0;
 output   n_regions_V_ce0;
 output  [7:0] n_regions_V_d0;
@@ -1012,21 +1012,21 @@ output   ap_ready;
 output   ap_idle;
 input   ap_continue;
 
-wire    read_train_1_U0_ap_start;
-wire    read_train_1_U0_ap_done;
-wire    read_train_1_U0_ap_continue;
-wire    read_train_1_U0_ap_idle;
-wire    read_train_1_U0_ap_ready;
-wire    read_train_1_U0_trainStream_TREADY;
-wire   [5:0] read_train_1_U0_ap_return_0;
-wire   [31:0] read_train_1_U0_ap_return_1;
-wire   [31:0] read_train_1_U0_ap_return_2;
-wire   [31:0] read_train_1_U0_ap_return_3;
-wire   [31:0] read_train_1_U0_ap_return_4;
-wire   [31:0] read_train_1_U0_ap_return_5;
-wire   [31:0] read_train_1_U0_ap_return_6;
-wire   [31:0] read_train_1_U0_ap_return_7;
-wire   [31:0] read_train_1_U0_ap_return_8;
+wire    read_train_U0_ap_start;
+wire    read_train_U0_ap_done;
+wire    read_train_U0_ap_continue;
+wire    read_train_U0_ap_idle;
+wire    read_train_U0_ap_ready;
+wire    read_train_U0_trainStream_TREADY;
+wire   [5:0] read_train_U0_ap_return_0;
+wire   [31:0] read_train_U0_ap_return_1;
+wire   [31:0] read_train_U0_ap_return_2;
+wire   [31:0] read_train_U0_ap_return_3;
+wire   [31:0] read_train_U0_ap_return_4;
+wire   [31:0] read_train_U0_ap_return_5;
+wire   [31:0] read_train_U0_ap_return_6;
+wire   [31:0] read_train_U0_ap_return_7;
+wire   [31:0] read_train_U0_ap_return_8;
 wire    ap_channel_done_data_7;
 wire    data_7_full_n;
 reg    ap_sync_reg_channel_write_data_7;
@@ -1076,6 +1076,14 @@ wire   [8:0] insert_point_U0_regions_address1;
 wire    insert_point_U0_regions_ce1;
 wire    insert_point_U0_regions_we1;
 wire   [31:0] insert_point_U0_regions_d1;
+wire   [8:0] insert_point_U0_regions_1_address0;
+wire    insert_point_U0_regions_1_ce0;
+wire    insert_point_U0_regions_1_we0;
+wire   [31:0] insert_point_U0_regions_1_d0;
+wire   [8:0] insert_point_U0_regions_1_address1;
+wire    insert_point_U0_regions_1_ce1;
+wire    insert_point_U0_regions_1_we1;
+wire   [31:0] insert_point_U0_regions_1_d1;
 wire   [8:0] insert_point_U0_regions_2_address0;
 wire    insert_point_U0_regions_2_ce0;
 wire    insert_point_U0_regions_2_we0;
@@ -1186,14 +1194,14 @@ wire    insert_point_U0_regions_15_we0;
 wire   [31:0] insert_point_U0_regions_15_d0;
 wire   [8:0] insert_point_U0_regions_15_address1;
 wire    insert_point_U0_regions_15_ce1;
-wire    insert_point_U0_regions_15_we1;
-wire   [31:0] insert_point_U0_regions_15_d1;
 wire   [8:0] insert_point_U0_regions_16_address0;
 wire    insert_point_U0_regions_16_ce0;
 wire    insert_point_U0_regions_16_we0;
 wire   [31:0] insert_point_U0_regions_16_d0;
 wire   [8:0] insert_point_U0_regions_16_address1;
 wire    insert_point_U0_regions_16_ce1;
+wire    insert_point_U0_regions_16_we1;
+wire   [31:0] insert_point_U0_regions_16_d1;
 wire   [8:0] insert_point_U0_regions_17_address0;
 wire    insert_point_U0_regions_17_ce0;
 wire    insert_point_U0_regions_17_we0;
@@ -1312,14 +1320,14 @@ wire    insert_point_U0_regions_31_we0;
 wire   [31:0] insert_point_U0_regions_31_d0;
 wire   [8:0] insert_point_U0_regions_31_address1;
 wire    insert_point_U0_regions_31_ce1;
-wire    insert_point_U0_regions_31_we1;
-wire   [31:0] insert_point_U0_regions_31_d1;
 wire   [8:0] insert_point_U0_regions_32_address0;
 wire    insert_point_U0_regions_32_ce0;
 wire    insert_point_U0_regions_32_we0;
 wire   [31:0] insert_point_U0_regions_32_d0;
 wire   [8:0] insert_point_U0_regions_32_address1;
 wire    insert_point_U0_regions_32_ce1;
+wire    insert_point_U0_regions_32_we1;
+wire   [31:0] insert_point_U0_regions_32_d1;
 wire   [8:0] insert_point_U0_regions_33_address0;
 wire    insert_point_U0_regions_33_ce0;
 wire    insert_point_U0_regions_33_we0;
@@ -1438,14 +1446,6 @@ wire    insert_point_U0_regions_47_we0;
 wire   [31:0] insert_point_U0_regions_47_d0;
 wire   [8:0] insert_point_U0_regions_47_address1;
 wire    insert_point_U0_regions_47_ce1;
-wire    insert_point_U0_regions_47_we1;
-wire   [31:0] insert_point_U0_regions_47_d1;
-wire   [8:0] insert_point_U0_regions_48_address0;
-wire    insert_point_U0_regions_48_ce0;
-wire    insert_point_U0_regions_48_we0;
-wire   [31:0] insert_point_U0_regions_48_d0;
-wire   [8:0] insert_point_U0_regions_48_address1;
-wire    insert_point_U0_regions_48_ce1;
 wire   [5:0] insert_point_U0_n_regions_V_address0;
 wire    insert_point_U0_n_regions_V_ce0;
 wire    insert_point_U0_n_regions_V_we0;
@@ -1487,8 +1487,8 @@ wire   [1:0] data_7_num_data_valid;
 wire   [1:0] data_7_fifo_cap;
 wire    data_7_empty_n;
 wire    ap_sync_ready;
-reg    ap_sync_reg_read_train_1_U0_ap_ready;
-wire    ap_sync_read_train_1_U0_ap_ready;
+reg    ap_sync_reg_read_train_U0_ap_ready;
+wire    ap_sync_read_train_U0_ap_ready;
 reg    ap_sync_reg_insert_point_U0_ap_ready;
 wire    ap_sync_insert_point_U0_ap_ready;
 wire    ap_ce_reg;
@@ -1504,30 +1504,30 @@ initial begin
 #0 ap_sync_reg_channel_write_data_1 = 1'b0;
 #0 ap_sync_reg_channel_write_data = 1'b0;
 #0 ap_sync_reg_channel_write_checkId_V = 1'b0;
-#0 ap_sync_reg_read_train_1_U0_ap_ready = 1'b0;
+#0 ap_sync_reg_read_train_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_insert_point_U0_ap_ready = 1'b0;
 end
 
-run_read_train_1 read_train_1_U0(
+run_read_train read_train_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(read_train_1_U0_ap_start),
-    .ap_done(read_train_1_U0_ap_done),
-    .ap_continue(read_train_1_U0_ap_continue),
-    .ap_idle(read_train_1_U0_ap_idle),
-    .ap_ready(read_train_1_U0_ap_ready),
+    .ap_start(read_train_U0_ap_start),
+    .ap_done(read_train_U0_ap_done),
+    .ap_continue(read_train_U0_ap_continue),
+    .ap_idle(read_train_U0_ap_idle),
+    .ap_ready(read_train_U0_ap_ready),
     .trainStream_TDATA(trainStream_TDATA),
     .trainStream_TVALID(trainStream_TVALID),
-    .trainStream_TREADY(read_train_1_U0_trainStream_TREADY),
-    .ap_return_0(read_train_1_U0_ap_return_0),
-    .ap_return_1(read_train_1_U0_ap_return_1),
-    .ap_return_2(read_train_1_U0_ap_return_2),
-    .ap_return_3(read_train_1_U0_ap_return_3),
-    .ap_return_4(read_train_1_U0_ap_return_4),
-    .ap_return_5(read_train_1_U0_ap_return_5),
-    .ap_return_6(read_train_1_U0_ap_return_6),
-    .ap_return_7(read_train_1_U0_ap_return_7),
-    .ap_return_8(read_train_1_U0_ap_return_8)
+    .trainStream_TREADY(read_train_U0_trainStream_TREADY),
+    .ap_return_0(read_train_U0_ap_return_0),
+    .ap_return_1(read_train_U0_ap_return_1),
+    .ap_return_2(read_train_U0_ap_return_2),
+    .ap_return_3(read_train_U0_ap_return_3),
+    .ap_return_4(read_train_U0_ap_return_4),
+    .ap_return_5(read_train_U0_ap_return_5),
+    .ap_return_6(read_train_U0_ap_return_6),
+    .ap_return_7(read_train_U0_ap_return_7),
+    .ap_return_8(read_train_U0_ap_return_8)
 );
 
 run_insert_point insert_point_U0(
@@ -1549,6 +1549,16 @@ run_insert_point insert_point_U0(
     .regions_d1(insert_point_U0_regions_d1),
     .regions_q1(regions_q1),
     .p_read(checkId_V_dout),
+    .regions_1_address0(insert_point_U0_regions_1_address0),
+    .regions_1_ce0(insert_point_U0_regions_1_ce0),
+    .regions_1_we0(insert_point_U0_regions_1_we0),
+    .regions_1_d0(insert_point_U0_regions_1_d0),
+    .regions_1_q0(regions_1_q0),
+    .regions_1_address1(insert_point_U0_regions_1_address1),
+    .regions_1_ce1(insert_point_U0_regions_1_ce1),
+    .regions_1_we1(insert_point_U0_regions_1_we1),
+    .regions_1_d1(insert_point_U0_regions_1_d1),
+    .regions_1_q1(regions_1_q1),
     .regions_2_address0(insert_point_U0_regions_2_address0),
     .regions_2_ce0(insert_point_U0_regions_2_ce0),
     .regions_2_we0(insert_point_U0_regions_2_we0),
@@ -1686,8 +1696,6 @@ run_insert_point insert_point_U0(
     .regions_15_q0(regions_15_q0),
     .regions_15_address1(insert_point_U0_regions_15_address1),
     .regions_15_ce1(insert_point_U0_regions_15_ce1),
-    .regions_15_we1(insert_point_U0_regions_15_we1),
-    .regions_15_d1(insert_point_U0_regions_15_d1),
     .regions_15_q1(regions_15_q1),
     .regions_16_address0(insert_point_U0_regions_16_address0),
     .regions_16_ce0(insert_point_U0_regions_16_ce0),
@@ -1696,6 +1704,8 @@ run_insert_point insert_point_U0(
     .regions_16_q0(regions_16_q0),
     .regions_16_address1(insert_point_U0_regions_16_address1),
     .regions_16_ce1(insert_point_U0_regions_16_ce1),
+    .regions_16_we1(insert_point_U0_regions_16_we1),
+    .regions_16_d1(insert_point_U0_regions_16_d1),
     .regions_16_q1(regions_16_q1),
     .regions_17_address0(insert_point_U0_regions_17_address0),
     .regions_17_ce0(insert_point_U0_regions_17_ce0),
@@ -1844,8 +1854,6 @@ run_insert_point insert_point_U0(
     .regions_31_q0(regions_31_q0),
     .regions_31_address1(insert_point_U0_regions_31_address1),
     .regions_31_ce1(insert_point_U0_regions_31_ce1),
-    .regions_31_we1(insert_point_U0_regions_31_we1),
-    .regions_31_d1(insert_point_U0_regions_31_d1),
     .regions_31_q1(regions_31_q1),
     .regions_32_address0(insert_point_U0_regions_32_address0),
     .regions_32_ce0(insert_point_U0_regions_32_ce0),
@@ -1854,6 +1862,8 @@ run_insert_point insert_point_U0(
     .regions_32_q0(regions_32_q0),
     .regions_32_address1(insert_point_U0_regions_32_address1),
     .regions_32_ce1(insert_point_U0_regions_32_ce1),
+    .regions_32_we1(insert_point_U0_regions_32_we1),
+    .regions_32_d1(insert_point_U0_regions_32_d1),
     .regions_32_q1(regions_32_q1),
     .regions_33_address0(insert_point_U0_regions_33_address0),
     .regions_33_ce0(insert_point_U0_regions_33_ce0),
@@ -2002,17 +2012,7 @@ run_insert_point insert_point_U0(
     .regions_47_q0(regions_47_q0),
     .regions_47_address1(insert_point_U0_regions_47_address1),
     .regions_47_ce1(insert_point_U0_regions_47_ce1),
-    .regions_47_we1(insert_point_U0_regions_47_we1),
-    .regions_47_d1(insert_point_U0_regions_47_d1),
     .regions_47_q1(regions_47_q1),
-    .regions_48_address0(insert_point_U0_regions_48_address0),
-    .regions_48_ce0(insert_point_U0_regions_48_ce0),
-    .regions_48_we0(insert_point_U0_regions_48_we0),
-    .regions_48_d0(insert_point_U0_regions_48_d0),
-    .regions_48_q0(regions_48_q0),
-    .regions_48_address1(insert_point_U0_regions_48_address1),
-    .regions_48_ce1(insert_point_U0_regions_48_ce1),
-    .regions_48_q1(regions_48_q1),
     .n_regions_V_address0(insert_point_U0_n_regions_V_address0),
     .n_regions_V_ce0(insert_point_U0_n_regions_V_ce0),
     .n_regions_V_we0(insert_point_U0_n_regions_V_we0),
@@ -2033,7 +2033,7 @@ run_fifo_w6_d2_S_x checkId_V_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_0),
+    .if_din(read_train_U0_ap_return_0),
     .if_full_n(checkId_V_full_n),
     .if_write(ap_channel_done_checkId_V),
     .if_dout(checkId_V_dout),
@@ -2048,7 +2048,7 @@ run_fifo_w32_d2_S_x data_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_1),
+    .if_din(read_train_U0_ap_return_1),
     .if_full_n(data_full_n),
     .if_write(ap_channel_done_data),
     .if_dout(data_dout),
@@ -2063,7 +2063,7 @@ run_fifo_w32_d2_S_x data_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_2),
+    .if_din(read_train_U0_ap_return_2),
     .if_full_n(data_1_full_n),
     .if_write(ap_channel_done_data_1),
     .if_dout(data_1_dout),
@@ -2078,7 +2078,7 @@ run_fifo_w32_d2_S_x data_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_3),
+    .if_din(read_train_U0_ap_return_3),
     .if_full_n(data_2_full_n),
     .if_write(ap_channel_done_data_2),
     .if_dout(data_2_dout),
@@ -2093,7 +2093,7 @@ run_fifo_w32_d2_S_x data_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_4),
+    .if_din(read_train_U0_ap_return_4),
     .if_full_n(data_3_full_n),
     .if_write(ap_channel_done_data_3),
     .if_dout(data_3_dout),
@@ -2108,7 +2108,7 @@ run_fifo_w32_d2_S_x data_4_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_5),
+    .if_din(read_train_U0_ap_return_5),
     .if_full_n(data_4_full_n),
     .if_write(ap_channel_done_data_4),
     .if_dout(data_4_dout),
@@ -2123,7 +2123,7 @@ run_fifo_w32_d2_S_x data_5_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_6),
+    .if_din(read_train_U0_ap_return_6),
     .if_full_n(data_5_full_n),
     .if_write(ap_channel_done_data_5),
     .if_dout(data_5_dout),
@@ -2138,7 +2138,7 @@ run_fifo_w32_d2_S_x data_6_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_7),
+    .if_din(read_train_U0_ap_return_7),
     .if_full_n(data_6_full_n),
     .if_write(ap_channel_done_data_6),
     .if_dout(data_6_dout),
@@ -2153,7 +2153,7 @@ run_fifo_w32_d2_S_x data_7_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_1_U0_ap_return_8),
+    .if_din(read_train_U0_ap_return_8),
     .if_full_n(data_7_full_n),
     .if_write(ap_channel_done_data_7),
     .if_dout(data_7_dout),
@@ -2167,7 +2167,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_checkId_V <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_checkId_V <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_checkId_V <= ap_sync_channel_write_checkId_V;
@@ -2179,7 +2179,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data <= ap_sync_channel_write_data;
@@ -2191,7 +2191,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_1 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_1 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_1 <= ap_sync_channel_write_data_1;
@@ -2203,7 +2203,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_2 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_2 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_2 <= ap_sync_channel_write_data_2;
@@ -2215,7 +2215,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_3 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_3 <= ap_sync_channel_write_data_3;
@@ -2227,7 +2227,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_4 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_4 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_4 <= ap_sync_channel_write_data_4;
@@ -2239,7 +2239,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_5 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_5 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_5 <= ap_sync_channel_write_data_5;
@@ -2251,7 +2251,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_6 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_6 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_6 <= ap_sync_channel_write_data_6;
@@ -2263,7 +2263,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_7 <= 1'b0;
     end else begin
-        if (((read_train_1_U0_ap_done & read_train_1_U0_ap_continue) == 1'b1)) begin
+        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_data_7 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_data_7 <= ap_sync_channel_write_data_7;
@@ -2285,37 +2285,37 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_read_train_1_U0_ap_ready <= 1'b0;
+        ap_sync_reg_read_train_U0_ap_ready <= 1'b0;
     end else begin
         if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_read_train_1_U0_ap_ready <= 1'b0;
+            ap_sync_reg_read_train_U0_ap_ready <= 1'b0;
         end else begin
-            ap_sync_reg_read_train_1_U0_ap_ready <= ap_sync_read_train_1_U0_ap_ready;
+            ap_sync_reg_read_train_U0_ap_ready <= ap_sync_read_train_U0_ap_ready;
         end
     end
 end
 
-assign ap_channel_done_checkId_V = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_checkId_V ^ 1'b1));
+assign ap_channel_done_checkId_V = (read_train_U0_ap_done & (ap_sync_reg_channel_write_checkId_V ^ 1'b1));
 
-assign ap_channel_done_data = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data ^ 1'b1));
+assign ap_channel_done_data = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data ^ 1'b1));
 
-assign ap_channel_done_data_1 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_1 ^ 1'b1));
+assign ap_channel_done_data_1 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_1 ^ 1'b1));
 
-assign ap_channel_done_data_2 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_2 ^ 1'b1));
+assign ap_channel_done_data_2 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_2 ^ 1'b1));
 
-assign ap_channel_done_data_3 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_3 ^ 1'b1));
+assign ap_channel_done_data_3 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_3 ^ 1'b1));
 
-assign ap_channel_done_data_4 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_4 ^ 1'b1));
+assign ap_channel_done_data_4 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_4 ^ 1'b1));
 
-assign ap_channel_done_data_5 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_5 ^ 1'b1));
+assign ap_channel_done_data_5 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_5 ^ 1'b1));
 
-assign ap_channel_done_data_6 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_6 ^ 1'b1));
+assign ap_channel_done_data_6 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_6 ^ 1'b1));
 
-assign ap_channel_done_data_7 = (read_train_1_U0_ap_done & (ap_sync_reg_channel_write_data_7 ^ 1'b1));
+assign ap_channel_done_data_7 = (read_train_U0_ap_done & (ap_sync_reg_channel_write_data_7 ^ 1'b1));
 
 assign ap_done = insert_point_U0_ap_done;
 
-assign ap_idle = (read_train_1_U0_ap_idle & insert_point_U0_ap_idle & (data_7_empty_n ^ 1'b1) & (data_6_empty_n ^ 1'b1) & (data_5_empty_n ^ 1'b1) & (data_4_empty_n ^ 1'b1) & (data_3_empty_n ^ 1'b1) & (data_2_empty_n ^ 1'b1) & (data_1_empty_n ^ 1'b1) & (data_empty_n ^ 1'b1) & (checkId_V_empty_n ^ 1'b1));
+assign ap_idle = (read_train_U0_ap_idle & insert_point_U0_ap_idle & (data_7_empty_n ^ 1'b1) & (data_6_empty_n ^ 1'b1) & (data_5_empty_n ^ 1'b1) & (data_4_empty_n ^ 1'b1) & (data_3_empty_n ^ 1'b1) & (data_2_empty_n ^ 1'b1) & (data_1_empty_n ^ 1'b1) & (data_empty_n ^ 1'b1) & (checkId_V_empty_n ^ 1'b1));
 
 assign ap_ready = ap_sync_ready;
 
@@ -2339,9 +2339,9 @@ assign ap_sync_channel_write_data_7 = ((data_7_full_n & ap_channel_done_data_7) 
 
 assign ap_sync_insert_point_U0_ap_ready = (insert_point_U0_ap_ready | ap_sync_reg_insert_point_U0_ap_ready);
 
-assign ap_sync_read_train_1_U0_ap_ready = (read_train_1_U0_ap_ready | ap_sync_reg_read_train_1_U0_ap_ready);
+assign ap_sync_read_train_U0_ap_ready = (read_train_U0_ap_ready | ap_sync_reg_read_train_U0_ap_ready);
 
-assign ap_sync_ready = (ap_sync_read_train_1_U0_ap_ready & ap_sync_insert_point_U0_ap_ready);
+assign ap_sync_ready = (ap_sync_read_train_U0_ap_ready & ap_sync_insert_point_U0_ap_ready);
 
 assign insert_point_U0_ap_continue = ap_continue;
 
@@ -2363,9 +2363,9 @@ assign n_regions_V_we0 = insert_point_U0_n_regions_V_we0;
 
 assign n_regions_V_we1 = 1'b0;
 
-assign read_train_1_U0_ap_continue = (ap_sync_channel_write_data_7 & ap_sync_channel_write_data_6 & ap_sync_channel_write_data_5 & ap_sync_channel_write_data_4 & ap_sync_channel_write_data_3 & ap_sync_channel_write_data_2 & ap_sync_channel_write_data_1 & ap_sync_channel_write_data & ap_sync_channel_write_checkId_V);
+assign read_train_U0_ap_continue = (ap_sync_channel_write_data_7 & ap_sync_channel_write_data_6 & ap_sync_channel_write_data_5 & ap_sync_channel_write_data_4 & ap_sync_channel_write_data_3 & ap_sync_channel_write_data_2 & ap_sync_channel_write_data_1 & ap_sync_channel_write_data & ap_sync_channel_write_checkId_V);
 
-assign read_train_1_U0_ap_start = ((ap_sync_reg_read_train_1_U0_ap_ready ^ 1'b1) & ap_start);
+assign read_train_U0_ap_start = ((ap_sync_reg_read_train_U0_ap_ready ^ 1'b1) & ap_start);
 
 assign regions_10_address0 = insert_point_U0_regions_10_address0;
 
@@ -2457,11 +2457,11 @@ assign regions_15_ce1 = insert_point_U0_regions_15_ce1;
 
 assign regions_15_d0 = insert_point_U0_regions_15_d0;
 
-assign regions_15_d1 = insert_point_U0_regions_15_d1;
+assign regions_15_d1 = 32'd0;
 
 assign regions_15_we0 = insert_point_U0_regions_15_we0;
 
-assign regions_15_we1 = insert_point_U0_regions_15_we1;
+assign regions_15_we1 = 1'b0;
 
 assign regions_16_address0 = insert_point_U0_regions_16_address0;
 
@@ -2473,11 +2473,11 @@ assign regions_16_ce1 = insert_point_U0_regions_16_ce1;
 
 assign regions_16_d0 = insert_point_U0_regions_16_d0;
 
-assign regions_16_d1 = 32'd0;
+assign regions_16_d1 = insert_point_U0_regions_16_d1;
 
 assign regions_16_we0 = insert_point_U0_regions_16_we0;
 
-assign regions_16_we1 = 1'b0;
+assign regions_16_we1 = insert_point_U0_regions_16_we1;
 
 assign regions_17_address0 = insert_point_U0_regions_17_address0;
 
@@ -2526,6 +2526,22 @@ assign regions_19_d1 = insert_point_U0_regions_19_d1;
 assign regions_19_we0 = insert_point_U0_regions_19_we0;
 
 assign regions_19_we1 = insert_point_U0_regions_19_we1;
+
+assign regions_1_address0 = insert_point_U0_regions_1_address0;
+
+assign regions_1_address1 = insert_point_U0_regions_1_address1;
+
+assign regions_1_ce0 = insert_point_U0_regions_1_ce0;
+
+assign regions_1_ce1 = insert_point_U0_regions_1_ce1;
+
+assign regions_1_d0 = insert_point_U0_regions_1_d0;
+
+assign regions_1_d1 = insert_point_U0_regions_1_d1;
+
+assign regions_1_we0 = insert_point_U0_regions_1_we0;
+
+assign regions_1_we1 = insert_point_U0_regions_1_we1;
 
 assign regions_20_address0 = insert_point_U0_regions_20_address0;
 
@@ -2729,11 +2745,11 @@ assign regions_31_ce1 = insert_point_U0_regions_31_ce1;
 
 assign regions_31_d0 = insert_point_U0_regions_31_d0;
 
-assign regions_31_d1 = insert_point_U0_regions_31_d1;
+assign regions_31_d1 = 32'd0;
 
 assign regions_31_we0 = insert_point_U0_regions_31_we0;
 
-assign regions_31_we1 = insert_point_U0_regions_31_we1;
+assign regions_31_we1 = 1'b0;
 
 assign regions_32_address0 = insert_point_U0_regions_32_address0;
 
@@ -2745,11 +2761,11 @@ assign regions_32_ce1 = insert_point_U0_regions_32_ce1;
 
 assign regions_32_d0 = insert_point_U0_regions_32_d0;
 
-assign regions_32_d1 = 32'd0;
+assign regions_32_d1 = insert_point_U0_regions_32_d1;
 
 assign regions_32_we0 = insert_point_U0_regions_32_we0;
 
-assign regions_32_we1 = 1'b0;
+assign regions_32_we1 = insert_point_U0_regions_32_we1;
 
 assign regions_33_address0 = insert_point_U0_regions_33_address0;
 
@@ -3001,27 +3017,11 @@ assign regions_47_ce1 = insert_point_U0_regions_47_ce1;
 
 assign regions_47_d0 = insert_point_U0_regions_47_d0;
 
-assign regions_47_d1 = insert_point_U0_regions_47_d1;
+assign regions_47_d1 = 32'd0;
 
 assign regions_47_we0 = insert_point_U0_regions_47_we0;
 
-assign regions_47_we1 = insert_point_U0_regions_47_we1;
-
-assign regions_48_address0 = insert_point_U0_regions_48_address0;
-
-assign regions_48_address1 = insert_point_U0_regions_48_address1;
-
-assign regions_48_ce0 = insert_point_U0_regions_48_ce0;
-
-assign regions_48_ce1 = insert_point_U0_regions_48_ce1;
-
-assign regions_48_d0 = insert_point_U0_regions_48_d0;
-
-assign regions_48_d1 = 32'd0;
-
-assign regions_48_we0 = insert_point_U0_regions_48_we0;
-
-assign regions_48_we1 = 1'b0;
+assign regions_47_we1 = 1'b0;
 
 assign regions_4_address0 = insert_point_U0_regions_4_address0;
 
@@ -3135,6 +3135,6 @@ assign regions_we0 = insert_point_U0_regions_we0;
 
 assign regions_we1 = insert_point_U0_regions_we1;
 
-assign trainStream_TREADY = read_train_1_U0_trainStream_TREADY;
+assign trainStream_TREADY = read_train_U0_trainStream_TREADY;
 
 endmodule //run_runTrainAfterInit

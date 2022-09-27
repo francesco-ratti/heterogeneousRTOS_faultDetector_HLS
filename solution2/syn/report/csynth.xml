@@ -29,26 +29,26 @@
             <Interval-max>undef</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
-            <VITIS_LOOP_669_4>
+            <VITIS_LOOP_625_1>
                 <TripCount>inf</TripCount>
                 <Latency>undef</Latency>
                 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                 <IterationLatency>
                     <range>
-                        <min>62</min>
-                        <max>385</max>
+                        <min>35</min>
+                        <max>269</max>
                     </range>
                 </IterationLatency>
                 <InstanceList/>
-            </VITIS_LOOP_669_4>
+            </VITIS_LOOP_625_1>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>176</BRAM_18K>
             <DSP>394</DSP>
-            <FF>61659</FF>
-            <LUT>69356</LUT>
+            <FF>61657</FF>
+            <LUT>69346</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -288,7 +288,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>320</Bits>
+            <Bits>288</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -324,7 +324,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>320</Bits>
+            <Bits>288</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -394,18 +394,18 @@
             <ModuleName>run</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170</InstName>
-                    <ModuleName>run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2</ModuleName>
+                    <InstName>grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170</InstName>
+                    <ModuleName>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>170</ID>
-                    <BindInstances>sub_ln658_fu_3925_p2 add_ln654_1_fu_3867_p2 add_ln654_fu_3931_p2 sub_ln658_2_fu_3976_p2 sub_ln658_1_fu_4011_p2 add_ln658_fu_4021_p2 mul_64ns_66ns_81_1_1_U1 add_ln658_1_fu_4060_p2 sub_ln658_3_fu_4086_p2 mul_64ns_66ns_129_1_1_U2 sub_ln658_4_fu_4199_p2 mul_64ns_66ns_129_1_1_U3 sub_ln658_5_fu_4316_p2 mul_64ns_66ns_129_1_1_U4 sub_ln658_6_fu_4433_p2 mul_64ns_66ns_129_1_1_U5 sub_ln658_7_fu_4550_p2 mul_64ns_66ns_129_1_1_U6 sub_ln658_8_fu_4667_p2 mul_64ns_66ns_129_1_1_U7 sub_ln658_9_fu_4784_p2 mul_64ns_66ns_129_1_1_U8 sub_ln658_10_fu_4906_p2 add_ln658_2_fu_4840_p2 mul_64ns_66ns_129_1_1_U9 add_ln658_3_fu_4956_p2 mul_64ns_66ns_129_1_1_U10 add_ln658_4_fu_5072_p2 mul_64ns_66ns_129_1_1_U11 add_ln658_5_fu_5163_p2 mul_64ns_66ns_129_1_1_U12 add_ln658_6_fu_5254_p2 mul_64ns_66ns_129_1_1_U13 add_ln658_7_fu_5345_p2 mul_64ns_66ns_129_1_1_U14 add_ln658_8_fu_5436_p2 mul_64ns_66ns_129_1_1_U15 add_ln658_9_fu_5527_p2 mul_64ns_66ns_129_1_1_U16 add_ln658_10_fu_5618_p2 mul_64ns_66ns_129_1_1_U17 add_ln658_11_fu_5709_p2 mul_64ns_66ns_129_1_1_U18 add_ln658_12_fu_5800_p2 mul_64ns_66ns_129_1_1_U19 add_ln658_13_fu_5891_p2 mul_64ns_66ns_129_1_1_U20 add_ln658_14_fu_5982_p2 mul_64ns_66ns_129_1_1_U21 add_ln658_15_fu_6073_p2 mul_64ns_66ns_129_1_1_U22 add_ln658_16_fu_6164_p2 mul_64ns_66ns_129_1_1_U23 add_ln658_17_fu_6255_p2 mul_64ns_66ns_129_1_1_U24 add_ln656_fu_6260_p2</BindInstances>
+                    <BindInstances>sub_ln690_fu_3925_p2 add_ln686_1_fu_3867_p2 add_ln686_fu_3931_p2 sub_ln690_2_fu_3976_p2 sub_ln690_1_fu_4011_p2 add_ln690_fu_4021_p2 mul_64ns_66ns_81_1_1_U1 add_ln690_1_fu_4060_p2 sub_ln690_3_fu_4086_p2 mul_64ns_66ns_129_1_1_U2 sub_ln690_4_fu_4199_p2 mul_64ns_66ns_129_1_1_U3 sub_ln690_5_fu_4316_p2 mul_64ns_66ns_129_1_1_U4 sub_ln690_6_fu_4433_p2 mul_64ns_66ns_129_1_1_U5 sub_ln690_7_fu_4550_p2 mul_64ns_66ns_129_1_1_U6 sub_ln690_8_fu_4667_p2 mul_64ns_66ns_129_1_1_U7 sub_ln690_9_fu_4784_p2 mul_64ns_66ns_129_1_1_U8 sub_ln690_10_fu_4906_p2 add_ln690_2_fu_4840_p2 mul_64ns_66ns_129_1_1_U9 add_ln690_3_fu_4956_p2 mul_64ns_66ns_129_1_1_U10 add_ln690_4_fu_5072_p2 mul_64ns_66ns_129_1_1_U11 add_ln690_5_fu_5163_p2 mul_64ns_66ns_129_1_1_U12 add_ln690_6_fu_5254_p2 mul_64ns_66ns_129_1_1_U13 add_ln690_7_fu_5345_p2 mul_64ns_66ns_129_1_1_U14 add_ln690_8_fu_5436_p2 mul_64ns_66ns_129_1_1_U15 add_ln690_9_fu_5527_p2 mul_64ns_66ns_129_1_1_U16 add_ln690_10_fu_5618_p2 mul_64ns_66ns_129_1_1_U17 add_ln690_11_fu_5709_p2 mul_64ns_66ns_129_1_1_U18 add_ln690_12_fu_5800_p2 mul_64ns_66ns_129_1_1_U19 add_ln690_13_fu_5891_p2 mul_64ns_66ns_129_1_1_U20 add_ln690_14_fu_5982_p2 mul_64ns_66ns_129_1_1_U21 add_ln690_15_fu_6073_p2 mul_64ns_66ns_129_1_1_U22 add_ln690_16_fu_6164_p2 mul_64ns_66ns_129_1_1_U23 add_ln690_17_fu_6255_p2 mul_64ns_66ns_129_1_1_U24 add_ln688_fu_6260_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_run_Pipeline_VITIS_LOOP_662_3_fu_272</InstName>
-                    <ModuleName>run_Pipeline_VITIS_LOOP_662_3</ModuleName>
+                    <InstName>grp_run_Pipeline_VITIS_LOOP_694_3_fu_272</InstName>
+                    <ModuleName>run_Pipeline_VITIS_LOOP_694_3</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>272</ID>
-                    <BindInstances>add_ln662_fu_89_p2</BindInstances>
+                    <BindInstances>add_ln694_fu_89_p2</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>grp_runTestAfterInit_fu_280</InstName>
@@ -414,8 +414,8 @@
                     <ID>280</ID>
                     <InstancesList>
                         <Instance>
-                            <InstName>read_train_U0</InstName>
-                            <ModuleName>read_train</ModuleName>
+                            <InstName>read_test_U0</InstName>
+                            <ModuleName>read_test</ModuleName>
                             <IsCompInst>true</IsCompInst>
                             <ID>200</ID>
                             <BindInstances>contr_AOV_U empty_fu_391_p2</BindInstances>
@@ -459,8 +459,8 @@
                     <ID>390</ID>
                     <InstancesList>
                         <Instance>
-                            <InstName>read_train_1_U0</InstName>
-                            <ModuleName>read_train_1</ModuleName>
+                            <InstName>read_train_U0</InstName>
+                            <ModuleName>read_train</ModuleName>
                             <IsCompInst>true</IsCompInst>
                             <ID>118</ID>
                             <BindInstances>contr_AOV_U empty_fu_359_p2</BindInstances>
@@ -492,14 +492,14 @@
                     <BindInstances>checkId_V_U data_U data_1_U data_2_U data_3_U data_4_U data_5_U data_6_U data_7_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>regions_U regions_17_U regions_33_U regions_2_U regions_18_U regions_34_U regions_3_U regions_19_U regions_35_U regions_4_U regions_20_U regions_36_U regions_5_U regions_21_U regions_37_U regions_6_U regions_22_U regions_38_U regions_7_U regions_23_U regions_39_U regions_8_U regions_24_U regions_40_U regions_9_U regions_25_U regions_41_U regions_10_U regions_26_U regions_42_U regions_11_U regions_27_U regions_43_U regions_12_U regions_28_U regions_44_U regions_13_U regions_29_U regions_45_U regions_14_U regions_30_U regions_46_U regions_15_U regions_31_U regions_47_U regions_16_U regions_32_U regions_48_U n_regions_V_U</BindInstances>
+            <BindInstances>regions_U regions_16_U regions_32_U regions_1_U regions_17_U regions_33_U regions_2_U regions_18_U regions_34_U regions_3_U regions_19_U regions_35_U regions_4_U regions_20_U regions_36_U regions_5_U regions_21_U regions_37_U regions_6_U regions_22_U regions_38_U regions_7_U regions_23_U regions_39_U regions_8_U regions_24_U regions_40_U regions_9_U regions_25_U regions_41_U regions_10_U regions_26_U regions_42_U regions_11_U regions_27_U regions_43_U regions_12_U regions_28_U regions_44_U regions_13_U regions_29_U regions_45_U regions_14_U regions_30_U regions_46_U regions_15_U regions_31_U regions_47_U n_regions_V_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2</Name>
+            <Name>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Name>
             <Loops>
-                <VITIS_LOOP_654_1_VITIS_LOOP_656_2/>
+                <VITIS_LOOP_686_1_VITIS_LOOP_688_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -518,8 +518,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_654_1_VITIS_LOOP_656_2>
-                        <Name>VITIS_LOOP_654_1_VITIS_LOOP_656_2</Name>
+                    <VITIS_LOOP_686_1_VITIS_LOOP_688_2>
+                        <Name>VITIS_LOOP_686_1_VITIS_LOOP_688_2</Name>
                         <TripCount>1024</TripCount>
                         <Latency>24578</Latency>
                         <AbsoluteTimeLatency>0.492 ms</AbsoluteTimeLatency>
@@ -527,7 +527,7 @@
                         <PipelineDepth>27</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_654_1_VITIS_LOOP_656_2>
+                    </VITIS_LOOP_686_1_VITIS_LOOP_688_2>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -550,68 +550,68 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_fu_3925_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln654_1_fu_3867_p2" SOURCE="detector_solid/abs_solid_detector.cpp:654" URAM="0" VARIABLE="add_ln654_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln654_fu_3931_p2" SOURCE="detector_solid/abs_solid_detector.cpp:654" URAM="0" VARIABLE="add_ln654"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_2_fu_3976_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_1_fu_4011_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_fu_4021_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="6" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_81_1_1_U1" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_1_fu_4060_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_3_fu_4086_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_4_fu_4199_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U3" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_5_fu_4316_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U4" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_6_fu_4433_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U5" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_7_fu_4550_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U6" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_8_fu_4667_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U7" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_9_fu_4784_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U8" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln658_10_fu_4906_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="sub_ln658_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_2_fu_4840_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U9" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_3_fu_4956_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U10" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_4_fu_5072_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U11" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_5_fu_5163_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U12" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_6_fu_5254_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U13" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_7_fu_5345_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U14" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_8_fu_5436_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U15" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_9_fu_5527_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U16" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_10_fu_5618_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U17" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_11_fu_5709_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U18" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_12_fu_5800_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U19" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_13_fu_5891_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U20" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_14_fu_5982_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U21" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_15_fu_6073_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U22" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_16_fu_6164_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U23" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_22"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln658_17_fu_6255_p2" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="add_ln658_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U24" SOURCE="detector_solid/abs_solid_detector.cpp:658" URAM="0" VARIABLE="mul_ln658_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_654_1_VITIS_LOOP_656_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln656_fu_6260_p2" SOURCE="detector_solid/abs_solid_detector.cpp:656" URAM="0" VARIABLE="add_ln656"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_fu_3925_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln686_1_fu_3867_p2" SOURCE="detector_solid/abs_solid_detector.cpp:686" URAM="0" VARIABLE="add_ln686_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln686_fu_3931_p2" SOURCE="detector_solid/abs_solid_detector.cpp:686" URAM="0" VARIABLE="add_ln686"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_2_fu_3976_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_1_fu_4011_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_fu_4021_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="6" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_81_1_1_U1" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_1_fu_4060_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_3_fu_4086_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_4_fu_4199_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U3" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_5_fu_4316_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U4" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_6_fu_4433_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U5" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_7_fu_4550_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U6" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_8_fu_4667_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U7" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_9_fu_4784_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U8" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln690_10_fu_4906_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="sub_ln690_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_2_fu_4840_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U9" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_3_fu_4956_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U10" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_4_fu_5072_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U11" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_5_fu_5163_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U12" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_6_fu_5254_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U13" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_7_fu_5345_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U14" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_8_fu_5436_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U15" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_9_fu_5527_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U16" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_10_fu_5618_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U17" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_11_fu_5709_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U18" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_12_fu_5800_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U19" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_13_fu_5891_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U20" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_14_fu_5982_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U21" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_15_fu_6073_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U22" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_16_fu_6164_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U23" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_17_fu_6255_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U24" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="mul_ln690_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_686_1_VITIS_LOOP_688_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln688_fu_6260_p2" SOURCE="detector_solid/abs_solid_detector.cpp:688" URAM="0" VARIABLE="add_ln688"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>run_Pipeline_VITIS_LOOP_662_3</Name>
+            <Name>run_Pipeline_VITIS_LOOP_694_3</Name>
             <Loops>
-                <VITIS_LOOP_662_3/>
+                <VITIS_LOOP_694_3/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -630,8 +630,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_662_3>
-                        <Name>VITIS_LOOP_662_3</Name>
+                    <VITIS_LOOP_694_3>
+                        <Name>VITIS_LOOP_694_3</Name>
                         <TripCount>64</TripCount>
                         <Latency>64</Latency>
                         <AbsoluteTimeLatency>1.280 us</AbsoluteTimeLatency>
@@ -639,7 +639,7 @@
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </VITIS_LOOP_662_3>
+                    </VITIS_LOOP_694_3>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -662,11 +662,11 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_662_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln662_fu_89_p2" SOURCE="detector_solid/abs_solid_detector.cpp:662" URAM="0" VARIABLE="add_ln662"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_694_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_fu_89_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>read_train</Name>
+            <Name>read_test</Name>
             <Loops>
                 <Loop1/>
             </Loops>
@@ -719,7 +719,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="contr_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:465" URAM="0" VARIABLE="contr_AOV"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="contr_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:471" URAM="0" VARIABLE="contr_AOV"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_391_p2" SOURCE="" URAM="0" VARIABLE="empty"/>
             </BindNodes>
         </Module>
@@ -965,7 +965,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="outcome_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:497" URAM="0" VARIABLE="outcome_AOV"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="outcome_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:502" URAM="0" VARIABLE="outcome_AOV"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_339_p2" SOURCE="" URAM="0" VARIABLE="empty"/>
             </BindNodes>
         </Module>
@@ -1022,26 +1022,26 @@
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_2_c_U" SOURCE="" URAM="0" VARIABLE="data_2_c"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_1_c_U" SOURCE="" URAM="0" VARIABLE="data_1_c"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_c_U" SOURCE="" URAM="0" VARIABLE="data_c"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="taskId_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="checkId_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="uniId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="uniId_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_c21_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_c21_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_1_c22_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_1_c22_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_2_c23_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_2_c23_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_3_c24_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_3_c24_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_4_c25_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_4_c25_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_5_c26_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_5_c26_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_6_c27_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_6_c27_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_7_c28_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="data_7_c28_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="taskId_V_load_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_cast_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="taskId_V_load_cast_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_cast5_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="taskId_V_load_cast5_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="n_regions_V_load_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:539" URAM="0" VARIABLE="n_regions_V_load_loc_channel"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="56" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="error"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="taskId_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="checkId_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="uniId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="uniId_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_c21_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_c21_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_1_c22_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_1_c22_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_2_c23_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_2_c23_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_3_c24_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_3_c24_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_4_c25_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_4_c25_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_5_c26_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_5_c26_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_6_c27_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_6_c27_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_7_c28_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="data_7_c28_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="taskId_V_load_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_cast_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="taskId_V_load_cast_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="taskId_V_load_cast5_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="taskId_V_load_cast5_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="n_regions_V_load_loc_channel_U" SOURCE="detector_solid/abs_solid_detector.cpp:543" URAM="0" VARIABLE="n_regions_V_load_loc_channel"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="56" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="error_U" SOURCE="detector_solid/abs_solid_detector.cpp:547" URAM="0" VARIABLE="error"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>read_train_1</Name>
+            <Name>read_train</Name>
             <Loops>
                 <Loop1/>
             </Loops>
@@ -1094,7 +1094,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="contr_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:465" URAM="0" VARIABLE="contr_AOV"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="contr_AOV_U" SOURCE="detector_solid/abs_solid_detector.cpp:464" URAM="0" VARIABLE="contr_AOV"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_359_p2" SOURCE="" URAM="0" VARIABLE="empty"/>
             </BindNodes>
         </Module>
@@ -1170,7 +1170,7 @@
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U737" SOURCE="detector_solid/abs_solid_detector.cpp:297" URAM="0" VARIABLE="d1_1_i"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U737" SOURCE="detector_solid/abs_solid_detector.cpp:298" URAM="0" VARIABLE="d2_1_i"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U738" SOURCE="detector_solid/abs_solid_detector.cpp:301" URAM="0" VARIABLE="sub_1_i"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U760" SOURCE="detector_solid/abs_solid_detector.cpp:301" URAM="0" VARIABLE="ov_i_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U760" SOURCE="detector_solid/abs_solid_detector.cpp:301" URAM="0" VARIABLE="ov_i_56"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U738" SOURCE="detector_solid/abs_solid_detector.cpp:303" URAM="0" VARIABLE="sub3_1_i"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="3" LOOP="VITIS_LOOP_264_1" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_4_full_dsp_1_U760" SOURCE="detector_solid/abs_solid_detector.cpp:303" URAM="0" VARIABLE="ov_1_1_i"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="1" LOOP="VITIS_LOOP_264_1" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_2_max_dsp_1_U776" SOURCE="detector_solid/abs_solid_detector.cpp:305" URAM="0" VARIABLE="overlap_1_1_i"/>
@@ -1418,21 +1418,21 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="checkId_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_1_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_2_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_3_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_4_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_5_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_6_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_7_U" SOURCE="detector_solid/abs_solid_detector.cpp:575" URAM="0" VARIABLE="data_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="checkId_V_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="checkId_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_1_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_2_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_3_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_4_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_5_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_6_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="data_7_U" SOURCE="detector_solid/abs_solid_detector.cpp:576" URAM="0" VARIABLE="data_7"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>run</Name>
             <Loops>
-                <VITIS_LOOP_669_4/>
+                <VITIS_LOOP_625_1/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1451,24 +1451,24 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_669_4>
-                        <Name>VITIS_LOOP_669_4</Name>
+                    <VITIS_LOOP_625_1>
+                        <Name>VITIS_LOOP_625_1</Name>
                         <TripCount>inf</TripCount>
                         <Latency>undef</Latency>
                         <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                         <IterationLatency>
                             <range>
-                                <min>62</min>
-                                <max>385</max>
+                                <min>35</min>
+                                <max>269</max>
                             </range>
                         </IterationLatency>
-                        <PipelineDepth>62 ~ 385</PipelineDepth>
+                        <PipelineDepth>35 ~ 269</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList>
                             <Instance>grp_runTestAfterInit_fu_280</Instance>
                             <Instance>grp_runTrainAfterInit_fu_390</Instance>
                         </InstanceList>
-                    </VITIS_LOOP_669_4>
+                    </VITIS_LOOP_625_1>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -1479,10 +1479,10 @@
                     <DSP>394</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>179</UTIL_DSP>
-                    <FF>61659</FF>
+                    <FF>61657</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>57</UTIL_FF>
-                    <LUT>69356</LUT>
+                    <LUT>69346</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>130</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1492,6 +1492,9 @@
             </AreaEstimates>
             <BindNodes>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_U" SOURCE="" URAM="0" VARIABLE="regions"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_16_U" SOURCE="" URAM="0" VARIABLE="regions_16"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_32_U" SOURCE="" URAM="0" VARIABLE="regions_32"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_1_U" SOURCE="" URAM="0" VARIABLE="regions_1"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_17_U" SOURCE="" URAM="0" VARIABLE="regions_17"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_33_U" SOURCE="" URAM="0" VARIABLE="regions_33"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_2_U" SOURCE="" URAM="0" VARIABLE="regions_2"/>
@@ -1533,12 +1536,9 @@
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_14_U" SOURCE="" URAM="0" VARIABLE="regions_14"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_30_U" SOURCE="" URAM="0" VARIABLE="regions_30"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_46_U" SOURCE="" URAM="0" VARIABLE="regions_46"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_15_U" SOURCE="" URAM="0" VARIABLE="regions_15"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_31_U" SOURCE="" URAM="0" VARIABLE="regions_31"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_47_U" SOURCE="" URAM="0" VARIABLE="regions_47"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_16_U" SOURCE="" URAM="0" VARIABLE="regions_16"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_32_U" SOURCE="" URAM="0" VARIABLE="regions_32"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_48_U" SOURCE="" URAM="0" VARIABLE="regions_48"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_15_U" SOURCE="" URAM="0" VARIABLE="regions_15"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_31_U" SOURCE="" URAM="0" VARIABLE="regions_31"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="regions_47_U" SOURCE="" URAM="0" VARIABLE="regions_47"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="n_regions_V_U" SOURCE="" URAM="0" VARIABLE="n_regions_V"/>
             </BindNodes>
         </Module>
@@ -1592,12 +1592,12 @@
                 <hwRef type="memory" interface="s_axi_control" name="outcomeInRam" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="testStream" index="2" direction="in" srcType="stream&lt;controlStr, 0&gt;&amp;" srcSize="320">
+        <Arg ArgName="testStream" index="2" direction="in" srcType="stream&lt;controlStr, 0&gt;&amp;" srcSize="288">
             <hwRefs>
                 <hwRef type="interface" interface="testStream" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="trainStream" index="3" direction="in" srcType="stream&lt;controlStr, 0&gt;&amp;" srcSize="320">
+        <Arg ArgName="trainStream" index="3" direction="in" srcType="stream&lt;controlStr, 0&gt;&amp;" srcSize="288">
             <hwRefs>
                 <hwRef type="interface" interface="trainStream" name="" usage="data" direction="in"/>
             </hwRefs>
@@ -1722,7 +1722,7 @@
                 <port>interrupt</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="testStream" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="320" portPrefix="testStream_">
+        <Interface InterfaceName="testStream" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="288" portPrefix="testStream_">
             <ports>
                 <port>testStream_TDATA</port>
                 <port>testStream_TREADY</port>
@@ -1732,7 +1732,7 @@
                 <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both" argName="testStream"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="trainStream" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="320" portPrefix="trainStream_">
+        <Interface InterfaceName="trainStream" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="288" portPrefix="trainStream_">
             <ports>
                 <port>trainStream_TDATA</port>
                 <port>trainStream_TREADY</port>
@@ -1773,9 +1773,9 @@
             <item name="AXIS">
                 <table isCollapsed="0">
                     <keys size="5">Interface, Register Mode, TDATA, TREADY, TVALID</keys>
-                    <column name="testStream">both, 320, 1, 1, , , , , , , </column>
+                    <column name="testStream">both, 288, 1, 1, , , , , , , </column>
                     <column name="toScheduler">both, 8, 1, 1, , , , , , , </column>
-                    <column name="trainStream">both, 320, 1, 1, , , , , , , </column>
+                    <column name="trainStream">both, 288, 1, 1, , , , , , , </column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -1823,20 +1823,26 @@
     <PragmaReport>
         <Pragma type="inline" location="detector_solid/abs_solid_detector.cpp:81" status="valid" parentFunction="update_train_regions" variable="" isDirective="0" options=""/>
         <Pragma type="loop_tripcount" location="detector_solid/abs_solid_detector.cpp:266" status="valid" parentFunction="insert_point" variable="" isDirective="0" options="min=0 max=136"/>
-        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:525" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:534" status="valid" parentFunction="runtestafterinit" variable="data" isDirective="0" options="variable=data complete"/>
-        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:563" status="valid" parentFunction="runtrainafterinit" variable="" isDirective="0" options=""/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:568" status="valid" parentFunction="runtrainafterinit" variable="data" isDirective="0" options="variable=data complete"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:613" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:614" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:615" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = errorInTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:616" status="valid" parentFunction="run" variable="outcomeInRam" isDirective="0" options="s_axilite port=outcomeInRam"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:617" status="valid" parentFunction="run" variable="testStream" isDirective="0" options="axis port=testStream"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:618" status="valid" parentFunction="run" variable="trainStream" isDirective="0" options="axis port=trainStream"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:619" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:621" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
-        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:672" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions type=inter dependent=false"/>
-        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:673" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions type=inter dependent=false"/>
+        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:530" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:538" status="valid" parentFunction="runtestafterinit" variable="data" isDirective="0" options="variable=data complete"/>
+        <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:567" status="valid" parentFunction="runtrainafterinit" variable="" isDirective="0" options=""/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:572" status="valid" parentFunction="runtrainafterinit" variable="data" isDirective="0" options="variable=data complete"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:626" status="valid" parentFunction="running" variable="regions" isDirective="0" options="variable=regions type=inter dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:627" status="valid" parentFunction="running" variable="n_regions" isDirective="0" options="variable=n_regions type=inter dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:628" status="valid" parentFunction="running" variable="regions" isDirective="0" options="variable=regions type=intra dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:629" status="valid" parentFunction="running" variable="n_regions" isDirective="0" options="variable=n_regions type=intra dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:632" status="valid" parentFunction="running" variable="regions" isDirective="0" options="variable=regions type=inter dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:633" status="valid" parentFunction="running" variable="n_regions" isDirective="0" options="variable=n_regions type=inter dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:634" status="valid" parentFunction="running" variable="regions" isDirective="0" options="variable=regions type=intra dependent=false"/>
+        <Pragma type="dependence" location="detector_solid/abs_solid_detector.cpp:635" status="valid" parentFunction="running" variable="n_regions" isDirective="0" options="variable=n_regions type=intra dependent=false"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:645" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:646" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:647" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = errorInTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:648" status="valid" parentFunction="run" variable="outcomeInRam" isDirective="0" options="s_axilite port=outcomeInRam"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:649" status="valid" parentFunction="run" variable="testStream" isDirective="0" options="axis port=testStream"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:650" status="valid" parentFunction="run" variable="trainStream" isDirective="0" options="axis port=trainStream"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:651" status="valid" parentFunction="run" variable="toScheduler" isDirective="0" options="axis port=toScheduler"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:653" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions complete dim=2"/>
     </PragmaReport>
 </profile>
 

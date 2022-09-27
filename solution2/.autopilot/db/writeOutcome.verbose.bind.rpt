@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome'
 ================================================================
-* Date:           Tue Sep 27 18:00:46 2022
+* Date:           Tue Sep 27 19:09:50 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -108,7 +108,7 @@ ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface 
 ST_1 : Operation 27 [1/1] (3.63ns)   --->   "%data_1_read = read i32 @_ssdm_op_Read.ap_fifo.floatP0A, i32 %data_1"   --->   Operation 27 'read' 'data_1_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
 ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %data, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 29 [1/1] (3.63ns)   --->   "%data_read = read i32 @_ssdm_op_Read.ap_fifo.floatP0A, i32 %data"   --->   Operation 29 'read' 'data_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 30 [1/1] (2.32ns)   --->   "%outcome_AOV = alloca i64 1" [detector_solid/abs_solid_detector.cpp:497->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 30 'alloca' 'outcome_AOV' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_1 : Operation 30 [1/1] (2.32ns)   --->   "%outcome_AOV = alloca i64 1" [detector_solid/abs_solid_detector.cpp:502->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 30 'alloca' 'outcome_AOV' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%errorInTask1_cast_i = zext i4 %p_read63"   --->   Operation 31 'zext' 'errorInTask1_cast_i' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 32 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 33 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
@@ -116,8 +116,8 @@ ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface 
 ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 37 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 38 [1/1] (1.58ns)   --->   "%store_ln500 = store i4 0, i4 %loop_index3_i" [detector_solid/abs_solid_detector.cpp:500->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 38 'store' 'store_ln500' <Predicate = true> <Delay = 1.58>
-ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln500 = br void %load-store-loop2.i" [detector_solid/abs_solid_detector.cpp:500->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 39 'br' 'br_ln500' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (1.58ns)   --->   "%store_ln505 = store i4 0, i4 %loop_index3_i" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 38 'store' 'store_ln505' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln505 = br void %load-store-loop2.i" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 39 'br' 'br_ln505' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 4.62>
 ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%loop_index3_i_load = load i4 %loop_index3_i"   --->   Operation 40 'load' 'loop_index3_i_load' <Predicate = true> <Delay = 0.00>
@@ -131,13 +131,13 @@ ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%outcome_AOV_addr = getelementptr i
 ST_2 : Operation 48 [1/1] (2.32ns)   --->   "%store_ln0 = store i32 %tmp_i, i3 %outcome_AOV_addr"   --->   Operation 48 'store' 'store_ln0' <Predicate = (!exitcond4_i)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_2 : Operation 49 [1/1] (1.58ns)   --->   "%store_ln0 = store i4 %empty, i4 %loop_index3_i"   --->   Operation 49 'store' 'store_ln0' <Predicate = (!exitcond4_i)> <Delay = 1.58>
 ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop2.i"   --->   Operation 50 'br' 'br_ln0' <Predicate = (!exitcond4_i)> <Delay = 0.00>
-ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln503 = br i1 %p_read_1, void %writeOutcome.exit, void %if.then.i" [detector_solid/abs_solid_detector.cpp:503->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 51 'br' 'br_ln503' <Predicate = (exitcond4_i)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln508 = br i1 %p_read_1, void %writeOutcome.exit, void %if.then.i" [detector_solid/abs_solid_detector.cpp:508->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 51 'br' 'br_ln508' <Predicate = (exitcond4_i)> <Delay = 0.00>
 ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%outcome_AOV_addr_1 = getelementptr i32 %outcome_AOV, i64 0, i64 0"   --->   Operation 52 'getelementptr' 'outcome_AOV_addr_1' <Predicate = (exitcond4_i & p_read_1)> <Delay = 0.00>
 ST_2 : Operation 53 [2/2] (2.32ns)   --->   "%outcome_AOV_load = load i3 %outcome_AOV_addr_1"   --->   Operation 53 'load' 'outcome_AOV_load' <Predicate = (exitcond4_i & p_read_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%outcome_AOV_addr_2 = getelementptr i32 %outcome_AOV, i64 0, i64 1"   --->   Operation 54 'getelementptr' 'outcome_AOV_addr_2' <Predicate = (exitcond4_i & p_read_1)> <Delay = 0.00>
 ST_2 : Operation 55 [2/2] (2.32ns)   --->   "%outcome_AOV_load_1 = load i3 %outcome_AOV_addr_2"   --->   Operation 55 'load' 'outcome_AOV_load_1' <Predicate = (exitcond4_i & p_read_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
-ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%errorInTask_addr = getelementptr i1 %errorInTask, i64 0, i64 %errorInTask1_cast_i" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 56 'getelementptr' 'errorInTask_addr' <Predicate = (exitcond4_i & p_read_1)> <Delay = 0.00>
-ST_2 : Operation 57 [2/2] (2.32ns)   --->   "%store_ln505 = store i1 1, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 57 'store' 'store_ln505' <Predicate = (exitcond4_i & p_read_1)> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%errorInTask_addr = getelementptr i1 %errorInTask, i64 0, i64 %errorInTask1_cast_i" [detector_solid/abs_solid_detector.cpp:510->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 56 'getelementptr' 'errorInTask_addr' <Predicate = (exitcond4_i & p_read_1)> <Delay = 0.00>
+ST_2 : Operation 57 [2/2] (2.32ns)   --->   "%store_ln510 = store i1 1, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:510->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 57 'store' 'store_ln510' <Predicate = (exitcond4_i & p_read_1)> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
 ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.axis.volatile.i8P128A, i8 %toScheduler, i8 %p_read_3" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 58 'write' 'write_ln174' <Predicate = (exitcond4_i & p_read_1)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
 
 State 3 <SV = 2> <Delay = 2.32>
@@ -147,7 +147,7 @@ ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%outcome_AOV_addr_3 = getelementptr
 ST_3 : Operation 62 [2/2] (2.32ns)   --->   "%outcome_AOV_load_2 = load i3 %outcome_AOV_addr_3"   --->   Operation 62 'load' 'outcome_AOV_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%outcome_AOV_addr_4 = getelementptr i32 %outcome_AOV, i64 0, i64 3"   --->   Operation 63 'getelementptr' 'outcome_AOV_addr_4' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 64 [2/2] (2.32ns)   --->   "%outcome_AOV_load_3 = load i3 %outcome_AOV_addr_4"   --->   Operation 64 'load' 'outcome_AOV_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
-ST_3 : Operation 65 [1/2] (2.32ns)   --->   "%store_ln505 = store i1 1, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 65 'store' 'store_ln505' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
+ST_3 : Operation 65 [1/2] (2.32ns)   --->   "%store_ln510 = store i1 1, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:510->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 65 'store' 'store_ln510' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
 
 State 4 <SV = 3> <Delay = 2.32>
 ST_4 : Operation 66 [1/2] (2.32ns)   --->   "%outcome_AOV_load_2 = load i3 %outcome_AOV_addr_3"   --->   Operation 66 'load' 'outcome_AOV_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
@@ -169,21 +169,21 @@ State 6 <SV = 5> <Delay = 5.57>
 ST_6 : Operation 78 [1/2] (2.32ns)   --->   "%outcome_AOV_load_6 = load i3 %outcome_AOV_addr_7"   --->   Operation 78 'load' 'outcome_AOV_load_6' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_6 : Operation 79 [1/2] (2.32ns)   --->   "%outcome_AOV_load_7 = load i3 %outcome_AOV_addr_8"   --->   Operation 79 'load' 'outcome_AOV_load_7' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%outcomeInRam_addr = getelementptr i288 %outcomeInRam, i64 0, i64 0"   --->   Operation 80 'getelementptr' 'outcomeInRam_addr' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%empty_38 = bitcast i32 %outcome_AOV_load"   --->   Operation 81 'bitcast' 'empty_38' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%empty_39 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 82 'bitcast' 'empty_39' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%empty_40 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 83 'bitcast' 'empty_40' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%empty_41 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 84 'bitcast' 'empty_41' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%empty_42 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 85 'bitcast' 'empty_42' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%empty_43 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 86 'bitcast' 'empty_43' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%empty_44 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 87 'bitcast' 'empty_44' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%empty_45 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 88 'bitcast' 'empty_45' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_45, i32 %empty_44, i32 %empty_43, i32 %empty_42, i32 %empty_41, i32 %empty_40, i32 %empty_39, i32 %empty_38, i16 %p_read_2, i8 0, i8 %p_read_4"   --->   Operation 89 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%empty_36 = bitcast i32 %outcome_AOV_load"   --->   Operation 81 'bitcast' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%empty_37 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 82 'bitcast' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%empty_38 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 83 'bitcast' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%empty_39 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 84 'bitcast' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%empty_40 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 85 'bitcast' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%empty_41 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 86 'bitcast' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%empty_42 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 87 'bitcast' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%empty_43 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 88 'bitcast' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_43, i32 %empty_42, i32 %empty_41, i32 %empty_40, i32 %empty_39, i32 %empty_38, i32 %empty_37, i32 %empty_36, i16 %p_read_2, i8 0, i8 %p_read_4"   --->   Operation 89 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 90 [2/2] (3.25ns)   --->   "%store_ln0 = store void @_ssdm_op_Write.bram.p0L_a9i32packedL, i4 %outcomeInRam_addr, i288 %tmp_35_i, i36 68719476733"   --->   Operation 90 'store' 'store_ln0' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 288> <Depth = 16> <RAM>
 
 State 7 <SV = 6> <Delay = 3.25>
 ST_7 : Operation 91 [1/2] (3.25ns)   --->   "%store_ln0 = store void @_ssdm_op_Write.bram.p0L_a9i32packedL, i4 %outcomeInRam_addr, i288 %tmp_35_i, i36 68719476733"   --->   Operation 91 'store' 'store_ln0' <Predicate = (p_read_1)> <Delay = 3.25> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 288> <Depth = 16> <RAM>
-ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln507 = br void %writeOutcome.exit" [detector_solid/abs_solid_detector.cpp:507->detector_solid/abs_solid_detector.cpp:544]   --->   Operation 92 'br' 'br_ln507' <Predicate = (p_read_1)> <Delay = 0.00>
-ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%ret_ln544 = ret" [detector_solid/abs_solid_detector.cpp:544]   --->   Operation 93 'ret' 'ret_ln544' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln512 = br void %writeOutcome.exit" [detector_solid/abs_solid_detector.cpp:512->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 92 'br' 'br_ln512' <Predicate = (p_read_1)> <Delay = 0.00>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%ret_ln548 = ret" [detector_solid/abs_solid_detector.cpp:548]   --->   Operation 93 'ret' 'ret_ln548' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -249,8 +249,8 @@ specinterface_ln0          (specinterface         ) [ 00000000]
 specinterface_ln0          (specinterface         ) [ 00000000]
 specinterface_ln0          (specinterface         ) [ 00000000]
 specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 00000000]
-store_ln500                (store                 ) [ 00000000]
-br_ln500                   (br                    ) [ 00000000]
+store_ln505                (store                 ) [ 00000000]
+br_ln505                   (br                    ) [ 00000000]
 loop_index3_i_load         (load                  ) [ 00000000]
 loop_index3_cast_i         (zext                  ) [ 00000000]
 exitcond4_i                (icmp                  ) [ 00100000]
@@ -262,7 +262,7 @@ outcome_AOV_addr           (getelementptr         ) [ 00000000]
 store_ln0                  (store                 ) [ 00000000]
 store_ln0                  (store                 ) [ 00000000]
 br_ln0                     (br                    ) [ 00000000]
-br_ln503                   (br                    ) [ 00000000]
+br_ln508                   (br                    ) [ 00000000]
 outcome_AOV_addr_1         (getelementptr         ) [ 00010000]
 outcome_AOV_addr_2         (getelementptr         ) [ 00010000]
 errorInTask_addr           (getelementptr         ) [ 00010000]
@@ -271,7 +271,7 @@ outcome_AOV_load           (load                  ) [ 00001110]
 outcome_AOV_load_1         (load                  ) [ 00001110]
 outcome_AOV_addr_3         (getelementptr         ) [ 00001000]
 outcome_AOV_addr_4         (getelementptr         ) [ 00001000]
-store_ln505                (store                 ) [ 00000000]
+store_ln510                (store                 ) [ 00000000]
 outcome_AOV_load_2         (load                  ) [ 00000110]
 outcome_AOV_load_3         (load                  ) [ 00000110]
 outcome_AOV_addr_5         (getelementptr         ) [ 00000100]
@@ -283,18 +283,18 @@ outcome_AOV_addr_8         (getelementptr         ) [ 00000010]
 outcome_AOV_load_6         (load                  ) [ 00000000]
 outcome_AOV_load_7         (load                  ) [ 00000000]
 outcomeInRam_addr          (getelementptr         ) [ 00000001]
+empty_36                   (bitcast               ) [ 00000000]
+empty_37                   (bitcast               ) [ 00000000]
 empty_38                   (bitcast               ) [ 00000000]
 empty_39                   (bitcast               ) [ 00000000]
 empty_40                   (bitcast               ) [ 00000000]
 empty_41                   (bitcast               ) [ 00000000]
 empty_42                   (bitcast               ) [ 00000000]
 empty_43                   (bitcast               ) [ 00000000]
-empty_44                   (bitcast               ) [ 00000000]
-empty_45                   (bitcast               ) [ 00000000]
 tmp_35_i                   (bitconcatenate        ) [ 00000001]
 store_ln0                  (store                 ) [ 00000000]
-br_ln507                   (br                    ) [ 00000000]
-ret_ln544                  (ret                   ) [ 00000000]
+br_ln512                   (br                    ) [ 00000000]
+ret_ln548                  (ret                   ) [ 00000000]
 </LifeTime>
 
 <model>
@@ -1093,7 +1093,7 @@ ret_ln544                  (ret                   ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln505/2 "/>
+<opset="store_ln510/2 "/>
 </bind>
 </comp>
 
@@ -1212,7 +1212,7 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="320" class="1004" name="store_ln500_store_fu_320">
+<comp id="320" class="1004" name="store_ln505_store_fu_320">
 <pin_list>
 <pin id="321" dir="0" index="0" bw="1" slack="0"/>
 <pin id="322" dir="0" index="1" bw="4" slack="0"/>
@@ -1220,7 +1220,7 @@ ret_ln544                  (ret                   ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln500/1 "/>
+<opset="store_ln505/1 "/>
 </bind>
 </comp>
 
@@ -1302,10 +1302,32 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="365" class="1004" name="empty_38_fu_365">
+<comp id="365" class="1004" name="empty_36_fu_365">
 <pin_list>
 <pin id="366" dir="0" index="0" bw="32" slack="3"/>
 <pin id="367" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="empty_36/6 "/>
+</bind>
+</comp>
+
+<comp id="368" class="1004" name="empty_37_fu_368">
+<pin_list>
+<pin id="369" dir="0" index="0" bw="32" slack="3"/>
+<pin id="370" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="empty_37/6 "/>
+</bind>
+</comp>
+
+<comp id="371" class="1004" name="empty_38_fu_371">
+<pin_list>
+<pin id="372" dir="0" index="0" bw="32" slack="2"/>
+<pin id="373" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1313,10 +1335,10 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="368" class="1004" name="empty_39_fu_368">
+<comp id="374" class="1004" name="empty_39_fu_374">
 <pin_list>
-<pin id="369" dir="0" index="0" bw="32" slack="3"/>
-<pin id="370" dir="1" index="1" bw="32" slack="0"/>
+<pin id="375" dir="0" index="0" bw="32" slack="2"/>
+<pin id="376" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1324,10 +1346,10 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="371" class="1004" name="empty_40_fu_371">
+<comp id="377" class="1004" name="empty_40_fu_377">
 <pin_list>
-<pin id="372" dir="0" index="0" bw="32" slack="2"/>
-<pin id="373" dir="1" index="1" bw="32" slack="0"/>
+<pin id="378" dir="0" index="0" bw="32" slack="1"/>
+<pin id="379" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1335,10 +1357,10 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="374" class="1004" name="empty_41_fu_374">
+<comp id="380" class="1004" name="empty_41_fu_380">
 <pin_list>
-<pin id="375" dir="0" index="0" bw="32" slack="2"/>
-<pin id="376" dir="1" index="1" bw="32" slack="0"/>
+<pin id="381" dir="0" index="0" bw="32" slack="1"/>
+<pin id="382" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1346,10 +1368,10 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="377" class="1004" name="empty_42_fu_377">
+<comp id="383" class="1004" name="empty_42_fu_383">
 <pin_list>
-<pin id="378" dir="0" index="0" bw="32" slack="1"/>
-<pin id="379" dir="1" index="1" bw="32" slack="0"/>
+<pin id="384" dir="0" index="0" bw="32" slack="0"/>
+<pin id="385" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1357,36 +1379,14 @@ ret_ln544                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="380" class="1004" name="empty_43_fu_380">
-<pin_list>
-<pin id="381" dir="0" index="0" bw="32" slack="1"/>
-<pin id="382" dir="1" index="1" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_43/6 "/>
-</bind>
-</comp>
-
-<comp id="383" class="1004" name="empty_44_fu_383">
-<pin_list>
-<pin id="384" dir="0" index="0" bw="32" slack="0"/>
-<pin id="385" dir="1" index="1" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_44/6 "/>
-</bind>
-</comp>
-
-<comp id="387" class="1004" name="empty_45_fu_387">
+<comp id="387" class="1004" name="empty_43_fu_387">
 <pin_list>
 <pin id="388" dir="0" index="0" bw="32" slack="0"/>
 <pin id="389" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_45/6 "/>
+<opset="empty_43/6 "/>
 </bind>
 </comp>
 
@@ -2053,7 +2053,7 @@ ret_ln544                  (ret                   ) [ 00000000]
 	Port: writeOutcome : data_7 | {1 }
   - Chain level:
 	State 1
-		store_ln500 : 1
+		store_ln505 : 1
 	State 2
 		loop_index3_cast_i : 1
 		exitcond4_i : 1
@@ -2065,7 +2065,7 @@ ret_ln544                  (ret                   ) [ 00000000]
 		store_ln0 : 2
 		outcome_AOV_load : 1
 		outcome_AOV_load_1 : 1
-		store_ln505 : 1
+		store_ln510 : 1
 	State 3
 		outcome_AOV_load_2 : 1
 		outcome_AOV_load_3 : 1
@@ -2076,8 +2076,8 @@ ret_ln544                  (ret                   ) [ 00000000]
 		outcome_AOV_load_6 : 1
 		outcome_AOV_load_7 : 1
 	State 6
-		empty_44 : 1
-		empty_45 : 1
+		empty_42 : 1
+		empty_43 : 1
 		tmp_35_i : 2
 		store_ln0 : 3
 	State 7

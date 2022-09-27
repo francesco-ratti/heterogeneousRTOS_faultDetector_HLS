@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1664294469688">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1664298614028">
   <ports id="1" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="3621216858" bitwidth="1" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="2" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="1419157328" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+  <ports id="2" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="2919517363" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="3" name="testStream" type="PortType" originalName="testStream" coreId="2777375297" bitwidth="320">
+  <ports id="3" name="testStream" type="PortType" originalName="testStream" coreId="2712669577" bitwidth="288">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="4" name="trainStream" type="PortType" originalName="trainStream" coreId="1413179984" bitwidth="320">
+  <ports id="4" name="trainStream" type="PortType" originalName="trainStream" coreId="2926250810" bitwidth="288">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="5" name="trainedRegions" type="PortType" originalName="trainedRegions" coreName="RAM_1P" coreId="0" bitwidth="32" iftype="IfTypeRegister" arraysize="24576">
+  <ports id="5" name="trainedRegions" type="PortType" originalName="trainedRegions" coreName="RAM_1P" coreId="1476217504" bitwidth="32" iftype="IfTypeRegister" arraysize="24576">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="6" name="n_regions_in" type="PortType" coreName="RAM_1P" coreId="1416176896" bitwidth="8" iftype="IfTypeRegister" arraysize="64">
+  <ports id="6" name="n_regions_in" type="PortType" coreName="RAM_1P" coreId="2925471552" bitwidth="8" iftype="IfTypeRegister" arraysize="64">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="7" name="toScheduler" type="PortType" originalName="toScheduler" coreId="1415830064" bitwidth="8" direction="DirOut">
+  <ports id="7" name="toScheduler" type="PortType" originalName="toScheduler" coreId="1469136816" bitwidth="8" direction="DirOut">
     <dataInputObjs>call</dataInputObjs>
   </ports>
   <edges id="94" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.0"/>
@@ -179,76 +179,72 @@
   <edges id="255" sink_obj="//@blocks.1/@node_objs.1"/>
   <edges id="568" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
   <edges id="569" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.1" is_back_edge="1"/>
-  <edges id="570" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="571" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="572" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
-  <edges id="573" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="574" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
-  <edges id="575" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="570" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="571" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="572" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="573" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.1"/>
   <blocks id="86" name="entry" type="BlockType">
-    <controlOutputObjs>while.body</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="_ln0" rtlName="grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170" coreId="2771593894" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <controlOutputObjs>while.body.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="_ln0" rtlName="grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170" coreId="1472868568" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>trainedRegions</dataInputObjs>
-      <constName>run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2</constName>
+      <constName>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="_ln0" rtlName="grp_run_Pipeline_VITIS_LOOP_662_3_fu_272" coreId="1601335156" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="_ln0" rtlName="grp_run_Pipeline_VITIS_LOOP_694_3_fu_272" coreId="1471980016" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>n_regions_in</dataInputObjs>
-      <constName>run_Pipeline_VITIS_LOOP_662_3</constName>
+      <constName>run_Pipeline_VITIS_LOOP_694_3</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="br_ln670" lineNumber="670" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1413179984" contextFuncName="run" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="670" fileDirectory="/home/francesco/workspace" functionName="run"/>
-      <controlInputObjs>while.body</controlInputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="br_ln626" lineNumber="626" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="320" contextFuncName="running" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="626" fileDirectory="/home/francesco/workspace" functionName="running"/>
+      <controlInputObjs>while.body.i</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>670</validLinenumbers>
+      <validLinenumbers>626</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="91" name="while.body" type="BlockType">
+  <blocks id="91" name="while.body.i" type="BlockType">
     <controlInputObjs>entry</controlInputObjs>
-    <controlInputObjs>while.body</controlInputObjs>
+    <controlInputObjs>while.body.i</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>while.body</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="_ln670" lineNumber="670" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_runTestAfterInit_fu_280" coreId="1416218752" contextFuncName="run" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="670" fileDirectory="/home/francesco/workspace" functionName="run"/>
+    <controlOutputObjs>while.body.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="_ln630" lineNumber="630" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_runTestAfterInit_fu_280" coreId="1478026512" contextFuncName="running" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="630" fileDirectory="/home/francesco/workspace" functionName="running"/>
       <dataInputObjs>testStream</dataInputObjs>
       <dataOutputObjs>outcomeInRam</dataOutputObjs>
       <dataOutputObjs>toScheduler</dataOutputObjs>
       <dataOutputObjs>errorInTask</dataOutputObjs>
       <constName>runTestAfterInit</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="_ln671" lineNumber="671" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_runTrainAfterInit_fu_390" coreId="1419245568" contextFuncName="run" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="671" fileDirectory="/home/francesco/workspace" functionName="run"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="_ln631" lineNumber="631" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_runTrainAfterInit_fu_390" coreId="1330007625" contextFuncName="running" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="631" fileDirectory="/home/francesco/workspace" functionName="running"/>
       <dataInputObjs>trainStream</dataInputObjs>
       <constName>runTrainAfterInit</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="br_ln669" lineNumber="669" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2770277589" contextFuncName="run" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="669" fileDirectory="/home/francesco/workspace" functionName="run"/>
-      <controlInputObjs>while.body</controlInputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="br_ln625" lineNumber="625" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="30" contextFuncName="running" opcode="br" nodeLabel="3.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="625" fileDirectory="/home/francesco/workspace" functionName="running"/>
+      <controlInputObjs>while.body.i</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>670</validLinenumbers>
-      <validLinenumbers>671</validLinenumbers>
-      <validLinenumbers>669</validLinenumbers>
+      <validLinenumbers>630</validLinenumbers>
+      <validLinenumbers>631</validLinenumbers>
+      <validLinenumbers>625</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
   <ScheduleInfo time="1"/>
   <ScheduleInfo time="2"/>
   <ScheduleInfo time="3"/>
-  <ScheduleInfo time="4"/>
-  <ScheduleInfo time="5"/>
-  <moduleNodes realName="grp_run_Pipeline_VITIS_LOOP_662_3_fu_272">
+  <moduleNodes realName="grp_run_Pipeline_VITIS_LOOP_694_3_fu_272">
     <nodeIds>84</nodeIds>
   </moduleNodes>
   <moduleNodes realName="grp_runTestAfterInit_fu_280">
     <nodeIds>88</nodeIds>
   </moduleNodes>
+  <moduleNodes realName="grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170">
+    <nodeIds>83</nodeIds>
+  </moduleNodes>
   <moduleNodes realName="grp_runTrainAfterInit_fu_390">
     <nodeIds>89</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170">
-    <nodeIds>83</nodeIds>
   </moduleNodes>
   <memoryPorts dataString="n_regions_V" portID="100">
     <nodeIds>84</nodeIds>
@@ -256,6 +252,11 @@
     <nodeIds>89</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="regions" portID="100">
+    <nodeIds>83</nodeIds>
+    <nodeIds>88</nodeIds>
+    <nodeIds>89</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="regions_1" portID="100">
     <nodeIds>83</nodeIds>
     <nodeIds>88</nodeIds>
     <nodeIds>89</nodeIds>
@@ -465,11 +466,6 @@
     <nodeIds>88</nodeIds>
     <nodeIds>89</nodeIds>
   </memoryPorts>
-  <memoryPorts dataString="regions_48" portID="100">
-    <nodeIds>83</nodeIds>
-    <nodeIds>88</nodeIds>
-    <nodeIds>89</nodeIds>
-  </memoryPorts>
   <memoryPorts dataString="regions_5" portID="100">
     <nodeIds>83</nodeIds>
     <nodeIds>88</nodeIds>
@@ -548,15 +544,11 @@
     </states>
     <states id="3">
       <operations id="88" stage="2" latency="2"/>
-    </states>
-    <states id="4">
-      <operations id="88" stage="1" latency="2"/>
-    </states>
-    <states id="5">
       <operations id="89" stage="2" latency="2"/>
     </states>
-    <states id="6">
+    <states id="4">
       <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="2"/>
       <operations id="89" stage="1" latency="2"/>
       <operations id="90" stage="1" latency="1"/>
     </states>
@@ -569,13 +561,7 @@
     <transitions inState="3" outState="4">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="4" outState="5">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="5" outState="6">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="6" outState="3">
+    <transitions inState="4" outState="3">
       <condition id="-1"/>
     </transitions>
   </fsm>
@@ -589,7 +575,7 @@
       <basicBlocks>86</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="3" mTag="VITIS_LOOP_669_4" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+    <cfgRegions mId="3" mTag="VITIS_LOOP_625_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
       <basicBlocks>91</basicBlocks>
       <mDfPipe/>
     </cfgRegions>

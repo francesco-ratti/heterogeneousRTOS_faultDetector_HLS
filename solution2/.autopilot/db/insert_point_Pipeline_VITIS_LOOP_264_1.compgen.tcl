@@ -110,6 +110,21 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 857 \
+    name regions_32_load \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_32_load \
+    op interface \
+    ports { regions_32_load { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 858 \
     name regions_33_load \
     type other \
     dir I \
@@ -124,7 +139,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 858 \
+    id 859 \
     name regions_34_load \
     type other \
     dir I \
@@ -139,7 +154,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 859 \
+    id 860 \
     name regions_35_load \
     type other \
     dir I \
@@ -154,7 +169,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 860 \
+    id 861 \
     name regions_36_load \
     type other \
     dir I \
@@ -169,7 +184,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 861 \
+    id 862 \
     name regions_37_load \
     type other \
     dir I \
@@ -184,7 +199,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 862 \
+    id 863 \
     name regions_38_load \
     type other \
     dir I \
@@ -199,7 +214,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 863 \
+    id 864 \
     name regions_39_load \
     type other \
     dir I \
@@ -214,7 +229,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 864 \
+    id 865 \
     name regions_40_load \
     type other \
     dir I \
@@ -229,7 +244,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 865 \
+    id 866 \
     name regions_41_load \
     type other \
     dir I \
@@ -244,7 +259,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 866 \
+    id 867 \
     name regions_42_load \
     type other \
     dir I \
@@ -259,7 +274,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 867 \
+    id 868 \
     name regions_43_load \
     type other \
     dir I \
@@ -274,7 +289,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 868 \
+    id 869 \
     name regions_44_load \
     type other \
     dir I \
@@ -289,7 +304,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 869 \
+    id 870 \
     name regions_45_load \
     type other \
     dir I \
@@ -304,7 +319,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 870 \
+    id 871 \
     name regions_46_load \
     type other \
     dir I \
@@ -319,7 +334,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 871 \
+    id 872 \
     name regions_47_load \
     type other \
     dir I \
@@ -334,22 +349,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 872 \
-    name regions_48_load \
+    id 873 \
+    name regions_16_load \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load \
+    corename dc_regions_16_load \
     op interface \
-    ports { regions_48_load { I 32 vector } } \
+    ports { regions_16_load { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 873 \
+    id 874 \
     name regions_17_load \
     type other \
     dir I \
@@ -364,7 +379,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 874 \
+    id 875 \
     name regions_18_load \
     type other \
     dir I \
@@ -379,7 +394,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 875 \
+    id 876 \
     name regions_19_load \
     type other \
     dir I \
@@ -394,7 +409,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 876 \
+    id 877 \
     name regions_20_load \
     type other \
     dir I \
@@ -409,7 +424,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 877 \
+    id 878 \
     name regions_21_load \
     type other \
     dir I \
@@ -424,7 +439,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 878 \
+    id 879 \
     name regions_22_load \
     type other \
     dir I \
@@ -439,7 +454,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 879 \
+    id 880 \
     name regions_23_load \
     type other \
     dir I \
@@ -454,7 +469,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 880 \
+    id 881 \
     name regions_24_load \
     type other \
     dir I \
@@ -469,7 +484,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 881 \
+    id 882 \
     name regions_25_load \
     type other \
     dir I \
@@ -484,7 +499,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 882 \
+    id 883 \
     name regions_26_load \
     type other \
     dir I \
@@ -499,7 +514,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 883 \
+    id 884 \
     name regions_27_load \
     type other \
     dir I \
@@ -514,7 +529,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 884 \
+    id 885 \
     name regions_28_load \
     type other \
     dir I \
@@ -529,7 +544,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 885 \
+    id 886 \
     name regions_29_load \
     type other \
     dir I \
@@ -544,7 +559,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 886 \
+    id 887 \
     name regions_30_load \
     type other \
     dir I \
@@ -559,7 +574,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 887 \
+    id 888 \
     name regions_31_load \
     type other \
     dir I \
@@ -568,21 +583,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load \
     op interface \
     ports { regions_31_load { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 888 \
-    name regions_32_load \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load \
-    op interface \
-    ports { regions_32_load { I 32 vector } } \
 } "
 }
 
@@ -605,6 +605,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 890 \
+    name regions_1_load \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load \
+    op interface \
+    ports { regions_1_load { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 891 \
     name regions_2_load \
     type other \
     dir I \
@@ -619,7 +634,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 891 \
+    id 892 \
     name regions_3_load \
     type other \
     dir I \
@@ -634,7 +649,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 892 \
+    id 893 \
     name regions_4_load \
     type other \
     dir I \
@@ -649,7 +664,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 893 \
+    id 894 \
     name regions_5_load \
     type other \
     dir I \
@@ -664,7 +679,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 894 \
+    id 895 \
     name regions_6_load \
     type other \
     dir I \
@@ -679,7 +694,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 895 \
+    id 896 \
     name regions_7_load \
     type other \
     dir I \
@@ -694,7 +709,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 896 \
+    id 897 \
     name regions_8_load \
     type other \
     dir I \
@@ -709,7 +724,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 897 \
+    id 898 \
     name regions_9_load \
     type other \
     dir I \
@@ -724,7 +739,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 898 \
+    id 899 \
     name regions_10_load \
     type other \
     dir I \
@@ -739,7 +754,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 899 \
+    id 900 \
     name regions_11_load \
     type other \
     dir I \
@@ -754,7 +769,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 900 \
+    id 901 \
     name regions_12_load \
     type other \
     dir I \
@@ -769,7 +784,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 901 \
+    id 902 \
     name regions_13_load \
     type other \
     dir I \
@@ -784,7 +799,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 902 \
+    id 903 \
     name regions_14_load \
     type other \
     dir I \
@@ -799,7 +814,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 903 \
+    id 904 \
     name regions_15_load \
     type other \
     dir I \
@@ -814,22 +829,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 904 \
-    name regions_16_load \
+    id 905 \
+    name regions_32_load_8 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load \
+    corename dc_regions_32_load_8 \
     op interface \
-    ports { regions_16_load { I 32 vector } } \
+    ports { regions_32_load_8 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 905 \
+    id 906 \
     name regions_33_load_8 \
     type other \
     dir I \
@@ -844,7 +859,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 906 \
+    id 907 \
     name regions_34_load_8 \
     type other \
     dir I \
@@ -859,7 +874,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 907 \
+    id 908 \
     name regions_35_load_8 \
     type other \
     dir I \
@@ -874,7 +889,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 908 \
+    id 909 \
     name regions_36_load_8 \
     type other \
     dir I \
@@ -889,7 +904,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 909 \
+    id 910 \
     name regions_37_load_8 \
     type other \
     dir I \
@@ -904,7 +919,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 910 \
+    id 911 \
     name regions_38_load_8 \
     type other \
     dir I \
@@ -919,7 +934,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 911 \
+    id 912 \
     name regions_39_load_8 \
     type other \
     dir I \
@@ -934,7 +949,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 912 \
+    id 913 \
     name regions_40_load_8 \
     type other \
     dir I \
@@ -949,7 +964,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 913 \
+    id 914 \
     name regions_41_load_8 \
     type other \
     dir I \
@@ -964,7 +979,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 914 \
+    id 915 \
     name regions_42_load_8 \
     type other \
     dir I \
@@ -979,7 +994,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 915 \
+    id 916 \
     name regions_43_load_8 \
     type other \
     dir I \
@@ -994,7 +1009,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 916 \
+    id 917 \
     name regions_44_load_8 \
     type other \
     dir I \
@@ -1009,7 +1024,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 917 \
+    id 918 \
     name regions_45_load_8 \
     type other \
     dir I \
@@ -1024,7 +1039,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 918 \
+    id 919 \
     name regions_46_load_8 \
     type other \
     dir I \
@@ -1039,7 +1054,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 919 \
+    id 920 \
     name regions_47_load_8 \
     type other \
     dir I \
@@ -1054,22 +1069,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 920 \
-    name regions_48_load_8 \
+    id 921 \
+    name regions_16_load_8 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_8 \
+    corename dc_regions_16_load_8 \
     op interface \
-    ports { regions_48_load_8 { I 32 vector } } \
+    ports { regions_16_load_8 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 921 \
+    id 922 \
     name regions_17_load_8 \
     type other \
     dir I \
@@ -1084,7 +1099,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 922 \
+    id 923 \
     name regions_18_load_8 \
     type other \
     dir I \
@@ -1099,7 +1114,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 923 \
+    id 924 \
     name regions_19_load_8 \
     type other \
     dir I \
@@ -1114,7 +1129,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 924 \
+    id 925 \
     name regions_20_load_8 \
     type other \
     dir I \
@@ -1129,7 +1144,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 925 \
+    id 926 \
     name regions_21_load_8 \
     type other \
     dir I \
@@ -1144,7 +1159,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 926 \
+    id 927 \
     name regions_22_load_8 \
     type other \
     dir I \
@@ -1159,7 +1174,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 927 \
+    id 928 \
     name regions_23_load_8 \
     type other \
     dir I \
@@ -1174,7 +1189,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 928 \
+    id 929 \
     name regions_24_load_8 \
     type other \
     dir I \
@@ -1189,7 +1204,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 929 \
+    id 930 \
     name regions_25_load_8 \
     type other \
     dir I \
@@ -1204,7 +1219,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 930 \
+    id 931 \
     name regions_26_load_8 \
     type other \
     dir I \
@@ -1219,7 +1234,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 931 \
+    id 932 \
     name regions_27_load_8 \
     type other \
     dir I \
@@ -1234,7 +1249,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 932 \
+    id 933 \
     name regions_28_load_8 \
     type other \
     dir I \
@@ -1249,7 +1264,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 933 \
+    id 934 \
     name regions_29_load_8 \
     type other \
     dir I \
@@ -1264,7 +1279,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 934 \
+    id 935 \
     name regions_30_load_8 \
     type other \
     dir I \
@@ -1279,7 +1294,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 935 \
+    id 936 \
     name regions_31_load_8 \
     type other \
     dir I \
@@ -1288,21 +1303,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_8 \
     op interface \
     ports { regions_31_load_8 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 936 \
-    name regions_32_load_8 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_8 \
-    op interface \
-    ports { regions_32_load_8 { I 32 vector } } \
 } "
 }
 
@@ -1325,6 +1325,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 938 \
+    name regions_1_load_8 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_8 \
+    op interface \
+    ports { regions_1_load_8 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 939 \
     name regions_2_load_8 \
     type other \
     dir I \
@@ -1339,7 +1354,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 939 \
+    id 940 \
     name regions_3_load_8 \
     type other \
     dir I \
@@ -1354,7 +1369,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 940 \
+    id 941 \
     name regions_4_load_8 \
     type other \
     dir I \
@@ -1369,7 +1384,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 941 \
+    id 942 \
     name regions_5_load_8 \
     type other \
     dir I \
@@ -1384,7 +1399,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 942 \
+    id 943 \
     name regions_6_load_8 \
     type other \
     dir I \
@@ -1399,7 +1414,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 943 \
+    id 944 \
     name regions_7_load_8 \
     type other \
     dir I \
@@ -1414,7 +1429,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 944 \
+    id 945 \
     name regions_8_load_8 \
     type other \
     dir I \
@@ -1429,7 +1444,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 945 \
+    id 946 \
     name regions_9_load_8 \
     type other \
     dir I \
@@ -1444,7 +1459,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 946 \
+    id 947 \
     name regions_10_load_8 \
     type other \
     dir I \
@@ -1459,7 +1474,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 947 \
+    id 948 \
     name regions_11_load_8 \
     type other \
     dir I \
@@ -1474,7 +1489,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 948 \
+    id 949 \
     name regions_12_load_8 \
     type other \
     dir I \
@@ -1489,7 +1504,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 949 \
+    id 950 \
     name regions_13_load_8 \
     type other \
     dir I \
@@ -1504,7 +1519,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 950 \
+    id 951 \
     name regions_14_load_8 \
     type other \
     dir I \
@@ -1519,7 +1534,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 951 \
+    id 952 \
     name regions_15_load_8 \
     type other \
     dir I \
@@ -1534,22 +1549,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 952 \
-    name regions_16_load_8 \
+    id 953 \
+    name regions_32_load_9 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_8 \
+    corename dc_regions_32_load_9 \
     op interface \
-    ports { regions_16_load_8 { I 32 vector } } \
+    ports { regions_32_load_9 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 953 \
+    id 954 \
     name regions_33_load_9 \
     type other \
     dir I \
@@ -1564,7 +1579,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 954 \
+    id 955 \
     name regions_34_load_9 \
     type other \
     dir I \
@@ -1579,7 +1594,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 955 \
+    id 956 \
     name regions_35_load_9 \
     type other \
     dir I \
@@ -1594,7 +1609,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 956 \
+    id 957 \
     name regions_36_load_9 \
     type other \
     dir I \
@@ -1609,7 +1624,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 957 \
+    id 958 \
     name regions_37_load_9 \
     type other \
     dir I \
@@ -1624,7 +1639,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 958 \
+    id 959 \
     name regions_38_load_9 \
     type other \
     dir I \
@@ -1639,7 +1654,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 959 \
+    id 960 \
     name regions_39_load_9 \
     type other \
     dir I \
@@ -1654,7 +1669,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 960 \
+    id 961 \
     name regions_40_load_9 \
     type other \
     dir I \
@@ -1669,7 +1684,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 961 \
+    id 962 \
     name regions_41_load_9 \
     type other \
     dir I \
@@ -1684,7 +1699,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 962 \
+    id 963 \
     name regions_42_load_9 \
     type other \
     dir I \
@@ -1699,7 +1714,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 963 \
+    id 964 \
     name regions_43_load_9 \
     type other \
     dir I \
@@ -1714,7 +1729,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 964 \
+    id 965 \
     name regions_44_load_9 \
     type other \
     dir I \
@@ -1729,7 +1744,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 965 \
+    id 966 \
     name regions_45_load_9 \
     type other \
     dir I \
@@ -1744,7 +1759,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 966 \
+    id 967 \
     name regions_46_load_9 \
     type other \
     dir I \
@@ -1759,7 +1774,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 967 \
+    id 968 \
     name regions_47_load_9 \
     type other \
     dir I \
@@ -1774,22 +1789,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 968 \
-    name regions_48_load_9 \
+    id 969 \
+    name regions_16_load_9 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_9 \
+    corename dc_regions_16_load_9 \
     op interface \
-    ports { regions_48_load_9 { I 32 vector } } \
+    ports { regions_16_load_9 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 969 \
+    id 970 \
     name regions_17_load_9 \
     type other \
     dir I \
@@ -1804,7 +1819,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 970 \
+    id 971 \
     name regions_18_load_9 \
     type other \
     dir I \
@@ -1819,7 +1834,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 971 \
+    id 972 \
     name regions_19_load_9 \
     type other \
     dir I \
@@ -1834,7 +1849,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 972 \
+    id 973 \
     name regions_20_load_9 \
     type other \
     dir I \
@@ -1849,7 +1864,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 973 \
+    id 974 \
     name regions_21_load_9 \
     type other \
     dir I \
@@ -1864,7 +1879,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 974 \
+    id 975 \
     name regions_22_load_9 \
     type other \
     dir I \
@@ -1879,7 +1894,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 975 \
+    id 976 \
     name regions_23_load_9 \
     type other \
     dir I \
@@ -1894,7 +1909,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 976 \
+    id 977 \
     name regions_24_load_9 \
     type other \
     dir I \
@@ -1909,7 +1924,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 977 \
+    id 978 \
     name regions_25_load_9 \
     type other \
     dir I \
@@ -1924,7 +1939,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 978 \
+    id 979 \
     name regions_26_load_9 \
     type other \
     dir I \
@@ -1939,7 +1954,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 979 \
+    id 980 \
     name regions_27_load_9 \
     type other \
     dir I \
@@ -1954,7 +1969,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 980 \
+    id 981 \
     name regions_28_load_9 \
     type other \
     dir I \
@@ -1969,7 +1984,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 981 \
+    id 982 \
     name regions_29_load_9 \
     type other \
     dir I \
@@ -1984,7 +1999,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 982 \
+    id 983 \
     name regions_30_load_9 \
     type other \
     dir I \
@@ -1999,7 +2014,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 983 \
+    id 984 \
     name regions_31_load_9 \
     type other \
     dir I \
@@ -2008,21 +2023,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_9 \
     op interface \
     ports { regions_31_load_9 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 984 \
-    name regions_32_load_9 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_9 \
-    op interface \
-    ports { regions_32_load_9 { I 32 vector } } \
 } "
 }
 
@@ -2045,6 +2045,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 986 \
+    name regions_1_load_9 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_9 \
+    op interface \
+    ports { regions_1_load_9 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 987 \
     name regions_2_load_9 \
     type other \
     dir I \
@@ -2059,7 +2074,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 987 \
+    id 988 \
     name regions_3_load_9 \
     type other \
     dir I \
@@ -2074,7 +2089,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 988 \
+    id 989 \
     name regions_4_load_9 \
     type other \
     dir I \
@@ -2089,7 +2104,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 989 \
+    id 990 \
     name regions_5_load_9 \
     type other \
     dir I \
@@ -2104,7 +2119,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 990 \
+    id 991 \
     name regions_6_load_9 \
     type other \
     dir I \
@@ -2119,7 +2134,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 991 \
+    id 992 \
     name regions_7_load_9 \
     type other \
     dir I \
@@ -2134,7 +2149,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 992 \
+    id 993 \
     name regions_8_load_9 \
     type other \
     dir I \
@@ -2149,7 +2164,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 993 \
+    id 994 \
     name regions_9_load_9 \
     type other \
     dir I \
@@ -2164,7 +2179,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 994 \
+    id 995 \
     name regions_10_load_9 \
     type other \
     dir I \
@@ -2179,7 +2194,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 995 \
+    id 996 \
     name regions_11_load_9 \
     type other \
     dir I \
@@ -2194,7 +2209,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 996 \
+    id 997 \
     name regions_12_load_9 \
     type other \
     dir I \
@@ -2209,7 +2224,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 997 \
+    id 998 \
     name regions_13_load_9 \
     type other \
     dir I \
@@ -2224,7 +2239,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 998 \
+    id 999 \
     name regions_14_load_9 \
     type other \
     dir I \
@@ -2239,7 +2254,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 999 \
+    id 1000 \
     name regions_15_load_9 \
     type other \
     dir I \
@@ -2254,22 +2269,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1000 \
-    name regions_16_load_9 \
+    id 1001 \
+    name regions_32_load_10 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_9 \
+    corename dc_regions_32_load_10 \
     op interface \
-    ports { regions_16_load_9 { I 32 vector } } \
+    ports { regions_32_load_10 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1001 \
+    id 1002 \
     name regions_33_load_10 \
     type other \
     dir I \
@@ -2284,7 +2299,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1002 \
+    id 1003 \
     name regions_34_load_10 \
     type other \
     dir I \
@@ -2299,7 +2314,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1003 \
+    id 1004 \
     name regions_35_load_10 \
     type other \
     dir I \
@@ -2314,7 +2329,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1004 \
+    id 1005 \
     name regions_36_load_10 \
     type other \
     dir I \
@@ -2329,7 +2344,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1005 \
+    id 1006 \
     name regions_37_load_10 \
     type other \
     dir I \
@@ -2344,7 +2359,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1006 \
+    id 1007 \
     name regions_38_load_10 \
     type other \
     dir I \
@@ -2359,7 +2374,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1007 \
+    id 1008 \
     name regions_39_load_10 \
     type other \
     dir I \
@@ -2374,7 +2389,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1008 \
+    id 1009 \
     name regions_40_load_10 \
     type other \
     dir I \
@@ -2389,7 +2404,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1009 \
+    id 1010 \
     name regions_41_load_10 \
     type other \
     dir I \
@@ -2404,7 +2419,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1010 \
+    id 1011 \
     name regions_42_load_10 \
     type other \
     dir I \
@@ -2419,7 +2434,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1011 \
+    id 1012 \
     name regions_43_load_10 \
     type other \
     dir I \
@@ -2434,7 +2449,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1012 \
+    id 1013 \
     name regions_44_load_10 \
     type other \
     dir I \
@@ -2449,7 +2464,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1013 \
+    id 1014 \
     name regions_45_load_10 \
     type other \
     dir I \
@@ -2464,7 +2479,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1014 \
+    id 1015 \
     name regions_46_load_10 \
     type other \
     dir I \
@@ -2479,7 +2494,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1015 \
+    id 1016 \
     name regions_47_load_10 \
     type other \
     dir I \
@@ -2494,22 +2509,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1016 \
-    name regions_48_load_10 \
+    id 1017 \
+    name regions_16_load_10 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_10 \
+    corename dc_regions_16_load_10 \
     op interface \
-    ports { regions_48_load_10 { I 32 vector } } \
+    ports { regions_16_load_10 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1017 \
+    id 1018 \
     name regions_17_load_10 \
     type other \
     dir I \
@@ -2524,7 +2539,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1018 \
+    id 1019 \
     name regions_18_load_10 \
     type other \
     dir I \
@@ -2539,7 +2554,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1019 \
+    id 1020 \
     name regions_19_load_10 \
     type other \
     dir I \
@@ -2554,7 +2569,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1020 \
+    id 1021 \
     name regions_20_load_10 \
     type other \
     dir I \
@@ -2569,7 +2584,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1021 \
+    id 1022 \
     name regions_21_load_10 \
     type other \
     dir I \
@@ -2584,7 +2599,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1022 \
+    id 1023 \
     name regions_22_load_10 \
     type other \
     dir I \
@@ -2599,7 +2614,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1023 \
+    id 1024 \
     name regions_23_load_10 \
     type other \
     dir I \
@@ -2614,7 +2629,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1024 \
+    id 1025 \
     name regions_24_load_10 \
     type other \
     dir I \
@@ -2629,7 +2644,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1025 \
+    id 1026 \
     name regions_25_load_10 \
     type other \
     dir I \
@@ -2644,7 +2659,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1026 \
+    id 1027 \
     name regions_26_load_10 \
     type other \
     dir I \
@@ -2659,7 +2674,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1027 \
+    id 1028 \
     name regions_27_load_10 \
     type other \
     dir I \
@@ -2674,7 +2689,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1028 \
+    id 1029 \
     name regions_28_load_10 \
     type other \
     dir I \
@@ -2689,7 +2704,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1029 \
+    id 1030 \
     name regions_29_load_10 \
     type other \
     dir I \
@@ -2704,7 +2719,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1030 \
+    id 1031 \
     name regions_30_load_10 \
     type other \
     dir I \
@@ -2719,7 +2734,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1031 \
+    id 1032 \
     name regions_31_load_10 \
     type other \
     dir I \
@@ -2728,21 +2743,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_10 \
     op interface \
     ports { regions_31_load_10 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1032 \
-    name regions_32_load_10 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_10 \
-    op interface \
-    ports { regions_32_load_10 { I 32 vector } } \
 } "
 }
 
@@ -2765,6 +2765,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1034 \
+    name regions_1_load_10 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_10 \
+    op interface \
+    ports { regions_1_load_10 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1035 \
     name regions_2_load_10 \
     type other \
     dir I \
@@ -2779,7 +2794,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1035 \
+    id 1036 \
     name regions_3_load_10 \
     type other \
     dir I \
@@ -2794,7 +2809,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1036 \
+    id 1037 \
     name regions_4_load_10 \
     type other \
     dir I \
@@ -2809,7 +2824,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1037 \
+    id 1038 \
     name regions_5_load_10 \
     type other \
     dir I \
@@ -2824,7 +2839,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1038 \
+    id 1039 \
     name regions_6_load_10 \
     type other \
     dir I \
@@ -2839,7 +2854,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1039 \
+    id 1040 \
     name regions_7_load_10 \
     type other \
     dir I \
@@ -2854,7 +2869,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1040 \
+    id 1041 \
     name regions_8_load_10 \
     type other \
     dir I \
@@ -2869,7 +2884,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1041 \
+    id 1042 \
     name regions_9_load_10 \
     type other \
     dir I \
@@ -2884,7 +2899,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1042 \
+    id 1043 \
     name regions_10_load_10 \
     type other \
     dir I \
@@ -2899,7 +2914,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1043 \
+    id 1044 \
     name regions_11_load_10 \
     type other \
     dir I \
@@ -2914,7 +2929,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1044 \
+    id 1045 \
     name regions_12_load_10 \
     type other \
     dir I \
@@ -2929,7 +2944,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1045 \
+    id 1046 \
     name regions_13_load_10 \
     type other \
     dir I \
@@ -2944,7 +2959,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1046 \
+    id 1047 \
     name regions_14_load_10 \
     type other \
     dir I \
@@ -2959,7 +2974,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1047 \
+    id 1048 \
     name regions_15_load_10 \
     type other \
     dir I \
@@ -2974,22 +2989,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1048 \
-    name regions_16_load_10 \
+    id 1049 \
+    name regions_32_load_11 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_10 \
+    corename dc_regions_32_load_11 \
     op interface \
-    ports { regions_16_load_10 { I 32 vector } } \
+    ports { regions_32_load_11 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1049 \
+    id 1050 \
     name regions_33_load_11 \
     type other \
     dir I \
@@ -3004,7 +3019,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1050 \
+    id 1051 \
     name regions_34_load_11 \
     type other \
     dir I \
@@ -3019,7 +3034,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1051 \
+    id 1052 \
     name regions_35_load_11 \
     type other \
     dir I \
@@ -3034,7 +3049,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1052 \
+    id 1053 \
     name regions_36_load_11 \
     type other \
     dir I \
@@ -3049,7 +3064,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1053 \
+    id 1054 \
     name regions_37_load_11 \
     type other \
     dir I \
@@ -3064,7 +3079,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1054 \
+    id 1055 \
     name regions_38_load_11 \
     type other \
     dir I \
@@ -3079,7 +3094,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1055 \
+    id 1056 \
     name regions_39_load_11 \
     type other \
     dir I \
@@ -3094,7 +3109,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1056 \
+    id 1057 \
     name regions_40_load_11 \
     type other \
     dir I \
@@ -3109,7 +3124,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1057 \
+    id 1058 \
     name regions_41_load_11 \
     type other \
     dir I \
@@ -3124,7 +3139,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1058 \
+    id 1059 \
     name regions_42_load_11 \
     type other \
     dir I \
@@ -3139,7 +3154,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1059 \
+    id 1060 \
     name regions_43_load_11 \
     type other \
     dir I \
@@ -3154,7 +3169,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1060 \
+    id 1061 \
     name regions_44_load_11 \
     type other \
     dir I \
@@ -3169,7 +3184,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1061 \
+    id 1062 \
     name regions_45_load_11 \
     type other \
     dir I \
@@ -3184,7 +3199,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1062 \
+    id 1063 \
     name regions_46_load_11 \
     type other \
     dir I \
@@ -3199,7 +3214,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1063 \
+    id 1064 \
     name regions_47_load_11 \
     type other \
     dir I \
@@ -3214,22 +3229,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1064 \
-    name regions_48_load_11 \
+    id 1065 \
+    name regions_16_load_11 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_11 \
+    corename dc_regions_16_load_11 \
     op interface \
-    ports { regions_48_load_11 { I 32 vector } } \
+    ports { regions_16_load_11 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1065 \
+    id 1066 \
     name regions_17_load_11 \
     type other \
     dir I \
@@ -3244,7 +3259,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1066 \
+    id 1067 \
     name regions_18_load_11 \
     type other \
     dir I \
@@ -3259,7 +3274,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1067 \
+    id 1068 \
     name regions_19_load_11 \
     type other \
     dir I \
@@ -3274,7 +3289,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1068 \
+    id 1069 \
     name regions_20_load_11 \
     type other \
     dir I \
@@ -3289,7 +3304,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1069 \
+    id 1070 \
     name regions_21_load_11 \
     type other \
     dir I \
@@ -3304,7 +3319,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1070 \
+    id 1071 \
     name regions_22_load_11 \
     type other \
     dir I \
@@ -3319,7 +3334,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1071 \
+    id 1072 \
     name regions_23_load_11 \
     type other \
     dir I \
@@ -3334,7 +3349,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1072 \
+    id 1073 \
     name regions_24_load_11 \
     type other \
     dir I \
@@ -3349,7 +3364,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1073 \
+    id 1074 \
     name regions_25_load_11 \
     type other \
     dir I \
@@ -3364,7 +3379,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1074 \
+    id 1075 \
     name regions_26_load_11 \
     type other \
     dir I \
@@ -3379,7 +3394,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1075 \
+    id 1076 \
     name regions_27_load_11 \
     type other \
     dir I \
@@ -3394,7 +3409,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1076 \
+    id 1077 \
     name regions_28_load_11 \
     type other \
     dir I \
@@ -3409,7 +3424,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1077 \
+    id 1078 \
     name regions_29_load_11 \
     type other \
     dir I \
@@ -3424,7 +3439,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1078 \
+    id 1079 \
     name regions_30_load_11 \
     type other \
     dir I \
@@ -3439,7 +3454,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1079 \
+    id 1080 \
     name regions_31_load_11 \
     type other \
     dir I \
@@ -3448,21 +3463,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_11 \
     op interface \
     ports { regions_31_load_11 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1080 \
-    name regions_32_load_11 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_11 \
-    op interface \
-    ports { regions_32_load_11 { I 32 vector } } \
 } "
 }
 
@@ -3485,6 +3485,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1082 \
+    name regions_1_load_11 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_11 \
+    op interface \
+    ports { regions_1_load_11 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1083 \
     name regions_2_load_11 \
     type other \
     dir I \
@@ -3499,7 +3514,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1083 \
+    id 1084 \
     name regions_3_load_11 \
     type other \
     dir I \
@@ -3514,7 +3529,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1084 \
+    id 1085 \
     name regions_4_load_11 \
     type other \
     dir I \
@@ -3529,7 +3544,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1085 \
+    id 1086 \
     name regions_5_load_11 \
     type other \
     dir I \
@@ -3544,7 +3559,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1086 \
+    id 1087 \
     name regions_6_load_11 \
     type other \
     dir I \
@@ -3559,7 +3574,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1087 \
+    id 1088 \
     name regions_7_load_11 \
     type other \
     dir I \
@@ -3574,7 +3589,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1088 \
+    id 1089 \
     name regions_8_load_11 \
     type other \
     dir I \
@@ -3589,7 +3604,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1089 \
+    id 1090 \
     name regions_9_load_11 \
     type other \
     dir I \
@@ -3604,7 +3619,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1090 \
+    id 1091 \
     name regions_10_load_11 \
     type other \
     dir I \
@@ -3619,7 +3634,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1091 \
+    id 1092 \
     name regions_11_load_11 \
     type other \
     dir I \
@@ -3634,7 +3649,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1092 \
+    id 1093 \
     name regions_12_load_11 \
     type other \
     dir I \
@@ -3649,7 +3664,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1093 \
+    id 1094 \
     name regions_13_load_11 \
     type other \
     dir I \
@@ -3664,7 +3679,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1094 \
+    id 1095 \
     name regions_14_load_11 \
     type other \
     dir I \
@@ -3679,7 +3694,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1095 \
+    id 1096 \
     name regions_15_load_11 \
     type other \
     dir I \
@@ -3694,22 +3709,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1096 \
-    name regions_16_load_11 \
+    id 1097 \
+    name regions_32_load_12 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_11 \
+    corename dc_regions_32_load_12 \
     op interface \
-    ports { regions_16_load_11 { I 32 vector } } \
+    ports { regions_32_load_12 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1097 \
+    id 1098 \
     name regions_33_load_12 \
     type other \
     dir I \
@@ -3724,7 +3739,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1098 \
+    id 1099 \
     name regions_34_load_12 \
     type other \
     dir I \
@@ -3739,7 +3754,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1099 \
+    id 1100 \
     name regions_35_load_12 \
     type other \
     dir I \
@@ -3754,7 +3769,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1100 \
+    id 1101 \
     name regions_36_load_12 \
     type other \
     dir I \
@@ -3769,7 +3784,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1101 \
+    id 1102 \
     name regions_37_load_12 \
     type other \
     dir I \
@@ -3784,7 +3799,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1102 \
+    id 1103 \
     name regions_38_load_12 \
     type other \
     dir I \
@@ -3799,7 +3814,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1103 \
+    id 1104 \
     name regions_39_load_12 \
     type other \
     dir I \
@@ -3814,7 +3829,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1104 \
+    id 1105 \
     name regions_40_load_12 \
     type other \
     dir I \
@@ -3829,7 +3844,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1105 \
+    id 1106 \
     name regions_41_load_12 \
     type other \
     dir I \
@@ -3844,7 +3859,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1106 \
+    id 1107 \
     name regions_42_load_12 \
     type other \
     dir I \
@@ -3859,7 +3874,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1107 \
+    id 1108 \
     name regions_43_load_12 \
     type other \
     dir I \
@@ -3874,7 +3889,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1108 \
+    id 1109 \
     name regions_44_load_12 \
     type other \
     dir I \
@@ -3889,7 +3904,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1109 \
+    id 1110 \
     name regions_45_load_12 \
     type other \
     dir I \
@@ -3904,7 +3919,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1110 \
+    id 1111 \
     name regions_46_load_12 \
     type other \
     dir I \
@@ -3919,7 +3934,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1111 \
+    id 1112 \
     name regions_47_load_12 \
     type other \
     dir I \
@@ -3934,22 +3949,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1112 \
-    name regions_48_load_12 \
+    id 1113 \
+    name regions_16_load_12 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_12 \
+    corename dc_regions_16_load_12 \
     op interface \
-    ports { regions_48_load_12 { I 32 vector } } \
+    ports { regions_16_load_12 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1113 \
+    id 1114 \
     name regions_17_load_12 \
     type other \
     dir I \
@@ -3964,7 +3979,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1114 \
+    id 1115 \
     name regions_18_load_12 \
     type other \
     dir I \
@@ -3979,7 +3994,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1115 \
+    id 1116 \
     name regions_19_load_12 \
     type other \
     dir I \
@@ -3994,7 +4009,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1116 \
+    id 1117 \
     name regions_20_load_12 \
     type other \
     dir I \
@@ -4009,7 +4024,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1117 \
+    id 1118 \
     name regions_21_load_12 \
     type other \
     dir I \
@@ -4024,7 +4039,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1118 \
+    id 1119 \
     name regions_22_load_12 \
     type other \
     dir I \
@@ -4039,7 +4054,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1119 \
+    id 1120 \
     name regions_23_load_12 \
     type other \
     dir I \
@@ -4054,7 +4069,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1120 \
+    id 1121 \
     name regions_24_load_12 \
     type other \
     dir I \
@@ -4069,7 +4084,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1121 \
+    id 1122 \
     name regions_25_load_12 \
     type other \
     dir I \
@@ -4084,7 +4099,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1122 \
+    id 1123 \
     name regions_26_load_12 \
     type other \
     dir I \
@@ -4099,7 +4114,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1123 \
+    id 1124 \
     name regions_27_load_12 \
     type other \
     dir I \
@@ -4114,7 +4129,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1124 \
+    id 1125 \
     name regions_28_load_12 \
     type other \
     dir I \
@@ -4129,7 +4144,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1125 \
+    id 1126 \
     name regions_29_load_12 \
     type other \
     dir I \
@@ -4144,7 +4159,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1126 \
+    id 1127 \
     name regions_30_load_12 \
     type other \
     dir I \
@@ -4159,7 +4174,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1127 \
+    id 1128 \
     name regions_31_load_12 \
     type other \
     dir I \
@@ -4168,21 +4183,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_12 \
     op interface \
     ports { regions_31_load_12 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1128 \
-    name regions_32_load_12 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_12 \
-    op interface \
-    ports { regions_32_load_12 { I 32 vector } } \
 } "
 }
 
@@ -4205,6 +4205,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1130 \
+    name regions_1_load_12 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_12 \
+    op interface \
+    ports { regions_1_load_12 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1131 \
     name regions_2_load_12 \
     type other \
     dir I \
@@ -4219,7 +4234,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1131 \
+    id 1132 \
     name regions_3_load_12 \
     type other \
     dir I \
@@ -4234,7 +4249,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1132 \
+    id 1133 \
     name regions_4_load_12 \
     type other \
     dir I \
@@ -4249,7 +4264,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1133 \
+    id 1134 \
     name regions_5_load_12 \
     type other \
     dir I \
@@ -4264,7 +4279,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1134 \
+    id 1135 \
     name regions_6_load_12 \
     type other \
     dir I \
@@ -4279,7 +4294,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1135 \
+    id 1136 \
     name regions_7_load_12 \
     type other \
     dir I \
@@ -4294,7 +4309,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1136 \
+    id 1137 \
     name regions_8_load_12 \
     type other \
     dir I \
@@ -4309,7 +4324,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1137 \
+    id 1138 \
     name regions_9_load_12 \
     type other \
     dir I \
@@ -4324,7 +4339,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1138 \
+    id 1139 \
     name regions_10_load_12 \
     type other \
     dir I \
@@ -4339,7 +4354,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1139 \
+    id 1140 \
     name regions_11_load_12 \
     type other \
     dir I \
@@ -4354,7 +4369,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1140 \
+    id 1141 \
     name regions_12_load_12 \
     type other \
     dir I \
@@ -4369,7 +4384,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1141 \
+    id 1142 \
     name regions_13_load_12 \
     type other \
     dir I \
@@ -4384,7 +4399,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1142 \
+    id 1143 \
     name regions_14_load_12 \
     type other \
     dir I \
@@ -4399,7 +4414,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1143 \
+    id 1144 \
     name regions_15_load_12 \
     type other \
     dir I \
@@ -4414,22 +4429,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1144 \
-    name regions_16_load_12 \
+    id 1145 \
+    name regions_32_load_13 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_12 \
+    corename dc_regions_32_load_13 \
     op interface \
-    ports { regions_16_load_12 { I 32 vector } } \
+    ports { regions_32_load_13 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1145 \
+    id 1146 \
     name regions_33_load_13 \
     type other \
     dir I \
@@ -4444,7 +4459,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1146 \
+    id 1147 \
     name regions_34_load_13 \
     type other \
     dir I \
@@ -4459,7 +4474,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1147 \
+    id 1148 \
     name regions_35_load_13 \
     type other \
     dir I \
@@ -4474,7 +4489,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1148 \
+    id 1149 \
     name regions_36_load_13 \
     type other \
     dir I \
@@ -4489,7 +4504,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1149 \
+    id 1150 \
     name regions_37_load_13 \
     type other \
     dir I \
@@ -4504,7 +4519,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1150 \
+    id 1151 \
     name regions_38_load_13 \
     type other \
     dir I \
@@ -4519,7 +4534,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1151 \
+    id 1152 \
     name regions_39_load_13 \
     type other \
     dir I \
@@ -4534,7 +4549,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1152 \
+    id 1153 \
     name regions_40_load_13 \
     type other \
     dir I \
@@ -4549,7 +4564,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1153 \
+    id 1154 \
     name regions_41_load_13 \
     type other \
     dir I \
@@ -4564,7 +4579,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1154 \
+    id 1155 \
     name regions_42_load_13 \
     type other \
     dir I \
@@ -4579,7 +4594,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1155 \
+    id 1156 \
     name regions_43_load_13 \
     type other \
     dir I \
@@ -4594,7 +4609,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1156 \
+    id 1157 \
     name regions_44_load_13 \
     type other \
     dir I \
@@ -4609,7 +4624,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1157 \
+    id 1158 \
     name regions_45_load_13 \
     type other \
     dir I \
@@ -4624,7 +4639,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1158 \
+    id 1159 \
     name regions_46_load_13 \
     type other \
     dir I \
@@ -4639,7 +4654,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1159 \
+    id 1160 \
     name regions_47_load_13 \
     type other \
     dir I \
@@ -4654,22 +4669,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1160 \
-    name regions_48_load_13 \
+    id 1161 \
+    name regions_16_load_13 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_13 \
+    corename dc_regions_16_load_13 \
     op interface \
-    ports { regions_48_load_13 { I 32 vector } } \
+    ports { regions_16_load_13 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1161 \
+    id 1162 \
     name regions_17_load_13 \
     type other \
     dir I \
@@ -4684,7 +4699,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1162 \
+    id 1163 \
     name regions_18_load_13 \
     type other \
     dir I \
@@ -4699,7 +4714,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1163 \
+    id 1164 \
     name regions_19_load_13 \
     type other \
     dir I \
@@ -4714,7 +4729,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1164 \
+    id 1165 \
     name regions_20_load_13 \
     type other \
     dir I \
@@ -4729,7 +4744,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1165 \
+    id 1166 \
     name regions_21_load_13 \
     type other \
     dir I \
@@ -4744,7 +4759,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1166 \
+    id 1167 \
     name regions_22_load_13 \
     type other \
     dir I \
@@ -4759,7 +4774,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1167 \
+    id 1168 \
     name regions_23_load_13 \
     type other \
     dir I \
@@ -4774,7 +4789,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1168 \
+    id 1169 \
     name regions_24_load_13 \
     type other \
     dir I \
@@ -4789,7 +4804,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1169 \
+    id 1170 \
     name regions_25_load_13 \
     type other \
     dir I \
@@ -4804,7 +4819,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1170 \
+    id 1171 \
     name regions_26_load_13 \
     type other \
     dir I \
@@ -4819,7 +4834,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1171 \
+    id 1172 \
     name regions_27_load_13 \
     type other \
     dir I \
@@ -4834,7 +4849,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1172 \
+    id 1173 \
     name regions_28_load_13 \
     type other \
     dir I \
@@ -4849,7 +4864,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1173 \
+    id 1174 \
     name regions_29_load_13 \
     type other \
     dir I \
@@ -4864,7 +4879,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1174 \
+    id 1175 \
     name regions_30_load_13 \
     type other \
     dir I \
@@ -4879,7 +4894,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1175 \
+    id 1176 \
     name regions_31_load_13 \
     type other \
     dir I \
@@ -4888,21 +4903,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_13 \
     op interface \
     ports { regions_31_load_13 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1176 \
-    name regions_32_load_13 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_13 \
-    op interface \
-    ports { regions_32_load_13 { I 32 vector } } \
 } "
 }
 
@@ -4925,6 +4925,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1178 \
+    name regions_1_load_13 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_13 \
+    op interface \
+    ports { regions_1_load_13 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1179 \
     name regions_2_load_13 \
     type other \
     dir I \
@@ -4939,7 +4954,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1179 \
+    id 1180 \
     name regions_3_load_13 \
     type other \
     dir I \
@@ -4954,7 +4969,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1180 \
+    id 1181 \
     name regions_4_load_13 \
     type other \
     dir I \
@@ -4969,7 +4984,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1181 \
+    id 1182 \
     name regions_5_load_13 \
     type other \
     dir I \
@@ -4984,7 +4999,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1182 \
+    id 1183 \
     name regions_6_load_13 \
     type other \
     dir I \
@@ -4999,7 +5014,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1183 \
+    id 1184 \
     name regions_7_load_13 \
     type other \
     dir I \
@@ -5014,7 +5029,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1184 \
+    id 1185 \
     name regions_8_load_13 \
     type other \
     dir I \
@@ -5029,7 +5044,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1185 \
+    id 1186 \
     name regions_9_load_13 \
     type other \
     dir I \
@@ -5044,7 +5059,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1186 \
+    id 1187 \
     name regions_10_load_13 \
     type other \
     dir I \
@@ -5059,7 +5074,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1187 \
+    id 1188 \
     name regions_11_load_13 \
     type other \
     dir I \
@@ -5074,7 +5089,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1188 \
+    id 1189 \
     name regions_12_load_13 \
     type other \
     dir I \
@@ -5089,7 +5104,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1189 \
+    id 1190 \
     name regions_13_load_13 \
     type other \
     dir I \
@@ -5104,7 +5119,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1190 \
+    id 1191 \
     name regions_14_load_13 \
     type other \
     dir I \
@@ -5119,7 +5134,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1191 \
+    id 1192 \
     name regions_15_load_13 \
     type other \
     dir I \
@@ -5134,22 +5149,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1192 \
-    name regions_16_load_13 \
+    id 1193 \
+    name regions_32_load_14 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_16_load_13 \
+    corename dc_regions_32_load_14 \
     op interface \
-    ports { regions_16_load_13 { I 32 vector } } \
+    ports { regions_32_load_14 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1193 \
+    id 1194 \
     name regions_33_load_14 \
     type other \
     dir I \
@@ -5164,7 +5179,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1194 \
+    id 1195 \
     name regions_34_load_14 \
     type other \
     dir I \
@@ -5179,7 +5194,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1195 \
+    id 1196 \
     name regions_35_load_14 \
     type other \
     dir I \
@@ -5194,7 +5209,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1196 \
+    id 1197 \
     name regions_36_load_14 \
     type other \
     dir I \
@@ -5209,7 +5224,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1197 \
+    id 1198 \
     name regions_37_load_14 \
     type other \
     dir I \
@@ -5224,7 +5239,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1198 \
+    id 1199 \
     name regions_38_load_14 \
     type other \
     dir I \
@@ -5239,7 +5254,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1199 \
+    id 1200 \
     name regions_39_load_14 \
     type other \
     dir I \
@@ -5254,7 +5269,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1200 \
+    id 1201 \
     name regions_40_load_14 \
     type other \
     dir I \
@@ -5269,7 +5284,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1201 \
+    id 1202 \
     name regions_41_load_14 \
     type other \
     dir I \
@@ -5284,7 +5299,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1202 \
+    id 1203 \
     name regions_42_load_14 \
     type other \
     dir I \
@@ -5299,7 +5314,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1203 \
+    id 1204 \
     name regions_43_load_14 \
     type other \
     dir I \
@@ -5314,7 +5329,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1204 \
+    id 1205 \
     name regions_44_load_14 \
     type other \
     dir I \
@@ -5329,7 +5344,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1205 \
+    id 1206 \
     name regions_45_load_14 \
     type other \
     dir I \
@@ -5344,7 +5359,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1206 \
+    id 1207 \
     name regions_46_load_14 \
     type other \
     dir I \
@@ -5359,7 +5374,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1207 \
+    id 1208 \
     name regions_47_load_14 \
     type other \
     dir I \
@@ -5374,22 +5389,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1208 \
-    name regions_48_load_14 \
+    id 1209 \
+    name regions_16_load_14 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_regions_48_load_14 \
+    corename dc_regions_16_load_14 \
     op interface \
-    ports { regions_48_load_14 { I 32 vector } } \
+    ports { regions_16_load_14 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1209 \
+    id 1210 \
     name regions_17_load_14 \
     type other \
     dir I \
@@ -5404,7 +5419,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1210 \
+    id 1211 \
     name regions_18_load_14 \
     type other \
     dir I \
@@ -5419,7 +5434,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1211 \
+    id 1212 \
     name regions_19_load_14 \
     type other \
     dir I \
@@ -5434,7 +5449,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1212 \
+    id 1213 \
     name regions_20_load_14 \
     type other \
     dir I \
@@ -5449,7 +5464,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1213 \
+    id 1214 \
     name regions_21_load_14 \
     type other \
     dir I \
@@ -5464,7 +5479,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1214 \
+    id 1215 \
     name regions_22_load_14 \
     type other \
     dir I \
@@ -5479,7 +5494,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1215 \
+    id 1216 \
     name regions_23_load_14 \
     type other \
     dir I \
@@ -5494,7 +5509,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1216 \
+    id 1217 \
     name regions_24_load_14 \
     type other \
     dir I \
@@ -5509,7 +5524,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1217 \
+    id 1218 \
     name regions_25_load_14 \
     type other \
     dir I \
@@ -5524,7 +5539,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1218 \
+    id 1219 \
     name regions_26_load_14 \
     type other \
     dir I \
@@ -5539,7 +5554,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1219 \
+    id 1220 \
     name regions_27_load_14 \
     type other \
     dir I \
@@ -5554,7 +5569,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1220 \
+    id 1221 \
     name regions_28_load_14 \
     type other \
     dir I \
@@ -5569,7 +5584,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1221 \
+    id 1222 \
     name regions_29_load_14 \
     type other \
     dir I \
@@ -5584,7 +5599,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1222 \
+    id 1223 \
     name regions_30_load_14 \
     type other \
     dir I \
@@ -5599,7 +5614,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1223 \
+    id 1224 \
     name regions_31_load_14 \
     type other \
     dir I \
@@ -5608,21 +5623,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_31_load_14 \
     op interface \
     ports { regions_31_load_14 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1224 \
-    name regions_32_load_14 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_32_load_14 \
-    op interface \
-    ports { regions_32_load_14 { I 32 vector } } \
 } "
 }
 
@@ -5645,6 +5645,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1226 \
+    name regions_1_load_14 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_regions_1_load_14 \
+    op interface \
+    ports { regions_1_load_14 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 1227 \
     name regions_2_load_14 \
     type other \
     dir I \
@@ -5659,7 +5674,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1227 \
+    id 1228 \
     name regions_3_load_14 \
     type other \
     dir I \
@@ -5674,7 +5689,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1228 \
+    id 1229 \
     name regions_4_load_14 \
     type other \
     dir I \
@@ -5689,7 +5704,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1229 \
+    id 1230 \
     name regions_5_load_14 \
     type other \
     dir I \
@@ -5704,7 +5719,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1230 \
+    id 1231 \
     name regions_6_load_14 \
     type other \
     dir I \
@@ -5719,7 +5734,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1231 \
+    id 1232 \
     name regions_7_load_14 \
     type other \
     dir I \
@@ -5734,7 +5749,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1232 \
+    id 1233 \
     name regions_8_load_14 \
     type other \
     dir I \
@@ -5749,7 +5764,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1233 \
+    id 1234 \
     name regions_9_load_14 \
     type other \
     dir I \
@@ -5764,7 +5779,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1234 \
+    id 1235 \
     name regions_10_load_14 \
     type other \
     dir I \
@@ -5779,7 +5794,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1235 \
+    id 1236 \
     name regions_11_load_14 \
     type other \
     dir I \
@@ -5794,7 +5809,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1236 \
+    id 1237 \
     name regions_12_load_14 \
     type other \
     dir I \
@@ -5809,7 +5824,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1237 \
+    id 1238 \
     name regions_13_load_14 \
     type other \
     dir I \
@@ -5824,7 +5839,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1238 \
+    id 1239 \
     name regions_14_load_14 \
     type other \
     dir I \
@@ -5839,7 +5854,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1239 \
+    id 1240 \
     name regions_15_load_14 \
     type other \
     dir I \
@@ -5848,21 +5863,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_regions_15_load_14 \
     op interface \
     ports { regions_15_load_14 { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 1240 \
-    name regions_16_load_14 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_regions_16_load_14 \
-    op interface \
-    ports { regions_16_load_14 { I 32 vector } } \
 } "
 }
 

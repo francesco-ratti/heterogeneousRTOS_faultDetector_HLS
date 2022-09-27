@@ -82,7 +82,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 1429
 set hasByteEnable 0
-set MemName run_regions_16_RAM_AUTO_1R1W
+set MemName run_regions_15_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 32
@@ -340,7 +340,7 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     corename {} \
     metadata {  } \
     op interface \
-    ports { testStream_TDATA { I 320 vector } testStream_TVALID { I 1 bit } testStream_TREADY { O 1 bit } } \
+    ports { testStream_TDATA { I 288 vector } testStream_TVALID { I 1 bit } testStream_TREADY { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'testStream'"
@@ -359,7 +359,7 @@ eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     corename {} \
     metadata {  } \
     op interface \
-    ports { trainStream_TDATA { I 320 vector } trainStream_TVALID { I 1 bit } trainStream_TREADY { O 1 bit } } \
+    ports { trainStream_TDATA { I 288 vector } trainStream_TVALID { I 1 bit } trainStream_TREADY { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'trainStream'"

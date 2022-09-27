@@ -32,19 +32,19 @@
 <Interval-max>undef</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_669_4>
+<VITIS_LOOP_625_1>
 <TripCount>inf</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>62</min>
-<max>385</max>
+<min>35</min>
+<max>269</max>
 </range>
 </IterationLatency>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_669_4>
+</VITIS_LOOP_625_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
@@ -52,8 +52,8 @@
 <Resources>
 <BRAM_18K>176</BRAM_18K>
 <DSP>394</DSP>
-<FF>61659</FF>
-<LUT>69356</LUT>
+<FF>61657</FF>
+<LUT>69346</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -294,7 +294,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
-<Bits>320</Bits>
+<Bits>288</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -330,7 +330,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
-<Bits>320</Bits>
+<Bits>288</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

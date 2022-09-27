@@ -29,9 +29,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="262" op_0_bw="262" op_1_bw="320">
+<Node id="53" bw="262" op_0_bw="262" op_1_bw="288">
 <![CDATA[
-entry:2 %call_ret = call i262 @read_train.1, i320 %trainStream
+entry:2 %call_ret = call i262 @read_train, i288 %trainStream
 
 ]]></Node>
 <StgValue><ssdm name="call_ret"/></StgValue>
@@ -47,9 +47,9 @@ entry:2 %call_ret = call i262 @read_train.1, i320 %trainStream
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="262" op_0_bw="262" op_1_bw="320">
+<Node id="53" bw="262" op_0_bw="262" op_1_bw="288">
 <![CDATA[
-entry:2 %call_ret = call i262 @read_train.1, i320 %trainStream
+entry:2 %call_ret = call i262 @read_train, i288 %trainStream
 
 ]]></Node>
 <StgValue><ssdm name="call_ret"/></StgValue>
@@ -199,10 +199,10 @@ entry:11 %data_7 = extractvalue i262 %call_ret
 
 <Node id="63" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="6" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="32" op_38_bw="32" op_39_bw="32" op_40_bw="32" op_41_bw="32" op_42_bw="32" op_43_bw="32" op_44_bw="32" op_45_bw="32" op_46_bw="32" op_47_bw="32" op_48_bw="32" op_49_bw="32" op_50_bw="8" op_51_bw="32" op_52_bw="32" op_53_bw="32" op_54_bw="32" op_55_bw="32" op_56_bw="32" op_57_bw="32" op_58_bw="32">
 <![CDATA[
-entry:12 %call_ln578 = call void @insert_point, i32 %regions, i6 %checkId_V, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i32 %regions_48, i8 %n_regions_V, i32 %data, i32 %data_1, i32 %data_2, i32 %data_3, i32 %data_4, i32 %data_5, i32 %data_6, i32 %data_7
+entry:12 %call_ln579 = call void @insert_point, i32 %regions, i6 %checkId_V, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V, i32 %data, i32 %data_1, i32 %data_2, i32 %data_3, i32 %data_4, i32 %data_5, i32 %data_6, i32 %data_7
 
 ]]></Node>
-<StgValue><ssdm name="call_ln578"/></StgValue>
+<StgValue><ssdm name="call_ln579"/></StgValue>
 </operation>
 </state>
 
@@ -230,9 +230,9 @@ entry:0 %specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecData
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<Node id="52" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %trainStream, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0
+entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %trainStream, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -247,10 +247,10 @@ entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %t
 
 <Node id="63" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="6" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="32" op_38_bw="32" op_39_bw="32" op_40_bw="32" op_41_bw="32" op_42_bw="32" op_43_bw="32" op_44_bw="32" op_45_bw="32" op_46_bw="32" op_47_bw="32" op_48_bw="32" op_49_bw="32" op_50_bw="8" op_51_bw="32" op_52_bw="32" op_53_bw="32" op_54_bw="32" op_55_bw="32" op_56_bw="32" op_57_bw="32" op_58_bw="32">
 <![CDATA[
-entry:12 %call_ln578 = call void @insert_point, i32 %regions, i6 %checkId_V, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i32 %regions_48, i8 %n_regions_V, i32 %data, i32 %data_1, i32 %data_2, i32 %data_3, i32 %data_4, i32 %data_5, i32 %data_6, i32 %data_7
+entry:12 %call_ln579 = call void @insert_point, i32 %regions, i6 %checkId_V, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V, i32 %data, i32 %data_1, i32 %data_2, i32 %data_3, i32 %data_4, i32 %data_5, i32 %data_6, i32 %data_7
 
 ]]></Node>
-<StgValue><ssdm name="call_ln578"/></StgValue>
+<StgValue><ssdm name="call_ln579"/></StgValue>
 </operation>
 
 <operation id="19" st_id="3" stage="1" lat="1">
@@ -262,10 +262,10 @@ entry:12 %call_ln578 = call void @insert_point, i32 %regions, i6 %checkId_V, i32
 
 <Node id="64" bw="0">
 <![CDATA[
-entry:13 %ret_ln581 = ret
+entry:13 %ret_ln582 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln581"/></StgValue>
+<StgValue><ssdm name="ret_ln582"/></StgValue>
 </operation>
 </state>
 </state_list>

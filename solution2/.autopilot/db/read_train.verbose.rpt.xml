@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_train'" level="0">
-<item name = "Date">Tue Sep 27 18:00:57 2022
+<item name = "Date">Tue Sep 27 19:10:05 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -53,7 +53,7 @@
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">0, -, 64, 4, 0</column>
 <column name="Multiplexer">-, -, -, 170, -</column>
-<column name="Register">-, -, 498, -, -</column>
+<column name="Register">-, -, 472, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -70,7 +70,7 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="contr_AOV_U">read_train_contr_AOV_RAM_AUTO_1R1W, 0, 64, 4, 0, 8, 32, 1, 256</column>
+<column name="contr_AOV_U">read_test_contr_AOV_RAM_AUTO_1R1W, 0, 64, 4, 0, 8, 32, 1, 256</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -79,8 +79,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_fu_391_p2">+, 0, 0, 13, 4, 1</column>
-<column name="exitcond2_fu_385_p2">icmp, 0, 0, 9, 4, 5</column>
+<column name="empty_fu_359_p2">+, 0, 0, 13, 4, 1</column>
+<column name="exitcond1_fu_353_p2">icmp, 0, 0, 9, 4, 5</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
@@ -92,34 +92,32 @@
 <column name="contr_AOV_address1">25, 5, 3, 15</column>
 <column name="contr_AOV_d0">25, 5, 32, 160</column>
 <column name="contr_AOV_d1">25, 5, 32, 160</column>
-<column name="loop_index_fu_106">9, 2, 4, 8</column>
-<column name="testStream_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="loop_index_fu_94">9, 2, 4, 8</column>
+<column name="trainStream_TDATA_blk_n">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">6, 0, 6, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="data_1_c22_0_fu_114">32, 0, 32, 0</column>
-<column name="data_2_c23_0_fu_118">32, 0, 32, 0</column>
-<column name="data_3_c24_0_fu_122">32, 0, 32, 0</column>
-<column name="data_4_c25_0_fu_126">32, 0, 32, 0</column>
-<column name="data_5_c26_0_fu_130">32, 0, 32, 0</column>
-<column name="data_6_c27_0_fu_134">32, 0, 32, 0</column>
-<column name="data_7_c28_0_fu_138">32, 0, 32, 0</column>
-<column name="data_c21_0_fu_110">32, 0, 32, 0</column>
-<column name="empty_56_reg_645">3, 0, 3, 0</column>
-<column name="empty_reg_635">4, 0, 4, 0</column>
-<column name="loop_index_fu_106">4, 0, 4, 0</column>
-<column name="tmp_51_reg_602">32, 0, 32, 0</column>
-<column name="tmp_52_reg_607">32, 0, 32, 0</column>
-<column name="tmp_53_reg_612">32, 0, 32, 0</column>
-<column name="tmp_54_reg_617">32, 0, 32, 0</column>
-<column name="tmp_55_reg_622">32, 0, 32, 0</column>
-<column name="tmp_56_reg_627">32, 0, 32, 0</column>
-<column name="tmp_checkId_V_reg_587">8, 0, 8, 0</column>
-<column name="tmp_taskId_V_reg_592">8, 0, 8, 0</column>
-<column name="tmp_uniId_V_reg_597">16, 0, 16, 0</column>
+<column name="data_0_out_0_fu_98">32, 0, 32, 0</column>
+<column name="data_1_out_0_fu_102">32, 0, 32, 0</column>
+<column name="data_2_out_0_fu_106">32, 0, 32, 0</column>
+<column name="data_3_out_0_fu_110">32, 0, 32, 0</column>
+<column name="data_4_out_0_fu_114">32, 0, 32, 0</column>
+<column name="data_5_out_0_fu_118">32, 0, 32, 0</column>
+<column name="data_6_out_0_fu_122">32, 0, 32, 0</column>
+<column name="data_7_out_0_fu_126">32, 0, 32, 0</column>
+<column name="empty_53_reg_593">3, 0, 3, 0</column>
+<column name="empty_reg_583">4, 0, 4, 0</column>
+<column name="loop_index_fu_94">4, 0, 4, 0</column>
+<column name="tmp_45_reg_550">32, 0, 32, 0</column>
+<column name="tmp_46_reg_555">32, 0, 32, 0</column>
+<column name="tmp_47_reg_560">32, 0, 32, 0</column>
+<column name="tmp_48_reg_565">32, 0, 32, 0</column>
+<column name="tmp_49_reg_570">32, 0, 32, 0</column>
+<column name="tmp_50_reg_575">32, 0, 32, 0</column>
+<column name="tmp_checkId_V_reg_545">6, 0, 6, 0</column>
 </table>
 </item>
 </section>
@@ -136,20 +134,18 @@
 <column name="ap_continue">in, 1, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, read_train, return value</column>
-<column name="ap_return_0">out, 8, ap_ctrl_hs, read_train, return value</column>
-<column name="ap_return_1">out, 8, ap_ctrl_hs, read_train, return value</column>
-<column name="ap_return_2">out, 16, ap_ctrl_hs, read_train, return value</column>
+<column name="ap_return_0">out, 6, ap_ctrl_hs, read_train, return value</column>
+<column name="ap_return_1">out, 32, ap_ctrl_hs, read_train, return value</column>
+<column name="ap_return_2">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_3">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_4">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_5">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_6">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_7">out, 32, ap_ctrl_hs, read_train, return value</column>
 <column name="ap_return_8">out, 32, ap_ctrl_hs, read_train, return value</column>
-<column name="ap_return_9">out, 32, ap_ctrl_hs, read_train, return value</column>
-<column name="ap_return_10">out, 32, ap_ctrl_hs, read_train, return value</column>
-<column name="testStream_TDATA">in, 320, axis, testStream, pointer</column>
-<column name="testStream_TVALID">in, 1, axis, testStream, pointer</column>
-<column name="testStream_TREADY">out, 1, axis, testStream, pointer</column>
+<column name="trainStream_TDATA">in, 288, axis, trainStream, pointer</column>
+<column name="trainStream_TVALID">in, 1, axis, trainStream, pointer</column>
+<column name="trainStream_TREADY">out, 1, axis, trainStream, pointer</column>
 </table>
 </item>
 </section>

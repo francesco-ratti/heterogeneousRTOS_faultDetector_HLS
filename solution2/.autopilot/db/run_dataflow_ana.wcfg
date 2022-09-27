@@ -37,37 +37,37 @@
          <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxWaveData.Cycles</obj_property>
          <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxWaveData.OutStanding</obj_property>
          <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run//AESL_inst_run_activity.dataflowTxTooltipData</obj_property>
-         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity">
-            <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity">
+            <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity</obj_property>
+            <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity.dataflowTxTooltipData</obj_property>
+            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity.dataflowTxTooltipData</obj_property>
          </wvobject>
-         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity">
-            <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity</obj_property>
+         <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity">
+            <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="UseFullPath">true</obj_property>
-            <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity</obj_property>
-            <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity</obj_property>
+            <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
             <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
             <obj_property name="CustomSignalColor">turquoise</obj_property>
             <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity.dataflowTxWaveData.Cycles</obj_property>
-            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity.dataflowTxWaveData.OutStanding</obj_property>
-            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity.dataflowTxTooltipData</obj_property>
+            <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity.dataflowTxTooltipData</obj_property>
          </wvobject>
          <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/grp_runTestAfterInit_fu_280_activity">
             <obj_property name="label">grp_runTestAfterInit_fu_280_activity</obj_property>
@@ -84,21 +84,21 @@
             <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/grp_runTestAfterInit_fu_280_activity.dataflowTxWaveData.Cycles</obj_property>
             <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/grp_runTestAfterInit_fu_280_activity.dataflowTxWaveData.OutStanding</obj_property>
             <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/grp_runTestAfterInit_fu_280_activity.dataflowTxTooltipData</obj_property>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/read_train_U0_activity">
-               <obj_property name="label">read_train_U0_activity</obj_property>
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/read_test_U0_activity">
+               <obj_property name="label">read_test_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
-               <obj_property name="ElementShortName">read_train_U0_activity</obj_property>
-               <obj_property name="ObjectShortName">read_train_U0_activity</obj_property>
+               <obj_property name="ElementShortName">read_test_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">read_test_U0_activity</obj_property>
                <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/read_train_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/read_train_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/read_train_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/read_test_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/read_test_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/read_test_U0_activity.dataflowTxTooltipData</obj_property>
             </wvobject>
             <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/runTestAfterInit_Block_entry1012_proc_U0/runTestAfterInit_Block_entry1012_proc_U0_activity">
                <obj_property name="label">runTestAfterInit_Block_entry1012_proc_U0_activity</obj_property>
@@ -180,21 +180,21 @@
             <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/grp_runTrainAfterInit_fu_390_activity.dataflowTxWaveData.Cycles</obj_property>
             <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/grp_runTrainAfterInit_fu_390_activity.dataflowTxWaveData.OutStanding</obj_property>
             <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/grp_runTrainAfterInit_fu_390_activity.dataflowTxTooltipData</obj_property>
-            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/read_train_1_U0_activity">
-               <obj_property name="label">read_train_1_U0_activity</obj_property>
+            <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/read_train_U0_activity">
+               <obj_property name="label">read_train_U0_activity</obj_property>
                <obj_property name="DisplayName">label</obj_property>
                <obj_property name="UseFullPath">true</obj_property>
-               <obj_property name="ElementShortName">read_train_1_U0_activity</obj_property>
-               <obj_property name="ObjectShortName">read_train_1_U0_activity</obj_property>
+               <obj_property name="ElementShortName">read_train_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">read_train_U0_activity</obj_property>
                <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
                <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
                <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
                <obj_property name="UseCustomSignalColor">true</obj_property>
                <obj_property name="CustomSignalColor">turquoise</obj_property>
                <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
-               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/read_train_1_U0_activity.dataflowTxWaveData.Cycles</obj_property>
-               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/read_train_1_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
-               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/read_train_1_U0_activity.dataflowTxTooltipData</obj_property>
+               <obj_property name="Render_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/read_train_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/read_train_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/read_train_U0_activity.dataflowTxTooltipData</obj_property>
             </wvobject>
             <wvobject type="group" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/insert_point_U0/insert_point_U0_activity">
                <obj_property name="label">insert_point_U0_activity</obj_property>
@@ -254,13 +254,13 @@
    <wvobject type="group" fp_name="AESL_inst_run_group">
       <obj_property name="label">AESL_inst_run</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity">
-         <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity">
+         <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_activity</obj_property>
       </wvobject>
-      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity">
-         <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity</obj_property>
-         <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_activity</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity">
+         <obj_property name="ElementShortName">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_activity</obj_property>
       </wvobject>
       <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/grp_runTestAfterInit_fu_280_activity">
          <obj_property name="ElementShortName">grp_runTestAfterInit_fu_280_activity</obj_property>
@@ -290,41 +290,41 @@
             <obj_property name="ObjectShortName">ap_continue</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_group">
-         <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170</obj_property>
+      <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_group">
+         <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_Handshake_group">
+         <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/ap_start">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170/ap_done">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
          </wvobject>
       </wvobject>
-      <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_group">
-         <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_662_3_fu_272</obj_property>
+      <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_group">
+         <obj_property name="label">grp_run_Pipeline_VITIS_LOOP_694_3_fu_272</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_Handshake_group">
+         <wvobject type="group" fp_name="grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_Handshake_group">
             <obj_property name="label">Block-level handshake</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/ap_start">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/ap_start">
                <obj_property name="ElementShortName">ap_start</obj_property>
                <obj_property name="ObjectShortName">ap_start</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/ap_ready">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/ap_ready">
                <obj_property name="ElementShortName">ap_ready</obj_property>
                <obj_property name="ObjectShortName">ap_ready</obj_property>
             </wvobject>
-            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_662_3_fu_272/ap_done">
+            <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_run_Pipeline_VITIS_LOOP_694_3_fu_272/ap_done">
                <obj_property name="ElementShortName">ap_done</obj_property>
                <obj_property name="ObjectShortName">ap_done</obj_property>
             </wvobject>
@@ -333,9 +333,9 @@
       <wvobject type="group" fp_name="grp_runTestAfterInit_fu_280_group">
          <obj_property name="label">grp_runTestAfterInit_fu_280</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/read_train_U0_activity">
-            <obj_property name="ElementShortName">read_train_U0_activity</obj_property>
-            <obj_property name="ObjectShortName">read_train_U0_activity</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/read_test_U0_activity">
+            <obj_property name="ElementShortName">read_test_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">read_test_U0_activity</obj_property>
          </wvobject>
          <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/runTestAfterInit_Block_entry1012_proc_U0/runTestAfterInit_Block_entry1012_proc_U0_activity">
             <obj_property name="ElementShortName">runTestAfterInit_Block_entry1012_proc_U0_activity</obj_property>
@@ -369,34 +369,34 @@
                <obj_property name="ObjectShortName">ap_continue</obj_property>
             </wvobject>
          </wvobject>
-         <wvobject type="group" fp_name="read_train_U0_group">
-            <obj_property name="label">read_train_U0</obj_property>
+         <wvobject type="group" fp_name="read_test_U0_group">
+            <obj_property name="label">read_test_U0</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="group" fp_name="read_train_U0_Input_group">
+            <wvobject type="group" fp_name="read_test_U0_Input_group">
                <obj_property name="label">Input Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
             </wvobject>
-            <wvobject type="group" fp_name="read_train_U0_Handshake_group">
+            <wvobject type="group" fp_name="read_test_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_train_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/read_test_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="read_train_U0_Output_group">
+            <wvobject type="group" fp_name="read_test_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
             </wvobject>
@@ -471,6 +471,24 @@
                   <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_ce0">
                      <obj_property name="ElementShortName">regions_ce0</obj_property>
                      <obj_property name="ObjectShortName">regions_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                     <obj_property name="label">ap_ready(t_read)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="regions_1_group">
+                  <obj_property name="label">regions_1(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_1_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_1_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_1_ce0">
+                     <obj_property name="ElementShortName">regions_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">regions_1_ce0</obj_property>
                   </wvobject>
                   <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/ap_ready">
                      <obj_property name="ElementShortName">ap_ready</obj_property>
@@ -1307,24 +1325,6 @@
                      <obj_property name="DisplayName">label</obj_property>
                   </wvobject>
                </wvobject>
-               <wvobject type="group" fp_name="regions_48_group">
-                  <obj_property name="label">regions_48(PIPO)</obj_property>
-                  <obj_property name="DisplayName">label</obj_property>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_48_address0">
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_48_q0">
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/regions_48_ce0">
-                     <obj_property name="ElementShortName">regions_48_ce0</obj_property>
-                     <obj_property name="ObjectShortName">regions_48_ce0</obj_property>
-                  </wvobject>
-                  <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTestAfterInit_fu_280/run_test_U0/ap_ready">
-                     <obj_property name="ElementShortName">ap_ready</obj_property>
-                     <obj_property name="ObjectShortName">ap_ready</obj_property>
-                     <obj_property name="label">ap_ready(t_read)</obj_property>
-                     <obj_property name="DisplayName">label</obj_property>
-                  </wvobject>
-               </wvobject>
             </wvobject>
             <wvobject type="group" fp_name="run_test_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
@@ -1767,9 +1767,9 @@
       <wvobject type="group" fp_name="grp_runTrainAfterInit_fu_390_group">
          <obj_property name="label">grp_runTrainAfterInit_fu_390</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/read_train_1_U0_activity">
-            <obj_property name="ElementShortName">read_train_1_U0_activity</obj_property>
-            <obj_property name="ObjectShortName">read_train_1_U0_activity</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/read_train_U0_activity">
+            <obj_property name="ElementShortName">read_train_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">read_train_U0_activity</obj_property>
          </wvobject>
          <wvobject type="protoinst" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/insert_point_U0/insert_point_U0_activity">
             <obj_property name="ElementShortName">insert_point_U0_activity</obj_property>
@@ -1795,34 +1795,34 @@
                <obj_property name="ObjectShortName">ap_continue</obj_property>
             </wvobject>
          </wvobject>
-         <wvobject type="group" fp_name="read_train_1_U0_group">
-            <obj_property name="label">read_train_1_U0</obj_property>
+         <wvobject type="group" fp_name="read_train_U0_group">
+            <obj_property name="label">read_train_U0</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject type="group" fp_name="read_train_1_U0_Input_group">
+            <wvobject type="group" fp_name="read_train_U0_Input_group">
                <obj_property name="label">Input Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
             </wvobject>
-            <wvobject type="group" fp_name="read_train_1_U0_Handshake_group">
+            <wvobject type="group" fp_name="read_train_U0_Handshake_group">
                <obj_property name="label">Block-level handshake</obj_property>
                <obj_property name="DisplayName">label</obj_property>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/ap_start">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/ap_start">
                   <obj_property name="ElementShortName">ap_start</obj_property>
                   <obj_property name="ObjectShortName">ap_start</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/ap_ready">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/ap_ready">
                   <obj_property name="ElementShortName">ap_ready</obj_property>
                   <obj_property name="ObjectShortName">ap_ready</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/ap_done">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/ap_done">
                   <obj_property name="ElementShortName">ap_done</obj_property>
                   <obj_property name="ObjectShortName">ap_done</obj_property>
                </wvobject>
-               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_1_U0/ap_continue">
+               <wvobject type="logic" fp_name="/apatb_run_top/AESL_inst_run/grp_runTrainAfterInit_fu_390/read_train_U0/ap_continue">
                   <obj_property name="ElementShortName">ap_continue</obj_property>
                   <obj_property name="ObjectShortName">ap_continue</obj_property>
                </wvobject>
             </wvobject>
-            <wvobject type="group" fp_name="read_train_1_U0_Output_group">
+            <wvobject type="group" fp_name="read_train_U0_Output_group">
                <obj_property name="label">Output Channels</obj_property>
                <obj_property name="DisplayName">label</obj_property>
             </wvobject>

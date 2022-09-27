@@ -56,10 +56,10 @@ reg[7:0] ap_return_3;
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [5:0] trunc_ln543_fu_34_p1;
-reg   [5:0] trunc_ln543_reg_68;
-wire   [3:0] trunc_ln543_1_fu_38_p1;
-reg   [3:0] trunc_ln543_1_reg_73;
+wire   [5:0] trunc_ln547_fu_34_p1;
+reg   [5:0] trunc_ln547_reg_68;
+wire   [3:0] trunc_ln547_1_fu_38_p1;
+reg   [3:0] trunc_ln547_1_reg_73;
 wire   [63:0] zext_ln587_fu_29_p1;
 reg    ap_block_state1;
 wire    ap_CS_fsm_state2;
@@ -117,7 +117,7 @@ always @ (posedge ap_clk) begin
         ap_return_1_preg <= 6'd0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            ap_return_1_preg <= trunc_ln543_reg_68;
+            ap_return_1_preg <= trunc_ln547_reg_68;
         end
     end
 end
@@ -127,7 +127,7 @@ always @ (posedge ap_clk) begin
         ap_return_2_preg <= 4'd0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            ap_return_2_preg <= trunc_ln543_1_reg_73;
+            ap_return_2_preg <= trunc_ln547_1_reg_73;
         end
     end
 end
@@ -144,8 +144,8 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        trunc_ln543_1_reg_73 <= trunc_ln543_1_fu_38_p1;
-        trunc_ln543_reg_68 <= trunc_ln543_fu_34_p1;
+        trunc_ln547_1_reg_73 <= trunc_ln547_1_fu_38_p1;
+        trunc_ln547_reg_68 <= trunc_ln547_fu_34_p1;
     end
 end
 
@@ -193,7 +193,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        ap_return_1 = trunc_ln543_reg_68;
+        ap_return_1 = trunc_ln547_reg_68;
     end else begin
         ap_return_1 = ap_return_1_preg;
     end
@@ -201,7 +201,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        ap_return_2 = trunc_ln543_1_reg_73;
+        ap_return_2 = trunc_ln547_1_reg_73;
     end else begin
         ap_return_2 = ap_return_2_preg;
     end
@@ -251,9 +251,9 @@ end
 
 assign n_regions_V_address0 = zext_ln587_fu_29_p1;
 
-assign trunc_ln543_1_fu_38_p1 = p_read[3:0];
+assign trunc_ln547_1_fu_38_p1 = p_read[3:0];
 
-assign trunc_ln543_fu_34_p1 = p_read[5:0];
+assign trunc_ln547_fu_34_p1 = p_read[5:0];
 
 assign zext_ln587_fu_29_p1 = p_read;
 

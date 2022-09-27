@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vitis HLS Report for 'read_test'
+================================================================
+* Date:           Tue Sep 27 19:10:01 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        detector_solid
+* Solution:       solution2 (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  20.00 ns|  4.644 ns|     5.40 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       20|       20|  0.400 us|  0.400 us|   20|   20|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |       16|       16|         2|          -|          -|     8|        no|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     24|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        0|    -|      64|      4|    0|
+|Multiplexer      |        -|    -|       -|    170|    -|
+|Register         |        -|    -|     498|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     562|    198|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-------------+-----------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |    Memory   |               Module              | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-------------+-----------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |contr_AOV_U  |read_test_contr_AOV_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    +-------------+-----------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total        |                                   |        0|  64|   4|    0|     8|   32|     1|          256|
+    +-------------+-----------------------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |empty_fu_391_p2      |         +|   0|  0|  13|           4|           1|
+    |exitcond1_fu_385_p2  |      icmp|   0|  0|   9|           4|           5|
+    |ap_block_state1      |        or|   0|  0|   2|           1|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  24|           9|           7|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  37|          7|    1|          7|
+    |ap_done                 |   9|          2|    1|          2|
+    |contr_AOV_address0      |  31|          6|    3|         18|
+    |contr_AOV_address1      |  25|          5|    3|         15|
+    |contr_AOV_d0            |  25|          5|   32|        160|
+    |contr_AOV_d1            |  25|          5|   32|        160|
+    |loop_index_fu_106       |   9|          2|    4|          8|
+    |testStream_TDATA_blk_n  |   9|          2|    1|          2|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 170|         34|   77|        372|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+----+----+-----+-----------+
+    |          Name         | FF | LUT| Bits| Const Bits|
+    +-----------------------+----+----+-----+-----------+
+    |ap_CS_fsm              |   6|   0|    6|          0|
+    |ap_done_reg            |   1|   0|    1|          0|
+    |data_1_c22_0_fu_114    |  32|   0|   32|          0|
+    |data_2_c23_0_fu_118    |  32|   0|   32|          0|
+    |data_3_c24_0_fu_122    |  32|   0|   32|          0|
+    |data_4_c25_0_fu_126    |  32|   0|   32|          0|
+    |data_5_c26_0_fu_130    |  32|   0|   32|          0|
+    |data_6_c27_0_fu_134    |  32|   0|   32|          0|
+    |data_7_c28_0_fu_138    |  32|   0|   32|          0|
+    |data_c21_0_fu_110      |  32|   0|   32|          0|
+    |empty_54_reg_645       |   3|   0|    3|          0|
+    |empty_reg_635          |   4|   0|    4|          0|
+    |loop_index_fu_106      |   4|   0|    4|          0|
+    |tmp_51_reg_602         |  32|   0|   32|          0|
+    |tmp_52_reg_607         |  32|   0|   32|          0|
+    |tmp_53_reg_612         |  32|   0|   32|          0|
+    |tmp_54_reg_617         |  32|   0|   32|          0|
+    |tmp_55_reg_622         |  32|   0|   32|          0|
+    |tmp_56_reg_627         |  32|   0|   32|          0|
+    |tmp_checkId_V_reg_587  |   8|   0|    8|          0|
+    |tmp_taskId_V_reg_592   |   8|   0|    8|          0|
+    |tmp_uniId_V_reg_597    |  16|   0|   16|          0|
+    +-----------------------+----+----+-----+-----------+
+    |Total                  | 498|   0|  498|          0|
+    +-----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_continue        |   in|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_0        |  out|    8|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_1        |  out|    8|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_2        |  out|   16|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_3        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_4        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_5        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_6        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_7        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_8        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_9        |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|ap_return_10       |  out|   32|  ap_ctrl_hs|     read_test|  return value|
+|testStream_TDATA   |   in|  288|        axis|    testStream|       pointer|
+|testStream_TVALID  |   in|    1|        axis|    testStream|       pointer|
+|testStream_TREADY  |  out|    1|        axis|    testStream|       pointer|
++-------------------+-----+-----+------------+--------------+--------------+
+

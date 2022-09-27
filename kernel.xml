@@ -1,8 +1,8 @@
 <root versionMajor = "1" versionMinor = "5">
   <kernel name="run" language="c" vlnv="xilinx.com:hls:run:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_chain">
     <ports>
-      <port name="TESTSTREAM" mode="read_only" dataWidth="320" portType="stream"/>
-      <port name="TRAINSTREAM" mode="read_only" dataWidth="320" portType="stream"/>
+      <port name="TESTSTREAM" mode="read_only" dataWidth="288" portType="stream"/>
+      <port name="TRAINSTREAM" mode="read_only" dataWidth="288" portType="stream"/>
       <port name="TOSCHEDULER" mode="write_only" dataWidth="8" portType="stream"/>
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x2000" dataWidth="32"/>
     </ports>

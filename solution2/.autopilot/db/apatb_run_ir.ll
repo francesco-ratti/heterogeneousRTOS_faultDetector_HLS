@@ -11,10 +11,7 @@ target triple = "fpga64-xilinx-none"
 %"struct.ap_int_base<16, false>" = type { %"struct.ssdm_int<16, false>" }
 %"struct.ssdm_int<16, false>" = type { i16 }
 %"class.hls::stream<controlStr, 0>" = type { %struct.controlStr }
-%struct.controlStr = type { %"struct.ap_uint<8>", %"struct.ap_uint<8>", %"struct.ap_uint<16>", %"struct.ap_uint<2>", [8 x float] }
-%"struct.ap_uint<2>" = type { %"struct.ap_int_base<2, false>" }
-%"struct.ap_int_base<2, false>" = type { %"struct.ssdm_int<2, false>" }
-%"struct.ssdm_int<2, false>" = type { i2 }
+%struct.controlStr = type { %"struct.ap_uint<8>", %"struct.ap_uint<8>", %"struct.ap_uint<16>", [8 x float] }
 %struct.REGION_T = type { [8 x float], [8 x float], [8 x float] }
 %"class.hls::stream<ap_uint<8>, 0>" = type { %"struct.ap_uint<8>" }
 
@@ -22,7 +19,7 @@ target triple = "fpga64-xilinx-none"
 declare void @llvm.sideeffect() #0
 
 ; Function Attrs: noinline
-define void @apatb_run_ir(i1* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %"class.hls::stream<controlStr, 0>"* noalias nocapture nonnull dereferenceable(40) %testStream, %"class.hls::stream<controlStr, 0>"* noalias nocapture nonnull dereferenceable(40) %trainStream, [16 x %struct.REGION_T]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="64" %trainedRegions, %"struct.ap_uint<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="64" %n_regions_in, %"class.hls::stream<ap_uint<8>, 0>"* noalias nocapture nonnull dereferenceable(1) %toScheduler) local_unnamed_addr #1 {
+define void @apatb_run_ir(i1* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %"class.hls::stream<controlStr, 0>"* noalias nocapture nonnull dereferenceable(36) %testStream, %"class.hls::stream<controlStr, 0>"* noalias nocapture nonnull dereferenceable(36) %trainStream, [16 x %struct.REGION_T]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="64" %trainedRegions, %"struct.ap_uint<8>"* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="64" %n_regions_in, %"class.hls::stream<ap_uint<8>, 0>"* noalias nocapture nonnull dereferenceable(1) %toScheduler) local_unnamed_addr #1 {
 entry:
   %errorInTask_copy = alloca [16 x i1], align 512
   %outcomeInRam_copy = alloca [16 x %struct.OutcomeStr], align 512
@@ -158,17 +155,17 @@ entry:
 
 empty:                                            ; preds = %push, %entry
   %3 = bitcast %"class.hls::stream<controlStr, 0>"* %1 to i8*
-  %4 = call i1 @fpga_fifo_not_empty_40(i8* %3)
+  %4 = call i1 @fpga_fifo_not_empty_36(i8* %3)
   br i1 %4, label %push, label %ret
 
 push:                                             ; preds = %empty
   %5 = bitcast %"class.hls::stream<controlStr, 0>"* %2 to i8*
   %6 = bitcast %"class.hls::stream<controlStr, 0>"* %1 to i8*
-  call void @fpga_fifo_pop_40(i8* %5, i8* %6)
+  call void @fpga_fifo_pop_36(i8* %5, i8* %6)
   %7 = load volatile %"class.hls::stream<controlStr, 0>", %"class.hls::stream<controlStr, 0>"* %2
   %8 = bitcast %"class.hls::stream<controlStr, 0>"* %2 to i8*
   %9 = bitcast %"class.hls::stream<controlStr, 0>"* %0 to i8*
-  call void @fpga_fifo_push_40(i8* %8, i8* %9)
+  call void @fpga_fifo_push_36(i8* %8, i8* %9)
   br label %empty, !llvm.loop !5
 
 ret:                                              ; preds = %empty
@@ -356,15 +353,15 @@ entry:
 
 declare void @run_hw_stub(i1*, %struct.OutcomeStr*, %"class.hls::stream<controlStr, 0>"*, %"class.hls::stream<controlStr, 0>"*, [16 x %struct.REGION_T]*, %"struct.ap_uint<8>"*, %"class.hls::stream<ap_uint<8>, 0>"*)
 
-declare i1 @fpga_fifo_not_empty_40(i8*)
+declare i1 @fpga_fifo_not_empty_36(i8*)
 
 declare i1 @fpga_fifo_not_empty_1(i8*)
 
-declare void @fpga_fifo_pop_40(i8*, i8*)
+declare void @fpga_fifo_pop_36(i8*, i8*)
 
 declare void @fpga_fifo_pop_1(i8*, i8*)
 
-declare void @fpga_fifo_push_40(i8*, i8*)
+declare void @fpga_fifo_push_36(i8*, i8*)
 
 declare void @fpga_fifo_push_1(i8*, i8*)
 
@@ -376,7 +373,7 @@ attributes #4 = { argmemonly noinline "fpga.wrapper.func"="onebyonecpy_hls" }
 attributes #5 = { argmemonly noinline "fpga.wrapper.func"="streamcpy_hls" }
 attributes #6 = { argmemonly noinline "fpga.wrapper.func"="copyout" }
 attributes #7 = { "fpga.wrapper.func"="stub" }
-attributes #8 = { inaccessiblememonly nounwind "xlx.port.bitwidth"="320" }
+attributes #8 = { inaccessiblememonly nounwind "xlx.port.bitwidth"="288" }
 attributes #9 = { inaccessiblememonly nounwind "xlx.port.bitwidth"="8" }
 
 !llvm.dbg.cu = !{}

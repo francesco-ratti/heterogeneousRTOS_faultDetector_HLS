@@ -450,7 +450,6 @@ struct controlStr {
 	ap_uint<8> checkId;
 	ap_uint<8> taskId;
 	ap_uint<16> uniId;
-	ap_uint<2> command;
 	float AOV[MAX_AOV_DIM];
 };
 
@@ -460,13 +459,19 @@ struct controlStr {
 #define sizeOfOutcome  ((MAX_CHECKS*sizeof(OutcomeStr)) / 32) + (((MAX_CHECKS*sizeof(OutcomeStr)) % 32) != 0)
 #define SHARED_MEM_SIZE sizeOfInputData*MAX_CHECKS+sizeOfOutcome
 
-void read_train(ap_uint<2> &command, ap_uint<8> &taskId, ap_uint<8> &checkId, ap_uint<16> &uniId, hls::stream< controlStr > &testStream, float data[MAX_AOV_DIM]) {
+void read_train(ap_uint<8> &checkId, hls::stream< controlStr > &stream, float data[MAX_AOV_DIM]) {
 	//#pragma HLS PIPELINE II=64
-	controlStr contr=testStream.read();
+	controlStr contr=stream.read();
+	checkId=contr.checkId;
+	memcpy(data, contr.AOV, sizeOfInputData);
+}
+
+void read_test(ap_uint<8> &taskId, ap_uint<8> &checkId, ap_uint<16> &uniId, hls::stream< controlStr > &stream, float data[MAX_AOV_DIM]) {
+	//#pragma HLS PIPELINE II=64
+	controlStr contr=stream.read();
 	taskId=contr.taskId;
 	checkId=contr.checkId;
 	uniId=contr.uniId;
-	command=contr.command;
 	memcpy(data, contr.AOV, sizeOfInputData);
 }
 
@@ -530,13 +535,12 @@ void runTestAfterInit(hls::stream< controlStr > &testStream,
 	ap_uint<8> taskId;
 	ap_uint<8> checkId;
 	ap_uint<16> uniId;
-	ap_uint<2> command;
 #pragma HLS array_partition variable=data complete //dim=2
 
 	bool error;
 	//ap_uint<8> n_regions_currCheck=n_regions[checkId];
 
-	read_train(command, taskId, checkId, uniId, testStream, data);
+	read_test(taskId, checkId, uniId, testStream, data);
 	//read_test(data, inputDataInRam, checkId);
 	//if (!errorInTask[taskId]) {
 	//if (command==COMMAND_TEST) {
@@ -567,12 +571,9 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
 	float data[MAX_CHECKS];//[MAX_AOV_DIM]; // key
 #pragma HLS array_partition variable=data complete //dim=2
 
-	ap_uint<8> taskId;
 	ap_uint<8> checkId;
-	ap_uint<16> uniId;
-	ap_uint<2> command;
 
-	read_train(command, taskId, checkId, uniId, trainStream, data);
+	read_train(checkId, trainStream, data);
 	//read_test(data_key, inputDataInRam, checkId);
 	//run_train(regions[checkId],
 	insert_point(regions[checkId],
@@ -604,13 +605,44 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
 //		n_regions [i] = n_regions_in [i];
 //	}
 //}
+
+//void runTestLoop (hls::stream< controlStr > &testStream, OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[MAX_TASKS],
+//		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS]) {
+//	for (;;)
+//		runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+//
+//}
+//void runTrainLoop (hls::stream< controlStr > &trainStream,
+//		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS]) {
+//	for (;;)
+//		runTrainAfterInit(trainStream, regions, n_regions);
+//}
+void running (bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
+		hls::stream< controlStr > &trainStream,
+		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream< ap_uint<8> > &toScheduler) {
+
+	//#pragma HLS dataflow
+	while(1) {
+#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+		runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+		runTrainAfterInit(trainStream, regions, n_regions);
+#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+	}
+}
+
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 static ap_uint<8> n_regions[MAX_CHECKS];
 
 void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
 		hls::stream< controlStr > &trainStream,
 		region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions_in[MAX_CHECKS], hls::stream< ap_uint<8> > &toScheduler) {
-#pragma HLS interface s_axilite port = trainedRegions //bundle=A
+	#pragma HLS interface s_axilite port = trainedRegions //bundle=A
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 #pragma HLS interface s_axilite port = errorInTask //bundle=A
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
@@ -666,11 +698,8 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 
 //		fsmstate=STATE_READY;
 	//} else if (fsmstate==STATE_READY) {
-		while(1) {
-			runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-			runTrainAfterInit(trainStream, regions, n_regions);
-#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
-#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
-		}
+		running(errorInTask, outcomeInRam, testStream,
+				trainStream,
+				regions, n_regions, toScheduler);
 	}
 //}

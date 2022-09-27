@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run'
 ================================================================
-* Date:           Tue Sep 27 18:01:06 2022
+* Date:           Tue Sep 27 19:10:11 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -38,8 +38,8 @@
         |                                                           |                                                |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline |
         |                          Instance                         |                     Module                     |   min   |   max   |    min   |    max   |  min  |  max  |   Type   |
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
-        |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170  |run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
-        |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272                   |run_Pipeline_VITIS_LOOP_662_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
+        |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170  |run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
+        |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272                   |run_Pipeline_VITIS_LOOP_694_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
         |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |       33|      114|  0.660 us|  2.280 us|     21|     92|  dataflow|
         |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |       25|      267|  0.500 us|  5.340 us|     21|    247|  dataflow|
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
@@ -49,7 +49,7 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_669_4  |        ?|        ?|  62 ~ 385|          -|          -|   inf|        no|
+        |- VITIS_LOOP_625_1  |        ?|        ?|  35 ~ 269|          -|          -|   inf|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -62,14 +62,14 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|     14|    -|
+|Expression       |        -|    -|       0|     16|    -|
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |       80|  394|   61634|  64198|    0|
 |Memory           |       96|    -|       8|      8|    0|
-|Multiplexer      |        -|    -|       -|   5136|    -|
-|Register         |        -|    -|      17|      -|    -|
+|Multiplexer      |        -|    -|       -|   5124|    -|
+|Register         |        -|    -|      15|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      176|  394|   61659|  69356|    0|
+|Total            |      176|  394|   61657|  69346|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -84,8 +84,8 @@
     |control_s_axi_U                                            |control_s_axi                                   |       80|    0|    356|    329|    0|
     |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |        0|   56|  26463|  18089|    0|
     |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |        0|  125|  34113|  38026|    0|
-    |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170  |run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2  |        0|  213|    685|   7691|    0|
-    |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272                   |run_Pipeline_VITIS_LOOP_662_3                   |        0|    0|     17|     63|    0|
+    |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170  |run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2  |        0|  213|    685|   7691|    0|
+    |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272                   |run_Pipeline_VITIS_LOOP_694_3                   |        0|    0|     17|     63|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
     |Total                                                      |                                                |       80|  394|  61634|  64198|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
@@ -98,10 +98,13 @@
     |     Memory    |           Module          | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
     +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
     |n_regions_V_U  |n_regions_V_RAM_AUTO_1R1W  |        0|  8|   8|    0|    64|    8|     1|          512|
-    |regions_16_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
-    |regions_32_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
-    |regions_48_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_15_U   |regions_15_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_31_U   |regions_15_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_47_U   |regions_15_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_U      |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_16_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_32_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_1_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_17_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_33_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_2_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
@@ -143,9 +146,6 @@
     |regions_14_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_30_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     |regions_46_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
-    |regions_15_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
-    |regions_31_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
-    |regions_47_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
     +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
     |Total          |                           |       96|  8|   8|    0| 24640| 1544|    49|       786944|
     +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
@@ -160,19 +160,20 @@
     |grp_runTestAfterInit_fu_280_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
     |ap_block_state1                                 |        or|   0|  0|   2|           1|           1|
     |ap_block_state2_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
+    |ap_block_state4_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
     |ap_sync_grp_runTestAfterInit_fu_280_ap_done     |        or|   0|  0|   2|           1|           1|
     |ap_sync_grp_runTestAfterInit_fu_280_ap_ready    |        or|   0|  0|   2|           1|           1|
     |ap_sync_grp_runTrainAfterInit_fu_390_ap_done    |        or|   0|  0|   2|           1|           1|
     |ap_sync_grp_runTrainAfterInit_fu_390_ap_ready   |        or|   0|  0|   2|           1|           1|
     +------------------------------------------------+----------+----+---+----+------------+------------+
-    |Total                                           |          |   0|  0|  14|           7|           7|
+    |Total                                           |          |   0|  0|  16|           8|           8|
     +------------------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +---------------------------------+----+-----------+-----+-----------+
     |               Name              | LUT| Input Size| Bits| Total Bits|
     +---------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                        |  37|          7|    1|          7|
+    |ap_NS_fsm                        |  25|          5|    1|          5|
     |n_regions_V_address0             |  20|          4|    6|         24|
     |n_regions_V_ce0                  |  20|          4|    1|          4|
     |n_regions_V_d0                   |  14|          3|    8|         24|
@@ -218,13 +219,13 @@
     |regions_15_ce1                   |  14|          3|    1|          3|
     |regions_15_d0                    |  14|          3|   32|         96|
     |regions_15_we0                   |  14|          3|    1|          3|
-    |regions_15_we1                   |   9|          2|    1|          2|
     |regions_16_address0              |  20|          4|    9|         36|
     |regions_16_address1              |  14|          3|    9|         27|
     |regions_16_ce0                   |  20|          4|    1|          4|
     |regions_16_ce1                   |  14|          3|    1|          3|
     |regions_16_d0                    |  14|          3|   32|         96|
     |regions_16_we0                   |  14|          3|    1|          3|
+    |regions_16_we1                   |   9|          2|    1|          2|
     |regions_17_address0              |  20|          4|    9|         36|
     |regions_17_address1              |  14|          3|    9|         27|
     |regions_17_ce0                   |  20|          4|    1|          4|
@@ -246,6 +247,13 @@
     |regions_19_d0                    |  14|          3|   32|         96|
     |regions_19_we0                   |  14|          3|    1|          3|
     |regions_19_we1                   |   9|          2|    1|          2|
+    |regions_1_address0               |  20|          4|    9|         36|
+    |regions_1_address1               |  14|          3|    9|         27|
+    |regions_1_ce0                    |  20|          4|    1|          4|
+    |regions_1_ce1                    |  14|          3|    1|          3|
+    |regions_1_d0                     |  14|          3|   32|         96|
+    |regions_1_we0                    |  14|          3|    1|          3|
+    |regions_1_we1                    |   9|          2|    1|          2|
     |regions_20_address0              |  20|          4|    9|         36|
     |regions_20_address1              |  14|          3|    9|         27|
     |regions_20_ce0                   |  20|          4|    1|          4|
@@ -336,13 +344,13 @@
     |regions_31_ce1                   |  14|          3|    1|          3|
     |regions_31_d0                    |  14|          3|   32|         96|
     |regions_31_we0                   |  14|          3|    1|          3|
-    |regions_31_we1                   |   9|          2|    1|          2|
     |regions_32_address0              |  20|          4|    9|         36|
     |regions_32_address1              |  14|          3|    9|         27|
     |regions_32_ce0                   |  20|          4|    1|          4|
     |regions_32_ce1                   |  14|          3|    1|          3|
     |regions_32_d0                    |  14|          3|   32|         96|
     |regions_32_we0                   |  14|          3|    1|          3|
+    |regions_32_we1                   |   9|          2|    1|          2|
     |regions_33_address0              |  20|          4|    9|         36|
     |regions_33_address1              |  14|          3|    9|         27|
     |regions_33_ce0                   |  20|          4|    1|          4|
@@ -454,13 +462,6 @@
     |regions_47_ce1                   |  14|          3|    1|          3|
     |regions_47_d0                    |  14|          3|   32|         96|
     |regions_47_we0                   |  14|          3|    1|          3|
-    |regions_47_we1                   |   9|          2|    1|          2|
-    |regions_48_address0              |  20|          4|    9|         36|
-    |regions_48_address1              |  14|          3|    9|         27|
-    |regions_48_ce0                   |  20|          4|    1|          4|
-    |regions_48_ce1                   |  14|          3|    1|          3|
-    |regions_48_d0                    |  14|          3|   32|         96|
-    |regions_48_we0                   |  14|          3|    1|          3|
     |regions_4_address0               |  20|          4|    9|         36|
     |regions_4_address1               |  14|          3|    9|         27|
     |regions_4_ce0                    |  20|          4|    1|          4|
@@ -513,14 +514,14 @@
     |testStream_TREADY_int_regslice   |   9|          2|    1|          2|
     |trainStream_TREADY_int_regslice  |   9|          2|    1|          2|
     +---------------------------------+----+-----------+-----+-----------+
-    |Total                            |5136|       1075| 2608|       8268|
+    |Total                            |5124|       1073| 2608|       8266|
     +---------------------------------+----+-----------+-----+-----------+
 
     * Register: 
     +------------------------------------------------------------------------+---+----+-----+-----------+
     |                                  Name                                  | FF| LUT| Bits| Const Bits|
     +------------------------------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                                               |  6|   0|    6|          0|
+    |ap_CS_fsm                                                               |  4|   0|    4|          0|
     |ap_done_reg                                                             |  0|   0|    1|          1|
     |ap_rst_n_inv                                                            |  1|   0|    1|          0|
     |ap_rst_reg_1                                                            |  1|   0|    1|          0|
@@ -531,10 +532,10 @@
     |ap_sync_reg_grp_runTrainAfterInit_fu_390_ap_ready                       |  1|   0|    1|          0|
     |grp_runTestAfterInit_fu_280_ap_start_reg                                |  1|   0|    1|          0|
     |grp_runTrainAfterInit_fu_390_ap_start_reg                               |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_ap_start_reg  |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_ap_start_reg                   |  1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_ap_start_reg  |  1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_ap_start_reg                   |  1|   0|    1|          0|
     +------------------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                                   | 17|   0|   18|          1|
+    |Total                                                                   | 15|   0|   16|          1|
     +------------------------------------------------------------------------+---+----+-----+-----------+
 
 
@@ -566,10 +567,10 @@
 |ap_clk                 |   in|    1|  ap_ctrl_chain|           run|  return value|
 |ap_rst_n               |   in|    1|  ap_ctrl_chain|           run|  return value|
 |interrupt              |  out|    1|  ap_ctrl_chain|           run|  return value|
-|testStream_TDATA       |   in|  320|           axis|    testStream|       pointer|
+|testStream_TDATA       |   in|  288|           axis|    testStream|       pointer|
 |testStream_TVALID      |   in|    1|           axis|    testStream|       pointer|
 |testStream_TREADY      |  out|    1|           axis|    testStream|       pointer|
-|trainStream_TDATA      |   in|  320|           axis|   trainStream|       pointer|
+|trainStream_TDATA      |   in|  288|           axis|   trainStream|       pointer|
 |trainStream_TVALID     |   in|    1|           axis|   trainStream|       pointer|
 |trainStream_TREADY     |  out|    1|           axis|   trainStream|       pointer|
 |toScheduler_TDATA      |  out|    8|           axis|   toScheduler|       pointer|

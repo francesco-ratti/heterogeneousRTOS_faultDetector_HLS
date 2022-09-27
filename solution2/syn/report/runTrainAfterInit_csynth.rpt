@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTrainAfterInit'
 ================================================================
-* Date:           Tue Sep 27 18:01:05 2022
+* Date:           Tue Sep 27 19:10:10 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -38,7 +38,7 @@
         |                 |              |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
         |     Instance    |    Module    |   min   |   max   |    min    |    max   | min | max |   Type  |
         +-----------------+--------------+---------+---------+-----------+----------+-----+-----+---------+
-        |read_train_1_U0  |read_train_1  |       20|       20|   0.400 us|  0.400 us|   20|   20|       no|
+        |read_train_U0    |read_train    |       20|       20|   0.400 us|  0.400 us|   20|   20|       no|
         |insert_point_U0  |insert_point  |        4|      246|  80.000 ns|  4.920 us|    4|  246|       no|
         +-----------------+--------------+---------+---------+-----------+----------+-----+-----+---------+
 
@@ -75,7 +75,7 @@
     |     Instance    |    Module    | BRAM_18K| DSP |   FF  |  LUT  | URAM|
     +-----------------+--------------+---------+-----+-------+-------+-----+
     |insert_point_U0  |insert_point  |        0|  125|  32675|  37067|    0|
-    |read_train_1_U0  |read_train_1  |        0|    0|    536|    198|    0|
+    |read_train_U0    |read_train    |        0|    0|    536|    198|    0|
     +-----------------+--------------+---------+-----+-------+-------+-----+
     |Total            |              |        0|  125|  33211|  37265|    0|
     +-----------------+--------------+---------+-----+-------+-------+-----+
@@ -119,8 +119,8 @@
     |ap_idle                           |       and|   0|  0|   2|           1|           1|
     |ap_sync_ready                     |       and|   0|  0|   2|           1|           1|
     |insert_point_U0_ap_start          |       and|   0|  0|   2|           1|           1|
-    |read_train_1_U0_ap_continue       |       and|   0|  0|   2|           1|           1|
-    |read_train_1_U0_ap_start          |       and|   0|  0|   2|           1|           1|
+    |read_train_U0_ap_continue         |       and|   0|  0|   2|           1|           1|
+    |read_train_U0_ap_start            |       and|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_checkId_V   |        or|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_data        |        or|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_data_1      |        or|   0|  0|   2|           1|           1|
@@ -131,7 +131,7 @@
     |ap_sync_channel_write_data_6      |        or|   0|  0|   2|           1|           1|
     |ap_sync_channel_write_data_7      |        or|   0|  0|   2|           1|           1|
     |ap_sync_insert_point_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
-    |ap_sync_read_train_1_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_read_train_U0_ap_ready    |        or|   0|  0|   2|           1|           1|
     +----------------------------------+----------+----+---+----+------------+------------+
     |Total                             |          |   0|  0|  50|          25|          25|
     +----------------------------------+----------+----+---+----+------------+------------+
@@ -150,7 +150,7 @@
     |ap_sync_reg_channel_write_data_6      |   9|          2|    1|          2|
     |ap_sync_reg_channel_write_data_7      |   9|          2|    1|          2|
     |ap_sync_reg_insert_point_U0_ap_ready  |   9|          2|    1|          2|
-    |ap_sync_reg_read_train_1_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_read_train_U0_ap_ready    |   9|          2|    1|          2|
     +--------------------------------------+----+-----------+-----+-----------+
     |Total                                 |  99|         22|   11|         22|
     +--------------------------------------+----+-----------+-----+-----------+
@@ -169,7 +169,7 @@
     |ap_sync_reg_channel_write_data_6      |  1|   0|    1|          0|
     |ap_sync_reg_channel_write_data_7      |  1|   0|    1|          0|
     |ap_sync_reg_insert_point_U0_ap_ready  |  1|   0|    1|          0|
-    |ap_sync_reg_read_train_1_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_read_train_U0_ap_ready    |  1|   0|    1|          0|
     +--------------------------------------+---+----+-----+-----------+
     |Total                                 | 11|   0|   11|          0|
     +--------------------------------------+---+----+-----+-----------+
@@ -183,7 +183,7 @@
 +----------------------+-----+-----+------------+-------------------+--------------+
 |       RTL Ports      | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
 +----------------------+-----+-----+------------+-------------------+--------------+
-|trainStream_TDATA     |   in|  320|        axis|        trainStream|       pointer|
+|trainStream_TDATA     |   in|  288|        axis|        trainStream|       pointer|
 |trainStream_TVALID    |   in|    1|        axis|        trainStream|       pointer|
 |trainStream_TREADY    |  out|    1|        axis|        trainStream|       pointer|
 |regions_address0      |  out|    9|   ap_memory|            regions|         array|
@@ -196,6 +196,16 @@
 |regions_d1            |  out|   32|   ap_memory|            regions|         array|
 |regions_q1            |   in|   32|   ap_memory|            regions|         array|
 |regions_we1           |  out|    1|   ap_memory|            regions|         array|
+|regions_1_address0    |  out|    9|   ap_memory|          regions_1|         array|
+|regions_1_ce0         |  out|    1|   ap_memory|          regions_1|         array|
+|regions_1_d0          |  out|   32|   ap_memory|          regions_1|         array|
+|regions_1_q0          |   in|   32|   ap_memory|          regions_1|         array|
+|regions_1_we0         |  out|    1|   ap_memory|          regions_1|         array|
+|regions_1_address1    |  out|    9|   ap_memory|          regions_1|         array|
+|regions_1_ce1         |  out|    1|   ap_memory|          regions_1|         array|
+|regions_1_d1          |  out|   32|   ap_memory|          regions_1|         array|
+|regions_1_q1          |   in|   32|   ap_memory|          regions_1|         array|
+|regions_1_we1         |  out|    1|   ap_memory|          regions_1|         array|
 |regions_2_address0    |  out|    9|   ap_memory|          regions_2|         array|
 |regions_2_ce0         |  out|    1|   ap_memory|          regions_2|         array|
 |regions_2_d0          |  out|   32|   ap_memory|          regions_2|         array|
@@ -656,16 +666,6 @@
 |regions_47_d1         |  out|   32|   ap_memory|         regions_47|         array|
 |regions_47_q1         |   in|   32|   ap_memory|         regions_47|         array|
 |regions_47_we1        |  out|    1|   ap_memory|         regions_47|         array|
-|regions_48_address0   |  out|    9|   ap_memory|         regions_48|         array|
-|regions_48_ce0        |  out|    1|   ap_memory|         regions_48|         array|
-|regions_48_d0         |  out|   32|   ap_memory|         regions_48|         array|
-|regions_48_q0         |   in|   32|   ap_memory|         regions_48|         array|
-|regions_48_we0        |  out|    1|   ap_memory|         regions_48|         array|
-|regions_48_address1   |  out|    9|   ap_memory|         regions_48|         array|
-|regions_48_ce1        |  out|    1|   ap_memory|         regions_48|         array|
-|regions_48_d1         |  out|   32|   ap_memory|         regions_48|         array|
-|regions_48_q1         |   in|   32|   ap_memory|         regions_48|         array|
-|regions_48_we1        |  out|    1|   ap_memory|         regions_48|         array|
 |n_regions_V_address0  |  out|    6|   ap_memory|        n_regions_V|         array|
 |n_regions_V_ce0       |  out|    1|   ap_memory|        n_regions_V|         array|
 |n_regions_V_d0        |  out|    8|   ap_memory|        n_regions_V|         array|

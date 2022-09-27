@@ -13014,7 +13014,6 @@ struct controlStr {
  ap_uint<8> checkId;
  ap_uint<8> taskId;
  ap_uint<16> uniId;
- ap_uint<2> command;
  float AOV[8];
 };
 
@@ -30177,23 +30176,29 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 459 "detector_solid/abs_solid_detector.cpp" 2
+# 458 "detector_solid/abs_solid_detector.cpp" 2
 
 
 
 
-void read_train(ap_uint<2> &command, ap_uint<8> &taskId, ap_uint<8> &checkId, ap_uint<16> &uniId, hls::stream< controlStr > &testStream, float data[8]) {
+void read_train(ap_uint<8> &checkId, hls::stream< controlStr > &stream, float data[8]) {
 
- controlStr contr=testStream.read();
+ controlStr contr=stream.read();
+ checkId=contr.checkId;
+ memcpy(data, contr.AOV, sizeof(float)*8);
+}
+
+void read_test(ap_uint<8> &taskId, ap_uint<8> &checkId, ap_uint<16> &uniId, hls::stream< controlStr > &stream, float data[8]) {
+
+ controlStr contr=stream.read();
  taskId=contr.taskId;
  checkId=contr.checkId;
  uniId=contr.uniId;
- command=contr.command;
  memcpy(data, contr.AOV, sizeof(float)*8);
 }
-# 487 "detector_solid/abs_solid_detector.cpp"
+# 492 "detector_solid/abs_solid_detector.cpp"
 void writeOutcome(bool &errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, hls::stream< ap_uint<8>> &toScheduler, OutcomeStr* outcomeInRam, float data[8]) {
-# 497 "detector_solid/abs_solid_detector.cpp"
+# 502 "detector_solid/abs_solid_detector.cpp"
  OutcomeStr outcome;
  outcome.checkId=checkId;
  outcome.uniId=uniId;
@@ -30206,7 +30211,7 @@ void writeOutcome(bool &errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
   toScheduler.write(taskId);
  }
 }
-# 517 "detector_solid/abs_solid_detector.cpp"
+# 522 "detector_solid/abs_solid_detector.cpp"
 void run_test(bool &error, region_t regions[16], ap_uint<8> n_regions, float data[8]) {
  error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
@@ -30223,13 +30228,12 @@ void runTestAfterInit(hls::stream< controlStr > &testStream,
  ap_uint<8> taskId;
  ap_uint<8> checkId;
  ap_uint<16> uniId;
- ap_uint<2> command;
 #pragma HLS array_partition variable=data complete
 
  bool error;
 
 
- read_train(command, taskId, checkId, uniId, testStream, data);
+ read_test(taskId, checkId, uniId, testStream, data);
 
 
 
@@ -30242,7 +30246,7 @@ void runTestAfterInit(hls::stream< controlStr > &testStream,
 
 
 }
-# 562 "detector_solid/abs_solid_detector.cpp"
+# 566 "detector_solid/abs_solid_detector.cpp"
 void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[64][16], ap_uint<8> n_regions[64]) {
 #pragma HLS dataflow
 
@@ -30251,19 +30255,35 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
  float data[64];
 #pragma HLS array_partition variable=data complete
 
- ap_uint<8> taskId;
  ap_uint<8> checkId;
- ap_uint<16> uniId;
- ap_uint<2> command;
 
- read_train(command, taskId, checkId, uniId, trainStream, data);
+ read_train(checkId, trainStream, data);
 
 
  insert_point(regions[checkId],
    n_regions[checkId],
    data);
 }
-# 607 "detector_solid/abs_solid_detector.cpp"
+# 620 "detector_solid/abs_solid_detector.cpp"
+void running (bool errorInTask[16], OutcomeStr outcomeInRam[16], hls::stream< controlStr > &testStream,
+  hls::stream< controlStr > &trainStream,
+  region_t regions[64][16], ap_uint<8> n_regions[64], hls::stream< ap_uint<8> > &toScheduler) {
+
+
+ VITIS_LOOP_625_1: while(1) {
+#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+ runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+  runTrainAfterInit(trainStream, regions, n_regions);
+#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+ }
+}
+
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
 
@@ -30272,7 +30292,11 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
   region_t trainedRegions[64][16], ap_uint<8> n_regions_in[64], hls::stream< ap_uint<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 612 "detector_solid/abs_solid_detector.cpp"
+# 644 "detector_solid/abs_solid_detector.cpp"
+
+#line 6 "/home/francesco/workspace/detector_solid/solution2/directives.tcl"
+#pragma HLSDIRECTIVE TOP name=run
+# 644 "detector_solid/abs_solid_detector.cpp"
 
 #pragma HLS interface s_axilite port = trainedRegions
 #pragma HLS interface s_axilite port = n_regions_in
@@ -30283,26 +30307,23 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
 #pragma HLS INTERFACE axis port=toScheduler
 
 #pragma HLS array_partition variable=regions complete dim=2
-# 654 "detector_solid/abs_solid_detector.cpp"
- VITIS_LOOP_654_1: for (int i=0; i<64; i++) {
+# 686 "detector_solid/abs_solid_detector.cpp"
+ VITIS_LOOP_686_1: for (int i=0; i<64; i++) {
 
-   VITIS_LOOP_656_2: for (int j=0; j<16; j++) {
+   VITIS_LOOP_688_2: for (int j=0; j<16; j++) {
 
     regions [i][j] = trainedRegions [i][j];
    }
   }
 
-  VITIS_LOOP_662_3: for (int i=0; i<64; i++) {
+  VITIS_LOOP_694_3: for (int i=0; i<64; i++) {
 
    n_regions [i] = n_regions_in [i];
   }
 
 
 
-  VITIS_LOOP_669_4: while(1) {
-   runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-   runTrainAfterInit(trainStream, regions, n_regions);
-#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
-#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
- }
+  running(errorInTask, outcomeInRam, testStream,
+    trainStream,
+    regions, n_regions, toScheduler);
  }

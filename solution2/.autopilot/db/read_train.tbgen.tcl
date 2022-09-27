@@ -11,15 +11,15 @@ set StallSigGenFlag 0
 set isEnableWaveformDebug 1
 set hasInterrupt 0
 set C_modelName {read_train}
-set C_modelType { int 288 }
+set C_modelType { int 262 }
 set C_modelArgList {
-	{ testStream int 320 regular {axi_s 0 volatile  { testStream Data } }  }
+	{ trainStream int 288 regular {axi_s 0 volatile  { trainStream Data } }  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "testStream", "interface" : "axis", "bitwidth" : 320, "direction" : "READONLY"} , 
- 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 288} ]}
+	{ "Name" : "trainStream", "interface" : "axis", "bitwidth" : 288, "direction" : "READONLY"} , 
+ 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 262} ]}
 # RTL Port declarations: 
-set portNum 21
+set portNum 19
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -28,20 +28,18 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ testStream_TDATA sc_in sc_lv 320 signal 0 } 
-	{ testStream_TVALID sc_in sc_logic 1 invld 0 } 
-	{ testStream_TREADY sc_out sc_logic 1 inacc 0 } 
-	{ ap_return_0 sc_out sc_lv 8 signal -1 } 
-	{ ap_return_1 sc_out sc_lv 8 signal -1 } 
-	{ ap_return_2 sc_out sc_lv 16 signal -1 } 
+	{ trainStream_TDATA sc_in sc_lv 288 signal 0 } 
+	{ trainStream_TVALID sc_in sc_logic 1 invld 0 } 
+	{ trainStream_TREADY sc_out sc_logic 1 inacc 0 } 
+	{ ap_return_0 sc_out sc_lv 6 signal -1 } 
+	{ ap_return_1 sc_out sc_lv 32 signal -1 } 
+	{ ap_return_2 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_3 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_4 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_5 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_6 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_7 sc_out sc_lv 32 signal -1 } 
 	{ ap_return_8 sc_out sc_lv 32 signal -1 } 
-	{ ap_return_9 sc_out sc_lv 32 signal -1 } 
-	{ ap_return_10 sc_out sc_lv 32 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -51,20 +49,18 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "testStream_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":320, "type": "signal", "bundle":{"name": "testStream", "role": "TDATA" }} , 
- 	{ "name": "testStream_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "testStream", "role": "TVALID" }} , 
- 	{ "name": "testStream_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "testStream", "role": "TREADY" }} , 
- 	{ "name": "ap_return_0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "ap_return_0", "role": "default" }} , 
- 	{ "name": "ap_return_1", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "ap_return_1", "role": "default" }} , 
- 	{ "name": "ap_return_2", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "ap_return_2", "role": "default" }} , 
+ 	{ "name": "trainStream_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":288, "type": "signal", "bundle":{"name": "trainStream", "role": "TDATA" }} , 
+ 	{ "name": "trainStream_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "trainStream", "role": "TVALID" }} , 
+ 	{ "name": "trainStream_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "trainStream", "role": "TREADY" }} , 
+ 	{ "name": "ap_return_0", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "ap_return_0", "role": "default" }} , 
+ 	{ "name": "ap_return_1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_1", "role": "default" }} , 
+ 	{ "name": "ap_return_2", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_2", "role": "default" }} , 
  	{ "name": "ap_return_3", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_3", "role": "default" }} , 
  	{ "name": "ap_return_4", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_4", "role": "default" }} , 
  	{ "name": "ap_return_5", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_5", "role": "default" }} , 
  	{ "name": "ap_return_6", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_6", "role": "default" }} , 
  	{ "name": "ap_return_7", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_7", "role": "default" }} , 
- 	{ "name": "ap_return_8", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_8", "role": "default" }} , 
- 	{ "name": "ap_return_9", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_9", "role": "default" }} , 
- 	{ "name": "ap_return_10", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_10", "role": "default" }}  ]}
+ 	{ "name": "ap_return_8", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "ap_return_8", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -82,9 +78,9 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "testStream", "Type" : "Axis", "Direction" : "I",
+			{"Name" : "trainStream", "Type" : "Axis", "Direction" : "I",
 				"BlockSignal" : [
-					{"Name" : "testStream_TDATA_blk_n", "Type" : "RtlSignal"}]}],
+					{"Name" : "trainStream_TDATA_blk_n", "Type" : "RtlSignal"}]}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_state5", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state5"], "PreState" : ["ap_ST_fsm_state4"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
@@ -93,7 +89,7 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	read_train {
-		testStream {Type I LastRead 0 FirstWrite -1}}}
+		trainStream {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -106,5 +102,5 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	testStream { axis {  { testStream_TDATA in_data 0 320 }  { testStream_TVALID in_vld 0 1 }  { testStream_TREADY in_acc 1 1 } } }
+	trainStream { axis {  { trainStream_TDATA in_data 0 288 }  { trainStream_TVALID in_vld 0 1 }  { trainStream_TREADY in_acc 1 1 } } }
 }

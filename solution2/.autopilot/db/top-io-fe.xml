@@ -11,13 +11,13 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="1024"/>
         </hw>
       </arg>
-      <arg id="2" access_type="r" src_name="testStream" src_type="stream&lt;controlStr, 0&gt;&amp;" src_isptr="1" src_bitwidth="320" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="testStream" hw_bitwidth="320" hw_size_or_depth="0" hw_kernel_support="true">
+      <arg id="2" access_type="r" src_name="testStream" src_type="stream&lt;controlStr, 0&gt;&amp;" src_isptr="1" src_bitwidth="288" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="testStream" hw_bitwidth="288" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>
       </arg>
-      <arg id="3" access_type="r" src_name="trainStream" src_type="stream&lt;controlStr, 0&gt;&amp;" src_isptr="1" src_bitwidth="320" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="trainStream" hw_bitwidth="320" hw_size_or_depth="0" hw_kernel_support="true">
+      <arg id="3" access_type="r" src_name="trainStream" src_type="stream&lt;controlStr, 0&gt;&amp;" src_isptr="1" src_bitwidth="288" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="trainStream" hw_bitwidth="288" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>
       </arg>

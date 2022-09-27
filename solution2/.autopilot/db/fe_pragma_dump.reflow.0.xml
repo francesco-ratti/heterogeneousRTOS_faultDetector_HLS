@@ -1,4 +1,5 @@
 <pragmas>
+<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="230" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="260" pragmaType="inline" parentfunction="ap_int_base<32, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="1834" pragmaType="inline" parentfunction="bool operator>=<8, false>(int, ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
@@ -10,8 +11,8 @@
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="1834" pragmaType="inline" parentfunction="bool operator==<8, false>(ap_int_base<8, false> const&, int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="1679" pragmaType="inline" parentfunction="ap_int_base<8, false>::RType<($_0)32, true>::minus operator-<8, false>(ap_int_base<8, false> const&, int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="1834" pragmaType="inline" parentfunction="bool operator==<33, true>(int, ap_int_base<33, true> const&)" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="260" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="587" pragmaType="inline" parentfunction="ap_int_base<33, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="260" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="300" pragmaType="inline" parentfunction="ap_uint<8>::ap_uint<8, false>(ap_int_base<8, false> const&)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="567" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="1064" pragmaType="inline" parentfunction="bool ap_int_base<32, true>::operator==<33, true>(ap_int_base<33, true> const&) const" off="0" region="0" recursive="0"/>
@@ -26,30 +27,32 @@
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" line="154" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" line="144" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="230" pragmaType="inline" parentfunction="ap_uint<16>::ap_uint()" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int.h" line="230" pragmaType="inline" parentfunction="ap_uint<2>::ap_uint()" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<2, false>::ap_int_base()" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<16, false>::ssdm_int()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<16, false>::ap_int_base()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" line="173" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="525" pragmaType="dataflow" parentfunction="runTestAfterInit" disable_start_propagation="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="534" pragmaType="array_partition" parentfunction="runTestAfterInit" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="563" pragmaType="dataflow" parentfunction="runTrainAfterInit" disable_start_propagation="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="568" pragmaType="array_partition" parentfunction="runTrainAfterInit" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="613" pragmaType="interface" parentfunction="run" mode="s_axilite" port="trainedRegions" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="614" pragmaType="interface" parentfunction="run" mode="s_axilite" port="n_regions_in" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="615" pragmaType="interface" parentfunction="run" mode="s_axilite" port="errorInTask" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="616" pragmaType="interface" parentfunction="run" mode="s_axilite" port="outcomeInRam" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="617" pragmaType="interface" parentfunction="run" mode="axis" port="testStream" register="0" register_mode="both" name="" depth="-1"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="618" pragmaType="interface" parentfunction="run" mode="axis" port="trainStream" register="0" register_mode="both" name="" depth="-1"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="619" pragmaType="interface" parentfunction="run" mode="axis" port="toScheduler" register="0" register_mode="both" name="" depth="-1"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="621" pragmaType="array_partition" parentfunction="run" dim="2" factor="0" mode="complete" dynamic="0" variable=""/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="672" pragmaType="dependence" parentfunction="run" class="" direction="NODIR" type="inter" distance="0" variable="_ZL7regions"/>
-<pragma file="detector_solid/abs_solid_detector.cpp" line="673" pragmaType="dependence" parentfunction="run" class="" direction="NODIR" type="inter" distance="0" variable="_ZL9n_regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="530" pragmaType="dataflow" parentfunction="runTestAfterInit" disable_start_propagation="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="538" pragmaType="array_partition" parentfunction="runTestAfterInit" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="567" pragmaType="dataflow" parentfunction="runTrainAfterInit" disable_start_propagation="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="572" pragmaType="array_partition" parentfunction="runTrainAfterInit" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="626" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="inter" distance="0" variable="regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="627" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="inter" distance="0" variable="n_regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="628" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="intra" distance="0" variable="regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="629" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="intra" distance="0" variable="n_regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="632" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="inter" distance="0" variable="regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="633" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="inter" distance="0" variable="n_regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="634" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="intra" distance="0" variable="regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="635" pragmaType="dependence" parentfunction="running" class="" direction="NODIR" type="intra" distance="0" variable="n_regions"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="645" pragmaType="interface" parentfunction="run" mode="s_axilite" port="trainedRegions" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="646" pragmaType="interface" parentfunction="run" mode="s_axilite" port="n_regions_in" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="647" pragmaType="interface" parentfunction="run" mode="s_axilite" port="errorInTask" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="648" pragmaType="interface" parentfunction="run" mode="s_axilite" port="outcomeInRam" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="649" pragmaType="interface" parentfunction="run" mode="axis" port="testStream" register="0" register_mode="both" name="" depth="-1"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="650" pragmaType="interface" parentfunction="run" mode="axis" port="trainStream" register="0" register_mode="both" name="" depth="-1"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="651" pragmaType="interface" parentfunction="run" mode="axis" port="toScheduler" register="0" register_mode="both" name="" depth="-1"/>
+<pragma file="detector_solid/abs_solid_detector.cpp" line="653" pragmaType="array_partition" parentfunction="run" dim="2" factor="0" mode="complete" dynamic="0" variable=""/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<8, false>::ap_int_base()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator++(int)" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<8, false>::ssdm_int()" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>::operator--(int)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>& ap_int_base<8, false>::operator-=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
 <pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="ap_int_base<8, false>& ap_int_base<8, false>::operator+=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
-<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<2, false>::ssdm_int()" off="0" region="0" recursive="0"/>
+<pragma file="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<16, false>::ssdm_int()" off="0" region="0" recursive="0"/>
 </pragmas>
