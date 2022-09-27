@@ -5,14 +5,23 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
+    <targetInfo>
+        <TargetInfo value="xc7z020:-clg484:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
+    </libraryList>
+    <flowTarget value="vitis"/>
     <synthesis askAgain="true"/>
+    <clockList>
+        <clock default="false" name="default" period="20"/>
+    </clockList>
     <config>
         <config_export vivado_clock="20"/>
-        <config_interface s_axilite_auto_restart_counter="1" s_axilite_sw_reset="1" m_axi_latency="64" m_axi_alignment_byte_size="64" m_axi_max_widen_bitwidth="512" default_interface="kernel"/>
-        <config_rtl register_reset_num="3"/>
+        <config_interface s_axilite_auto_restart_counter="1" s_axilite_sw_reset="1"/>
     </config>
     <UIConfigurations>
-        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
+        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/zynq/zynq</Platform>
             <customLibs/>
         </UIAutosynConf>
@@ -63,15 +72,5 @@
     <project>
         <value string="detector_solid"/>
     </project>
-    <flowTarget value="vitis"/>
-    <targetInfo>
-        <TargetInfo value="xc7z020:-clg484:-1"/>
-    </targetInfo>
-    <libraryList>
-        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
-    </libraryList>
-    <clockList>
-        <clock name="default" default="false" period="20"/>
-    </clockList>
 </solution>
 

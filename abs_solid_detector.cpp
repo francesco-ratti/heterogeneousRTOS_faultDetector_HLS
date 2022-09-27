@@ -43,10 +43,9 @@ int find_region(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions,
 		float tmp_score = 0;
 		float dist = 0;
 		float area = 0;
-		for(int j=0; j < MAX_AOV_DIM; j++){
+		find_region_label1:for(int j=0; j < MAX_AOV_DIM; j++){
 			//compute the distance and scale.
 			//#pragma HLS PIPELINE II=1
-#pragma HLS unroll
 			float ldist = (d[j] - regions[i].center[j]);
 			float hdist = (regions[i].max[j] - regions[i].center[j]);
 			float absdist = ldist*ldist;
@@ -70,8 +69,7 @@ int find_region(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions,
 
 bool is_valid(const float val[MAX_AOV_DIM]){
 
-	for(int i=0; i < MAX_AOV_DIM; i++){
-#pragma HLS unroll
+	is_valid_label0:is_valid_label2:for(int i=0; i < MAX_AOV_DIM;  i++) {
 		//#pragma HLS PIPELINE II=1
 		if(isnan(val[i]) || val[i] == INFINITY || val[i] == -INFINITY)
 			return false;
@@ -96,8 +94,7 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 	//we have a region
 	//update boundaries to include point.
 
-	for(int i=0; i < MAX_AOV_DIM; i++) {
-#pragma HLS unroll
+	update_train_regions_label3:for(int i=0; i < MAX_AOV_DIM; i++) {
 		if(val[i] > regions[id].max[i]) regions[id].max[i] = val[i];
 		else if(val[i] < regions[id].min[i]) regions[id].min[i] = val[i];
 		regions[id].center[i] = (regions[id].max[i] + regions[id].min[i])/2.0;
@@ -244,8 +241,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 	if (is_valid(d)) { //&& id<0) {
 		//create a new node.
-		for(int i=0; i < MAX_AOV_DIM; i++){
-#pragma HLS unroll
+		insert_point_label4:for(int i=0; i < MAX_AOV_DIM; i++){
 			regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
 		}
 		n_regions++;
@@ -293,8 +289,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 				float distance = 0;
 				float overlap=1;
 
-				for(int j=0; j < MAX_AOV_DIM; j++){
-#pragma HLS unroll
+				insert_point_label5:for(int j=0; j < MAX_AOV_DIM; j++){
 
 
 					float d = (regions[i_real].center[j] - regions[k_real].center[j]);
@@ -360,8 +355,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 			//merge_regions(regions, merge_1, merge_2);
 			//merge regions inlining
-			for(int i=0; i < MAX_AOV_DIM; i++){
-#pragma HLS unroll
+			insert_point_label6:for(int i=0; i < MAX_AOV_DIM; i++){
 				if(regions[merge_2].min[i] < regions[merge_1].min[i]){
 					regions[merge_1].min[i] = regions[merge_2].min[i];
 				}
@@ -372,8 +366,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			}
 
 			//move everything over
-			for(int i=0; i < MAX_REGIONS-1; i++){
-#pragma HLS unroll
+			insert_point_label7:for(int i=0; i < MAX_REGIONS-1; i++){
 				if (i>=merge_2) {
 					regions[i] = regions[i+1];
 				}
@@ -551,8 +544,8 @@ void runTestAfterInit(hls::stream< controlStr > &testStream,
 	//read_test(data, inputDataInRam, checkId);
 	//if (!errorInTask[taskId]) {
 	//if (command==COMMAND_TEST) {
-		run_test(error, regions[taskId], n_regions[taskId], data);
-		writeOutcome(errorInTask[taskId], checkId, taskId, uniId, error, toScheduler, outcomeInRam, data);
+	run_test(error, regions[taskId], n_regions[taskId], data);
+	writeOutcome(errorInTask[taskId], checkId, taskId, uniId, error, toScheduler, outcomeInRam, data);
 	/*} else if (command==COMMAND_TRAIN) {
 		insert_point(regions[checkId],
 				n_regions[checkId],
@@ -679,11 +672,11 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 
 		fsmstate=STATE_READY;
 	} else if (fsmstate==STATE_READY) {
-		if (!testStream.empty())
+		while(1) {
 			runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-		else if (trainStream.empty())
 			runTrainAfterInit(trainStream, regions, n_regions);
-
-		//test=!test;
+#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+		}
 	}
 }

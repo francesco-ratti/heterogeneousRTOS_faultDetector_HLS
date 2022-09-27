@@ -1,0 +1,993 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: source ./detector_solid/solution2/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:547:35)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file detector_solid/abs_solid_detector.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 19.63 seconds. CPU system time: 0.8 seconds. Elapsed time: 19.85 seconds; current allocated memory: 460.293 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float const*)' (detector_solid/abs_solid_detector.cpp:70:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float const*)' into 'run_test(bool&, REGION_T*, ap_uint<8>, float*)' (detector_solid/abs_solid_detector.cpp:521:0)
+INFO: [HLS 214-178] Inlining function 'find_region(REGION_T const*, ap_uint<8>, float const*)' into 'run_test(bool&, REGION_T*, ap_uint<8>, float*)' (detector_solid/abs_solid_detector.cpp:521:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_uint<8>&, float const*)' (detector_solid/abs_solid_detector.cpp:237:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.center': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.max': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.min': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to 'data': Complete partitioning on dimension 1. (detector_solid/abs_solid_detector.cpp:533:8)
+INFO: [HLS 214-248] Applying array_partition to 'data': Complete partitioning on dimension 1. (detector_solid/abs_solid_detector.cpp:571:8)
+INFO: [HLS 214-354] Changing the port bit width of top function 'run(bool, bool*, OutcomeStr*, hls::stream<controlStr, 0>&, hls::stream<controlStr, 0>&, REGION_T (*) [16], ap_uint<8>*, hls::stream<ap_uint<8>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:617:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uint<8>s' into 'writeOutcome(bool&, ap_uint<8>, ap_uint<8>, ap_uint<16>, bool, hls::stream<ap_uint<8>, 0>&, OutcomeStr*, float*) (.1)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.03 seconds. CPU system time: 0.35 seconds. Elapsed time: 4.38 seconds; current allocated memory: 461.219 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.219 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.53 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.55 seconds; current allocated memory: 482.074 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.45 seconds; current allocated memory: 508.094 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_37_1' in function 'run_test' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_268_1' (detector_solid/abs_solid_detector.cpp:289) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'insert_point_label6' (detector_solid/abs_solid_detector.cpp:358) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'insert_point_label7' (detector_solid/abs_solid_detector.cpp:369) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_662_2' (detector_solid/abs_solid_detector.cpp:662) in function 'run' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_668_3' (detector_solid/abs_solid_detector.cpp:668) in function 'run' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_268_1' (detector_solid/abs_solid_detector.cpp:289) in function 'insert_point' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_37_1' in function 'run_test' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'insert_point_label5' (detector_solid/abs_solid_detector.cpp:292) in function 'insert_point' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'find_region_label1' (detector_solid/abs_solid_detector.cpp:42) in function 'run_test' completely with a factor of 8.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTestAfterInit' (detector_solid/abs_solid_detector.cpp:534:1), detected/extracted 4 process function(s): 
+	 'read_train'
+	 'runTestAfterInit_Block_entry1012_proc'
+	 'run_test'
+	 'writeOutcome'.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTrainAfterInit' (detector_solid/abs_solid_detector.cpp:571:1), detected/extracted 2 process function(s): 
+	 'read_train.1'
+	 'insert_point'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:50:19) to (detector_solid/abs_solid_detector.cpp:37:19) in function 'run_test'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'run_test' (detector_solid/abs_solid_detector.cpp:37:19)...28 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 3.31 seconds. CPU system time: 0.03 seconds. Elapsed time: 3.34 seconds; current allocated memory: 562.031 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_660_1' (detector_solid/abs_solid_detector.cpp:660:30) in function 'run'.
+WARNING: [XFORM 203-561] 'VITIS_LOOP_675_4' (detector_solid/abs_solid_detector.cpp:676:4) in function 'run' is an infinite loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'outcome.AOV' 
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:664:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' (detector_solid/abs_solid_detector.cpp:670:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'contr.AOV' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'contr.AOV' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.33' (detector_solid/abs_solid_detector.cpp:245:89)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.17' (detector_solid/abs_solid_detector.cpp:245:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:245:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:360:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.17' (detector_solid/abs_solid_detector.cpp:363:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.33' (detector_solid/abs_solid_detector.cpp:365:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:371:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' 
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.14'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.10'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.28'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.41'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'n_regions.V'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.14'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.10'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.28'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.41'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'n_regions.V'.
+WARNING: [HLS 200-1449] Process runTestAfterInit_Block_entry1012_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process run_test has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process insert_point has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3.26 seconds. CPU system time: 0.04 seconds. Elapsed time: 3.31 seconds; current allocated memory: 717.891 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'run' ...
+WARNING: [SYN 201-103] Legalizing function name 'read_train.1' to 'read_train_1'.
+WARNING: [SYN 201-506] An incorrect offset '4096' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '131072'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_1', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_2', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_3', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_18', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 19). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_22', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 23). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 24, Depth = 27, loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.49 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.52 seconds; current allocated memory: 732.293 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.4 seconds; current allocated memory: 732.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_VITIS_LOOP_668_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_668_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_668_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 732.293 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 732.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_train' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 732.293 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 732.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit_Block_entry1012_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 732.293 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 732.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test_Pipeline_VITIS_LOOP_37_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_37_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 49, loop 'VITIS_LOOP_37_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.88 seconds; current allocated memory: 734.816 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.5 seconds; current allocated memory: 735.707 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.02 seconds; current allocated memory: 746.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.43 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 746.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.64 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 746.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 746.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO checkId_V (from read_train_U0 to writeOutcome_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO uniId_V (from read_train_U0 to writeOutcome_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_c21_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_1_c22_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_2_c23_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_3_c24_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_4_c25_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_5_c26_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_6_c27_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_7_c28_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_V_load_loc_channel (from runTestAfterInit_Block_entry1012_proc_U0 to writeOutcome_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_V_load_cast5_loc_channel (from runTestAfterInit_Block_entry1012_proc_U0 to writeOutcome_U0) to 3 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 746.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 746.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_train_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.52 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 746.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 746.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_268_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_268_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 41, loop 'VITIS_LOOP_268_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.99 seconds; current allocated memory: 756.070 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.71 seconds. CPU system time: 0 seconds. Elapsed time: 0.71 seconds; current allocated memory: 756.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_insert_point_label6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'insert_point_label6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 10, loop 'insert_point_label6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.04 seconds; current allocated memory: 757.410 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 757.410 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_insert_point_label7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'insert_point_label7'.
+WARNING: [HLS 200-880] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('regions_10_addr_write_ln371', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) of variable 'tmp_21_i', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582 on array 'regions_10' and 'load' operation ('regions_10_load_14', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_10'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_2_load_10', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_2' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'regions_2'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_2_load_12', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_2' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'regions_2'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_14_load_14', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_14' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'regions_14'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'store' operation ('regions_14_addr_15_write_ln371', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) of variable 'tmp_19_i', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582 on array 'regions_14' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'regions_14'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 8, loop 'insert_point_label7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 5.04 seconds; current allocated memory: 769.559 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.36 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 769.559 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.82 seconds. CPU system time: 0 seconds. Elapsed time: 0.82 seconds; current allocated memory: 776.625 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.66 seconds; current allocated memory: 776.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTrainAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.93 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.93 seconds; current allocated memory: 776.625 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 776.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.76 seconds. CPU system time: 0 seconds. Elapsed time: 0.77 seconds; current allocated memory: 776.625 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.57 seconds. CPU system time: 0 seconds. Elapsed time: 0.58 seconds; current allocated memory: 776.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' pipeline 'VITIS_LOOP_660_1_VITIS_LOOP_662_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_129_1_1': 23 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_81_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.65 seconds. CPU system time: 0 seconds. Elapsed time: 1.65 seconds; current allocated memory: 781.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_VITIS_LOOP_668_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_VITIS_LOOP_668_3' pipeline 'VITIS_LOOP_668_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_VITIS_LOOP_668_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.11 seconds; current allocated memory: 800.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_train' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_train'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 800.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit_Block_entry1012_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit_Block_entry1012_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 801.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test_Pipeline_VITIS_LOOP_37_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_165_32_1_1': 24 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test_Pipeline_VITIS_LOOP_37_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 810.395 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.57 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.61 seconds; current allocated memory: 828.676 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'writeOutcome'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.01 seconds; current allocated memory: 847.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 849.695 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_train_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_train_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.71 seconds. CPU system time: 0 seconds. Elapsed time: 0.71 seconds; current allocated memory: 852.445 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_VITIS_LOOP_268_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 19 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_4_full_dsp_1': 31 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_1632_32_1_1': 48 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_VITIS_LOOP_268_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 865.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_insert_point_label6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'insert_point_Pipeline_insert_point_label6' pipeline 'insert_point_label6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_1632_32_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_insert_point_label6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.25 seconds; current allocated memory: 883.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_insert_point_label7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mux_154_32_1_1': 24 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_insert_point_label7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.47 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.49 seconds; current allocated memory: 893.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.83 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.86 seconds; current allocated memory: 922.230 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: source ./detector_solid/solution2/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.456 GB.
+INFO: [HLS 200-10] Analyzing design file 'detector_solid/abs_solid_detector.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (detector_solid/abs_solid_detector.cpp:547:35)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file detector_solid/abs_solid_detector.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 19.53 seconds. CPU system time: 0.74 seconds. Elapsed time: 19.67 seconds; current allocated memory: 460.293 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-178] Inlining function 'std::isnan(float)' into 'is_valid(float const*)' (detector_solid/abs_solid_detector.cpp:70:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float const*)' into 'run_test(bool&, REGION_T*, ap_uint<8>, float*)' (detector_solid/abs_solid_detector.cpp:521:0)
+INFO: [HLS 214-178] Inlining function 'find_region(REGION_T const*, ap_uint<8>, float const*)' into 'run_test(bool&, REGION_T*, ap_uint<8>, float*)' (detector_solid/abs_solid_detector.cpp:521:0)
+INFO: [HLS 214-178] Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_uint<8>&, float const*)' (detector_solid/abs_solid_detector.cpp:237:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.center': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.max': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7regions.min': Complete partitioning on dimension 2. (detector_solid/abs_solid_detector.cpp:611:0)
+INFO: [HLS 214-248] Applying array_partition to 'data': Complete partitioning on dimension 1. (detector_solid/abs_solid_detector.cpp:533:8)
+INFO: [HLS 214-248] Applying array_partition to 'data': Complete partitioning on dimension 1. (detector_solid/abs_solid_detector.cpp:571:8)
+INFO: [HLS 214-354] Changing the port bit width of top function 'run(bool*, OutcomeStr*, hls::stream<controlStr, 0>&, hls::stream<controlStr, 0>&, REGION_T (*) [16], ap_uint<8>*, hls::stream<ap_uint<8>, 0>&)' argument 'trainedRegions': from '768' to '32' due to access pattern. (detector_solid/abs_solid_detector.cpp:617:0)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uint<8>s' into 'writeOutcome(bool&, ap_uint<8>, ap_uint<8>, ap_uint<16>, bool, hls::stream<ap_uint<8>, 0>&, OutcomeStr*, float*) (.1)' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.83 seconds. CPU system time: 0.36 seconds. Elapsed time: 4.19 seconds; current allocated memory: 461.219 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 461.219 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.55 seconds. CPU system time: 0 seconds. Elapsed time: 0.55 seconds; current allocated memory: 482.117 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.44 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.46 seconds; current allocated memory: 508.074 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_37_1' in function 'run_test' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_268_1' (detector_solid/abs_solid_detector.cpp:289) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'insert_point_label6' (detector_solid/abs_solid_detector.cpp:358) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'insert_point_label7' (detector_solid/abs_solid_detector.cpp:369) in function 'insert_point' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_662_2' (detector_solid/abs_solid_detector.cpp:662) in function 'run' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_668_3' (detector_solid/abs_solid_detector.cpp:668) in function 'run' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_268_1' (detector_solid/abs_solid_detector.cpp:289) in function 'insert_point' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_37_1' in function 'run_test' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'insert_point_label5' (detector_solid/abs_solid_detector.cpp:292) in function 'insert_point' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'find_region_label1' (detector_solid/abs_solid_detector.cpp:42) in function 'run_test' completely with a factor of 8.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTestAfterInit' (detector_solid/abs_solid_detector.cpp:534:1), detected/extracted 4 process function(s): 
+	 'read_train'
+	 'runTestAfterInit_Block_entry1012_proc'
+	 'run_test'
+	 'writeOutcome'.
+INFO: [XFORM 203-712] Applying dataflow to function 'runTrainAfterInit' (detector_solid/abs_solid_detector.cpp:571:1), detected/extracted 2 process function(s): 
+	 'read_train.1'
+	 'insert_point'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (detector_solid/abs_solid_detector.cpp:50:19) to (detector_solid/abs_solid_detector.cpp:37:19) in function 'run_test'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'run_test' (detector_solid/abs_solid_detector.cpp:37:19)...28 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 3.23 seconds. CPU system time: 0.06 seconds. Elapsed time: 3.29 seconds; current allocated memory: 562.020 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_660_1' (detector_solid/abs_solid_detector.cpp:660:30) in function 'run'.
+WARNING: [XFORM 203-561] 'VITIS_LOOP_675_4' (detector_solid/abs_solid_detector.cpp:676:4) in function 'run' is an infinite loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'outcome.AOV' 
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:664:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' (detector_solid/abs_solid_detector.cpp:670:18)
+INFO: [HLS 200-472] Inferring partial write operation for 'contr.AOV' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'contr.AOV' (/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.33' (detector_solid/abs_solid_detector.cpp:245:89)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.17' (detector_solid/abs_solid_detector.cpp:245:58)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:245:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:360:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.17' (detector_solid/abs_solid_detector.cpp:363:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions.33' (detector_solid/abs_solid_detector.cpp:365:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'regions' (detector_solid/abs_solid_detector.cpp:371:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'n_regions.V' 
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.14'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.10'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.28'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.41'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'n_regions.V'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.14'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.10'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.4'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.28'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.41'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'regions.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'n_regions.V'.
+WARNING: [HLS 200-1449] Process runTestAfterInit_Block_entry1012_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process run_test has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process insert_point has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3.27 seconds. CPU system time: 0.02 seconds. Elapsed time: 3.3 seconds; current allocated memory: 717.832 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'run' ...
+WARNING: [SYN 201-103] Legalizing function name 'read_train.1' to 'read_train_1'.
+WARNING: [SYN 201-506] An incorrect offset '4096' is defined with AXILite port 'trainedRegions', and it will be replaced with a new offset '131072'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_1', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_2', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_3', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_18', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 19). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+WARNING: [HLS 200-885] The II Violation in module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' (loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'): Unable to schedule 'load' operation ('trainedRegions_load_22', detector_solid/abs_solid_detector.cpp:664) on array 'trainedRegions' due to limited memory ports (II = 23). Please consider using a memory core with more ports or partitioning the array 'trainedRegions'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 24, Depth = 27, loop 'VITIS_LOOP_660_1_VITIS_LOOP_662_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.38 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.42 seconds; current allocated memory: 732.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.39 seconds. CPU system time: 0 seconds. Elapsed time: 0.39 seconds; current allocated memory: 732.531 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_Pipeline_VITIS_LOOP_668_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_668_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_668_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.44 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 732.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 732.531 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_train' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 732.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 732.531 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit_Block_entry1012_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 732.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 732.531 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test_Pipeline_VITIS_LOOP_37_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_37_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 49, loop 'VITIS_LOOP_37_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.89 seconds. CPU system time: 0 seconds. Elapsed time: 0.89 seconds; current allocated memory: 736.977 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.49 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.49 seconds; current allocated memory: 736.977 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.01 seconds. CPU system time: 0 seconds. Elapsed time: 1.01 seconds; current allocated memory: 745.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.43 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 745.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 745.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 745.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO checkId_V (from read_train_U0 to writeOutcome_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO uniId_V (from read_train_U0 to writeOutcome_U0) to 4 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_c21_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_1_c22_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_2_c23_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_3_c24_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_4_c25_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_5_c26_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_6_c27_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO data_7_c28_channel (from read_train_U0 to run_test_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_V_load_loc_channel (from runTestAfterInit_Block_entry1012_proc_U0 to writeOutcome_U0) to 3 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO taskId_V_load_cast5_loc_channel (from runTestAfterInit_Block_entry1012_proc_U0 to writeOutcome_U0) to 3 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 745.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 745.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_train_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.52 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 746.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 746.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_VITIS_LOOP_268_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_268_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 41, loop 'VITIS_LOOP_268_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0.01 seconds. Elapsed time: 1 seconds; current allocated memory: 756.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.7 seconds. CPU system time: 0 seconds. Elapsed time: 0.7 seconds; current allocated memory: 756.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_insert_point_label6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'insert_point_label6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 10, loop 'insert_point_label6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.01 seconds; current allocated memory: 757.328 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 757.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point_Pipeline_insert_point_label7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'insert_point_label7'.
+WARNING: [HLS 200-880] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('regions_10_addr_write_ln371', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) of variable 'tmp_21_i', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582 on array 'regions_10' and 'load' operation ('regions_10_load_14', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_10'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_2_load_10', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_2' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'regions_2'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_2_load_12', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_2' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'regions_2'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'load' operation ('regions_14_load_14', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) on array 'regions_14' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'regions_14'.
+WARNING: [HLS 200-885] The II Violation in module 'insert_point_Pipeline_insert_point_label7' (loop 'insert_point_label7'): Unable to schedule 'store' operation ('regions_14_addr_15_write_ln371', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582) of variable 'tmp_19_i', detector_solid/abs_solid_detector.cpp:371->detector_solid/abs_solid_detector.cpp:582 on array 'regions_14' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'regions_14'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 8, loop 'insert_point_label7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4.81 seconds. CPU system time: 0.04 seconds. Elapsed time: 4.85 seconds; current allocated memory: 769.727 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 769.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_point' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.83 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.83 seconds; current allocated memory: 776.562 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 776.562 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'runTrainAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.92 seconds. CPU system time: 0 seconds. Elapsed time: 0.92 seconds; current allocated memory: 776.562 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 776.562 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'run' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.74 seconds. CPU system time: 0 seconds. Elapsed time: 0.75 seconds; current allocated memory: 776.562 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.57 seconds. CPU system time: 0 seconds. Elapsed time: 0.58 seconds; current allocated memory: 776.562 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2' pipeline 'VITIS_LOOP_660_1_VITIS_LOOP_662_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_129_1_1': 23 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_81_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.64 seconds; current allocated memory: 780.992 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_Pipeline_VITIS_LOOP_668_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'run_Pipeline_VITIS_LOOP_668_3' pipeline 'VITIS_LOOP_668_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_Pipeline_VITIS_LOOP_668_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.11 seconds; current allocated memory: 800.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_train' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_train'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 800.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit_Block_entry1012_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit_Block_entry1012_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 801.324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test_Pipeline_VITIS_LOOP_37_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_165_32_1_1': 24 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test_Pipeline_VITIS_LOOP_37_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 810.281 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'run_test' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'run_test'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.58 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.6 seconds; current allocated memory: 828.559 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'writeOutcome' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'writeOutcome'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.97 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.99 seconds; current allocated memory: 847.453 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'runTestAfterInit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'runTestAfterInit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 849.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_train_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_train_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.71 seconds. CPU system time: 0 seconds. Elapsed time: 0.7 seconds; current allocated memory: 852.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_VITIS_LOOP_268_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 19 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_4_full_dsp_1': 31 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_1632_32_1_1': 48 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_VITIS_LOOP_268_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 865.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_insert_point_label6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'insert_point_Pipeline_insert_point_label6' pipeline 'insert_point_label6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_1632_32_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_insert_point_label6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.24 seconds; current allocated memory: 883.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point_Pipeline_insert_point_label7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mux_154_32_1_1': 24 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point_Pipeline_insert_point_label7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.48 seconds; current allocated memory: 893.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'insert_point' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_84_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'insert_point'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.8 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.84 seconds; current allocated memory: 922.113 MB.
