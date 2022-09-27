@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run'
 ================================================================
-* Date:           Tue Sep 27 19:10:11 2022
+* Date:           Tue Sep 27 20:01:33 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -38,10 +38,10 @@
         |                                                           |                                                |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline |
         |                          Instance                         |                     Module                     |   min   |   max   |    min   |    max   |  min  |  max  |   Type   |
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
-        |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170  |run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
-        |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272                   |run_Pipeline_VITIS_LOOP_694_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
-        |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |       33|      114|  0.660 us|  2.280 us|     21|     92|  dataflow|
-        |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |       25|      267|  0.500 us|  5.340 us|     21|    247|  dataflow|
+        |grp_run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2_fu_200  |run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
+        |grp_run_Pipeline_VITIS_LOOP_721_3_fu_302                   |run_Pipeline_VITIS_LOOP_721_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
+        |grp_runTestAfterInit_fu_310                                |runTestAfterInit                                |       33|      114|  0.660 us|  2.280 us|     21|     92|  dataflow|
+        |grp_runTrainAfterInit_fu_420                               |runTrainAfterInit                               |       25|      267|  0.500 us|  5.340 us|     21|    247|  dataflow|
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
 
         * Loop: 
@@ -49,7 +49,8 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_625_1  |        ?|        ?|  35 ~ 269|          -|          -|   inf|        no|
+        |- VITIS_LOOP_611_1  |        ?|        ?|  37 ~ 118|          -|          -|     ?|        no|
+        |- VITIS_LOOP_617_1  |        ?|        ?|  27 ~ 269|          -|          -|   inf|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -62,18 +63,18 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|     16|    -|
+|Expression       |        -|    -|       0|     14|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |       80|  394|   61634|  64198|    0|
+|Instance         |       80|  394|   61712|  64269|    0|
 |Memory           |       96|    -|       8|      8|    0|
-|Multiplexer      |        -|    -|       -|   5124|    -|
-|Register         |        -|    -|      15|      -|    -|
+|Multiplexer      |        -|    -|       -|   5210|    -|
+|Register         |        -|    -|      22|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      176|  394|   61657|  69346|    0|
+|Total            |      176|  394|   61742|  69501|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |       62|  179|      57|    130|    0|
+|Utilization (%)  |       62|  179|      58|    130|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -81,13 +82,13 @@
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
     |                          Instance                         |                     Module                     | BRAM_18K| DSP |   FF  |  LUT  | URAM|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
-    |control_s_axi_U                                            |control_s_axi                                   |       80|    0|    356|    329|    0|
-    |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |        0|   56|  26463|  18089|    0|
-    |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |        0|  125|  34113|  38026|    0|
-    |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170  |run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2  |        0|  213|    685|   7691|    0|
-    |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272                   |run_Pipeline_VITIS_LOOP_694_3                   |        0|    0|     17|     63|    0|
+    |control_s_axi_U                                            |control_s_axi                                   |       80|    0|    434|    400|    0|
+    |grp_runTestAfterInit_fu_310                                |runTestAfterInit                                |        0|   56|  26463|  18089|    0|
+    |grp_runTrainAfterInit_fu_420                               |runTrainAfterInit                               |        0|  125|  34113|  38026|    0|
+    |grp_run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2_fu_200  |run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2  |        0|  213|    685|   7691|    0|
+    |grp_run_Pipeline_VITIS_LOOP_721_3_fu_302                   |run_Pipeline_VITIS_LOOP_721_3                   |        0|    0|     17|     63|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
-    |Total                                                      |                                                |       80|  394|  61634|  64198|    0|
+    |Total                                                      |                                                |       80|  394|  61712|  64269|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
 
     * DSP: 
@@ -157,23 +158,26 @@
     +------------------------------------------------+----------+----+---+----+------------+------------+
     |                  Variable Name                 | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +------------------------------------------------+----------+----+---+----+------------+------------+
-    |grp_runTestAfterInit_fu_280_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_runTestAfterInit_fu_310_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
     |ap_block_state1                                 |        or|   0|  0|   2|           1|           1|
     |ap_block_state2_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
-    |ap_block_state4_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTestAfterInit_fu_280_ap_done     |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTestAfterInit_fu_280_ap_ready    |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTrainAfterInit_fu_390_ap_done    |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTrainAfterInit_fu_390_ap_ready   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_310_ap_done     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_310_ap_ready    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTrainAfterInit_fu_420_ap_done    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTrainAfterInit_fu_420_ap_ready   |        or|   0|  0|   2|           1|           1|
     +------------------------------------------------+----------+----+---+----+------------+------------+
-    |Total                                           |          |   0|  0|  16|           8|           8|
+    |Total                                           |          |   0|  0|  14|           7|           7|
     +------------------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +---------------------------------+----+-----------+-----+-----------+
     |               Name              | LUT| Input Size| Bits| Total Bits|
     +---------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                        |  25|          5|    1|          5|
+    |ap_NS_fsm                        |  59|         11|    1|         11|
+    |ap_done                          |   9|          2|    1|          2|
+    |errorInTask_address0             |  20|          4|    4|         16|
+    |errorInTask_ce0                  |  14|          3|    1|          3|
+    |errorInTask_we0                  |   9|          2|    1|          2|
     |n_regions_V_address0             |  20|          4|    6|         24|
     |n_regions_V_ce0                  |  20|          4|    1|          4|
     |n_regions_V_d0                   |  14|          3|    8|         24|
@@ -514,29 +518,29 @@
     |testStream_TREADY_int_regslice   |   9|          2|    1|          2|
     |trainStream_TREADY_int_regslice  |   9|          2|    1|          2|
     +---------------------------------+----+-----------+-----+-----------+
-    |Total                            |5124|       1073| 2608|       8266|
+    |Total                            |5210|       1090| 2615|       8295|
     +---------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +------------------------------------------------------------------------+---+----+-----+-----------+
-    |                                  Name                                  | FF| LUT| Bits| Const Bits|
-    +------------------------------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                                               |  4|   0|    4|          0|
-    |ap_done_reg                                                             |  0|   0|    1|          1|
-    |ap_rst_n_inv                                                            |  1|   0|    1|          0|
-    |ap_rst_reg_1                                                            |  1|   0|    1|          0|
-    |ap_rst_reg_2                                                            |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTestAfterInit_fu_280_ap_done                         |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTestAfterInit_fu_280_ap_ready                        |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTrainAfterInit_fu_390_ap_done                        |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTrainAfterInit_fu_390_ap_ready                       |  1|   0|    1|          0|
-    |grp_runTestAfterInit_fu_280_ap_start_reg                                |  1|   0|    1|          0|
-    |grp_runTrainAfterInit_fu_390_ap_start_reg                               |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170_ap_start_reg  |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_694_3_fu_272_ap_start_reg                   |  1|   0|    1|          0|
-    +------------------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                                   | 15|   0|   16|          1|
-    +------------------------------------------------------------------------+---+----+-----+-----------+
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                  Name                                  | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                               |  10|   0|   10|          0|
+    |ap_done_reg                                                             |   1|   0|    1|          0|
+    |ap_rst_n_inv                                                            |   1|   0|    1|          0|
+    |ap_rst_reg_1                                                            |   1|   0|    1|          0|
+    |ap_rst_reg_2                                                            |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_310_ap_done                         |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_310_ap_ready                        |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTrainAfterInit_fu_420_ap_done                        |   1|   0|    1|          0|
+    |ap_sync_reg_grp_runTrainAfterInit_fu_420_ap_ready                       |   1|   0|    1|          0|
+    |grp_runTestAfterInit_fu_310_ap_start_reg                                |   1|   0|    1|          0|
+    |grp_runTrainAfterInit_fu_420_ap_start_reg                               |   1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2_fu_200_ap_start_reg  |   1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_721_3_fu_302_ap_start_reg                   |   1|   0|    1|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                   |  22|   0|   22|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
 
 
 

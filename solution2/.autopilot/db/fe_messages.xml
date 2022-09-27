@@ -1,5 +1,8 @@
 <xilinx:hls_fe_msgs>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:547:35" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:615:25" msg_body="unused parameter 'errorInTask'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_ref.h:724:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -630,28 +633,34 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:572:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runTrainAfterInit" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=data complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:626:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:627:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:628:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:629:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:632:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:633:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:636:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:637:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:634:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:638:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:635:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:639:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:643:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:644:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=inter dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:645:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:646:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="running" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions type=intra dependent=false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution2/csynth.tcl:18:9" msg_body="HLS pragma dump">
@@ -660,28 +669,31 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution2/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=run" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:645:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:671:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = trainedRegions" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:646:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:672:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = t" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:673:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:647:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:674:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = errorInTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:648:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:675:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=outcomeInRam" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:649:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:676:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=testStream" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:650:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:677:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=trainStream" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:651:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:678:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=toScheduler" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:653:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:680:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:70:0" msg_body="Inlining function 'std::isnan(float)' into 'is_valid(float const*)'">
@@ -696,16 +708,22 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:237:0" msg_body="Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*)'">
         <args Callee="is_valid(float const*)" Caller="insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:644:0" msg_body="Inlining function 'running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' into 'run(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)'">
-        <args Callee="running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" Caller="run(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:622:0" msg_body="Inlining function 'runTestLoop(hls::stream&lt;controlStr, 0&gt;&amp;, OutcomeStr*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, bool*, REGION_T (*) [16], ap_uint&lt;8&gt;*, bool*)' into 'running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)'">
+        <args Callee="runTestLoop(hls::stream&lt;controlStr, 0&gt;&amp;, OutcomeStr*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, bool*, REGION_T (*) [16], ap_uint&lt;8&gt;*, bool*)" Caller="running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:639:0" msg_body="Applying array_partition to '_ZL7regions.center': Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:622:0" msg_body="Inlining function 'runTrainLoop(bool, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, bool*)' into 'running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)'">
+        <args Callee="runTrainLoop(bool, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, bool*)" Caller="running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:670:0" msg_body="Inlining function 'running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' into 'run(int*, bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)'">
+        <args Callee="running(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" Caller="run(int*, bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:665:0" msg_body="Applying array_partition to '_ZL7regions.center': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="_ZL7regions.center"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:639:0" msg_body="Applying array_partition to '_ZL7regions.max': Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:665:0" msg_body="Applying array_partition to '_ZL7regions.max': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="_ZL7regions.max"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:639:0" msg_body="Applying array_partition to '_ZL7regions.min': Complete partitioning on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:665:0" msg_body="Applying array_partition to '_ZL7regions.min': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="_ZL7regions.min"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:534:8" msg_body="Applying array_partition to 'data': Complete partitioning on dimension 1.">
@@ -714,8 +732,8 @@
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:571:8" msg_body="Applying array_partition to 'data': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="data"/>
     </msg>
-    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:644:0" msg_body="Changing the port bit width of top function 'run(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
-        <args Function="run(bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:670:0" msg_body="Changing the port bit width of top function 'run(int*, bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
+        <args Function="run(int*, bool*, OutcomeStr*, hls::stream&lt;controlStr, 0&gt;&amp;, hls::stream&lt;controlStr, 0&gt;&amp;, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
     </msg>
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9" msg_body="Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s' into 'writeOutcome(bool&amp;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)'">
         <args Callee="_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s" Caller="writeOutcome(bool&amp;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)"/>

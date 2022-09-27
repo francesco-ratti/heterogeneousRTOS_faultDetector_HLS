@@ -5,22 +5,22 @@
 <ModuleName>run</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2_fu_170</InstName>
-<ModuleName>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</ModuleName>
+<InstName>grp_run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2_fu_200</InstName>
+<ModuleName>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>170</ID>
+<ID>200</ID>
 </Instance>
 <Instance>
-<InstName>grp_run_Pipeline_VITIS_LOOP_694_3_fu_272</InstName>
-<ModuleName>run_Pipeline_VITIS_LOOP_694_3</ModuleName>
+<InstName>grp_run_Pipeline_VITIS_LOOP_721_3_fu_302</InstName>
+<ModuleName>run_Pipeline_VITIS_LOOP_721_3</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>272</ID>
+<ID>302</ID>
 </Instance>
 <Instance>
-<InstName>grp_runTestAfterInit_fu_280</InstName>
+<InstName>grp_runTestAfterInit_fu_310</InstName>
 <ModuleName>runTestAfterInit</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>280</ID>
+<ID>310</ID>
 <InstancesList>
 <Instance>
 <InstName>read_test_U0</InstName>
@@ -57,10 +57,10 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_runTrainAfterInit_fu_390</InstName>
+<InstName>grp_runTrainAfterInit_fu_420</InstName>
 <ModuleName>runTrainAfterInit</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>390</ID>
+<ID>420</ID>
 <InstancesList>
 <Instance>
 <InstName>read_train_U0</InstName>
@@ -96,9 +96,9 @@
 
 <ModuleInformation>
 <Module>
-<Name>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Name>
+<Name>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Name>
 <Loops>
-<VITIS_LOOP_686_1_VITIS_LOOP_688_2></VITIS_LOOP_686_1_VITIS_LOOP_688_2>
+<VITIS_LOOP_713_1_VITIS_LOOP_715_2></VITIS_LOOP_713_1_VITIS_LOOP_715_2>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -117,8 +117,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_686_1_VITIS_LOOP_688_2>
-<Name>VITIS_LOOP_686_1_VITIS_LOOP_688_2</Name>
+<VITIS_LOOP_713_1_VITIS_LOOP_715_2>
+<Name>VITIS_LOOP_713_1_VITIS_LOOP_715_2</Name>
 <TripCount>1024</TripCount>
 <Latency>24578</Latency>
 <AbsoluteTimeLatency>0.492 ms</AbsoluteTimeLatency>
@@ -127,7 +127,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_686_1_VITIS_LOOP_688_2>
+</VITIS_LOOP_713_1_VITIS_LOOP_715_2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -152,7 +152,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -163,7 +163,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -174,7 +174,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -185,7 +185,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -196,7 +196,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -207,7 +207,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2</Object>
+<Object>run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2364,9 +2364,9 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>run_Pipeline_VITIS_LOOP_694_3</Name>
+<Name>run_Pipeline_VITIS_LOOP_721_3</Name>
 <Loops>
-<VITIS_LOOP_694_3></VITIS_LOOP_694_3>
+<VITIS_LOOP_721_3></VITIS_LOOP_721_3>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -2385,8 +2385,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_694_3>
-<Name>VITIS_LOOP_694_3</Name>
+<VITIS_LOOP_721_3>
+<Name>VITIS_LOOP_721_3</Name>
 <TripCount>64</TripCount>
 <Latency>64</Latency>
 <AbsoluteTimeLatency>1.280 us</AbsoluteTimeLatency>
@@ -2395,7 +2395,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_694_3>
+</VITIS_LOOP_721_3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -2420,7 +2420,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2431,7 +2431,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2442,7 +2442,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2453,7 +2453,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2464,7 +2464,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2475,7 +2475,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>run_Pipeline_VITIS_LOOP_694_3</Object>
+<Object>run_Pipeline_VITIS_LOOP_721_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -37718,7 +37718,8 @@
 <Module>
 <Name>run</Name>
 <Loops>
-<VITIS_LOOP_625_1></VITIS_LOOP_625_1>
+<VITIS_LOOP_611_1></VITIS_LOOP_611_1>
+<VITIS_LOOP_617_1></VITIS_LOOP_617_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -37737,24 +37738,40 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_625_1>
-<Name>VITIS_LOOP_625_1</Name>
+<VITIS_LOOP_611_1>
+<Name>VITIS_LOOP_611_1</Name>
+<TripCount>undef</TripCount>
+<Latency>undef</Latency>
+<AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+<IterationLatency>
+<range>
+<min>37</min>
+<max>118</max>
+</range>
+</IterationLatency>
+<PipelineDepth>37 ~ 118</PipelineDepth>
+<PipelineType>no</PipelineType>
+<InstanceList>
+<Instance>grp_runTestAfterInit_fu_310</Instance>
+</InstanceList>
+</VITIS_LOOP_611_1>
+<VITIS_LOOP_617_1>
+<Name>VITIS_LOOP_617_1</Name>
 <TripCount>inf</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>35</min>
+<min>27</min>
 <max>269</max>
 </range>
 </IterationLatency>
-<PipelineDepth>35 ~ 269</PipelineDepth>
+<PipelineDepth>27 ~ 269</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
-<Instance>grp_runTestAfterInit_fu_280</Instance>
-<Instance>grp_runTrainAfterInit_fu_390</Instance>
+<Instance>grp_runTrainAfterInit_fu_420</Instance>
 </InstanceList>
-</VITIS_LOOP_625_1>
+</VITIS_LOOP_617_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -37765,10 +37782,10 @@
 <DSP>394</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>179</UTIL_DSP>
-<FF>61657</FF>
+<FF>61742</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>57</UTIL_FF>
-<LUT>69346</LUT>
+<UTIL_FF>58</UTIL_FF>
+<LUT>69501</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>130</UTIL_LUT>
 <URAM>0</URAM>

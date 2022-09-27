@@ -606,43 +606,70 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
 //	}
 //}
 
-//void runTestLoop (hls::stream< controlStr > &testStream, OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[MAX_TASKS],
-//		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS]) {
-//	for (;;)
-//		runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-//
-//}
-//void runTrainLoop (hls::stream< controlStr > &trainStream,
-//		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS]) {
-//	for (;;)
-//		runTrainAfterInit(trainStream, regions, n_regions);
-//}
+void runTestLoop (hls::stream< controlStr > &testStream, OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[MAX_TASKS],
+		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], bool errorsInTask[MAX_TASKS]) {
+	for (;errorsInTask[0];)
+		runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+
+}
+void runTrainLoop (bool errorInTask, hls::stream< controlStr > &trainStream,
+		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], bool errorsInTask[MAX_TASKS]) {
+	for (;errorsInTask[1];)
+		runTrainAfterInit(trainStream, regions, n_regions);
+}
 void running (bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
 		hls::stream< controlStr > &trainStream,
 		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream< ap_uint<8> > &toScheduler) {
+//#pragma HLS INLINE off
+//	#pragma HLS dataflow
+//#pragma HLS DEPENDENCE variable=regions dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions dependent=false
+//	for(;;) {
+//#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+#pragma HLS DEPENDENCE variable=regions dependent=false
+#pragma HLS DEPENDENCE variable=n_regions dependent=false
 
-	//#pragma HLS dataflow
-	while(1) {
+	runTestLoop(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions, errorInTask );
+	#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+	#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+	#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+	#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+
+
+	runTrainLoop(errorInTask, trainStream, regions, n_regions, errorInTask);
 #pragma HLS DEPENDENCE variable=regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=regions type=intra dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
-		runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-		runTrainAfterInit(trainStream, regions, n_regions);
-#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
-#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
-#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
-#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
-	}
+//	}
 }
+//	for(;;) {
+//#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+//		for (;t1[1]==true;)
+//			runTrainAfterInit(trainStream, regions, n_regions);
+//#pragma HLS DEPENDENCE variable=regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
+//#pragma HLS DEPENDENCE variable=regions type=intra dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
+////	}
+//#pragma HLS DEPENDENCE variable=regions dependent=false
+//#pragma HLS DEPENDENCE variable=n_regions dependent=false
+
 
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 static ap_uint<8> n_regions[MAX_CHECKS];
 
-void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
+void run(int t[2], bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
 		hls::stream< controlStr > &trainStream,
 		region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions_in[MAX_CHECKS], hls::stream< ap_uint<8> > &toScheduler) {
 	#pragma HLS interface s_axilite port = trainedRegions //bundle=A
+#pragma HLS interface s_axilite port = t //bundle=A
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 #pragma HLS interface s_axilite port = errorInTask //bundle=A
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
@@ -696,10 +723,13 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 			n_regions [i] = n_regions_in [i];
 		}
 
+
 //		fsmstate=STATE_READY;
 	//} else if (fsmstate==STATE_READY) {
 		running(errorInTask, outcomeInRam, testStream,
 				trainStream,
 				regions, n_regions, toScheduler);
+
+
 	}
 //}

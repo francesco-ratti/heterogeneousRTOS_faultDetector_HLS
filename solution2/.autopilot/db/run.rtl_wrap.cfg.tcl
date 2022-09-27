@@ -4,6 +4,18 @@ set moduleIsExternC "1"
 set rawDecl ""
 set globalVariable ""
 set PortList ""
+set PortName "t"
+set BitWidth "32"
+set ArrayOpt ""
+set Const "0"
+set Volatile "1"
+set Pointer "1"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "void"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
 set PortName "errorInTask"
 set BitWidth "1"
 set ArrayOpt ""

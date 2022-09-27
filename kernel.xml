@@ -7,13 +7,14 @@
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x2000" dataWidth="32"/>
     </ports>
     <args>
-    <arg id="0" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x10" size="0x10" type="bool*"/>
-    <arg id="1" name="outcomeInRam" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x240" offset="0x400" size="0x400" type="OutcomeStr*"/>
-      <arg id="2" name="testStream" addressQualifier="4" port="TESTSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;controlStr, 0&gt;&amp;" origName="testStream" origUse="variable"/>
-      <arg id="3" name="trainStream" addressQualifier="4" port="TRAINSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;controlStr, 0&gt;&amp;" origName="trainStream" origUse="variable"/>
-    <arg id="4" name="trainedRegions" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x18000" offset="0x1000" size="0x1000" type="REGION_T*"/>
-    <arg id="5" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x40" offset="0x40" size="0x40" type="ap_uint&lt;8&gt;*"/>
-      <arg id="6" name="toScheduler" addressQualifier="4" port="TOSCHEDULER" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;" origName="toScheduler" origUse="variable"/>
+    <arg id="0" name="t" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x10" size="0x8" type="int*"/>
+    <arg id="1" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x20" size="0x10" type="bool*"/>
+    <arg id="2" name="outcomeInRam" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x240" offset="0x400" size="0x400" type="OutcomeStr*"/>
+      <arg id="3" name="testStream" addressQualifier="4" port="TESTSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;controlStr, 0&gt;&amp;" origName="testStream" origUse="variable"/>
+      <arg id="4" name="trainStream" addressQualifier="4" port="TRAINSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;controlStr, 0&gt;&amp;" origName="trainStream" origUse="variable"/>
+    <arg id="5" name="trainedRegions" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x18000" offset="0x1000" size="0x1000" type="REGION_T*"/>
+    <arg id="6" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x40" offset="0x40" size="0x40" type="ap_uint&lt;8&gt;*"/>
+      <arg id="7" name="toScheduler" addressQualifier="4" port="TOSCHEDULER" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;" origName="toScheduler" origUse="variable"/>
     </args>
     <compileWorkGroupSize x="1" y="1" z="1"/>
     <maxWorkGroupSize x="1" y="1" z="1"/>

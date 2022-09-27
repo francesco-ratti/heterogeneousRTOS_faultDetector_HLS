@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'insert_point_Pipeline_insert_point_label6'
 ================================================================
-* Date:           Tue Sep 27 19:09:54 2022
+* Date:           Tue Sep 27 20:01:16 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -319,19 +319,19 @@ ST_3 : Operation 231 [1/1] (0.95ns)   --->   "%switch_ln357 = switch i4 %merge_1
 
 State 4 <SV = 3> <Delay = 12.1>
 ST_4 : Operation 232 [1/1] (1.58ns)   --->   "%br_ln353 = br void %if.end150.i" [detector_solid/abs_solid_detector.cpp:353->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 232 'br' 'br_ln353' <Predicate = (!icmp_ln350 & and_ln351_1)> <Delay = 1.58>
-ST_4 : Operation 233 [1/1] (0.00ns)   --->   "%empty_55 = phi i32 %tmp_12_i, void %arrayidx13747.exit.i, i32 %tmp_13_i, void %for.body127.split.i" [detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 233 'phi' 'empty_55' <Predicate = (!icmp_ln350)> <Delay = 0.00>
+ST_4 : Operation 233 [1/1] (0.00ns)   --->   "%empty_57 = phi i32 %tmp_12_i, void %arrayidx13747.exit.i, i32 %tmp_13_i, void %for.body127.split.i" [detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 233 'phi' 'empty_57' <Predicate = (!icmp_ln350)> <Delay = 0.00>
 ST_4 : Operation 234 [1/1] (1.58ns)   --->   "%br_ln356 = br void %for.inc191.i" [detector_solid/abs_solid_detector.cpp:356->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 234 'br' 'br_ln356' <Predicate = (!icmp_ln350 & and_ln354_1)> <Delay = 1.58>
 ST_4 : Operation 235 [1/1] (0.00ns)   --->   "%empty = phi i32 %tmp_14_i, void %arrayidx16089.exit.i, i32 %tmp_15_i, void %if.end150.i" [detector_solid/abs_solid_detector.cpp:354->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 235 'phi' 'empty' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 236 [4/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 236 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 236 [4/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_57" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 236 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 5 <SV = 4> <Delay = 10.5>
-ST_5 : Operation 237 [3/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 237 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 237 [3/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_57" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 237 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 6 <SV = 5> <Delay = 10.5>
-ST_6 : Operation 238 [2/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 238 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 238 [2/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_57" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 238 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 7 <SV = 6> <Delay = 10.5>
-ST_7 : Operation 239 [1/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 239 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 239 [1/4] (10.5ns)   --->   "%add_i = fadd i32 %empty, i32 %empty_57" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 239 'fadd' 'add_i' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 8 <SV = 7> <Delay = 12.3>
 ST_8 : Operation 240 [2/2] (12.3ns)   --->   "%conv_i = fmul i32 %add_i, i32 0.5" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 240 'fmul' 'conv_i' <Predicate = true> <Delay = 12.3> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
@@ -357,7 +357,7 @@ ST_10 : Operation 254 [1/1] (0.00ns)   --->   "%regions_44_addr = getelementptr 
 ST_10 : Operation 255 [1/1] (0.00ns)   --->   "%regions_45_addr = getelementptr i32 %regions_45, i64 0, i64 %zext_ln351_1" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 255 'getelementptr' 'regions_45_addr' <Predicate = (!icmp_ln350)> <Delay = 0.00>
 ST_10 : Operation 256 [1/1] (0.00ns)   --->   "%regions_46_addr = getelementptr i32 %regions_46, i64 0, i64 %zext_ln351_1" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 256 'getelementptr' 'regions_46_addr' <Predicate = (!icmp_ln350)> <Delay = 0.00>
 ST_10 : Operation 257 [1/1] (0.00ns)   --->   "%regions_47_addr = getelementptr i32 %regions_47, i64 0, i64 %zext_ln351_1" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 257 'getelementptr' 'regions_47_addr' <Predicate = (!icmp_ln350)> <Delay = 0.00>
-ST_10 : Operation 258 [1/1] (0.00ns)   --->   "%specloopname_ln350 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [detector_solid/abs_solid_detector.cpp:350->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 258 'specloopname' 'specloopname_ln350' <Predicate = (!icmp_ln350)> <Delay = 0.00>
+ST_10 : Operation 258 [1/1] (0.00ns)   --->   "%specloopname_ln350 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [detector_solid/abs_solid_detector.cpp:350->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 258 'specloopname' 'specloopname_ln350' <Predicate = (!icmp_ln350)> <Delay = 0.00>
 ST_10 : Operation 259 [1/1] (3.25ns)   --->   "%store_ln357 = store i32 %conv_i, i9 %regions_46_addr" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 259 'store' 'store_ln357' <Predicate = (merge_1_cast_i_read == 14)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 ST_10 : Operation 260 [1/1] (0.00ns)   --->   "%br_ln357 = br void %arrayidx1901410.exit.i" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 260 'br' 'br_ln357' <Predicate = (merge_1_cast_i_read == 14)> <Delay = 0.00>
 ST_10 : Operation 261 [1/1] (3.25ns)   --->   "%store_ln357 = store i32 %conv_i, i9 %regions_45_addr" [detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579]   --->   Operation 261 'store' 'store_ln357' <Predicate = (merge_1_cast_i_read == 13)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
@@ -420,8 +420,8 @@ The critical path consists of the following:
 
  <State 4>: 12.1ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('empty_55', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) with incoming values : ('tmp_12_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) ('tmp_13_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) [207]  (1.59 ns)
-	'phi' operation ('empty_55', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) with incoming values : ('tmp_12_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) ('tmp_13_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) [207]  (0 ns)
+	multiplexor before 'phi' operation ('empty_57', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) with incoming values : ('tmp_12_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) ('tmp_13_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) [207]  (1.59 ns)
+	'phi' operation ('empty_57', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) with incoming values : ('tmp_12_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) ('tmp_13_i', detector_solid/abs_solid_detector.cpp:351->detector_solid/abs_solid_detector.cpp:579) [207]  (0 ns)
 	'fadd' operation ('add_i', detector_solid/abs_solid_detector.cpp:357->detector_solid/abs_solid_detector.cpp:579) [296]  (10.5 ns)
 
  <State 5>: 10.5ns

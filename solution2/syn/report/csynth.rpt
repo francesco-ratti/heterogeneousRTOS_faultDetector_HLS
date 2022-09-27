@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Tue Sep 27 19:10:14 2022
+    * Date:           Tue Sep 27 20:01:36 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
@@ -19,12 +19,12 @@
     |                      Modules                      | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |           |            |             |              |     |
     |                      & Loops                      | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM    |     DSP    |      FF     |      LUT     | URAM|
     +---------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+-----------+------------+-------------+--------------+-----+
-    |+ run                                              |     -|   0.41|        -|          -|         -|        -|     -|        no|  176 (62%)|  394 (179%)|  61657 (57%)|  69346 (130%)|    -|
-    | + run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2  |     -|   0.41|    24580|  4.916e+05|         -|    24580|     -|        no|          -|   213 (96%)|    685 (~0%)|    7691 (14%)|    -|
-    |  o VITIS_LOOP_686_1_VITIS_LOOP_688_2              |    II|  14.60|    24578|  4.916e+05|        27|       24|  1024|       yes|          -|           -|            -|             -|    -|
-    | + run_Pipeline_VITIS_LOOP_694_3                   |     -|   9.96|       66|  1.320e+03|         -|       66|     -|        no|          -|           -|     17 (~0%)|      63 (~0%)|    -|
-    |  o VITIS_LOOP_694_3                               |     -|  14.60|       64|  1.280e+03|         2|        1|    64|       yes|          -|           -|            -|             -|    -|
-    | o VITIS_LOOP_625_1                                |     -|  14.60|        -|          -|       269|        -|     -|        no|          -|           -|            -|             -|    -|
+    |+ run                                              |     -|   0.41|        -|          -|         -|        -|     -|        no|  176 (62%)|  394 (179%)|  61742 (58%)|  69501 (130%)|    -|
+    | + run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2  |     -|   0.41|    24580|  4.916e+05|         -|    24580|     -|        no|          -|   213 (96%)|    685 (~0%)|    7691 (14%)|    -|
+    |  o VITIS_LOOP_713_1_VITIS_LOOP_715_2              |    II|  14.60|    24578|  4.916e+05|        27|       24|  1024|       yes|          -|           -|            -|             -|    -|
+    | + run_Pipeline_VITIS_LOOP_721_3                   |     -|   9.96|       66|  1.320e+03|         -|       66|     -|        no|          -|           -|     17 (~0%)|      63 (~0%)|    -|
+    |  o VITIS_LOOP_721_3                               |     -|  14.60|       64|  1.280e+03|         2|        1|    64|       yes|          -|           -|            -|             -|    -|
+    | o VITIS_LOOP_611_1                                |     -|  14.60|        -|          -|       118|        -|     -|        no|          -|           -|            -|             -|    -|
     |  + runTestAfterInit*                              |     -|   0.57|      114|  2.280e+03|         -|       92|     -|  dataflow|          -|    56 (25%)|  26463 (24%)|   18089 (34%)|    -|
     |   + read_test                                     |     -|   9.96|       20|    400.000|         -|       20|     -|        no|          -|           -|    562 (~0%)|     198 (~0%)|    -|
     |    o Loop 1                                       |     -|  14.60|       16|    320.000|         2|        -|     8|        no|          -|           -|            -|             -|    -|
@@ -35,6 +35,7 @@
     |    o is_valid_label2                              |     -|  14.60|       17|    340.000|         2|        -|     8|        no|          -|           -|            -|             -|    -|
     |   + writeOutcome                                  |     -|   9.02|       14|    280.000|         -|       14|     -|        no|          -|           -|    528 (~0%)|     280 (~0%)|    -|
     |    o Loop 1                                       |     -|  14.60|        8|    160.000|         1|        -|     8|        no|          -|           -|            -|             -|    -|
+    | o VITIS_LOOP_617_1                                |     -|  14.60|        -|          -|       269|        -|     -|        no|          -|           -|            -|             -|    -|
     |  + runTrainAfterInit*                             |     -|   2.00|      267|  5.340e+03|         -|      247|     -|  dataflow|          -|   125 (56%)|  34113 (32%)|   38026 (71%)|    -|
     |   + read_train                                    |     -|   9.96|       20|    400.000|         -|       20|     -|        no|          -|           -|    536 (~0%)|     198 (~0%)|    -|
     |    o Loop 1                                       |     -|  14.60|       16|    320.000|         2|        -|     8|        no|          -|           -|            -|             -|    -|
@@ -95,7 +96,8 @@
 +----------------+-----------+------------------------+
 | Argument       | Direction | Datatype               |
 +----------------+-----------+------------------------+
-| errorInTask    | out       | bool*                  |
+| t              | unused    | int*                   |
+| errorInTask    | inout     | bool*                  |
 | outcomeInRam   | out       | OutcomeStr*            |
 | testStream     | in        | stream<controlStr, 0>& |
 | trainStream    | in        | stream<controlStr, 0>& |
@@ -108,7 +110,8 @@
 +----------------+---------------+-----------+------------------------------------------------+
 | Argument       | HW Interface  | HW Type   | HW Info                                        |
 +----------------+---------------+-----------+------------------------------------------------+
-| errorInTask    | s_axi_control | memory    | name=errorInTask offset=16 range=16            |
+| t              | s_axi_control | memory    | name=t offset=16 range=8                       |
+| errorInTask    | s_axi_control | memory    | name=errorInTask offset=32 range=16            |
 | outcomeInRam   | s_axi_control | memory    | name=outcomeInRam offset=1024 range=1024       |
 | testStream     | testStream    | interface |                                                |
 | trainStream    | trainStream   | interface |                                                |
@@ -132,65 +135,65 @@
 | Name                                              | DSP | Pragma | Variable                        | Op   | Impl    | Latency |
 +---------------------------------------------------+-----+--------+---------------------------------+------+---------+---------+
 | + run                                             | 394 |        |                                 |      |         |         |
-|  + run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2 | 213 |        |                                 |      |         |         |
-|    sub_ln690_fu_3925_p2                           | -   |        | sub_ln690                       | sub  | fabric  | 0       |
-|    add_ln686_1_fu_3867_p2                         | -   |        | add_ln686_1                     | add  | fabric  | 0       |
-|    add_ln686_fu_3931_p2                           | -   |        | add_ln686                       | add  | fabric  | 0       |
-|    sub_ln690_2_fu_3976_p2                         | -   |        | sub_ln690_2                     | sub  | fabric  | 0       |
-|    sub_ln690_1_fu_4011_p2                         | -   |        | sub_ln690_1                     | sub  | fabric  | 0       |
-|    add_ln690_fu_4021_p2                           | -   |        | add_ln690                       | add  | fabric  | 0       |
-|    mul_64ns_66ns_81_1_1_U1                        | 6   |        | mul_ln690                       | mul  | auto    | 0       |
-|    add_ln690_1_fu_4060_p2                         | -   |        | add_ln690_1                     | add  | fabric  | 0       |
-|    sub_ln690_3_fu_4086_p2                         | -   |        | sub_ln690_3                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U2                       | 9   |        | mul_ln690_1                     | mul  | auto    | 0       |
-|    sub_ln690_4_fu_4199_p2                         | -   |        | sub_ln690_4                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U3                       | 9   |        | mul_ln690_2                     | mul  | auto    | 0       |
-|    sub_ln690_5_fu_4316_p2                         | -   |        | sub_ln690_5                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U4                       | 9   |        | mul_ln690_3                     | mul  | auto    | 0       |
-|    sub_ln690_6_fu_4433_p2                         | -   |        | sub_ln690_6                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U5                       | 9   |        | mul_ln690_4                     | mul  | auto    | 0       |
-|    sub_ln690_7_fu_4550_p2                         | -   |        | sub_ln690_7                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U6                       | 9   |        | mul_ln690_5                     | mul  | auto    | 0       |
-|    sub_ln690_8_fu_4667_p2                         | -   |        | sub_ln690_8                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U7                       | 9   |        | mul_ln690_6                     | mul  | auto    | 0       |
-|    sub_ln690_9_fu_4784_p2                         | -   |        | sub_ln690_9                     | sub  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U8                       | 9   |        | mul_ln690_7                     | mul  | auto    | 0       |
-|    sub_ln690_10_fu_4906_p2                        | -   |        | sub_ln690_10                    | sub  | fabric  | 0       |
-|    add_ln690_2_fu_4840_p2                         | -   |        | add_ln690_2                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U9                       | 9   |        | mul_ln690_8                     | mul  | auto    | 0       |
-|    add_ln690_3_fu_4956_p2                         | -   |        | add_ln690_3                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U10                      | 9   |        | mul_ln690_9                     | mul  | auto    | 0       |
-|    add_ln690_4_fu_5072_p2                         | -   |        | add_ln690_4                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U11                      | 9   |        | mul_ln690_10                    | mul  | auto    | 0       |
-|    add_ln690_5_fu_5163_p2                         | -   |        | add_ln690_5                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U12                      | 9   |        | mul_ln690_11                    | mul  | auto    | 0       |
-|    add_ln690_6_fu_5254_p2                         | -   |        | add_ln690_6                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U13                      | 9   |        | mul_ln690_12                    | mul  | auto    | 0       |
-|    add_ln690_7_fu_5345_p2                         | -   |        | add_ln690_7                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U14                      | 9   |        | mul_ln690_13                    | mul  | auto    | 0       |
-|    add_ln690_8_fu_5436_p2                         | -   |        | add_ln690_8                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U15                      | 9   |        | mul_ln690_14                    | mul  | auto    | 0       |
-|    add_ln690_9_fu_5527_p2                         | -   |        | add_ln690_9                     | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U16                      | 9   |        | mul_ln690_15                    | mul  | auto    | 0       |
-|    add_ln690_10_fu_5618_p2                        | -   |        | add_ln690_10                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U17                      | 9   |        | mul_ln690_16                    | mul  | auto    | 0       |
-|    add_ln690_11_fu_5709_p2                        | -   |        | add_ln690_11                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U18                      | 9   |        | mul_ln690_17                    | mul  | auto    | 0       |
-|    add_ln690_12_fu_5800_p2                        | -   |        | add_ln690_12                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U19                      | 9   |        | mul_ln690_18                    | mul  | auto    | 0       |
-|    add_ln690_13_fu_5891_p2                        | -   |        | add_ln690_13                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U20                      | 9   |        | mul_ln690_19                    | mul  | auto    | 0       |
-|    add_ln690_14_fu_5982_p2                        | -   |        | add_ln690_14                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U21                      | 9   |        | mul_ln690_20                    | mul  | auto    | 0       |
-|    add_ln690_15_fu_6073_p2                        | -   |        | add_ln690_15                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U22                      | 9   |        | mul_ln690_21                    | mul  | auto    | 0       |
-|    add_ln690_16_fu_6164_p2                        | -   |        | add_ln690_16                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U23                      | 9   |        | mul_ln690_22                    | mul  | auto    | 0       |
-|    add_ln690_17_fu_6255_p2                        | -   |        | add_ln690_17                    | add  | fabric  | 0       |
-|    mul_64ns_66ns_129_1_1_U24                      | 9   |        | mul_ln690_23                    | mul  | auto    | 0       |
-|    add_ln688_fu_6260_p2                           | -   |        | add_ln688                       | add  | fabric  | 0       |
-|  + run_Pipeline_VITIS_LOOP_694_3                  | 0   |        |                                 |      |         |         |
-|    add_ln694_fu_89_p2                             | -   |        | add_ln694                       | add  | fabric  | 0       |
+|  + run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2 | 213 |        |                                 |      |         |         |
+|    sub_ln717_fu_3925_p2                           | -   |        | sub_ln717                       | sub  | fabric  | 0       |
+|    add_ln713_1_fu_3867_p2                         | -   |        | add_ln713_1                     | add  | fabric  | 0       |
+|    add_ln713_fu_3931_p2                           | -   |        | add_ln713                       | add  | fabric  | 0       |
+|    sub_ln717_2_fu_3976_p2                         | -   |        | sub_ln717_2                     | sub  | fabric  | 0       |
+|    sub_ln717_1_fu_4011_p2                         | -   |        | sub_ln717_1                     | sub  | fabric  | 0       |
+|    add_ln717_fu_4021_p2                           | -   |        | add_ln717                       | add  | fabric  | 0       |
+|    mul_64ns_66ns_81_1_1_U1                        | 6   |        | mul_ln717                       | mul  | auto    | 0       |
+|    add_ln717_1_fu_4060_p2                         | -   |        | add_ln717_1                     | add  | fabric  | 0       |
+|    sub_ln717_3_fu_4086_p2                         | -   |        | sub_ln717_3                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U2                       | 9   |        | mul_ln717_1                     | mul  | auto    | 0       |
+|    sub_ln717_4_fu_4199_p2                         | -   |        | sub_ln717_4                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U3                       | 9   |        | mul_ln717_2                     | mul  | auto    | 0       |
+|    sub_ln717_5_fu_4316_p2                         | -   |        | sub_ln717_5                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U4                       | 9   |        | mul_ln717_3                     | mul  | auto    | 0       |
+|    sub_ln717_6_fu_4433_p2                         | -   |        | sub_ln717_6                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U5                       | 9   |        | mul_ln717_4                     | mul  | auto    | 0       |
+|    sub_ln717_7_fu_4550_p2                         | -   |        | sub_ln717_7                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U6                       | 9   |        | mul_ln717_5                     | mul  | auto    | 0       |
+|    sub_ln717_8_fu_4667_p2                         | -   |        | sub_ln717_8                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U7                       | 9   |        | mul_ln717_6                     | mul  | auto    | 0       |
+|    sub_ln717_9_fu_4784_p2                         | -   |        | sub_ln717_9                     | sub  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U8                       | 9   |        | mul_ln717_7                     | mul  | auto    | 0       |
+|    sub_ln717_10_fu_4906_p2                        | -   |        | sub_ln717_10                    | sub  | fabric  | 0       |
+|    add_ln717_2_fu_4840_p2                         | -   |        | add_ln717_2                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U9                       | 9   |        | mul_ln717_8                     | mul  | auto    | 0       |
+|    add_ln717_3_fu_4956_p2                         | -   |        | add_ln717_3                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U10                      | 9   |        | mul_ln717_9                     | mul  | auto    | 0       |
+|    add_ln717_4_fu_5072_p2                         | -   |        | add_ln717_4                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U11                      | 9   |        | mul_ln717_10                    | mul  | auto    | 0       |
+|    add_ln717_5_fu_5163_p2                         | -   |        | add_ln717_5                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U12                      | 9   |        | mul_ln717_11                    | mul  | auto    | 0       |
+|    add_ln717_6_fu_5254_p2                         | -   |        | add_ln717_6                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U13                      | 9   |        | mul_ln717_12                    | mul  | auto    | 0       |
+|    add_ln717_7_fu_5345_p2                         | -   |        | add_ln717_7                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U14                      | 9   |        | mul_ln717_13                    | mul  | auto    | 0       |
+|    add_ln717_8_fu_5436_p2                         | -   |        | add_ln717_8                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U15                      | 9   |        | mul_ln717_14                    | mul  | auto    | 0       |
+|    add_ln717_9_fu_5527_p2                         | -   |        | add_ln717_9                     | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U16                      | 9   |        | mul_ln717_15                    | mul  | auto    | 0       |
+|    add_ln717_10_fu_5618_p2                        | -   |        | add_ln717_10                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U17                      | 9   |        | mul_ln717_16                    | mul  | auto    | 0       |
+|    add_ln717_11_fu_5709_p2                        | -   |        | add_ln717_11                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U18                      | 9   |        | mul_ln717_17                    | mul  | auto    | 0       |
+|    add_ln717_12_fu_5800_p2                        | -   |        | add_ln717_12                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U19                      | 9   |        | mul_ln717_18                    | mul  | auto    | 0       |
+|    add_ln717_13_fu_5891_p2                        | -   |        | add_ln717_13                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U20                      | 9   |        | mul_ln717_19                    | mul  | auto    | 0       |
+|    add_ln717_14_fu_5982_p2                        | -   |        | add_ln717_14                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U21                      | 9   |        | mul_ln717_20                    | mul  | auto    | 0       |
+|    add_ln717_15_fu_6073_p2                        | -   |        | add_ln717_15                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U22                      | 9   |        | mul_ln717_21                    | mul  | auto    | 0       |
+|    add_ln717_16_fu_6164_p2                        | -   |        | add_ln717_16                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U23                      | 9   |        | mul_ln717_22                    | mul  | auto    | 0       |
+|    add_ln717_17_fu_6255_p2                        | -   |        | add_ln717_17                    | add  | fabric  | 0       |
+|    mul_64ns_66ns_129_1_1_U24                      | 9   |        | mul_ln717_23                    | mul  | auto    | 0       |
+|    add_ln715_fu_6260_p2                           | -   |        | add_ln715                       | add  | fabric  | 0       |
+|  + run_Pipeline_VITIS_LOOP_721_3                  | 0   |        |                                 |      |         |         |
+|    add_ln721_fu_89_p2                             | -   |        | add_ln721                       | add  | fabric  | 0       |
 |  + runTestAfterInit                               | 56  |        |                                 |      |         |         |
 |    taskId_V_U                                     | -   |        | taskId_V                        | fifo | srl     | 0       |
 |    checkId_V_U                                    | -   |        | checkId_V                       | fifo | srl     | 0       |
@@ -272,7 +275,7 @@
 |      fsub_32ns_32ns_32_4_full_dsp_1_U737          | 2   |        | d1_1_i                          | fsub | fulldsp | 3       |
 |      fsub_32ns_32ns_32_4_full_dsp_1_U737          | 2   |        | d2_1_i                          | fsub | fulldsp | 3       |
 |      fsub_32ns_32ns_32_4_full_dsp_1_U738          | 2   |        | sub_1_i                         | fsub | fulldsp | 3       |
-|      fsub_32ns_32ns_32_4_full_dsp_1_U760          | 2   |        | ov_i_56                         | fsub | fulldsp | 3       |
+|      fsub_32ns_32ns_32_4_full_dsp_1_U760          | 2   |        | ov_i_58                         | fsub | fulldsp | 3       |
 |      fsub_32ns_32ns_32_4_full_dsp_1_U738          | 2   |        | sub3_1_i                        | fsub | fulldsp | 3       |
 |      fsub_32ns_32ns_32_4_full_dsp_1_U760          | 2   |        | ov_1_1_i                        | fsub | fulldsp | 3       |
 |      fmul_32ns_32ns_32_2_max_dsp_1_U776           | 3   |        | overlap_1_1_i                   | fmul | maxdsp  | 1       |
@@ -433,22 +436,25 @@
 | array_partition | variable=data complete                        | detector_solid/abs_solid_detector.cpp:538 in runtestafterinit, data  |
 | dataflow        |                                               | detector_solid/abs_solid_detector.cpp:567 in runtrainafterinit       |
 | array_partition | variable=data complete                        | detector_solid/abs_solid_detector.cpp:572 in runtrainafterinit, data |
-| dependence      | variable=regions type=inter dependent=false   | detector_solid/abs_solid_detector.cpp:626 in running, regions        |
-| dependence      | variable=n_regions type=inter dependent=false | detector_solid/abs_solid_detector.cpp:627 in running, n_regions      |
-| dependence      | variable=regions type=intra dependent=false   | detector_solid/abs_solid_detector.cpp:628 in running, regions        |
-| dependence      | variable=n_regions type=intra dependent=false | detector_solid/abs_solid_detector.cpp:629 in running, n_regions      |
-| dependence      | variable=regions type=inter dependent=false   | detector_solid/abs_solid_detector.cpp:632 in running, regions        |
-| dependence      | variable=n_regions type=inter dependent=false | detector_solid/abs_solid_detector.cpp:633 in running, n_regions      |
-| dependence      | variable=regions type=intra dependent=false   | detector_solid/abs_solid_detector.cpp:634 in running, regions        |
-| dependence      | variable=n_regions type=intra dependent=false | detector_solid/abs_solid_detector.cpp:635 in running, n_regions      |
-| interface       | s_axilite port = trainedRegions               | detector_solid/abs_solid_detector.cpp:645 in run                     |
-| interface       | s_axilite port = n_regions_in                 | detector_solid/abs_solid_detector.cpp:646 in run                     |
-| interface       | s_axilite port = errorInTask                  | detector_solid/abs_solid_detector.cpp:647 in run                     |
-| interface       | s_axilite port=outcomeInRam                   | detector_solid/abs_solid_detector.cpp:648 in run, outcomeInRam       |
-| interface       | axis port=testStream                          | detector_solid/abs_solid_detector.cpp:649 in run, testStream         |
-| interface       | axis port=trainStream                         | detector_solid/abs_solid_detector.cpp:650 in run, trainStream        |
-| interface       | axis port=toScheduler                         | detector_solid/abs_solid_detector.cpp:651 in run, toScheduler        |
-| array_partition | variable=regions complete dim=2               | detector_solid/abs_solid_detector.cpp:653 in run, regions            |
+| dependence      | variable=regions dependent=false              | detector_solid/abs_solid_detector.cpp:632 in running, regions        |
+| dependence      | variable=n_regions dependent=false            | detector_solid/abs_solid_detector.cpp:633 in running, n_regions      |
+| dependence      | variable=regions type=inter dependent=false   | detector_solid/abs_solid_detector.cpp:636 in running, regions        |
+| dependence      | variable=n_regions type=inter dependent=false | detector_solid/abs_solid_detector.cpp:637 in running, n_regions      |
+| dependence      | variable=regions type=intra dependent=false   | detector_solid/abs_solid_detector.cpp:638 in running, regions        |
+| dependence      | variable=n_regions type=intra dependent=false | detector_solid/abs_solid_detector.cpp:639 in running, n_regions      |
+| dependence      | variable=regions type=inter dependent=false   | detector_solid/abs_solid_detector.cpp:643 in running, regions        |
+| dependence      | variable=n_regions type=inter dependent=false | detector_solid/abs_solid_detector.cpp:644 in running, n_regions      |
+| dependence      | variable=regions type=intra dependent=false   | detector_solid/abs_solid_detector.cpp:645 in running, regions        |
+| dependence      | variable=n_regions type=intra dependent=false | detector_solid/abs_solid_detector.cpp:646 in running, n_regions      |
+| interface       | s_axilite port = trainedRegions               | detector_solid/abs_solid_detector.cpp:671 in run                     |
+| interface       | s_axilite port = t                            | detector_solid/abs_solid_detector.cpp:672 in run                     |
+| interface       | s_axilite port = n_regions_in                 | detector_solid/abs_solid_detector.cpp:673 in run                     |
+| interface       | s_axilite port = errorInTask                  | detector_solid/abs_solid_detector.cpp:674 in run                     |
+| interface       | s_axilite port=outcomeInRam                   | detector_solid/abs_solid_detector.cpp:675 in run, outcomeInRam       |
+| interface       | axis port=testStream                          | detector_solid/abs_solid_detector.cpp:676 in run, testStream         |
+| interface       | axis port=trainStream                         | detector_solid/abs_solid_detector.cpp:677 in run, trainStream        |
+| interface       | axis port=toScheduler                         | detector_solid/abs_solid_detector.cpp:678 in run, toScheduler        |
+| array_partition | variable=regions complete dim=2               | detector_solid/abs_solid_detector.cpp:680 in run, regions            |
 +-----------------+-----------------------------------------------+----------------------------------------------------------------------+
 
 

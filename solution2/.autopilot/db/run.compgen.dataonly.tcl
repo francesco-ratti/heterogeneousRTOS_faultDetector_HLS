@@ -2,13 +2,25 @@
 
 set axilite_register_dict [dict create]
 set port_control {
+t { 
+	dir X
+	width 32
+	depth 2
+	mode ap_memory
+	offset 16
+	offset_end 23
+	core_op ram_1p
+	core_impl auto
+	core_latency 3
+	byte_write 0
+}
 errorInTask { 
-	dir O
+	dir IO
 	width 1
 	depth 16
 	mode ap_memory
-	offset 16
-	offset_end 31
+	offset 32
+	offset_end 47
 	core_op ram_1p
 	core_impl auto
 	core_latency 1

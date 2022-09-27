@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run_test'
 ================================================================
-* Date:           Tue Sep 27 19:09:49 2022
+* Date:           Tue Sep 27 20:01:11 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -632,7 +632,7 @@ ST_2 : Operation 548 [2/2] (3.25ns)   --->   "%regions_14_load_1 = load i9 %regi
 ST_2 : Operation 549 [2/2] (3.25ns)   --->   "%regions_15_load_1 = load i9 %regions_15_addr_1" [detector_solid/abs_solid_detector.cpp:56]   --->   Operation 549 'load' 'regions_15_load_1' <Predicate = (icmp_ln72)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 512> <RAM>
 
 State 3 <SV = 2> <Delay = 7.99>
-ST_3 : Operation 550 [1/1] (0.00ns)   --->   "%specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12" [detector_solid/abs_solid_detector.cpp:72]   --->   Operation 550 'specloopname' 'specloopname_ln72' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 550 [1/1] (0.00ns)   --->   "%specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [detector_solid/abs_solid_detector.cpp:72]   --->   Operation 550 'specloopname' 'specloopname_ln72' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 551 [1/2] (5.43ns)   --->   "%cmp_i_i_i = fcmp_uno  i32 %p_x_assign, i32 0" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:612]   --->   Operation 551 'fcmp' 'cmp_i_i_i' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 552 [1/1] (0.00ns) (grouped into LUT with out node or_ln74_1)   --->   "%or_ln74 = or i1 %icmp_ln74_1, i1 %icmp_ln74" [detector_solid/abs_solid_detector.cpp:74]   --->   Operation 552 'or' 'or_ln74' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 553 [1/2] (5.43ns)   --->   "%tmp_2 = fcmp_oeq  i32 %p_x_assign, i32 inf" [detector_solid/abs_solid_detector.cpp:74]   --->   Operation 553 'fcmp' 'tmp_2' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>

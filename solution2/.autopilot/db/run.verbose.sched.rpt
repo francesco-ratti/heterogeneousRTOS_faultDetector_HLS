@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run'
 ================================================================
-* Date:           Tue Sep 27 19:09:58 2022
+* Date:           Tue Sep 27 20:01:20 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -41,7 +41,8 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_625_1  |        ?|        ?|  35 ~ 269|          -|          -|   inf|        no|
+        |- VITIS_LOOP_611_1  |        ?|        ?|  37 ~ 118|          -|          -|     ?|        no|
+        |- VITIS_LOOP_617_1  |        ?|        ?|  27 ~ 269|          -|          -|   inf|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -56,7 +57,7 @@ IsTopModel: 1
 ResetActiveHigh: 1
 IsCombinational: 0
 IsDatapathOnly: 0
-HasWiredReturn: 0
+HasWiredReturn: 1
 HasMFsm: 0
 HasVarLatency: 1
 IsPipeline: 0
@@ -70,7 +71,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 4
+* Number of FSM states : 10
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -78,54 +79,88 @@ IsGatedGlobalClock: 0
 1 --> 2 
 2 --> 3 
 3 --> 4 
-4 --> 3 
+4 --> 5 7 
+5 --> 6 
+6 --> 3 
+7 --> 8 9 
+8 --> 
+9 --> 10 
+10 --> 9 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.00>
-ST_1 : Operation 5 [2/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2, i32 %trainedRegions, i32 %regions, i32 %regions_16, i32 %regions_32, i32 %regions_1, i32 %regions_17, i32 %regions_33, i32 %regions_2, i32 %regions_18, i32 %regions_34, i32 %regions_3, i32 %regions_19, i32 %regions_35, i32 %regions_4, i32 %regions_20, i32 %regions_36, i32 %regions_5, i32 %regions_21, i32 %regions_37, i32 %regions_6, i32 %regions_22, i32 %regions_38, i32 %regions_7, i32 %regions_23, i32 %regions_39, i32 %regions_8, i32 %regions_24, i32 %regions_40, i32 %regions_9, i32 %regions_25, i32 %regions_41, i32 %regions_10, i32 %regions_26, i32 %regions_42, i32 %regions_11, i32 %regions_27, i32 %regions_43, i32 %regions_12, i32 %regions_28, i32 %regions_44, i32 %regions_13, i32 %regions_29, i32 %regions_45, i32 %regions_14, i32 %regions_30, i32 %regions_46, i32 %regions_15, i32 %regions_31, i32 %regions_47"   --->   Operation 5 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_1 : Operation 6 [2/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_694_3, i8 %n_regions_in, i8 %n_regions_V"   --->   Operation 6 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 11 [2/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2, i32 %trainedRegions, i32 %regions, i32 %regions_16, i32 %regions_32, i32 %regions_1, i32 %regions_17, i32 %regions_33, i32 %regions_2, i32 %regions_18, i32 %regions_34, i32 %regions_3, i32 %regions_19, i32 %regions_35, i32 %regions_4, i32 %regions_20, i32 %regions_36, i32 %regions_5, i32 %regions_21, i32 %regions_37, i32 %regions_6, i32 %regions_22, i32 %regions_38, i32 %regions_7, i32 %regions_23, i32 %regions_39, i32 %regions_8, i32 %regions_24, i32 %regions_40, i32 %regions_9, i32 %regions_25, i32 %regions_41, i32 %regions_10, i32 %regions_26, i32 %regions_42, i32 %regions_11, i32 %regions_27, i32 %regions_43, i32 %regions_12, i32 %regions_28, i32 %regions_44, i32 %regions_13, i32 %regions_29, i32 %regions_45, i32 %regions_14, i32 %regions_30, i32 %regions_46, i32 %regions_15, i32 %regions_31, i32 %regions_47"   --->   Operation 11 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 12 [2/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_721_3, i8 %n_regions_in, i8 %n_regions_V"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%spectopmodule_ln642 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_3" [detector_solid/abs_solid_detector.cpp:642]   --->   Operation 7 'spectopmodule' 'spectopmodule_ln642' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln642 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_15, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0" [detector_solid/abs_solid_detector.cpp:642]   --->   Operation 8 'specinterface' 'specinterface_ln642' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_4, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_6, void @empty_7, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 11 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %errorInTask"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_4, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_6, void @empty_0, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 15 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %outcomeInRam"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %testStream, void @empty_8, i32 1, i32 1, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %testStream"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %trainStream, void @empty_8, i32 1, i32 1, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %trainStream"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %trainedRegions, void @empty_4, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_6, void @empty_14, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %trainedRegions, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %trainedRegions, i64 666, i64 207, i64 1"   --->   Operation 23 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %trainedRegions"   --->   Operation 24 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %n_regions_in, void @empty_4, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_6, void @empty_2, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %n_regions_in, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %n_regions_in, i64 666, i64 207, i64 1"   --->   Operation 27 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %n_regions_in"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_8, i32 1, i32 1, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %toScheduler"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_4, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_6, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 32 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2, i32 %trainedRegions, i32 %regions, i32 %regions_16, i32 %regions_32, i32 %regions_1, i32 %regions_17, i32 %regions_33, i32 %regions_2, i32 %regions_18, i32 %regions_34, i32 %regions_3, i32 %regions_19, i32 %regions_35, i32 %regions_4, i32 %regions_20, i32 %regions_36, i32 %regions_5, i32 %regions_21, i32 %regions_37, i32 %regions_6, i32 %regions_22, i32 %regions_38, i32 %regions_7, i32 %regions_23, i32 %regions_39, i32 %regions_8, i32 %regions_24, i32 %regions_40, i32 %regions_9, i32 %regions_25, i32 %regions_41, i32 %regions_10, i32 %regions_26, i32 %regions_42, i32 %regions_11, i32 %regions_27, i32 %regions_43, i32 %regions_12, i32 %regions_28, i32 %regions_44, i32 %regions_13, i32 %regions_29, i32 %regions_45, i32 %regions_14, i32 %regions_30, i32 %regions_46, i32 %regions_15, i32 %regions_31, i32 %regions_47"   --->   Operation 33 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 34 [1/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_694_3, i8 %n_regions_in, i8 %n_regions_V"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln626 = br void %while.body.i" [detector_solid/abs_solid_detector.cpp:626]   --->   Operation 35 'br' 'br_ln626' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%spectopmodule_ln668 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_11" [detector_solid/abs_solid_detector.cpp:668]   --->   Operation 13 'spectopmodule' 'spectopmodule_ln668' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln668 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_12, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0" [detector_solid/abs_solid_detector.cpp:668]   --->   Operation 14 'specinterface' 'specinterface_ln668' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %t, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_9, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %t, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %t, i64 666, i64 207, i64 1"   --->   Operation 17 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %t"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_20, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 21 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %errorInTask"   --->   Operation 22 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_8, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 25 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %outcomeInRam"   --->   Operation 26 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %testStream, void @empty_7, i32 1, i32 1, void @empty_6, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %testStream"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %trainStream, void @empty_7, i32 1, i32 1, void @empty_6, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i288 %trainStream"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %trainedRegions, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_16, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %trainedRegions, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i32 %trainedRegions, i64 666, i64 207, i64 1"   --->   Operation 33 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %trainedRegions"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %n_regions_in, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_15, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %n_regions_in, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %n_regions_in, i64 666, i64 207, i64 1"   --->   Operation 37 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %n_regions_in"   --->   Operation 38 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_7, i32 1, i32 1, void @empty_6, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %toScheduler"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_5, i32 0, i32 0, void @empty_10, i32 0, i32 0, void @empty_19, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 42 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2, i32 %trainedRegions, i32 %regions, i32 %regions_16, i32 %regions_32, i32 %regions_1, i32 %regions_17, i32 %regions_33, i32 %regions_2, i32 %regions_18, i32 %regions_34, i32 %regions_3, i32 %regions_19, i32 %regions_35, i32 %regions_4, i32 %regions_20, i32 %regions_36, i32 %regions_5, i32 %regions_21, i32 %regions_37, i32 %regions_6, i32 %regions_22, i32 %regions_38, i32 %regions_7, i32 %regions_23, i32 %regions_39, i32 %regions_8, i32 %regions_24, i32 %regions_40, i32 %regions_9, i32 %regions_25, i32 %regions_41, i32 %regions_10, i32 %regions_26, i32 %regions_42, i32 %regions_11, i32 %regions_27, i32 %regions_43, i32 %regions_12, i32 %regions_28, i32 %regions_44, i32 %regions_13, i32 %regions_29, i32 %regions_45, i32 %regions_14, i32 %regions_30, i32 %regions_46, i32 %regions_15, i32 %regions_31, i32 %regions_47"   --->   Operation 43 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 44 [1/2] (0.00ns)   --->   "%call_ln0 = call void @run_Pipeline_VITIS_LOOP_721_3, i8 %n_regions_in, i8 %n_regions_V"   --->   Operation 44 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%errorInTask_addr = getelementptr i1 %errorInTask, i64 0, i64 0" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 45 'getelementptr' 'errorInTask_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln611 = br void %for.cond.i.i" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 46 'br' 'br_ln611' <Predicate = true> <Delay = 0.00>
 
-State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 36 [2/2] (0.00ns)   --->   "%call_ln630 = call void @runTestAfterInit, i288 %testStream, i288 %outcomeInRam, i8 %toScheduler, i1 %errorInTask, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47" [detector_solid/abs_solid_detector.cpp:630]   --->   Operation 36 'call' 'call_ln630' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 37 [2/2] (0.00ns)   --->   "%call_ln631 = call void @runTrainAfterInit, i288 %trainStream, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:631]   --->   Operation 37 'call' 'call_ln631' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 47 [2/2] (2.32ns)   --->   "%errorInTask_load = load i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 47 'load' 'errorInTask_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
 
-State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%specloopname_ln626 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16" [detector_solid/abs_solid_detector.cpp:626]   --->   Operation 38 'specloopname' 'specloopname_ln626' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln630 = call void @runTestAfterInit, i288 %testStream, i288 %outcomeInRam, i8 %toScheduler, i1 %errorInTask, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47" [detector_solid/abs_solid_detector.cpp:630]   --->   Operation 39 'call' 'call_ln630' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_4 : Operation 40 [1/2] (0.00ns)   --->   "%call_ln631 = call void @runTrainAfterInit, i288 %trainStream, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:631]   --->   Operation 40 'call' 'call_ln631' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln625 = br void %while.body.i" [detector_solid/abs_solid_detector.cpp:625]   --->   Operation 41 'br' 'br_ln625' <Predicate = true> <Delay = 0.00>
+State 4 <SV = 3> <Delay = 2.32>
+ST_4 : Operation 48 [1/2] (2.32ns)   --->   "%errorInTask_load = load i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 48 'load' 'errorInTask_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln611 = br i1 %errorInTask_load, void %_Z11runTestLoopRN3hls6streamI10controlStrLi0EEEP10OutcomeStrRNS0_I7ap_uintILi8EELi0EEEPbPA16_8REGION_TPS7_SA_.exit.i, void %for.body.i.i" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 49 'br' 'br_ln611' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%errorInTask_addr_1 = getelementptr i1 %errorInTask, i64 0, i64 1"   --->   Operation 50 'getelementptr' 'errorInTask_addr_1' <Predicate = (!errorInTask_load)> <Delay = 0.00>
+ST_4 : Operation 51 [2/2] (2.32ns)   --->   "%errorInTask_load_1 = load i4 %errorInTask_addr_1"   --->   Operation 51 'load' 'errorInTask_load_1' <Predicate = (!errorInTask_load)> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 52 [2/2] (0.00ns)   --->   "%call_ln612 = call void @runTestAfterInit, i288 %testStream, i288 %outcomeInRam, i8 %toScheduler, i1 %errorInTask, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47" [detector_solid/abs_solid_detector.cpp:612]   --->   Operation 52 'call' 'call_ln612' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specloopname_ln612 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [detector_solid/abs_solid_detector.cpp:612]   --->   Operation 53 'specloopname' 'specloopname_ln612' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/2] (0.00ns)   --->   "%call_ln612 = call void @runTestAfterInit, i288 %testStream, i288 %outcomeInRam, i8 %toScheduler, i1 %errorInTask, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47" [detector_solid/abs_solid_detector.cpp:612]   --->   Operation 54 'call' 'call_ln612' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%br_ln611 = br void %for.cond.i.i" [detector_solid/abs_solid_detector.cpp:611]   --->   Operation 55 'br' 'br_ln611' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 2.32>
+ST_7 : Operation 56 [1/2] (2.32ns)   --->   "%errorInTask_load_1 = load i4 %errorInTask_addr_1"   --->   Operation 56 'load' 'errorInTask_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln617 = br i1 %errorInTask_load_1, void %_Z7runningPbP10OutcomeStrRN3hls6streamI10controlStrLi0EEES6_PA16_8REGION_TP7ap_uintILi8EERNS3_ISB_Li0EEE.exit, void %for.cond.i1.i.preheader" [detector_solid/abs_solid_detector.cpp:617]   --->   Operation 57 'br' 'br_ln617' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln618 = br void %for.cond.i1.i" [detector_solid/abs_solid_detector.cpp:618]   --->   Operation 58 'br' 'br_ln618' <Predicate = (errorInTask_load_1)> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 0.00>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%ret_ln734 = ret" [detector_solid/abs_solid_detector.cpp:734]   --->   Operation 59 'ret' 'ret_ln734' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 5> <Delay = 0.00>
+ST_9 : Operation 60 [2/2] (0.00ns)   --->   "%call_ln618 = call void @runTrainAfterInit, i288 %trainStream, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:618]   --->   Operation 60 'call' 'call_ln618' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 6> <Delay = 0.00>
+ST_10 : Operation 61 [1/1] (0.00ns)   --->   "%specloopname_ln618 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14" [detector_solid/abs_solid_detector.cpp:618]   --->   Operation 61 'specloopname' 'specloopname_ln618' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 62 [1/2] (0.00ns)   --->   "%call_ln618 = call void @runTrainAfterInit, i288 %trainStream, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i32 %regions_6, i32 %regions_7, i32 %regions_8, i32 %regions_9, i32 %regions_10, i32 %regions_11, i32 %regions_12, i32 %regions_13, i32 %regions_14, i32 %regions_15, i32 %regions_16, i32 %regions_17, i32 %regions_18, i32 %regions_19, i32 %regions_20, i32 %regions_21, i32 %regions_22, i32 %regions_23, i32 %regions_24, i32 %regions_25, i32 %regions_26, i32 %regions_27, i32 %regions_28, i32 %regions_29, i32 %regions_30, i32 %regions_31, i32 %regions_32, i32 %regions_33, i32 %regions_34, i32 %regions_35, i32 %regions_36, i32 %regions_37, i32 %regions_38, i32 %regions_39, i32 %regions_40, i32 %regions_41, i32 %regions_42, i32 %regions_43, i32 %regions_44, i32 %regions_45, i32 %regions_46, i32 %regions_47, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:618]   --->   Operation 62 'call' 'call_ln618' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 63 [1/1] (0.00ns)   --->   "%br_ln617 = br void %for.cond.i1.i" [detector_solid/abs_solid_detector.cpp:617]   --->   Operation 63 'br' 'br_ln617' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -139,10 +174,31 @@ The critical path consists of the following:
  <State 2>: 0ns
 The critical path consists of the following:
 
- <State 3>: 0ns
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('errorInTask_load', detector_solid/abs_solid_detector.cpp:611) on array 'errorInTask' [93]  (2.32 ns)
+
+ <State 4>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('errorInTask_load', detector_solid/abs_solid_detector.cpp:611) on array 'errorInTask' [93]  (2.32 ns)
+
+ <State 5>: 0ns
 The critical path consists of the following:
 
- <State 4>: 0ns
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('errorInTask_load_1') on array 'errorInTask' [101]  (2.32 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
 The critical path consists of the following:
 
 
@@ -158,6 +214,12 @@ N/A
 	State 2
 	State 3
 	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
 
 
 ============================================================

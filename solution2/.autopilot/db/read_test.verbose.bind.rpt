@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_test'
 ================================================================
-* Date:           Tue Sep 27 19:09:47 2022
+* Date:           Tue Sep 27 20:01:09 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -132,7 +132,7 @@ ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%dout_AOV_addr_13 = getelementptr i
 ST_3 : Operation 47 [1/1] (2.32ns)   --->   "%store_ln145 = store i32 %bitcast_ln145_12, i3 %dout_AOV_addr_13" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 47 'store' 'store_ln145' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 
 State 4 <SV = 3> <Delay = 2.32>
-ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %testStream, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %testStream, void @empty_7, i32 0, i32 0, void @empty_6, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%bitcast_ln145_13 = bitcast i32 %tmp_55" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 49 'bitcast' 'bitcast_ln145_13' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%dout_AOV_addr_14 = getelementptr i32 %contr_AOV, i64 0, i64 6" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 50 'getelementptr' 'dout_AOV_addr_14' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 51 [1/1] (2.32ns)   --->   "%store_ln145 = store i32 %bitcast_ln145_13, i3 %dout_AOV_addr_14" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 51 'store' 'store_ln145' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
@@ -150,7 +150,7 @@ ST_5 : Operation 60 [1/1] (1.73ns)   --->   "%empty = add i4 %loop_index_load, i
 ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond1, void %load-store-loop.split, void %memcpy-split"   --->   Operation 61 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%dout_AOV_addr_16 = getelementptr i32 %contr_AOV, i64 0, i64 %loop_index_cast1"   --->   Operation 62 'getelementptr' 'dout_AOV_addr_16' <Predicate = (!exitcond1)> <Delay = 0.00>
 ST_5 : Operation 63 [2/2] (2.32ns)   --->   "%dout_AOV_load = load i3 %dout_AOV_addr_16"   --->   Operation 63 'load' 'dout_AOV_load' <Predicate = (!exitcond1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
-ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%empty_54 = trunc i4 %loop_index_load"   --->   Operation 64 'trunc' 'empty_54' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%empty_56 = trunc i4 %loop_index_load"   --->   Operation 64 'trunc' 'empty_56' <Predicate = (!exitcond1)> <Delay = 0.00>
 ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%data_c21_0_load = load i32 %data_c21_0" [detector_solid/abs_solid_detector.cpp:476]   --->   Operation 65 'load' 'data_c21_0_load' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%data_1_c22_0_load = load i32 %data_1_c22_0" [detector_solid/abs_solid_detector.cpp:476]   --->   Operation 66 'load' 'data_1_c22_0_load' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%data_2_c23_0_load = load i32 %data_2_c23_0" [detector_solid/abs_solid_detector.cpp:476]   --->   Operation 67 'load' 'data_2_c23_0_load' <Predicate = (exitcond1)> <Delay = 0.00>
@@ -174,23 +174,23 @@ ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%ret_ln476 = ret i288 %mrv_s" [dete
 
 State 6 <SV = 5> <Delay = 2.32>
 ST_6 : Operation 85 [1/2] (2.32ns)   --->   "%dout_AOV_load = load i3 %dout_AOV_addr_16"   --->   Operation 85 'load' 'dout_AOV_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
-ST_6 : Operation 86 [1/1] (0.95ns)   --->   "%switch_ln0 = switch i3 %empty_54, void %.case.7, i3 0, void %load-store-loop.split..exit_crit_edge, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6"   --->   Operation 86 'switch' 'switch_ln0' <Predicate = true> <Delay = 0.95>
-ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_6_c27_0"   --->   Operation 87 'store' 'store_ln0' <Predicate = (empty_54 == 6)> <Delay = 0.00>
-ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 88 'br' 'br_ln0' <Predicate = (empty_54 == 6)> <Delay = 0.00>
-ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_5_c26_0"   --->   Operation 89 'store' 'store_ln0' <Predicate = (empty_54 == 5)> <Delay = 0.00>
-ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 90 'br' 'br_ln0' <Predicate = (empty_54 == 5)> <Delay = 0.00>
-ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_4_c25_0"   --->   Operation 91 'store' 'store_ln0' <Predicate = (empty_54 == 4)> <Delay = 0.00>
-ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 92 'br' 'br_ln0' <Predicate = (empty_54 == 4)> <Delay = 0.00>
-ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_3_c24_0"   --->   Operation 93 'store' 'store_ln0' <Predicate = (empty_54 == 3)> <Delay = 0.00>
-ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 94 'br' 'br_ln0' <Predicate = (empty_54 == 3)> <Delay = 0.00>
-ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_2_c23_0"   --->   Operation 95 'store' 'store_ln0' <Predicate = (empty_54 == 2)> <Delay = 0.00>
-ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 96 'br' 'br_ln0' <Predicate = (empty_54 == 2)> <Delay = 0.00>
-ST_6 : Operation 97 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_1_c22_0"   --->   Operation 97 'store' 'store_ln0' <Predicate = (empty_54 == 1)> <Delay = 0.00>
-ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 98 'br' 'br_ln0' <Predicate = (empty_54 == 1)> <Delay = 0.00>
-ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_c21_0"   --->   Operation 99 'store' 'store_ln0' <Predicate = (empty_54 == 0)> <Delay = 0.00>
-ST_6 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 100 'br' 'br_ln0' <Predicate = (empty_54 == 0)> <Delay = 0.00>
-ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_7_c28_0"   --->   Operation 101 'store' 'store_ln0' <Predicate = (empty_54 == 7)> <Delay = 0.00>
-ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 102 'br' 'br_ln0' <Predicate = (empty_54 == 7)> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.95ns)   --->   "%switch_ln0 = switch i3 %empty_56, void %.case.7, i3 0, void %load-store-loop.split..exit_crit_edge, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6"   --->   Operation 86 'switch' 'switch_ln0' <Predicate = true> <Delay = 0.95>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_6_c27_0"   --->   Operation 87 'store' 'store_ln0' <Predicate = (empty_56 == 6)> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 88 'br' 'br_ln0' <Predicate = (empty_56 == 6)> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_5_c26_0"   --->   Operation 89 'store' 'store_ln0' <Predicate = (empty_56 == 5)> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 90 'br' 'br_ln0' <Predicate = (empty_56 == 5)> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_4_c25_0"   --->   Operation 91 'store' 'store_ln0' <Predicate = (empty_56 == 4)> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 92 'br' 'br_ln0' <Predicate = (empty_56 == 4)> <Delay = 0.00>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_3_c24_0"   --->   Operation 93 'store' 'store_ln0' <Predicate = (empty_56 == 3)> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 94 'br' 'br_ln0' <Predicate = (empty_56 == 3)> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_2_c23_0"   --->   Operation 95 'store' 'store_ln0' <Predicate = (empty_56 == 2)> <Delay = 0.00>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 96 'br' 'br_ln0' <Predicate = (empty_56 == 2)> <Delay = 0.00>
+ST_6 : Operation 97 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_1_c22_0"   --->   Operation 97 'store' 'store_ln0' <Predicate = (empty_56 == 1)> <Delay = 0.00>
+ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 98 'br' 'br_ln0' <Predicate = (empty_56 == 1)> <Delay = 0.00>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_c21_0"   --->   Operation 99 'store' 'store_ln0' <Predicate = (empty_56 == 0)> <Delay = 0.00>
+ST_6 : Operation 100 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 100 'br' 'br_ln0' <Predicate = (empty_56 == 0)> <Delay = 0.00>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%store_ln0 = store i32 %dout_AOV_load, i32 %data_7_c28_0"   --->   Operation 101 'store' 'store_ln0' <Predicate = (empty_56 == 7)> <Delay = 0.00>
+ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.exit"   --->   Operation 102 'br' 'br_ln0' <Predicate = (empty_56 == 7)> <Delay = 0.00>
 ST_6 : Operation 103 [1/1] (1.58ns)   --->   "%store_ln0 = store i4 %empty, i4 %loop_index"   --->   Operation 103 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
 ST_6 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop"   --->   Operation 104 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
@@ -269,7 +269,7 @@ speclooptripcount_ln0 (speclooptripcount) [ 0000000]
 empty                 (add              ) [ 0000001]
 br_ln0                (br               ) [ 0000000]
 dout_AOV_addr_16      (getelementptr    ) [ 0000001]
-empty_54              (trunc            ) [ 0000001]
+empty_56              (trunc            ) [ 0000001]
 data_c21_0_load       (load             ) [ 0000000]
 data_1_c22_0_load     (load             ) [ 0000000]
 data_2_c23_0_load     (load             ) [ 0000000]
@@ -626,7 +626,7 @@ br_ln0                (br               ) [ 0000000]
 <pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_8"/></StgValue>
+<StgValue><ssdm name="empty_7"/></StgValue>
 </bind>
 </comp>
 
@@ -644,7 +644,7 @@ br_ln0                (br               ) [ 0000000]
 <pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_6"/></StgValue>
 </bind>
 </comp>
 
@@ -653,7 +653,7 @@ br_ln0                (br               ) [ 0000000]
 <pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_5"/></StgValue>
+<StgValue><ssdm name="empty_10"/></StgValue>
 </bind>
 </comp>
 
@@ -1345,14 +1345,14 @@ br_ln0                (br               ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="397" class="1004" name="empty_54_fu_397">
+<comp id="397" class="1004" name="empty_56_fu_397">
 <pin_list>
 <pin id="398" dir="0" index="0" bw="4" slack="0"/>
 <pin id="399" dir="1" index="1" bw="3" slack="1"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="empty_54/5 "/>
+<opset="empty_56/5 "/>
 </bind>
 </comp>
 
@@ -1884,13 +1884,13 @@ br_ln0                (br               ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="645" class="1005" name="empty_54_reg_645">
+<comp id="645" class="1005" name="empty_56_reg_645">
 <pin_list>
 <pin id="646" dir="0" index="0" bw="3" slack="1"/>
 <pin id="647" dir="1" index="1" bw="3" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="empty_54 "/>
+<opset="empty_56 "/>
 </bind>
 </comp>
 
@@ -2285,7 +2285,7 @@ br_ln0                (br               ) [ 0000000]
 		br_ln0 : 2
 		dout_AOV_addr_16 : 2
 		dout_AOV_load : 3
-		empty_54 : 1
+		empty_56 : 1
 		mrv_1 : 1
 		mrv_2 : 2
 		mrv_3 : 3
@@ -2323,7 +2323,7 @@ br_ln0                (br               ) [ 0000000]
 |   read   | testStream_read_read_fu_146 |    0    |    0    |
 |----------|-----------------------------|---------|---------|
 |   trunc  |     tmp_checkId_V_fu_234    |    0    |    0    |
-|          |       empty_54_fu_397       |    0    |    0    |
+|          |       empty_56_fu_397       |    0    |    0    |
 |----------|-----------------------------|---------|---------|
 |          |     tmp_taskId_V_fu_238     |    0    |    0    |
 |          |      tmp_uniId_V_fu_248     |    0    |    0    |
@@ -2375,7 +2375,7 @@ Memories:
 |  data_7_c28_0_reg_581  |   32   |
 |   data_c21_0_reg_539   |   32   |
 |dout_AOV_addr_16_reg_640|    3   |
-|    empty_54_reg_645    |    3   |
+|    empty_56_reg_645    |    3   |
 |      empty_reg_635     |    4   |
 |   loop_index_reg_532   |    4   |
 |     tmp_51_reg_602     |   32   |

@@ -1291,7 +1291,7 @@ wire   [31:0] tmp_6_i_fu_5193_p18;
 wire   [31:0] tmp_7_6_i_fu_5215_p18;
 wire   [31:0] tmp_8_6_i_fu_5237_p18;
 wire   [31:0] tmp_10_6_i_fu_5259_p18;
-wire   [31:0] tmp_7_i_57_fu_5281_p18;
+wire   [31:0] tmp_7_i_59_fu_5281_p18;
 wire   [31:0] tmp_7_7_i_fu_5303_p18;
 wire   [31:0] tmp_8_7_i_fu_5325_p18;
 wire   [31:0] tmp_10_7_i_fu_5347_p18;
@@ -2215,7 +2215,7 @@ run_fsub_32ns_32ns_32_4_full_dsp_1 #(
 fsub_32ns_32ns_32_4_full_dsp_1_U755(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(tmp_7_i_57_fu_5281_p18),
+    .din0(tmp_7_i_59_fu_5281_p18),
     .din1(tmp_7_7_i_fu_5303_p18),
     .ce(1'b1),
     .dout(grp_fu_3252_p2)
@@ -4844,7 +4844,7 @@ mux_1632_32_1_1_U852(
     .din14(regions_46_load_14),
     .din15(regions_47_load_14),
     .din16(i_real_3_reg_8534_pp0_iter4_reg),
-    .dout(tmp_7_i_57_fu_5281_p18)
+    .dout(tmp_7_i_59_fu_5281_p18)
 );
 
 run_mux_1632_32_1_1 #(

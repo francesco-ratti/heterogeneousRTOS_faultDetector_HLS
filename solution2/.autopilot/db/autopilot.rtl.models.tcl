@@ -1,12 +1,12 @@
 set SynModuleInfo {
-  {SRCNAME run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2 MODELNAME run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2 RTLNAME run_run_Pipeline_VITIS_LOOP_686_1_VITIS_LOOP_688_2
+  {SRCNAME run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2 MODELNAME run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2 RTLNAME run_run_Pipeline_VITIS_LOOP_713_1_VITIS_LOOP_715_2
     SUBMODULES {
       {MODELNAME run_mul_64ns_66ns_81_1_1 RTLNAME run_mul_64ns_66ns_81_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME run_mul_64ns_66ns_129_1_1 RTLNAME run_mul_64ns_66ns_129_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME run_flow_control_loop_pipe_sequential_init RTLNAME run_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME run_flow_control_loop_pipe_sequential_init_U}
     }
   }
-  {SRCNAME run_Pipeline_VITIS_LOOP_694_3 MODELNAME run_Pipeline_VITIS_LOOP_694_3 RTLNAME run_run_Pipeline_VITIS_LOOP_694_3}
+  {SRCNAME run_Pipeline_VITIS_LOOP_721_3 MODELNAME run_Pipeline_VITIS_LOOP_721_3 RTLNAME run_run_Pipeline_VITIS_LOOP_721_3}
   {SRCNAME read_test MODELNAME read_test RTLNAME run_read_test
     SUBMODULES {
       {MODELNAME run_read_test_contr_AOV_RAM_AUTO_1R1W RTLNAME run_read_test_contr_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}

@@ -8294,7 +8294,7 @@ lor.rhs.i:95 %regions_15_load_1 = load i9 %regions_15_addr_1
 
 <Node id="504" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12
+for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln72"/></StgValue>

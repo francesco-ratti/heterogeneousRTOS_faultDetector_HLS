@@ -30264,41 +30264,56 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
    n_regions[checkId],
    data);
 }
-# 620 "detector_solid/abs_solid_detector.cpp"
+# 609 "detector_solid/abs_solid_detector.cpp"
+void runTestLoop (hls::stream< controlStr > &testStream, OutcomeStr outcomeInRam[16], hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[16],
+  region_t regions[64][16], ap_uint<8> n_regions[64], bool errorsInTask[16]) {
+ VITIS_LOOP_611_1: for (;errorsInTask[0];)
+  runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+
+}
+void runTrainLoop (bool errorInTask, hls::stream< controlStr > &trainStream,
+  region_t regions[64][16], ap_uint<8> n_regions[64], bool errorsInTask[16]) {
+ VITIS_LOOP_617_1: for (;errorsInTask[1];)
+  runTrainAfterInit(trainStream, regions, n_regions);
+}
 void running (bool errorInTask[16], OutcomeStr outcomeInRam[16], hls::stream< controlStr > &testStream,
   hls::stream< controlStr > &trainStream,
   region_t regions[64][16], ap_uint<8> n_regions[64], hls::stream< ap_uint<8> > &toScheduler) {
+# 632 "detector_solid/abs_solid_detector.cpp"
+#pragma HLS DEPENDENCE variable=regions dependent=false
+#pragma HLS DEPENDENCE variable=n_regions dependent=false
 
-
- VITIS_LOOP_625_1: while(1) {
+ runTestLoop(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions, errorInTask );
 #pragma HLS DEPENDENCE variable=regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=regions type=intra dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
- runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-  runTrainAfterInit(trainStream, regions, n_regions);
+
+
+ runTrainLoop(errorInTask, trainStream, regions, n_regions, errorInTask);
 #pragma HLS DEPENDENCE variable=regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
 #pragma HLS DEPENDENCE variable=regions type=intra dependent=false
 #pragma HLS DEPENDENCE variable=n_regions type=intra dependent=false
- }
+
 }
-
+# 665 "detector_solid/abs_solid_detector.cpp"
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
 
-__attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr outcomeInRam[16], hls::stream< controlStr > &testStream,
+__attribute__((sdx_kernel("run", 0))) void run(int t[2], bool errorInTask[16], OutcomeStr outcomeInRam[16], hls::stream< controlStr > &testStream,
   hls::stream< controlStr > &trainStream,
   region_t trainedRegions[64][16], ap_uint<8> n_regions_in[64], hls::stream< ap_uint<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 644 "detector_solid/abs_solid_detector.cpp"
+# 670 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution2/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 644 "detector_solid/abs_solid_detector.cpp"
+# 670 "detector_solid/abs_solid_detector.cpp"
 
 #pragma HLS interface s_axilite port = trainedRegions
+#pragma HLS interface s_axilite port = t
 #pragma HLS interface s_axilite port = n_regions_in
 #pragma HLS interface s_axilite port = errorInTask
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
@@ -30307,23 +30322,26 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
 #pragma HLS INTERFACE axis port=toScheduler
 
 #pragma HLS array_partition variable=regions complete dim=2
-# 686 "detector_solid/abs_solid_detector.cpp"
- VITIS_LOOP_686_1: for (int i=0; i<64; i++) {
+# 713 "detector_solid/abs_solid_detector.cpp"
+ VITIS_LOOP_713_1: for (int i=0; i<64; i++) {
 
-   VITIS_LOOP_688_2: for (int j=0; j<16; j++) {
+   VITIS_LOOP_715_2: for (int j=0; j<16; j++) {
 
     regions [i][j] = trainedRegions [i][j];
    }
   }
 
-  VITIS_LOOP_694_3: for (int i=0; i<64; i++) {
+  VITIS_LOOP_721_3: for (int i=0; i<64; i++) {
 
    n_regions [i] = n_regions_in [i];
   }
 
 
 
+
   running(errorInTask, outcomeInRam, testStream,
     trainStream,
     regions, n_regions, toScheduler);
+
+
  }

@@ -189,8 +189,25 @@ static AESL_RUNTIME_BC __xlx_toScheduler_V_size_Reader("../tv/stream_size/stream
 struct __cosim_s36__ { char data[36]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void run(char*, __cosim_s64__*, __cosim_s36__*, __cosim_s36__*, int*, char*, __cosim_s1__*);
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_testStream, volatile void * __xlx_apatb_param_trainStream, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void run(int*, char*, __cosim_s64__*, __cosim_s36__*, __cosim_s36__*, int*, char*, __cosim_s1__*);
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_t, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_testStream, volatile void * __xlx_apatb_param_trainStream, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+  // Collect __xlx_t__tmp_vec
+  vector<sc_bv<32> >__xlx_t__tmp_vec;
+  for (int j = 0, e = 2; j != e; ++j) {
+    sc_bv<32> _xlx_tmp_sc;
+    _xlx_tmp_sc.range(7, 0) = ((char*)__xlx_apatb_param_t)[j*4+0];
+    _xlx_tmp_sc.range(15, 8) = ((char*)__xlx_apatb_param_t)[j*4+1];
+    _xlx_tmp_sc.range(23, 16) = ((char*)__xlx_apatb_param_t)[j*4+2];
+    _xlx_tmp_sc.range(31, 24) = ((char*)__xlx_apatb_param_t)[j*4+3];
+    __xlx_t__tmp_vec.push_back(_xlx_tmp_sc);
+  }
+  int __xlx_size_param_t = 2;
+  int __xlx_offset_param_t = 0;
+  int __xlx_offset_byte_param_t = 0*4;
+  int* __xlx_t__input_buffer= new int[__xlx_t__tmp_vec.size()];
+  for (int i = 0; i < __xlx_t__tmp_vec.size(); ++i) {
+    __xlx_t__input_buffer[i] = __xlx_t__tmp_vec[i].range(31, 0).to_uint64();
+  }
   // Collect __xlx_errorInTask__tmp_vec
   vector<sc_bv<1> >__xlx_errorInTask__tmp_vec;
   for (int j = 0, e = 16; j != e; ++j) {
@@ -292,7 +309,18 @@ auto* strainStream = bcsim::createStream((hls::stream<__cosim_s36__>*)__xlx_apat
   __cosim_s1__* __xlx_toScheduler_input_buffer= new __cosim_s1__[ap_apatb_toScheduler_cap_bc];
 auto* stoScheduler = bcsim::createStream((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler);
   // DUT call
-  run(__xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, stestStream->data<__cosim_s36__>(), strainStream->data<__cosim_s36__>(), __xlx_trainedRegions__input_buffer, __xlx_n_regions_in__input_buffer, stoScheduler->data<__cosim_s1__>());
+  run(__xlx_t__input_buffer, __xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, stestStream->data<__cosim_s36__>(), strainStream->data<__cosim_s36__>(), __xlx_trainedRegions__input_buffer, __xlx_n_regions_in__input_buffer, stoScheduler->data<__cosim_s1__>());
+// print __xlx_apatb_param_t
+  sc_bv<32>*__xlx_t_output_buffer = new sc_bv<32>[__xlx_size_param_t];
+  for (int i = 0; i < __xlx_size_param_t; ++i) {
+    __xlx_t_output_buffer[i] = __xlx_t__input_buffer[i+__xlx_offset_param_t];
+  }
+  for (int i = 0; i < __xlx_size_param_t; ++i) {
+    ((char*)__xlx_apatb_param_t)[i*4+0] = __xlx_t_output_buffer[i].range(7, 0).to_uint();
+    ((char*)__xlx_apatb_param_t)[i*4+1] = __xlx_t_output_buffer[i].range(15, 8).to_uint();
+    ((char*)__xlx_apatb_param_t)[i*4+2] = __xlx_t_output_buffer[i].range(23, 16).to_uint();
+    ((char*)__xlx_apatb_param_t)[i*4+3] = __xlx_t_output_buffer[i].range(31, 24).to_uint();
+  }
 // print __xlx_apatb_param_errorInTask
   sc_bv<1>*__xlx_errorInTask_output_buffer = new sc_bv<1>[__xlx_size_param_errorInTask];
   for (int i = 0; i < __xlx_size_param_errorInTask; ++i) {

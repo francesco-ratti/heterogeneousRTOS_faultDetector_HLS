@@ -8294,7 +8294,7 @@ lor.rhs.i:95 %regions_15_load_1 = load i9 %regions_15_addr_1
 
 <Node id="504" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12
+for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln72"/></StgValue>
@@ -22428,7 +22428,7 @@ run_test.exit:1 %ret_ln547 = ret i1 %error_0
 </dataflow>
 <dataflow id="2900" from="_ssdm_op_SpecLoopName" to="specloopname_ln72" fromId="2899" toId="550">
 </dataflow>
-<dataflow id="2902" from="empty_12" to="specloopname_ln72" fromId="2901" toId="550">
+<dataflow id="2902" from="empty_3" to="specloopname_ln72" fromId="2901" toId="550">
 </dataflow>
 <dataflow id="2903" from="p_x_assign" to="cmp_i_i_i" fromId="445" toId="551">
 </dataflow>

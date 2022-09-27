@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome'
 ================================================================
-* Date:           Tue Sep 27 19:09:50 2022
+* Date:           Tue Sep 27 20:01:13 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -112,9 +112,9 @@ ST_1 : Operation 30 [1/1] (2.32ns)   --->   "%outcome_AOV = alloca i64 1" [detec
 ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%errorInTask1_cast_i = zext i4 %p_read63"   --->   Operation 31 'zext' 'errorInTask1_cast_i' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 32 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 33 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_0, i32 0, i32 0, void @empty_10, i32 1, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_7, i32 0, i32 0, void @empty_6, i32 0, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 37 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 38 [1/1] (1.58ns)   --->   "%store_ln505 = store i4 0, i4 %loop_index3_i" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 38 'store' 'store_ln505' <Predicate = true> <Delay = 1.58>
 ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln505 = br void %load-store-loop2.i" [detector_solid/abs_solid_detector.cpp:505->detector_solid/abs_solid_detector.cpp:548]   --->   Operation 39 'br' 'br_ln505' <Predicate = true> <Delay = 0.00>
@@ -169,15 +169,15 @@ State 6 <SV = 5> <Delay = 5.57>
 ST_6 : Operation 78 [1/2] (2.32ns)   --->   "%outcome_AOV_load_6 = load i3 %outcome_AOV_addr_7"   --->   Operation 78 'load' 'outcome_AOV_load_6' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_6 : Operation 79 [1/2] (2.32ns)   --->   "%outcome_AOV_load_7 = load i3 %outcome_AOV_addr_8"   --->   Operation 79 'load' 'outcome_AOV_load_7' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%outcomeInRam_addr = getelementptr i288 %outcomeInRam, i64 0, i64 0"   --->   Operation 80 'getelementptr' 'outcomeInRam_addr' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%empty_36 = bitcast i32 %outcome_AOV_load"   --->   Operation 81 'bitcast' 'empty_36' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%empty_37 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 82 'bitcast' 'empty_37' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%empty_38 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 83 'bitcast' 'empty_38' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%empty_39 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 84 'bitcast' 'empty_39' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%empty_40 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 85 'bitcast' 'empty_40' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%empty_41 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 86 'bitcast' 'empty_41' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%empty_42 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 87 'bitcast' 'empty_42' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%empty_43 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 88 'bitcast' 'empty_43' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_43, i32 %empty_42, i32 %empty_41, i32 %empty_40, i32 %empty_39, i32 %empty_38, i32 %empty_37, i32 %empty_36, i16 %p_read_2, i8 0, i8 %p_read_4"   --->   Operation 89 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%empty_38 = bitcast i32 %outcome_AOV_load"   --->   Operation 81 'bitcast' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%empty_39 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 82 'bitcast' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%empty_40 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 83 'bitcast' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%empty_41 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 84 'bitcast' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%empty_42 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 85 'bitcast' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%empty_43 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 86 'bitcast' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%empty_44 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 87 'bitcast' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%empty_45 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 88 'bitcast' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_45, i32 %empty_44, i32 %empty_43, i32 %empty_42, i32 %empty_41, i32 %empty_40, i32 %empty_39, i32 %empty_38, i16 %p_read_2, i8 0, i8 %p_read_4"   --->   Operation 89 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 90 [2/2] (3.25ns)   --->   "%store_ln0 = store void @_ssdm_op_Write.bram.p0L_a9i32packedL, i4 %outcomeInRam_addr, i288 %tmp_35_i, i36 68719476733"   --->   Operation 90 'store' 'store_ln0' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 288> <Depth = 16> <RAM>
 
 State 7 <SV = 6> <Delay = 3.25>
@@ -283,14 +283,14 @@ outcome_AOV_addr_8         (getelementptr         ) [ 00000010]
 outcome_AOV_load_6         (load                  ) [ 00000000]
 outcome_AOV_load_7         (load                  ) [ 00000000]
 outcomeInRam_addr          (getelementptr         ) [ 00000001]
-empty_36                   (bitcast               ) [ 00000000]
-empty_37                   (bitcast               ) [ 00000000]
 empty_38                   (bitcast               ) [ 00000000]
 empty_39                   (bitcast               ) [ 00000000]
 empty_40                   (bitcast               ) [ 00000000]
 empty_41                   (bitcast               ) [ 00000000]
 empty_42                   (bitcast               ) [ 00000000]
 empty_43                   (bitcast               ) [ 00000000]
+empty_44                   (bitcast               ) [ 00000000]
+empty_45                   (bitcast               ) [ 00000000]
 tmp_35_i                   (bitconcatenate        ) [ 00000001]
 store_ln0                  (store                 ) [ 00000000]
 br_ln512                   (br                    ) [ 00000000]
@@ -613,7 +613,7 @@ ret_ln548                  (ret                   ) [ 00000000]
 <pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_0"/></StgValue>
 </bind>
 </comp>
 
@@ -622,7 +622,7 @@ ret_ln548                  (ret                   ) [ 00000000]
 <pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_5"/></StgValue>
+<StgValue><ssdm name="empty_10"/></StgValue>
 </bind>
 </comp>
 
@@ -631,7 +631,7 @@ ret_ln548                  (ret                   ) [ 00000000]
 <pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_8"/></StgValue>
+<StgValue><ssdm name="empty_7"/></StgValue>
 </bind>
 </comp>
 
@@ -640,7 +640,7 @@ ret_ln548                  (ret                   ) [ 00000000]
 <pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_6"/></StgValue>
 </bind>
 </comp>
 
@@ -1302,32 +1302,10 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="365" class="1004" name="empty_36_fu_365">
+<comp id="365" class="1004" name="empty_38_fu_365">
 <pin_list>
 <pin id="366" dir="0" index="0" bw="32" slack="3"/>
 <pin id="367" dir="1" index="1" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_36/6 "/>
-</bind>
-</comp>
-
-<comp id="368" class="1004" name="empty_37_fu_368">
-<pin_list>
-<pin id="369" dir="0" index="0" bw="32" slack="3"/>
-<pin id="370" dir="1" index="1" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_37/6 "/>
-</bind>
-</comp>
-
-<comp id="371" class="1004" name="empty_38_fu_371">
-<pin_list>
-<pin id="372" dir="0" index="0" bw="32" slack="2"/>
-<pin id="373" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1335,10 +1313,10 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="374" class="1004" name="empty_39_fu_374">
+<comp id="368" class="1004" name="empty_39_fu_368">
 <pin_list>
-<pin id="375" dir="0" index="0" bw="32" slack="2"/>
-<pin id="376" dir="1" index="1" bw="32" slack="0"/>
+<pin id="369" dir="0" index="0" bw="32" slack="3"/>
+<pin id="370" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1346,10 +1324,10 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="377" class="1004" name="empty_40_fu_377">
+<comp id="371" class="1004" name="empty_40_fu_371">
 <pin_list>
-<pin id="378" dir="0" index="0" bw="32" slack="1"/>
-<pin id="379" dir="1" index="1" bw="32" slack="0"/>
+<pin id="372" dir="0" index="0" bw="32" slack="2"/>
+<pin id="373" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1357,10 +1335,10 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="380" class="1004" name="empty_41_fu_380">
+<comp id="374" class="1004" name="empty_41_fu_374">
 <pin_list>
-<pin id="381" dir="0" index="0" bw="32" slack="1"/>
-<pin id="382" dir="1" index="1" bw="32" slack="0"/>
+<pin id="375" dir="0" index="0" bw="32" slack="2"/>
+<pin id="376" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1368,10 +1346,10 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="383" class="1004" name="empty_42_fu_383">
+<comp id="377" class="1004" name="empty_42_fu_377">
 <pin_list>
-<pin id="384" dir="0" index="0" bw="32" slack="0"/>
-<pin id="385" dir="1" index="1" bw="32" slack="0"/>
+<pin id="378" dir="0" index="0" bw="32" slack="1"/>
+<pin id="379" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
@@ -1379,14 +1357,36 @@ ret_ln548                  (ret                   ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="387" class="1004" name="empty_43_fu_387">
+<comp id="380" class="1004" name="empty_43_fu_380">
+<pin_list>
+<pin id="381" dir="0" index="0" bw="32" slack="1"/>
+<pin id="382" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="empty_43/6 "/>
+</bind>
+</comp>
+
+<comp id="383" class="1004" name="empty_44_fu_383">
+<pin_list>
+<pin id="384" dir="0" index="0" bw="32" slack="0"/>
+<pin id="385" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="empty_44/6 "/>
+</bind>
+</comp>
+
+<comp id="387" class="1004" name="empty_45_fu_387">
 <pin_list>
 <pin id="388" dir="0" index="0" bw="32" slack="0"/>
 <pin id="389" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="empty_43/6 "/>
+<opset="empty_45/6 "/>
 </bind>
 </comp>
 
@@ -2076,8 +2076,8 @@ ret_ln548                  (ret                   ) [ 00000000]
 		outcome_AOV_load_6 : 1
 		outcome_AOV_load_7 : 1
 	State 6
-		empty_42 : 1
-		empty_43 : 1
+		empty_44 : 1
+		empty_45 : 1
 		tmp_35_i : 2
 		store_ln0 : 3
 	State 7

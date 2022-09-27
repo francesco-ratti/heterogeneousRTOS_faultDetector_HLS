@@ -84,6 +84,101 @@ void XRun_DisableAutoRestart(XRun *InstancePtr) {
     XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_AP_CTRL, 0);
 }
 
+u32 XRun_Get_t_BaseAddress(XRun *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_BASE);
+}
+
+u32 XRun_Get_t_HighAddress(XRun *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_HIGH);
+}
+
+u32 XRun_Get_t_TotalBytes(XRun *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XRUN_CONTROL_ADDR_T_HIGH - XRUN_CONTROL_ADDR_T_BASE + 1);
+}
+
+u32 XRun_Get_t_BitWidth(XRun *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XRUN_CONTROL_WIDTH_T;
+}
+
+u32 XRun_Get_t_Depth(XRun *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XRUN_CONTROL_DEPTH_T;
+}
+
+u32 XRun_Write_t_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_T_HIGH - XRUN_CONTROL_ADDR_T_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XRun_Read_t_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_T_HIGH - XRUN_CONTROL_ADDR_T_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XRun_Write_t_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XRUN_CONTROL_ADDR_T_HIGH - XRUN_CONTROL_ADDR_T_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XRun_Read_t_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XRUN_CONTROL_ADDR_T_HIGH - XRUN_CONTROL_ADDR_T_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_T_BASE + offset + i);
+    }
+    return length;
+}
+
 u32 XRun_Get_errorInTask_BaseAddress(XRun *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -33,10 +33,15 @@ port (
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
+    t_address0            :in   STD_LOGIC_VECTOR(0 downto 0);
+    t_ce0                 :in   STD_LOGIC;
+    t_we0                 :in   STD_LOGIC;
+    t_d0                  :in   STD_LOGIC_VECTOR(31 downto 0);
     errorInTask_address0  :in   STD_LOGIC_VECTOR(3 downto 0);
     errorInTask_ce0       :in   STD_LOGIC;
     errorInTask_we0       :in   STD_LOGIC;
     errorInTask_d0        :in   STD_LOGIC_VECTOR(0 downto 0);
+    errorInTask_q0        :out  STD_LOGIC_VECTOR(0 downto 0);
     n_regions_in_address0 :in   STD_LOGIC_VECTOR(5 downto 0);
     n_regions_in_ce0      :in   STD_LOGIC;
     n_regions_in_q0       :out  STD_LOGIC_VECTOR(7 downto 0);
@@ -77,7 +82,10 @@ end entity run_control_s_axi;
 --           bit 1 - ap_ready (Read/COR)
 --           others - reserved
 -- 0x00010 ~
--- 0x0001f : Memory 'errorInTask' (16 * 1b)
+-- 0x00017 : Memory 't' (2 * 32b)
+--           Word n : bit [31:0] - t[n]
+-- 0x00020 ~
+-- 0x0002f : Memory 'errorInTask' (16 * 1b)
 --           Word n : bit [ 0: 0] - errorInTask[4n]
 --                    bit [ 8: 8] - errorInTask[4n+1]
 --                    bit [16:16] - errorInTask[4n+2]
@@ -121,8 +129,10 @@ architecture behave of run_control_s_axi is
     constant ADDR_GIE                 : INTEGER := 16#00004#;
     constant ADDR_IER                 : INTEGER := 16#00008#;
     constant ADDR_ISR                 : INTEGER := 16#0000c#;
-    constant ADDR_ERRORINTASK_BASE    : INTEGER := 16#00010#;
-    constant ADDR_ERRORINTASK_HIGH    : INTEGER := 16#0001f#;
+    constant ADDR_T_BASE              : INTEGER := 16#00010#;
+    constant ADDR_T_HIGH              : INTEGER := 16#00017#;
+    constant ADDR_ERRORINTASK_BASE    : INTEGER := 16#00020#;
+    constant ADDR_ERRORINTASK_HIGH    : INTEGER := 16#0002f#;
     constant ADDR_N_REGIONS_IN_BASE   : INTEGER := 16#00040#;
     constant ADDR_N_REGIONS_IN_HIGH   : INTEGER := 16#0007f#;
     constant ADDR_OUTCOMEINRAM_BASE   : INTEGER := 16#00400#;
@@ -159,12 +169,29 @@ architecture behave of run_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     -- memory signals
+    signal int_t_address0      : UNSIGNED(0 downto 0);
+    signal int_t_ce0           : STD_LOGIC;
+    signal int_t_be0           : UNSIGNED(3 downto 0);
+    signal int_t_d0            : UNSIGNED(31 downto 0);
+    signal int_t_q0            : UNSIGNED(31 downto 0);
+    signal int_t_address1      : UNSIGNED(0 downto 0);
+    signal int_t_ce1           : STD_LOGIC;
+    signal int_t_we1           : STD_LOGIC;
+    signal int_t_be1           : UNSIGNED(3 downto 0);
+    signal int_t_d1            : UNSIGNED(31 downto 0);
+    signal int_t_q1            : UNSIGNED(31 downto 0);
+    signal int_t_read          : STD_LOGIC;
+    signal int_t_write         : STD_LOGIC;
     signal int_errorInTask_address0 : UNSIGNED(1 downto 0);
     signal int_errorInTask_ce0 : STD_LOGIC;
     signal int_errorInTask_be0 : UNSIGNED(3 downto 0);
     signal int_errorInTask_d0  : UNSIGNED(31 downto 0);
+    signal int_errorInTask_q0  : UNSIGNED(31 downto 0);
     signal int_errorInTask_address1 : UNSIGNED(1 downto 0);
     signal int_errorInTask_ce1 : STD_LOGIC;
+    signal int_errorInTask_we1 : STD_LOGIC;
+    signal int_errorInTask_be1 : UNSIGNED(3 downto 0);
+    signal int_errorInTask_d1  : UNSIGNED(31 downto 0);
     signal int_errorInTask_q1  : UNSIGNED(31 downto 0);
     signal int_errorInTask_read : STD_LOGIC;
     signal int_errorInTask_write : STD_LOGIC;
@@ -239,11 +266,32 @@ architecture behave of run_control_s_axi is
 
 begin
 -- ----------------------- Instantiation------------------
+-- int_t
+int_t : run_control_s_axi_ram
+generic map (
+     MEM_STYLE => "auto",
+     MEM_TYPE  => "T2P",
+     BYTES     => 4,
+     DEPTH     => 2,
+     AWIDTH    => log2(2))
+port map (
+     clk0      => ACLK,
+     address0  => int_t_address0,
+     ce0       => int_t_ce0,
+     we0       => int_t_be0,
+     d0        => int_t_d0,
+     q0        => int_t_q0,
+     clk1      => ACLK,
+     address1  => int_t_address1,
+     ce1       => int_t_ce1,
+     we1       => int_t_be1,
+     d1        => int_t_d1,
+     q1        => int_t_q1);
 -- int_errorInTask
 int_errorInTask : run_control_s_axi_ram
 generic map (
      MEM_STYLE => "auto",
-     MEM_TYPE  => "S2P",
+     MEM_TYPE  => "T2P",
      BYTES     => 4,
      DEPTH     => 4,
      AWIDTH    => log2(4))
@@ -253,12 +301,12 @@ port map (
      ce0       => int_errorInTask_ce0,
      we0       => int_errorInTask_be0,
      d0        => int_errorInTask_d0,
-     q0        => open,
+     q0        => int_errorInTask_q0,
      clk1      => ACLK,
      address1  => int_errorInTask_address1,
      ce1       => int_errorInTask_ce1,
-     we1       => (others=>'0'),
-     d1        => (others=>'0'),
+     we1       => int_errorInTask_be1,
+     d1        => int_errorInTask_d1,
      q1        => int_errorInTask_q1);
 -- int_n_regions_in
 int_n_regions_in : run_control_s_axi_ram
@@ -390,7 +438,7 @@ port map (
     ARREADY <= ARREADY_t;
     RDATA   <= STD_LOGIC_VECTOR(rdata_data);
     RRESP   <= "00";  -- OKAY
-    RVALID_t  <= '1' when (rstate = rddata) and (int_errorInTask_read = '0') and (int_n_regions_in_read = '0') and (int_outcomeInRam_read = '0') and (int_trainedRegions_read = '0') else '0';
+    RVALID_t  <= '1' when (rstate = rddata) and (int_t_read = '0') and (int_errorInTask_read = '0') and (int_n_regions_in_read = '0') and (int_outcomeInRam_read = '0') and (int_trainedRegions_read = '0') else '0';
     RVALID    <= RVALID_t;
     ar_hs   <= ARVALID and ARREADY_t;
     raddr   <= UNSIGNED(ARADDR(ADDR_BITS-1 downto 0));
@@ -451,6 +499,8 @@ port map (
                     when others =>
                         NULL;
                     end case;
+                elsif (int_t_read = '1') then
+                    rdata_data <= int_t_q1;
                 elsif (int_errorInTask_read = '1') then
                     rdata_data <= int_errorInTask_q1;
                 elsif (int_n_regions_in_read = '1') then
@@ -673,13 +723,25 @@ port map (
 
 
 -- ----------------------- Memory logic ------------------
+    -- t
+    int_t_address0       <= UNSIGNED(t_address0);
+    int_t_ce0            <= t_ce0;
+    int_t_address1       <= raddr(2 downto 2) when ar_hs = '1' else waddr(2 downto 2);
+    int_t_ce1            <= '1' when ar_hs = '1' or (int_t_write = '1' and WVALID  = '1') else '0';
+    int_t_we1            <= '1' when int_t_write = '1' and w_hs = '1' else '0';
+    int_t_be1            <= UNSIGNED(WSTRB) when int_t_we1 = '1' else (others=>'0');
+    int_t_d1             <= UNSIGNED(WDATA);
     -- errorInTask
     int_errorInTask_address0 <= SHIFT_RIGHT(UNSIGNED(errorInTask_address0), 2)(1 downto 0);
     int_errorInTask_ce0  <= errorInTask_ce0;
     int_errorInTask_be0  <= SHIFT_LEFT(TO_UNSIGNED(1, 4), TO_INTEGER(UNSIGNED(errorInTask_address0(1 downto 0)))) when errorInTask_we0 = '1' else (others=>'0');
     int_errorInTask_d0   <= UNSIGNED(RESIZE(UNSIGNED(errorInTask_d0), 8)) & UNSIGNED(RESIZE(UNSIGNED(errorInTask_d0), 8)) & UNSIGNED(RESIZE(UNSIGNED(errorInTask_d0), 8)) & UNSIGNED(RESIZE(UNSIGNED(errorInTask_d0), 8));
+    errorInTask_q0       <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_errorInTask_q0, TO_INTEGER(int_errorInTask_shift0) * 8)(0 downto 0));
     int_errorInTask_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
     int_errorInTask_ce1  <= '1' when ar_hs = '1' or (int_errorInTask_write = '1' and WVALID  = '1') else '0';
+    int_errorInTask_we1  <= '1' when int_errorInTask_write = '1' and w_hs = '1' else '0';
+    int_errorInTask_be1  <= UNSIGNED(WSTRB) when int_errorInTask_we1 = '1' else (others=>'0');
+    int_errorInTask_d1   <= UNSIGNED(WDATA);
     -- n_regions_in
     int_n_regions_in_address0 <= SHIFT_RIGHT(UNSIGNED(n_regions_in_address0), 2)(3 downto 0);
     int_n_regions_in_ce0 <= n_regions_in_ce0;
@@ -710,12 +772,57 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
+                int_t_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_T_BASE and raddr <= ADDR_T_HIGH) then
+                    int_t_read <= '1';
+                else
+                    int_t_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_t_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_T_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_T_HIGH) then
+                    int_t_write <= '1';
+                elsif (w_hs = '1') then
+                    int_t_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
                 int_errorInTask_read <= '0';
             elsif (ACLK_EN = '1') then
                 if (ar_hs = '1' and raddr >= ADDR_ERRORINTASK_BASE and raddr <= ADDR_ERRORINTASK_HIGH) then
                     int_errorInTask_read <= '1';
                 else
                     int_errorInTask_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_errorInTask_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_ERRORINTASK_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_ERRORINTASK_HIGH) then
+                    int_errorInTask_write <= '1';
+                elsif (w_hs = '1') then
+                    int_errorInTask_write <= '0';
                 end if;
             end if;
         end if;

@@ -101,6 +101,15 @@ void XRun_Continue(XRun *InstancePtr);
 void XRun_EnableAutoRestart(XRun *InstancePtr);
 void XRun_DisableAutoRestart(XRun *InstancePtr);
 
+u32 XRun_Get_t_BaseAddress(XRun *InstancePtr);
+u32 XRun_Get_t_HighAddress(XRun *InstancePtr);
+u32 XRun_Get_t_TotalBytes(XRun *InstancePtr);
+u32 XRun_Get_t_BitWidth(XRun *InstancePtr);
+u32 XRun_Get_t_Depth(XRun *InstancePtr);
+u32 XRun_Write_t_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Read_t_Words(XRun *InstancePtr, int offset, word_type *data, int length);
+u32 XRun_Write_t_Bytes(XRun *InstancePtr, int offset, char *data, int length);
+u32 XRun_Read_t_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 u32 XRun_Get_errorInTask_BaseAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_HighAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_TotalBytes(XRun *InstancePtr);
