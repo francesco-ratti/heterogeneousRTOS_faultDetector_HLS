@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run'" level="0">
-<item name = "Date">Tue Sep 27 15:13:54 2022
+<item name = "Date">Tue Sep 27 18:00:54 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -31,15 +31,15 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2_fu_176">run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2, 24580, 24580, 0.492 ms, 0.492 ms, 24580, 24580, no</column>
-<column name="grp_run_Pipeline_VITIS_LOOP_668_3_fu_278">run_Pipeline_VITIS_LOOP_668_3, 66, 66, 1.320 us, 1.320 us, 66, 66, no</column>
-<column name="grp_runTestAfterInit_fu_286">runTestAfterInit, 33, 114, 0.660 us, 2.280 us, 21, 92, dataflow</column>
-<column name="grp_runTrainAfterInit_fu_396">runTrainAfterInit, 25, 389, 0.500 us, 7.780 us, 21, 369, dataflow</column>
+<column name="grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170">run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2, 24580, 24580, 0.492 ms, 0.492 ms, 24580, 24580, no</column>
+<column name="grp_run_Pipeline_VITIS_LOOP_662_3_fu_272">run_Pipeline_VITIS_LOOP_662_3, 66, 66, 1.320 us, 1.320 us, 66, 66, no</column>
+<column name="grp_runTestAfterInit_fu_280">runTestAfterInit, 33, 114, 0.660 us, 2.280 us, 21, 92, dataflow</column>
+<column name="grp_runTrainAfterInit_fu_390">runTrainAfterInit, 25, 267, 0.500 us, 5.340 us, 21, 247, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_675_4">?, ?, 62 ~ 507, -, -, inf, no</column>
+<column name="- VITIS_LOOP_669_4">?, ?, 62 ~ 385, -, -, inf, no</column>
 </table>
 </item>
 </section>

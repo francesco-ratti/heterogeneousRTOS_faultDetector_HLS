@@ -206,21 +206,21 @@ reg   [2:0] outcome_AOV_address1;
 reg    outcome_AOV_ce1;
 wire   [63:0] loop_index3_cast_i_fu_328_p1;
 reg   [3:0] loop_index3_i_fu_116;
-wire   [3:0] empty_39_fu_339_p2;
+wire   [3:0] empty_fu_339_p2;
 reg    ap_predicate_op58_write_state2;
 reg    ap_block_state2;
 reg    ap_block_state2_io;
 reg    ap_block_state1;
 wire   [31:0] tmp_i_fu_345_p10;
 wire    ap_CS_fsm_state7;
-wire   [31:0] empty_47_fu_387_p1;
-wire   [31:0] empty_46_fu_383_p1;
-wire   [31:0] empty_45_fu_380_p1;
-wire   [31:0] empty_44_fu_377_p1;
-wire   [31:0] empty_43_fu_374_p1;
-wire   [31:0] empty_42_fu_371_p1;
-wire   [31:0] empty_41_fu_368_p1;
-wire   [31:0] empty_40_fu_365_p1;
+wire   [31:0] empty_45_fu_387_p1;
+wire   [31:0] empty_44_fu_383_p1;
+wire   [31:0] empty_43_fu_380_p1;
+wire   [31:0] empty_42_fu_377_p1;
+wire   [31:0] empty_41_fu_374_p1;
+wire   [31:0] empty_40_fu_371_p1;
+wire   [31:0] empty_39_fu_368_p1;
+wire   [31:0] empty_38_fu_365_p1;
 reg   [6:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
@@ -304,7 +304,7 @@ always @ (posedge ap_clk) begin
     if ((~((data_7_empty_n == 1'b0) | (data_6_empty_n == 1'b0) | (data_5_empty_n == 1'b0) | (data_4_empty_n == 1'b0) | (data_3_empty_n == 1'b0) | (data_2_empty_n == 1'b0) | (data_1_empty_n == 1'b0) | (data_empty_n == 1'b0) | (ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
         loop_index3_i_fu_116 <= 4'd0;
     end else if ((~((1'b1 == ap_block_state2_io) | ((toScheduler_TREADY == 1'b0) & (ap_predicate_op58_write_state2 == 1'b1))) & (1'b1 == ap_CS_fsm_state2) & (exitcond4_i_fu_333_p2 == 1'd0))) begin
-        loop_index3_i_fu_116 <= empty_39_fu_339_p2;
+        loop_index3_i_fu_116 <= empty_fu_339_p2;
     end
 end
 
@@ -694,23 +694,23 @@ always @ (*) begin
     ap_predicate_op58_write_state2 = ((p_read4 == 1'd1) & (exitcond4_i_fu_333_p2 == 1'd1));
 end
 
-assign empty_39_fu_339_p2 = (loop_index3_i_fu_116 + 4'd1);
+assign empty_38_fu_365_p1 = outcome_AOV_load_reg_505;
 
-assign empty_40_fu_365_p1 = outcome_AOV_load_reg_505;
+assign empty_39_fu_368_p1 = outcome_AOV_load_1_reg_510;
 
-assign empty_41_fu_368_p1 = outcome_AOV_load_1_reg_510;
+assign empty_40_fu_371_p1 = outcome_AOV_load_2_reg_525;
 
-assign empty_42_fu_371_p1 = outcome_AOV_load_2_reg_525;
+assign empty_41_fu_374_p1 = outcome_AOV_load_3_reg_530;
 
-assign empty_43_fu_374_p1 = outcome_AOV_load_3_reg_530;
+assign empty_42_fu_377_p1 = outcome_AOV_load_4_reg_545;
 
-assign empty_44_fu_377_p1 = outcome_AOV_load_4_reg_545;
+assign empty_43_fu_380_p1 = outcome_AOV_load_5_reg_550;
 
-assign empty_45_fu_380_p1 = outcome_AOV_load_5_reg_550;
+assign empty_44_fu_383_p1 = outcome_AOV_q0;
 
-assign empty_46_fu_383_p1 = outcome_AOV_q0;
+assign empty_45_fu_387_p1 = outcome_AOV_q1;
 
-assign empty_47_fu_387_p1 = outcome_AOV_q1;
+assign empty_fu_339_p2 = (loop_index3_i_fu_116 + 4'd1);
 
 assign errorInTask1_cast_i_fu_316_p1 = p_read;
 
@@ -724,7 +724,7 @@ assign loop_index3_cast_i_fu_328_p1 = loop_index3_i_fu_116;
 
 assign outcomeInRam_address0 = 64'd0;
 
-assign outcomeInRam_d0 = {{{{{{{{{{{empty_47_fu_387_p1}, {empty_46_fu_383_p1}}, {empty_45_fu_380_p1}}, {empty_44_fu_377_p1}}, {empty_43_fu_374_p1}}, {empty_42_fu_371_p1}}, {empty_41_fu_368_p1}}, {empty_40_fu_365_p1}}, {p_read3}}, {8'd0}}, {p_read1}};
+assign outcomeInRam_d0 = {{{{{{{{{{{empty_45_fu_387_p1}, {empty_44_fu_383_p1}}, {empty_43_fu_380_p1}}, {empty_42_fu_377_p1}}, {empty_41_fu_374_p1}}, {empty_40_fu_371_p1}}, {empty_39_fu_368_p1}}, {empty_38_fu_365_p1}}, {p_read3}}, {8'd0}}, {p_read1}};
 
 assign p_read_1_read_fu_124_p2 = p_read4;
 

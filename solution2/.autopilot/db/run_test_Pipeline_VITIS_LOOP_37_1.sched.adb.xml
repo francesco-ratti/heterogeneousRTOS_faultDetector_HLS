@@ -6628,12 +6628,12 @@ for.body.i1.i:2 %icmp_ln37 = icmp_eq  i5 %i_1, i5 16
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="831" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<Node id="831" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.body.i1.i:3 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 16, i64 8
+for.body.i1.i:3 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 16, i64 8
 
 ]]></Node>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
 </operation>
 
 <operation id="473" st_id="2" stage="1" lat="1">
@@ -8454,10 +8454,10 @@ for.body4.i.split.0.i_ifconv:4 %scale_i = fmul i32 %hdist_i, i32 %hdist_i
 
 <Node id="870" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="5">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:28 %tmp_i_48 = mux i32 @_ssdm_op_Mux.ap_auto.16float.i5, i32 %regions_17_load_1_read, i32 %regions_18_load_1_read, i32 %regions_19_load_1_read, i32 %regions_20_load_1_read, i32 %regions_21_load_1_read, i32 %regions_22_load_1_read, i32 %regions_23_load_1_read, i32 %regions_24_load_1_read, i32 %regions_25_load_1_read, i32 %regions_26_load_1_read, i32 %regions_27_load_1_read, i32 %regions_28_load_1_read, i32 %regions_29_load_1_read, i32 %regions_30_load_1_read, i32 %regions_31_load_1_read, i32 %regions_32_load_1_read, i5 %i_1
+for.body4.i.split.0.i_ifconv:28 %tmp_i_46 = mux i32 @_ssdm_op_Mux.ap_auto.16float.i5, i32 %regions_17_load_1_read, i32 %regions_18_load_1_read, i32 %regions_19_load_1_read, i32 %regions_20_load_1_read, i32 %regions_21_load_1_read, i32 %regions_22_load_1_read, i32 %regions_23_load_1_read, i32 %regions_24_load_1_read, i32 %regions_25_load_1_read, i32 %regions_26_load_1_read, i32 %regions_27_load_1_read, i32 %regions_28_load_1_read, i32 %regions_29_load_1_read, i32 %regions_30_load_1_read, i32 %regions_31_load_1_read, i32 %regions_32_load_1_read, i5 %i_1
 
 ]]></Node>
-<StgValue><ssdm name="tmp_i_48"/></StgValue>
+<StgValue><ssdm name="tmp_i_46"/></StgValue>
 </operation>
 
 <operation id="580" st_id="6" stage="1" lat="1">
@@ -8488,7 +8488,7 @@ for.body4.i.split.0.i_ifconv:29 %tmp_1_1_i = mux i32 @_ssdm_op_Mux.ap_auto.16flo
 
 <Node id="872" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_48, i32 %tmp_1_1_i
+for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_46, i32 %tmp_1_1_i
 
 ]]></Node>
 <StgValue><ssdm name="hdist_1_i"/></StgValue>
@@ -8505,7 +8505,7 @@ for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_48, i32 %tmp_1_1_i
 
 <Node id="888" bw="32" op_0_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:46 %bitcast_ln56_6 = bitcast i32 %tmp_i_48
+for.body4.i.split.0.i_ifconv:46 %bitcast_ln56_6 = bitcast i32 %tmp_i_46
 
 ]]></Node>
 <StgValue><ssdm name="bitcast_ln56_6"/></StgValue>
@@ -8590,7 +8590,7 @@ for.body4.i.split.0.i_ifconv:50 %icmp_ln56_13 = icmp_eq  i23 %trunc_ln56_3, i23 
 
 <Node id="895" bw="1" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:53 %tmp_4 = fcmp_olt  i32 %tmp_i_48, i32 %p_read_11
+for.body4.i.split.0.i_ifconv:53 %tmp_4 = fcmp_olt  i32 %tmp_i_46, i32 %p_read_11
 
 ]]></Node>
 <StgValue><ssdm name="tmp_4"/></StgValue>
@@ -8627,7 +8627,7 @@ for.body4.i.split.0.i_ifconv:4 %scale_i = fmul i32 %hdist_i, i32 %hdist_i
 
 <Node id="872" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_48, i32 %tmp_1_1_i
+for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_46, i32 %tmp_1_1_i
 
 ]]></Node>
 <StgValue><ssdm name="hdist_1_i"/></StgValue>
@@ -8678,7 +8678,7 @@ for.body4.i.split.0.i_ifconv:52 %and_ln56_6 = and i1 %or_ln56_5, i1 %or_ln56_4
 
 <Node id="895" bw="1" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:53 %tmp_4 = fcmp_olt  i32 %tmp_i_48, i32 %p_read_11
+for.body4.i.split.0.i_ifconv:53 %tmp_4 = fcmp_olt  i32 %tmp_i_46, i32 %p_read_11
 
 ]]></Node>
 <StgValue><ssdm name="tmp_4"/></StgValue>
@@ -8868,7 +8868,7 @@ for.body4.i.split.0.i_ifconv:5 %area_1_i = fadd i32 %scale_i, i32 0
 
 <Node id="872" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_48, i32 %tmp_1_1_i
+for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_46, i32 %tmp_1_1_i
 
 ]]></Node>
 <StgValue><ssdm name="hdist_1_i"/></StgValue>
@@ -8905,7 +8905,7 @@ for.body4.i.split.0.i_ifconv:5 %area_1_i = fadd i32 %scale_i, i32 0
 
 <Node id="872" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_48, i32 %tmp_1_1_i
+for.body4.i.split.0.i_ifconv:30 %hdist_1_i = fsub i32 %tmp_i_46, i32 %tmp_1_1_i
 
 ]]></Node>
 <StgValue><ssdm name="hdist_1_i"/></StgValue>
@@ -12240,10 +12240,10 @@ for.body.i1.split.i:0 %idx_load = load i32 %idx
 
 <Node id="836" bw="31" op_0_bw="32">
 <![CDATA[
-for.body.i1.split.i:1 %empty_49 = trunc i32 %idx_load
+for.body.i1.split.i:1 %empty = trunc i32 %idx_load
 
 ]]></Node>
-<StgValue><ssdm name="empty_49"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </operation>
 
 <operation id="795" st_id="50" stage="1" lat="1">
@@ -12256,7 +12256,7 @@ for.body.i1.split.i:1 %empty_49 = trunc i32 %idx_load
 
 <Node id="838" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i1.split.i:3 %specloopname_ln1834 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3
+for.body.i1.split.i:3 %specloopname_ln1834 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln1834"/></StgValue>
@@ -12617,7 +12617,7 @@ for.body4.i.split.0.i_ifconv:252 %zext_ln61 = zext i4 %trunc_ln61_2
 
 <Node id="1095" bw="31" op_0_bw="1" op_1_bw="31" op_2_bw="31">
 <![CDATA[
-for.body4.i.split.0.i_ifconv:253 %select_ln61_1 = select i1 %or_ln61, i31 %zext_ln61, i31 %empty_49
+for.body4.i.split.0.i_ifconv:253 %select_ln61_1 = select i1 %or_ln61, i31 %zext_ln61, i31 %empty
 
 ]]></Node>
 <StgValue><ssdm name="select_ln61_1"/></StgValue>

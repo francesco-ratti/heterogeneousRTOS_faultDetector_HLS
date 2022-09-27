@@ -1,41 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-  <sourceFile>
-    <directive functionName="run" label="" functionLabel="">
-      <pragma name="TOP">
-        <option name="name" value="run"/>
-      </pragma>
-    </directive>
-    <directive functionName="run" label="" functionLabel="">
-      <pragma name="TOP">
-        <option name="name" value="run"/>
-      </pragma>
-    </directive>
-  </sourceFile>
-  <sourceFile name="detector_solid/abs_solid_detector.cpp">
-    <directive functionName="is_valid" label="is_valid_label0" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="find_region" label="find_region_label1" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="is_valid" label="is_valid_label2" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="update_train_regions" label="update_train_regions_label3" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="insert_point" label="insert_point_label4" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="insert_point" label="insert_point_label5" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="insert_point" label="insert_point_label6" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-    <directive functionName="insert_point" label="insert_point_label7" functionLabel=" ">
-      <pragma name="UNROLL"/>
-    </directive>
-  </sourceFile>
+    <sourceFile name="">
+        <directive functionName="run" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="run"/>
+            </pragma>
+        </directive>
+        <directive functionName="is_valid" label="is_valid_label0" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="find_region" label="find_region_label1" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="is_valid" label="is_valid_label2" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="update_train_regions" label="update_train_regions_label3" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="insert_point" label="insert_point_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="insert_point" label="insert_point_label5" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="insert_point" label="insert_point_label6" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="insert_point" label="insert_point_label7" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="run" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="run"/>
+            </pragma>
+        </directive>
+    </sourceFile>
 </AutoPilot:ProjectResources>
+

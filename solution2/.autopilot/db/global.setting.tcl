@@ -2,7 +2,7 @@
 set TopModule "run"
 set ClockPeriod 20
 set ClockList ap_clk
-set HasVivadoClockPeriod 0
+set HasVivadoClockPeriod 1
 set CombLogicFlag 0
 set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
@@ -18,7 +18,7 @@ set ResetLevelFlag 0
 set ResetStyle control
 set ResetSyncFlag 1
 set ResetRegisterFlag 1
-set ResetVariableFlag 1
+set ResetVariableFlag 0
 set ResetRegisterNum 3
 set FsmEncStyle onehot
 set MaxFanout 0

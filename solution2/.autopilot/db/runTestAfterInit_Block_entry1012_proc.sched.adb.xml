@@ -55,10 +55,10 @@ entry:1 %zext_ln587 = zext i8 %p_read_22
 
 <Node id="5" bw="6" op_0_bw="8">
 <![CDATA[
-entry:2 %trunc_ln547 = trunc i8 %p_read_22
+entry:2 %trunc_ln543 = trunc i8 %p_read_22
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln547"/></StgValue>
+<StgValue><ssdm name="trunc_ln543"/></StgValue>
 </operation>
 
 <operation id="6" st_id="1" stage="1" lat="1">
@@ -70,10 +70,10 @@ entry:2 %trunc_ln547 = trunc i8 %p_read_22
 
 <Node id="6" bw="4" op_0_bw="8">
 <![CDATA[
-entry:3 %trunc_ln547_1 = trunc i8 %p_read_22
+entry:3 %trunc_ln543_1 = trunc i8 %p_read_22
 
 ]]></Node>
-<StgValue><ssdm name="trunc_ln547_1"/></StgValue>
+<StgValue><ssdm name="trunc_ln543_1"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -148,7 +148,7 @@ entry:6 %mrv = insertvalue i26 <undef>, i8 %p_read_22
 
 <Node id="10" bw="26" op_0_bw="26" op_1_bw="6">
 <![CDATA[
-entry:7 %mrv_1 = insertvalue i26 %mrv, i6 %trunc_ln547
+entry:7 %mrv_1 = insertvalue i26 %mrv, i6 %trunc_ln543
 
 ]]></Node>
 <StgValue><ssdm name="mrv_1"/></StgValue>
@@ -163,7 +163,7 @@ entry:7 %mrv_1 = insertvalue i26 %mrv, i6 %trunc_ln547
 
 <Node id="11" bw="26" op_0_bw="26" op_1_bw="4">
 <![CDATA[
-entry:8 %mrv_2 = insertvalue i26 %mrv_1, i4 %trunc_ln547_1
+entry:8 %mrv_2 = insertvalue i26 %mrv_1, i4 %trunc_ln543_1
 
 ]]></Node>
 <StgValue><ssdm name="mrv_2"/></StgValue>

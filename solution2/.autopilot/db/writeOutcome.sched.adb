@@ -106,7 +106,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1142958928</coreId>
+						<coreId>7216</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -142,7 +142,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1147874176</coreId>
+						<coreId>1664497648</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -178,7 +178,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150056416</coreId>
+						<coreId>1666367136</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>16</bitwidth>
@@ -214,7 +214,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149732368</coreId>
+						<coreId>65</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -250,7 +250,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149764680</coreId>
+						<coreId>1666069120</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -286,7 +286,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149777360</coreId>
+						<coreId>1666419456</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>288</bitwidth>
@@ -322,7 +322,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2875780210</coreId>
+						<coreId>542329928</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -358,7 +358,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149775104</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -394,7 +394,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2875439032</coreId>
+						<coreId>1666409232</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -430,7 +430,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149781952</coreId>
+						<coreId>1666414544</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -466,7 +466,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149775104</coreId>
+						<coreId>4294967040</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -502,7 +502,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2875769480</coreId>
+						<coreId>1643091744</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -538,7 +538,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>256</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -574,7 +574,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149776096</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -614,7 +614,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>128</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -1200,7 +1200,7 @@
 						<name>outcome_AOV</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>501</lineNumber>
+						<lineNumber>497</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -1216,14 +1216,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>501</second>
+										<second>497</second>
 									</item>
 								</second>
 							</item>
@@ -1302,10 +1302,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>loop_index3_i_write_ln504</name>
+						<name>loop_index3_i_write_ln500</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>504</lineNumber>
+						<lineNumber>500</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -1321,14 +1321,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>504</second>
+										<second>500</second>
 									</item>
 								</second>
 							</item>
@@ -1366,10 +1366,10 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>br_ln504</name>
+						<name>br_ln500</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>504</lineNumber>
+						<lineNumber>500</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -1385,14 +1385,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>504</second>
+										<second>500</second>
 									</item>
 								</second>
 							</item>
@@ -1557,7 +1557,7 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>empty_39</name>
+						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1662,7 +1662,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667226880</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -1713,7 +1713,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1666069344</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -1845,7 +1845,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667164176</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1869,10 +1869,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>br_ln507</name>
+						<name>br_ln503</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>507</lineNumber>
+						<lineNumber>503</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -1888,14 +1888,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>507</second>
+										<second>503</second>
 									</item>
 								</second>
 							</item>
@@ -1908,7 +1908,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1398055824</coreId>
+						<coreId>6775156</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1952,7 +1952,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>176</coreId>
+						<coreId>1667140880</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -1996,7 +1996,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150561360</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2038,7 +2038,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667145992</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2082,7 +2082,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150593384</coreId>
+						<coreId>1667138304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2124,7 +2124,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1314013527</coreId>
+						<coreId>1667143296</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2168,7 +2168,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150543056</coreId>
+						<coreId>1667143952</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2210,7 +2210,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150543888</coreId>
+						<coreId>1667135728</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2254,7 +2254,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150535488</coreId>
+						<coreId>2465745176</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2296,7 +2296,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2876736125</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2340,7 +2340,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>20</coreId>
+						<coreId>1667133152</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2382,7 +2382,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150532912</coreId>
+						<coreId>2465744648</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2426,7 +2426,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2876737548</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2468,7 +2468,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667130576</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2512,7 +2512,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150530336</coreId>
+						<coreId>2465750327</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2554,7 +2554,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2876767772</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>3</bitwidth>
@@ -2598,7 +2598,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667128000</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2640,7 +2640,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150527760</coreId>
+						<coreId>2465753894</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -2666,7 +2666,7 @@
 					<Obj>
 						<type>0</type>
 						<id>82</id>
-						<name>empty_40</name>
+						<name>empty_38</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2684,7 +2684,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2876761131</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2708,7 +2708,7 @@
 					<Obj>
 						<type>0</type>
 						<id>83</id>
-						<name>empty_41</name>
+						<name>empty_39</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2726,7 +2726,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150525184</coreId>
+						<coreId>1667128000</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2750,7 +2750,7 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>empty_42</name>
+						<name>empty_40</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2768,7 +2768,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>184</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2792,7 +2792,7 @@
 					<Obj>
 						<type>0</type>
 						<id>85</id>
-						<name>empty_43</name>
+						<name>empty_41</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2834,7 +2834,7 @@
 					<Obj>
 						<type>0</type>
 						<id>86</id>
-						<name>empty_44</name>
+						<name>empty_42</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2876,7 +2876,7 @@
 					<Obj>
 						<type>0</type>
 						<id>87</id>
-						<name>empty_45</name>
+						<name>empty_43</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2894,7 +2894,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1953394531</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2918,7 +2918,7 @@
 					<Obj>
 						<type>0</type>
 						<id>88</id>
-						<name>empty_46</name>
+						<name>empty_44</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2936,7 +2936,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150533408</coreId>
+						<coreId>224</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2960,7 +2960,7 @@
 					<Obj>
 						<type>0</type>
 						<id>89</id>
-						<name>empty_47</name>
+						<name>empty_45</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -2978,7 +2978,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150773560</coreId>
+						<coreId>1666404608</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -3020,7 +3020,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150772384</coreId>
+						<coreId>1666072576</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>288</bitwidth>
@@ -3073,7 +3073,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1667357296</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3103,7 +3103,7 @@
 						<name>errorInTask_addr</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>509</lineNumber>
+						<lineNumber>505</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -3119,14 +3119,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>509</second>
+										<second>505</second>
 									</item>
 								</second>
 							</item>
@@ -3139,7 +3139,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2876454983</coreId>
+						<coreId>4133</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -3165,10 +3165,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>errorInTask_addr_write_ln509</name>
+						<name>errorInTask_addr_write_ln505</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>509</lineNumber>
+						<lineNumber>505</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -3184,14 +3184,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>509</second>
+										<second>505</second>
 									</item>
 								</second>
 							</item>
@@ -3204,7 +3204,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1184</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3261,7 +3261,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150741984</coreId>
+						<coreId>1667377920</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3287,10 +3287,10 @@
 					<Obj>
 						<type>0</type>
 						<id>95</id>
-						<name>br_ln511</name>
+						<name>br_ln507</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>511</lineNumber>
+						<lineNumber>507</lineNumber>
 						<contextFuncName>writeOutcome</contextFuncName>
 						<contextNormFuncName>writeOutcome</contextNormFuncName>
 						<inlineStackInfo>
@@ -3306,14 +3306,14 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 									<item>
 										<first>
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>writeOutcome</second>
 										</first>
-										<second>511</second>
+										<second>507</second>
 									</item>
 								</second>
 							</item>
@@ -3326,7 +3326,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4645</coreId>
+						<coreId>4917</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3350,10 +3350,10 @@
 					<Obj>
 						<type>0</type>
 						<id>97</id>
-						<name>_ln548</name>
+						<name>_ln544</name>
 						<fileName>detector_solid/abs_solid_detector.cpp</fileName>
 						<fileDirectory>/home/francesco/workspace</fileDirectory>
-						<lineNumber>548</lineNumber>
+						<lineNumber>544</lineNumber>
 						<contextFuncName>runTestAfterInit</contextFuncName>
 						<contextNormFuncName>runTestAfterInit</contextNormFuncName>
 						<inlineStackInfo>
@@ -3369,7 +3369,7 @@
 											<first>detector_solid/abs_solid_detector.cpp</first>
 											<second>runTestAfterInit</second>
 										</first>
-										<second>548</second>
+										<second>544</second>
 									</item>
 								</second>
 							</item>
@@ -3382,7 +3382,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150755280</coreId>
+						<coreId>1667355920</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -3458,7 +3458,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150741984</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3489,7 +3489,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150646672</coreId>
+						<coreId>3136</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -3520,7 +3520,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150657936</coreId>
+						<coreId>3428</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -3551,7 +3551,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150657040</coreId>
+						<coreId>1953394531</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>4</bitwidth>
@@ -3582,7 +3582,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3165</coreId>
+						<coreId>908</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3613,7 +3613,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>3469</coreId>
+						<coreId>1212</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3644,7 +3644,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150646672</coreId>
+						<coreId>304</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3675,7 +3675,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150660656</coreId>
+						<coreId>1667261296</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3706,7 +3706,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>375</coreId>
+						<coreId>1667263968</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3737,7 +3737,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>543</coreId>
+						<coreId>1666403408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3768,7 +3768,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150665200</coreId>
+						<coreId>2020173413</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>64</bitwidth>
@@ -3799,7 +3799,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1150666528</coreId>
+						<coreId>1936942413</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>8</bitwidth>
@@ -3830,7 +3830,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149441576</coreId>
+						<coreId>1666682288</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>36</bitwidth>
@@ -3861,7 +3861,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1149435616</coreId>
+						<coreId>1666403408</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>1</bitwidth>
@@ -3978,7 +3978,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>1149799936</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -4013,7 +4013,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>0</coreId>
+					<coreId>183</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -4044,7 +4044,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>1150785752</coreId>
+					<coreId>2462343429</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -4105,7 +4105,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>1150754288</coreId>
+					<coreId>1667344800</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>

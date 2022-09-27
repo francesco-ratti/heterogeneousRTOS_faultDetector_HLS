@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTrainAfterInit'" level="0">
-<item name = "Date">Tue Sep 27 15:14:06 2022
+<item name = "Date">Tue Sep 27 18:01:05 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">25, 389, 0.500 us, 7.780 us, 21, 369, dataflow</column>
+<column name="">25, 267, 0.500 us, 5.340 us, 21, 247, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,7 +32,7 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="read_train_1_U0">read_train_1, 20, 20, 0.400 us, 0.400 us, 20, 20, no</column>
-<column name="insert_point_U0">insert_point, 4, 368, 80.000 ns, 7.360 us, 4, 368, no</column>
+<column name="insert_point_U0">insert_point, 4, 246, 80.000 ns, 4.920 us, 4, 246, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -51,19 +51,19 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 50, -</column>
 <column name="FIFO">-, -, 891, 612, -</column>
-<column name="Instance">0, 125, 37351, 43680, 0</column>
+<column name="Instance">0, 125, 33211, 37265, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 99, -</column>
 <column name="Register">-, -, 11, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 56, 35, 83, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 56, 32, 71, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="insert_point_U0">insert_point, 0, 125, 36815, 43482, 0</column>
+<column name="insert_point_U0">insert_point, 0, 125, 32675, 37067, 0</column>
 <column name="read_train_1_U0">read_train_1, 0, 0, 536, 198, 0</column>
 </table>
 </item>

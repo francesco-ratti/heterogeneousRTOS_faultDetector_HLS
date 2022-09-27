@@ -6564,12 +6564,12 @@ for.body.i.i:1 %icmp_ln72 = icmp_eq  i4 %i_2, i4 8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="500" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<Node id="500" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.body.i.i:2 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4
+for.body.i.i:2 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4
 
 ]]></Node>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
 </operation>
 
 <operation id="443" st_id="2" stage="1" lat="1">
@@ -8294,7 +8294,7 @@ lor.rhs.i:95 %regions_16_load_1 = load i9 %regions_16_addr_1
 
 <Node id="504" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17
+for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln72"/></StgValue>
@@ -19118,10 +19118,10 @@ lor.rhs.i:418 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %idx_loc_l
 
 <Node id="944" bw="0" op_0_bw="0">
 <![CDATA[
-lor.rhs.i:419 %br_ln522 = br void %run_test.exit
+lor.rhs.i:419 %br_ln518 = br void %run_test.exit
 
 ]]></Node>
-<StgValue><ssdm name="br_ln522"/></StgValue>
+<StgValue><ssdm name="br_ln518"/></StgValue>
 </operation>
 
 <operation id="1271" st_id="9" stage="1" lat="1">
@@ -19148,10 +19148,10 @@ run_test.exit:0 %error_0 = phi i1 %tmp, void %lor.rhs.i, i1 1, void %run_test.ex
 
 <Node id="947" bw="0" op_0_bw="1">
 <![CDATA[
-run_test.exit:1 %ret_ln547 = ret i1 %error_0
+run_test.exit:1 %ret_ln543 = ret i1 %error_0
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln547"/></StgValue>
+<StgValue><ssdm name="ret_ln543"/></StgValue>
 </operation>
 </state>
 </state_list>

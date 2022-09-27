@@ -32,19 +32,19 @@
 <Interval-max>undef</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_675_4>
+<VITIS_LOOP_669_4>
 <TripCount>inf</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
 <min>62</min>
-<max>507</max>
+<max>385</max>
 </range>
 </IterationLatency>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_675_4>
+</VITIS_LOOP_669_4>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
@@ -52,8 +52,8 @@
 <Resources>
 <BRAM_18K>176</BRAM_18K>
 <DSP>394</DSP>
-<FF>90378</FF>
-<LUT>85001</LUT>
+<FF>61659</FF>
+<LUT>69356</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

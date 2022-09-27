@@ -40,7 +40,6 @@ run_fifo_w32_d2_S
 run_fifo_w1_d2_S
 run_mux_1632_32_1_1
 run_flow_control_loop_pipe_sequential_init
-run_mux_154_32_1_1
 run_flow_control_loop_pipe_sequential_init
 run_faddfsub_32ns_32ns_32_4_full_dsp_1
 run_fifo_w6_d2_S_x
@@ -59,8 +58,8 @@ run_control_s_axi
 run_regslice_both
 run_regslice_both
 run_regslice_both
-run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2
-run_Pipeline_VITIS_LOOP_668_3
+run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2
+run_Pipeline_VITIS_LOOP_662_3
 read_train
 runTestAfterInit_Block_entry1012_proc
 run_test_Pipeline_VITIS_LOOP_37_1
@@ -68,9 +67,8 @@ run_test
 writeOutcome
 runTestAfterInit
 read_train_1
-insert_point_Pipeline_VITIS_LOOP_268_1
+insert_point_Pipeline_VITIS_LOOP_264_1
 insert_point_Pipeline_insert_point_label6
-insert_point_Pipeline_insert_point_label7
 insert_point
 runTrainAfterInit
 run

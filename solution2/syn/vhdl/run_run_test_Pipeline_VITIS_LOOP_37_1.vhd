@@ -1052,7 +1052,7 @@ attribute shreg_extract : string;
     signal or_ln56_31_reg_7526_pp0_iter4_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_fu_3355_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal hdist_i_reg_7531 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_i_48_fu_4204_p18 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_i_46_fu_4204_p18 : STD_LOGIC_VECTOR (31 downto 0);
     signal tmp_1_1_i_fu_4227_p18 : STD_LOGIC_VECTOR (31 downto 0);
     signal icmp_ln56_12_fu_4267_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal icmp_ln56_12_reg_7548 : STD_LOGIC_VECTOR (0 downto 0);
@@ -1481,7 +1481,7 @@ attribute shreg_extract : string;
     signal or_ln61_fu_5185_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal trunc_ln61_2_fu_5197_p1 : STD_LOGIC_VECTOR (3 downto 0);
     signal zext_ln61_fu_5200_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal empty_49_fu_5091_p1 : STD_LOGIC_VECTOR (30 downto 0);
+    signal empty_fu_5091_p1 : STD_LOGIC_VECTOR (30 downto 0);
     signal select_ln61_1_fu_5204_p3 : STD_LOGIC_VECTOR (30 downto 0);
     signal select_ln61_fu_5191_p3 : STD_LOGIC_VECTOR (31 downto 0);
     signal zext_ln61_1_fu_5212_p1 : STD_LOGIC_VECTOR (31 downto 0);
@@ -1652,7 +1652,7 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => tmp_i_48_fu_4204_p18,
+        din0 => tmp_i_46_fu_4204_p18,
         din1 => tmp_1_1_i_fu_4227_p18,
         ce => ap_const_logic_1,
         dout => grp_fu_3359_p2);
@@ -2108,7 +2108,7 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => tmp_i_48_fu_4204_p18,
+        din0 => tmp_i_46_fu_4204_p18,
         din1 => p_read4,
         ce => ap_const_logic_1,
         opcode => ap_const_lv5_4,
@@ -2686,7 +2686,7 @@ begin
         din14 => regions_31_load_1,
         din15 => regions_32_load_1,
         din16 => i_1_reg_7313_pp0_iter3_reg,
-        dout => tmp_i_48_fu_4204_p18);
+        dout => tmp_i_46_fu_4204_p18);
 
     mux_165_32_1_1_U135 : component run_mux_165_32_1_1
     generic map (
@@ -5060,12 +5060,12 @@ begin
     bitcast_ln56_23_fu_4980_p1 <= tmp_7_i_fu_4935_p18;
     bitcast_ln56_2_fu_3668_p1 <= tmp_i_fu_3568_p18;
     bitcast_ln56_4_fu_3721_p1 <= tmp_2_1_i_fu_3698_p18;
-    bitcast_ln56_6_fu_4249_p1 <= tmp_i_48_fu_4204_p18;
+    bitcast_ln56_6_fu_4249_p1 <= tmp_i_46_fu_4204_p18;
     bitcast_ln56_8_fu_3774_p1 <= tmp_2_2_i_fu_3751_p18;
     bitcast_ln56_fu_3638_p1 <= tmp_2_i_fu_3615_p18;
     bitcast_ln61_1_fu_5120_p1 <= score_load_reg_7859;
     bitcast_ln61_fu_5103_p1 <= tmp_score_reg_7852_pp0_iter47_reg;
-    empty_49_fu_5091_p1 <= idx_fu_886(31 - 1 downto 0);
+    empty_fu_5091_p1 <= idx_fu_886(31 - 1 downto 0);
     grp_fu_3995_p_ce <= ap_const_logic_1;
     grp_fu_3995_p_din0 <= tmp_2_i_fu_3615_p18;
     grp_fu_3995_p_din1 <= p_read3;
@@ -5197,7 +5197,7 @@ begin
         select_ln61_fu_5191_p3;
     select_ln61_1_fu_5204_p3 <= 
         zext_ln61_fu_5200_p1 when (or_ln61_fu_5185_p2(0) = '1') else 
-        empty_49_fu_5091_p1;
+        empty_fu_5091_p1;
     select_ln61_fu_5191_p3 <= 
         tmp_score_reg_7852_pp0_iter47_reg when (or_ln61_fu_5185_p2(0) = '1') else 
         score_load_reg_7859;

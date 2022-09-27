@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run'
 ================================================================
-* Date:           Tue Sep 27 15:14:07 2022
+* Date:           Tue Sep 27 18:01:06 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -38,10 +38,10 @@
         |                                                           |                                                |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline |
         |                          Instance                         |                     Module                     |   min   |   max   |    min   |    max   |  min  |  max  |   Type   |
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
-        |grp_run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2_fu_176  |run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
-        |grp_run_Pipeline_VITIS_LOOP_668_3_fu_278                   |run_Pipeline_VITIS_LOOP_668_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
-        |grp_runTestAfterInit_fu_286                                |runTestAfterInit                                |       33|      114|  0.660 us|  2.280 us|     21|     92|  dataflow|
-        |grp_runTrainAfterInit_fu_396                               |runTrainAfterInit                               |       25|      389|  0.500 us|  7.780 us|     21|    369|  dataflow|
+        |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170  |run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2  |    24580|    24580|  0.492 ms|  0.492 ms|  24580|  24580|        no|
+        |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272                   |run_Pipeline_VITIS_LOOP_662_3                   |       66|       66|  1.320 us|  1.320 us|     66|     66|        no|
+        |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |       33|      114|  0.660 us|  2.280 us|     21|     92|  dataflow|
+        |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |       25|      267|  0.500 us|  5.340 us|     21|    247|  dataflow|
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-------+-------+----------+
 
         * Loop: 
@@ -49,7 +49,7 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_675_4  |        ?|        ?|  62 ~ 507|          -|          -|   inf|        no|
+        |- VITIS_LOOP_669_4  |        ?|        ?|  62 ~ 385|          -|          -|   inf|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -64,16 +64,16 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     14|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |       80|  394|   65774|  70613|    0|
-|Memory           |       96|    -|   24584|   9224|    0|
-|Multiplexer      |        -|    -|       -|   5150|    -|
-|Register         |        -|    -|      20|      -|    -|
+|Instance         |       80|  394|   61634|  64198|    0|
+|Memory           |       96|    -|       8|      8|    0|
+|Multiplexer      |        -|    -|       -|   5136|    -|
+|Register         |        -|    -|      17|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      176|  394|   90378|  85001|    0|
+|Total            |      176|  394|   61659|  69356|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |       62|  179|      84|    159|    0|
+|Utilization (%)  |       62|  179|      57|    130|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -82,73 +82,73 @@
     |                          Instance                         |                     Module                     | BRAM_18K| DSP |   FF  |  LUT  | URAM|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
     |control_s_axi_U                                            |control_s_axi                                   |       80|    0|    356|    329|    0|
-    |grp_runTestAfterInit_fu_286                                |runTestAfterInit                                |        0|   56|  26463|  18089|    0|
-    |grp_runTrainAfterInit_fu_396                               |runTrainAfterInit                               |        0|  125|  38253|  44441|    0|
-    |grp_run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2_fu_176  |run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2  |        0|  213|    685|   7691|    0|
-    |grp_run_Pipeline_VITIS_LOOP_668_3_fu_278                   |run_Pipeline_VITIS_LOOP_668_3                   |        0|    0|     17|     63|    0|
+    |grp_runTestAfterInit_fu_280                                |runTestAfterInit                                |        0|   56|  26463|  18089|    0|
+    |grp_runTrainAfterInit_fu_390                               |runTrainAfterInit                               |        0|  125|  34113|  38026|    0|
+    |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170  |run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2  |        0|  213|    685|   7691|    0|
+    |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272                   |run_Pipeline_VITIS_LOOP_662_3                   |        0|    0|     17|     63|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
-    |Total                                                      |                                                |       80|  394|  65774|  70613|    0|
+    |Total                                                      |                                                |       80|  394|  61634|  64198|    0|
     +-----------------------------------------------------------+------------------------------------------------+---------+-----+-------+-------+-----+
 
     * DSP: 
     N/A
 
     * Memory: 
-    +---------------+---------------------------+---------+-----+-----+-----+------+-----+------+-------------+
-    |     Memory    |           Module          | BRAM_18K|  FF | LUT | URAM| Words| Bits| Banks| W*Bits*Banks|
-    +---------------+---------------------------+---------+-----+-----+-----+------+-----+------+-------------+
-    |n_regions_V_U  |n_regions_V_RAM_AUTO_1R1W  |        0|    8|    8|    0|    64|    8|     1|          512|
-    |regions_16_U   |regions_16_RAM_AUTO_1R1W   |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_32_U   |regions_16_RAM_AUTO_1R1W   |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_48_U   |regions_16_RAM_AUTO_1R1W   |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_U      |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_17_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_33_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_2_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_18_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_34_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_3_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_19_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_35_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_4_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_20_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_36_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_5_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_21_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_37_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_6_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_22_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_38_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_7_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_23_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_39_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_8_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_24_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_40_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_9_U    |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_25_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_41_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_10_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_26_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_42_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_11_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_27_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_43_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_12_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_28_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_44_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_13_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_29_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_45_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_14_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_30_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_46_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_15_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_31_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    |regions_47_U   |regions_RAM_AUTO_1R1W      |        2|  512|  192|    0|   512|   32|     1|        16384|
-    +---------------+---------------------------+---------+-----+-----+-----+------+-----+------+-------------+
-    |Total          |                           |       96|24584| 9224|    0| 24640| 1544|    49|       786944|
-    +---------------+---------------------------+---------+-----+-----+-----+------+-----+------+-------------+
+    +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory    |           Module          | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |n_regions_V_U  |n_regions_V_RAM_AUTO_1R1W  |        0|  8|   8|    0|    64|    8|     1|          512|
+    |regions_16_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_32_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_48_U   |regions_16_RAM_AUTO_1R1W   |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_U      |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_17_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_33_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_2_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_18_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_34_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_3_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_19_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_35_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_4_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_20_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_36_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_5_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_21_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_37_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_6_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_22_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_38_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_7_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_23_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_39_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_8_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_24_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_40_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_9_U    |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_25_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_41_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_10_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_26_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_42_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_11_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_27_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_43_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_12_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_28_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_44_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_13_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_29_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_45_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_14_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_30_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_46_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_15_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_31_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    |regions_47_U   |regions_RAM_AUTO_1R1W      |        2|  0|   0|    0|   512|   32|     1|        16384|
+    +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total          |                           |       96|  8|   8|    0| 24640| 1544|    49|       786944|
+    +---------------+---------------------------+---------+---+----+-----+------+-----+------+-------------+
 
     * FIFO: 
     N/A
@@ -157,13 +157,13 @@
     +------------------------------------------------+----------+----+---+----+------------+------------+
     |                  Variable Name                 | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +------------------------------------------------+----------+----+---+----+------------+------------+
-    |grp_runTestAfterInit_fu_286_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_runTestAfterInit_fu_280_toScheduler_TREADY  |       and|   0|  0|   2|           1|           1|
     |ap_block_state1                                 |        or|   0|  0|   2|           1|           1|
-    |ap_block_state3_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTestAfterInit_fu_286_ap_done     |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTestAfterInit_fu_286_ap_ready    |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTrainAfterInit_fu_396_ap_done    |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_runTrainAfterInit_fu_396_ap_ready   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_on_subcall_done                 |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_280_ap_done     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTestAfterInit_fu_280_ap_ready    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTrainAfterInit_fu_390_ap_done    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_runTrainAfterInit_fu_390_ap_ready   |        or|   0|  0|   2|           1|           1|
     +------------------------------------------------+----------+----+---+----+------------+------------+
     |Total                                           |          |   0|  0|  14|           7|           7|
     +------------------------------------------------+----------+----+---+----+------------+------------+
@@ -172,8 +172,7 @@
     +---------------------------------+----+-----------+-----+-----------+
     |               Name              | LUT| Input Size| Bits| Total Bits|
     +---------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                        |  42|          8|    1|          8|
-    |ap_done                          |   9|          2|    1|          2|
+    |ap_NS_fsm                        |  37|          7|    1|          7|
     |n_regions_V_address0             |  20|          4|    6|         24|
     |n_regions_V_ce0                  |  20|          4|    1|          4|
     |n_regions_V_d0                   |  14|          3|    8|         24|
@@ -514,29 +513,28 @@
     |testStream_TREADY_int_regslice   |   9|          2|    1|          2|
     |trainStream_TREADY_int_regslice  |   9|          2|    1|          2|
     +---------------------------------+----+-----------+-----+-----------+
-    |Total                            |5150|       1078| 2609|       8271|
+    |Total                            |5136|       1075| 2608|       8268|
     +---------------------------------+----+-----------+-----+-----------+
 
     * Register: 
     +------------------------------------------------------------------------+---+----+-----+-----------+
     |                                  Name                                  | FF| LUT| Bits| Const Bits|
     +------------------------------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                                               |  7|   0|    7|          0|
-    |ap_done_reg                                                             |  1|   0|    1|          0|
+    |ap_CS_fsm                                                               |  6|   0|    6|          0|
+    |ap_done_reg                                                             |  0|   0|    1|          1|
     |ap_rst_n_inv                                                            |  1|   0|    1|          0|
     |ap_rst_reg_1                                                            |  1|   0|    1|          0|
     |ap_rst_reg_2                                                            |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTestAfterInit_fu_286_ap_done                         |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTestAfterInit_fu_286_ap_ready                        |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTrainAfterInit_fu_396_ap_done                        |  1|   0|    1|          0|
-    |ap_sync_reg_grp_runTrainAfterInit_fu_396_ap_ready                       |  1|   0|    1|          0|
-    |fsmstate_V                                                              |  1|   0|    1|          0|
-    |grp_runTestAfterInit_fu_286_ap_start_reg                                |  1|   0|    1|          0|
-    |grp_runTrainAfterInit_fu_396_ap_start_reg                               |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2_fu_176_ap_start_reg  |  1|   0|    1|          0|
-    |grp_run_Pipeline_VITIS_LOOP_668_3_fu_278_ap_start_reg                   |  1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_280_ap_done                         |  1|   0|    1|          0|
+    |ap_sync_reg_grp_runTestAfterInit_fu_280_ap_ready                        |  1|   0|    1|          0|
+    |ap_sync_reg_grp_runTrainAfterInit_fu_390_ap_done                        |  1|   0|    1|          0|
+    |ap_sync_reg_grp_runTrainAfterInit_fu_390_ap_ready                       |  1|   0|    1|          0|
+    |grp_runTestAfterInit_fu_280_ap_start_reg                                |  1|   0|    1|          0|
+    |grp_runTrainAfterInit_fu_390_ap_start_reg                               |  1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2_fu_170_ap_start_reg  |  1|   0|    1|          0|
+    |grp_run_Pipeline_VITIS_LOOP_662_3_fu_272_ap_start_reg                   |  1|   0|    1|          0|
     +------------------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                                   | 20|   0|   20|          0|
+    |Total                                                                   | 17|   0|   18|          1|
     +------------------------------------------------------------------------+---+----+-----+-----------+
 
 

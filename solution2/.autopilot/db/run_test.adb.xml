@@ -6564,12 +6564,12 @@ for.body.i.i:1 %icmp_ln72 = icmp_eq  i4 %i_2, i4 8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="500" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<Node id="500" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.body.i.i:2 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4
+for.body.i.i:2 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4
 
 ]]></Node>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
 </operation>
 
 <operation id="443" st_id="2" stage="1" lat="1">
@@ -8294,7 +8294,7 @@ lor.rhs.i:95 %regions_16_load_1 = load i9 %regions_16_addr_1
 
 <Node id="504" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17
+for.body.i.split.i:0 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln72"/></StgValue>
@@ -19118,10 +19118,10 @@ lor.rhs.i:418 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %idx_loc_l
 
 <Node id="944" bw="0" op_0_bw="0">
 <![CDATA[
-lor.rhs.i:419 %br_ln522 = br void %run_test.exit
+lor.rhs.i:419 %br_ln518 = br void %run_test.exit
 
 ]]></Node>
-<StgValue><ssdm name="br_ln522"/></StgValue>
+<StgValue><ssdm name="br_ln518"/></StgValue>
 </operation>
 
 <operation id="1271" st_id="9" stage="1" lat="1">
@@ -19148,10 +19148,10 @@ run_test.exit:0 %error_0 = phi i1 %tmp, void %lor.rhs.i, i1 1, void %run_test.ex
 
 <Node id="947" bw="0" op_0_bw="1">
 <![CDATA[
-run_test.exit:1 %ret_ln547 = ret i1 %error_0
+run_test.exit:1 %ret_ln543 = ret i1 %error_0
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln547"/></StgValue>
+<StgValue><ssdm name="ret_ln543"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -22168,13 +22168,13 @@ run_test.exit:1 %ret_ln547 = ret i1 %error_0
 </dataflow>
 <dataflow id="2756" from="StgValue_2755" to="icmp_ln72" fromId="2755" toId="441">
 </dataflow>
-<dataflow id="2758" from="_ssdm_op_SpecLoopTripCount" to="empty" fromId="2757" toId="442">
+<dataflow id="2758" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln0" fromId="2757" toId="442">
 </dataflow>
-<dataflow id="2759" from="StgValue_1376" to="empty" fromId="1376" toId="442">
+<dataflow id="2759" from="StgValue_1376" to="speclooptripcount_ln0" fromId="1376" toId="442">
 </dataflow>
-<dataflow id="2761" from="StgValue_2760" to="empty" fromId="2760" toId="442">
+<dataflow id="2761" from="StgValue_2760" to="speclooptripcount_ln0" fromId="2760" toId="442">
 </dataflow>
-<dataflow id="2763" from="StgValue_2762" to="empty" fromId="2762" toId="442">
+<dataflow id="2763" from="StgValue_2762" to="speclooptripcount_ln0" fromId="2762" toId="442">
 </dataflow>
 <dataflow id="2764" from="i_2" to="add_ln72" fromId="440" toId="443">
 </dataflow>
@@ -22428,7 +22428,7 @@ run_test.exit:1 %ret_ln547 = ret i1 %error_0
 </dataflow>
 <dataflow id="2900" from="_ssdm_op_SpecLoopName" to="specloopname_ln72" fromId="2899" toId="550">
 </dataflow>
-<dataflow id="2902" from="empty_17" to="specloopname_ln72" fromId="2901" toId="550">
+<dataflow id="2902" from="empty_12" to="specloopname_ln72" fromId="2901" toId="550">
 </dataflow>
 <dataflow id="2903" from="p_x_assign" to="cmp_i_i_i" fromId="445" toId="551">
 </dataflow>
@@ -25546,7 +25546,7 @@ run_test.exit:1 %ret_ln547 = ret i1 %error_0
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="4462" from="br_ln522" to="error_0" fromId="1270" toId="1271">
+<dataflow id="4462" from="br_ln518" to="error_0" fromId="1270" toId="1271">
 </dataflow>
 <dataflow id="4464" from="StgValue_4463" to="error_0" fromId="4463" toId="1271">
 <condition id="-1">
@@ -25556,7 +25556,7 @@ run_test.exit:1 %ret_ln547 = ret i1 %error_0
 </dataflow>
 <dataflow id="4465" from="br_ln0" to="error_0" fromId="561" toId="1271">
 </dataflow>
-<dataflow id="4466" from="error_0" to="ret_ln547" fromId="1271" toId="1272">
+<dataflow id="4466" from="error_0" to="ret_ln543" fromId="1271" toId="1272">
 </dataflow>
 <dataflow id="4467" from="icmp_ln72" to="StgValue_2" fromId="441" toId="2">
 </dataflow>

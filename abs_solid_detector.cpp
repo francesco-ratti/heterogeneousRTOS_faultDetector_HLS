@@ -254,19 +254,16 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			int merge_2=-1;
 			float score = 0;
 
-			int iter=n_regions-1;
-			int iterctr=0;
-
 			int i_real=0;
-			int k_real=n_regions-1;
-
+			int k_real=1;
 
 			float tmp_score=0;
 			int tmp_other=-1;
 
-
-			for(int i=0; i < MAX_REGIONS_SUMM; i++){
+//MAX_REGIONS_SUMM
+			for(int i=0; i_real < n_regions-1; i++){
 				//#pragma HLS unroll
+				#pragma HLS loop_tripcount min=0 max=136
 
 
 
@@ -326,14 +323,9 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 				//				}
 
 
-
-				iterctr++;
-
-				if (iterctr==iter) {
-					iterctr=0;
+				if (k_real==n_regions-1) {
 					i_real++;
-					iter--;
-					k_real=n_regions-1;
+					k_real=i_real+1;
 
 
 					if(merge_1 < 0 || tmp_score > score){
@@ -345,11 +337,11 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 					tmp_score=0;
 					tmp_other = -1;
 
-					if (i_real>=n_regions)
-						break;
+					/*if (i_real>=n_regions)
+						break;*/
 
 				} else {
-					k_real--;
+					k_real++;
 				}
 			}
 
@@ -366,11 +358,15 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			}
 
 			//move everything over
-			insert_point_label7:for(int i=0; i < MAX_REGIONS-1; i++){
-				if (i>=merge_2) {
-					regions[i] = regions[i+1];
-				}
-			}
+//			insert_point_label7:for(int i=merge_2; i < MAX_REGIONS-1; i++){
+////#pragma HLS PIPELINE off
+//#pragma HLS loop_tripcount min=1 max=15
+//				//if (i>=merge_2) {
+//					regions[i] = regions[i+1];
+//				//}
+//			}
+			//if (merge_2!=(n_regions-1))
+				regions[merge_2]=regions[n_regions-1];
 			n_regions--;
 		}
 	}
@@ -442,7 +438,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 #define STATE_UNINITIALISED 0
 #define STATE_READY 1
 
-ap_uint<2> fsmstate=STATE_UNINITIALISED;
+//ap_uint<2> fsmstate=STATE_UNINITIALISED;
 
 struct OutcomeStr {
 	ap_uint<8> checkId;
@@ -610,7 +606,6 @@ void runTrainAfterInit(hls::stream< controlStr > &trainStream, region_t regions[
 //}
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 static ap_uint<8> n_regions[MAX_CHECKS];
-bool test=false;
 
 void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::stream< controlStr > &testStream,
 		hls::stream< controlStr > &trainStream,
@@ -623,15 +618,14 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 #pragma HLS INTERFACE axis port=trainStream
 #pragma HLS INTERFACE axis port=toScheduler
 
-#pragma HLS reset variable=regions
-#pragma HLS array_partition variable=regions cyclic factor=16 dim=2//cyclic factor=16  //should be MAX_REGIONS
+#pragma HLS array_partition variable=regions complete dim=2//cyclic factor=16  //should be MAX_REGIONS
 
 	//#pragma HLS reset variable=data
 	//#pragma HLS reset variable=n_regions
 
 
 
-	//#pragma HLS array_partition variable=n_regions cyclic factor=16//complete
+	//#pragma HLS array_partition variable=n_regions cyclic factor=2//complete
 
 	//
 	//
@@ -652,7 +646,7 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 
 
 
-	if (fsmstate==STATE_UNINITIALISED) {
+//	if (fsmstate==STATE_UNINITIALISED) {
 
 		//memcpy(regions, trainedRegions, sizeof(regions)); vitis tries to optimise it, causing resource violation!
 
@@ -670,8 +664,8 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 			n_regions [i] = n_regions_in [i];
 		}
 
-		fsmstate=STATE_READY;
-	} else if (fsmstate==STATE_READY) {
+//		fsmstate=STATE_READY;
+	//} else if (fsmstate==STATE_READY) {
 		while(1) {
 			runTestAfterInit(testStream, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
 			runTrainAfterInit(trainStream, regions, n_regions);
@@ -679,4 +673,4 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], hls::s
 #pragma HLS DEPENDENCE variable=n_regions type=inter dependent=false
 		}
 	}
-}
+//}

@@ -1,12 +1,12 @@
 set SynModuleInfo {
-  {SRCNAME run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2 MODELNAME run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2 RTLNAME run_run_Pipeline_VITIS_LOOP_660_1_VITIS_LOOP_662_2
+  {SRCNAME run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2 MODELNAME run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2 RTLNAME run_run_Pipeline_VITIS_LOOP_654_1_VITIS_LOOP_656_2
     SUBMODULES {
       {MODELNAME run_mul_64ns_66ns_81_1_1 RTLNAME run_mul_64ns_66ns_81_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME run_mul_64ns_66ns_129_1_1 RTLNAME run_mul_64ns_66ns_129_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME run_flow_control_loop_pipe_sequential_init RTLNAME run_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME run_flow_control_loop_pipe_sequential_init_U}
     }
   }
-  {SRCNAME run_Pipeline_VITIS_LOOP_668_3 MODELNAME run_Pipeline_VITIS_LOOP_668_3 RTLNAME run_run_Pipeline_VITIS_LOOP_668_3}
+  {SRCNAME run_Pipeline_VITIS_LOOP_662_3 MODELNAME run_Pipeline_VITIS_LOOP_662_3 RTLNAME run_run_Pipeline_VITIS_LOOP_662_3}
   {SRCNAME read_train MODELNAME read_train RTLNAME run_read_train
     SUBMODULES {
       {MODELNAME run_read_train_contr_AOV_RAM_AUTO_1R1W RTLNAME run_read_train_contr_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
@@ -47,17 +47,12 @@ set SynModuleInfo {
     }
   }
   {SRCNAME read_train.1 MODELNAME read_train_1 RTLNAME run_read_train_1}
-  {SRCNAME insert_point_Pipeline_VITIS_LOOP_268_1 MODELNAME insert_point_Pipeline_VITIS_LOOP_268_1 RTLNAME run_insert_point_Pipeline_VITIS_LOOP_268_1
+  {SRCNAME insert_point_Pipeline_VITIS_LOOP_264_1 MODELNAME insert_point_Pipeline_VITIS_LOOP_264_1 RTLNAME run_insert_point_Pipeline_VITIS_LOOP_264_1
     SUBMODULES {
       {MODELNAME run_mux_1632_32_1_1 RTLNAME run_mux_1632_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME insert_point_Pipeline_insert_point_label6 MODELNAME insert_point_Pipeline_insert_point_label6 RTLNAME run_insert_point_Pipeline_insert_point_label6}
-  {SRCNAME insert_point_Pipeline_insert_point_label7 MODELNAME insert_point_Pipeline_insert_point_label7 RTLNAME run_insert_point_Pipeline_insert_point_label7
-    SUBMODULES {
-      {MODELNAME run_mux_154_32_1_1 RTLNAME run_mux_154_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
-    }
-  }
   {SRCNAME insert_point MODELNAME insert_point RTLNAME run_insert_point
     SUBMODULES {
       {MODELNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1 RTLNAME run_faddfsub_32ns_32ns_32_4_full_dsp_1 BINDTYPE op TYPE fsub IMPL fulldsp LATENCY 3 ALLOW_PRAGMA 1}

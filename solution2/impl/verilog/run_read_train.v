@@ -79,12 +79,12 @@ reg   [31:0] tmp_53_reg_612;
 reg   [31:0] tmp_54_reg_617;
 reg   [31:0] tmp_55_reg_622;
 reg   [31:0] tmp_56_reg_627;
-wire   [3:0] empty_61_fu_391_p2;
-reg   [3:0] empty_61_reg_635;
+wire   [3:0] empty_fu_391_p2;
+reg   [3:0] empty_reg_635;
 wire    ap_CS_fsm_state5;
 wire   [0:0] exitcond2_fu_385_p2;
-wire   [2:0] empty_62_fu_397_p1;
-reg   [2:0] empty_62_reg_645;
+wire   [2:0] empty_56_fu_397_p1;
+reg   [2:0] empty_56_reg_645;
 reg   [2:0] contr_AOV_address0;
 reg    contr_AOV_ce0;
 reg    contr_AOV_we0;
@@ -176,67 +176,67 @@ always @ (posedge ap_clk) begin
     if ((~((testStream_TVALID == 1'b0) | (ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
         loop_index_fu_106 <= 4'd0;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        loop_index_fu_106 <= empty_61_reg_635;
+        loop_index_fu_106 <= empty_reg_635;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd1) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd1) & (1'b1 == ap_CS_fsm_state6))) begin
         data_1_c22_0_fu_114 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd2) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd2) & (1'b1 == ap_CS_fsm_state6))) begin
         data_2_c23_0_fu_118 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd3) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd3) & (1'b1 == ap_CS_fsm_state6))) begin
         data_3_c24_0_fu_122 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd4) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd4) & (1'b1 == ap_CS_fsm_state6))) begin
         data_4_c25_0_fu_126 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd5) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd5) & (1'b1 == ap_CS_fsm_state6))) begin
         data_5_c26_0_fu_130 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd6) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd6) & (1'b1 == ap_CS_fsm_state6))) begin
         data_6_c27_0_fu_134 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd7) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd7) & (1'b1 == ap_CS_fsm_state6))) begin
         data_7_c28_0_fu_138 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((empty_62_reg_645 == 3'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+    if (((empty_56_reg_645 == 3'd0) & (1'b1 == ap_CS_fsm_state6))) begin
         data_c21_0_fu_110 <= contr_AOV_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
-        empty_61_reg_635 <= empty_61_fu_391_p2;
+    if (((exitcond2_fu_385_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
+        empty_56_reg_645 <= empty_56_fu_397_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((exitcond2_fu_385_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
-        empty_62_reg_645 <= empty_62_fu_397_p1;
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        empty_reg_635 <= empty_fu_391_p2;
     end
 end
 
@@ -490,9 +490,9 @@ assign bitcast_ln145_9_fu_353_p1 = tmp_51_reg_602;
 
 assign bitcast_ln145_fu_268_p1 = tmp_fu_258_p4;
 
-assign empty_61_fu_391_p2 = (loop_index_fu_106 + 4'd1);
+assign empty_56_fu_397_p1 = loop_index_fu_106[2:0];
 
-assign empty_62_fu_397_p1 = loop_index_fu_106[2:0];
+assign empty_fu_391_p2 = (loop_index_fu_106 + 4'd1);
 
 assign exitcond2_fu_385_p2 = ((loop_index_fu_106 == 4'd8) ? 1'b1 : 1'b0);
 

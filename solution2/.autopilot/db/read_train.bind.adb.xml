@@ -477,10 +477,10 @@ entry:43 %tmp_56 = partselect i32 @_ssdm_op_PartSelect.i32.i320.i32.i32, i320 %t
 
 <Node id="49" bw="0" op_0_bw="4" op_1_bw="4">
 <![CDATA[
-entry:47 %store_ln474 = store i4 0, i4 %loop_index
+entry:47 %store_ln470 = store i4 0, i4 %loop_index
 
 ]]></Node>
-<StgValue><ssdm name="store_ln474"/></StgValue>
+<StgValue><ssdm name="store_ln470"/></StgValue>
 </operation>
 </state>
 
@@ -681,7 +681,7 @@ entry:38 %store_ln145 = store i32 %bitcast_ln145_12, i3 %dout_AOV_addr_13
 
 <Node id="11" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %testStream, void @empty_19, i32 0, i32 0, void @empty_8, i32 0, i32 0, void @empty_9, void @empty_9, void @empty_9, i32 0, i32 0, i32 0, i32 0, void @empty_9, void @empty_9, i32 4294967295, i32 0
+entry:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %testStream, void @empty_8, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -786,10 +786,10 @@ entry:46 %store_ln145 = store i32 %bitcast_ln145_14, i3 %dout_AOV_addr_15
 
 <Node id="50" bw="0" op_0_bw="0">
 <![CDATA[
-entry:48 %br_ln474 = br void %load-store-loop
+entry:48 %br_ln470 = br void %load-store-loop
 
 ]]></Node>
-<StgValue><ssdm name="br_ln474"/></StgValue>
+<StgValue><ssdm name="br_ln470"/></StgValue>
 </operation>
 </state>
 
@@ -847,12 +847,12 @@ load-store-loop:2 %exitcond2 = icmp_eq  i4 %loop_index_load, i4 8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-load-store-loop:3 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8
+load-store-loop:3 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8
 
 ]]></Node>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="speclooptripcount_ln0"/></StgValue>
 </operation>
 
 <operation id="60" st_id="5" stage="1" lat="1">
@@ -864,10 +864,10 @@ load-store-loop:3 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i6
 
 <Node id="56" bw="4" op_0_bw="4" op_1_bw="4">
 <![CDATA[
-load-store-loop:4 %empty_61 = add i4 %loop_index_load, i4 1
+load-store-loop:4 %empty = add i4 %loop_index_load, i4 1
 
 ]]></Node>
-<StgValue><ssdm name="empty_61"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </operation>
 
 <operation id="61" st_id="5" stage="1" lat="1">
@@ -927,10 +927,10 @@ load-store-loop.split:1 %dout_AOV_load = load i3 %dout_AOV_addr_16
 
 <Node id="61" bw="3" op_0_bw="4">
 <![CDATA[
-load-store-loop.split:2 %empty_62 = trunc i4 %loop_index_load
+load-store-loop.split:2 %empty_56 = trunc i4 %loop_index_load
 
 ]]></Node>
-<StgValue><ssdm name="empty_62"/></StgValue>
+<StgValue><ssdm name="empty_56"/></StgValue>
 </operation>
 
 <operation id="65" st_id="5" stage="1" lat="1">
@@ -1247,10 +1247,10 @@ memcpy-split:18 %mrv_s = insertvalue i288 %mrv_9, i32 %data_7_c28_0_load
 
 <Node id="110" bw="0" op_0_bw="288">
 <![CDATA[
-memcpy-split:19 %ret_ln475 = ret i288 %mrv_s
+memcpy-split:19 %ret_ln471 = ret i288 %mrv_s
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln475"/></StgValue>
+<StgValue><ssdm name="ret_ln471"/></StgValue>
 </operation>
 </state>
 
@@ -1280,7 +1280,7 @@ load-store-loop.split:1 %dout_AOV_load = load i3 %dout_AOV_addr_16
 
 <Node id="62" bw="0" op_0_bw="3" op_1_bw="0" op_2_bw="3" op_3_bw="0" op_4_bw="3" op_5_bw="0" op_6_bw="3" op_7_bw="0" op_8_bw="3" op_9_bw="0" op_10_bw="3" op_11_bw="0" op_12_bw="3" op_13_bw="0" op_14_bw="3" op_15_bw="0">
 <![CDATA[
-load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, void %load-store-loop.split..exit_crit_edge, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6
+load-store-loop.split:3 %switch_ln0 = switch i3 %empty_56, void %.case.7, i3 0, void %load-store-loop.split..exit_crit_edge, i3 1, void %.case.1, i3 2, void %.case.2, i3 3, void %.case.3, i3 4, void %.case.4, i3 5, void %.case.5, i3 6, void %.case.6
 
 ]]></Node>
 <StgValue><ssdm name="switch_ln0"/></StgValue>
@@ -1290,7 +1290,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-2"/>
+<or_exp><and_exp><literal name="empty_56" val="-2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1306,7 +1306,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-2"/>
+<or_exp><and_exp><literal name="empty_56" val="-2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1322,7 +1322,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-3"/>
+<or_exp><and_exp><literal name="empty_56" val="-3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1338,7 +1338,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-3"/>
+<or_exp><and_exp><literal name="empty_56" val="-3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1354,7 +1354,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-4"/>
+<or_exp><and_exp><literal name="empty_56" val="-4"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1370,7 +1370,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-4"/>
+<or_exp><and_exp><literal name="empty_56" val="-4"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1386,7 +1386,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="3"/>
+<or_exp><and_exp><literal name="empty_56" val="3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1402,7 +1402,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="3"/>
+<or_exp><and_exp><literal name="empty_56" val="3"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1418,7 +1418,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="2"/>
+<or_exp><and_exp><literal name="empty_56" val="2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1434,7 +1434,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="2"/>
+<or_exp><and_exp><literal name="empty_56" val="2"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1450,7 +1450,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="1"/>
+<or_exp><and_exp><literal name="empty_56" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1466,7 +1466,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="1"/>
+<or_exp><and_exp><literal name="empty_56" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1482,7 +1482,7 @@ load-store-loop.split:3 %switch_ln0 = switch i3 %empty_62, void %.case.7, i3 0, 
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="0"/>
+<or_exp><and_exp><literal name="empty_56" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1498,7 +1498,7 @@ load-store-loop.split..exit_crit_edge:0 %store_ln0 = store i32 %dout_AOV_load, i
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="0"/>
+<or_exp><and_exp><literal name="empty_56" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1514,7 +1514,7 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-1"/>
+<or_exp><and_exp><literal name="empty_56" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1530,7 +1530,7 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="empty_62" val="-1"/>
+<or_exp><and_exp><literal name="empty_56" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1551,7 +1551,7 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 
 <Node id="88" bw="0" op_0_bw="4" op_1_bw="4" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-.exit:0 %store_ln0 = store i4 %empty_61, i4 %loop_index
+.exit:0 %store_ln0 = store i4 %empty, i4 %loop_index
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -1713,9 +1713,9 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="204" from="StgValue_203" to="tmp_56" fromId="203" toId="34">
 </dataflow>
-<dataflow id="206" from="StgValue_205" to="store_ln474" fromId="205" toId="35">
+<dataflow id="206" from="StgValue_205" to="store_ln470" fromId="205" toId="35">
 </dataflow>
-<dataflow id="207" from="loop_index" to="store_ln474" fromId="7" toId="35">
+<dataflow id="207" from="loop_index" to="store_ln470" fromId="7" toId="35">
 </dataflow>
 <dataflow id="208" from="tmp_51" to="bitcast_ln145_9" fromId="29" toId="36">
 </dataflow>
@@ -1769,23 +1769,23 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="238" from="testStream" to="specinterface_ln0" fromId="112" toId="48">
 </dataflow>
-<dataflow id="240" from="empty_19" to="specinterface_ln0" fromId="239" toId="48">
+<dataflow id="240" from="empty_8" to="specinterface_ln0" fromId="239" toId="48">
 </dataflow>
 <dataflow id="242" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
 <dataflow id="243" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
-<dataflow id="245" from="empty_8" to="specinterface_ln0" fromId="244" toId="48">
+<dataflow id="245" from="empty_1" to="specinterface_ln0" fromId="244" toId="48">
 </dataflow>
 <dataflow id="246" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
 <dataflow id="247" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
-<dataflow id="249" from="empty_9" to="specinterface_ln0" fromId="248" toId="48">
+<dataflow id="249" from="empty_5" to="specinterface_ln0" fromId="248" toId="48">
 </dataflow>
-<dataflow id="250" from="empty_9" to="specinterface_ln0" fromId="248" toId="48">
+<dataflow id="250" from="empty_5" to="specinterface_ln0" fromId="248" toId="48">
 </dataflow>
-<dataflow id="251" from="empty_9" to="specinterface_ln0" fromId="248" toId="48">
+<dataflow id="251" from="empty_5" to="specinterface_ln0" fromId="248" toId="48">
 </dataflow>
 <dataflow id="252" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
@@ -1795,9 +1795,9 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="255" from="StgValue_241" to="specinterface_ln0" fromId="241" toId="48">
 </dataflow>
-<dataflow id="256" from="empty_9" to="specinterface_ln0" fromId="248" toId="48">
+<dataflow id="256" from="empty_5" to="specinterface_ln0" fromId="248" toId="48">
 </dataflow>
-<dataflow id="257" from="empty_9" to="specinterface_ln0" fromId="248" toId="48">
+<dataflow id="257" from="empty_5" to="specinterface_ln0" fromId="248" toId="48">
 </dataflow>
 <dataflow id="259" from="StgValue_258" to="specinterface_ln0" fromId="258" toId="48">
 </dataflow>
@@ -1835,17 +1835,17 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="279" from="StgValue_278" to="exitcond2" fromId="278" toId="58">
 </dataflow>
-<dataflow id="281" from="_ssdm_op_SpecLoopTripCount" to="empty" fromId="280" toId="59">
+<dataflow id="281" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln0" fromId="280" toId="59">
 </dataflow>
-<dataflow id="283" from="StgValue_282" to="empty" fromId="282" toId="59">
+<dataflow id="283" from="StgValue_282" to="speclooptripcount_ln0" fromId="282" toId="59">
 </dataflow>
-<dataflow id="284" from="StgValue_282" to="empty" fromId="282" toId="59">
+<dataflow id="284" from="StgValue_282" to="speclooptripcount_ln0" fromId="282" toId="59">
 </dataflow>
-<dataflow id="285" from="StgValue_282" to="empty" fromId="282" toId="59">
+<dataflow id="285" from="StgValue_282" to="speclooptripcount_ln0" fromId="282" toId="59">
 </dataflow>
-<dataflow id="286" from="loop_index_load" to="empty_61" fromId="56" toId="60">
+<dataflow id="286" from="loop_index_load" to="empty" fromId="56" toId="60">
 </dataflow>
-<dataflow id="288" from="StgValue_287" to="empty_61" fromId="287" toId="60">
+<dataflow id="288" from="StgValue_287" to="empty" fromId="287" toId="60">
 </dataflow>
 <dataflow id="289" from="exitcond2" to="br_ln0" fromId="58" toId="61">
 </dataflow>
@@ -1857,7 +1857,7 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="293" from="dout_AOV_addr_16" to="dout_AOV_load" fromId="62" toId="63">
 </dataflow>
-<dataflow id="294" from="loop_index_load" to="empty_62" fromId="56" toId="64">
+<dataflow id="294" from="loop_index_load" to="empty_56" fromId="56" toId="64">
 </dataflow>
 <dataflow id="295" from="data_c21_0" to="data_c21_0_load" fromId="8" toId="65">
 </dataflow>
@@ -1919,11 +1919,11 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="325" from="data_7_c28_0_load" to="mrv_s" fromId="72" toId="83">
 </dataflow>
-<dataflow id="326" from="mrv_s" to="ret_ln475" fromId="83" toId="84">
+<dataflow id="326" from="mrv_s" to="ret_ln471" fromId="83" toId="84">
 </dataflow>
 <dataflow id="327" from="dout_AOV_addr_16" to="dout_AOV_load" fromId="62" toId="85">
 </dataflow>
-<dataflow id="328" from="empty_62" to="switch_ln0" fromId="64" toId="86">
+<dataflow id="328" from="empty_56" to="switch_ln0" fromId="64" toId="86">
 </dataflow>
 <dataflow id="330" from="StgValue_329" to="switch_ln0" fromId="329" toId="86">
 </dataflow>
@@ -1971,13 +1971,13 @@ load-store-loop.split..exit_crit_edge:1 %br_ln0 = br void %.exit
 </dataflow>
 <dataflow id="358" from="data_7_c28_0" to="store_ln0" fromId="15" toId="101">
 </dataflow>
-<dataflow id="359" from="empty_61" to="store_ln0" fromId="60" toId="103">
+<dataflow id="359" from="empty" to="store_ln0" fromId="60" toId="103">
 </dataflow>
 <dataflow id="360" from="loop_index" to="store_ln0" fromId="7" toId="103">
 </dataflow>
 <dataflow id="361" from="exitcond2" to="StgValue_5" fromId="58" toId="5">
 </dataflow>
-<dataflow id="362" from="empty_62" to="StgValue_6" fromId="64" toId="6">
+<dataflow id="362" from="empty_56" to="StgValue_6" fromId="64" toId="6">
 </dataflow>
 </dataflows>
 

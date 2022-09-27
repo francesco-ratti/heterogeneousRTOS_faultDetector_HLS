@@ -111,13 +111,13 @@ attribute shreg_extract : string;
     signal tmp_54_reg_617 : STD_LOGIC_VECTOR (31 downto 0);
     signal tmp_55_reg_622 : STD_LOGIC_VECTOR (31 downto 0);
     signal tmp_56_reg_627 : STD_LOGIC_VECTOR (31 downto 0);
-    signal empty_61_fu_391_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal empty_61_reg_635 : STD_LOGIC_VECTOR (3 downto 0);
+    signal empty_fu_391_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal empty_reg_635 : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
     signal exitcond2_fu_385_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal empty_62_fu_397_p1 : STD_LOGIC_VECTOR (2 downto 0);
-    signal empty_62_reg_645 : STD_LOGIC_VECTOR (2 downto 0);
+    signal empty_56_fu_397_p1 : STD_LOGIC_VECTOR (2 downto 0);
+    signal empty_56_reg_645 : STD_LOGIC_VECTOR (2 downto 0);
     signal contr_AOV_address0 : STD_LOGIC_VECTOR (2 downto 0);
     signal contr_AOV_ce0 : STD_LOGIC;
     signal contr_AOV_we0 : STD_LOGIC;
@@ -243,14 +243,14 @@ begin
             if ((not(((testStream_TVALID = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
                 loop_index_fu_106 <= ap_const_lv4_0;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-                loop_index_fu_106 <= empty_61_reg_635;
+                loop_index_fu_106 <= empty_reg_635;
             end if; 
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_1_c22_0_fu_114 <= contr_AOV_q0;
             end if;
         end if;
@@ -258,7 +258,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_2) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_2) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_2_c23_0_fu_118 <= contr_AOV_q0;
             end if;
         end if;
@@ -266,7 +266,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_3) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_3) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_3_c24_0_fu_122 <= contr_AOV_q0;
             end if;
         end if;
@@ -274,7 +274,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_4) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_4) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_4_c25_0_fu_126 <= contr_AOV_q0;
             end if;
         end if;
@@ -282,7 +282,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_5) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_5) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_5_c26_0_fu_130 <= contr_AOV_q0;
             end if;
         end if;
@@ -290,7 +290,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_6) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_6) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_6_c27_0_fu_134 <= contr_AOV_q0;
             end if;
         end if;
@@ -298,7 +298,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_7) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_7) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_7_c28_0_fu_138 <= contr_AOV_q0;
             end if;
         end if;
@@ -306,7 +306,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((empty_62_reg_645 = ap_const_lv3_0) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+            if (((empty_56_reg_645 = ap_const_lv3_0) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                 data_c21_0_fu_110 <= contr_AOV_q0;
             end if;
         end if;
@@ -314,16 +314,16 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state5)) then
-                empty_61_reg_635 <= empty_61_fu_391_p2;
+            if (((exitcond2_fu_385_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
+                empty_56_reg_645 <= empty_56_fu_397_p1;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((exitcond2_fu_385_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
-                empty_62_reg_645 <= empty_62_fu_397_p1;
+            if ((ap_const_logic_1 = ap_CS_fsm_state5)) then
+                empty_reg_635 <= empty_fu_391_p2;
             end if;
         end if;
     end process;
@@ -553,8 +553,8 @@ begin
         end if; 
     end process;
 
-    empty_61_fu_391_p2 <= std_logic_vector(unsigned(loop_index_fu_106) + unsigned(ap_const_lv4_1));
-    empty_62_fu_397_p1 <= loop_index_fu_106(3 - 1 downto 0);
+    empty_56_fu_397_p1 <= loop_index_fu_106(3 - 1 downto 0);
+    empty_fu_391_p2 <= std_logic_vector(unsigned(loop_index_fu_106) + unsigned(ap_const_lv4_1));
     exitcond2_fu_385_p2 <= "1" when (loop_index_fu_106 = ap_const_lv4_8) else "0";
     loop_index_cast1_fu_380_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(loop_index_fu_106),64));
 
