@@ -18,20 +18,14 @@ using namespace sc_core;
 using namespace sc_dt;
 
 // wrapc file define:
-#define AUTOTB_TVIN_t "../tv/cdatafile/c.run.autotvin_t.dat"
-#define AUTOTB_TVOUT_t "../tv/cdatafile/c.run.autotvout_t.dat"
 #define AUTOTB_TVIN_errorInTask "../tv/cdatafile/c.run.autotvin_errorInTask.dat"
 #define AUTOTB_TVOUT_errorInTask "../tv/cdatafile/c.run.autotvout_errorInTask.dat"
 #define AUTOTB_TVIN_outcomeInRam "../tv/cdatafile/c.run.autotvin_outcomeInRam.dat"
 #define AUTOTB_TVOUT_outcomeInRam "../tv/cdatafile/c.run.autotvout_outcomeInRam.dat"
-#define AUTOTB_TVIN_testStream "../tv/cdatafile/c.run.autotvin_testStream.dat"
-#define AUTOTB_TVOUT_testStream "../tv/cdatafile/c.run.autotvout_testStream.dat"
-#define WRAPC_STREAM_SIZE_IN_testStream "../tv/stream_size/stream_size_in_testStream.dat"
-#define WRAPC_STREAM_INGRESS_STATUS_testStream "../tv/stream_size/stream_ingress_status_testStream.dat"
-#define AUTOTB_TVIN_trainStream "../tv/cdatafile/c.run.autotvin_trainStream.dat"
-#define AUTOTB_TVOUT_trainStream "../tv/cdatafile/c.run.autotvout_trainStream.dat"
-#define WRAPC_STREAM_SIZE_IN_trainStream "../tv/stream_size/stream_size_in_trainStream.dat"
-#define WRAPC_STREAM_INGRESS_STATUS_trainStream "../tv/stream_size/stream_ingress_status_trainStream.dat"
+#define AUTOTB_TVIN_inputAOV "../tv/cdatafile/c.run.autotvin_inputAOV.dat"
+#define AUTOTB_TVOUT_inputAOV "../tv/cdatafile/c.run.autotvout_inputAOV.dat"
+#define AUTOTB_TVIN_copyInputAOV "../tv/cdatafile/c.run.autotvin_copyInputAOV.dat"
+#define AUTOTB_TVOUT_copyInputAOV "../tv/cdatafile/c.run.autotvout_copyInputAOV.dat"
 #define AUTOTB_TVIN_trainedRegions "../tv/cdatafile/c.run.autotvin_trainedRegions.dat"
 #define AUTOTB_TVOUT_trainedRegions "../tv/cdatafile/c.run.autotvout_trainedRegions.dat"
 #define AUTOTB_TVIN_n_regions_in "../tv/cdatafile/c.run.autotvin_n_regions_in.dat"
@@ -40,18 +34,20 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_toScheduler "../tv/cdatafile/c.run.autotvout_toScheduler.dat"
 #define WRAPC_STREAM_SIZE_OUT_toScheduler "../tv/stream_size/stream_size_out_toScheduler.dat"
 #define WRAPC_STREAM_EGRESS_STATUS_toScheduler "../tv/stream_size/stream_egress_status_toScheduler.dat"
+#define AUTOTB_TVIN_gmem "../tv/cdatafile/c.run.autotvin_gmem.dat"
+#define AUTOTB_TVOUT_gmem "../tv/cdatafile/c.run.autotvout_gmem.dat"
 
 #define INTER_TCL "../tv/cdatafile/ref.tcl"
 
 // tvout file define:
-#define AUTOTB_TVOUT_PC_t "../tv/rtldatafile/rtl.run.autotvout_t.dat"
 #define AUTOTB_TVOUT_PC_errorInTask "../tv/rtldatafile/rtl.run.autotvout_errorInTask.dat"
 #define AUTOTB_TVOUT_PC_outcomeInRam "../tv/rtldatafile/rtl.run.autotvout_outcomeInRam.dat"
-#define AUTOTB_TVOUT_PC_testStream "../tv/rtldatafile/rtl.run.autotvout_testStream.dat"
-#define AUTOTB_TVOUT_PC_trainStream "../tv/rtldatafile/rtl.run.autotvout_trainStream.dat"
+#define AUTOTB_TVOUT_PC_inputAOV "../tv/rtldatafile/rtl.run.autotvout_inputAOV.dat"
+#define AUTOTB_TVOUT_PC_copyInputAOV "../tv/rtldatafile/rtl.run.autotvout_copyInputAOV.dat"
 #define AUTOTB_TVOUT_PC_trainedRegions "../tv/rtldatafile/rtl.run.autotvout_trainedRegions.dat"
 #define AUTOTB_TVOUT_PC_n_regions_in "../tv/rtldatafile/rtl.run.autotvout_n_regions_in.dat"
 #define AUTOTB_TVOUT_PC_toScheduler "../tv/rtldatafile/rtl.run.autotvout_toScheduler.dat"
+#define AUTOTB_TVOUT_PC_gmem "../tv/rtldatafile/rtl.run.autotvout_gmem.dat"
 
 
 static const bool little_endian()
@@ -281,14 +277,14 @@ class INTER_TCL_FILE {
   public:
 INTER_TCL_FILE(const char* name) {
   mName = name; 
-  t_depth = 0;
   errorInTask_depth = 0;
   outcomeInRam_depth = 0;
-  testStream_depth = 0;
-  trainStream_depth = 0;
+  inputAOV_depth = 0;
+  copyInputAOV_depth = 0;
   trainedRegions_depth = 0;
   n_regions_in_depth = 0;
   toScheduler_depth = 0;
+  gmem_depth = 0;
   trans_num =0;
 }
 ~INTER_TCL_FILE() {
@@ -306,14 +302,14 @@ INTER_TCL_FILE(const char* name) {
 }
 string get_depth_list () {
   stringstream total_list;
-  total_list << "{t " << t_depth << "}\n";
   total_list << "{errorInTask " << errorInTask_depth << "}\n";
   total_list << "{outcomeInRam " << outcomeInRam_depth << "}\n";
-  total_list << "{testStream " << testStream_depth << "}\n";
-  total_list << "{trainStream " << trainStream_depth << "}\n";
+  total_list << "{inputAOV " << inputAOV_depth << "}\n";
+  total_list << "{copyInputAOV " << copyInputAOV_depth << "}\n";
   total_list << "{trainedRegions " << trainedRegions_depth << "}\n";
   total_list << "{n_regions_in " << n_regions_in_depth << "}\n";
   total_list << "{toScheduler " << toScheduler_depth << "}\n";
+  total_list << "{gmem " << gmem_depth << "}\n";
   return total_list.str();
 }
 void set_num (int num , int* class_num) {
@@ -323,14 +319,14 @@ void set_string(std::string list, std::string* class_list) {
   (*class_list) = list;
 }
   public:
-    int t_depth;
     int errorInTask_depth;
     int outcomeInRam_depth;
-    int testStream_depth;
-    int trainStream_depth;
+    int inputAOV_depth;
+    int copyInputAOV_depth;
     int trainedRegions_depth;
     int n_regions_in_depth;
     int toScheduler_depth;
+    int gmem_depth;
     int trans_num;
   private:
     ofstream mFile;
@@ -339,10 +335,12 @@ void set_string(std::string list, std::string* class_list) {
 
 
 struct __cosim_s36__ { char data[36]; };
+struct __cosim_s40__ { char data[40]; };
 struct __cosim_s1__ { char data[1]; };
-extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
+struct __cosim_s64__ { char data[64]; };
+extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, char, volatile void *, volatile void *, volatile void *);
 
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_t, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_testStream, volatile void * __xlx_apatb_param_trainStream, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, char __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -355,68 +353,6 @@ static AESL_FILE_HANDLER aesl_fh;
     static unsigned AESL_transaction_pc = 0;
     string AESL_token;
     string AESL_num;
-long __xlx_apatb_param_testStream_stream_buf_final_size;
-{
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(WRAPC_STREAM_SIZE_IN_testStream);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){__xlx_apatb_param_testStream_stream_buf_final_size = atoi(AESL_token.c_str());
-
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  for (long i = 0; i < __xlx_apatb_param_testStream_stream_buf_final_size; ++i)((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->read();
-long __xlx_apatb_param_trainStream_stream_buf_final_size;
-{
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(WRAPC_STREAM_SIZE_IN_trainStream);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){__xlx_apatb_param_trainStream_stream_buf_final_size = atoi(AESL_token.c_str());
-
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  for (long i = 0; i < __xlx_apatb_param_trainStream_stream_buf_final_size; ++i)((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->read();
 long __xlx_apatb_param_toScheduler_stream_buf_final_size;
 {
       static ifstream rtl_tv_out_file;
@@ -633,46 +569,10 @@ static unsigned AESL_transaction;
 static INTER_TCL_FILE tcl_file(INTER_TCL);
 std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
-aesl_fh.touch(WRAPC_STREAM_SIZE_IN_testStream);
-aesl_fh.touch(WRAPC_STREAM_INGRESS_STATUS_testStream);
-aesl_fh.touch(WRAPC_STREAM_SIZE_IN_trainStream);
-aesl_fh.touch(WRAPC_STREAM_INGRESS_STATUS_trainStream);
 aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_toScheduler);
 aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_toScheduler);
 CodeState = DUMP_INPUTS;
-unsigned __xlx_offset_byte_param_t = 0;
-#ifdef USE_BINARY_TV_FILE
-{
-aesl_fh.touch(AUTOTB_TVIN_t, 'b');
-transaction<32> tr(2);
-  __xlx_offset_byte_param_t = 0*4;
-  if (__xlx_apatb_param_t) {
-tr.import<4>((char*)__xlx_apatb_param_t, 2, 0);
-  }
-aesl_fh.write(AUTOTB_TVIN_t, tr.p, tr.tbytes);
-}
-
-  tcl_file.set_num(2, &tcl_file.t_depth);
-#else
-// print t Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_t, begin_str(AESL_transaction));
-{
-  __xlx_offset_byte_param_t = 0*4;
-if (__xlx_apatb_param_t) {
-for (size_t i = 0; i < 2; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_t + i * 4;
-std::string s = formatData(pos, 32);
-aesl_fh.write(AUTOTB_TVIN_t, s);
-}
-}
-}
-
-  tcl_file.set_num(2, &tcl_file.t_depth);
-aesl_fh.write(AUTOTB_TVIN_t, end_str());
-}
-
-#endif
+unsigned __xlx_offset_byte_param_inputAOV = 0;
 unsigned __xlx_offset_byte_param_errorInTask = 0;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -739,22 +639,6 @@ aesl_fh.write(AUTOTB_TVIN_outcomeInRam, end_str());
 }
 
 #endif
-std::vector<__cosim_s36__> __xlx_apatb_param_testStream_stream_buf;
-{
-  while (!((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->empty())
-    __xlx_apatb_param_testStream_stream_buf.push_back(((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->read());
-  for (int i = 0; i < __xlx_apatb_param_testStream_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->write(__xlx_apatb_param_testStream_stream_buf[i]);
-  }
-long __xlx_apatb_param_testStream_stream_buf_size = ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->size();
-std::vector<__cosim_s36__> __xlx_apatb_param_trainStream_stream_buf;
-{
-  while (!((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->empty())
-    __xlx_apatb_param_trainStream_stream_buf.push_back(((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->read());
-  for (int i = 0; i < __xlx_apatb_param_trainStream_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->write(__xlx_apatb_param_trainStream_stream_buf[i]);
-  }
-long __xlx_apatb_param_trainStream_stream_buf_size = ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->size();
 unsigned __xlx_offset_byte_param_trainedRegions = 0;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -823,8 +707,44 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 #endif
 std::vector<__cosim_s1__> __xlx_apatb_param_toScheduler_stream_buf;
 long __xlx_apatb_param_toScheduler_stream_buf_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size();
+aesl_fh.touch(AUTOTB_TVIN_gmem);
+{
+aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
+__xlx_offset_byte_param_inputAOV = 0*64;
+if (__xlx_apatb_param_inputAOV) {
+for (size_t i = 0; i < 1; ++i) {
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_inputAOV + i * 64;
+std::string s = formatData(pos, 512);
+aesl_fh.write(AUTOTB_TVIN_gmem, s);
+}
+}
+tcl_file.set_num(1, &tcl_file.gmem_depth);
+aesl_fh.write(AUTOTB_TVIN_gmem, end_str());
+}
+// print inputAOV Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_inputAOV, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_offset_byte_param_inputAOV;
+aesl_fh.write(AUTOTB_TVIN_inputAOV, formatData(pos, 32));
+}
+  tcl_file.set_num(1, &tcl_file.inputAOV_depth);
+aesl_fh.write(AUTOTB_TVIN_inputAOV, end_str());
+}
+
+// print copyInputAOV Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_copyInputAOV, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_apatb_param_copyInputAOV;
+aesl_fh.write(AUTOTB_TVIN_copyInputAOV, formatData(pos, 1));
+}
+  tcl_file.set_num(1, &tcl_file.copyInputAOV_depth);
+aesl_fh.write(AUTOTB_TVIN_copyInputAOV, end_str());
+}
+
 CodeState = CALL_C_DUT;
-run_hw_stub_wrapper(__xlx_apatb_param_t, __xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_testStream, __xlx_apatb_param_trainStream, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_toScheduler);
+run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_copyInputAOV, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_toScheduler);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -890,86 +810,6 @@ aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, end_str());
 }
 
 #endif
-long __xlx_apatb_param_testStream_stream_buf_final_size = __xlx_apatb_param_testStream_stream_buf_size - ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_testStream)->size();
-// print testStream Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_testStream, begin_str(AESL_transaction));
-for (int i = 0; i < __xlx_apatb_param_testStream_stream_buf_final_size; ++i) {
-unsigned char *pos = (unsigned char*)(__xlx_apatb_param_testStream_stream_buf.data()+i);
-std::string s(formatData(pos, 288));
-aesl_fh.write(AUTOTB_TVIN_testStream, s);
-}
-
-  tcl_file.set_num(__xlx_apatb_param_testStream_stream_buf_final_size, &tcl_file.testStream_depth);
-aesl_fh.write(AUTOTB_TVIN_testStream, end_str());
-}
-
-
-// dump stream ingress status to file
-{
-aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_testStream, begin_str(AESL_transaction));
-if (__xlx_apatb_param_testStream_stream_buf_final_size > 0) {
-  long testStream_stream_ingress_size = __xlx_apatb_param_testStream_stream_buf_size;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", testStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_testStream, __xlx_sprintf_buffer.data());
-  for (int j = 0, e = __xlx_apatb_param_testStream_stream_buf_final_size; j != e; j++) {
-    testStream_stream_ingress_size--;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", testStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_testStream, __xlx_sprintf_buffer.data());
-  }
-} else {
-  long testStream_stream_ingress_size = 0;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", testStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_testStream, __xlx_sprintf_buffer.data());
-}
-aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_testStream, end_str());
-}
-{
-aesl_fh.write(WRAPC_STREAM_SIZE_IN_testStream, begin_str(AESL_transaction));
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_testStream_stream_buf_final_size);
- aesl_fh.write(WRAPC_STREAM_SIZE_IN_testStream, __xlx_sprintf_buffer.data());
-aesl_fh.write(WRAPC_STREAM_SIZE_IN_testStream, end_str());
-}
-long __xlx_apatb_param_trainStream_stream_buf_final_size = __xlx_apatb_param_trainStream_stream_buf_size - ((hls::stream<__cosim_s36__>*)__xlx_apatb_param_trainStream)->size();
-// print trainStream Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_trainStream, begin_str(AESL_transaction));
-for (int i = 0; i < __xlx_apatb_param_trainStream_stream_buf_final_size; ++i) {
-unsigned char *pos = (unsigned char*)(__xlx_apatb_param_trainStream_stream_buf.data()+i);
-std::string s(formatData(pos, 288));
-aesl_fh.write(AUTOTB_TVIN_trainStream, s);
-}
-
-  tcl_file.set_num(__xlx_apatb_param_trainStream_stream_buf_final_size, &tcl_file.trainStream_depth);
-aesl_fh.write(AUTOTB_TVIN_trainStream, end_str());
-}
-
-
-// dump stream ingress status to file
-{
-aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_trainStream, begin_str(AESL_transaction));
-if (__xlx_apatb_param_trainStream_stream_buf_final_size > 0) {
-  long trainStream_stream_ingress_size = __xlx_apatb_param_trainStream_stream_buf_size;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", trainStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_trainStream, __xlx_sprintf_buffer.data());
-  for (int j = 0, e = __xlx_apatb_param_trainStream_stream_buf_final_size; j != e; j++) {
-    trainStream_stream_ingress_size--;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", trainStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_trainStream, __xlx_sprintf_buffer.data());
-  }
-} else {
-  long trainStream_stream_ingress_size = 0;
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", trainStream_stream_ingress_size);
- aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_trainStream, __xlx_sprintf_buffer.data());
-}
-aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_trainStream, end_str());
-}
-{
-aesl_fh.write(WRAPC_STREAM_SIZE_IN_trainStream, begin_str(AESL_transaction));
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_trainStream_stream_buf_final_size);
- aesl_fh.write(WRAPC_STREAM_SIZE_IN_trainStream, __xlx_sprintf_buffer.data());
-aesl_fh.write(WRAPC_STREAM_SIZE_IN_trainStream, end_str());
-}
 long __xlx_apatb_param_toScheduler_stream_buf_final_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size() - __xlx_apatb_param_toScheduler_stream_buf_size;
 {
   while (!((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->empty())

@@ -24,11 +24,17 @@
 //           bit 0 - ap_done (Read/COR)
 //           bit 1 - ap_ready (Read/COR)
 //           others - reserved
+// 0x00020 : Data signal of inputAOV
+//           bit 31~0 - inputAOV[31:0] (Read/Write)
+// 0x00024 : Data signal of inputAOV
+//           bit 31~0 - inputAOV[63:32] (Read/Write)
+// 0x00028 : reserved
+// 0x0002c : Data signal of copyInputAOV
+//           bit 0  - copyInputAOV[0] (Read/Write)
+//           others - reserved
+// 0x00030 : reserved
 // 0x00010 ~
-// 0x00017 : Memory 't' (2 * 32b)
-//           Word n : bit [31:0] - t[n]
-// 0x00020 ~
-// 0x0002f : Memory 'errorInTask' (16 * 1b)
+// 0x0001f : Memory 'errorInTask' (16 * 1b)
 //           Word n : bit [ 0: 0] - errorInTask[4n]
 //                    bit [ 8: 8] - errorInTask[4n+1]
 //                    bit [16:16] - errorInTask[4n+2]
@@ -67,12 +73,12 @@
 #define XRUN_CONTROL_ADDR_GIE                 0x00004
 #define XRUN_CONTROL_ADDR_IER                 0x00008
 #define XRUN_CONTROL_ADDR_ISR                 0x0000c
-#define XRUN_CONTROL_ADDR_T_BASE              0x00010
-#define XRUN_CONTROL_ADDR_T_HIGH              0x00017
-#define XRUN_CONTROL_WIDTH_T                  32
-#define XRUN_CONTROL_DEPTH_T                  2
-#define XRUN_CONTROL_ADDR_ERRORINTASK_BASE    0x00020
-#define XRUN_CONTROL_ADDR_ERRORINTASK_HIGH    0x0002f
+#define XRUN_CONTROL_ADDR_INPUTAOV_DATA       0x00020
+#define XRUN_CONTROL_BITS_INPUTAOV_DATA       64
+#define XRUN_CONTROL_ADDR_COPYINPUTAOV_DATA   0x0002c
+#define XRUN_CONTROL_BITS_COPYINPUTAOV_DATA   1
+#define XRUN_CONTROL_ADDR_ERRORINTASK_BASE    0x00010
+#define XRUN_CONTROL_ADDR_ERRORINTASK_HIGH    0x0001f
 #define XRUN_CONTROL_WIDTH_ERRORINTASK        1
 #define XRUN_CONTROL_DEPTH_ERRORINTASK        16
 #define XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE   0x00040

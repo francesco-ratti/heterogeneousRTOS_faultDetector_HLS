@@ -30,15 +30,13 @@ module run_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
-    input  wire [0:0]                    t_address0,
-    input  wire                          t_ce0,
-    input  wire                          t_we0,
-    input  wire [31:0]                   t_d0,
     input  wire [3:0]                    errorInTask_address0,
     input  wire                          errorInTask_ce0,
     input  wire                          errorInTask_we0,
     input  wire [0:0]                    errorInTask_d0,
     output wire [0:0]                    errorInTask_q0,
+    output wire [63:0]                   inputAOV,
+    output wire [0:0]                    copyInputAOV,
     input  wire [5:0]                    n_regions_in_address0,
     input  wire                          n_regions_in_ce0,
     output wire [7:0]                    n_regions_in_q0,
@@ -76,11 +74,17 @@ module run_control_s_axi
 //           bit 0 - ap_done (Read/COR)
 //           bit 1 - ap_ready (Read/COR)
 //           others - reserved
+// 0x00020 : Data signal of inputAOV
+//           bit 31~0 - inputAOV[31:0] (Read/Write)
+// 0x00024 : Data signal of inputAOV
+//           bit 31~0 - inputAOV[63:32] (Read/Write)
+// 0x00028 : reserved
+// 0x0002c : Data signal of copyInputAOV
+//           bit 0  - copyInputAOV[0] (Read/Write)
+//           others - reserved
+// 0x00030 : reserved
 // 0x00010 ~
-// 0x00017 : Memory 't' (2 * 32b)
-//           Word n : bit [31:0] - t[n]
-// 0x00020 ~
-// 0x0002f : Memory 'errorInTask' (16 * 1b)
+// 0x0001f : Memory 'errorInTask' (16 * 1b)
 //           Word n : bit [ 0: 0] - errorInTask[4n]
 //                    bit [ 8: 8] - errorInTask[4n+1]
 //                    bit [16:16] - errorInTask[4n+2]
@@ -121,10 +125,13 @@ localparam
     ADDR_GIE                 = 18'h00004,
     ADDR_IER                 = 18'h00008,
     ADDR_ISR                 = 18'h0000c,
-    ADDR_T_BASE              = 18'h00010,
-    ADDR_T_HIGH              = 18'h00017,
-    ADDR_ERRORINTASK_BASE    = 18'h00020,
-    ADDR_ERRORINTASK_HIGH    = 18'h0002f,
+    ADDR_INPUTAOV_DATA_0     = 18'h00020,
+    ADDR_INPUTAOV_DATA_1     = 18'h00024,
+    ADDR_INPUTAOV_CTRL       = 18'h00028,
+    ADDR_COPYINPUTAOV_DATA_0 = 18'h0002c,
+    ADDR_COPYINPUTAOV_CTRL   = 18'h00030,
+    ADDR_ERRORINTASK_BASE    = 18'h00010,
+    ADDR_ERRORINTASK_HIGH    = 18'h0001f,
     ADDR_N_REGIONS_IN_BASE   = 18'h00040,
     ADDR_N_REGIONS_IN_HIGH   = 18'h0007f,
     ADDR_OUTCOMEINRAM_BASE   = 18'h00400,
@@ -168,20 +175,9 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
+    reg  [63:0]                   int_inputAOV = 'b0;
+    reg  [0:0]                    int_copyInputAOV = 'b0;
     // memory signals
-    wire [0:0]                    int_t_address0;
-    wire                          int_t_ce0;
-    wire [3:0]                    int_t_be0;
-    wire [31:0]                   int_t_d0;
-    wire [31:0]                   int_t_q0;
-    wire [0:0]                    int_t_address1;
-    wire                          int_t_ce1;
-    wire                          int_t_we1;
-    wire [3:0]                    int_t_be1;
-    wire [31:0]                   int_t_d1;
-    wire [31:0]                   int_t_q1;
-    reg                           int_t_read;
-    reg                           int_t_write;
     wire [1:0]                    int_errorInTask_address0;
     wire                          int_errorInTask_ce0;
     wire [3:0]                    int_errorInTask_be0;
@@ -231,26 +227,6 @@ localparam
     reg                           int_trainedRegions_write;
 
 //------------------------Instantiation------------------
-// int_t
-run_control_s_axi_ram #(
-    .MEM_STYLE ( "auto" ),
-    .MEM_TYPE  ( "T2P" ),
-    .BYTES     ( 4 ),
-    .DEPTH     ( 2 )
-) int_t (
-    .clk0      ( ACLK ),
-    .address0  ( int_t_address0 ),
-    .ce0       ( int_t_ce0 ),
-    .we0       ( int_t_be0 ),
-    .d0        ( int_t_d0 ),
-    .q0        ( int_t_q0 ),
-    .clk1      ( ACLK ),
-    .address1  ( int_t_address1 ),
-    .ce1       ( int_t_ce1 ),
-    .we1       ( int_t_be1 ),
-    .d1        ( int_t_d1 ),
-    .q1        ( int_t_q1 )
-);
 // int_errorInTask
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
@@ -385,7 +361,7 @@ end
 assign ARREADY = (rstate == RDIDLE);
 assign RDATA   = rdata;
 assign RRESP   = 2'b00;  // OKAY
-assign RVALID  = (rstate == RDDATA) & !int_t_read & !int_errorInTask_read & !int_n_regions_in_read & !int_outcomeInRam_read & !int_trainedRegions_read;
+assign RVALID  = (rstate == RDDATA) & !int_errorInTask_read & !int_n_regions_in_read & !int_outcomeInRam_read & !int_trainedRegions_read;
 assign ar_hs   = ARVALID & ARREADY;
 assign raddr   = ARADDR[ADDR_BITS-1:0];
 
@@ -439,10 +415,16 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
+                ADDR_INPUTAOV_DATA_0: begin
+                    rdata <= int_inputAOV[31:0];
+                end
+                ADDR_INPUTAOV_DATA_1: begin
+                    rdata <= int_inputAOV[63:32];
+                end
+                ADDR_COPYINPUTAOV_DATA_0: begin
+                    rdata <= int_copyInputAOV[0:0];
+                end
             endcase
-        end
-        else if (int_t_read) begin
-            rdata <= int_t_q1;
         end
         else if (int_errorInTask_read) begin
             rdata <= int_errorInTask_q1;
@@ -466,6 +448,8 @@ assign ap_start      = int_ap_start;
 assign task_ap_done  = (ap_done && !auto_restart_status) || auto_restart_done;
 assign task_ap_ready = ap_ready && !int_auto_restart;
 assign ap_continue   = int_ap_continue || auto_restart_status;
+assign inputAOV      = int_inputAOV;
+assign copyInputAOV  = int_copyInputAOV;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -619,6 +603,36 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_inputAOV[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_inputAOV[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_INPUTAOV_DATA_0)
+            int_inputAOV[31:0] <= (WDATA[31:0] & wmask) | (int_inputAOV[31:0] & ~wmask);
+    end
+end
+
+// int_inputAOV[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_inputAOV[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_INPUTAOV_DATA_1)
+            int_inputAOV[63:32] <= (WDATA[31:0] & wmask) | (int_inputAOV[63:32] & ~wmask);
+    end
+end
+
+// int_copyInputAOV[0:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_copyInputAOV[0:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_COPYINPUTAOV_DATA_0)
+            int_copyInputAOV[0:0] <= (WDATA[31:0] & wmask) | (int_copyInputAOV[0:0] & ~wmask);
+    end
+end
+
 //synthesis translate_off
 always @(posedge ACLK) begin
     if (ACLK_EN) begin
@@ -631,14 +645,6 @@ end
 //synthesis translate_on
 
 //------------------------Memory logic-------------------
-// t
-assign int_t_address0              = t_address0;
-assign int_t_ce0                   = t_ce0;
-assign int_t_address1              = ar_hs? raddr[2:2] : waddr[2:2];
-assign int_t_ce1                   = ar_hs | (int_t_write & WVALID);
-assign int_t_we1                   = int_t_write & w_hs;
-assign int_t_be1                   = int_t_we1 ? WSTRB : 'b0;
-assign int_t_d1                    = WDATA;
 // errorInTask
 assign int_errorInTask_address0    = errorInTask_address0 >> 2;
 assign int_errorInTask_ce0         = errorInTask_ce0;
@@ -675,30 +681,6 @@ assign int_trainedRegions_ce1      = ar_hs | (int_trainedRegions_write & WVALID)
 assign int_trainedRegions_we1      = int_trainedRegions_write & w_hs;
 assign int_trainedRegions_be1      = int_trainedRegions_we1 ? WSTRB : 'b0;
 assign int_trainedRegions_d1       = WDATA;
-// int_t_read
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_t_read <= 1'b0;
-    else if (ACLK_EN) begin
-        if (ar_hs && raddr >= ADDR_T_BASE && raddr <= ADDR_T_HIGH)
-            int_t_read <= 1'b1;
-        else
-            int_t_read <= 1'b0;
-    end
-end
-
-// int_t_write
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_t_write <= 1'b0;
-    else if (ACLK_EN) begin
-        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_T_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_T_HIGH)
-            int_t_write <= 1'b1;
-        else if (w_hs)
-            int_t_write <= 1'b0;
-    end
-end
-
 // int_errorInTask_read
 always @(posedge ACLK) begin
     if (ARESET)

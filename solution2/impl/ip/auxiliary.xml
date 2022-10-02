@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="run" xd:componentRef="run" xd:initiationInterval="x" xd:clockPeriod="18" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(errorInTask)" xd:originalName="errorInTask" xd:direction="inout" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x10" xd:dataWidth="16"/>
+  <xd:arg xd:name="*(outcomeInRam)" xd:originalName="outcomeInRam" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x400" xd:dataWidth="1024"/>
+  <xd:arg xd:name="*(inputAOV)" xd:originalName="inputAOV" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataWidth="512" xd:bufferDirection="in"/>
+  <xd:arg xd:name="inputAOV" xd:originalName="inputAOV" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x20" xd:dataWidth="32" xd:aximmInterfaceRef="m_axi_gmem"/>
+  <xd:arg xd:name="copyInputAOV" xd:originalName="copyInputAOV" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x2C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(trainedRegions)" xd:originalName="trainedRegions" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x20000" xd:dataWidth="131072"/>
+  <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x40" xd:dataWidth="64"/>
+  <xd:arg xd:name="toScheduler" xd:originalName="toScheduler" xd:direction="out" xd:interfaceRef="toScheduler" xd:busTypeRef="axis" xd:dataWidth="8"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="23264" xd:FF="16383" xd:BRAM="0" xd:DSP="235"/>
+</xd:acceleratorMap>

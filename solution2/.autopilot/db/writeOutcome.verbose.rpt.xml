@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'writeOutcome'" level="0">
-<item name = "Date">Tue Sep 27 20:01:26 2022
+<item name = "Date">Sun Oct  2 18:57:56 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">20.00 ns, 5.576 ns, 5.40 ns</column>
+<column name="ap_clk">18.00 ns, 5.576 ns, 4.86 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">10, 14, 0.200 us, 0.280 us, 10, 14, no</column>
+<column name="">15, 15, 0.270 us, 0.270 us, 15, 15, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -48,12 +48,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 28, -</column>
+<column name="Expression">-, -, 0, 24, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, 0, 42, -</column>
 <column name="Memory">0, -, 64, 4, 0</column>
-<column name="Multiplexer">-, -, -, 206, -</column>
-<column name="Register">-, -, 464, -, -</column>
+<column name="Multiplexer">-, -, -, 131, -</column>
+<column name="Register">-, -, 208, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -62,7 +62,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mux_84_32_1_1_U638">mux_84_32_1_1, 0, 0, 0, 42, 0</column>
+<column name="mux_84_32_1_1_U144">mux_84_32_1_1, 0, 0, 0, 42, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -80,26 +80,15 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_fu_339_p2">+, 0, 0, 13, 4, 1</column>
-<column name="ap_block_state2">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op58_write_state2">and, 0, 0, 2, 1, 1</column>
-<column name="exitcond4_i_fu_333_p2">icmp, 0, 0, 9, 4, 5</column>
-<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="empty_fu_329_p2">+, 0, 0, 13, 4, 1</column>
+<column name="ap_block_state7">and, 0, 0, 2, 1, 1</column>
+<column name="exitcond4_fu_323_p2">icmp, 0, 0, 9, 4, 5</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">42, 8, 1, 8</column>
-<column name="ap_done">9, 2, 1, 2</column>
-<column name="data_1_blk_n">9, 2, 1, 2</column>
-<column name="data_2_blk_n">9, 2, 1, 2</column>
-<column name="data_3_blk_n">9, 2, 1, 2</column>
-<column name="data_4_blk_n">9, 2, 1, 2</column>
-<column name="data_5_blk_n">9, 2, 1, 2</column>
-<column name="data_6_blk_n">9, 2, 1, 2</column>
-<column name="data_7_blk_n">9, 2, 1, 2</column>
-<column name="data_blk_n">9, 2, 1, 2</column>
-<column name="loop_index3_i_fu_116">9, 2, 4, 8</column>
+<column name="ap_NS_fsm">48, 9, 1, 9</column>
+<column name="loop_index3_fu_106">9, 2, 4, 8</column>
 <column name="outcomeInRam_we0">9, 2, 35, 70</column>
 <column name="outcome_AOV_address0">31, 6, 3, 18</column>
 <column name="outcome_AOV_address1">25, 5, 3, 15</column>
@@ -108,24 +97,15 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">7, 0, 7, 0</column>
-<column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="data_1_read_reg_472">32, 0, 32, 0</column>
-<column name="data_2_read_reg_467">32, 0, 32, 0</column>
-<column name="data_3_read_reg_462">32, 0, 32, 0</column>
-<column name="data_4_read_reg_457">32, 0, 32, 0</column>
-<column name="data_5_read_reg_452">32, 0, 32, 0</column>
-<column name="data_6_read_reg_447">32, 0, 32, 0</column>
-<column name="data_7_read_reg_442">32, 0, 32, 0</column>
-<column name="data_read_reg_477">32, 0, 32, 0</column>
-<column name="errorInTask1_cast_i_reg_482">4, 0, 64, 60</column>
-<column name="loop_index3_i_fu_116">4, 0, 4, 0</column>
-<column name="outcome_AOV_load_1_reg_510">32, 0, 32, 0</column>
-<column name="outcome_AOV_load_2_reg_525">32, 0, 32, 0</column>
-<column name="outcome_AOV_load_3_reg_530">32, 0, 32, 0</column>
-<column name="outcome_AOV_load_4_reg_545">32, 0, 32, 0</column>
-<column name="outcome_AOV_load_5_reg_550">32, 0, 32, 0</column>
-<column name="outcome_AOV_load_reg_505">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">8, 0, 8, 0</column>
+<column name="errorInTask1_cast_reg_472">4, 0, 64, 60</column>
+<column name="loop_index3_fu_106">4, 0, 4, 0</column>
+<column name="outcome_AOV_load_1_reg_495">32, 0, 32, 0</column>
+<column name="outcome_AOV_load_2_reg_510">32, 0, 32, 0</column>
+<column name="outcome_AOV_load_3_reg_515">32, 0, 32, 0</column>
+<column name="outcome_AOV_load_4_reg_530">32, 0, 32, 0</column>
+<column name="outcome_AOV_load_5_reg_535">32, 0, 32, 0</column>
+<column name="outcome_AOV_load_reg_490">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -139,18 +119,17 @@
 <column name="ap_rst">in, 1, ap_ctrl_hs, writeOutcome, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, writeOutcome, return value</column>
 <column name="ap_done">out, 1, ap_ctrl_hs, writeOutcome, return value</column>
-<column name="ap_continue">in, 1, ap_ctrl_hs, writeOutcome, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, writeOutcome, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, writeOutcome, return value</column>
 <column name="errorInTask_address0">out, 4, ap_memory, errorInTask, array</column>
 <column name="errorInTask_ce0">out, 1, ap_memory, errorInTask, array</column>
 <column name="errorInTask_we0">out, 1, ap_memory, errorInTask, array</column>
 <column name="errorInTask_d0">out, 1, ap_memory, errorInTask, array</column>
-<column name="p_read">in, 4, ap_none, p_read, scalar</column>
-<column name="p_read1">in, 8, ap_none, p_read1, scalar</column>
-<column name="p_read2">in, 8, ap_none, p_read2, scalar</column>
-<column name="p_read3">in, 16, ap_none, p_read3, scalar</column>
-<column name="p_read4">in, 1, ap_none, p_read4, scalar</column>
+<column name="errorInTask1">in, 4, ap_none, errorInTask1, scalar</column>
+<column name="checkId">in, 8, ap_none, checkId, scalar</column>
+<column name="taskId">in, 8, ap_none, taskId, scalar</column>
+<column name="uniId">in, 16, ap_none, uniId, scalar</column>
+<column name="error">in, 1, ap_none, error, scalar</column>
 <column name="toScheduler_TDATA">out, 8, axis, toScheduler, pointer</column>
 <column name="toScheduler_TVALID">out, 1, axis, toScheduler, pointer</column>
 <column name="toScheduler_TREADY">in, 1, axis, toScheduler, pointer</column>
@@ -158,46 +137,14 @@
 <column name="outcomeInRam_ce0">out, 1, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_we0">out, 36, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_d0">out, 288, ap_memory, outcomeInRam, array</column>
-<column name="data_dout">in, 32, ap_fifo, data, pointer</column>
-<column name="data_num_data_valid">in, 2, ap_fifo, data, pointer</column>
-<column name="data_fifo_cap">in, 2, ap_fifo, data, pointer</column>
-<column name="data_empty_n">in, 1, ap_fifo, data, pointer</column>
-<column name="data_read">out, 1, ap_fifo, data, pointer</column>
-<column name="data_1_dout">in, 32, ap_fifo, data_1, pointer</column>
-<column name="data_1_num_data_valid">in, 2, ap_fifo, data_1, pointer</column>
-<column name="data_1_fifo_cap">in, 2, ap_fifo, data_1, pointer</column>
-<column name="data_1_empty_n">in, 1, ap_fifo, data_1, pointer</column>
-<column name="data_1_read">out, 1, ap_fifo, data_1, pointer</column>
-<column name="data_2_dout">in, 32, ap_fifo, data_2, pointer</column>
-<column name="data_2_num_data_valid">in, 2, ap_fifo, data_2, pointer</column>
-<column name="data_2_fifo_cap">in, 2, ap_fifo, data_2, pointer</column>
-<column name="data_2_empty_n">in, 1, ap_fifo, data_2, pointer</column>
-<column name="data_2_read">out, 1, ap_fifo, data_2, pointer</column>
-<column name="data_3_dout">in, 32, ap_fifo, data_3, pointer</column>
-<column name="data_3_num_data_valid">in, 2, ap_fifo, data_3, pointer</column>
-<column name="data_3_fifo_cap">in, 2, ap_fifo, data_3, pointer</column>
-<column name="data_3_empty_n">in, 1, ap_fifo, data_3, pointer</column>
-<column name="data_3_read">out, 1, ap_fifo, data_3, pointer</column>
-<column name="data_4_dout">in, 32, ap_fifo, data_4, pointer</column>
-<column name="data_4_num_data_valid">in, 2, ap_fifo, data_4, pointer</column>
-<column name="data_4_fifo_cap">in, 2, ap_fifo, data_4, pointer</column>
-<column name="data_4_empty_n">in, 1, ap_fifo, data_4, pointer</column>
-<column name="data_4_read">out, 1, ap_fifo, data_4, pointer</column>
-<column name="data_5_dout">in, 32, ap_fifo, data_5, pointer</column>
-<column name="data_5_num_data_valid">in, 2, ap_fifo, data_5, pointer</column>
-<column name="data_5_fifo_cap">in, 2, ap_fifo, data_5, pointer</column>
-<column name="data_5_empty_n">in, 1, ap_fifo, data_5, pointer</column>
-<column name="data_5_read">out, 1, ap_fifo, data_5, pointer</column>
-<column name="data_6_dout">in, 32, ap_fifo, data_6, pointer</column>
-<column name="data_6_num_data_valid">in, 2, ap_fifo, data_6, pointer</column>
-<column name="data_6_fifo_cap">in, 2, ap_fifo, data_6, pointer</column>
-<column name="data_6_empty_n">in, 1, ap_fifo, data_6, pointer</column>
-<column name="data_6_read">out, 1, ap_fifo, data_6, pointer</column>
-<column name="data_7_dout">in, 32, ap_fifo, data_7, pointer</column>
-<column name="data_7_num_data_valid">in, 2, ap_fifo, data_7, pointer</column>
-<column name="data_7_fifo_cap">in, 2, ap_fifo, data_7, pointer</column>
-<column name="data_7_empty_n">in, 1, ap_fifo, data_7, pointer</column>
-<column name="data_7_read">out, 1, ap_fifo, data_7, pointer</column>
+<column name="p_read">in, 32, ap_none, p_read, scalar</column>
+<column name="p_read1">in, 32, ap_none, p_read1, scalar</column>
+<column name="p_read2">in, 32, ap_none, p_read2, scalar</column>
+<column name="p_read3">in, 32, ap_none, p_read3, scalar</column>
+<column name="p_read4">in, 32, ap_none, p_read4, scalar</column>
+<column name="p_read5">in, 32, ap_none, p_read5, scalar</column>
+<column name="p_read6">in, 32, ap_none, p_read6, scalar</column>
+<column name="p_read7">in, 32, ap_none, p_read7, scalar</column>
 </table>
 </item>
 </section>

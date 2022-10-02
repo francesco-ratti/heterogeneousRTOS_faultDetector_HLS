@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'insert_point_Pipeline_insert_point_label6'" level="0">
-<item name = "Date">Tue Sep 27 20:01:16 2022
+<item name = "Date">Sun Oct  2 18:57:45 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">20.00 ns, 12.383 ns, 5.40 ns</column>
+<column name="ap_clk">18.00 ns, 12.383 ns, 4.86 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">18, 18, 0.360 us, 0.360 us, 18, 18, no</column>
+<column name="">26, 26, 0.468 us, 0.468 us, 26, 26, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- insert_point_label6">16, 16, 10, 1, 1, 8, yes</column>
+<column name="- insert_point_label6">24, 24, 11, 2, 1, 8, yes</column>
 </table>
 </item>
 </section>

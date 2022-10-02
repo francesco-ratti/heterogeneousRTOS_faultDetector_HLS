@@ -1,14 +1,26 @@
 # This script segment is generated automatically by AutoPilot
 
+set name run_mul_64ns_66ns_81_1_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
+set name run_mul_64ns_66ns_129_1_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
 # Memory (RAM/ROM)  definition:
-set ID 1428
+set ID 261
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 32
-set AddrRange 512
-set AddrWd 9
+set AddrRange 4096
+set AddrWd 12
 set impl_style auto
 set TrueReset 0
 set IsROM 0
@@ -80,86 +92,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 1429
-set hasByteEnable 0
-set MemName run_regions_15_RAM_AUTO_1R1W
-set CoreName ap_simcore_mem
-set PortList { 2 1 }
-set DataWd 32
-set AddrRange 512
-set AddrWd 9
-set impl_style auto
-set TrueReset 0
-set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set DelayBudget 3.254
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem  \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $MemName BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-set CoreName RAM
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem  \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 1430
+set ID 262
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -237,6 +170,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 }
 
 
+set name run_gmem_m_axi
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -246,29 +185,33 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 set axilite_register_dict [dict create]
 set port_control {
-t { 
-	dir X
-	width 32
-	depth 2
-	mode ap_memory
-	offset 16
-	offset_end 23
-	core_op ram_1p
-	core_impl auto
-	core_latency 3
-	byte_write 0
-}
 errorInTask { 
 	dir IO
 	width 1
 	depth 16
 	mode ap_memory
-	offset 32
-	offset_end 47
+	offset 16
+	offset_end 31
 	core_op ram_1p
 	core_impl auto
 	core_latency 1
 	byte_write 0
+}
+inputAOV { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 32
+	offset_end 43
+}
+copyInputAOV { 
+	dir I
+	width 1
+	depth 1
+	mode ap_none
+	offset 44
+	offset_end 51
 }
 n_regions_in { 
 	dir I
@@ -321,7 +264,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 1431 \
+			id 263 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -345,45 +288,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 1432 \
-    name testStream \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { testStream_TDATA { I 288 vector } testStream_TVALID { I 1 bit } testStream_TREADY { O 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'testStream'"
-}
-}
-
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 1433 \
-    name trainStream \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { trainStream_TDATA { I 288 vector } trainStream_TVALID { I 1 bit } trainStream_TREADY { O 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'trainStream'"
-}
-}
-
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 1434 \
+    id 265 \
     name toScheduler \
     reset_level 0 \
     sync_rst true \
@@ -449,53 +354,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 1435
-set RegSliceName run_regslice_both
-set RegSliceInstName run_regslice_both_U
-set CoreName ap_simcore_run_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix run_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 1436
-set RegSliceName run_regslice_both
-set RegSliceInstName run_regslice_both_U
-set CoreName ap_simcore_run_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix run_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 1437
+set ID 266
 set RegSliceName run_regslice_both
 set RegSliceInstName run_regslice_both_U
 set CoreName ap_simcore_run_regslice_both
