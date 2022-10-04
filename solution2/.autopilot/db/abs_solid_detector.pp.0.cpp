@@ -12895,11 +12895,11 @@ void update_train_regions(region_t regions[16], const int id, const float val[8]
  }
 }
 # 239 "detector_solid/abs_solid_detector.cpp"
-void insert_point(region_t regions[16], ap_uint<8> &n_regions, const float d[8], bool &copyInputAOV) {
+void insert_point(region_t regions[16], ap_uint<8> &n_regions, const float d[8], char* copyInputAOV) {
 
 
 
- copyInputAOV=false;
+ *copyInputAOV=0;
 
  if (is_valid(d)) {
 
@@ -30191,9 +30191,9 @@ void read_train(
 
   controlStr* dest,
   controlStr* inputAOV,
-  bool &copyInputAOV) {
+  char* copyInputAOV) {
 
- VITIS_LOOP_471_1: while (!copyInputAOV) {}
+ VITIS_LOOP_471_1: while ((*copyInputAOV)==0) {}
  memcpy(dest, inputAOV, sizeof(controlStr));
 
 
@@ -30202,7 +30202,7 @@ void read_train(
 
 }
 # 494 "detector_solid/abs_solid_detector.cpp"
-void writeOutcome(bool &errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, hls::stream< ap_uint<8>> &toScheduler, OutcomeStr* outcomeInRam, float data[8]) {
+void writeOutcome(bool* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, hls::stream< ap_uint<8>> &toScheduler, OutcomeStr* outcomeInRam, float data[8]) {
 # 504 "detector_solid/abs_solid_detector.cpp"
  OutcomeStr outcome;
  outcome.checkId=checkId;
@@ -30213,17 +30213,17 @@ void writeOutcome(bool &errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 
  if (error) {
 
-  errorInTask=true;
+  *errorInTask=true;
   toScheduler.write(taskId);
  }
 }
 # 525 "detector_solid/abs_solid_detector.cpp"
-void run_test(bool &error, region_t regions[16], ap_uint<8> n_regions, float data[8], bool &copyInputAOV) {
- copyInputAOV=false;
- error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
+void run_test(bool* error, region_t regions[16], ap_uint<8> n_regions, float data[8], char* copyInputAOV) {
+ *copyInputAOV=0;
+ *error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
 }
 
-void runTestAfterInit(controlStr* inputAOV, bool &copyInputAOV,
+void runTestAfterInit(controlStr* inputAOV, char* copyInputAOV,
   OutcomeStr * outcomeInRam, hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[16], region_t regions[64][16], ap_uint<8> n_regions[64]
 ) {
 
@@ -30246,8 +30246,8 @@ void runTestAfterInit(controlStr* inputAOV, bool &copyInputAOV,
 
 
  if (contr.command==2 && !errorInTask[contr.taskId]) {
-  run_test(error, regions[contr.taskId], n_regions[contr.taskId], contr.AOV, copyInputAOV);
-  writeOutcome(errorInTask[contr.taskId], contr.checkId, contr.taskId, contr.uniId, error, toScheduler, outcomeInRam, contr.AOV);
+  run_test(&error, regions[contr.taskId], n_regions[contr.taskId], contr.AOV, copyInputAOV);
+  writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, toScheduler, outcomeInRam, contr.AOV);
  } else if (contr.command==3) {
   insert_point(regions[contr.checkId],
     n_regions[contr.checkId],
@@ -30255,12 +30255,20 @@ void runTestAfterInit(controlStr* inputAOV, bool &copyInputAOV,
  }
 
 }
-# 616 "detector_solid/abs_solid_detector.cpp"
+# 608 "detector_solid/abs_solid_detector.cpp"
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
 
 
-__attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV, bool copyInputAOV,
+void runT(controlStr* inputAOV, char* copyInputAOV,
+  OutcomeStr * outcomeInRam, hls::stream< ap_uint<8> > &toScheduler, bool errorInTask[16], region_t regions[64][16], ap_uint<8> n_regions[64]
+) {
+ *copyInputAOV=0;
+ VITIS_LOOP_616_1: for (;;)
+  runTestAfterInit(inputAOV, copyInputAOV, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+}
+
+__attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV, char* copyInputAOV,
 
   region_t trainedRegions[64][16], ap_uint<8> n_regions_in[64], hls::stream< ap_uint<8> > &toScheduler) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
@@ -30300,8 +30308,10 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
 
 
 
- VITIS_LOOP_682_4: for (;;)
-  runTestAfterInit(inputAOV, copyInputAOV, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
+
+
+
+ runT(inputAOV, copyInputAOV, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
 
 
 

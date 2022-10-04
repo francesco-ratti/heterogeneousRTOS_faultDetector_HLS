@@ -47,7 +47,7 @@
 <AreaEstimates>
 <Resources>
 <FF>651</FF>
-<LUT>536</LUT>
+<LUT>512</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -129,7 +129,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1723_p_din0</name>
+<name>grp_fu_1705_p_din0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -140,7 +140,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1723_p_din1</name>
+<name>grp_fu_1705_p_din1</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -151,7 +151,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1723_p_opcode</name>
+<name>grp_fu_1705_p_opcode</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -162,7 +162,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1723_p_dout0</name>
+<name>grp_fu_1705_p_dout0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -173,7 +173,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1723_p_ce</name>
+<name>grp_fu_1705_p_ce</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -184,7 +184,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1739_p_din0</name>
+<name>grp_fu_1721_p_din0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -195,7 +195,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1739_p_din1</name>
+<name>grp_fu_1721_p_din1</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -206,7 +206,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1739_p_dout0</name>
+<name>grp_fu_1721_p_dout0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -217,7 +217,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1739_p_ce</name>
+<name>grp_fu_1721_p_ce</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -228,7 +228,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1711_p_din0</name>
+<name>grp_fu_1693_p_din0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -239,7 +239,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1711_p_din1</name>
+<name>grp_fu_1693_p_din1</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -250,7 +250,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1711_p_opcode</name>
+<name>grp_fu_1693_p_opcode</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -261,7 +261,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1711_p_dout0</name>
+<name>grp_fu_1693_p_dout0</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -272,7 +272,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_1711_p_ce</name>
+<name>grp_fu_1693_p_ce</name>
 <Object>insert_point_Pipeline_insert_point_label6</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -305,14 +305,14 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>tmp_128</name>
-<Object>tmp_128</Object>
+<name>tmp_127</name>
+<Object>tmp_127</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>12</Bits>
+<Bits>9</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -404,14 +404,14 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>tmp_131</name>
-<Object>tmp_131</Object>
+<name>tmp_130</name>
+<Object>tmp_130</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>12</Bits>
+<Bits>9</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

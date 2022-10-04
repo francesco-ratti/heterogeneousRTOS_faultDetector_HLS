@@ -5,10 +5,11 @@
   <xd:arg xd:name="*(outcomeInRam)" xd:originalName="outcomeInRam" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x400" xd:dataWidth="1024"/>
   <xd:arg xd:name="*(inputAOV)" xd:originalName="inputAOV" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataWidth="512" xd:bufferDirection="in"/>
   <xd:arg xd:name="inputAOV" xd:originalName="inputAOV" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x20" xd:dataWidth="32" xd:aximmInterfaceRef="m_axi_gmem"/>
-  <xd:arg xd:name="copyInputAOV" xd:originalName="copyInputAOV" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x2C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(copyInputAOV)" xd:originalName="copyInputAOV" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(copyInputAOV)" xd:originalName="copyInputAOV" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(trainedRegions)" xd:originalName="trainedRegions" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x20000" xd:dataWidth="131072"/>
   <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x40" xd:dataWidth="64"/>
   <xd:arg xd:name="toScheduler" xd:originalName="toScheduler" xd:direction="out" xd:interfaceRef="toScheduler" xd:busTypeRef="axis" xd:dataWidth="8"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="23264" xd:FF="16383" xd:BRAM="0" xd:DSP="235"/>
+  <xd:resourceEstimates xd:LUT="23227" xd:FF="16176" xd:BRAM="0" xd:DSP="166"/>
 </xd:acceleratorMap>

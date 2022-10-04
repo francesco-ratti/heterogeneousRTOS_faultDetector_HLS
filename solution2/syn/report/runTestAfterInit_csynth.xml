@@ -22,19 +22,19 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>3</Best-caseLatency>
-<Average-caseLatency>100</Average-caseLatency>
-<Worst-caseLatency>1278</Worst-caseLatency>
-<Best-caseRealTimeLatency>54.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.800 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>23.004 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>4</Best-caseLatency>
+<Average-caseLatency>101</Average-caseLatency>
+<Worst-caseLatency>1279</Worst-caseLatency>
+<Best-caseRealTimeLatency>72.000 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.818 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>23.022 us</Worst-caseRealTimeLatency>
 <DataflowPipelineThroughput>
 <range>
-<min>2</min>
+<min>3</min>
 <max>1207</max>
 </range>
 </DataflowPipelineThroughput>
-<Interval-min>2</Interval-min>
+<Interval-min>3</Interval-min>
 <Interval-max>1207</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -43,8 +43,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>22</DSP>
-<FF>11945</FF>
-<LUT>16234</LUT>
+<FF>11964</FF>
+<LUT>16217</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -87,7 +87,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -307,7 +307,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>32</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -571,7 +571,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>64</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -586,20 +586,20 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_read</name>
-<Object>p_read</Object>
-<Type>scalar</Type>
+<name>copyInputAOV_in</name>
+<Object>copyInputAOV_in</Object>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_read_ap_vld</name>
-<Object>p_read</Object>
-<Type>scalar</Type>
+<name>copyInputAOV_in_ap_vld</name>
+<Object>copyInputAOV_in</Object>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -615,7 +615,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

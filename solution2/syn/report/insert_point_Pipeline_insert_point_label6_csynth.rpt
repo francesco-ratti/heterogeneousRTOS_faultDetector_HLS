@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'insert_point_Pipeline_insert_point_label6'
 ================================================================
-* Date:           Sun Oct  2 18:57:54 2022
+* Date:           Tue Oct  4 21:03:57 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -54,18 +54,18 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|    174|    -|
+|Expression       |        -|    -|       0|    150|    -|
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |        -|    -|       0|     36|    -|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|    230|    -|
 |Register         |        -|    -|     651|     96|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     651|    536|    0|
+|Total            |        0|    0|     651|    512|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        0|    0|      ~0|      1|    0|
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
@@ -95,31 +95,29 @@
     |      Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +------------------------+----------+----+---+----+------------+------------+
     |add_ln353_fu_265_p2     |         +|   0|  0|  13|           4|           1|
-    |add_ln354_1_fu_289_p2   |         +|   0|  0|  12|          12|          12|
-    |add_ln354_fu_275_p2     |         +|   0|  0|  12|          12|          12|
-    |and_ln354_1_fu_424_p2   |       and|   0|  0|   2|           1|           1|
-    |and_ln354_fu_418_p2     |       and|   0|  0|   2|           1|           1|
-    |and_ln357_1_fu_506_p2   |       and|   0|  0|   2|           1|           1|
-    |and_ln357_fu_500_p2     |       and|   0|  0|   2|           1|           1|
+    |and_ln354_1_fu_428_p2   |       and|   0|  0|   2|           1|           1|
+    |and_ln354_fu_422_p2     |       and|   0|  0|   2|           1|           1|
+    |and_ln357_1_fu_510_p2   |       and|   0|  0|   2|           1|           1|
+    |and_ln357_fu_504_p2     |       and|   0|  0|   2|           1|           1|
     |ap_condition_253        |       and|   0|  0|   2|           1|           1|
     |ap_condition_459        |       and|   0|  0|   2|           1|           1|
     |ap_condition_462        |       and|   0|  0|   2|           1|           1|
     |icmp_ln353_fu_259_p2    |      icmp|   0|  0|   9|           4|           5|
-    |icmp_ln354_1_fu_388_p2  |      icmp|   0|  0|  15|          23|           1|
-    |icmp_ln354_2_fu_400_p2  |      icmp|   0|  0|  11|           8|           2|
-    |icmp_ln354_3_fu_406_p2  |      icmp|   0|  0|  15|          23|           1|
-    |icmp_ln354_fu_382_p2    |      icmp|   0|  0|  11|           8|           2|
-    |icmp_ln357_1_fu_470_p2  |      icmp|   0|  0|  15|          23|           1|
-    |icmp_ln357_2_fu_482_p2  |      icmp|   0|  0|  11|           8|           2|
-    |icmp_ln357_3_fu_488_p2  |      icmp|   0|  0|  15|          23|           1|
-    |icmp_ln357_fu_464_p2    |      icmp|   0|  0|  11|           8|           2|
-    |or_ln354_1_fu_412_p2    |        or|   0|  0|   2|           1|           1|
-    |or_ln354_fu_394_p2      |        or|   0|  0|   2|           1|           1|
-    |or_ln357_1_fu_494_p2    |        or|   0|  0|   2|           1|           1|
-    |or_ln357_fu_476_p2      |        or|   0|  0|   2|           1|           1|
+    |icmp_ln354_1_fu_392_p2  |      icmp|   0|  0|  15|          23|           1|
+    |icmp_ln354_2_fu_404_p2  |      icmp|   0|  0|  11|           8|           2|
+    |icmp_ln354_3_fu_410_p2  |      icmp|   0|  0|  15|          23|           1|
+    |icmp_ln354_fu_386_p2    |      icmp|   0|  0|  11|           8|           2|
+    |icmp_ln357_1_fu_474_p2  |      icmp|   0|  0|  15|          23|           1|
+    |icmp_ln357_2_fu_486_p2  |      icmp|   0|  0|  11|           8|           2|
+    |icmp_ln357_3_fu_492_p2  |      icmp|   0|  0|  15|          23|           1|
+    |icmp_ln357_fu_468_p2    |      icmp|   0|  0|  11|           8|           2|
+    |or_ln354_1_fu_416_p2    |        or|   0|  0|   2|           1|           1|
+    |or_ln354_fu_398_p2      |        or|   0|  0|   2|           1|           1|
+    |or_ln357_1_fu_498_p2    |        or|   0|  0|   2|           1|           1|
+    |or_ln357_fu_480_p2      |        or|   0|  0|   2|           1|           1|
     |ap_enable_pp0           |       xor|   0|  0|   2|           1|           2|
     +------------------------+----------+----+---+----+------------+------------+
-    |Total                   |          |   0|  0| 174|         168|          55|
+    |Total                   |          |   0|  0| 150|         144|          31|
     +------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -135,7 +133,7 @@
     |ap_loop_exit_ready_pp0_iter2_reg       |   9|          2|    1|          2|
     |ap_loop_exit_ready_pp0_iter3_reg       |   9|          2|    1|          2|
     |ap_loop_exit_ready_pp0_iter4_reg       |   9|          2|    1|          2|
-    |ap_phi_reg_pp0_iter1_empty_62_reg_216  |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_empty_59_reg_216  |  14|          3|   32|         96|
     |ap_phi_reg_pp0_iter2_empty_reg_226     |  14|          3|   32|         96|
     |ap_sig_allocacmp_i                     |   9|          2|    4|          8|
     |grp_fu_247_opcode                      |  14|          3|    5|         15|
@@ -154,8 +152,8 @@
     +--------------------------------------------+----+----+-----+-----------+
     |                    Name                    | FF | LUT| Bits| Const Bits|
     +--------------------------------------------+----+----+-----+-----------+
-    |add_reg_625                                 |  32|   0|   32|          0|
-    |and_ln354_1_reg_617                         |   1|   0|    1|          0|
+    |add_reg_629                                 |  32|   0|   32|          0|
+    |and_ln354_1_reg_621                         |   1|   0|    1|          0|
     |ap_CS_fsm                                   |   2|   0|    2|          0|
     |ap_done_reg                                 |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter0_reg                 |   1|   0|    1|          0|
@@ -168,30 +166,30 @@
     |ap_loop_exit_ready_pp0_iter2_reg            |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter3_reg            |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter4_reg            |   1|   0|    1|          0|
-    |ap_phi_reg_pp0_iter1_empty_62_reg_216       |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_empty_59_reg_216       |  32|   0|   32|          0|
     |ap_phi_reg_pp0_iter1_empty_reg_226          |  32|   0|   32|          0|
     |ap_phi_reg_pp0_iter2_empty_reg_226          |  32|   0|   32|          0|
-    |conv_reg_630                                |  32|   0|   32|          0|
-    |empty_62_reg_216                            |  32|   0|   32|          0|
+    |conv_reg_634                                |  32|   0|   32|          0|
+    |empty_59_reg_216                            |  32|   0|   32|          0|
     |i_3_fu_64                                   |   4|   0|    4|          0|
-    |icmp_ln353_reg_531                          |   1|   0|    1|          0|
-    |regions_center_0_addr_reg_575               |  12|   0|   12|          0|
-    |regions_center_1_addr_reg_580               |  12|   0|   12|          0|
-    |regions_max_0_addr_1_reg_560                |  12|   0|   12|          0|
-    |regions_max_0_addr_1_reg_560_pp0_iter1_reg  |  12|   0|   12|          0|
-    |regions_max_1_addr_1_reg_570                |  12|   0|   12|          0|
-    |regions_max_1_addr_1_reg_570_pp0_iter1_reg  |  12|   0|   12|          0|
-    |regions_min_0_addr_1_reg_540                |  12|   0|   12|          0|
-    |regions_min_0_addr_1_reg_540_pp0_iter1_reg  |  12|   0|   12|          0|
-    |regions_min_1_addr_1_reg_550                |  12|   0|   12|          0|
-    |regions_min_1_addr_1_reg_550_pp0_iter1_reg  |  12|   0|   12|          0|
-    |tmp_10_reg_594                              |  32|   0|   32|          0|
-    |tmp_14_reg_601                              |  32|   0|   32|          0|
-    |tmp_15_reg_610                              |  32|   0|   32|          0|
-    |tmp_s_reg_585                               |  32|   0|   32|          0|
-    |icmp_ln353_reg_531                          |  64|  32|    1|          0|
-    |regions_center_0_addr_reg_575               |  64|  32|   12|          0|
-    |regions_center_1_addr_reg_580               |  64|  32|   12|          0|
+    |icmp_ln353_reg_535                          |   1|   0|    1|          0|
+    |regions_center_0_addr_reg_579               |  12|   0|   12|          0|
+    |regions_center_1_addr_reg_584               |  12|   0|   12|          0|
+    |regions_max_0_addr_1_reg_564                |  12|   0|   12|          0|
+    |regions_max_0_addr_1_reg_564_pp0_iter1_reg  |  12|   0|   12|          0|
+    |regions_max_1_addr_1_reg_574                |  12|   0|   12|          0|
+    |regions_max_1_addr_1_reg_574_pp0_iter1_reg  |  12|   0|   12|          0|
+    |regions_min_0_addr_1_reg_544                |  12|   0|   12|          0|
+    |regions_min_0_addr_1_reg_544_pp0_iter1_reg  |  12|   0|   12|          0|
+    |regions_min_1_addr_1_reg_554                |  12|   0|   12|          0|
+    |regions_min_1_addr_1_reg_554_pp0_iter1_reg  |  12|   0|   12|          0|
+    |tmp_48_reg_589                              |  32|   0|   32|          0|
+    |tmp_49_reg_598                              |  32|   0|   32|          0|
+    |tmp_50_reg_605                              |  32|   0|   32|          0|
+    |tmp_51_reg_614                              |  32|   0|   32|          0|
+    |icmp_ln353_reg_535                          |  64|  32|    1|          0|
+    |regions_center_0_addr_reg_579               |  64|  32|   12|          0|
+    |regions_center_1_addr_reg_584               |  64|  32|   12|          0|
     +--------------------------------------------+----+----+-----+-----------+
     |Total                                       | 651|  96|  484|          0|
     +--------------------------------------------+----+----+-----+-----------+
@@ -211,23 +209,23 @@
 |ap_done                    |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1723_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1723_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1723_p_opcode       |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1723_p_dout0        |   in|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1723_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1739_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1739_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1739_p_dout0        |   in|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1739_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1711_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1711_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1711_p_opcode       |  out|    5|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1711_p_dout0        |   in|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
-|grp_fu_1711_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1705_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1705_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1705_p_opcode       |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1705_p_dout0        |   in|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1705_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1721_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1721_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1721_p_dout0        |   in|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1721_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1693_p_din0         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1693_p_din1         |  out|   32|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1693_p_opcode       |  out|    5|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1693_p_dout0        |   in|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
+|grp_fu_1693_p_ce           |  out|    1|  ap_ctrl_hs|  insert_point_Pipeline_insert_point_label6|  return value|
 |trunc_ln256_5              |   in|    1|     ap_none|                              trunc_ln256_5|        scalar|
 |trunc_ln256_7              |   in|    1|     ap_none|                              trunc_ln256_7|        scalar|
-|tmp_128                    |   in|   12|     ap_none|                                    tmp_128|        scalar|
+|tmp_127                    |   in|    9|     ap_none|                                    tmp_127|        scalar|
 |regions_min_0_address0     |  out|   12|   ap_memory|                              regions_min_0|         array|
 |regions_min_0_ce0          |  out|    1|   ap_memory|                              regions_min_0|         array|
 |regions_min_0_we0          |  out|    1|   ap_memory|                              regions_min_0|         array|
@@ -236,7 +234,7 @@
 |regions_min_0_address1     |  out|   12|   ap_memory|                              regions_min_0|         array|
 |regions_min_0_ce1          |  out|    1|   ap_memory|                              regions_min_0|         array|
 |regions_min_0_q1           |   in|   32|   ap_memory|                              regions_min_0|         array|
-|tmp_131                    |   in|   12|     ap_none|                                    tmp_131|        scalar|
+|tmp_130                    |   in|    9|     ap_none|                                    tmp_130|        scalar|
 |regions_min_1_address0     |  out|   12|   ap_memory|                              regions_min_1|         array|
 |regions_min_1_ce0          |  out|    1|   ap_memory|                              regions_min_1|         array|
 |regions_min_1_we0          |  out|    1|   ap_memory|                              regions_min_1|         array|

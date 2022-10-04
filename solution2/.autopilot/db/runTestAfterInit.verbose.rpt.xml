@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTestAfterInit'" level="0">
-<item name = "Date">Sun Oct  2 18:57:57 2022
+<item name = "Date">Tue Oct  4 21:04:01 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3, 1278, 54.000 ns, 23.004 us, 2, 1207, dataflow</column>
+<column name="">4, 1279, 72.000 ns, 23.022 us, 3, 1207, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="read_train_U0">read_train, 1, 71, 18.000 ns, 1.278 us, 1, 71, no</column>
+<column name="read_train_U0">read_train, 2, 72, 36.000 ns, 1.296 us, 2, 72, no</column>
 <column name="runTestAfterInit_Block_entry1119_proc7_U0">runTestAfterInit_Block_entry1119_proc7, 1, 1206, 18.000 ns, 21.708 us, 1, 1206, no</column>
 </table>
 </item>
@@ -51,7 +51,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 62, -</column>
 <column name="FIFO">-, -, 1287, 884, -</column>
-<column name="Instance">0, 22, 10644, 15162, 0</column>
+<column name="Instance">0, 22, 10663, 15145, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 126, -</column>
 <column name="Register">-, -, 14, -, -</column>
@@ -63,8 +63,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="read_train_U0">read_train, 0, 0, 369, 385, 0</column>
-<column name="runTestAfterInit_Block_entry1119_proc7_U0">runTestAfterInit_Block_entry1119_proc7, 0, 22, 10275, 14777, 0</column>
+<column name="read_train_U0">read_train, 0, 0, 371, 404, 0</column>
+<column name="runTestAfterInit_Block_entry1119_proc7_U0">runTestAfterInit_Block_entry1119_proc7, 0, 22, 10292, 14741, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -89,7 +89,7 @@
 <column name="contr_command_U">0, 99, 0, -, 2, 8, 16</column>
 <column name="contr_taskId_V_U">0, 99, 0, -, 2, 8, 16</column>
 <column name="contr_uniId_V_U">0, 99, 0, -, 2, 16, 32</column>
-<column name="copyInputAOV_in_c_U">0, 99, 0, -, 2, 1, 2</column>
+<column name="copyInputAOV_in_c_U">0, 99, 0, -, 2, 8, 16</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
@@ -172,7 +172,7 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="m_axi_gmem_AWVALID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWREADY">in, 1, m_axi, gmem, pointer</column>
-<column name="m_axi_gmem_AWADDR">out, 64, m_axi, gmem, pointer</column>
+<column name="m_axi_gmem_AWADDR">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWLEN">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWSIZE">out, 3, m_axi, gmem, pointer</column>
@@ -192,7 +192,7 @@
 <column name="m_axi_gmem_WUSER">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARVALID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARREADY">in, 1, m_axi, gmem, pointer</column>
-<column name="m_axi_gmem_ARADDR">out, 64, m_axi, gmem, pointer</column>
+<column name="m_axi_gmem_ARADDR">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARLEN">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARSIZE">out, 3, m_axi, gmem, pointer</column>
@@ -216,11 +216,11 @@
 <column name="m_axi_gmem_BRESP">in, 2, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
-<column name="inputAOV">in, 64, ap_none, inputAOV, scalar</column>
+<column name="inputAOV">in, 32, ap_none, inputAOV, scalar</column>
 <column name="inputAOV_ap_vld">in, 1, ap_none, inputAOV, scalar</column>
-<column name="p_read">in, 1, ap_none, p_read, scalar</column>
-<column name="p_read_ap_vld">in, 1, ap_none, p_read, scalar</column>
-<column name="copyInputAOV_out">out, 1, ap_vld, copyInputAOV_out, pointer</column>
+<column name="copyInputAOV_in">in, 8, ap_none, copyInputAOV_in, pointer</column>
+<column name="copyInputAOV_in_ap_vld">in, 1, ap_none, copyInputAOV_in, pointer</column>
+<column name="copyInputAOV_out">out, 8, ap_vld, copyInputAOV_out, pointer</column>
 <column name="copyInputAOV_out_ap_vld">out, 1, ap_vld, copyInputAOV_out, pointer</column>
 <column name="outcomeInRam_address0">out, 4, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_ce0">out, 1, ap_memory, outcomeInRam, array</column>

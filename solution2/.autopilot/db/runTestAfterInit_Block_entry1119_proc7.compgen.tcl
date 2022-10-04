@@ -427,7 +427,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_copyInputAOV_in \
     op interface \
-    ports { copyInputAOV_in_dout { I 1 vector } copyInputAOV_in_num_data_valid { I 2 vector } copyInputAOV_in_fifo_cap { I 2 vector } copyInputAOV_in_empty_n { I 1 bit } copyInputAOV_in_read { O 1 bit } } \
+    ports { copyInputAOV_in_dout { I 8 vector } copyInputAOV_in_num_data_valid { I 2 vector } copyInputAOV_in_fifo_cap { I 2 vector } copyInputAOV_in_empty_n { I 1 bit } copyInputAOV_in_read { O 1 bit } } \
 } "
 }
 
@@ -442,7 +442,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_copyInputAOV_out \
     op interface \
-    ports { copyInputAOV_out { O 1 vector } copyInputAOV_out_ap_vld { O 1 bit } } \
+    ports { copyInputAOV_out { O 8 vector } copyInputAOV_out_ap_vld { O 1 bit } } \
 } "
 }
 

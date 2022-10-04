@@ -46,7 +46,7 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>272</FF>
+<FF>268</FF>
 <LUT>201</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>

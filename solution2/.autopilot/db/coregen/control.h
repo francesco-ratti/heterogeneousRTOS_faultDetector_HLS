@@ -20,13 +20,15 @@
 //           others - reserved
 // 0x00020 : Data signal of inputAOV
 //           bit 31~0 - inputAOV[31:0] (Read/Write)
-// 0x00024 : Data signal of inputAOV
-//           bit 31~0 - inputAOV[63:32] (Read/Write)
-// 0x00028 : reserved
-// 0x0002c : Data signal of copyInputAOV
-//           bit 0  - copyInputAOV[0] (Read/Write)
-//           others - reserved
-// 0x00030 : reserved
+// 0x00024 : reserved
+// 0x00028 : Data signal of copyInputAOV_i
+//           bit 7~0 - copyInputAOV_i[7:0] (Read/Write)
+//           others  - reserved
+// 0x0002c : reserved
+// 0x00030 : Data signal of copyInputAOV_o
+//           bit 7~0 - copyInputAOV_o[7:0] (Read)
+//           others  - reserved
+// 0x00034 : reserved
 // 0x00010 ~
 // 0x0001f : Memory 'errorInTask' (16 * 1b)
 //           Word n : bit [ 0: 0] - errorInTask[4n]
@@ -68,9 +70,11 @@
 #define CONTROL_ADDR_IER                 0x00008
 #define CONTROL_ADDR_ISR                 0x0000c
 #define CONTROL_ADDR_INPUTAOV_DATA       0x00020
-#define CONTROL_BITS_INPUTAOV_DATA       64
-#define CONTROL_ADDR_COPYINPUTAOV_DATA   0x0002c
-#define CONTROL_BITS_COPYINPUTAOV_DATA   1
+#define CONTROL_BITS_INPUTAOV_DATA       32
+#define CONTROL_ADDR_COPYINPUTAOV_I_DATA 0x00028
+#define CONTROL_BITS_COPYINPUTAOV_I_DATA 8
+#define CONTROL_ADDR_COPYINPUTAOV_O_DATA 0x00030
+#define CONTROL_BITS_COPYINPUTAOV_O_DATA 8
 #define CONTROL_ADDR_ERRORINTASK_BASE    0x00010
 #define CONTROL_ADDR_ERRORINTASK_HIGH    0x0001f
 #define CONTROL_WIDTH_ERRORINTASK        1

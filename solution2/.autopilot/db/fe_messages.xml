@@ -693,29 +693,32 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:72:0" msg_body="Inlining function 'std::isnan(float)' into 'is_valid(float const*)'">
         <args Callee="std::isnan(float)" Caller="is_valid(float const*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:525:0" msg_body="Inlining function 'is_valid(float const*)' into 'run_test(bool&amp;, REGION_T*, ap_uint&lt;8&gt;, float*, bool&amp;)'">
-        <args Callee="is_valid(float const*)" Caller="run_test(bool&amp;, REGION_T*, ap_uint&lt;8&gt;, float*, bool&amp;)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:525:0" msg_body="Inlining function 'is_valid(float const*)' into 'run_test(bool*, REGION_T*, ap_uint&lt;8&gt;, float*, char*)'">
+        <args Callee="is_valid(float const*)" Caller="run_test(bool*, REGION_T*, ap_uint&lt;8&gt;, float*, char*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:239:0" msg_body="Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*, bool&amp;)'">
-        <args Callee="is_valid(float const*)" Caller="insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*, bool&amp;)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:239:0" msg_body="Inlining function 'is_valid(float const*)' into 'insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*, char*)'">
+        <args Callee="is_valid(float const*)" Caller="insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*, char*)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:616:0" msg_body="Applying array_partition to '_ZL7regions.center': Cyclic partitioning with factor 2 on dimension 2.">
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:622:0" msg_body="Inlining function 'runT(controlStr*, char*, OutcomeStr*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, bool*, REGION_T (*) [16], ap_uint&lt;8&gt;*)' into 'run(bool*, OutcomeStr*, controlStr*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)'">
+        <args Callee="runT(controlStr*, char*, OutcomeStr*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, bool*, REGION_T (*) [16], ap_uint&lt;8&gt;*)" Caller="run(bool*, OutcomeStr*, controlStr*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:608:0" msg_body="Applying array_partition to '_ZL7regions.center': Cyclic partitioning with factor 2 on dimension 2.">
         <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZL7regions.center"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:616:0" msg_body="Applying array_partition to '_ZL7regions.max': Cyclic partitioning with factor 2 on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:608:0" msg_body="Applying array_partition to '_ZL7regions.max': Cyclic partitioning with factor 2 on dimension 2.">
         <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZL7regions.max"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:616:0" msg_body="Applying array_partition to '_ZL7regions.min': Cyclic partitioning with factor 2 on dimension 2.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:608:0" msg_body="Applying array_partition to '_ZL7regions.min': Cyclic partitioning with factor 2 on dimension 2.">
         <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZL7regions.min"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:543:13" msg_body="Applying array_partition to 'contr.AOV': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="contr.AOV"/>
     </msg>
-    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:622:0" msg_body="Changing the port bit width of top function 'run(bool*, OutcomeStr*, controlStr*, bool, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
-        <args Function="run(bool*, OutcomeStr*, controlStr*, bool, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:622:0" msg_body="Changing the port bit width of top function 'run(bool*, OutcomeStr*, controlStr*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
+        <args Function="run(bool*, OutcomeStr*, controlStr*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9" msg_body="Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s' into 'writeOutcome(bool&amp;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)'">
-        <args Callee="_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s" Caller="writeOutcome(bool&amp;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9" msg_body="Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s' into 'writeOutcome(bool*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)'">
+        <args Callee="_llvm.fpga.pack.none.i8.s_struct.ap_uint&lt;8&gt;s" Caller="writeOutcome(bool*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, hls::stream&lt;ap_uint&lt;8&gt;, 0&gt;&amp;, OutcomeStr*, float*) (.1)"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

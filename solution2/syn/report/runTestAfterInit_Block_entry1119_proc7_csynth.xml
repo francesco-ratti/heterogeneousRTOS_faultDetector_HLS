@@ -62,8 +62,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>22</DSP>
-<FF>10275</FF>
-<LUT>14777</LUT>
+<FF>10292</FF>
+<LUT>14741</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -337,7 +337,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -392,7 +392,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

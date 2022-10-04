@@ -155,14 +155,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 76 \
-    name tmp_128 \
+    name tmp_127 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_tmp_128 \
+    corename dc_tmp_127 \
     op interface \
-    ports { tmp_128 { I 12 vector } } \
+    ports { tmp_127 { I 9 vector } } \
 } "
 }
 
@@ -170,14 +170,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 78 \
-    name tmp_131 \
+    name tmp_130 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_tmp_131 \
+    corename dc_tmp_130 \
     op interface \
-    ports { tmp_131 { I 12 vector } } \
+    ports { tmp_130 { I 9 vector } } \
 } "
 }
 

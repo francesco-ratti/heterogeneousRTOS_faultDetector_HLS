@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'find_region'
 ================================================================
-* Date:           Sun Oct  2 18:57:55 2022
+* Date:           Tue Oct  4 21:03:58 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -409,9 +409,9 @@
     |scale_reg_2834                     |  32|   0|   32|          0|
     |score_fu_112                       |  32|   0|   32|          0|
     |score_load_reg_2927                |  32|   0|   32|          0|
-    |tmp_105_reg_2283                   |   9|   0|   12|          3|
-    |tmp_125_reg_2704                   |   1|   0|    1|          0|
-    |tmp_135_reg_2768                   |   1|   0|    1|          0|
+    |tmp_128_reg_2704                   |   1|   0|    1|          0|
+    |tmp_139_reg_2768                   |   1|   0|    1|          0|
+    |tmp_144_reg_2283                   |   9|   0|   12|          3|
     |tmp_53_reg_2493                    |  32|   0|   32|          0|
     |tmp_54_reg_2500                    |  32|   0|   32|          0|
     |tmp_56_reg_2585                    |  32|   0|   32|          0|
@@ -459,49 +459,49 @@
 |ap_idle                    |  out|    1|  ap_ctrl_hs|           find_region|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|           find_region|  return value|
 |ap_return                  |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_687_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_687_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_687_p_opcode        |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_687_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_687_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_691_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_691_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_691_p_opcode        |  out|    2|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_691_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_691_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_695_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_695_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_695_p_opcode        |  out|    2|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_695_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_695_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_699_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_699_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_699_p_opcode        |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_699_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_699_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_703_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_703_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_703_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_703_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_707_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_707_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_707_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_707_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_675_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_675_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_675_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_675_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_675_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_679_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_679_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_679_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_679_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_679_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_683_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_683_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_683_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_683_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
-|grp_fu_683_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_685_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_685_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_685_p_opcode        |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_685_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_685_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_689_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_689_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_689_p_opcode        |  out|    2|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_689_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_689_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_693_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_693_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_693_p_opcode        |  out|    2|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_693_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_693_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_697_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_697_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_697_p_opcode        |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_697_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_697_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_701_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_701_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_701_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_701_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_705_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_705_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_705_p_dout0         |   in|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_705_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_673_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_673_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_673_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_673_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_673_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_677_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_677_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_677_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_677_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_677_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_681_p_din0          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_681_p_din1          |  out|   32|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_681_p_opcode        |  out|    5|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_681_p_dout0         |   in|    1|  ap_ctrl_hs|           find_region|  return value|
+|grp_fu_681_p_ce            |  out|    1|  ap_ctrl_hs|           find_region|  return value|
 |regions_min_0_address0     |  out|   12|   ap_memory|         regions_min_0|         array|
 |regions_min_0_ce0          |  out|    1|   ap_memory|         regions_min_0|         array|
 |regions_min_0_q0           |   in|   32|   ap_memory|         regions_min_0|         array|

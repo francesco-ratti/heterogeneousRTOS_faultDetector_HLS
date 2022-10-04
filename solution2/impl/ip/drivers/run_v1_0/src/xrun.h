@@ -39,12 +39,12 @@ typedef uint64_t u64;
 #else
 typedef struct {
     u16 DeviceId;
-    u64 Control_BaseAddress;
+    u32 Control_BaseAddress;
 } XRun_Config;
 #endif
 
 typedef struct {
-    u64 Control_BaseAddress;
+    u32 Control_BaseAddress;
     u32 IsReady;
 } XRun;
 
@@ -101,10 +101,11 @@ void XRun_Continue(XRun *InstancePtr);
 void XRun_EnableAutoRestart(XRun *InstancePtr);
 void XRun_DisableAutoRestart(XRun *InstancePtr);
 
-void XRun_Set_inputAOV(XRun *InstancePtr, u64 Data);
-u64 XRun_Get_inputAOV(XRun *InstancePtr);
-void XRun_Set_copyInputAOV(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_copyInputAOV(XRun *InstancePtr);
+void XRun_Set_inputAOV(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_inputAOV(XRun *InstancePtr);
+void XRun_Set_copyInputAOV_i(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_copyInputAOV_i(XRun *InstancePtr);
+u32 XRun_Get_copyInputAOV_o(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_BaseAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_HighAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_TotalBytes(XRun *InstancePtr);

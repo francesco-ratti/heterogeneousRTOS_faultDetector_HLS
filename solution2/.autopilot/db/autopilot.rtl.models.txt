@@ -19,7 +19,7 @@ run_faddfsub_32ns_32ns_32_4_full_dsp_1
 run_faddfsub_32ns_32ns_32_4_full_dsp_1
 run_fmul_32ns_32ns_32_2_max_dsp_1
 run_fmul_32ns_32ns_32_2_max_dsp_1
-run_fifo_w1_d2_S
+run_fifo_w8_d2_S
 run_fifo_w8_d2_S
 run_fifo_w16_d2_S
 run_fifo_w8_d2_S
@@ -33,7 +33,6 @@ run_fifo_w32_d2_S
 run_fifo_w32_d2_S
 run_fifo_w32_d2_S
 run_mul_64ns_66ns_81_1_1
-run_mul_64ns_66ns_129_1_1
 run_regions_RAM_AUTO_1R1W
 run_n_regions_V_RAM_AUTO_1R1W
 run_gmem_m_axi

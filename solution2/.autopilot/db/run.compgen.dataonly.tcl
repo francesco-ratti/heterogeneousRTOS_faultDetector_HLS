@@ -16,19 +16,27 @@ errorInTask {
 }
 inputAOV { 
 	dir I
-	width 64
+	width 32
 	depth 1
 	mode ap_none
 	offset 32
-	offset_end 43
+	offset_end 39
 }
-copyInputAOV { 
+copyInputAOV_i { 
 	dir I
-	width 1
+	width 8
 	depth 1
 	mode ap_none
-	offset 44
-	offset_end 51
+	offset 40
+	offset_end 47
+}
+copyInputAOV_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
 }
 n_regions_in { 
 	dir I

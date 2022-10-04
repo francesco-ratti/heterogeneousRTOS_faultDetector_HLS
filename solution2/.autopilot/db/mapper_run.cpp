@@ -186,8 +186,8 @@ struct __cosim_s36__ { char data[36]; };
 struct __cosim_s40__ { char data[40]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void run(__cosim_s64__*, char*, __cosim_s64__*, int, char, int*, char*, __cosim_s1__*);
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, char __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void run(__cosim_s64__*, char*, __cosim_s64__*, int, volatile void *, int*, char*, __cosim_s1__*);
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
   // Collect __xlx_inputAOV__tmp_vec
   vector<sc_bv<512> >__xlx_inputAOV__tmp_vec;
   for (int j = 0, e = 1; j != e; ++j) {

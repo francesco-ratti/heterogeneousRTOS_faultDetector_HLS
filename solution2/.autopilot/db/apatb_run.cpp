@@ -338,9 +338,9 @@ struct __cosim_s36__ { char data[36]; };
 struct __cosim_s40__ { char data[40]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, char, volatile void *, volatile void *, volatile void *);
+extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
 
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, char __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -561,7 +561,55 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
       } // end file is good
     } // end post check logic bolck
   #endif
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_copyInputAOV);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<8> > copyInputAOV_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
 
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              copyInputAOV_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "copyInputAOV" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {((char*)__xlx_apatb_param_copyInputAOV)[0*1+0] = copyInputAOV_pc_buffer[0].range(7, 0).to_int64();
+}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  
     AESL_transaction_pc++;
     return ;
   }
@@ -736,8 +784,8 @@ aesl_fh.write(AUTOTB_TVIN_inputAOV, end_str());
 {
 aesl_fh.write(AUTOTB_TVIN_copyInputAOV, begin_str(AESL_transaction));
 {
-auto *pos = (unsigned char*)&__xlx_apatb_param_copyInputAOV;
-aesl_fh.write(AUTOTB_TVIN_copyInputAOV, formatData(pos, 1));
+auto *pos = (unsigned char*)__xlx_apatb_param_copyInputAOV;
+aesl_fh.write(AUTOTB_TVIN_copyInputAOV, formatData(pos, 8));
 }
   tcl_file.set_num(1, &tcl_file.copyInputAOV_depth);
 aesl_fh.write(AUTOTB_TVIN_copyInputAOV, end_str());
@@ -836,6 +884,17 @@ sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_toScheduler_strea
  aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, __xlx_sprintf_buffer.data());
 aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, end_str());
 }
+// print copyInputAOV Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_copyInputAOV;
+aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.copyInputAOV_depth);
+aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, end_str());
+}
+
 CodeState = DELETE_CHAR_BUFFERS;
 AESL_transaction++;
 tcl_file.set_num(AESL_transaction , &tcl_file.trans_num);

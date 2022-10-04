@@ -6,14 +6,8 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
-set name run_mul_64ns_66ns_129_1_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
-}
-
-
 # Memory (RAM/ROM)  definition:
-set ID 261
+set ID 260
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -92,7 +86,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 262
+set ID 261
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -199,19 +193,27 @@ errorInTask {
 }
 inputAOV { 
 	dir I
-	width 64
+	width 32
 	depth 1
 	mode ap_none
 	offset 32
-	offset_end 43
+	offset_end 39
 }
-copyInputAOV { 
+copyInputAOV_i { 
 	dir I
-	width 1
+	width 8
 	depth 1
 	mode ap_none
-	offset 44
-	offset_end 51
+	offset 40
+	offset_end 47
+}
+copyInputAOV_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
 }
 n_regions_in { 
 	dir I
@@ -264,7 +266,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 263 \
+			id 262 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -273,7 +275,7 @@ if {${::AESL::PGuard_simmodel_gen}} {
 			interrupt_trigger_type default \
 			is_flushable 0 \
 			is_datawidth64 0 \
-			is_addrwidth64 1 \
+			is_addrwidth64 0 \
 		} "
 	} else {
 		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control'"
@@ -288,7 +290,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 265 \
+    id 264 \
     name toScheduler \
     reset_level 0 \
     sync_rst true \
@@ -354,7 +356,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 266
+set ID 265
 set RegSliceName run_regslice_both
 set RegSliceInstName run_regslice_both_U
 set CoreName ap_simcore_run_regslice_both

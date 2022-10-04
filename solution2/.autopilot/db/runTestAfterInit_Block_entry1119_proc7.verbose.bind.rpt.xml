@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTestAfterInit_Block_entry1119_proc7'" level="0">
-<item name = "Date">Sun Oct  2 18:57:48 2022
+<item name = "Date">Tue Oct  4 21:03:52 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -31,9 +31,9 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_insert_point_fu_291">insert_point, 7, 1204, 0.126 us, 21.672 us, 7, 1204, no</column>
-<column name="grp_find_region_fu_326">find_region, 2, 116, 36.000 ns, 2.088 us, 2, 116, no</column>
-<column name="grp_writeOutcome_fu_352">writeOutcome, 15, 15, 0.270 us, 0.270 us, 15, 15, no</column>
+<column name="grp_insert_point_fu_289">insert_point, 7, 1204, 0.126 us, 21.672 us, 7, 1204, no</column>
+<column name="grp_find_region_fu_324">find_region, 2, 116, 36.000 ns, 2.088 us, 2, 116, no</column>
+<column name="grp_writeOutcome_fu_350">writeOutcome, 15, 15, 0.270 us, 0.270 us, 15, 15, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
