@@ -6,12 +6,18 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
+set name run_mul_64ns_66ns_129_1_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
 # Memory (RAM/ROM)  definition:
-set ID 260
+set ID 152
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
-set PortList { 2 2 }
+set PortList { 2 0 }
 set DataWd 32
 set AddrRange 4096
 set AddrWd 12
@@ -86,7 +92,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 261
+set ID 153
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -180,7 +186,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 set axilite_register_dict [dict create]
 set port_control {
 errorInTask { 
-	dir IO
+	dir O
 	width 1
 	depth 16
 	mode ap_memory
@@ -193,27 +199,27 @@ errorInTask {
 }
 inputAOV { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 32
-	offset_end 39
+	offset_end 43
 }
-copyInputAOV_i { 
+readyForData { 
 	dir I
 	width 8
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 47
+	offset 44
+	offset_end 51
 }
-copyInputAOV_o { 
-	dir O
+copyInputAOV { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
-	offset 48
-	offset_end 55
+	offset 52
+	offset_end 59
 }
 n_regions_in { 
 	dir I
@@ -266,7 +272,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 262 \
+			id 154 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -275,7 +281,7 @@ if {${::AESL::PGuard_simmodel_gen}} {
 			interrupt_trigger_type default \
 			is_flushable 0 \
 			is_datawidth64 0 \
-			is_addrwidth64 0 \
+			is_addrwidth64 1 \
 		} "
 	} else {
 		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control'"
@@ -285,25 +291,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler run_control_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 264 \
-    name toScheduler \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { toScheduler_TDATA { O 8 vector } toScheduler_TVALID { O 1 bit } toScheduler_TREADY { I 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'toScheduler'"
-}
-}
-
 
 
 # Adapter definition:
@@ -352,29 +339,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# RegSlice definition:
-set ID 265
-set RegSliceName run_regslice_both
-set RegSliceInstName run_regslice_both_U
-set CoreName ap_simcore_run_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix run_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
 }
 
 

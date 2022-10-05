@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTestAfterInit'" level="0">
-<item name = "Date">Tue Oct  4 21:04:01 2022
+<item name = "Date">Wed Oct  5 22:50:37 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">18.00 ns, 13.694 ns, 4.86 ns</column>
+<column name="ap_clk">18.00 ns, 13.140 ns, 4.86 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4, 1279, 72.000 ns, 23.022 us, 3, 1207, dataflow</column>
+<column name="">90, 656, 1.620 us, 11.808 us, 71, 584, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="read_train_U0">read_train, 2, 72, 36.000 ns, 1.296 us, 2, 72, no</column>
-<column name="runTestAfterInit_Block_entry1119_proc7_U0">runTestAfterInit_Block_entry1119_proc7, 1, 1206, 18.000 ns, 21.708 us, 1, 1206, no</column>
+<column name="read_train_U0">read_train, 70, 70, 1.260 us, 1.260 us, 70, 70, no</column>
+<column name="runTestAfterInit_Block_entry79_proc_U0">runTestAfterInit_Block_entry79_proc, 1, 1, 18.000 ns, 18.000 ns, 1, 1, no</column>
+<column name="run_test_U0">run_test, 7, 583, 0.126 us, 10.494 us, 7, 583, no</column>
+<column name="writeOutcome_U0">writeOutcome, 17, 17, 0.306 us, 0.306 us, 17, 17, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -49,22 +51,24 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 62, -</column>
-<column name="FIFO">-, -, 1287, 884, -</column>
-<column name="Instance">0, 22, 10663, 15145, 0</column>
+<column name="Expression">-, -, 0, 78, -</column>
+<column name="FIFO">-, -, 2277, 1564, -</column>
+<column name="Instance">0, -, 1596, 2563, 0</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 126, -</column>
-<column name="Register">-, -, 14, -, -</column>
+<column name="Multiplexer">-, -, -, 153, -</column>
+<column name="Register">-, -, 17, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 10, 11, 30, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 3, 8, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="read_train_U0">read_train, 0, 0, 371, 404, 0</column>
-<column name="runTestAfterInit_Block_entry1119_proc7_U0">runTestAfterInit_Block_entry1119_proc7, 0, 22, 10292, 14741, 0</column>
+<column name="read_train_U0">read_train, 0, 0, 356, 465, 0</column>
+<column name="runTestAfterInit_Block_entry79_proc_U0">runTestAfterInit_Block_entry79_proc, 0, 0, 31, 52, 0</column>
+<column name="run_test_U0">run_test, 0, 0, 681, 1732, 0</column>
+<column name="writeOutcome_U0">writeOutcome, 0, 0, 528, 314, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -77,90 +81,114 @@
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
-<column name="contr_AOV_1_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_2_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_3_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_4_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_5_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_6_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_7_U">0, 99, 0, -, 2, 32, 64</column>
-<column name="contr_AOV_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_1_c19_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_1_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_2_c20_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_2_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_3_c21_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_3_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_4_c22_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_4_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_5_c23_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_5_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_6_c24_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_6_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_7_c25_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_7_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="contr_AOV_c18_channel_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="contr_AOV_c_U">0, 99, 0, -, 2, 32, 64</column>
 <column name="contr_checkId_V_U">0, 99, 0, -, 2, 8, 16</column>
-<column name="contr_command_U">0, 99, 0, -, 2, 8, 16</column>
-<column name="contr_taskId_V_U">0, 99, 0, -, 2, 8, 16</column>
-<column name="contr_uniId_V_U">0, 99, 0, -, 2, 16, 32</column>
-<column name="copyInputAOV_in_c_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="contr_checkId_V_load_cast_loc_channel_U">0, 99, 0, -, 2, 6, 12</column>
+<column name="contr_checkId_V_load_loc_channel_U">0, 99, 0, -, 3, 8, 24</column>
+<column name="contr_taskId_V_U">0, 99, 0, -, 4, 4, 16</column>
+<column name="contr_uniId_V_U">0, 99, 0, -, 4, 16, 64</column>
+<column name="error_U">0, 99, 0, -, 2, 1, 2</column>
+<column name="n_regions_V_load_loc_channel_U">0, 99, 0, -, 2, 8, 16</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ap_channel_done_contr_AOV">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_1">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_2">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_3">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_4">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_5">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_6">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_AOV_7">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_1_c19_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_2_c20_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_3_c21_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_4_c22_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_5_c23_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_6_c24_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_7_c25_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_AOV_c18_channel">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_contr_checkId_V">and, 0, 0, 2, 1, 1</column>
-<column name="ap_channel_done_contr_command">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_checkId_V_load_cast_loc_channel">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_contr_checkId_V_load_loc_channel">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_contr_taskId_V">and, 0, 0, 2, 1, 1</column>
 <column name="ap_channel_done_contr_uniId_V">and, 0, 0, 2, 1, 1</column>
+<column name="ap_channel_done_n_regions_V_load_loc_channel">and, 0, 0, 2, 1, 1</column>
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_ready">and, 0, 0, 2, 1, 1</column>
 <column name="read_train_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
 <column name="read_train_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="runTestAfterInit_Block_entry1119_proc7_U0_ap_start">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_1">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_2">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_3">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_4">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_5">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_6">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_AOV_7">or, 0, 0, 2, 1, 1</column>
+<column name="runTestAfterInit_Block_entry79_proc_U0_ap_continue">and, 0, 0, 2, 1, 1</column>
+<column name="runTestAfterInit_Block_entry79_proc_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="run_test_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="writeOutcome_U0_ap_start">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_1_c19_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_2_c20_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_3_c21_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_4_c22_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_5_c23_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_6_c24_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_7_c25_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_AOV_c18_channel">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_contr_checkId_V">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_channel_write_contr_command">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_contr_checkId_V_load_loc_channel">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_contr_taskId_V">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_channel_write_contr_uniId_V">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_channel_write_n_regions_V_load_loc_channel">or, 0, 0, 2, 1, 1</column>
 <column name="ap_sync_read_train_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_run_test_U0_ap_ready">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_sync_reg_channel_write_contr_AOV">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_1">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_2">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_3">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_4">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_5">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_6">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_7">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_1_c19_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_2_c20_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_3_c21_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_4_c22_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_5_c23_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_6_c24_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_7_c25_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_c18_channel">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_contr_checkId_V">9, 2, 1, 2</column>
-<column name="ap_sync_reg_channel_write_contr_command">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_contr_taskId_V">9, 2, 1, 2</column>
 <column name="ap_sync_reg_channel_write_contr_uniId_V">9, 2, 1, 2</column>
+<column name="ap_sync_reg_channel_write_n_regions_V_load_loc_channel">9, 2, 1, 2</column>
 <column name="ap_sync_reg_read_train_U0_ap_ready">9, 2, 1, 2</column>
-<column name="ap_sync_reg_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready">9, 2, 1, 2</column>
+<column name="ap_sync_reg_run_test_U0_ap_ready">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_sync_reg_channel_write_contr_AOV">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_1">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_2">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_3">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_4">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_5">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_6">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_AOV_7">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_1_c19_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_2_c20_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_3_c21_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_4_c22_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_5_c23_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_6_c24_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_7_c25_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_AOV_c18_channel">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_contr_checkId_V">1, 0, 1, 0</column>
-<column name="ap_sync_reg_channel_write_contr_command">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_contr_taskId_V">1, 0, 1, 0</column>
 <column name="ap_sync_reg_channel_write_contr_uniId_V">1, 0, 1, 0</column>
+<column name="ap_sync_reg_channel_write_n_regions_V_load_loc_channel">1, 0, 1, 0</column>
 <column name="ap_sync_reg_read_train_U0_ap_ready">1, 0, 1, 0</column>
-<column name="ap_sync_reg_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready">1, 0, 1, 0</column>
+<column name="ap_sync_reg_run_test_U0_ap_ready">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -172,7 +200,7 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="m_axi_gmem_AWVALID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWREADY">in, 1, m_axi, gmem, pointer</column>
-<column name="m_axi_gmem_AWADDR">out, 32, m_axi, gmem, pointer</column>
+<column name="m_axi_gmem_AWADDR">out, 64, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWLEN">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWSIZE">out, 3, m_axi, gmem, pointer</column>
@@ -192,7 +220,7 @@
 <column name="m_axi_gmem_WUSER">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARVALID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARREADY">in, 1, m_axi, gmem, pointer</column>
-<column name="m_axi_gmem_ARADDR">out, 32, m_axi, gmem, pointer</column>
+<column name="m_axi_gmem_ARADDR">out, 64, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARLEN">out, 32, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_ARSIZE">out, 3, m_axi, gmem, pointer</column>
@@ -216,25 +244,28 @@
 <column name="m_axi_gmem_BRESP">in, 2, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
-<column name="inputAOV">in, 32, ap_none, inputAOV, scalar</column>
+<column name="inputAOV">in, 64, ap_none, inputAOV, scalar</column>
 <column name="inputAOV_ap_vld">in, 1, ap_none, inputAOV, scalar</column>
-<column name="copyInputAOV_in">in, 8, ap_none, copyInputAOV_in, pointer</column>
-<column name="copyInputAOV_in_ap_vld">in, 1, ap_none, copyInputAOV_in, pointer</column>
-<column name="copyInputAOV_out">out, 8, ap_vld, copyInputAOV_out, pointer</column>
-<column name="copyInputAOV_out_ap_vld">out, 1, ap_vld, copyInputAOV_out, pointer</column>
 <column name="outcomeInRam_address0">out, 4, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_ce0">out, 1, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_d0">out, 288, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_q0">in, 288, ap_memory, outcomeInRam, array</column>
 <column name="outcomeInRam_we0">out, 36, ap_memory, outcomeInRam, array</column>
-<column name="toScheduler_TDATA">out, 8, axis, toScheduler, pointer</column>
-<column name="toScheduler_TVALID">out, 1, axis, toScheduler, pointer</column>
-<column name="toScheduler_TREADY">in, 1, axis, toScheduler, pointer</column>
 <column name="errorInTask_address0">out, 4, ap_memory, errorInTask, array</column>
 <column name="errorInTask_ce0">out, 1, ap_memory, errorInTask, array</column>
 <column name="errorInTask_d0">out, 1, ap_memory, errorInTask, array</column>
 <column name="errorInTask_q0">in, 1, ap_memory, errorInTask, array</column>
 <column name="errorInTask_we0">out, 1, ap_memory, errorInTask, array</column>
+<column name="n_regions_V_address0">out, 6, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_ce0">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_d0">out, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_q0">in, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_we0">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_address1">out, 6, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_ce1">out, 1, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_d1">out, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_q1">in, 8, ap_memory, n_regions_V, array</column>
+<column name="n_regions_V_we1">out, 1, ap_memory, n_regions_V, array</column>
 <column name="regions_address0">out, 12, ap_memory, regions, array</column>
 <column name="regions_ce0">out, 1, ap_memory, regions, array</column>
 <column name="regions_d0">out, 32, ap_memory, regions, array</column>
@@ -275,36 +306,6 @@
 <column name="regions_3_d1">out, 32, ap_memory, regions_3, array</column>
 <column name="regions_3_q1">in, 32, ap_memory, regions_3, array</column>
 <column name="regions_3_we1">out, 1, ap_memory, regions_3, array</column>
-<column name="regions_4_address0">out, 12, ap_memory, regions_4, array</column>
-<column name="regions_4_ce0">out, 1, ap_memory, regions_4, array</column>
-<column name="regions_4_d0">out, 32, ap_memory, regions_4, array</column>
-<column name="regions_4_q0">in, 32, ap_memory, regions_4, array</column>
-<column name="regions_4_we0">out, 1, ap_memory, regions_4, array</column>
-<column name="regions_4_address1">out, 12, ap_memory, regions_4, array</column>
-<column name="regions_4_ce1">out, 1, ap_memory, regions_4, array</column>
-<column name="regions_4_d1">out, 32, ap_memory, regions_4, array</column>
-<column name="regions_4_q1">in, 32, ap_memory, regions_4, array</column>
-<column name="regions_4_we1">out, 1, ap_memory, regions_4, array</column>
-<column name="regions_5_address0">out, 12, ap_memory, regions_5, array</column>
-<column name="regions_5_ce0">out, 1, ap_memory, regions_5, array</column>
-<column name="regions_5_d0">out, 32, ap_memory, regions_5, array</column>
-<column name="regions_5_q0">in, 32, ap_memory, regions_5, array</column>
-<column name="regions_5_we0">out, 1, ap_memory, regions_5, array</column>
-<column name="regions_5_address1">out, 12, ap_memory, regions_5, array</column>
-<column name="regions_5_ce1">out, 1, ap_memory, regions_5, array</column>
-<column name="regions_5_d1">out, 32, ap_memory, regions_5, array</column>
-<column name="regions_5_q1">in, 32, ap_memory, regions_5, array</column>
-<column name="regions_5_we1">out, 1, ap_memory, regions_5, array</column>
-<column name="n_regions_V_address0">out, 6, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_ce0">out, 1, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_d0">out, 8, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_q0">in, 8, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_we0">out, 1, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_address1">out, 6, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_ce1">out, 1, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_d1">out, 8, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_q1">in, 8, ap_memory, n_regions_V, array</column>
-<column name="n_regions_V_we1">out, 1, ap_memory, n_regions_V, array</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, runTestAfterInit, return value</column>

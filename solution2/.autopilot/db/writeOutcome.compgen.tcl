@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 145
+set ID 87
 set hasByteEnable 0
 set MemName run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -90,7 +90,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 146 \
+    id 88 \
     name errorInTask \
     reset_level 1 \
     sync_rst true \
@@ -105,30 +105,11 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 
 
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 152 \
-    name toScheduler \
-    reset_level 1 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { toScheduler_TDATA { O 8 vector } toScheduler_TVALID { O 1 bit } toScheduler_TREADY { I 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'toScheduler'"
-}
-}
-
-
 # XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 153 \
+    id 93 \
     name outcomeInRam \
     reset_level 1 \
     sync_rst true \
@@ -146,82 +127,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 147 \
-    name errorInTask1 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_errorInTask1 \
-    op interface \
-    ports { errorInTask1 { I 4 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 148 \
-    name checkId \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_checkId \
-    op interface \
-    ports { checkId { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 149 \
-    name taskId \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_taskId \
-    op interface \
-    ports { taskId { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 150 \
-    name uniId \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_uniId \
-    op interface \
-    ports { uniId { I 16 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 151 \
-    name error \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_error \
-    op interface \
-    ports { error { I 1 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 154 \
+    id 89 \
     name p_read \
     type other \
     dir I \
@@ -229,14 +135,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read \
     op interface \
-    ports { p_read { I 32 vector } } \
+    ports { p_read { I 4 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 155 \
+    id 90 \
     name p_read1 \
     type other \
     dir I \
@@ -244,14 +150,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read1 \
     op interface \
-    ports { p_read1 { I 32 vector } } \
+    ports { p_read1 { I 8 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 156 \
+    id 91 \
     name p_read2 \
     type other \
     dir I \
@@ -259,14 +165,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read2 \
     op interface \
-    ports { p_read2 { I 32 vector } } \
+    ports { p_read2 { I 16 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 157 \
+    id 92 \
     name p_read3 \
     type other \
     dir I \
@@ -274,67 +180,127 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read3 \
     op interface \
-    ports { p_read3 { I 32 vector } } \
+    ports { p_read3 { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 158 \
-    name p_read4 \
-    type other \
+    id 94 \
+    name contr_AOV \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read4 \
+    corename dc_contr_AOV \
     op interface \
-    ports { p_read4 { I 32 vector } } \
+    ports { contr_AOV_dout { I 32 vector } contr_AOV_num_data_valid { I 2 vector } contr_AOV_fifo_cap { I 2 vector } contr_AOV_empty_n { I 1 bit } contr_AOV_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 159 \
-    name p_read5 \
-    type other \
+    id 95 \
+    name contr_AOV_1 \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read5 \
+    corename dc_contr_AOV_1 \
     op interface \
-    ports { p_read5 { I 32 vector } } \
+    ports { contr_AOV_1_dout { I 32 vector } contr_AOV_1_num_data_valid { I 2 vector } contr_AOV_1_fifo_cap { I 2 vector } contr_AOV_1_empty_n { I 1 bit } contr_AOV_1_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 160 \
-    name p_read6 \
-    type other \
+    id 96 \
+    name contr_AOV_2 \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read6 \
+    corename dc_contr_AOV_2 \
     op interface \
-    ports { p_read6 { I 32 vector } } \
+    ports { contr_AOV_2_dout { I 32 vector } contr_AOV_2_num_data_valid { I 2 vector } contr_AOV_2_fifo_cap { I 2 vector } contr_AOV_2_empty_n { I 1 bit } contr_AOV_2_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 161 \
-    name p_read7 \
-    type other \
+    id 97 \
+    name contr_AOV_3 \
+    type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read7 \
+    corename dc_contr_AOV_3 \
     op interface \
-    ports { p_read7 { I 32 vector } } \
+    ports { contr_AOV_3_dout { I 32 vector } contr_AOV_3_num_data_valid { I 2 vector } contr_AOV_3_fifo_cap { I 2 vector } contr_AOV_3_empty_n { I 1 bit } contr_AOV_3_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 98 \
+    name contr_AOV_4 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_contr_AOV_4 \
+    op interface \
+    ports { contr_AOV_4_dout { I 32 vector } contr_AOV_4_num_data_valid { I 2 vector } contr_AOV_4_fifo_cap { I 2 vector } contr_AOV_4_empty_n { I 1 bit } contr_AOV_4_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 99 \
+    name contr_AOV_5 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_contr_AOV_5 \
+    op interface \
+    ports { contr_AOV_5_dout { I 32 vector } contr_AOV_5_num_data_valid { I 2 vector } contr_AOV_5_fifo_cap { I 2 vector } contr_AOV_5_empty_n { I 1 bit } contr_AOV_5_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 100 \
+    name contr_AOV_6 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_contr_AOV_6 \
+    op interface \
+    ports { contr_AOV_6_dout { I 32 vector } contr_AOV_6_num_data_valid { I 2 vector } contr_AOV_6_fifo_cap { I 2 vector } contr_AOV_6_empty_n { I 1 bit } contr_AOV_6_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 101 \
+    name contr_AOV_7 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_contr_AOV_7 \
+    op interface \
+    ports { contr_AOV_7_dout { I 32 vector } contr_AOV_7_num_data_valid { I 2 vector } contr_AOV_7_fifo_cap { I 2 vector } contr_AOV_7_empty_n { I 1 bit } contr_AOV_7_read { O 1 bit } } \
 } "
 }
 
@@ -348,7 +314,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

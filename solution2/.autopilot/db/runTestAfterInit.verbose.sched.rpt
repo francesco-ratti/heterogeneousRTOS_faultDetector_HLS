@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit'
 ================================================================
-* Date:           Tue Oct  4 21:03:52 2022
+* Date:           Wed Oct  5 22:50:34 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -20,17 +20,17 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  18.00 ns|  13.694 ns|     4.86 ns|
+    |ap_clk  |  18.00 ns|  13.140 ns|     4.86 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+------+----------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline |
-    |   min   |   max   |    min    |    max    | min |  max |   Type   |
-    +---------+---------+-----------+-----------+-----+------+----------+
-    |        4|     1279|  72.000 ns|  23.022 us|    3|  1207|  dataflow|
-    +---------+---------+-----------+-----------+-----+------+----------+
+    +---------+---------+----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max    | min | max |   Type   |
+    +---------+---------+----------+-----------+-----+-----+----------+
+    |       90|      656|  1.620 us|  11.808 us|   71|  584|  dataflow|
+    +---------+---------+----------+-----------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
@@ -65,55 +65,93 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 4
+* Number of FSM states : 8
 * Pipeline : 0
 * Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 4, States = { 1 2 3 4 }
+  DF-Pipeline-0: Size = 8, States = { 1 2 3 4 5 6 7 8 }
 
 * FSM state transitions: 
 1 --> 2 
 2 --> 3 
 3 --> 4 
-4 --> 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 13.1>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%inputAOV_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %inputAOV"   --->   Operation 5 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%copyInputAOV_in_c = alloca i32 1"   --->   Operation 6 'alloca' 'copyInputAOV_in_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_1 : Operation 7 [2/2] (13.1ns)   --->   "%call_ret = call i296 @read_train, i512 %gmem, i32 %inputAOV_read, i8 %copyInputAOV_in, i8 %copyInputAOV_in_c" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 7 'call' 'call_ret' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV"   --->   Operation 9 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%contr_AOV_7_c = alloca i64 1"   --->   Operation 10 'alloca' 'contr_AOV_7_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%contr_AOV_6_c = alloca i64 1"   --->   Operation 11 'alloca' 'contr_AOV_6_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%contr_AOV_5_c = alloca i64 1"   --->   Operation 12 'alloca' 'contr_AOV_5_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%contr_AOV_4_c = alloca i64 1"   --->   Operation 13 'alloca' 'contr_AOV_4_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%contr_AOV_3_c = alloca i64 1"   --->   Operation 14 'alloca' 'contr_AOV_3_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%contr_AOV_2_c = alloca i64 1"   --->   Operation 15 'alloca' 'contr_AOV_2_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%contr_AOV_1_c = alloca i64 1"   --->   Operation 16 'alloca' 'contr_AOV_1_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%contr_AOV_c = alloca i64 1"   --->   Operation 17 'alloca' 'contr_AOV_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 18 [2/2] (13.1ns)   --->   "%call_ret = call i284 @read_train, i512 %gmem, i64 %inputAOV_read" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 18 'call' 'call_ret' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 2 <SV = 1> <Delay = 1.58>
-ST_2 : Operation 8 [1/2] (1.58ns)   --->   "%call_ret = call i296 @read_train, i512 %gmem, i32 %inputAOV_read, i8 %copyInputAOV_in, i8 %copyInputAOV_in_c" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 8 'call' 'call_ret' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%contr_command = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 9 'extractvalue' 'contr_command' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%contr_uniId_V = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 10 'extractvalue' 'contr_uniId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%contr_taskId_V = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 11 'extractvalue' 'contr_taskId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%contr_checkId_V = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 12 'extractvalue' 'contr_checkId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%contr_AOV = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 13 'extractvalue' 'contr_AOV' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%contr_AOV_1 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 14 'extractvalue' 'contr_AOV_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%contr_AOV_2 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 15 'extractvalue' 'contr_AOV_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%contr_AOV_3 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 16 'extractvalue' 'contr_AOV_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%contr_AOV_4 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 17 'extractvalue' 'contr_AOV_4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%contr_AOV_5 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 18 'extractvalue' 'contr_AOV_5' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%contr_AOV_6 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 19 'extractvalue' 'contr_AOV_6' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%contr_AOV_7 = extractvalue i296 %call_ret" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 20 'extractvalue' 'contr_AOV_7' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+State 2 <SV = 1> <Delay = 13.1>
+ST_2 : Operation 19 [1/2] (13.1ns)   --->   "%call_ret = call i284 @read_train, i512 %gmem, i64 %inputAOV_read" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 19 'call' 'call_ret' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%contr_checkId_V = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 20 'extractvalue' 'contr_checkId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%contr_taskId_V = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 21 'extractvalue' 'contr_taskId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 4> <Depth = 2> <FIFO>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%contr_uniId_V = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 22 'extractvalue' 'contr_uniId_V' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%contr_AOV_c18_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 23 'extractvalue' 'contr_AOV_c18_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%contr_AOV_1_c19_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 24 'extractvalue' 'contr_AOV_1_c19_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%contr_AOV_2_c20_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 25 'extractvalue' 'contr_AOV_2_c20_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%contr_AOV_3_c21_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 26 'extractvalue' 'contr_AOV_3_c21_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%contr_AOV_4_c22_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 27 'extractvalue' 'contr_AOV_4_c22_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%contr_AOV_5_c23_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 28 'extractvalue' 'contr_AOV_5_c23_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%contr_AOV_6_c24_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 29 'extractvalue' 'contr_AOV_6_c24_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%contr_AOV_7_c25_channel = extractvalue i284 %call_ret" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 30 'extractvalue' 'contr_AOV_7_c25_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
 
-State 3 <SV = 2> <Delay = 11.3>
-ST_3 : Operation 21 [2/2] (11.3ns)   --->   "%call_ln549 = call void @runTestAfterInit_Block_entry1119_proc7, i8 %contr_command, i8 %contr_taskId_V, i1 %errorInTask, i8 %contr_checkId_V, i32 %contr_AOV, i32 %contr_AOV_1, i32 %contr_AOV_2, i32 %contr_AOV_3, i32 %contr_AOV_4, i32 %contr_AOV_5, i32 %contr_AOV_6, i32 %contr_AOV_7, i8 %copyInputAOV_in_c, i8 %copyInputAOV_out, i16 %contr_uniId_V, i8 %toScheduler, i288 %outcomeInRam, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 21 'call' 'call_ln549' <Predicate = true> <Delay = 11.3> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 3 <SV = 2> <Delay = 5.95>
+ST_3 : Operation 31 [2/2] (5.95ns)   --->   "%call_ret1 = call i22 @runTestAfterInit_Block_entry79_proc, i8 %contr_checkId_V, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 31 'call' 'call_ret1' <Predicate = true> <Delay = 5.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 4 <SV = 3> <Delay = 1.58>
-ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyInputAOV_in_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i8 %copyInputAOV_in_c, i8 %copyInputAOV_in_c"   --->   Operation 22 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %copyInputAOV_in_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_5"   --->   Operation 24 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 25 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 26 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %toScheduler, void @empty_22, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_24, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_24, i32 0, i32 0, void @empty_5, i32 1, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_25, i32 0, i32 0, void @empty_5, i32 64, i32 0, void @empty_4, void @empty_3, void @empty_5, i32 16, i32 16, i32 16, i32 16, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 31 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 32 [1/2] (1.58ns)   --->   "%call_ln549 = call void @runTestAfterInit_Block_entry1119_proc7, i8 %contr_command, i8 %contr_taskId_V, i1 %errorInTask, i8 %contr_checkId_V, i32 %contr_AOV, i32 %contr_AOV_1, i32 %contr_AOV_2, i32 %contr_AOV_3, i32 %contr_AOV_4, i32 %contr_AOV_5, i32 %contr_AOV_6, i32 %contr_AOV_7, i8 %copyInputAOV_in_c, i8 %copyInputAOV_out, i16 %contr_uniId_V, i8 %toScheduler, i288 %outcomeInRam, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3, i32 %regions_4, i32 %regions_5, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:549]   --->   Operation 32 'call' 'call_ln549' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%ret_ln561 = ret" [detector_solid/abs_solid_detector.cpp:561]   --->   Operation 33 'ret' 'ret_ln561' <Predicate = true> <Delay = 0.00>
+State 4 <SV = 3> <Delay = 2.32>
+ST_4 : Operation 32 [1/2] (2.32ns)   --->   "%call_ret1 = call i22 @runTestAfterInit_Block_entry79_proc, i8 %contr_checkId_V, i8 %n_regions_V" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 32 'call' 'call_ret1' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%contr_checkId_V_load_loc_channel = extractvalue i22 %call_ret1" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 33 'extractvalue' 'contr_checkId_V_load_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%contr_checkId_V_load_cast_loc_channel = extractvalue i22 %call_ret1" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 34 'extractvalue' 'contr_checkId_V_load_cast_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%n_regions_V_load_loc_channel = extractvalue i22 %call_ret1" [detector_solid/abs_solid_detector.cpp:572]   --->   Operation 35 'extractvalue' 'n_regions_V_load_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+
+State 5 <SV = 4> <Delay = 11.3>
+ST_5 : Operation 36 [2/2] (11.3ns)   --->   "%error = call i1 @run_test, i32 %regions, i6 %contr_checkId_V_load_cast_loc_channel, i32 %regions_1, i32 %regions_2, i32 %regions_3, i8 %n_regions_V_load_loc_channel, i32 %contr_AOV_c18_channel, i32 %contr_AOV_1_c19_channel, i32 %contr_AOV_2_c20_channel, i32 %contr_AOV_3_c21_channel, i32 %contr_AOV_4_c22_channel, i32 %contr_AOV_5_c23_channel, i32 %contr_AOV_6_c24_channel, i32 %contr_AOV_7_c25_channel, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:576]   --->   Operation 36 'call' 'error' <Predicate = true> <Delay = 11.3> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+
+State 6 <SV = 5> <Delay = 11.7>
+ST_6 : Operation 37 [1/2] (11.7ns)   --->   "%error = call i1 @run_test, i32 %regions, i6 %contr_checkId_V_load_cast_loc_channel, i32 %regions_1, i32 %regions_2, i32 %regions_3, i8 %n_regions_V_load_loc_channel, i32 %contr_AOV_c18_channel, i32 %contr_AOV_1_c19_channel, i32 %contr_AOV_2_c20_channel, i32 %contr_AOV_3_c21_channel, i32 %contr_AOV_4_c22_channel, i32 %contr_AOV_5_c23_channel, i32 %contr_AOV_6_c24_channel, i32 %contr_AOV_7_c25_channel, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:576]   --->   Operation 37 'call' 'error' <Predicate = true> <Delay = 11.7> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+
+State 7 <SV = 6> <Delay = 6.88>
+ST_7 : Operation 38 [2/2] (6.88ns)   --->   "%call_ln577 = call void @writeOutcome, i1 %errorInTask, i4 %contr_taskId_V, i8 %contr_checkId_V_load_loc_channel, i16 %contr_uniId_V, i1 %error, i288 %outcomeInRam, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 38 'call' 'call_ln577' <Predicate = true> <Delay = 6.88> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_7_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_7_c, i32 %contr_AOV_7_c"   --->   Operation 39 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_7_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_6_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_6_c, i32 %contr_AOV_6_c"   --->   Operation 41 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_6_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%empty_57 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_5_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_5_c, i32 %contr_AOV_5_c"   --->   Operation 43 'specchannel' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_5_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%empty_58 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_4_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_4_c, i32 %contr_AOV_4_c"   --->   Operation 45 'specchannel' 'empty_58' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_4_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%empty_59 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_3_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_3_c, i32 %contr_AOV_3_c"   --->   Operation 47 'specchannel' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_3_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%empty_60 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_2_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_2_c, i32 %contr_AOV_2_c"   --->   Operation 49 'specchannel' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_2_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%empty_61 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_1_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_1_c, i32 %contr_AOV_1_c"   --->   Operation 51 'specchannel' 'empty_61' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_1_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%empty_62 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_c, i32 %contr_AOV_c"   --->   Operation 53 'specchannel' 'empty_62' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_17"   --->   Operation 55 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 56 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 56 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 57 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 57 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_1, i32 0, i32 0, void @empty_17, i32 1, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_1, i32 0, i32 0, void @empty_17, i32 1, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_18, i32 0, i32 0, void @empty_17, i32 64, i32 0, void @empty_16, void @empty_15, void @empty_17, i32 16, i32 16, i32 16, i32 16, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 61 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 62 [1/2] (0.00ns)   --->   "%call_ln577 = call void @writeOutcome, i1 %errorInTask, i4 %contr_taskId_V, i8 %contr_checkId_V_load_loc_channel, i16 %contr_uniId_V, i1 %error, i288 %outcomeInRam, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 62 'call' 'call_ln577' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 63 [1/1] (0.00ns)   --->   "%ret_ln584 = ret" [detector_solid/abs_solid_detector.cpp:584]   --->   Operation 63 'ret' 'ret_ln584' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -123,20 +161,35 @@ Target clock period: 18ns, clock uncertainty: 4.86ns.
 
  <State 1>: 13.1ns
 The critical path consists of the following:
-	wire read operation ('inputAOV_read') on port 'inputAOV' [15]  (0 ns)
-	'call' operation ('call_ret', detector_solid/abs_solid_detector.cpp:549) to 'read_train' [27]  (13.1 ns)
+	wire read operation ('inputAOV_read') on port 'inputAOV' [10]  (0 ns)
+	'call' operation ('call_ret', detector_solid/abs_solid_detector.cpp:572) to 'read_train' [42]  (13.1 ns)
 
- <State 2>: 1.59ns
+ <State 2>: 13.1ns
 The critical path consists of the following:
-	'call' operation ('call_ret', detector_solid/abs_solid_detector.cpp:549) to 'read_train' [27]  (1.59 ns)
+	'call' operation ('call_ret', detector_solid/abs_solid_detector.cpp:572) to 'read_train' [42]  (13.1 ns)
 
- <State 3>: 11.4ns
+ <State 3>: 5.96ns
 The critical path consists of the following:
-	'call' operation ('call_ln549', detector_solid/abs_solid_detector.cpp:549) to 'runTestAfterInit_Block_entry1119_proc7' [40]  (11.4 ns)
+	'call' operation ('call_ret1', detector_solid/abs_solid_detector.cpp:572) to 'runTestAfterInit_Block_entry79_proc' [54]  (5.96 ns)
 
- <State 4>: 1.59ns
+ <State 4>: 2.32ns
 The critical path consists of the following:
-	'call' operation ('call_ln549', detector_solid/abs_solid_detector.cpp:549) to 'runTestAfterInit_Block_entry1119_proc7' [40]  (1.59 ns)
+	'call' operation ('call_ret1', detector_solid/abs_solid_detector.cpp:572) to 'runTestAfterInit_Block_entry79_proc' [54]  (2.32 ns)
+
+ <State 5>: 11.4ns
+The critical path consists of the following:
+	'call' operation ('error', detector_solid/abs_solid_detector.cpp:576) to 'run_test' [58]  (11.4 ns)
+
+ <State 6>: 11.7ns
+The critical path consists of the following:
+	'call' operation ('error', detector_solid/abs_solid_detector.cpp:576) to 'run_test' [58]  (11.7 ns)
+
+ <State 7>: 6.89ns
+The critical path consists of the following:
+	'call' operation ('call_ln577', detector_solid/abs_solid_detector.cpp:577) to 'writeOutcome' [59]  (6.89 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
 
 
 ============================================================
@@ -151,6 +204,10 @@ N/A
 	State 2
 	State 3
 	State 4
+	State 5
+	State 6
+	State 7
+	State 8
 
 
 ============================================================

@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665003038101">
+  <ports id="1" name="gmem" type="PortType" coreId="1952671092" bitwidth="512" iftype="IfTypeFifo">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="inputAOV" type="PortType" coreId="0" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="0" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="4" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="1864394868" bitwidth="1" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="5" name="n_regions_V" type="PortType" coreName="RAM" coreId="1914727791" bitwidth="8" iftype="IfTypeRegister" arraysize="64">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="6" name="regions" type="PortType" coreName="RAM" coreId="1869881395" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="7" name="regions_1" type="PortType" coreName="RAM" coreId="1701060708" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="8" name="regions_2" type="PortType" coreName="RAM" coreId="2037672306" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="9" name="regions_3" type="PortType" coreName="RAM" coreId="1145391171" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <edges id="64" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="76" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="77" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="82" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="84" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="85" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="86" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="87" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="88" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="92" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="93" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="94" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="97" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="98" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="99" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="100" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="101" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="103" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="105" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="106" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="107" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="108" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="109" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="110" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="111" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="112" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="113" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="114" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="115" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="117" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="118" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="121" source_obj="//@regions.0/@basic_blocks.0/@node_objs.26" sink_obj="//@ports.3"/>
+  <edges id="122" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="123" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="124" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="125" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="126" source_obj="//@regions.0/@basic_blocks.0/@node_objs.26" sink_obj="//@ports.2"/>
+  <edges id="127" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="128" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="129" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="130" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="131" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="132" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="133" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="134" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="135" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="461" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="462" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="337" RegionName="runTestAfterInit">
+    <basic_blocks id="61" name="runTestAfterInit" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="inputAOV_read" coreId="1868767266" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <dataInputObjs>inputAOV</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="contr_AOV_7_c" rtlName="contr_AOV_7_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="contr_AOV_6_c" rtlName="contr_AOV_6_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="contr_AOV_5_c" rtlName="contr_AOV_5_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="contr_AOV_4_c" rtlName="contr_AOV_4_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="contr_AOV_3_c" rtlName="contr_AOV_3_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="contr_AOV_2_c" rtlName="contr_AOV_2_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="contr_AOV_1_c" rtlName="contr_AOV_1_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="contr_AOV_c" rtlName="contr_AOV_c_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="call_ret" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_train_U0" coreId="1031369833" contextFuncName="runTestAfterInit" bitwidth="284" opcode="call" nodeLatency="1" m_display="0" m_delay="13.1" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>gmem</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <constName>read_train</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="contr_checkId_V" lineNumber="572" originalName="contr.checkId.V" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_checkId_V_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="8" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="contr_taskId_V" lineNumber="572" originalName="contr.taskId.V" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_taskId_V_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="4" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="contr_uniId_V" lineNumber="572" originalName="contr.uniId.V" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_uniId_V_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="16" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="contr_AOV_c18_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_c18_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="contr_AOV_1_c19_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_1_c19_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="contr_AOV_2_c20_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_2_c20_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="contr_AOV_3_c21_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_3_c21_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="contr_AOV_4_c22_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_4_c22_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="contr_AOV_5_c23_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_5_c23_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="contr_AOV_6_c24_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_6_c24_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="contr_AOV_7_c25_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_AOV_7_c25_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="32" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="call_ret1" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="runTestAfterInit_Block_entry79_proc_U0" coreId="1229085474" contextFuncName="runTestAfterInit" bitwidth="22" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="5.95" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>n_regions_V</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <constName>runTestAfterInit_Block_entry79_proc</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="contr_checkId_V_load_loc_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_checkId_V_load_loc_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="8" opcode="extractvalue" nodeLabel="3.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="contr_checkId_V_load_cast_loc_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="contr_checkId_V_load_cast_loc_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="6" opcode="extractvalue" nodeLabel="3.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="n_regions_V_load_loc_channel" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="n_regions_V_load_loc_channel_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="8" opcode="extractvalue" nodeLabel="3.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="error" lineNumber="576" originalName="error" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="error_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="runTestAfterInit" bitwidth="1" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="11.3" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="576" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>regions</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>regions_1</dataInputObjs>
+        <dataInputObjs>regions_2</dataInputObjs>
+        <dataInputObjs>regions_3</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>run_test</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="_ln577" lineNumber="577" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="757935405" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="6.88" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="577" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>call</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>errorInTask</dataOutputObjs>
+        <dataOutputObjs>outcomeInRam</dataOutputObjs>
+        <constName>writeOutcome</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="_ln584" lineNumber="584" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1769301803" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="7.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="584" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+        <validLinenumbers>572</validLinenumbers>
+        <validLinenumbers>576</validLinenumbers>
+        <validLinenumbers>577</validLinenumbers>
+        <validLinenumbers>584</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <regnodes realName="contr_checkId_V_load_cast_loc_channel_reg_358">
+    <nodeIds>56</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_1_c_reg_286">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="inputAOV_read_reg_245">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_c18_channel_reg_313">
+    <nodeIds>46</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_3_c_reg_274">
+    <nodeIds>23</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_c_reg_292">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_checkId_V_reg_298">
+    <nodeIds>43</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_7_c_reg_250">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_uniId_V_reg_308">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_2_c_reg_280">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_3_c21_channel_reg_328">
+    <nodeIds>49</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_5_c23_channel_reg_338">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="n_regions_V_load_loc_channel_reg_363">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_taskId_V_reg_303">
+    <nodeIds>44</nodeIds>
+  </regnodes>
+  <regnodes realName="error_reg_368">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_6_c_reg_256">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_checkId_V_load_loc_channel_reg_353">
+    <nodeIds>55</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_6_c24_channel_reg_343">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_4_c22_channel_reg_333">
+    <nodeIds>50</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_1_c19_channel_reg_318">
+    <nodeIds>47</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_4_c_reg_268">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_2_c20_channel_reg_323">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_7_c25_channel_reg_348">
+    <nodeIds>53</nodeIds>
+  </regnodes>
+  <regnodes realName="contr_AOV_5_c_reg_262">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <expressionNodes realName="contr_AOV_3_c_fu_102">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_5_c23_channel_fu_221">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_taskId_V_fu_193">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_4_c22_channel_fu_217">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_1_c19_channel_fu_205">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_uniId_V_fu_197">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_checkId_V_fu_189">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_4_c_fu_98">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_c_fu_114">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_checkId_V_load_loc_channel_fu_233">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_1_c_fu_110">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_3_c21_channel_fu_213">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_6_c_fu_90">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_checkId_V_load_cast_loc_channel_fu_237">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_2_c_fu_106">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="n_regions_V_load_loc_channel_fu_241">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_5_c_fu_94">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_7_c_fu_86">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_c18_channel_fu_201">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_2_c20_channel_fu_209">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_6_c24_channel_fu_225">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="contr_AOV_7_c25_channel_fu_229">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_read_train_fu_124">
+    <nodeIds>42</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_run_test_fu_139">
+    <nodeIds>58</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_writeOutcome_fu_169">
+    <nodeIds>59</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_runTestAfterInit_Block_entry79_proc_fu_132">
+    <nodeIds>54</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="inputAOV_read_read_fu_118">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioPorts name="gmem">
+    <contents name="call">
+      <nodeIds>42</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="inputAOV">
+    <contents name="read">
+      <nodeIds>10</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="42" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="42" stage="1" latency="2"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="54" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="54" stage="1" latency="2"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="58" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="58" stage="1" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="59" stage="2" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="2"/>
+      <operations id="60" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="runTestAfterInit" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="90" mMaxLatency="656" mIsDfPipe="true">
+      <basicBlocks>61</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.3/@pins.0/@inst">
+        <processe_list name="read_train_U0" ssdmobj_id="42">
+          <pins>
+            <port name="gmem" type="BUSType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_115" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </pins>
+          <pins>
+            <port name="inputAOV" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_116" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </pins>
+        </processe_list>
+        <processe_list name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54">
+          <pins>
+            <port name="n_regions_V" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_119" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54" object_id="_133"/>
+          </pins>
+        </processe_list>
+        <processe_list name="run_test_U0" ssdmobj_id="58">
+          <pins>
+            <port name="regions" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_120" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </pins>
+          <pins>
+            <port name="regions_1" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_121" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </pins>
+          <pins>
+            <port name="regions_2" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_122" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </pins>
+          <pins>
+            <port name="regions_3" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_123" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </pins>
+        </processe_list>
+        <processe_list name="writeOutcome_U0" ssdmobj_id="59">
+          <pins>
+            <port name="errorInTask" dir="DirOut" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_118" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </pins>
+          <pins>
+            <port name="outcomeInRam" dir="DirOut" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_117" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="2" bitwidth="8" suggested_type="1" suggested_depth="2" name="contr_checkId_V" ssdmobj_id="43">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54" object_id="_133"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="4" bitwidth="4" suggested_type="1" suggested_depth="4" name="contr_taskId_V" ssdmobj_id="44">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="4" bitwidth="16" suggested_type="1" suggested_depth="4" name="contr_uniId_V" ssdmobj_id="45">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_c18_channel" ssdmobj_id="46">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_1_c19_channel" ssdmobj_id="47">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_2_c20_channel" ssdmobj_id="48">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_3_c21_channel" ssdmobj_id="49">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_4_c22_channel" ssdmobj_id="50">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_5_c23_channel" ssdmobj_id="51">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_6_c24_channel" ssdmobj_id="52">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="32" suggested_type="1" suggested_depth="3" name="contr_AOV_7_c25_channel" ssdmobj_id="53">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_train_U0" ssdmobj_id="42" object_id="_127"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3" bitwidth="8" suggested_type="1" suggested_depth="3" name="contr_checkId_V_load_loc_channel" ssdmobj_id="55">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54" object_id="_133"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="6" suggested_type="1" suggested_depth="2" name="contr_checkId_V_load_cast_loc_channel" ssdmobj_id="56">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54" object_id="_133"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="8" suggested_type="1" suggested_depth="2" name="n_regions_V_load_loc_channel" ssdmobj_id="57">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="runTestAfterInit_Block_entry79_proc_U0" ssdmobj_id="54" object_id="_133"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_c" ssdmobj_id="32">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_1_c" ssdmobj_id="29">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_2_c" ssdmobj_id="26">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_3_c" ssdmobj_id="23">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_4_c" ssdmobj_id="20">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_5_c" ssdmobj_id="17">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_6_c" ssdmobj_id="14">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="contr_AOV_7_c" ssdmobj_id="11">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="1" suggested_type="1" suggested_depth="2" name="error" ssdmobj_id="58">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="58" object_id="_137"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="writeOutcome_U0" ssdmobj_id="59" object_id="_147"/>
+          </sink>
+        </channel_list>
+      </mDfPipe>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit'
 ================================================================
-* Date:           Tue Oct  4 21:04:01 2022
+* Date:           Wed Oct  5 22:50:37 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -20,27 +20,29 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  18.00 ns|  13.694 ns|     4.86 ns|
+    |ap_clk  |  18.00 ns|  13.140 ns|     4.86 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+------+----------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline |
-    |   min   |   max   |    min    |    max    | min |  max |   Type   |
-    +---------+---------+-----------+-----------+-----+------+----------+
-    |        4|     1279|  72.000 ns|  23.022 us|    3|  1207|  dataflow|
-    +---------+---------+-----------+-----------+-----+------+----------+
+    +---------+---------+----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max    | min | max |   Type   |
+    +---------+---------+----------+-----------+-----+-----+----------+
+    |       90|      656|  1.620 us|  11.808 us|   71|  584|  dataflow|
+    +---------+---------+----------+-----------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
-        +-------------------------------------------+----------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
-        |                                           |                                        |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline|
-        |                  Instance                 |                 Module                 |   min   |   max   |    min    |    max    | min |  max |   Type  |
-        +-------------------------------------------+----------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
-        |read_train_U0                              |read_train                              |        2|       72|  36.000 ns|   1.296 us|    2|    72|       no|
-        |runTestAfterInit_Block_entry1119_proc7_U0  |runTestAfterInit_Block_entry1119_proc7  |        1|     1206|  18.000 ns|  21.708 us|    1|  1206|       no|
-        +-------------------------------------------+----------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+        +----------------------------------------+-------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                                        |                                     |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |                Instance                |                Module               |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +----------------------------------------+-------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |read_train_U0                           |read_train                           |       70|       70|   1.260 us|   1.260 us|   70|   70|       no|
+        |runTestAfterInit_Block_entry79_proc_U0  |runTestAfterInit_Block_entry79_proc  |        1|        1|  18.000 ns|  18.000 ns|    1|    1|       no|
+        |run_test_U0                             |run_test                             |        7|      583|   0.126 us|  10.494 us|    7|  583|       no|
+        |writeOutcome_U0                         |writeOutcome                         |       17|       17|   0.306 us|   0.306 us|   17|   17|       no|
+        +----------------------------------------+-------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
 
         * Loop: 
         N/A
@@ -55,30 +57,32 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|     62|    -|
-|FIFO             |        -|    -|    1287|    884|    -|
-|Instance         |        0|   22|   10663|  15145|    0|
+|Expression       |        -|    -|       0|     78|    -|
+|FIFO             |        -|    -|    2277|   1564|    -|
+|Instance         |        0|    -|    1596|   2563|    0|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       -|    126|    -|
-|Register         |        -|    -|      14|      -|    -|
+|Multiplexer      |        -|    -|       -|    153|    -|
+|Register         |        -|    -|      17|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|   22|   11964|  16217|    0|
+|Total            |        0|    0|    3890|   4358|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        0|   10|      11|     30|    0|
+|Utilization (%)  |        0|    0|       3|      8|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------------------------+----------------------------------------+---------+----+-------+-------+-----+
-    |                  Instance                 |                 Module                 | BRAM_18K| DSP|   FF  |  LUT  | URAM|
-    +-------------------------------------------+----------------------------------------+---------+----+-------+-------+-----+
-    |read_train_U0                              |read_train                              |        0|   0|    371|    404|    0|
-    |runTestAfterInit_Block_entry1119_proc7_U0  |runTestAfterInit_Block_entry1119_proc7  |        0|  22|  10292|  14741|    0|
-    +-------------------------------------------+----------------------------------------+---------+----+-------+-------+-----+
-    |Total                                      |                                        |        0|  22|  10663|  15145|    0|
-    +-------------------------------------------+----------------------------------------+---------+----+-------+-------+-----+
+    +----------------------------------------+-------------------------------------+---------+----+-----+------+-----+
+    |                Instance                |                Module               | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +----------------------------------------+-------------------------------------+---------+----+-----+------+-----+
+    |read_train_U0                           |read_train                           |        0|   0|  356|   465|    0|
+    |runTestAfterInit_Block_entry79_proc_U0  |runTestAfterInit_Block_entry79_proc  |        0|   0|   31|    52|    0|
+    |run_test_U0                             |run_test                             |        0|   0|  681|  1732|    0|
+    |writeOutcome_U0                         |writeOutcome                         |        0|   0|  528|   314|    0|
+    +----------------------------------------+-------------------------------------+---------+----+-----+------+-----+
+    |Total                                   |                                     |        0|   0| 1596|  2563|    0|
+    +----------------------------------------+-------------------------------------+---------+----+-----+------+-----+
 
     * DSP: 
     N/A
@@ -87,108 +91,132 @@
     N/A
 
     * FIFO: 
-    +---------------------+---------+----+----+-----+------+-----+---------+
-    |         Name        | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
-    +---------------------+---------+----+----+-----+------+-----+---------+
-    |contr_AOV_1_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_2_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_3_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_4_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_5_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_6_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_7_U        |        0|  99|   0|    -|     2|   32|       64|
-    |contr_AOV_U          |        0|  99|   0|    -|     2|   32|       64|
-    |contr_checkId_V_U    |        0|  99|   0|    -|     2|    8|       16|
-    |contr_command_U      |        0|  99|   0|    -|     2|    8|       16|
-    |contr_taskId_V_U     |        0|  99|   0|    -|     2|    8|       16|
-    |contr_uniId_V_U      |        0|  99|   0|    -|     2|   16|       32|
-    |copyInputAOV_in_c_U  |        0|  99|   0|    -|     2|    8|       16|
-    +---------------------+---------+----+----+-----+------+-----+---------+
-    |Total                |        0|1287|   0|    0|    26|  304|      608|
-    +---------------------+---------+----+----+-----+------+-----+---------+
+    +-----------------------------------------+---------+----+----+-----+------+-----+---------+
+    |                   Name                  | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +-----------------------------------------+---------+----+----+-----+------+-----+---------+
+    |contr_AOV_1_c19_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_1_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_2_c20_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_2_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_3_c21_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_3_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_4_c22_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_4_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_5_c23_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_5_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_6_c24_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_6_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_7_c25_channel_U                |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_7_c_U                          |        0|  99|   0|    -|     2|   32|       64|
+    |contr_AOV_c18_channel_U                  |        0|  99|   0|    -|     3|   32|       96|
+    |contr_AOV_c_U                            |        0|  99|   0|    -|     2|   32|       64|
+    |contr_checkId_V_U                        |        0|  99|   0|    -|     2|    8|       16|
+    |contr_checkId_V_load_cast_loc_channel_U  |        0|  99|   0|    -|     2|    6|       12|
+    |contr_checkId_V_load_loc_channel_U       |        0|  99|   0|    -|     3|    8|       24|
+    |contr_taskId_V_U                         |        0|  99|   0|    -|     4|    4|       16|
+    |contr_uniId_V_U                          |        0|  99|   0|    -|     4|   16|       64|
+    |error_U                                  |        0|  99|   0|    -|     2|    1|        2|
+    |n_regions_V_load_loc_channel_U           |        0|  99|   0|    -|     2|    8|       16|
+    +-----------------------------------------+---------+----+----+-----+------+-----+---------+
+    |Total                                    |        0|2277|   0|    0|    59|  563|     1430|
+    +-----------------------------------------+---------+----+----+-----+------+-----+---------+
 
     * Expression: 
-    +------------------------------------------------------------+----------+----+---+----+------------+------------+
-    |                        Variable Name                       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +------------------------------------------------------------+----------+----+---+----+------------+------------+
-    |ap_channel_done_contr_AOV                                   |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_1                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_2                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_3                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_4                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_5                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_6                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_AOV_7                                 |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_checkId_V                             |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_command                               |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_taskId_V                              |       and|   0|  0|   2|           1|           1|
-    |ap_channel_done_contr_uniId_V                               |       and|   0|  0|   2|           1|           1|
-    |ap_idle                                                     |       and|   0|  0|   2|           1|           1|
-    |ap_sync_ready                                               |       and|   0|  0|   2|           1|           1|
-    |read_train_U0_ap_continue                                   |       and|   0|  0|   2|           1|           1|
-    |read_train_U0_ap_start                                      |       and|   0|  0|   2|           1|           1|
-    |runTestAfterInit_Block_entry1119_proc7_U0_ap_start          |       and|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV                             |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_1                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_2                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_3                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_4                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_5                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_6                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_AOV_7                           |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_checkId_V                       |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_command                         |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_taskId_V                        |        or|   0|  0|   2|           1|           1|
-    |ap_sync_channel_write_contr_uniId_V                         |        or|   0|  0|   2|           1|           1|
-    |ap_sync_read_train_U0_ap_ready                              |        or|   0|  0|   2|           1|           1|
-    |ap_sync_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
-    +------------------------------------------------------------+----------+----+---+----+------------+------------+
-    |Total                                                       |          |   0|  0|  62|          31|          31|
-    +------------------------------------------------------------+----------+----+---+----+------------+------------+
+    +-------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                        Variable Name                        | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |ap_channel_done_contr_AOV_1_c19_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_2_c20_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_3_c21_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_4_c22_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_5_c23_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_6_c24_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_7_c25_channel                      |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_AOV_c18_channel                        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_checkId_V                              |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_checkId_V_load_cast_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_checkId_V_load_loc_channel             |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_taskId_V                               |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_contr_uniId_V                                |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_n_regions_V_load_loc_channel                 |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                                      |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                                                |       and|   0|  0|   2|           1|           1|
+    |read_train_U0_ap_continue                                    |       and|   0|  0|   2|           1|           1|
+    |read_train_U0_ap_start                                       |       and|   0|  0|   2|           1|           1|
+    |runTestAfterInit_Block_entry79_proc_U0_ap_continue           |       and|   0|  0|   2|           1|           1|
+    |runTestAfterInit_Block_entry79_proc_U0_ap_start              |       and|   0|  0|   2|           1|           1|
+    |run_test_U0_ap_start                                         |       and|   0|  0|   2|           1|           1|
+    |writeOutcome_U0_ap_start                                     |       and|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_1_c19_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_2_c20_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_3_c21_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_4_c22_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_5_c23_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_6_c24_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_7_c25_channel                |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_AOV_c18_channel                  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_checkId_V                        |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_checkId_V_load_loc_channel       |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_taskId_V                         |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_contr_uniId_V                          |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_n_regions_V_load_loc_channel           |        or|   0|  0|   2|           1|           1|
+    |ap_sync_read_train_U0_ap_ready                               |        or|   0|  0|   2|           1|           1|
+    |ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready      |        or|   0|  0|   2|           1|           1|
+    |ap_sync_run_test_U0_ap_ready                                 |        or|   0|  0|   2|           1|           1|
+    +-------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                        |          |   0|  0|  78|          39|          39|
+    +-------------------------------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +----------------------------------------------------------------+----+-----------+-----+-----------+
-    |                              Name                              | LUT| Input Size| Bits| Total Bits|
-    +----------------------------------------------------------------+----+-----------+-----+-----------+
-    |ap_sync_reg_channel_write_contr_AOV                             |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_1                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_2                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_3                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_4                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_5                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_6                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_AOV_7                           |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_checkId_V                       |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_command                         |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_taskId_V                        |   9|          2|    1|          2|
-    |ap_sync_reg_channel_write_contr_uniId_V                         |   9|          2|    1|          2|
-    |ap_sync_reg_read_train_U0_ap_ready                              |   9|          2|    1|          2|
-    |ap_sync_reg_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready  |   9|          2|    1|          2|
-    +----------------------------------------------------------------+----+-----------+-----+-----------+
-    |Total                                                           | 126|         28|   14|         28|
-    +----------------------------------------------------------------+----+-----------+-----+-----------+
+    +-----------------------------------------------------------------+----+-----------+-----+-----------+
+    |                               Name                              | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_contr_AOV_1_c19_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_2_c20_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_3_c21_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_4_c22_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_5_c23_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_6_c24_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_7_c25_channel                |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_AOV_c18_channel                  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_checkId_V                        |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel       |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_taskId_V                         |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_contr_uniId_V                          |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_n_regions_V_load_loc_channel           |   9|          2|    1|          2|
+    |ap_sync_reg_read_train_U0_ap_ready                               |   9|          2|    1|          2|
+    |ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready      |   9|          2|    1|          2|
+    |ap_sync_reg_run_test_U0_ap_ready                                 |   9|          2|    1|          2|
+    +-----------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                            | 153|         34|   17|         34|
+    +-----------------------------------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +----------------------------------------------------------------+---+----+-----+-----------+
-    |                              Name                              | FF| LUT| Bits| Const Bits|
-    +----------------------------------------------------------------+---+----+-----+-----------+
-    |ap_sync_reg_channel_write_contr_AOV                             |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_1                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_2                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_3                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_4                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_5                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_6                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_AOV_7                           |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_checkId_V                       |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_command                         |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_taskId_V                        |  1|   0|    1|          0|
-    |ap_sync_reg_channel_write_contr_uniId_V                         |  1|   0|    1|          0|
-    |ap_sync_reg_read_train_U0_ap_ready                              |  1|   0|    1|          0|
-    |ap_sync_reg_runTestAfterInit_Block_entry1119_proc7_U0_ap_ready  |  1|   0|    1|          0|
-    +----------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                           | 14|   0|   14|          0|
-    +----------------------------------------------------------------+---+----+-----+-----------+
+    +-----------------------------------------------------------------+---+----+-----+-----------+
+    |                               Name                              | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_contr_AOV_1_c19_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_2_c20_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_3_c21_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_4_c22_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_5_c23_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_6_c24_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_7_c25_channel                |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_AOV_c18_channel                  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_checkId_V                        |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel       |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_taskId_V                         |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_contr_uniId_V                          |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_n_regions_V_load_loc_channel           |  1|   0|    1|          0|
+    |ap_sync_reg_read_train_U0_ap_ready                               |  1|   0|    1|          0|
+    |ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready      |  1|   0|    1|          0|
+    |ap_sync_reg_run_test_U0_ap_ready                                 |  1|   0|    1|          0|
+    +-----------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                            | 17|   0|   17|          0|
+    +-----------------------------------------------------------------+---+----+-----+-----------+
 
 
 
@@ -196,150 +224,123 @@
 == Interface
 ================================================================
 * Summary: 
-+-------------------------+-----+-----+------------+------------------+--------------+
-|        RTL Ports        | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
-+-------------------------+-----+-----+------------+------------------+--------------+
-|m_axi_gmem_AWVALID       |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWREADY       |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWADDR        |  out|   32|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWID          |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWLEN         |  out|   32|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWSIZE        |  out|    3|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWBURST       |  out|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWLOCK        |  out|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWCACHE       |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWPROT        |  out|    3|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWQOS         |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWREGION      |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_AWUSER        |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WVALID        |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WREADY        |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WDATA         |  out|  512|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WSTRB         |  out|   64|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WLAST         |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WID           |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_WUSER         |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARVALID       |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARREADY       |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARADDR        |  out|   32|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARID          |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARLEN         |  out|   32|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARSIZE        |  out|    3|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARBURST       |  out|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARLOCK        |  out|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARCACHE       |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARPROT        |  out|    3|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARQOS         |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARREGION      |  out|    4|       m_axi|              gmem|       pointer|
-|m_axi_gmem_ARUSER        |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RVALID        |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RREADY        |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RDATA         |   in|  512|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RLAST         |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RID           |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RFIFONUM      |   in|    9|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RUSER         |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_RRESP         |   in|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_BVALID        |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_BREADY        |  out|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_BRESP         |   in|    2|       m_axi|              gmem|       pointer|
-|m_axi_gmem_BID           |   in|    1|       m_axi|              gmem|       pointer|
-|m_axi_gmem_BUSER         |   in|    1|       m_axi|              gmem|       pointer|
-|inputAOV                 |   in|   32|     ap_none|          inputAOV|        scalar|
-|inputAOV_ap_vld          |   in|    1|     ap_none|          inputAOV|        scalar|
-|copyInputAOV_in          |   in|    8|     ap_none|   copyInputAOV_in|       pointer|
-|copyInputAOV_in_ap_vld   |   in|    1|     ap_none|   copyInputAOV_in|       pointer|
-|copyInputAOV_out         |  out|    8|      ap_vld|  copyInputAOV_out|       pointer|
-|copyInputAOV_out_ap_vld  |  out|    1|      ap_vld|  copyInputAOV_out|       pointer|
-|outcomeInRam_address0    |  out|    4|   ap_memory|      outcomeInRam|         array|
-|outcomeInRam_ce0         |  out|    1|   ap_memory|      outcomeInRam|         array|
-|outcomeInRam_d0          |  out|  288|   ap_memory|      outcomeInRam|         array|
-|outcomeInRam_q0          |   in|  288|   ap_memory|      outcomeInRam|         array|
-|outcomeInRam_we0         |  out|   36|   ap_memory|      outcomeInRam|         array|
-|toScheduler_TDATA        |  out|    8|        axis|       toScheduler|       pointer|
-|toScheduler_TVALID       |  out|    1|        axis|       toScheduler|       pointer|
-|toScheduler_TREADY       |   in|    1|        axis|       toScheduler|       pointer|
-|errorInTask_address0     |  out|    4|   ap_memory|       errorInTask|         array|
-|errorInTask_ce0          |  out|    1|   ap_memory|       errorInTask|         array|
-|errorInTask_d0           |  out|    1|   ap_memory|       errorInTask|         array|
-|errorInTask_q0           |   in|    1|   ap_memory|       errorInTask|         array|
-|errorInTask_we0          |  out|    1|   ap_memory|       errorInTask|         array|
-|regions_address0         |  out|   12|   ap_memory|           regions|         array|
-|regions_ce0              |  out|    1|   ap_memory|           regions|         array|
-|regions_d0               |  out|   32|   ap_memory|           regions|         array|
-|regions_q0               |   in|   32|   ap_memory|           regions|         array|
-|regions_we0              |  out|    1|   ap_memory|           regions|         array|
-|regions_address1         |  out|   12|   ap_memory|           regions|         array|
-|regions_ce1              |  out|    1|   ap_memory|           regions|         array|
-|regions_d1               |  out|   32|   ap_memory|           regions|         array|
-|regions_q1               |   in|   32|   ap_memory|           regions|         array|
-|regions_we1              |  out|    1|   ap_memory|           regions|         array|
-|regions_1_address0       |  out|   12|   ap_memory|         regions_1|         array|
-|regions_1_ce0            |  out|    1|   ap_memory|         regions_1|         array|
-|regions_1_d0             |  out|   32|   ap_memory|         regions_1|         array|
-|regions_1_q0             |   in|   32|   ap_memory|         regions_1|         array|
-|regions_1_we0            |  out|    1|   ap_memory|         regions_1|         array|
-|regions_1_address1       |  out|   12|   ap_memory|         regions_1|         array|
-|regions_1_ce1            |  out|    1|   ap_memory|         regions_1|         array|
-|regions_1_d1             |  out|   32|   ap_memory|         regions_1|         array|
-|regions_1_q1             |   in|   32|   ap_memory|         regions_1|         array|
-|regions_1_we1            |  out|    1|   ap_memory|         regions_1|         array|
-|regions_2_address0       |  out|   12|   ap_memory|         regions_2|         array|
-|regions_2_ce0            |  out|    1|   ap_memory|         regions_2|         array|
-|regions_2_d0             |  out|   32|   ap_memory|         regions_2|         array|
-|regions_2_q0             |   in|   32|   ap_memory|         regions_2|         array|
-|regions_2_we0            |  out|    1|   ap_memory|         regions_2|         array|
-|regions_2_address1       |  out|   12|   ap_memory|         regions_2|         array|
-|regions_2_ce1            |  out|    1|   ap_memory|         regions_2|         array|
-|regions_2_d1             |  out|   32|   ap_memory|         regions_2|         array|
-|regions_2_q1             |   in|   32|   ap_memory|         regions_2|         array|
-|regions_2_we1            |  out|    1|   ap_memory|         regions_2|         array|
-|regions_3_address0       |  out|   12|   ap_memory|         regions_3|         array|
-|regions_3_ce0            |  out|    1|   ap_memory|         regions_3|         array|
-|regions_3_d0             |  out|   32|   ap_memory|         regions_3|         array|
-|regions_3_q0             |   in|   32|   ap_memory|         regions_3|         array|
-|regions_3_we0            |  out|    1|   ap_memory|         regions_3|         array|
-|regions_3_address1       |  out|   12|   ap_memory|         regions_3|         array|
-|regions_3_ce1            |  out|    1|   ap_memory|         regions_3|         array|
-|regions_3_d1             |  out|   32|   ap_memory|         regions_3|         array|
-|regions_3_q1             |   in|   32|   ap_memory|         regions_3|         array|
-|regions_3_we1            |  out|    1|   ap_memory|         regions_3|         array|
-|regions_4_address0       |  out|   12|   ap_memory|         regions_4|         array|
-|regions_4_ce0            |  out|    1|   ap_memory|         regions_4|         array|
-|regions_4_d0             |  out|   32|   ap_memory|         regions_4|         array|
-|regions_4_q0             |   in|   32|   ap_memory|         regions_4|         array|
-|regions_4_we0            |  out|    1|   ap_memory|         regions_4|         array|
-|regions_4_address1       |  out|   12|   ap_memory|         regions_4|         array|
-|regions_4_ce1            |  out|    1|   ap_memory|         regions_4|         array|
-|regions_4_d1             |  out|   32|   ap_memory|         regions_4|         array|
-|regions_4_q1             |   in|   32|   ap_memory|         regions_4|         array|
-|regions_4_we1            |  out|    1|   ap_memory|         regions_4|         array|
-|regions_5_address0       |  out|   12|   ap_memory|         regions_5|         array|
-|regions_5_ce0            |  out|    1|   ap_memory|         regions_5|         array|
-|regions_5_d0             |  out|   32|   ap_memory|         regions_5|         array|
-|regions_5_q0             |   in|   32|   ap_memory|         regions_5|         array|
-|regions_5_we0            |  out|    1|   ap_memory|         regions_5|         array|
-|regions_5_address1       |  out|   12|   ap_memory|         regions_5|         array|
-|regions_5_ce1            |  out|    1|   ap_memory|         regions_5|         array|
-|regions_5_d1             |  out|   32|   ap_memory|         regions_5|         array|
-|regions_5_q1             |   in|   32|   ap_memory|         regions_5|         array|
-|regions_5_we1            |  out|    1|   ap_memory|         regions_5|         array|
-|n_regions_V_address0     |  out|    6|   ap_memory|       n_regions_V|         array|
-|n_regions_V_ce0          |  out|    1|   ap_memory|       n_regions_V|         array|
-|n_regions_V_d0           |  out|    8|   ap_memory|       n_regions_V|         array|
-|n_regions_V_q0           |   in|    8|   ap_memory|       n_regions_V|         array|
-|n_regions_V_we0          |  out|    1|   ap_memory|       n_regions_V|         array|
-|n_regions_V_address1     |  out|    6|   ap_memory|       n_regions_V|         array|
-|n_regions_V_ce1          |  out|    1|   ap_memory|       n_regions_V|         array|
-|n_regions_V_d1           |  out|    8|   ap_memory|       n_regions_V|         array|
-|n_regions_V_q1           |   in|    8|   ap_memory|       n_regions_V|         array|
-|n_regions_V_we1          |  out|    1|   ap_memory|       n_regions_V|         array|
-|ap_clk                   |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_rst                   |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_start                 |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_done                  |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_ready                 |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_idle                  |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-|ap_continue              |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
-+-------------------------+-----+-----+------------+------------------+--------------+
++-----------------------+-----+-----+------------+------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++-----------------------+-----+-----+------------+------------------+--------------+
+|m_axi_gmem_AWVALID     |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWREADY     |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWADDR      |  out|   64|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWID        |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWLEN       |  out|   32|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWSIZE      |  out|    3|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWBURST     |  out|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWLOCK      |  out|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWCACHE     |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWPROT      |  out|    3|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWQOS       |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWREGION    |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_AWUSER      |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WVALID      |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WREADY      |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WDATA       |  out|  512|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WSTRB       |  out|   64|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WLAST       |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WID         |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_WUSER       |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARVALID     |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARREADY     |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARADDR      |  out|   64|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARID        |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARLEN       |  out|   32|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARSIZE      |  out|    3|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARBURST     |  out|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARLOCK      |  out|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARCACHE     |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARPROT      |  out|    3|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARQOS       |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARREGION    |  out|    4|       m_axi|              gmem|       pointer|
+|m_axi_gmem_ARUSER      |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RVALID      |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RREADY      |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RDATA       |   in|  512|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RLAST       |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RID         |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RFIFONUM    |   in|    9|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RUSER       |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_RRESP       |   in|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_BVALID      |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_BREADY      |  out|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_BRESP       |   in|    2|       m_axi|              gmem|       pointer|
+|m_axi_gmem_BID         |   in|    1|       m_axi|              gmem|       pointer|
+|m_axi_gmem_BUSER       |   in|    1|       m_axi|              gmem|       pointer|
+|inputAOV               |   in|   64|     ap_none|          inputAOV|        scalar|
+|inputAOV_ap_vld        |   in|    1|     ap_none|          inputAOV|        scalar|
+|outcomeInRam_address0  |  out|    4|   ap_memory|      outcomeInRam|         array|
+|outcomeInRam_ce0       |  out|    1|   ap_memory|      outcomeInRam|         array|
+|outcomeInRam_d0        |  out|  288|   ap_memory|      outcomeInRam|         array|
+|outcomeInRam_q0        |   in|  288|   ap_memory|      outcomeInRam|         array|
+|outcomeInRam_we0       |  out|   36|   ap_memory|      outcomeInRam|         array|
+|errorInTask_address0   |  out|    4|   ap_memory|       errorInTask|         array|
+|errorInTask_ce0        |  out|    1|   ap_memory|       errorInTask|         array|
+|errorInTask_d0         |  out|    1|   ap_memory|       errorInTask|         array|
+|errorInTask_q0         |   in|    1|   ap_memory|       errorInTask|         array|
+|errorInTask_we0        |  out|    1|   ap_memory|       errorInTask|         array|
+|n_regions_V_address0   |  out|    6|   ap_memory|       n_regions_V|         array|
+|n_regions_V_ce0        |  out|    1|   ap_memory|       n_regions_V|         array|
+|n_regions_V_d0         |  out|    8|   ap_memory|       n_regions_V|         array|
+|n_regions_V_q0         |   in|    8|   ap_memory|       n_regions_V|         array|
+|n_regions_V_we0        |  out|    1|   ap_memory|       n_regions_V|         array|
+|n_regions_V_address1   |  out|    6|   ap_memory|       n_regions_V|         array|
+|n_regions_V_ce1        |  out|    1|   ap_memory|       n_regions_V|         array|
+|n_regions_V_d1         |  out|    8|   ap_memory|       n_regions_V|         array|
+|n_regions_V_q1         |   in|    8|   ap_memory|       n_regions_V|         array|
+|n_regions_V_we1        |  out|    1|   ap_memory|       n_regions_V|         array|
+|regions_address0       |  out|   12|   ap_memory|           regions|         array|
+|regions_ce0            |  out|    1|   ap_memory|           regions|         array|
+|regions_d0             |  out|   32|   ap_memory|           regions|         array|
+|regions_q0             |   in|   32|   ap_memory|           regions|         array|
+|regions_we0            |  out|    1|   ap_memory|           regions|         array|
+|regions_address1       |  out|   12|   ap_memory|           regions|         array|
+|regions_ce1            |  out|    1|   ap_memory|           regions|         array|
+|regions_d1             |  out|   32|   ap_memory|           regions|         array|
+|regions_q1             |   in|   32|   ap_memory|           regions|         array|
+|regions_we1            |  out|    1|   ap_memory|           regions|         array|
+|regions_1_address0     |  out|   12|   ap_memory|         regions_1|         array|
+|regions_1_ce0          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_d0           |  out|   32|   ap_memory|         regions_1|         array|
+|regions_1_q0           |   in|   32|   ap_memory|         regions_1|         array|
+|regions_1_we0          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_address1     |  out|   12|   ap_memory|         regions_1|         array|
+|regions_1_ce1          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_1_d1           |  out|   32|   ap_memory|         regions_1|         array|
+|regions_1_q1           |   in|   32|   ap_memory|         regions_1|         array|
+|regions_1_we1          |  out|    1|   ap_memory|         regions_1|         array|
+|regions_2_address0     |  out|   12|   ap_memory|         regions_2|         array|
+|regions_2_ce0          |  out|    1|   ap_memory|         regions_2|         array|
+|regions_2_d0           |  out|   32|   ap_memory|         regions_2|         array|
+|regions_2_q0           |   in|   32|   ap_memory|         regions_2|         array|
+|regions_2_we0          |  out|    1|   ap_memory|         regions_2|         array|
+|regions_2_address1     |  out|   12|   ap_memory|         regions_2|         array|
+|regions_2_ce1          |  out|    1|   ap_memory|         regions_2|         array|
+|regions_2_d1           |  out|   32|   ap_memory|         regions_2|         array|
+|regions_2_q1           |   in|   32|   ap_memory|         regions_2|         array|
+|regions_2_we1          |  out|    1|   ap_memory|         regions_2|         array|
+|regions_3_address0     |  out|   12|   ap_memory|         regions_3|         array|
+|regions_3_ce0          |  out|    1|   ap_memory|         regions_3|         array|
+|regions_3_d0           |  out|   32|   ap_memory|         regions_3|         array|
+|regions_3_q0           |   in|   32|   ap_memory|         regions_3|         array|
+|regions_3_we0          |  out|    1|   ap_memory|         regions_3|         array|
+|regions_3_address1     |  out|   12|   ap_memory|         regions_3|         array|
+|regions_3_ce1          |  out|    1|   ap_memory|         regions_3|         array|
+|regions_3_d1           |  out|   32|   ap_memory|         regions_3|         array|
+|regions_3_q1           |   in|   32|   ap_memory|         regions_3|         array|
+|regions_3_we1          |  out|    1|   ap_memory|         regions_3|         array|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
+|ap_continue            |   in|    1|  ap_ctrl_hs|  runTestAfterInit|  return value|
++-----------------------+-----+-----+------------+------------------+--------------+
 

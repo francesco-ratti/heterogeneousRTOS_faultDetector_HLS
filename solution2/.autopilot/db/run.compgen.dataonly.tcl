@@ -3,7 +3,7 @@
 set axilite_register_dict [dict create]
 set port_control {
 errorInTask { 
-	dir IO
+	dir O
 	width 1
 	depth 16
 	mode ap_memory
@@ -16,27 +16,27 @@ errorInTask {
 }
 inputAOV { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 32
-	offset_end 39
+	offset_end 43
 }
-copyInputAOV_i { 
+readyForData { 
 	dir I
 	width 8
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 47
+	offset 44
+	offset_end 51
 }
-copyInputAOV_o { 
-	dir O
+copyInputAOV { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
-	offset 48
-	offset_end 55
+	offset 52
+	offset_end 59
 }
 n_regions_in { 
 	dir I

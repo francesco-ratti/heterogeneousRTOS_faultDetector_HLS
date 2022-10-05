@@ -34,10 +34,9 @@ module run_control_s_axi
     input  wire                          errorInTask_ce0,
     input  wire                          errorInTask_we0,
     input  wire [0:0]                    errorInTask_d0,
-    output wire [0:0]                    errorInTask_q0,
-    output wire [31:0]                   inputAOV,
-    output wire [7:0]                    copyInputAOV_i,
-    input  wire [7:0]                    copyInputAOV_o,
+    output wire [63:0]                   inputAOV,
+    output wire [7:0]                    readyForData,
+    output wire [7:0]                    copyInputAOV,
     input  wire [5:0]                    n_regions_in_address0,
     input  wire                          n_regions_in_ce0,
     output wire [7:0]                    n_regions_in_q0,
@@ -77,15 +76,17 @@ module run_control_s_axi
 //           others - reserved
 // 0x00020 : Data signal of inputAOV
 //           bit 31~0 - inputAOV[31:0] (Read/Write)
-// 0x00024 : reserved
-// 0x00028 : Data signal of copyInputAOV_i
-//           bit 7~0 - copyInputAOV_i[7:0] (Read/Write)
+// 0x00024 : Data signal of inputAOV
+//           bit 31~0 - inputAOV[63:32] (Read/Write)
+// 0x00028 : reserved
+// 0x0002c : Data signal of readyForData
+//           bit 7~0 - readyForData[7:0] (Read/Write)
 //           others  - reserved
-// 0x0002c : reserved
-// 0x00030 : Data signal of copyInputAOV_o
-//           bit 7~0 - copyInputAOV_o[7:0] (Read)
+// 0x00030 : reserved
+// 0x00034 : Data signal of copyInputAOV
+//           bit 7~0 - copyInputAOV[7:0] (Read/Write)
 //           others  - reserved
-// 0x00034 : reserved
+// 0x00038 : reserved
 // 0x00010 ~
 // 0x0001f : Memory 'errorInTask' (16 * 1b)
 //           Word n : bit [ 0: 0] - errorInTask[4n]
@@ -124,31 +125,32 @@ module run_control_s_axi
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL               = 18'h00000,
-    ADDR_GIE                   = 18'h00004,
-    ADDR_IER                   = 18'h00008,
-    ADDR_ISR                   = 18'h0000c,
-    ADDR_INPUTAOV_DATA_0       = 18'h00020,
-    ADDR_INPUTAOV_CTRL         = 18'h00024,
-    ADDR_COPYINPUTAOV_I_DATA_0 = 18'h00028,
-    ADDR_COPYINPUTAOV_I_CTRL   = 18'h0002c,
-    ADDR_COPYINPUTAOV_O_DATA_0 = 18'h00030,
-    ADDR_COPYINPUTAOV_O_CTRL   = 18'h00034,
-    ADDR_ERRORINTASK_BASE      = 18'h00010,
-    ADDR_ERRORINTASK_HIGH      = 18'h0001f,
-    ADDR_N_REGIONS_IN_BASE     = 18'h00040,
-    ADDR_N_REGIONS_IN_HIGH     = 18'h0007f,
-    ADDR_OUTCOMEINRAM_BASE     = 18'h00400,
-    ADDR_OUTCOMEINRAM_HIGH     = 18'h007ff,
-    ADDR_TRAINEDREGIONS_BASE   = 18'h20000,
-    ADDR_TRAINEDREGIONS_HIGH   = 18'h3ffff,
-    WRIDLE                     = 2'd0,
-    WRDATA                     = 2'd1,
-    WRRESP                     = 2'd2,
-    WRRESET                    = 2'd3,
-    RDIDLE                     = 2'd0,
-    RDDATA                     = 2'd1,
-    RDRESET                    = 2'd2,
+    ADDR_AP_CTRL             = 18'h00000,
+    ADDR_GIE                 = 18'h00004,
+    ADDR_IER                 = 18'h00008,
+    ADDR_ISR                 = 18'h0000c,
+    ADDR_INPUTAOV_DATA_0     = 18'h00020,
+    ADDR_INPUTAOV_DATA_1     = 18'h00024,
+    ADDR_INPUTAOV_CTRL       = 18'h00028,
+    ADDR_READYFORDATA_DATA_0 = 18'h0002c,
+    ADDR_READYFORDATA_CTRL   = 18'h00030,
+    ADDR_COPYINPUTAOV_DATA_0 = 18'h00034,
+    ADDR_COPYINPUTAOV_CTRL   = 18'h00038,
+    ADDR_ERRORINTASK_BASE    = 18'h00010,
+    ADDR_ERRORINTASK_HIGH    = 18'h0001f,
+    ADDR_N_REGIONS_IN_BASE   = 18'h00040,
+    ADDR_N_REGIONS_IN_HIGH   = 18'h0007f,
+    ADDR_OUTCOMEINRAM_BASE   = 18'h00400,
+    ADDR_OUTCOMEINRAM_HIGH   = 18'h007ff,
+    ADDR_TRAINEDREGIONS_BASE = 18'h20000,
+    ADDR_TRAINEDREGIONS_HIGH = 18'h3ffff,
+    WRIDLE                   = 2'd0,
+    WRDATA                   = 2'd1,
+    WRRESP                   = 2'd2,
+    WRRESET                  = 2'd3,
+    RDIDLE                   = 2'd0,
+    RDDATA                   = 2'd1,
+    RDRESET                  = 2'd2,
     ADDR_BITS                = 18;
 
 //------------------------Local signal-------------------
@@ -179,20 +181,16 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [31:0]                   int_inputAOV = 'b0;
-    reg  [7:0]                    int_copyInputAOV_i = 'b0;
-    reg  [7:0]                    int_copyInputAOV_o = 'b0;
+    reg  [63:0]                   int_inputAOV = 'b0;
+    reg  [7:0]                    int_readyForData = 'b0;
+    reg  [7:0]                    int_copyInputAOV = 'b0;
     // memory signals
     wire [1:0]                    int_errorInTask_address0;
     wire                          int_errorInTask_ce0;
     wire [3:0]                    int_errorInTask_be0;
     wire [31:0]                   int_errorInTask_d0;
-    wire [31:0]                   int_errorInTask_q0;
     wire [1:0]                    int_errorInTask_address1;
     wire                          int_errorInTask_ce1;
-    wire                          int_errorInTask_we1;
-    wire [3:0]                    int_errorInTask_be1;
-    wire [31:0]                   int_errorInTask_d1;
     wire [31:0]                   int_errorInTask_q1;
     reg                           int_errorInTask_read;
     reg                           int_errorInTask_write;
@@ -235,7 +233,7 @@ localparam
 // int_errorInTask
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
-    .MEM_TYPE  ( "T2P" ),
+    .MEM_TYPE  ( "S2P" ),
     .BYTES     ( 4 ),
     .DEPTH     ( 4 )
 ) int_errorInTask (
@@ -244,12 +242,12 @@ run_control_s_axi_ram #(
     .ce0       ( int_errorInTask_ce0 ),
     .we0       ( int_errorInTask_be0 ),
     .d0        ( int_errorInTask_d0 ),
-    .q0        ( int_errorInTask_q0 ),
+    .q0        (  ),
     .clk1      ( ACLK ),
     .address1  ( int_errorInTask_address1 ),
     .ce1       ( int_errorInTask_ce1 ),
-    .we1       ( int_errorInTask_be1 ),
-    .d1        ( int_errorInTask_d1 ),
+    .we1       ( {4{1'b0}} ),
+    .d1        ( {1{1'b0}} ),
     .q1        ( int_errorInTask_q1 )
 );
 // int_n_regions_in
@@ -423,11 +421,14 @@ always @(posedge ACLK) begin
                 ADDR_INPUTAOV_DATA_0: begin
                     rdata <= int_inputAOV[31:0];
                 end
-                ADDR_COPYINPUTAOV_I_DATA_0: begin
-                    rdata <= int_copyInputAOV_i[7:0];
+                ADDR_INPUTAOV_DATA_1: begin
+                    rdata <= int_inputAOV[63:32];
                 end
-                ADDR_COPYINPUTAOV_O_DATA_0: begin
-                    rdata <= int_copyInputAOV_o[7:0];
+                ADDR_READYFORDATA_DATA_0: begin
+                    rdata <= int_readyForData[7:0];
+                end
+                ADDR_COPYINPUTAOV_DATA_0: begin
+                    rdata <= int_copyInputAOV[7:0];
                 end
             endcase
         end
@@ -448,13 +449,14 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt      = int_interrupt;
-assign ap_start       = int_ap_start;
-assign task_ap_done   = (ap_done && !auto_restart_status) || auto_restart_done;
-assign task_ap_ready  = ap_ready && !int_auto_restart;
-assign ap_continue    = int_ap_continue || auto_restart_status;
-assign inputAOV       = int_inputAOV;
-assign copyInputAOV_i = int_copyInputAOV_i;
+assign interrupt     = int_interrupt;
+assign ap_start      = int_ap_start;
+assign task_ap_done  = (ap_done && !auto_restart_status) || auto_restart_done;
+assign task_ap_ready = ap_ready && !int_auto_restart;
+assign ap_continue   = int_ap_continue || auto_restart_status;
+assign inputAOV      = int_inputAOV;
+assign readyForData  = int_readyForData;
+assign copyInputAOV  = int_copyInputAOV;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -618,23 +620,33 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_copyInputAOV_i[7:0]
+// int_inputAOV[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_copyInputAOV_i[7:0] <= 0;
+        int_inputAOV[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_COPYINPUTAOV_I_DATA_0)
-            int_copyInputAOV_i[7:0] <= (WDATA[31:0] & wmask) | (int_copyInputAOV_i[7:0] & ~wmask);
+        if (w_hs && waddr == ADDR_INPUTAOV_DATA_1)
+            int_inputAOV[63:32] <= (WDATA[31:0] & wmask) | (int_inputAOV[63:32] & ~wmask);
     end
 end
 
-// int_copyInputAOV_o
+// int_readyForData[7:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_copyInputAOV_o <= 0;
+        int_readyForData[7:0] <= 0;
     else if (ACLK_EN) begin
-        if (ap_done)
-            int_copyInputAOV_o <= copyInputAOV_o;
+        if (w_hs && waddr == ADDR_READYFORDATA_DATA_0)
+            int_readyForData[7:0] <= (WDATA[31:0] & wmask) | (int_readyForData[7:0] & ~wmask);
+    end
+end
+
+// int_copyInputAOV[7:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_copyInputAOV[7:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_COPYINPUTAOV_DATA_0)
+            int_copyInputAOV[7:0] <= (WDATA[31:0] & wmask) | (int_copyInputAOV[7:0] & ~wmask);
     end
 end
 
@@ -655,12 +667,8 @@ assign int_errorInTask_address0    = errorInTask_address0 >> 2;
 assign int_errorInTask_ce0         = errorInTask_ce0;
 assign int_errorInTask_be0         = errorInTask_we0 << errorInTask_address0[1:0];
 assign int_errorInTask_d0          = {4{7'd0, errorInTask_d0}};
-assign errorInTask_q0              = int_errorInTask_q0 >> (int_errorInTask_shift0 * 8);
 assign int_errorInTask_address1    = ar_hs? raddr[3:2] : waddr[3:2];
 assign int_errorInTask_ce1         = ar_hs | (int_errorInTask_write & WVALID);
-assign int_errorInTask_we1         = int_errorInTask_write & w_hs;
-assign int_errorInTask_be1         = int_errorInTask_we1 ? WSTRB : 'b0;
-assign int_errorInTask_d1          = WDATA;
 // n_regions_in
 assign int_n_regions_in_address0   = n_regions_in_address0 >> 2;
 assign int_n_regions_in_ce0        = n_regions_in_ce0;
@@ -695,18 +703,6 @@ always @(posedge ACLK) begin
             int_errorInTask_read <= 1'b1;
         else
             int_errorInTask_read <= 1'b0;
-    end
-end
-
-// int_errorInTask_write
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_errorInTask_write <= 1'b0;
-    else if (ACLK_EN) begin
-        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_ERRORINTASK_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_ERRORINTASK_HIGH)
-            int_errorInTask_write <= 1'b1;
-        else if (w_hs)
-            int_errorInTask_write <= 1'b0;
     end
 end
 

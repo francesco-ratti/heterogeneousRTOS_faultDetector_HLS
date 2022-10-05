@@ -29,45 +29,57 @@ const float thresh=THRESH;
 //		aov_dims[i]=5;
 //	}//__________
 //}
+//
+//int find_region(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, const float d[MAX_AOV_DIM]){
+//
+//	int idx = -1;
+//	float score = -1;
+//	for(int i=0; i < n_regions; i++){
+//#pragma HLS loop_tripcount min=0 max=16
+//#pragma HLS PIPELINE II=4
+//		//#pragma HLS unroll
+//		//		if (i>=n_regions)
+//		//			break;
+//
+//		bool is_idx = true;
+//		float tmp_score = 0;
+//		float dist = 0;
+//		float area = 0;
+//		find_region_label1:for(int j=0; j < MAX_AOV_DIM; j++){
+//			//compute the distance and scale.
+//			//#pragma HLS PIPELINE II=1
+//			float ldist = (d[j] - regions[i].center[j]);
+//			float hdist = (regions[i].max[j] - regions[i].center[j]);
+//			float absdist = ldist*ldist;
+//			float scale = hdist*hdist;
+//			area += scale;
+//			dist += absdist > scale ? absdist : scale;
+//			//determine if we're out of the bound
+//			if(regions[i].min[j] > d[j] || regions[i].max[j] < d[j])
+//				is_idx = false;
+//		}
+//		//used to just be smallest area.
+//		tmp_score = 1/area;
+//		if(is_idx && (idx < 0 || tmp_score > score)){
+//			idx = i;
+//			score = tmp_score;
+//		}
+//	}
+//	return idx;
+//}
 
-int find_region(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, const float d[MAX_AOV_DIM]){
-
-	int idx = -1;
-	float score = -1;
+bool hasRegion(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, const float d[MAX_AOV_DIM]){
 	for(int i=0; i < n_regions; i++){
 #pragma HLS loop_tripcount min=0 max=16
 #pragma HLS PIPELINE II=4
-		//#pragma HLS unroll
-		//		if (i>=n_regions)
-		//			break;
-
-		bool is_idx = true;
-		float tmp_score = 0;
-		float dist = 0;
-		float area = 0;
-		find_region_label1:for(int j=0; j < MAX_AOV_DIM; j++){
-			//compute the distance and scale.
-			//#pragma HLS PIPELINE II=1
-			float ldist = (d[j] - regions[i].center[j]);
-			float hdist = (regions[i].max[j] - regions[i].center[j]);
-			float absdist = ldist*ldist;
-			float scale = hdist*hdist;
-			area += scale;
-			dist += absdist > scale ? absdist : scale;
-			//determine if we're out of the bound
-			if(regions[i].min[j] > d[j] || regions[i].max[j] < d[j])
-				is_idx = false;
-		}
-		//used to just be smallest area.
-		tmp_score = 1/area;
-		if(is_idx && (idx < 0 || tmp_score > score)){
-			idx = i;
-			score = tmp_score;
+		for(int j=0; j < MAX_AOV_DIM; j++){
+			if(regions[i].min[j] <= d[j] && regions[i].max[j] >= d[j]) {
+				return true;
+			}
 		}
 	}
-	return idx;
+	return false;
 }
-
 
 bool is_valid(const float val[MAX_AOV_DIM]){
 
@@ -444,6 +456,7 @@ ap_uint<2> fsmstate=STATE_UNINITIALISED;
 
 struct OutcomeStr {
 	ap_uint<8> checkId;
+	char gap0;
 	ap_uint<16> uniId;
 	float AOV[MAX_AOV_DIM];
 };
@@ -453,6 +466,7 @@ struct controlStr {
 	ap_uint<8> taskId;
 	ap_uint<16> uniId;
 	char command;
+	char gap0[3];
 	float AOV[MAX_AOV_DIM];
 };
 
@@ -461,11 +475,10 @@ struct controlStr {
 #define sizeOfOutcome  ((MAX_CHECKS*sizeof(OutcomeStr)) / 32) + (((MAX_CHECKS*sizeof(OutcomeStr)) % 32) != 0)
 #define SHARED_MEM_SIZE sizeOfInputData*MAX_CHECKS+sizeOfOutcome
 
-static char oldCopyInputAOV=0x0;
 
-void setReadyState(char* dest, char readyState) {
-	*dest = readyState;
-}
+//void setReadyState(char* dest, char readyState) {
+//	*dest = readyState;
+//}
 
 void read_train(
 		//ap_uint<2> &command, ap_uint<8> &taskId, ap_uint<8> &checkId, ap_uint<16> &uniId,
@@ -474,11 +487,13 @@ void read_train(
 		char* readyForData,
 		char* copyInputAOV) { //, float data[MAX_AOV_DIM]) {
 	//#pragma HLS PIPELINE II=64
-	while ((*copyInputAOV)==oldCopyInputAOV) {}
-	setReadyState(0x0);
-	oldCopyInputAOV=*copyInputAOV;
+
+	//while ((*copyInputAOV)==oldCopyInputAOV) {}
+	//setReadyState(0x0);
+	//oldCopyInputAOV=*copyInputAOV;
 	memcpy(dest, inputAOV, sizeof(controlStr));
-	setReadyState(0xFF);
+	//setReadyState(0xFF);
+
 	//	taskId=contr.taskId;
 	//	checkId=contr.checkId
 	//	uniId=contr.uniId;
@@ -517,11 +532,11 @@ void writeOutcome(bool* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 	memcpy(outcomeInRam, &outcome, sizeof(outcome));
 
 	//memcpy((void*) &(outcomeptr[checkId]), (void*) &out, sizeof(out));
-	if (error) {
-		//		memcpy(outcomeInRam, &outcome, sizeof(outcome));
-		*errorInTask=true;
-		//toScheduler.write(taskId);
-	}
+	//if (error) {
+	//		memcpy(outcomeInRam, &outcome, sizeof(outcome));
+	*errorInTask=error;
+	//toScheduler.write(taskId);
+	//}
 }
 //
 //void read_test(float dest[MAX_TASKS][MAX_AOV_DIM], float* inputDataInRam, ap_uint<16> checkId) {
@@ -532,7 +547,7 @@ void writeOutcome(bool* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 //}
 
 void run_test(bool* error, region_t regions[MAX_REGIONS], ap_uint<8> n_regions, float data[MAX_AOV_DIM]) {
-	*error = ( !is_valid(data) || find_region(regions, n_regions, data) < 0 ) ;
+	*error = !(is_valid(data) && hasRegion(regions, n_regions, data));//find_region(regions, n_regions, data) < 0 ) ;
 }
 
 void runTestAfterInit(controlStr* inputAOV, char* readyForData,  char* copyInputAOV,
@@ -557,14 +572,14 @@ void runTestAfterInit(controlStr* inputAOV, char* readyForData,  char* copyInput
 	read_train(&contr, inputAOV, readyForData, copyInputAOV);
 	//read_test(data, inputDataInRam, checkId);
 	//if (!errorInTask[taskId]) {
-	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
-		run_test(&error, regions[contr.taskId], n_regions[contr.taskId], contr.AOV);
-		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
-	} else if (contr.command==COMMAND_TRAIN) {
-		insert_point(regions[contr.checkId],
-				n_regions[contr.checkId],
-				contr.AOV);
-	}
+	//	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
+	run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
+	writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
+	//	} else if (contr.command==COMMAND_TRAIN) {
+	//		insert_point(regions[contr.checkId],
+	//				n_regions[contr.checkId],
+	//				contr.AOV);
+	//	}
 	//}
 }
 
@@ -637,11 +652,11 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
 	//#pragma HLS INTERFACE axis port=testStream
 	//#pragma HLS INTERFACE axis port=trainStream
-/*#pragma HLS INTERFACE axis port=toScheduler*/
+	/*#pragma HLS INTERFACE axis port=toScheduler*/
 
 #pragma HLS reset variable=errorInTask
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2  //should be MAX_REGIONS
-
+#pragma HLS reset variable=errorInTask
 	//#pragma HLS reset variable=data
 	//#pragma HLS reset variable=n_regions
 

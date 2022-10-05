@@ -24,16 +24,14 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_outcomeInRam "../tv/cdatafile/c.run.autotvout_outcomeInRam.dat"
 #define AUTOTB_TVIN_inputAOV "../tv/cdatafile/c.run.autotvin_inputAOV.dat"
 #define AUTOTB_TVOUT_inputAOV "../tv/cdatafile/c.run.autotvout_inputAOV.dat"
+#define AUTOTB_TVIN_readyForData "../tv/cdatafile/c.run.autotvin_readyForData.dat"
+#define AUTOTB_TVOUT_readyForData "../tv/cdatafile/c.run.autotvout_readyForData.dat"
 #define AUTOTB_TVIN_copyInputAOV "../tv/cdatafile/c.run.autotvin_copyInputAOV.dat"
 #define AUTOTB_TVOUT_copyInputAOV "../tv/cdatafile/c.run.autotvout_copyInputAOV.dat"
 #define AUTOTB_TVIN_trainedRegions "../tv/cdatafile/c.run.autotvin_trainedRegions.dat"
 #define AUTOTB_TVOUT_trainedRegions "../tv/cdatafile/c.run.autotvout_trainedRegions.dat"
 #define AUTOTB_TVIN_n_regions_in "../tv/cdatafile/c.run.autotvin_n_regions_in.dat"
 #define AUTOTB_TVOUT_n_regions_in "../tv/cdatafile/c.run.autotvout_n_regions_in.dat"
-#define AUTOTB_TVIN_toScheduler "../tv/cdatafile/c.run.autotvin_toScheduler.dat"
-#define AUTOTB_TVOUT_toScheduler "../tv/cdatafile/c.run.autotvout_toScheduler.dat"
-#define WRAPC_STREAM_SIZE_OUT_toScheduler "../tv/stream_size/stream_size_out_toScheduler.dat"
-#define WRAPC_STREAM_EGRESS_STATUS_toScheduler "../tv/stream_size/stream_egress_status_toScheduler.dat"
 #define AUTOTB_TVIN_gmem "../tv/cdatafile/c.run.autotvin_gmem.dat"
 #define AUTOTB_TVOUT_gmem "../tv/cdatafile/c.run.autotvout_gmem.dat"
 
@@ -43,10 +41,10 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_errorInTask "../tv/rtldatafile/rtl.run.autotvout_errorInTask.dat"
 #define AUTOTB_TVOUT_PC_outcomeInRam "../tv/rtldatafile/rtl.run.autotvout_outcomeInRam.dat"
 #define AUTOTB_TVOUT_PC_inputAOV "../tv/rtldatafile/rtl.run.autotvout_inputAOV.dat"
+#define AUTOTB_TVOUT_PC_readyForData "../tv/rtldatafile/rtl.run.autotvout_readyForData.dat"
 #define AUTOTB_TVOUT_PC_copyInputAOV "../tv/rtldatafile/rtl.run.autotvout_copyInputAOV.dat"
 #define AUTOTB_TVOUT_PC_trainedRegions "../tv/rtldatafile/rtl.run.autotvout_trainedRegions.dat"
 #define AUTOTB_TVOUT_PC_n_regions_in "../tv/rtldatafile/rtl.run.autotvout_n_regions_in.dat"
-#define AUTOTB_TVOUT_PC_toScheduler "../tv/rtldatafile/rtl.run.autotvout_toScheduler.dat"
 #define AUTOTB_TVOUT_PC_gmem "../tv/rtldatafile/rtl.run.autotvout_gmem.dat"
 
 
@@ -280,10 +278,10 @@ INTER_TCL_FILE(const char* name) {
   errorInTask_depth = 0;
   outcomeInRam_depth = 0;
   inputAOV_depth = 0;
+  readyForData_depth = 0;
   copyInputAOV_depth = 0;
   trainedRegions_depth = 0;
   n_regions_in_depth = 0;
-  toScheduler_depth = 0;
   gmem_depth = 0;
   trans_num =0;
 }
@@ -305,10 +303,10 @@ string get_depth_list () {
   total_list << "{errorInTask " << errorInTask_depth << "}\n";
   total_list << "{outcomeInRam " << outcomeInRam_depth << "}\n";
   total_list << "{inputAOV " << inputAOV_depth << "}\n";
+  total_list << "{readyForData " << readyForData_depth << "}\n";
   total_list << "{copyInputAOV " << copyInputAOV_depth << "}\n";
   total_list << "{trainedRegions " << trainedRegions_depth << "}\n";
   total_list << "{n_regions_in " << n_regions_in_depth << "}\n";
-  total_list << "{toScheduler " << toScheduler_depth << "}\n";
   total_list << "{gmem " << gmem_depth << "}\n";
   return total_list.str();
 }
@@ -322,10 +320,10 @@ void set_string(std::string list, std::string* class_list) {
     int errorInTask_depth;
     int outcomeInRam_depth;
     int inputAOV_depth;
+    int readyForData_depth;
     int copyInputAOV_depth;
     int trainedRegions_depth;
     int n_regions_in_depth;
-    int toScheduler_depth;
     int gmem_depth;
     int trans_num;
   private:
@@ -340,7 +338,7 @@ struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
 extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
 
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_toScheduler) {
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_readyForData, volatile void * __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -353,89 +351,7 @@ static AESL_FILE_HANDLER aesl_fh;
     static unsigned AESL_transaction_pc = 0;
     string AESL_token;
     string AESL_num;
-long __xlx_apatb_param_toScheduler_stream_buf_final_size;
-{
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(WRAPC_STREAM_SIZE_OUT_toScheduler);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){__xlx_apatb_param_toScheduler_stream_buf_final_size = atoi(AESL_token.c_str());
-
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  {
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_toScheduler);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          std::vector<sc_bv<8> > toScheduler_pc_buffer;
-          int i = 0;
-          bool has_unknown_value = false;
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){
-
-            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
-  
-            // push token into output port buffer
-            if (AESL_token != "") {
-              toScheduler_pc_buffer.push_back(AESL_token.c_str());
-              i++;
-            }
-  
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-          if (has_unknown_value) {
-            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
-                 << "toScheduler" << ", possible cause: There are uninitialized variables in the C design."
-                 << endl; 
-          }
-  
-          if (i > 0) {for (int j = 0, e = i; j != e; ++j) {
-__cosim_s1__ xlx_stream_elt __attribute__ ((aligned));
-((char*)&xlx_stream_elt)[0*1+0] = toScheduler_pc_buffer[j].range(7, 0).to_int64();
-((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->write(xlx_stream_elt);
-}
-}
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  #ifdef USE_BINARY_TV_FILE
+#ifdef USE_BINARY_TV_FILE
 {
 transaction<1> tr(16);
 aesl_fh.read(AUTOTB_TVOUT_PC_errorInTask, tr.p, tr.tbytes);
@@ -561,55 +477,7 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
       } // end file is good
     } // end post check logic bolck
   #endif
-{
-      static ifstream rtl_tv_out_file;
-      if (!rtl_tv_out_file.is_open()) {
-        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_copyInputAOV);
-        if (rtl_tv_out_file.good()) {
-          rtl_tv_out_file >> AESL_token;
-          if (AESL_token != "[[[runtime]]]")
-            exit(1);
-        }
-      }
-  
-      if (rtl_tv_out_file.good()) {
-        rtl_tv_out_file >> AESL_token; 
-        rtl_tv_out_file >> AESL_num;  // transaction number
-        if (AESL_token != "[[transaction]]") {
-          cerr << "Unexpected token: " << AESL_token << endl;
-          exit(1);
-        }
-        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          std::vector<sc_bv<8> > copyInputAOV_pc_buffer(1);
-          int i = 0;
-          bool has_unknown_value = false;
-          rtl_tv_out_file >> AESL_token; //data
-          while (AESL_token != "[[/transaction]]"){
 
-            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
-  
-            // push token into output port buffer
-            if (AESL_token != "") {
-              copyInputAOV_pc_buffer[i] = AESL_token.c_str();;
-              i++;
-            }
-  
-            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
-            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
-              exit(1);
-          }
-          if (has_unknown_value) {
-            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
-                 << "copyInputAOV" << ", possible cause: There are uninitialized variables in the C design."
-                 << endl; 
-          }
-  
-          if (i > 0) {((char*)__xlx_apatb_param_copyInputAOV)[0*1+0] = copyInputAOV_pc_buffer[0].range(7, 0).to_int64();
-}
-        } // end transaction
-      } // end file is good
-    } // end post check logic bolck
-  
     AESL_transaction_pc++;
     return ;
   }
@@ -617,8 +485,6 @@ static unsigned AESL_transaction;
 static INTER_TCL_FILE tcl_file(INTER_TCL);
 std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
-aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_toScheduler);
-aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_toScheduler);
 CodeState = DUMP_INPUTS;
 unsigned __xlx_offset_byte_param_inputAOV = 0;
 unsigned __xlx_offset_byte_param_errorInTask = 0;
@@ -753,8 +619,6 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 }
 
 #endif
-std::vector<__cosim_s1__> __xlx_apatb_param_toScheduler_stream_buf;
-long __xlx_apatb_param_toScheduler_stream_buf_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size();
 aesl_fh.touch(AUTOTB_TVIN_gmem);
 {
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
@@ -780,6 +644,17 @@ aesl_fh.write(AUTOTB_TVIN_inputAOV, formatData(pos, 32));
 aesl_fh.write(AUTOTB_TVIN_inputAOV, end_str());
 }
 
+// print readyForData Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_readyForData, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_readyForData;
+aesl_fh.write(AUTOTB_TVIN_readyForData, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.readyForData_depth);
+aesl_fh.write(AUTOTB_TVIN_readyForData, end_str());
+}
+
 // print copyInputAOV Transactions
 {
 aesl_fh.write(AUTOTB_TVIN_copyInputAOV, begin_str(AESL_transaction));
@@ -792,7 +667,7 @@ aesl_fh.write(AUTOTB_TVIN_copyInputAOV, end_str());
 }
 
 CodeState = CALL_C_DUT;
-run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_copyInputAOV, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_toScheduler);
+run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_readyForData, __xlx_apatb_param_copyInputAOV, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_n_regions_in);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -858,43 +733,6 @@ aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, end_str());
 }
 
 #endif
-long __xlx_apatb_param_toScheduler_stream_buf_final_size = ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->size() - __xlx_apatb_param_toScheduler_stream_buf_size;
-{
-  while (!((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->empty())
-    __xlx_apatb_param_toScheduler_stream_buf.push_back(((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->read());
-  for (int i = 0; i < __xlx_apatb_param_toScheduler_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s1__>*)__xlx_apatb_param_toScheduler)->write(__xlx_apatb_param_toScheduler_stream_buf[i]);
-  }
-// print toScheduler Transactions
-{
-aesl_fh.write(AUTOTB_TVOUT_toScheduler, begin_str(AESL_transaction));
-for (int i = 0; i < __xlx_apatb_param_toScheduler_stream_buf_final_size; ++i) {
-unsigned char *pos = (unsigned char*)(__xlx_apatb_param_toScheduler_stream_buf.data()+__xlx_apatb_param_toScheduler_stream_buf_size+i);
-std::string s(formatData(pos, 8));
-aesl_fh.write(AUTOTB_TVOUT_toScheduler, s);
-}
-
-  tcl_file.set_num(__xlx_apatb_param_toScheduler_stream_buf_final_size, &tcl_file.toScheduler_depth);
-aesl_fh.write(AUTOTB_TVOUT_toScheduler, end_str());
-}
-
-{
-aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, begin_str(AESL_transaction));
-sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_toScheduler_stream_buf_final_size);
- aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, __xlx_sprintf_buffer.data());
-aesl_fh.write(WRAPC_STREAM_SIZE_OUT_toScheduler, end_str());
-}
-// print copyInputAOV Transactions
-{
-aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, begin_str(AESL_transaction));
-{
-auto *pos = (unsigned char*)__xlx_apatb_param_copyInputAOV;
-aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, formatData(pos, 8));
-}
-  tcl_file.set_num(1, &tcl_file.copyInputAOV_depth);
-aesl_fh.write(AUTOTB_TVOUT_copyInputAOV, end_str());
-}
-
 CodeState = DELETE_CHAR_BUFFERS;
 AESL_transaction++;
 tcl_file.set_num(AESL_transaction , &tcl_file.trans_num);

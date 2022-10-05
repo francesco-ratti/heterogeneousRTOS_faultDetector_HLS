@@ -1,0 +1,229 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'run_test'" level="0">
+<item name = "Date">Wed Oct  5 22:50:37 2022
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
+<item name = "Project">detector_solid</item>
+<item name = "Solution">solution2 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">18.00 ns, 13.074 ns, 4.86 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">7, 583, 0.126 us, 10.494 us, 7, 583, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_run_test_Pipeline_is_valid_label2_fu_225">run_test_Pipeline_is_valid_label2, 5, 19, 90.000 ns, 0.342 us, 5, 19, no</column>
+<column name="grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245">run_test_Pipeline_VITIS_LOOP_72_1, 34, 562, 0.612 us, 10.116 us, 34, 562, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 150, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 410, 1411, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 171, -</column>
+<column name="Register">-, -, 271, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 3, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="fcmp_32ns_32ns_1_2_no_dsp_1_U53">fcmp_32ns_32ns_1_2_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245">run_test_Pipeline_VITIS_LOOP_72_1, 0, 0, 394, 1254, 0</column>
+<column name="grp_run_test_Pipeline_is_valid_label2_fu_225">run_test_Pipeline_is_valid_label2, 0, 0, 16, 157, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state3_on_subcall_done">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_291">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op69_call_state3">and, 0, 0, 2, 1, 1</column>
+<column name="cond_fu_451_p2">icmp, 0, 0, 9, 4, 1</column>
+<column name="icmp_ln1073_fu_293_p2">icmp, 0, 0, 11, 8, 1</column>
+<column name="icmp_ln76_11_fu_368_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_14_fu_387_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_15_fu_406_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_19_fu_425_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_22_fu_444_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_3_fu_311_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_6_fu_330_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="icmp_ln76_7_fu_349_p2">icmp, 0, 0, 15, 23, 1</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_281">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">20, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_phi_mux_phi_ln550_phi_fu_214_p6">14, 3, 1, 3</column>
+<column name="contr_AOV_1_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_2_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_3_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_4_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_5_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_6_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_7_c_blk_n">9, 2, 1, 2</column>
+<column name="contr_AOV_c_blk_n">9, 2, 1, 2</column>
+<column name="grp_fu_614_ce">14, 3, 1, 3</column>
+<column name="grp_fu_614_opcode">14, 3, 5, 15</column>
+<column name="grp_fu_614_p0">14, 3, 32, 96</column>
+<column name="grp_fu_614_p1">14, 3, 32, 96</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_run_test_Pipeline_is_valid_label2_fu_225_ap_start_reg">1, 0, 1, 0</column>
+<column name="icmp_ln1073_reg_527">1, 0, 1, 0</column>
+<column name="icmp_ln76_11_reg_566">1, 0, 1, 0</column>
+<column name="icmp_ln76_14_reg_576">1, 0, 1, 0</column>
+<column name="icmp_ln76_15_reg_586">1, 0, 1, 0</column>
+<column name="icmp_ln76_19_reg_596">1, 0, 1, 0</column>
+<column name="icmp_ln76_22_reg_606">1, 0, 1, 0</column>
+<column name="icmp_ln76_3_reg_536">1, 0, 1, 0</column>
+<column name="icmp_ln76_6_reg_546">1, 0, 1, 0</column>
+<column name="icmp_ln76_7_reg_556">1, 0, 1, 0</column>
+<column name="phi_ln550_reg_210">1, 0, 1, 0</column>
+<column name="targetBlock_reg_523">1, 0, 1, 0</column>
+<column name="tmp_3_reg_518">6, 0, 9, 3</column>
+<column name="trunc_ln76_17_reg_541">31, 0, 31, 0</column>
+<column name="trunc_ln76_19_reg_551">31, 0, 31, 0</column>
+<column name="trunc_ln76_21_reg_561">31, 0, 31, 0</column>
+<column name="trunc_ln76_23_reg_571">31, 0, 31, 0</column>
+<column name="trunc_ln76_25_reg_581">31, 0, 31, 0</column>
+<column name="trunc_ln76_27_reg_591">31, 0, 31, 0</column>
+<column name="trunc_ln76_29_reg_601">31, 0, 31, 0</column>
+<column name="trunc_ln76_reg_531">31, 0, 31, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="ap_return">out, 1, ap_ctrl_hs, run_test, return value</column>
+<column name="regions_address0">out, 12, ap_memory, regions, array</column>
+<column name="regions_ce0">out, 1, ap_memory, regions, array</column>
+<column name="regions_q0">in, 32, ap_memory, regions, array</column>
+<column name="p_read1">in, 6, ap_none, p_read1, scalar</column>
+<column name="regions_1_address0">out, 12, ap_memory, regions_1, array</column>
+<column name="regions_1_ce0">out, 1, ap_memory, regions_1, array</column>
+<column name="regions_1_q0">in, 32, ap_memory, regions_1, array</column>
+<column name="regions_2_address0">out, 12, ap_memory, regions_2, array</column>
+<column name="regions_2_ce0">out, 1, ap_memory, regions_2, array</column>
+<column name="regions_2_q0">in, 32, ap_memory, regions_2, array</column>
+<column name="regions_3_address0">out, 12, ap_memory, regions_3, array</column>
+<column name="regions_3_ce0">out, 1, ap_memory, regions_3, array</column>
+<column name="regions_3_q0">in, 32, ap_memory, regions_3, array</column>
+<column name="p_read2">in, 8, ap_none, p_read2, scalar</column>
+<column name="p_read3">in, 32, ap_none, p_read3, scalar</column>
+<column name="p_read4">in, 32, ap_none, p_read4, scalar</column>
+<column name="p_read5">in, 32, ap_none, p_read5, scalar</column>
+<column name="p_read6">in, 32, ap_none, p_read6, scalar</column>
+<column name="p_read7">in, 32, ap_none, p_read7, scalar</column>
+<column name="p_read8">in, 32, ap_none, p_read8, scalar</column>
+<column name="p_read9">in, 32, ap_none, p_read9, scalar</column>
+<column name="p_read10">in, 32, ap_none, p_read10, scalar</column>
+<column name="contr_AOV_c_din">out, 32, ap_fifo, contr_AOV_c, pointer</column>
+<column name="contr_AOV_c_num_data_valid">in, 2, ap_fifo, contr_AOV_c, pointer</column>
+<column name="contr_AOV_c_fifo_cap">in, 2, ap_fifo, contr_AOV_c, pointer</column>
+<column name="contr_AOV_c_full_n">in, 1, ap_fifo, contr_AOV_c, pointer</column>
+<column name="contr_AOV_c_write">out, 1, ap_fifo, contr_AOV_c, pointer</column>
+<column name="contr_AOV_1_c_din">out, 32, ap_fifo, contr_AOV_1_c, pointer</column>
+<column name="contr_AOV_1_c_num_data_valid">in, 2, ap_fifo, contr_AOV_1_c, pointer</column>
+<column name="contr_AOV_1_c_fifo_cap">in, 2, ap_fifo, contr_AOV_1_c, pointer</column>
+<column name="contr_AOV_1_c_full_n">in, 1, ap_fifo, contr_AOV_1_c, pointer</column>
+<column name="contr_AOV_1_c_write">out, 1, ap_fifo, contr_AOV_1_c, pointer</column>
+<column name="contr_AOV_2_c_din">out, 32, ap_fifo, contr_AOV_2_c, pointer</column>
+<column name="contr_AOV_2_c_num_data_valid">in, 2, ap_fifo, contr_AOV_2_c, pointer</column>
+<column name="contr_AOV_2_c_fifo_cap">in, 2, ap_fifo, contr_AOV_2_c, pointer</column>
+<column name="contr_AOV_2_c_full_n">in, 1, ap_fifo, contr_AOV_2_c, pointer</column>
+<column name="contr_AOV_2_c_write">out, 1, ap_fifo, contr_AOV_2_c, pointer</column>
+<column name="contr_AOV_3_c_din">out, 32, ap_fifo, contr_AOV_3_c, pointer</column>
+<column name="contr_AOV_3_c_num_data_valid">in, 2, ap_fifo, contr_AOV_3_c, pointer</column>
+<column name="contr_AOV_3_c_fifo_cap">in, 2, ap_fifo, contr_AOV_3_c, pointer</column>
+<column name="contr_AOV_3_c_full_n">in, 1, ap_fifo, contr_AOV_3_c, pointer</column>
+<column name="contr_AOV_3_c_write">out, 1, ap_fifo, contr_AOV_3_c, pointer</column>
+<column name="contr_AOV_4_c_din">out, 32, ap_fifo, contr_AOV_4_c, pointer</column>
+<column name="contr_AOV_4_c_num_data_valid">in, 2, ap_fifo, contr_AOV_4_c, pointer</column>
+<column name="contr_AOV_4_c_fifo_cap">in, 2, ap_fifo, contr_AOV_4_c, pointer</column>
+<column name="contr_AOV_4_c_full_n">in, 1, ap_fifo, contr_AOV_4_c, pointer</column>
+<column name="contr_AOV_4_c_write">out, 1, ap_fifo, contr_AOV_4_c, pointer</column>
+<column name="contr_AOV_5_c_din">out, 32, ap_fifo, contr_AOV_5_c, pointer</column>
+<column name="contr_AOV_5_c_num_data_valid">in, 2, ap_fifo, contr_AOV_5_c, pointer</column>
+<column name="contr_AOV_5_c_fifo_cap">in, 2, ap_fifo, contr_AOV_5_c, pointer</column>
+<column name="contr_AOV_5_c_full_n">in, 1, ap_fifo, contr_AOV_5_c, pointer</column>
+<column name="contr_AOV_5_c_write">out, 1, ap_fifo, contr_AOV_5_c, pointer</column>
+<column name="contr_AOV_6_c_din">out, 32, ap_fifo, contr_AOV_6_c, pointer</column>
+<column name="contr_AOV_6_c_num_data_valid">in, 2, ap_fifo, contr_AOV_6_c, pointer</column>
+<column name="contr_AOV_6_c_fifo_cap">in, 2, ap_fifo, contr_AOV_6_c, pointer</column>
+<column name="contr_AOV_6_c_full_n">in, 1, ap_fifo, contr_AOV_6_c, pointer</column>
+<column name="contr_AOV_6_c_write">out, 1, ap_fifo, contr_AOV_6_c, pointer</column>
+<column name="contr_AOV_7_c_din">out, 32, ap_fifo, contr_AOV_7_c, pointer</column>
+<column name="contr_AOV_7_c_num_data_valid">in, 2, ap_fifo, contr_AOV_7_c, pointer</column>
+<column name="contr_AOV_7_c_fifo_cap">in, 2, ap_fifo, contr_AOV_7_c, pointer</column>
+<column name="contr_AOV_7_c_full_n">in, 1, ap_fifo, contr_AOV_7_c, pointer</column>
+<column name="contr_AOV_7_c_write">out, 1, ap_fifo, contr_AOV_7_c, pointer</column>
+</table>
+</item>
+</section>
+</profile>
