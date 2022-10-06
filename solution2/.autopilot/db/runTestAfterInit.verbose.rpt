@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit'
 ================================================================
-* Date:           Wed Oct  5 22:50:37 2022
+* Date:           Fri Oct  7 00:39:09 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -434,26 +434,26 @@ ST_7 : Operation 38 [2/2] (6.88ns)   --->   "%call_ln577 = call void @writeOutco
 State 8 <SV = 7> <Delay = 0.00>
 ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_7_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_7_c, i32 %contr_AOV_7_c"   --->   Operation 39 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_7_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_6_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_6_c, i32 %contr_AOV_6_c"   --->   Operation 41 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%empty_53 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_6_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_6_c, i32 %contr_AOV_6_c"   --->   Operation 41 'specchannel' 'empty_53' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_6_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%empty_57 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_5_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_5_c, i32 %contr_AOV_5_c"   --->   Operation 43 'specchannel' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%empty_54 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_5_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_5_c, i32 %contr_AOV_5_c"   --->   Operation 43 'specchannel' 'empty_54' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_5_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%empty_58 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_4_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_4_c, i32 %contr_AOV_4_c"   --->   Operation 45 'specchannel' 'empty_58' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%empty_55 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_4_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_4_c, i32 %contr_AOV_4_c"   --->   Operation 45 'specchannel' 'empty_55' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_4_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%empty_59 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_3_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_3_c, i32 %contr_AOV_3_c"   --->   Operation 47 'specchannel' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_3_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_3_c, i32 %contr_AOV_3_c"   --->   Operation 47 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_3_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%empty_60 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_2_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_2_c, i32 %contr_AOV_2_c"   --->   Operation 49 'specchannel' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%empty_57 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_2_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_2_c, i32 %contr_AOV_2_c"   --->   Operation 49 'specchannel' 'empty_57' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_2_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%empty_61 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_1_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_1_c, i32 %contr_AOV_1_c"   --->   Operation 51 'specchannel' 'empty_61' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%empty_58 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_1_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_1_c, i32 %contr_AOV_1_c"   --->   Operation 51 'specchannel' 'empty_58' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_1_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%empty_62 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_c, i32 %contr_AOV_c"   --->   Operation 53 'specchannel' 'empty_62' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%empty_59 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_c, i32 %contr_AOV_c"   --->   Operation 53 'specchannel' 'empty_59' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_17"   --->   Operation 55 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_12"   --->   Operation 55 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 56 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 56 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 57 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 57 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_1, i32 0, i32 0, void @empty_17, i32 1, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_1, i32 0, i32 0, void @empty_17, i32 1, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_18, i32 0, i32 0, void @empty_17, i32 64, i32 0, void @empty_16, void @empty_15, void @empty_17, i32 16, i32 16, i32 16, i32 16, void @empty_17, void @empty_17, i32 4294967295, i32 0"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_10, i32 0, i32 0, void @empty_12, i32 1, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_10, i32 0, i32 0, void @empty_12, i32 1, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_1, i32 0, i32 0, void @empty_12, i32 64, i32 0, void @empty_4, void @empty_23, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 61 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 62 [1/2] (0.00ns)   --->   "%call_ln577 = call void @writeOutcome, i1 %errorInTask, i4 %contr_taskId_V, i8 %contr_checkId_V_load_loc_channel, i16 %contr_uniId_V, i1 %error, i288 %outcomeInRam, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 62 'call' 'call_ln577' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_8 : Operation 63 [1/1] (0.00ns)   --->   "%ret_ln584 = ret" [detector_solid/abs_solid_detector.cpp:584]   --->   Operation 63 'ret' 'ret_ln584' <Predicate = true> <Delay = 0.00>
@@ -513,6 +513,12 @@ n_regions_V_load_loc_channel          (extractvalue          ) [ 000001100]
 error                                 (call                  ) [ 000000011]
 empty                                 (specchannel           ) [ 000000000]
 specinterface_ln0                     (specinterface         ) [ 000000000]
+empty_53                              (specchannel           ) [ 000000000]
+specinterface_ln0                     (specinterface         ) [ 000000000]
+empty_54                              (specchannel           ) [ 000000000]
+specinterface_ln0                     (specinterface         ) [ 000000000]
+empty_55                              (specchannel           ) [ 000000000]
+specinterface_ln0                     (specinterface         ) [ 000000000]
 empty_56                              (specchannel           ) [ 000000000]
 specinterface_ln0                     (specinterface         ) [ 000000000]
 empty_57                              (specchannel           ) [ 000000000]
@@ -520,12 +526,6 @@ specinterface_ln0                     (specinterface         ) [ 000000000]
 empty_58                              (specchannel           ) [ 000000000]
 specinterface_ln0                     (specinterface         ) [ 000000000]
 empty_59                              (specchannel           ) [ 000000000]
-specinterface_ln0                     (specinterface         ) [ 000000000]
-empty_60                              (specchannel           ) [ 000000000]
-specinterface_ln0                     (specinterface         ) [ 000000000]
-empty_61                              (specchannel           ) [ 000000000]
-specinterface_ln0                     (specinterface         ) [ 000000000]
-empty_62                              (specchannel           ) [ 000000000]
 specinterface_ln0                     (specinterface         ) [ 000000000]
 specdataflowpipeline_ln0              (specdataflowpipeline  ) [ 000000000]
 specmemcore_ln0                       (specmemcore           ) [ 000000000]
@@ -850,7 +850,7 @@ ret_ln584                             (ret                   ) [ 000000000]
 <pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_17"/></StgValue>
+<StgValue><ssdm name="empty_12"/></StgValue>
 </bind>
 </comp>
 
@@ -886,7 +886,7 @@ ret_ln584                             (ret                   ) [ 000000000]
 <pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_10"/></StgValue>
 </bind>
 </comp>
 
@@ -895,7 +895,7 @@ ret_ln584                             (ret                   ) [ 000000000]
 <pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_18"/></StgValue>
+<StgValue><ssdm name="empty_1"/></StgValue>
 </bind>
 </comp>
 
@@ -913,7 +913,7 @@ ret_ln584                             (ret                   ) [ 000000000]
 <pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_16"/></StgValue>
+<StgValue><ssdm name="empty_4"/></StgValue>
 </bind>
 </comp>
 
@@ -922,7 +922,7 @@ ret_ln584                             (ret                   ) [ 000000000]
 <pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_15"/></StgValue>
+<StgValue><ssdm name="empty_23"/></StgValue>
 </bind>
 </comp>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665003038101">
-  <ports id="1" name="gmem" type="PortType" coreId="1952671092" bitwidth="512" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665095950071">
+  <ports id="1" name="gmem" type="PortType" coreId="1952801851" bitwidth="512" iftype="IfTypeFifo">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
   <ports id="2" name="inputAOV" type="PortType" coreId="0" bitwidth="64">
@@ -9,22 +9,22 @@
   <ports id="3" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="0" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="4" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="1864394868" bitwidth="1" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+  <ports id="4" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="1836216166" bitwidth="1" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="5" name="n_regions_V" type="PortType" coreName="RAM" coreId="1914727791" bitwidth="8" iftype="IfTypeRegister" arraysize="64">
+  <ports id="5" name="n_regions_V" type="PortType" coreName="RAM" coreId="1970040691" bitwidth="8" iftype="IfTypeRegister" arraysize="64">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="6" name="regions" type="PortType" coreName="RAM" coreId="1869881395" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="6" name="regions" type="PortType" coreName="RAM" coreId="1931502951" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="7" name="regions_1" type="PortType" coreName="RAM" coreId="1701060708" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="7" name="regions_1" type="PortType" coreName="RAM" coreId="1702043749" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="8" name="regions_2" type="PortType" coreName="RAM" coreId="2037672306" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="8" name="regions_2" type="PortType" coreName="RAM" coreId="1885414944" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="9" name="regions_3" type="PortType" coreName="RAM" coreId="1145391171" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="9" name="regions_3" type="PortType" coreName="RAM" coreId="1702130553" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
   <edges id="64" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
@@ -86,7 +86,7 @@
   <edges id="462" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
   <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="337" RegionName="runTestAfterInit">
     <basic_blocks id="61" name="runTestAfterInit" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="inputAOV_read" coreId="1868767266" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="inputAOV_read" coreId="543516513" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <dataInputObjs>inputAOV</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
@@ -130,7 +130,7 @@
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="call_ret" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_train_U0" coreId="1031369833" contextFuncName="runTestAfterInit" bitwidth="284" opcode="call" nodeLatency="1" m_display="0" m_delay="13.1" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="call_ret" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_train_U0" coreId="1919889252" contextFuncName="runTestAfterInit" bitwidth="284" opcode="call" nodeLatency="1" m_display="0" m_delay="13.1" m_topoIndex="10" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
@@ -202,7 +202,7 @@
         <dataInputObjs>call</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="call_ret1" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="runTestAfterInit_Block_entry79_proc_U0" coreId="1229085474" contextFuncName="runTestAfterInit" bitwidth="22" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="5.95" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="call_ret1" lineNumber="572" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="runTestAfterInit_Block_entry79_proc_U0" coreId="1936683105" contextFuncName="runTestAfterInit" bitwidth="22" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="5.95" m_topoIndex="22" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="572" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>extractvalue</dataInputObjs>
         <dataInputObjs>n_regions_V</dataInputObjs>
@@ -253,7 +253,7 @@
         <dataOutputObjs>call</dataOutputObjs>
         <constName>run_test</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="_ln577" lineNumber="577" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="757935405" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="6.88" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="_ln577" lineNumber="577" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="1868770936" contextFuncName="runTestAfterInit" opcode="call" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="6.88" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="577" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
         <dataInputObjs>extractvalue</dataInputObjs>
         <dataInputObjs>extractvalue</dataInputObjs>
@@ -271,7 +271,7 @@
         <dataOutputObjs>outcomeInRam</dataOutputObjs>
         <constName>writeOutcome</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="_ln584" lineNumber="584" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1769301803" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="7.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="_ln584" lineNumber="584" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1852402789" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="7.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="584" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">

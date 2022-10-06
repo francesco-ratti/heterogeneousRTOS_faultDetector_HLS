@@ -64,8 +64,32 @@ set Interface "wire"
 set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
-set PortName "trainedRegions"
-set BitWidth "32"
+set PortName "accel_mode"
+set BitWidth "8"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "char"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "trainedRegion_i"
+set BitWidth "768"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "__cosim_s96__"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "trainedRegion_o"
+set BitWidth "768"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"
@@ -74,6 +98,30 @@ set Reference "0"
 set Dims [list 0]
 set Interface "wire"
 set DataType "void"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "IOCheckIdx"
+set BitWidth "8"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "char"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "IORegionIdx"
+set BitWidth "8"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "char"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "n_regions_in"

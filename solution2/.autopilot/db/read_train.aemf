@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665003035813">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665095947803">
   <ports id="1" name="gmem" type="PortType" coreId="3621216858" bitwidth="512" iftype="IfTypeFifo">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="2" name="inputAOV" type="PortType" coreId="1688885992" bitwidth="64">
+  <ports id="2" name="inputAOV" type="PortType" coreId="108" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="12" name="ap_return_0" direction="DirOut">
@@ -100,20 +100,20 @@
   <edges source_obj="//@blocks.0/@node_objs.36" sink_obj="//@ports.11"/>
   <edges source_obj="//@blocks.0/@node_objs.36" sink_obj="//@ports.12"/>
   <blocks id="41" name="read_train" type="BlockType">
-    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="inputAOV_read" coreId="1667592275" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="inputAOV_read" coreId="2660200344" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>inputAOV</dataInputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="p_cast" rtlName="p_cast_fu_98_p4" coreId="1689324952" bitwidth="58" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="p_cast" rtlName="p_cast_fu_98_p4" coreId="4274236616" bitwidth="58" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>sext</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="p_cast_cast" rtlName="p_cast_cast_fu_108_p1" coreId="4084985056" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="p_cast_cast" rtlName="p_cast_cast_fu_108_p1" coreId="646528224" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="gmem_addr" coreId="4084985056" bitwidth="512" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="gmem_addr" coreId="646528224" bitwidth="512" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>gmem</dataInputObjs>
       <dataInputObjs>sext</dataInputObjs>
       <dataOutputObjs>readreq</dataOutputObjs>
@@ -137,30 +137,30 @@
       <dataOutputObjs>partselect</dataOutputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="empty" rtlName="empty_fu_119_p1" coreId="4084985056" bitwidth="8" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="empty" rtlName="empty_fu_119_p1" coreId="646528224" bitwidth="8" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="dest_s" rtlName="ap_return_1_preg" coreId="3231468000" bitwidth="4" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
-      <dataInputObjs>read</dataInputObjs>
-      <dataOutputObjs>insertvalue</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="dest_1" rtlName="ap_return_2_preg" coreId="3231385888" bitwidth="16" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="dest_s" rtlName="ap_return_1_preg" coreId="4198213600" bitwidth="4" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="tmp_16" rtlName="tmp_16_fu_143_p4" coreId="3231261664" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="dest_1" rtlName="ap_return_2_preg" coreId="4198242560" bitwidth="16" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>insertvalue</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="tmp_6" rtlName="tmp_6_fu_143_p4" coreId="4198242560" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="contr_AOV_c18_0" rtlName="contr_AOV_c18_0_fu_153_p1" coreId="994067844" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="contr_AOV_c18_0" rtlName="contr_AOV_c18_0_fu_153_p1" coreId="4256775408" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="tmp_27" rtlName="tmp_27_fu_157_p4" coreId="4294967295" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="tmp_s" rtlName="tmp_s_fu_157_p4" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
@@ -169,127 +169,127 @@
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp_38" rtlName="tmp_38_fu_171_p4" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp_69" rtlName="tmp_69_fu_171_p4" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="contr_AOV_2_c20_0" rtlName="contr_AOV_2_c20_0_fu_181_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="contr_AOV_2_c20_0" rtlName="contr_AOV_2_c20_0_fu_181_p1" coreId="4198391992" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="tmp_s" rtlName="tmp_s_fu_185_p4" coreId="3231473048" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="tmp_70" rtlName="tmp_70_fu_185_p4" coreId="4198219184" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="contr_AOV_3_c21_0" rtlName="contr_AOV_3_c21_0_fu_195_p1" coreId="3231468000" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="contr_AOV_3_c21_0" rtlName="contr_AOV_3_c21_0_fu_195_p1" coreId="304" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="tmp_40" rtlName="tmp_40_fu_199_p4" coreId="1633951845" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="tmp_71" rtlName="tmp_71_fu_199_p4" coreId="4198210512" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="contr_AOV_4_c22_0" rtlName="contr_AOV_4_c22_0_fu_209_p1" coreId="3231286464" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="contr_AOV_4_c22_0" rtlName="contr_AOV_4_c22_0_fu_209_p1" coreId="4198211096" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="tmp_41" rtlName="tmp_41_fu_213_p4" coreId="3231246424" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="tmp_72" rtlName="tmp_72_fu_213_p4" coreId="0" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="contr_AOV_5_c23_0" rtlName="contr_AOV_5_c23_0_fu_223_p1" coreId="3231245248" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="contr_AOV_5_c23_0" rtlName="contr_AOV_5_c23_0_fu_223_p1" coreId="68282132" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="tmp_42" rtlName="tmp_42_fu_227_p4" coreId="304" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="tmp_73" rtlName="tmp_73_fu_227_p4" coreId="4294967295" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="contr_AOV_6_c24_0" rtlName="contr_AOV_6_c24_0_fu_237_p1" coreId="3231287552" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="contr_AOV_6_c24_0" rtlName="contr_AOV_6_c24_0_fu_237_p1" coreId="4198385904" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="tmp_43" rtlName="tmp_43_fu_241_p4" coreId="3231288136" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="tmp_74" rtlName="tmp_74_fu_241_p4" coreId="4198386488" bitwidth="32" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="contr_AOV_7_c25_0" rtlName="contr_AOV_7_c25_0_fu_251_p1" coreId="1881171045" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="contr_AOV_7_c25_0" rtlName="contr_AOV_7_c25_0_fu_251_p1" coreId="4198387112" bitwidth="32" opcode="bitcast" nodeLabel="70.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="mrv" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3231289480" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="mrv" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198386832" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="mrv_1" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="572669287" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="mrv_1" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198381024" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="mrv_2" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1869635878" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="mrv_2" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198381584" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="mrv_3" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2037672306" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="mrv_3" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198383512" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="mrv_4" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="874527353" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="mrv_4" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="mrv_5" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="544501349" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="mrv_5" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198383576" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="mrv_6" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1835627552" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="mrv_6" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="mrv_7" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3231052560" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="mrv_7" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198171664" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="mrv_8" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="994082519" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="mrv_8" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="mrv_9" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3231480288" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="mrv_9" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198389776" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="mrv_s" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1953067621" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="mrv_s" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="128" contextFuncName="read_train" bitwidth="284" opcode="insertvalue" nodeLabel="70.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>ret</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="_ln502" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="575620686" contextFuncName="read_train" opcode="ret" nodeLabel="70.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="_ln502" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4198452336" contextFuncName="read_train" opcode="ret" nodeLabel="70.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="/home/francesco/workspace" functionName="read_train"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataOutputObjs>ap_return_0</dataOutputObjs>
@@ -394,11 +394,11 @@
   <expressionNodes realName="mrv_6_fu_291">
     <nodeIds>35</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="tmp_71_fu_199">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="mrv_3_fu_273">
     <nodeIds>32</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_42_fu_227">
-    <nodeIds>25</nodeIds>
   </expressionNodes>
   <expressionNodes realName="dest_1_fu_133">
     <nodeIds>12</nodeIds>
@@ -406,8 +406,11 @@
   <expressionNodes realName="mrv_4_fu_279">
     <nodeIds>33</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_41_fu_213">
-    <nodeIds>23</nodeIds>
+  <expressionNodes realName="tmp_69_fu_171">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_6_fu_143">
+    <nodeIds>13</nodeIds>
   </expressionNodes>
   <expressionNodes realName="contr_AOV_c18_0_fu_153">
     <nodeIds>14</nodeIds>
@@ -415,17 +418,11 @@
   <expressionNodes realName="mrv_fu_255">
     <nodeIds>29</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_s_fu_185">
-    <nodeIds>19</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="contr_AOV_2_c20_0_fu_181">
     <nodeIds>18</nodeIds>
   </expressionNodes>
   <expressionNodes realName="contr_AOV_6_c24_0_fu_237">
     <nodeIds>26</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_40_fu_199">
-    <nodeIds>21</nodeIds>
   </expressionNodes>
   <expressionNodes realName="mrv_9_fu_309">
     <nodeIds>38</nodeIds>
@@ -433,17 +430,20 @@
   <expressionNodes realName="contr_AOV_5_c23_0_fu_223">
     <nodeIds>24</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_38_fu_171">
-    <nodeIds>17</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_27_fu_157">
-    <nodeIds>15</nodeIds>
+  <expressionNodes realName="tmp_73_fu_227">
+    <nodeIds>25</nodeIds>
   </expressionNodes>
   <expressionNodes realName="dest_s_fu_123">
     <nodeIds>11</nodeIds>
   </expressionNodes>
   <expressionNodes realName="mrv_5_fu_285">
     <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_70_fu_185">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_74_fu_241">
+    <nodeIds>27</nodeIds>
   </expressionNodes>
   <expressionNodes realName="contr_AOV_1_c19_0_fu_167">
     <nodeIds>16</nodeIds>
@@ -460,11 +460,11 @@
   <expressionNodes realName="mrv_2_fu_267">
     <nodeIds>31</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="tmp_s_fu_157">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="mrv_1_fu_261">
     <nodeIds>30</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_16_fu_143">
-    <nodeIds>13</nodeIds>
   </expressionNodes>
   <expressionNodes realName="empty_fu_119">
     <nodeIds>10</nodeIds>
@@ -472,8 +472,8 @@
   <expressionNodes realName="gmem_addr_fu_112">
     <nodeIds>7</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_43_fu_241">
-    <nodeIds>27</nodeIds>
+  <expressionNodes realName="tmp_72_fu_213">
+    <nodeIds>23</nodeIds>
   </expressionNodes>
   <expressionNodes realName="contr_AOV_4_c22_0_fu_209">
     <nodeIds>22</nodeIds>

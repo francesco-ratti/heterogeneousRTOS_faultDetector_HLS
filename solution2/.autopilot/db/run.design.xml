@@ -5,10 +5,10 @@
 <ModuleName>run</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_runTestAfterInit_fu_691</InstName>
+<InstName>grp_runTestAfterInit_fu_1109</InstName>
 <ModuleName>runTestAfterInit</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>691</ID>
+<ID>1109</ID>
 <InstancesList>
 <Instance>
 <InstName>read_train_U0</InstName>
@@ -4978,12 +4978,6 @@
 </Module>
 <Module>
 <Name>run</Name>
-<Loops>
-<VITIS_LOOP_690_1>
-<VITIS_LOOP_692_2></VITIS_LOOP_692_2>
-</VITIS_LOOP_690_1>
-<VITIS_LOOP_698_3></VITIS_LOOP_698_3>
-</Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>18.00</TargetClockPeriod>
@@ -4991,68 +4985,33 @@
 <EstimatedClockPeriod>13.140</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>22878</Best-caseLatency>
-<Average-caseLatency>23023</Average-caseLatency>
-<Worst-caseLatency>23444</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.412 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.414 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.422 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>22879 ~ 23445</PipelineInitiationInterval>
+<Best-caseLatency>2</Best-caseLatency>
+<Average-caseLatency>33</Average-caseLatency>
+<Worst-caseLatency>659</Worst-caseLatency>
+<Best-caseRealTimeLatency>36.000 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.594 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>11.862 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>3 ~ 660</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<VITIS_LOOP_690_1>
-<Name>VITIS_LOOP_690_1</Name>
-<TripCount>64</TripCount>
-<Latency>22656</Latency>
-<AbsoluteTimeLatency>0.408 ms</AbsoluteTimeLatency>
-<IterationLatency>354</IterationLatency>
-<PipelineDepth>354</PipelineDepth>
-<PipelineType>no</PipelineType>
-<InstanceList>
-</InstanceList>
-<VITIS_LOOP_692_2>
-<Name>VITIS_LOOP_692_2</Name>
-<TripCount>16</TripCount>
-<Latency>352</Latency>
-<AbsoluteTimeLatency>6.336 us</AbsoluteTimeLatency>
-<IterationLatency>22</IterationLatency>
-<PipelineDepth>22</PipelineDepth>
-<PipelineType>no</PipelineType>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_692_2>
-</VITIS_LOOP_690_1>
-<VITIS_LOOP_698_3>
-<Name>VITIS_LOOP_698_3</Name>
-<TripCount>64</TripCount>
-<Latency>128</Latency>
-<AbsoluteTimeLatency>2.304 us</AbsoluteTimeLatency>
-<IterationLatency>2</IterationLatency>
-<PipelineDepth>2</PipelineDepth>
-<PipelineType>no</PipelineType>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_698_3>
-</SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>112</BRAM_18K>
+<BRAM_18K>64</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
-<UTIL_BRAM>40</UTIL_BRAM>
-<DSP>141</DSP>
-<AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>64</UTIL_DSP>
-<FF>7567</FF>
+<UTIL_BRAM>22</UTIL_BRAM>
+<FF>9015</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>7</UTIL_FF>
-<LUT>9861</LUT>
+<UTIL_FF>8</UTIL_FF>
+<LUT>11512</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>18</UTIL_LUT>
+<UTIL_LUT>21</UTIL_LUT>
 <URAM>0</URAM>
 <AVAIL_URAM>0</AVAIL_URAM>
 <UTIL_URAM>0</UTIL_URAM>
+<DSP>0</DSP>
+<AVAIL_DSP>220</AVAIL_DSP>
+<UTIL_DSP>0</UTIL_DSP>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>
@@ -5084,7 +5043,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>18</Bits>
+<Bits>11</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -5161,7 +5120,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>18</Bits>
+<Bits>11</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -5248,7 +5207,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -5259,7 +5218,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -5270,7 +5229,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>

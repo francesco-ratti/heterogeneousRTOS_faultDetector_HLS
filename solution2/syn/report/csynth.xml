@@ -19,46 +19,23 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>22878</Best-caseLatency>
-            <Average-caseLatency>23023</Average-caseLatency>
-            <Worst-caseLatency>23444</Worst-caseLatency>
-            <Best-caseRealTimeLatency>0.412 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>0.414 ms</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>0.422 ms</Worst-caseRealTimeLatency>
-            <Interval-min>22879</Interval-min>
-            <Interval-max>23445</Interval-max>
+            <Best-caseLatency>2</Best-caseLatency>
+            <Average-caseLatency>33</Average-caseLatency>
+            <Worst-caseLatency>659</Worst-caseLatency>
+            <Best-caseRealTimeLatency>36.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.594 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>11.862 us</Worst-caseRealTimeLatency>
+            <Interval-min>3</Interval-min>
+            <Interval-max>660</Interval-max>
         </SummaryOfOverallLatency>
-        <SummaryOfLoopLatency>
-            <VITIS_LOOP_690_1>
-                <TripCount>64</TripCount>
-                <Latency>22656</Latency>
-                <AbsoluteTimeLatency>407808</AbsoluteTimeLatency>
-                <IterationLatency>354</IterationLatency>
-                <InstanceList/>
-                <VITIS_LOOP_692_2>
-                    <TripCount>16</TripCount>
-                    <Latency>352</Latency>
-                    <AbsoluteTimeLatency>6336</AbsoluteTimeLatency>
-                    <IterationLatency>22</IterationLatency>
-                    <InstanceList/>
-                </VITIS_LOOP_692_2>
-            </VITIS_LOOP_690_1>
-            <VITIS_LOOP_698_3>
-                <TripCount>64</TripCount>
-                <Latency>128</Latency>
-                <AbsoluteTimeLatency>2304</AbsoluteTimeLatency>
-                <IterationLatency>2</IterationLatency>
-                <InstanceList/>
-            </VITIS_LOOP_698_3>
-        </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>112</BRAM_18K>
-            <DSP>141</DSP>
-            <FF>7567</FF>
-            <LUT>9861</LUT>
+            <BRAM_18K>64</BRAM_18K>
+            <FF>9015</FF>
+            <LUT>11512</LUT>
             <URAM>0</URAM>
+            <DSP>0</DSP>
         </Resources>
         <AvailableResources>
             <BRAM_18K>280</BRAM_18K>
@@ -97,7 +74,7 @@
             <Type>array</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>18</Bits>
+            <Bits>11</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
             <HasCtrl>1</HasCtrl>
@@ -174,7 +151,7 @@
             <Type>array</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>18</Bits>
+            <Bits>11</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
             <HasCtrl>1</HasCtrl>
@@ -261,7 +238,7 @@
             <Object>run</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_chain</IOProtocol>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
@@ -272,7 +249,7 @@
             <Object>run</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_chain</IOProtocol>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
@@ -283,7 +260,7 @@
             <Object>run</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_chain</IOProtocol>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
             <Bits>1</Bits>
@@ -835,10 +812,10 @@
             <ModuleName>run</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_runTestAfterInit_fu_691</InstName>
+                    <InstName>grp_runTestAfterInit_fu_1109</InstName>
                     <ModuleName>runTestAfterInit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>691</ID>
+                    <ID>1109</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>read_train_U0</InstName>
@@ -895,7 +872,7 @@
                     <BindInstances>contr_AOV_7_c_U contr_AOV_6_c_U contr_AOV_5_c_U contr_AOV_4_c_U contr_AOV_3_c_U contr_AOV_2_c_U contr_AOV_1_c_U contr_AOV_c_U contr_checkId_V_U contr_taskId_V_U contr_uniId_V_U contr_AOV_c18_channel_U contr_AOV_1_c19_channel_U contr_AOV_2_c20_channel_U contr_AOV_3_c21_channel_U contr_AOV_4_c22_channel_U contr_AOV_5_c23_channel_U contr_AOV_6_c24_channel_U contr_AOV_7_c25_channel_U contr_checkId_V_load_loc_channel_U contr_checkId_V_load_cast_loc_channel_U n_regions_V_load_loc_channel_U error_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>add_ln690_fu_730_p2 sub_ln694_fu_760_p2 add_ln692_fu_781_p2 sub_ln694_1_fu_811_p2 add_ln694_fu_838_p2 mul_64ns_66ns_81_1_1_U134 add_ln694_1_fu_866_p2 sub_ln694_2_fu_892_p2 mul_64ns_66ns_129_1_1_U135 sub_ln694_3_fu_958_p2 mul_64ns_66ns_129_1_1_U136 sub_ln694_4_fu_1030_p2 mul_64ns_66ns_129_1_1_U137 sub_ln694_5_fu_1102_p2 mul_64ns_66ns_129_1_1_U138 sub_ln694_6_fu_1174_p2 mul_64ns_66ns_129_1_1_U139 sub_ln694_7_fu_1246_p2 mul_64ns_66ns_129_1_1_U140 sub_ln694_8_fu_1318_p2 mul_64ns_66ns_129_1_1_U141 sub_ln694_9_fu_1395_p2 add_ln694_2_fu_1374_p2 mul_64ns_66ns_129_1_1_U142 add_ln694_3_fu_1445_p2 mul_64ns_66ns_129_1_1_U143 add_ln694_4_fu_1516_p2 mul_64ns_66ns_129_1_1_U144 add_ln694_5_fu_1587_p2 mul_64ns_66ns_129_1_1_U145 add_ln694_6_fu_1658_p2 mul_64ns_66ns_129_1_1_U146 add_ln694_7_fu_1729_p2 mul_64ns_66ns_129_1_1_U147 add_ln694_8_fu_1800_p2 mul_64ns_66ns_129_1_1_U148 add_ln694_9_fu_1805_p2 mul_64ns_66ns_129_1_1_U149 add_ln698_fu_2159_p2 regions_U regions_2_U regions_1_U regions_3_U n_regions_V_U</BindInstances>
+            <BindInstances>add_ln724_fu_1219_p2 add_ln709_fu_1287_p2 regions_U regions_2_U regions_4_U regions_1_U regions_3_U regions_5_U n_regions_V_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -1315,12 +1292,6 @@
         </Module>
         <Module>
             <Name>run</Name>
-            <Loops>
-                <VITIS_LOOP_690_1>
-                    <VITIS_LOOP_692_2/>
-                </VITIS_LOOP_690_1>
-                <VITIS_LOOP_698_3/>
-            </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>18.00</TargetClockPeriod>
@@ -1328,111 +1299,44 @@
                     <EstimatedClockPeriod>13.140</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>22878</Best-caseLatency>
-                    <Average-caseLatency>23023</Average-caseLatency>
-                    <Worst-caseLatency>23444</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.412 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.414 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.422 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>22879 ~ 23445</PipelineInitiationInterval>
+                    <Best-caseLatency>2</Best-caseLatency>
+                    <Average-caseLatency>33</Average-caseLatency>
+                    <Worst-caseLatency>659</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>36.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.594 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>11.862 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>3 ~ 660</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <VITIS_LOOP_690_1>
-                        <Name>VITIS_LOOP_690_1</Name>
-                        <TripCount>64</TripCount>
-                        <Latency>22656</Latency>
-                        <AbsoluteTimeLatency>0.408 ms</AbsoluteTimeLatency>
-                        <IterationLatency>354</IterationLatency>
-                        <PipelineDepth>354</PipelineDepth>
-                        <PipelineType>no</PipelineType>
-                        <InstanceList/>
-                        <VITIS_LOOP_692_2>
-                            <Name>VITIS_LOOP_692_2</Name>
-                            <TripCount>16</TripCount>
-                            <Latency>352</Latency>
-                            <AbsoluteTimeLatency>6.336 us</AbsoluteTimeLatency>
-                            <IterationLatency>22</IterationLatency>
-                            <PipelineDepth>22</PipelineDepth>
-                            <PipelineType>no</PipelineType>
-                            <InstanceList/>
-                        </VITIS_LOOP_692_2>
-                    </VITIS_LOOP_690_1>
-                    <VITIS_LOOP_698_3>
-                        <Name>VITIS_LOOP_698_3</Name>
-                        <TripCount>64</TripCount>
-                        <Latency>128</Latency>
-                        <AbsoluteTimeLatency>2.304 us</AbsoluteTimeLatency>
-                        <IterationLatency>2</IterationLatency>
-                        <PipelineDepth>2</PipelineDepth>
-                        <PipelineType>no</PipelineType>
-                        <InstanceList/>
-                    </VITIS_LOOP_698_3>
-                </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>112</BRAM_18K>
+                    <BRAM_18K>64</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>40</UTIL_BRAM>
-                    <DSP>141</DSP>
-                    <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>64</UTIL_DSP>
-                    <FF>7567</FF>
+                    <UTIL_BRAM>22</UTIL_BRAM>
+                    <FF>9015</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>7</UTIL_FF>
-                    <LUT>9861</LUT>
+                    <UTIL_FF>8</UTIL_FF>
+                    <LUT>11512</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>18</UTIL_LUT>
+                    <UTIL_LUT>21</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_690_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln690_fu_730_p2" SOURCE="detector_solid/abs_solid_detector.cpp:690" URAM="0" VARIABLE="add_ln690"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_690_1" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_fu_760_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln692_fu_781_p2" SOURCE="detector_solid/abs_solid_detector.cpp:692" URAM="0" VARIABLE="add_ln692"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_1_fu_811_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_fu_838_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="6" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_81_1_1_U134" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_1_fu_866_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_2_fu_892_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U135" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_3_fu_958_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U136" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_4_fu_1030_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U137" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_5_fu_1102_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U138" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_6_fu_1174_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U139" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_7_fu_1246_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U140" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_8_fu_1318_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U141" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln694_9_fu_1395_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="sub_ln694_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_2_fu_1374_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U142" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_3_fu_1445_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U143" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_4_fu_1516_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U144" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_5_fu_1587_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U145" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_6_fu_1658_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U146" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_7_fu_1729_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U147" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_8_fu_1800_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U148" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_9_fu_1805_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="9" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_692_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_64ns_66ns_129_1_1_U149" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="mul_ln694_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_698_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln698_fu_2159_p2" SOURCE="detector_solid/abs_solid_detector.cpp:698" URAM="0" VARIABLE="add_ln698"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln724_fu_1219_p2" SOURCE="detector_solid/abs_solid_detector.cpp:724" URAM="0" VARIABLE="add_ln724"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln709_fu_1287_p2" SOURCE="detector_solid/abs_solid_detector.cpp:709" URAM="0" VARIABLE="add_ln709"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_U" SOURCE="" URAM="0" VARIABLE="regions"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_2_U" SOURCE="" URAM="0" VARIABLE="regions_2"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_4_U" SOURCE="" URAM="0" VARIABLE="regions_4"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_1_U" SOURCE="" URAM="0" VARIABLE="regions_1"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_3_U" SOURCE="" URAM="0" VARIABLE="regions_3"/>
+                <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_5_U" SOURCE="" URAM="0" VARIABLE="regions_5"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="n_regions_V_U" SOURCE="" URAM="0" VARIABLE="n_regions_V"/>
             </BindNodes>
         </Module>
@@ -1503,19 +1407,86 @@
                 <hwRef type="register" interface="s_axi_control" name="copyInputAOV" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="trainedRegions" index="5" direction="in" srcType="REGION_T*" srcSize="768">
+        <Arg ArgName="accel_mode" index="5" direction="in" srcType="char" srcSize="8">
             <hwRefs>
-                <hwRef type="memory" interface="s_axi_control" name="trainedRegions" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="accel_mode" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="n_regions_in" index="6" direction="in" srcType="ap_uint&lt;8&gt;*" srcSize="8">
+        <Arg ArgName="trainedRegion_i" index="6" direction="in" srcType="REGION_T" srcSize="768">
             <hwRefs>
-                <hwRef type="memory" interface="s_axi_control" name="n_regions_in" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_1" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_2" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_3" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_4" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_5" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_6" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_7" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_8" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_9" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_10" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_11" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_12" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_13" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_14" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_15" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_16" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_17" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_18" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_19" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_20" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_21" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_22" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_23" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_i_24" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="trainedRegion_o" index="7" direction="out" srcType="REGION_T*" srcSize="768">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_1" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_2" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_3" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_4" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_5" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_6" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_7" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_8" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_9" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_10" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_11" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_12" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_13" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_14" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_15" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_16" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_17" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_18" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_19" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_20" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_21" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_22" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_23" usage="data" direction="out"/>
+                <hwRef type="register" interface="s_axi_control" name="trainedRegion_o_24" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="IOCheckIdx" index="8" direction="in" srcType="ap_uint&lt;8&gt;" srcSize="8">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_control" name="IOCheckIdx" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="IORegionIdx" index="9" direction="in" srcType="ap_uint&lt;8&gt;" srcSize="8">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_control" name="IORegionIdx" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="n_regions_in" index="10" direction="inout" srcType="ap_uint&lt;8&gt;*" srcSize="8">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_control" name="n_regions_in_i" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="n_regions_in_o" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
     </Args>
     <Interfaces>
-        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="18" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
+        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="11" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
             <ports>
                 <port>s_axi_control_ARADDR</port>
                 <port>s_axi_control_ARREADY</port>
@@ -1537,9 +1508,7 @@
             </ports>
             <memories>
                 <memorie memorieName="errorInTask" offset="16" range="16"/>
-                <memorie memorieName="n_regions_in" offset="64" range="64"/>
                 <memorie memorieName="outcomeInRam" offset="1024" range="1024"/>
-                <memorie memorieName="trainedRegions" offset="131072" range="131072"/>
             </memories>
             <registers>
                 <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
@@ -1548,8 +1517,7 @@
                         <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
                         <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
                         <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
-                        <field offset="4" width="1" name="AP_CONTINUE" access="R" description="Control signal Register for 'ap_continue'."/>
-                        <field offset="5" width="2" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
                         <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
                         <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
                         <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
@@ -1598,6 +1566,276 @@
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
+                <register offset="0x3c" name="accel_mode" access="W" description="Data signal of accel_mode" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="accel_mode" access="W" description="Bit 7 to 0 of accel_mode"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x44" name="trainedRegion_i_1" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 31 to 0 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x48" name="trainedRegion_i_2" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 63 to 32 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x4c" name="trainedRegion_i_3" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 95 to 64 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x50" name="trainedRegion_i_4" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 127 to 96 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x54" name="trainedRegion_i_5" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 159 to 128 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x58" name="trainedRegion_i_6" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 191 to 160 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x5c" name="trainedRegion_i_7" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 223 to 192 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x60" name="trainedRegion_i_8" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 255 to 224 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x64" name="trainedRegion_i_9" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 287 to 256 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x68" name="trainedRegion_i_10" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 319 to 288 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x6c" name="trainedRegion_i_11" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 351 to 320 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x70" name="trainedRegion_i_12" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 383 to 352 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x74" name="trainedRegion_i_13" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 415 to 384 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x78" name="trainedRegion_i_14" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 447 to 416 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x7c" name="trainedRegion_i_15" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 479 to 448 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x80" name="trainedRegion_i_16" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 511 to 480 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x84" name="trainedRegion_i_17" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 543 to 512 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x88" name="trainedRegion_i_18" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 575 to 544 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x8c" name="trainedRegion_i_19" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 607 to 576 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x90" name="trainedRegion_i_20" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 639 to 608 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x94" name="trainedRegion_i_21" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 671 to 640 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x98" name="trainedRegion_i_22" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 703 to 672 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0x9c" name="trainedRegion_i_23" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 735 to 704 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0xa0" name="trainedRegion_i_24" access="W" description="Data signal of trainedRegion_i" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_i" access="W" description="Bit 767 to 736 of trainedRegion_i"/>
+                    </fields>
+                </register>
+                <register offset="0xa8" name="trainedRegion_o_1" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 31 to 0 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xac" name="trainedRegion_o_2" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 63 to 32 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xb0" name="trainedRegion_o_3" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 95 to 64 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xb4" name="trainedRegion_o_4" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 127 to 96 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xb8" name="trainedRegion_o_5" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 159 to 128 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xbc" name="trainedRegion_o_6" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 191 to 160 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xc0" name="trainedRegion_o_7" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 223 to 192 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xc4" name="trainedRegion_o_8" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 255 to 224 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xc8" name="trainedRegion_o_9" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 287 to 256 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xcc" name="trainedRegion_o_10" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 319 to 288 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xd0" name="trainedRegion_o_11" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 351 to 320 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xd4" name="trainedRegion_o_12" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 383 to 352 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xd8" name="trainedRegion_o_13" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 415 to 384 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xdc" name="trainedRegion_o_14" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 447 to 416 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xe0" name="trainedRegion_o_15" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 479 to 448 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xe4" name="trainedRegion_o_16" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 511 to 480 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xe8" name="trainedRegion_o_17" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 543 to 512 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xec" name="trainedRegion_o_18" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 575 to 544 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xf0" name="trainedRegion_o_19" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 607 to 576 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xf4" name="trainedRegion_o_20" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 639 to 608 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xf8" name="trainedRegion_o_21" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 671 to 640 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0xfc" name="trainedRegion_o_22" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 703 to 672 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0x100" name="trainedRegion_o_23" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 735 to 704 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0x104" name="trainedRegion_o_24" access="R" description="Data signal of trainedRegion_o" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 767 to 736 of trainedRegion_o"/>
+                    </fields>
+                </register>
+                <register offset="0x170" name="IOCheckIdx" access="W" description="Data signal of IOCheckIdx" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="IOCheckIdx" access="W" description="Bit 7 to 0 of IOCheckIdx"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x178" name="IORegionIdx" access="W" description="Data signal of IORegionIdx" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="IORegionIdx" access="W" description="Bit 7 to 0 of IORegionIdx"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x180" name="n_regions_in_i" access="W" description="Data signal of n_regions_in_i" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="n_regions_in_i" access="W" description="Bit 7 to 0 of n_regions_in_i"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x188" name="n_regions_in_o" access="R" description="Data signal of n_regions_in_o" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="n_regions_in_o" access="R" description="Bit 7 to 0 of n_regions_in_o"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
             </registers>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="errorInTask"/>
@@ -1605,8 +1843,12 @@
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32" argName="inputAOV"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="44" argName="readyForData"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52" argName="copyInputAOV"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="4096" argName="trainedRegions"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64" argName="n_regions_in"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="60" argName="accel_mode"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="68" argName="trainedRegion_i"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="168" argName="trainedRegion_o"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="368" argName="IOCheckIdx"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="376" argName="IORegionIdx"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="384" argName="n_regions_in"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
@@ -1719,13 +1961,13 @@
             <item name="S_AXILITE Interfaces">
                 <table isCollapsed="0">
                     <keys size="6">Interface, Data Width, Address Width, Offset, Register, Resource Estimate</keys>
-                    <column name="s_axi_control">32, 18, 16, 0, BRAM=80, , , , </column>
+                    <column name="s_axi_control">32, 11, 16, 0, BRAM=16, , , , </column>
                 </table>
             </item>
             <item name="S_AXILITE Registers">
                 <table isCollapsed="0">
                     <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
-                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
                     <column name="s_axi_control">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
                     <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
                     <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
@@ -1733,6 +1975,59 @@
                     <column name="s_axi_control">inputAOV_2, 0x24, 32, W, Data signal of inputAOV, </column>
                     <column name="s_axi_control">readyForData, 0x2c, 32, W, Data signal of readyForData, </column>
                     <column name="s_axi_control">copyInputAOV, 0x34, 32, W, Data signal of copyInputAOV, </column>
+                    <column name="s_axi_control">accel_mode, 0x3c, 32, W, Data signal of accel_mode, </column>
+                    <column name="s_axi_control">trainedRegion_i_1, 0x44, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_2, 0x48, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_3, 0x4c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_4, 0x50, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_5, 0x54, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_6, 0x58, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_7, 0x5c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_8, 0x60, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_9, 0x64, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_10, 0x68, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_11, 0x6c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_12, 0x70, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_13, 0x74, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_14, 0x78, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_15, 0x7c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_16, 0x80, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_17, 0x84, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_18, 0x88, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_19, 0x8c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_20, 0x90, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_21, 0x94, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_22, 0x98, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_23, 0x9c, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_i_24, 0xa0, 32, W, Data signal of trainedRegion_i, </column>
+                    <column name="s_axi_control">trainedRegion_o_1, 0xa8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_2, 0xac, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_3, 0xb0, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_4, 0xb4, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_5, 0xb8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_6, 0xbc, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_7, 0xc0, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_8, 0xc4, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_9, 0xc8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_10, 0xcc, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_11, 0xd0, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_12, 0xd4, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_13, 0xd8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_14, 0xdc, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_15, 0xe0, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_16, 0xe4, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_17, 0xe8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_18, 0xec, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_19, 0xf0, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_20, 0xf4, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_21, 0xf8, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_22, 0xfc, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_23, 0x100, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">trainedRegion_o_24, 0x104, 32, R, Data signal of trainedRegion_o, </column>
+                    <column name="s_axi_control">IOCheckIdx, 0x170, 32, W, Data signal of IOCheckIdx, </column>
+                    <column name="s_axi_control">IORegionIdx, 0x178, 32, W, Data signal of IORegionIdx, </column>
+                    <column name="s_axi_control">n_regions_in_i, 0x180, 32, W, Data signal of n_regions_in_i, </column>
+                    <column name="s_axi_control">n_regions_in_o, 0x188, 32, R, Data signal of n_regions_in_o, </column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -1741,7 +2036,7 @@
                     <column name="ap_clk">clock, ap_clk, </column>
                     <column name="ap_rst_n">reset, ap_rst_n, </column>
                     <column name="interrupt">interrupt, interrupt, </column>
-                    <column name="ap_ctrl">ap_ctrl_chain, , </column>
+                    <column name="ap_ctrl">ap_ctrl_hs, , </column>
                 </table>
             </item>
         </section>
@@ -1756,8 +2051,12 @@
                     <column name="inputAOV">in, controlStr*</column>
                     <column name="readyForData">unused, char*</column>
                     <column name="copyInputAOV">unused, char*</column>
-                    <column name="trainedRegions">in, REGION_T*</column>
-                    <column name="n_regions_in">in, ap_uint&lt;8&gt;*</column>
+                    <column name="accel_mode">in, char</column>
+                    <column name="trainedRegion_i">in, REGION_T</column>
+                    <column name="trainedRegion_o">out, REGION_T*</column>
+                    <column name="IOCheckIdx">in, ap_uint&lt;8&gt;</column>
+                    <column name="IORegionIdx">in, ap_uint&lt;8&gt;</column>
+                    <column name="n_regions_in">inout, ap_uint&lt;8&gt;*</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
@@ -1770,8 +2069,59 @@
                     <column name="inputAOV">s_axi_control, register, offset, name=inputAOV_2 offset=0x24 range=32</column>
                     <column name="readyForData">s_axi_control, register, , name=readyForData offset=0x2c range=32</column>
                     <column name="copyInputAOV">s_axi_control, register, , name=copyInputAOV offset=0x34 range=32</column>
-                    <column name="trainedRegions">s_axi_control, memory, , name=trainedRegions offset=131072 range=131072</column>
-                    <column name="n_regions_in">s_axi_control, memory, , name=n_regions_in offset=64 range=64</column>
+                    <column name="accel_mode">s_axi_control, register, , name=accel_mode offset=0x3c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_1 offset=0x44 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_2 offset=0x48 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_3 offset=0x4c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_4 offset=0x50 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_5 offset=0x54 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_6 offset=0x58 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_7 offset=0x5c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_8 offset=0x60 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_9 offset=0x64 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_10 offset=0x68 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_11 offset=0x6c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_12 offset=0x70 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_13 offset=0x74 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_14 offset=0x78 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_15 offset=0x7c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_16 offset=0x80 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_17 offset=0x84 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_18 offset=0x88 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_19 offset=0x8c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_20 offset=0x90 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_21 offset=0x94 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_22 offset=0x98 range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_23 offset=0x9c range=32</column>
+                    <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_24 offset=0xa0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_1 offset=0xa8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_2 offset=0xac range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_3 offset=0xb0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_4 offset=0xb4 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_5 offset=0xb8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_6 offset=0xbc range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_7 offset=0xc0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_8 offset=0xc4 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_9 offset=0xc8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_10 offset=0xcc range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_11 offset=0xd0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_12 offset=0xd4 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_13 offset=0xd8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_14 offset=0xdc range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_15 offset=0xe0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_16 offset=0xe4 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_17 offset=0xe8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_18 offset=0xec range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_19 offset=0xf0 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_20 offset=0xf4 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_21 offset=0xf8 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_22 offset=0xfc range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_23 offset=0x100 range=32</column>
+                    <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_24 offset=0x104 range=32</column>
+                    <column name="IOCheckIdx">s_axi_control, register, , name=IOCheckIdx offset=0x170 range=32</column>
+                    <column name="IORegionIdx">s_axi_control, register, , name=IORegionIdx offset=0x178 range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_i offset=0x180 range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_o offset=0x188 range=32</column>
                 </table>
             </item>
         </section>
@@ -1787,22 +2137,22 @@
         <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:281" status="valid" parentFunction="insert_point" variable="" isDirective="0" options="II=8"/>
         <Pragma type="dataflow" location="detector_solid/abs_solid_detector.cpp:557" status="valid" parentFunction="runtestafterinit" variable="" isDirective="0" options=""/>
         <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:567" status="valid" parentFunction="runtestafterinit" variable="contr.AOV" isDirective="0" options="variable=contr.AOV complete"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:646" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = copyInputAOV"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:647" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = readyForData"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:648" status="valid" parentFunction="run" variable="" isDirective="0" options="m_axi port = inputAOV"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:649" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegions"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:650" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:651" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = errorInTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:652" status="valid" parentFunction="run" variable="outcomeInRam" isDirective="0" options="s_axilite port=outcomeInRam"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:657" status="warning" parentFunction="run" variable="errorInTask" isDirective="0" options="variable=errorInTask">
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:650" status="valid" parentFunction="run" variable="return" isDirective="0" options="mode=ap_ctrl_hs port=return"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:651" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = copyInputAOV"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:652" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = readyForData"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:653" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = accel_mode"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:654" status="valid" parentFunction="run" variable="" isDirective="0" options="m_axi port = inputAOV"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:655" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegion_i"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:656" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = trainedRegion_o"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:657" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = IOCheckIdx"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:658" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = IORegionIdx"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:660" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:662" status="valid" parentFunction="run" variable="" isDirective="0" options="s_axilite port = errorInTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:663" status="valid" parentFunction="run" variable="outcomeInRam" isDirective="0" options="s_axilite port=outcomeInRam"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:668" status="warning" parentFunction="run" variable="errorInTask" isDirective="0" options="variable=errorInTask">
             <Msg msg_id="207-5541" msg_severity="WARNING" msg_body="Invalid variable in '#pragma HLS reset': expect variable to be static or global"/>
         </Pragma>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:658" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions dim=2 cyclic factor=2"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:659" status="warning" parentFunction="run" variable="errorInTask" isDirective="0" options="variable=errorInTask">
-            <Msg msg_id="207-5541" msg_severity="WARNING" msg_body="Invalid variable in '#pragma HLS reset': expect variable to be static or global"/>
-        </Pragma>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:693" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
-        <Pragma type="pipeline" location="detector_solid/abs_solid_detector.cpp:699" status="valid" parentFunction="run" variable="" isDirective="0" options="off"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:669" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions dim=2 cyclic factor=2"/>
     </PragmaReport>
 </profile>
 

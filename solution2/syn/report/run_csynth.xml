@@ -22,50 +22,24 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>22878</Best-caseLatency>
-<Average-caseLatency>23023</Average-caseLatency>
-<Worst-caseLatency>23444</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.412 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.414 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.422 ms</Worst-caseRealTimeLatency>
-<Interval-min>22879</Interval-min>
-<Interval-max>23445</Interval-max>
+<Best-caseLatency>2</Best-caseLatency>
+<Average-caseLatency>33</Average-caseLatency>
+<Worst-caseLatency>659</Worst-caseLatency>
+<Best-caseRealTimeLatency>36.000 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.594 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>11.862 us</Worst-caseRealTimeLatency>
+<Interval-min>3</Interval-min>
+<Interval-max>660</Interval-max>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<VITIS_LOOP_690_1>
-<TripCount>64</TripCount>
-<Latency>22656</Latency>
-<AbsoluteTimeLatency>407808</AbsoluteTimeLatency>
-<IterationLatency>354</IterationLatency>
-<InstanceList>
-</InstanceList>
-<VITIS_LOOP_692_2>
-<TripCount>16</TripCount>
-<Latency>352</Latency>
-<AbsoluteTimeLatency>6336</AbsoluteTimeLatency>
-<IterationLatency>22</IterationLatency>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_692_2>
-</VITIS_LOOP_690_1>
-<VITIS_LOOP_698_3>
-<TripCount>64</TripCount>
-<Latency>128</Latency>
-<AbsoluteTimeLatency>2304</AbsoluteTimeLatency>
-<IterationLatency>2</IterationLatency>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_698_3>
-</SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>112</BRAM_18K>
-<DSP>141</DSP>
-<FF>7567</FF>
-<LUT>9861</LUT>
+<BRAM_18K>64</BRAM_18K>
+<FF>9015</FF>
+<LUT>11512</LUT>
 <URAM>0</URAM>
+<DSP>0</DSP>
 </Resources>
 <AvailableResources>
 <BRAM_18K>280</BRAM_18K>
@@ -105,7 +79,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>18</Bits>
+<Bits>11</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -182,7 +156,7 @@
 <Type>array</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>18</Bits>
+<Bits>11</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -269,7 +243,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -280,7 +254,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -291,7 +265,7 @@
 <Object>run</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_chain</IOProtocol>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>

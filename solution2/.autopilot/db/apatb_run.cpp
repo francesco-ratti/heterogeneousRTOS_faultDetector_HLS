@@ -28,8 +28,16 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_readyForData "../tv/cdatafile/c.run.autotvout_readyForData.dat"
 #define AUTOTB_TVIN_copyInputAOV "../tv/cdatafile/c.run.autotvin_copyInputAOV.dat"
 #define AUTOTB_TVOUT_copyInputAOV "../tv/cdatafile/c.run.autotvout_copyInputAOV.dat"
-#define AUTOTB_TVIN_trainedRegions "../tv/cdatafile/c.run.autotvin_trainedRegions.dat"
-#define AUTOTB_TVOUT_trainedRegions "../tv/cdatafile/c.run.autotvout_trainedRegions.dat"
+#define AUTOTB_TVIN_accel_mode "../tv/cdatafile/c.run.autotvin_accel_mode.dat"
+#define AUTOTB_TVOUT_accel_mode "../tv/cdatafile/c.run.autotvout_accel_mode.dat"
+#define AUTOTB_TVIN_trainedRegion_i "../tv/cdatafile/c.run.autotvin_trainedRegion_i.dat"
+#define AUTOTB_TVOUT_trainedRegion_i "../tv/cdatafile/c.run.autotvout_trainedRegion_i.dat"
+#define AUTOTB_TVIN_trainedRegion_o "../tv/cdatafile/c.run.autotvin_trainedRegion_o.dat"
+#define AUTOTB_TVOUT_trainedRegion_o "../tv/cdatafile/c.run.autotvout_trainedRegion_o.dat"
+#define AUTOTB_TVIN_IOCheckIdx "../tv/cdatafile/c.run.autotvin_IOCheckIdx.dat"
+#define AUTOTB_TVOUT_IOCheckIdx "../tv/cdatafile/c.run.autotvout_IOCheckIdx.dat"
+#define AUTOTB_TVIN_IORegionIdx "../tv/cdatafile/c.run.autotvin_IORegionIdx.dat"
+#define AUTOTB_TVOUT_IORegionIdx "../tv/cdatafile/c.run.autotvout_IORegionIdx.dat"
 #define AUTOTB_TVIN_n_regions_in "../tv/cdatafile/c.run.autotvin_n_regions_in.dat"
 #define AUTOTB_TVOUT_n_regions_in "../tv/cdatafile/c.run.autotvout_n_regions_in.dat"
 #define AUTOTB_TVIN_gmem "../tv/cdatafile/c.run.autotvin_gmem.dat"
@@ -43,7 +51,11 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_inputAOV "../tv/rtldatafile/rtl.run.autotvout_inputAOV.dat"
 #define AUTOTB_TVOUT_PC_readyForData "../tv/rtldatafile/rtl.run.autotvout_readyForData.dat"
 #define AUTOTB_TVOUT_PC_copyInputAOV "../tv/rtldatafile/rtl.run.autotvout_copyInputAOV.dat"
-#define AUTOTB_TVOUT_PC_trainedRegions "../tv/rtldatafile/rtl.run.autotvout_trainedRegions.dat"
+#define AUTOTB_TVOUT_PC_accel_mode "../tv/rtldatafile/rtl.run.autotvout_accel_mode.dat"
+#define AUTOTB_TVOUT_PC_trainedRegion_i "../tv/rtldatafile/rtl.run.autotvout_trainedRegion_i.dat"
+#define AUTOTB_TVOUT_PC_trainedRegion_o "../tv/rtldatafile/rtl.run.autotvout_trainedRegion_o.dat"
+#define AUTOTB_TVOUT_PC_IOCheckIdx "../tv/rtldatafile/rtl.run.autotvout_IOCheckIdx.dat"
+#define AUTOTB_TVOUT_PC_IORegionIdx "../tv/rtldatafile/rtl.run.autotvout_IORegionIdx.dat"
 #define AUTOTB_TVOUT_PC_n_regions_in "../tv/rtldatafile/rtl.run.autotvout_n_regions_in.dat"
 #define AUTOTB_TVOUT_PC_gmem "../tv/rtldatafile/rtl.run.autotvout_gmem.dat"
 
@@ -280,7 +292,11 @@ INTER_TCL_FILE(const char* name) {
   inputAOV_depth = 0;
   readyForData_depth = 0;
   copyInputAOV_depth = 0;
-  trainedRegions_depth = 0;
+  accel_mode_depth = 0;
+  trainedRegion_i_depth = 0;
+  trainedRegion_o_depth = 0;
+  IOCheckIdx_depth = 0;
+  IORegionIdx_depth = 0;
   n_regions_in_depth = 0;
   gmem_depth = 0;
   trans_num =0;
@@ -305,7 +321,11 @@ string get_depth_list () {
   total_list << "{inputAOV " << inputAOV_depth << "}\n";
   total_list << "{readyForData " << readyForData_depth << "}\n";
   total_list << "{copyInputAOV " << copyInputAOV_depth << "}\n";
-  total_list << "{trainedRegions " << trainedRegions_depth << "}\n";
+  total_list << "{accel_mode " << accel_mode_depth << "}\n";
+  total_list << "{trainedRegion_i " << trainedRegion_i_depth << "}\n";
+  total_list << "{trainedRegion_o " << trainedRegion_o_depth << "}\n";
+  total_list << "{IOCheckIdx " << IOCheckIdx_depth << "}\n";
+  total_list << "{IORegionIdx " << IORegionIdx_depth << "}\n";
   total_list << "{n_regions_in " << n_regions_in_depth << "}\n";
   total_list << "{gmem " << gmem_depth << "}\n";
   return total_list.str();
@@ -322,7 +342,11 @@ void set_string(std::string list, std::string* class_list) {
     int inputAOV_depth;
     int readyForData_depth;
     int copyInputAOV_depth;
-    int trainedRegions_depth;
+    int accel_mode_depth;
+    int trainedRegion_i_depth;
+    int trainedRegion_o_depth;
+    int IOCheckIdx_depth;
+    int IORegionIdx_depth;
     int n_regions_in_depth;
     int gmem_depth;
     int trans_num;
@@ -334,11 +358,12 @@ void set_string(std::string list, std::string* class_list) {
 
 struct __cosim_s36__ { char data[36]; };
 struct __cosim_s40__ { char data[40]; };
+struct __cosim_s96__ { char data[96]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
+extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, char, __cosim_s96__*, volatile void *, __cosim_s1__*, __cosim_s1__*, volatile void *);
 
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_readyForData, volatile void * __xlx_apatb_param_copyInputAOV, volatile void * __xlx_apatb_param_trainedRegions, volatile void * __xlx_apatb_param_n_regions_in) {
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, volatile void * __xlx_apatb_param_readyForData, volatile void * __xlx_apatb_param_copyInputAOV, char __xlx_apatb_param_accel_mode, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -477,7 +502,114 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
       } // end file is good
     } // end post check logic bolck
   #endif
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_trainedRegion_o);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<768> > trainedRegion_o_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
 
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              trainedRegion_o_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "trainedRegion_o" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+0] = trainedRegion_o_pc_buffer[0].range(63,0).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+1] = trainedRegion_o_pc_buffer[0].range(127,64).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+2] = trainedRegion_o_pc_buffer[0].range(191,128).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+3] = trainedRegion_o_pc_buffer[0].range(255,192).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+4] = trainedRegion_o_pc_buffer[0].range(319,256).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+5] = trainedRegion_o_pc_buffer[0].range(383,320).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+6] = trainedRegion_o_pc_buffer[0].range(447,384).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+7] = trainedRegion_o_pc_buffer[0].range(511,448).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+8] = trainedRegion_o_pc_buffer[0].range(575,512).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+9] = trainedRegion_o_pc_buffer[0].range(639,576).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+10] = trainedRegion_o_pc_buffer[0].range(703,640).to_int64();
+((long long*)__xlx_apatb_param_trainedRegion_o)[0*12+11] = trainedRegion_o_pc_buffer[0].range(767,704).to_int64();
+}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  {
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_n_regions_in);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<8> > n_regions_in_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              n_regions_in_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "n_regions_in" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {((char*)__xlx_apatb_param_n_regions_in)[0*1+0] = n_regions_in_pc_buffer[0].range(7, 0).to_int64();
+}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  
     AESL_transaction_pc++;
     return ;
   }
@@ -553,72 +685,6 @@ aesl_fh.write(AUTOTB_TVIN_outcomeInRam, end_str());
 }
 
 #endif
-unsigned __xlx_offset_byte_param_trainedRegions = 0;
-#ifdef USE_BINARY_TV_FILE
-{
-aesl_fh.touch(AUTOTB_TVIN_trainedRegions, 'b');
-transaction<32> tr(24576);
-  __xlx_offset_byte_param_trainedRegions = 0*4;
-  if (__xlx_apatb_param_trainedRegions) {
-tr.import<4>((char*)__xlx_apatb_param_trainedRegions, 24576, 0);
-  }
-aesl_fh.write(AUTOTB_TVIN_trainedRegions, tr.p, tr.tbytes);
-}
-
-  tcl_file.set_num(24576, &tcl_file.trainedRegions_depth);
-#else
-// print trainedRegions Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_trainedRegions, begin_str(AESL_transaction));
-{
-  __xlx_offset_byte_param_trainedRegions = 0*4;
-if (__xlx_apatb_param_trainedRegions) {
-for (size_t i = 0; i < 24576; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_trainedRegions + i * 4;
-std::string s = formatData(pos, 32);
-aesl_fh.write(AUTOTB_TVIN_trainedRegions, s);
-}
-}
-}
-
-  tcl_file.set_num(24576, &tcl_file.trainedRegions_depth);
-aesl_fh.write(AUTOTB_TVIN_trainedRegions, end_str());
-}
-
-#endif
-unsigned __xlx_offset_byte_param_n_regions_in = 0;
-#ifdef USE_BINARY_TV_FILE
-{
-aesl_fh.touch(AUTOTB_TVIN_n_regions_in, 'b');
-transaction<8> tr(64);
-  __xlx_offset_byte_param_n_regions_in = 0*1;
-  if (__xlx_apatb_param_n_regions_in) {
-tr.import<1>((char*)__xlx_apatb_param_n_regions_in, 64, 0);
-  }
-aesl_fh.write(AUTOTB_TVIN_n_regions_in, tr.p, tr.tbytes);
-}
-
-  tcl_file.set_num(64, &tcl_file.n_regions_in_depth);
-#else
-// print n_regions_in Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_n_regions_in, begin_str(AESL_transaction));
-{
-  __xlx_offset_byte_param_n_regions_in = 0*1;
-if (__xlx_apatb_param_n_regions_in) {
-for (size_t i = 0; i < 64; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_n_regions_in + i * 1;
-std::string s = formatData(pos, 8);
-aesl_fh.write(AUTOTB_TVIN_n_regions_in, s);
-}
-}
-}
-
-  tcl_file.set_num(64, &tcl_file.n_regions_in_depth);
-aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
-}
-
-#endif
 aesl_fh.touch(AUTOTB_TVIN_gmem);
 {
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
@@ -666,8 +732,74 @@ aesl_fh.write(AUTOTB_TVIN_copyInputAOV, formatData(pos, 8));
 aesl_fh.write(AUTOTB_TVIN_copyInputAOV, end_str());
 }
 
+// print accel_mode Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_accel_mode, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_apatb_param_accel_mode;
+aesl_fh.write(AUTOTB_TVIN_accel_mode, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.accel_mode_depth);
+aesl_fh.write(AUTOTB_TVIN_accel_mode, end_str());
+}
+
+// print trainedRegion_i Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_i, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_trainedRegion_i;
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_i, formatData(pos, 768));
+}
+  tcl_file.set_num(1, &tcl_file.trainedRegion_i_depth);
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_i, end_str());
+}
+
+// print trainedRegion_o Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_o, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_trainedRegion_o;
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_o, formatData(pos, 768));
+}
+  tcl_file.set_num(1, &tcl_file.trainedRegion_o_depth);
+aesl_fh.write(AUTOTB_TVIN_trainedRegion_o, end_str());
+}
+
+// print IOCheckIdx Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_IOCheckIdx, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_IOCheckIdx;
+aesl_fh.write(AUTOTB_TVIN_IOCheckIdx, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.IOCheckIdx_depth);
+aesl_fh.write(AUTOTB_TVIN_IOCheckIdx, end_str());
+}
+
+// print IORegionIdx Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_IORegionIdx, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_IORegionIdx;
+aesl_fh.write(AUTOTB_TVIN_IORegionIdx, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.IORegionIdx_depth);
+aesl_fh.write(AUTOTB_TVIN_IORegionIdx, end_str());
+}
+
+// print n_regions_in Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_n_regions_in, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_n_regions_in;
+aesl_fh.write(AUTOTB_TVIN_n_regions_in, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.n_regions_in_depth);
+aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
+}
+
 CodeState = CALL_C_DUT;
-run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_readyForData, __xlx_apatb_param_copyInputAOV, __xlx_apatb_param_trainedRegions, __xlx_apatb_param_n_regions_in);
+run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_readyForData, __xlx_apatb_param_copyInputAOV, __xlx_apatb_param_accel_mode, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, __xlx_apatb_param_IOCheckIdx, __xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -733,6 +865,28 @@ aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, end_str());
 }
 
 #endif
+// print trainedRegion_o Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_trainedRegion_o, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_trainedRegion_o;
+aesl_fh.write(AUTOTB_TVOUT_trainedRegion_o, formatData(pos, 768));
+}
+  tcl_file.set_num(1, &tcl_file.trainedRegion_o_depth);
+aesl_fh.write(AUTOTB_TVOUT_trainedRegion_o, end_str());
+}
+
+// print n_regions_in Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_n_regions_in, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_n_regions_in;
+aesl_fh.write(AUTOTB_TVOUT_n_regions_in, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.n_regions_in_depth);
+aesl_fh.write(AUTOTB_TVOUT_n_regions_in, end_str());
+}
+
 CodeState = DELETE_CHAR_BUFFERS;
 AESL_transaction++;
 tcl_file.set_num(AESL_transaction , &tcl_file.trans_num);

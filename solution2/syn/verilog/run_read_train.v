@@ -239,14 +239,14 @@ wire    ap_CS_fsm_state71;
 wire  signed [63:0] p_cast_cast_fu_108_p1;
 reg    ap_block_state1;
 wire   [57:0] p_cast_fu_98_p4;
-wire   [31:0] tmp_16_fu_143_p4;
-wire   [31:0] tmp_27_fu_157_p4;
-wire   [31:0] tmp_38_fu_171_p4;
-wire   [31:0] tmp_s_fu_185_p4;
-wire   [31:0] tmp_40_fu_199_p4;
-wire   [31:0] tmp_41_fu_213_p4;
-wire   [31:0] tmp_42_fu_227_p4;
-wire   [31:0] tmp_43_fu_241_p4;
+wire   [31:0] tmp_6_fu_143_p4;
+wire   [31:0] tmp_s_fu_157_p4;
+wire   [31:0] tmp_69_fu_171_p4;
+wire   [31:0] tmp_70_fu_185_p4;
+wire   [31:0] tmp_71_fu_199_p4;
+wire   [31:0] tmp_72_fu_213_p4;
+wire   [31:0] tmp_73_fu_227_p4;
+wire   [31:0] tmp_74_fu_241_p4;
 wire   [7:0] empty_fu_119_p1;
 wire   [31:0] contr_AOV_c18_0_fu_153_p1;
 wire   [31:0] contr_AOV_1_c19_0_fu_167_p1;
@@ -1023,21 +1023,21 @@ always @ (*) begin
     ap_block_state1 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0));
 end
 
-assign contr_AOV_1_c19_0_fu_167_p1 = tmp_27_fu_157_p4;
+assign contr_AOV_1_c19_0_fu_167_p1 = tmp_s_fu_157_p4;
 
-assign contr_AOV_2_c20_0_fu_181_p1 = tmp_38_fu_171_p4;
+assign contr_AOV_2_c20_0_fu_181_p1 = tmp_69_fu_171_p4;
 
-assign contr_AOV_3_c21_0_fu_195_p1 = tmp_s_fu_185_p4;
+assign contr_AOV_3_c21_0_fu_195_p1 = tmp_70_fu_185_p4;
 
-assign contr_AOV_4_c22_0_fu_209_p1 = tmp_40_fu_199_p4;
+assign contr_AOV_4_c22_0_fu_209_p1 = tmp_71_fu_199_p4;
 
-assign contr_AOV_5_c23_0_fu_223_p1 = tmp_41_fu_213_p4;
+assign contr_AOV_5_c23_0_fu_223_p1 = tmp_72_fu_213_p4;
 
-assign contr_AOV_6_c24_0_fu_237_p1 = tmp_42_fu_227_p4;
+assign contr_AOV_6_c24_0_fu_237_p1 = tmp_73_fu_227_p4;
 
-assign contr_AOV_7_c25_0_fu_251_p1 = tmp_43_fu_241_p4;
+assign contr_AOV_7_c25_0_fu_251_p1 = tmp_74_fu_241_p4;
 
-assign contr_AOV_c18_0_fu_153_p1 = tmp_16_fu_143_p4;
+assign contr_AOV_c18_0_fu_153_p1 = tmp_6_fu_143_p4;
 
 assign empty_fu_119_p1 = m_axi_gmem_RDATA[7:0];
 
@@ -1105,20 +1105,20 @@ assign p_cast_cast_fu_108_p1 = $signed(p_cast_fu_98_p4);
 
 assign p_cast_fu_98_p4 = {{inputAOV[63:6]}};
 
-assign tmp_16_fu_143_p4 = {{m_axi_gmem_RDATA[95:64]}};
+assign tmp_69_fu_171_p4 = {{m_axi_gmem_RDATA[159:128]}};
 
-assign tmp_27_fu_157_p4 = {{m_axi_gmem_RDATA[127:96]}};
+assign tmp_6_fu_143_p4 = {{m_axi_gmem_RDATA[95:64]}};
 
-assign tmp_38_fu_171_p4 = {{m_axi_gmem_RDATA[159:128]}};
+assign tmp_70_fu_185_p4 = {{m_axi_gmem_RDATA[191:160]}};
 
-assign tmp_40_fu_199_p4 = {{m_axi_gmem_RDATA[223:192]}};
+assign tmp_71_fu_199_p4 = {{m_axi_gmem_RDATA[223:192]}};
 
-assign tmp_41_fu_213_p4 = {{m_axi_gmem_RDATA[255:224]}};
+assign tmp_72_fu_213_p4 = {{m_axi_gmem_RDATA[255:224]}};
 
-assign tmp_42_fu_227_p4 = {{m_axi_gmem_RDATA[287:256]}};
+assign tmp_73_fu_227_p4 = {{m_axi_gmem_RDATA[287:256]}};
 
-assign tmp_43_fu_241_p4 = {{m_axi_gmem_RDATA[319:288]}};
+assign tmp_74_fu_241_p4 = {{m_axi_gmem_RDATA[319:288]}};
 
-assign tmp_s_fu_185_p4 = {{m_axi_gmem_RDATA[191:160]}};
+assign tmp_s_fu_157_p4 = {{m_axi_gmem_RDATA[127:96]}};
 
 endmodule //run_read_train

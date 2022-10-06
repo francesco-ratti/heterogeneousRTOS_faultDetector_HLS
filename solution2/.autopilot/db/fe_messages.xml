@@ -646,52 +646,55 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:567:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runTestAfterInit" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=contr.AOV complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution2/csynth.tcl:16:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution2/csynth.tcl:18:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=run" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/francesco/workspace/detector_solid/solution2/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=run" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:646:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = copyInputAOV" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:647:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = readyForData" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:648:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = inputAOV" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:649:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = trainedRegions" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:650:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_ctrl_hs port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:651:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = errorInTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = copyInputAOV" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:652:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=outcomeInRam" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = readyForData" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:653:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = accel_mode" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:654:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = inputAOV" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:655:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = trainedRegion_i" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:656:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = trainedRegion_o" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:657:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=errorInTask" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = IOCheckIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:658:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions dim=2 cyclic factor=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = IORegionIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:659:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:660:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:662:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = errorInTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:663:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=outcomeInRam" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:668:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=errorInTask" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:693:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:669:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions dim=2 cyclic factor=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:699:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5541" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:657:9" msg_body="Invalid variable in '#pragma HLS reset': expect variable to be static or global">
-        <args ClangWarningOption="invalid-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5541" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:659:9" msg_body="Invalid variable in '#pragma HLS reset': expect variable to be static or global">
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5541" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:668:9" msg_body="Invalid variable in '#pragma HLS reset': expect variable to be static or global">
         <args ClangWarningOption="invalid-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_DISAGGREGATE" msg_id="214-210" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:566:13" msg_body="Disaggregating variable 'contr'">
@@ -723,9 +726,6 @@
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:566:13" msg_body="Applying array_partition to 'contr.AOV': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="contr.AOV"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-354" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:645:0" msg_body="Changing the port bit width of top function 'run(bool*, OutcomeStr*, controlStr*, char*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*)' argument 'trainedRegions': from '768' to '32' due to access pattern.">
-        <args Function="run(bool*, OutcomeStr*, controlStr*, char*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*)" TopArgName="trainedRegions" originPortWidth="768" portWidth="32"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

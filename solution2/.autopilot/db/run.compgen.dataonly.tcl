@@ -38,17 +38,61 @@ copyInputAOV {
 	offset 52
 	offset_end 59
 }
-n_regions_in { 
+accel_mode { 
 	dir I
 	width 8
-	depth 64
-	mode ap_memory
-	offset 64
-	offset_end 127
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
+	depth 1
+	mode ap_none
+	offset 60
+	offset_end 67
+}
+trainedRegion_i { 
+	dir I
+	width 768
+	depth 1
+	mode ap_none
+	offset 68
+	offset_end 167
+}
+trainedRegion_o { 
+	dir O
+	width 768
+	depth 1
+	mode ap_none
+	offset 168
+	offset_end 267
+}
+IOCheckIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 368
+	offset_end 375
+}
+IORegionIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 376
+	offset_end 383
+}
+n_regions_in_i { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 384
+	offset_end 391
+}
+n_regions_in_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 392
+	offset_end 399
 }
 outcomeInRam { 
 	dir O
@@ -65,20 +109,7 @@ outcomeInRam {
 ap_start { }
 ap_done { }
 ap_ready { }
-ap_continue { }
 ap_idle { }
-trainedRegions { 
-	dir I
-	width 32
-	depth 24576
-	mode ap_memory
-	offset 131072
-	offset_end 262143
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
-}
 interrupt {
 }
 }

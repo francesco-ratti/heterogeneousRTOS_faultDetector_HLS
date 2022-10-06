@@ -1,23 +1,11 @@
 # This script segment is generated automatically by AutoPilot
 
-set name run_mul_64ns_66ns_81_1_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
-}
-
-
-set name run_mul_64ns_66ns_129_1_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
-}
-
-
 # Memory (RAM/ROM)  definition:
-set ID 152
+set ID 140
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
-set PortList { 2 0 }
+set PortList { 2 2 }
 set DataWd 32
 set AddrRange 4096
 set AddrWd 12
@@ -92,7 +80,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 153
+set ID 141
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -221,17 +209,61 @@ copyInputAOV {
 	offset 52
 	offset_end 59
 }
-n_regions_in { 
+accel_mode { 
 	dir I
 	width 8
-	depth 64
-	mode ap_memory
-	offset 64
-	offset_end 127
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
+	depth 1
+	mode ap_none
+	offset 60
+	offset_end 67
+}
+trainedRegion_i { 
+	dir I
+	width 768
+	depth 1
+	mode ap_none
+	offset 68
+	offset_end 167
+}
+trainedRegion_o { 
+	dir O
+	width 768
+	depth 1
+	mode ap_none
+	offset 168
+	offset_end 267
+}
+IOCheckIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 368
+	offset_end 375
+}
+IORegionIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 376
+	offset_end 383
+}
+n_regions_in_i { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 384
+	offset_end 391
+}
+n_regions_in_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 392
+	offset_end 399
 }
 outcomeInRam { 
 	dir O
@@ -248,20 +280,7 @@ outcomeInRam {
 ap_start { }
 ap_done { }
 ap_ready { }
-ap_continue { }
 ap_idle { }
-trainedRegions { 
-	dir I
-	width 32
-	depth 24576
-	mode ap_memory
-	offset 131072
-	offset_end 262143
-	core_op ram_1p
-	core_impl auto
-	core_latency 1
-	byte_write 0
-}
 interrupt {
 }
 }
@@ -272,7 +291,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 154 \
+			id 142 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \

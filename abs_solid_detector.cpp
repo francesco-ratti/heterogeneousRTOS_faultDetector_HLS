@@ -640,14 +640,25 @@ static ap_uint<8> n_regions[MAX_CHECKS];
 //		runTestAfterInit(inputAOV, copyInputAOV, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
 //}
 
+#define MODE_INIT 1
+#define MODE_OUT 2
+#define MODE_RUN 3
+
 void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], controlStr* inputAOV, char* readyForData, char* copyInputAOV,
 		//	hls::stream< controlStr > &trainStream,
-		region_t trainedRegions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions_in[MAX_CHECKS]/*, hls::stream< ap_uint<8> > &toScheduler*/) {
+		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in /*, hls::stream< ap_uint<8> > &toScheduler*/) {
+#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS interface s_axilite port = copyInputAOV //bundle=A
 #pragma HLS interface s_axilite port = readyForData //bundle=A
+#pragma HLS interface s_axilite port = accel_mode //bundle=A
 #pragma HLS interface m_axi port = inputAOV //bundle=A
-#pragma HLS interface s_axilite port = trainedRegions //bundle=A
+#pragma HLS interface s_axilite port = trainedRegion_i //bundle=A
+#pragma HLS interface s_axilite port = trainedRegion_o //bundle=A
+#pragma HLS interface s_axilite port = IOCheckIdx //bundle=A
+#pragma HLS interface s_axilite port = IORegionIdx
+
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
+
 #pragma HLS interface s_axilite port = errorInTask //bundle=A
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
 	//#pragma HLS INTERFACE axis port=testStream
@@ -656,7 +667,9 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 
 #pragma HLS reset variable=errorInTask
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2  //should be MAX_REGIONS
-#pragma HLS reset variable=errorInTask
+
+//	#pragma HLS PIPELINE II=8
+
 	//#pragma HLS reset variable=data
 	//#pragma HLS reset variable=n_regions
 
@@ -682,36 +695,34 @@ void run(bool errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 
 
 	//
-	//	if (fsmstate==STATE_UNINITIALISED) {
+	if (accel_mode==MODE_INIT) {
 
-	//memcpy(regions, trainedRegions, sizeof(regions)); vitis tries to optimise it, causing resource violation!
+		//memcpy(regions, trainedRegions, sizeof(regions)); vitis tries to optimise it, causing resource violation!
 
-	//*readyForData=0;
-	for (int i=0; i<MAX_CHECKS; i++) {
-		//	#pragma HLS PIPELINE off
-		for (int j=0; j<MAX_REGIONS; j++) {
-#pragma HLS PIPELINE off
-			regions [i][j] = trainedRegions [i][j];
-		}
-	}
+//		//*readyForData=0;
+//		for (int i=0; i<MAX_CHECKS; i++) {
+//			//	#pragma HLS PIPELINE off
+//			for (int j=0; j<MAX_REGIONS; j++) {
+//#pragma HLS PIPELINE off
+//				*(((unsigned int*) regions)+trainedRegionOffset) = trainedRegion;
+//				*(((unsigned int*) n_regions)+n_regions_in_offset) = n_regions_in;
+		regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
+		n_regions[IOCheckIdx]=*n_regions_in;
+//			}
+//		}
+//
+//		for (int i=0; i<MAX_CHECKS; i++) {
+//#pragma HLS PIPELINE off
+//			n_regions [i] = n_regions_in [i];
+//		}
+		//	init(trainedRegions, n_regions_in, regions, n_regions);
 
-	for (int i=0; i<MAX_CHECKS; i++) {
-#pragma HLS PIPELINE off
-		n_regions [i] = n_regions_in [i];
-	}
-	//	init(trainedRegions, n_regions_in, regions, n_regions);
-
-	//
-	//		fsmstate=STATE_READY;
-	//	} else if (fsmstate==STATE_READY) {
-	//if (contr.command==COMMAND_TEST)
-
-
-	//	runT(inputAOV, copyInputAOV, outcomeInRam, toScheduler, errorInTask, regions, n_regions);
-
-	runTestAfterInit(inputAOV, readyForData, copyInputAOV, outcomeInRam, /*toScheduler,*/ errorInTask, regions, n_regions);
-
-	//else if (contr.command==COMMAND_TRAIN)
-	//	runTrainAfterInit(testStream, regions, n_regions);
-	//	}
+		//
+//		if (trainedRegionOffset==((sizeof(regions)/4)-1))
+//			fsmstate=STATE_READY;
+	} else if (accel_mode==MODE_OUT) {
+		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
+		*n_regions_in=n_regions[IOCheckIdx];
+	} else if (accel_mode==MODE_RUN)
+		runTestAfterInit(inputAOV, readyForData, copyInputAOV, outcomeInRam, /*toScheduler,*/ errorInTask, regions, n_regions);
 }

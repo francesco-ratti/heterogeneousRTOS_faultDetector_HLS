@@ -60,12 +60,70 @@ typedef struct {
     u32 word_6;
     u32 word_7;
     u32 word_8;
+    u32 word_9;
+    u32 word_10;
+    u32 word_11;
+    u32 word_12;
+    u32 word_13;
+    u32 word_14;
+    u32 word_15;
+    u32 word_16;
+    u32 word_17;
+    u32 word_18;
+    u32 word_19;
+    u32 word_20;
+    u32 word_21;
+    u32 word_22;
+    u32 word_23;
+} XRun_Trainedregion_i;
+
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+    u32 word_8;
+    u32 word_9;
+    u32 word_10;
+    u32 word_11;
+    u32 word_12;
+    u32 word_13;
+    u32 word_14;
+    u32 word_15;
+    u32 word_16;
+    u32 word_17;
+    u32 word_18;
+    u32 word_19;
+    u32 word_20;
+    u32 word_21;
+    u32 word_22;
+    u32 word_23;
+} XRun_Trainedregion_o;
+
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+    u32 word_8;
 } XRun_Outcomeinram;
 
 #define FAULTDETECTOR_MAX_CHECKS 64
 #define FAULTDETECTOR_MAX_TASKS 16
 #define FAULTDETECTOR_MAX_AOV_DIM 8
 #define FAULTDETECTOR_MAX_REGIONS 16
+
+#define FAULTDETECTOR_MODE_INIT 1
+#define FAULTDETECTOR_MODE_OUT 2
+#define FAULTDETECTOR_MODE_RUN 3
 
 typedef struct REGION_T{
 	float min[FAULTDETECTOR_MAX_AOV_DIM];
@@ -125,7 +183,6 @@ void XRun_Start(XRun *InstancePtr);
 u32 XRun_IsDone(XRun *InstancePtr);
 u32 XRun_IsIdle(XRun *InstancePtr);
 u32 XRun_IsReady(XRun *InstancePtr);
-void XRun_Continue(XRun *InstancePtr);
 void XRun_EnableAutoRestart(XRun *InstancePtr);
 void XRun_DisableAutoRestart(XRun *InstancePtr);
 
@@ -135,6 +192,18 @@ void XRun_Set_readyForData(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_readyForData(XRun *InstancePtr);
 void XRun_Set_copyInputAOV(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_copyInputAOV(XRun *InstancePtr);
+void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_accel_mode(XRun *InstancePtr);
+void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data);
+XRun_Trainedregion_i XRun_Get_trainedRegion_i(XRun *InstancePtr);
+XRun_Trainedregion_o XRun_Get_trainedRegion_o(XRun *InstancePtr);
+void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_IOCheckIdx(XRun *InstancePtr);
+void XRun_Set_IORegionIdx(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_IORegionIdx(XRun *InstancePtr);
+void XRun_Set_n_regions_in_i(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_n_regions_in_i(XRun *InstancePtr);
+u32 XRun_Get_n_regions_in_o(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_BaseAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_HighAddress(XRun *InstancePtr);
 u32 XRun_Get_errorInTask_TotalBytes(XRun *InstancePtr);
@@ -144,15 +213,6 @@ u32 XRun_Write_errorInTask_Words(XRun *InstancePtr, int offset, word_type *data,
 u32 XRun_Read_errorInTask_Words(XRun *InstancePtr, int offset, word_type *data, int length);
 u32 XRun_Write_errorInTask_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 u32 XRun_Read_errorInTask_Bytes(XRun *InstancePtr, int offset, char *data, int length);
-u32 XRun_Get_n_regions_in_BaseAddress(XRun *InstancePtr);
-u32 XRun_Get_n_regions_in_HighAddress(XRun *InstancePtr);
-u32 XRun_Get_n_regions_in_TotalBytes(XRun *InstancePtr);
-u32 XRun_Get_n_regions_in_BitWidth(XRun *InstancePtr);
-u32 XRun_Get_n_regions_in_Depth(XRun *InstancePtr);
-u32 XRun_Write_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length);
-u32 XRun_Read_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length);
-u32 XRun_Write_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length);
-u32 XRun_Read_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 u32 XRun_Get_outcomeInRam_BaseAddress(XRun *InstancePtr);
 u32 XRun_Get_outcomeInRam_HighAddress(XRun *InstancePtr);
 u32 XRun_Get_outcomeInRam_TotalBytes(XRun *InstancePtr);
@@ -162,15 +222,6 @@ u32 XRun_Write_outcomeInRam_Words(XRun *InstancePtr, int offset, word_type *data
 u32 XRun_Read_outcomeInRam_Words(XRun *InstancePtr, int offset, word_type *data, int length);
 u32 XRun_Write_outcomeInRam_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 u32 XRun_Read_outcomeInRam_Bytes(XRun *InstancePtr, int offset, char *data, int length);
-u32 XRun_Get_trainedRegions_BaseAddress(XRun *InstancePtr);
-u32 XRun_Get_trainedRegions_HighAddress(XRun *InstancePtr);
-u32 XRun_Get_trainedRegions_TotalBytes(XRun *InstancePtr);
-u32 XRun_Get_trainedRegions_BitWidth(XRun *InstancePtr);
-u32 XRun_Get_trainedRegions_Depth(XRun *InstancePtr);
-u32 XRun_Write_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length);
-u32 XRun_Read_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length);
-u32 XRun_Write_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length);
-u32 XRun_Read_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length);
 
 void XRun_InterruptGlobalEnable(XRun *InstancePtr);
 void XRun_InterruptGlobalDisable(XRun *InstancePtr);
@@ -180,14 +231,18 @@ void XRun_InterruptClear(XRun *InstancePtr, u32 Mask);
 u32 XRun_InterruptGetEnabled(XRun *InstancePtr);
 u32 XRun_InterruptGetStatus(XRun *InstancePtr);
 
-
+void FAULTDETECTOR_setTrainedRegion(XRun *InstancePtr, region_t* region);
+region_t FAULTDETECTOR_getTrainedRegion(XRun *InstancePtr);
 char FAULTDETECTOR_isReadyForNextControl(XRun *InstancePtr);
 void FAULTDETECTOR_processNextControl(XRun *InstancePtr);
 FAULTDETECTOR_OutcomeStr FAULTDETECTOR_getLastError(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeStr* dest);
-void FAULTDETECTOR_MoveRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS]);
-void FAULTDETECTOR_MoveNRegions(XRun *InstancePtr, u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
+/*void FAULTDETECTOR_MoveRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS]);
+void FAULTDETECTOR_MoveNRegions(XRun *InstancePtr, u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);*/
 char FAULTDETECTOR_isFault(XRun *InstancePtr, u8 taskId);
 void FAULTDETECTOR_resetFault(XRun *InstancePtr, u8 taskId);
+void FAULTDETECTOR_initHW(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
+void FAULTDETECTOR_dumpRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
+
 
 #ifdef __cplusplus
 }

@@ -60,16 +60,6 @@ u32 XRun_IsReady(XRun *InstancePtr) {
     return !(Data & 0x1);
 }
 
-void XRun_Continue(XRun *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_AP_CTRL) & 0x80;
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_AP_CTRL, Data | 0x10);
-}
-
 void XRun_EnableAutoRestart(XRun *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
@@ -134,6 +124,174 @@ u32 XRun_Get_copyInputAOV(XRun *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYINPUTAOV_DATA);
+    return Data;
+}
+
+void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_ACCEL_MODE_DATA, Data);
+}
+
+u32 XRun_Get_accel_mode(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_ACCEL_MODE_DATA);
+    return Data;
+}
+
+void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 0, Data.word_0);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 4, Data.word_1);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 8, Data.word_2);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 12, Data.word_3);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 16, Data.word_4);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 20, Data.word_5);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 24, Data.word_6);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 28, Data.word_7);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 32, Data.word_8);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 36, Data.word_9);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 40, Data.word_10);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 44, Data.word_11);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 48, Data.word_12);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 52, Data.word_13);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 56, Data.word_14);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 60, Data.word_15);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 64, Data.word_16);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 68, Data.word_17);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 72, Data.word_18);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 76, Data.word_19);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 80, Data.word_20);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 84, Data.word_21);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 88, Data.word_22);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 92, Data.word_23);
+}
+
+XRun_Trainedregion_i XRun_Get_trainedRegion_i(XRun *InstancePtr) {
+    XRun_Trainedregion_i Data;
+
+    Data.word_0 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 0);
+    Data.word_1 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 4);
+    Data.word_2 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 8);
+    Data.word_3 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 12);
+    Data.word_4 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 16);
+    Data.word_5 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 20);
+    Data.word_6 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 24);
+    Data.word_7 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 28);
+    Data.word_8 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 32);
+    Data.word_9 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 36);
+    Data.word_10 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 40);
+    Data.word_11 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 44);
+    Data.word_12 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 48);
+    Data.word_13 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 52);
+    Data.word_14 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 56);
+    Data.word_15 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 60);
+    Data.word_16 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 64);
+    Data.word_17 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 68);
+    Data.word_18 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 72);
+    Data.word_19 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 76);
+    Data.word_20 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 80);
+    Data.word_21 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 84);
+    Data.word_22 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 88);
+    Data.word_23 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA + 92);
+    return Data;
+}
+
+XRun_Trainedregion_o XRun_Get_trainedRegion_o(XRun *InstancePtr) {
+    XRun_Trainedregion_o Data;
+
+    Data.word_0 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 0);
+    Data.word_1 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 4);
+    Data.word_2 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 8);
+    Data.word_3 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 12);
+    Data.word_4 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 16);
+    Data.word_5 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 20);
+    Data.word_6 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 24);
+    Data.word_7 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 28);
+    Data.word_8 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 32);
+    Data.word_9 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 36);
+    Data.word_10 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 40);
+    Data.word_11 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 44);
+    Data.word_12 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 48);
+    Data.word_13 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 52);
+    Data.word_14 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 56);
+    Data.word_15 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 60);
+    Data.word_16 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 64);
+    Data.word_17 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 68);
+    Data.word_18 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 72);
+    Data.word_19 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 76);
+    Data.word_20 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 80);
+    Data.word_21 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 84);
+    Data.word_22 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 88);
+    Data.word_23 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 92);
+    return Data;
+}
+
+void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA, Data);
+}
+
+u32 XRun_Get_IOCheckIdx(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA);
+    return Data;
+}
+
+void XRun_Set_IORegionIdx(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOREGIONIDX_DATA, Data);
+}
+
+u32 XRun_Get_IORegionIdx(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOREGIONIDX_DATA);
+    return Data;
+}
+
+void XRun_Set_n_regions_in_i(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_N_REGIONS_IN_I_DATA, Data);
+}
+
+u32 XRun_Get_n_regions_in_i(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_N_REGIONS_IN_I_DATA);
+    return Data;
+}
+
+u32 XRun_Get_n_regions_in_o(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_N_REGIONS_IN_O_DATA);
     return Data;
 }
 
@@ -232,101 +390,6 @@ u32 XRun_Read_errorInTask_Bytes(XRun *InstancePtr, int offset, char *data, int l
     return length;
 }
 
-u32 XRun_Get_n_regions_in_BaseAddress(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE);
-}
-
-u32 XRun_Get_n_regions_in_HighAddress(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH);
-}
-
-u32 XRun_Get_n_regions_in_TotalBytes(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH - XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + 1);
-}
-
-u32 XRun_Get_n_regions_in_BitWidth(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return XRUN_CONTROL_WIDTH_N_REGIONS_IN;
-}
-
-u32 XRun_Get_n_regions_in_Depth(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return XRUN_CONTROL_DEPTH_N_REGIONS_IN;
-}
-
-u32 XRun_Write_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH - XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + (offset + i)*4) = *(data + i);
-    }
-    return length;
-}
-
-u32 XRun_Read_n_regions_in_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH - XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(data + i) = *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + (offset + i)*4);
-    }
-    return length;
-}
-
-u32 XRun_Write_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length) > (XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH - XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + offset + i) = *(data + i);
-    }
-    return length;
-}
-
-u32 XRun_Read_n_regions_in_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length) > (XRUN_CONTROL_ADDR_N_REGIONS_IN_HIGH - XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(data + i) = *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_N_REGIONS_IN_BASE + offset + i);
-    }
-    return length;
-}
-
 u32 XRun_Get_outcomeInRam_BaseAddress(XRun *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
@@ -418,101 +481,6 @@ u32 XRun_Read_outcomeInRam_Bytes(XRun *InstancePtr, int offset, char *data, int 
 
     for (i = 0; i < length; i++) {
         *(data + i) = *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE + offset + i);
-    }
-    return length;
-}
-
-u32 XRun_Get_trainedRegions_BaseAddress(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE);
-}
-
-u32 XRun_Get_trainedRegions_HighAddress(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH);
-}
-
-u32 XRun_Get_trainedRegions_TotalBytes(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return (XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH - XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + 1);
-}
-
-u32 XRun_Get_trainedRegions_BitWidth(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return XRUN_CONTROL_WIDTH_TRAINEDREGIONS;
-}
-
-u32 XRun_Get_trainedRegions_Depth(XRun *InstancePtr) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    return XRUN_CONTROL_DEPTH_TRAINEDREGIONS;
-}
-
-u32 XRun_Write_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH - XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + (offset + i)*4) = *(data + i);
-    }
-    return length;
-}
-
-u32 XRun_Read_trainedRegions_Words(XRun *InstancePtr, int offset, word_type *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length)*4 > (XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH - XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(data + i) = *(int *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + (offset + i)*4);
-    }
-    return length;
-}
-
-u32 XRun_Write_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length) > (XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH - XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + offset + i) = *(data + i);
-    }
-    return length;
-}
-
-u32 XRun_Read_trainedRegions_Bytes(XRun *InstancePtr, int offset, char *data, int length) {
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
-
-    int i;
-
-    if ((offset + length) > (XRUN_CONTROL_ADDR_TRAINEDREGIONS_HIGH - XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + 1))
-        return 0;
-
-    for (i = 0; i < length; i++) {
-        *(data + i) = *(char *)(InstancePtr->Control_BaseAddress + XRUN_CONTROL_ADDR_TRAINEDREGIONS_BASE + offset + i);
     }
     return length;
 }

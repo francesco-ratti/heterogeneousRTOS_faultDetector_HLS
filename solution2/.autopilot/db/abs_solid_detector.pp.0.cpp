@@ -30235,23 +30235,30 @@ void runTestAfterInit(controlStr* inputAOV, char* readyForData, char* copyInputA
 # 631 "detector_solid/abs_solid_detector.cpp"
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
-# 643 "detector_solid/abs_solid_detector.cpp"
+# 647 "detector_solid/abs_solid_detector.cpp"
 __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV, char* readyForData, char* copyInputAOV,
 
-  region_t trainedRegions[64][16], ap_uint<8> n_regions_in[64] ) {
-#line 16 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
+  char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in ) {
+#line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 645 "detector_solid/abs_solid_detector.cpp"
+# 649 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution2/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 645 "detector_solid/abs_solid_detector.cpp"
+# 649 "detector_solid/abs_solid_detector.cpp"
 
+#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS interface s_axilite port = copyInputAOV
 #pragma HLS interface s_axilite port = readyForData
+#pragma HLS interface s_axilite port = accel_mode
 #pragma HLS interface m_axi port = inputAOV
-#pragma HLS interface s_axilite port = trainedRegions
+#pragma HLS interface s_axilite port = trainedRegion_i
+#pragma HLS interface s_axilite port = trainedRegion_o
+#pragma HLS interface s_axilite port = IOCheckIdx
+#pragma HLS interface s_axilite port = IORegionIdx
+
 #pragma HLS interface s_axilite port = n_regions_in
+
 #pragma HLS interface s_axilite port = errorInTask
 #pragma HLS INTERFACE s_axilite port=outcomeInRam
 
@@ -30260,24 +30267,15 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
 
 #pragma HLS reset variable=errorInTask
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2
-#pragma HLS reset variable=errorInTask
-# 690 "detector_solid/abs_solid_detector.cpp"
- VITIS_LOOP_690_1: for (int i=0; i<64; i++) {
-
-  VITIS_LOOP_692_2: for (int j=0; j<16; j++) {
-#pragma HLS PIPELINE off
- regions [i][j] = trainedRegions [i][j];
-  }
- }
-
- VITIS_LOOP_698_3: for (int i=0; i<64; i++) {
-#pragma HLS PIPELINE off
- n_regions [i] = n_regions_in [i];
- }
-# 712 "detector_solid/abs_solid_detector.cpp"
- runTestAfterInit(inputAOV, readyForData, copyInputAOV, outcomeInRam, errorInTask, regions, n_regions);
-
-
-
-
+# 698 "detector_solid/abs_solid_detector.cpp"
+ if (accel_mode==1) {
+# 709 "detector_solid/abs_solid_detector.cpp"
+  regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
+  n_regions[IOCheckIdx]=*n_regions_in;
+# 723 "detector_solid/abs_solid_detector.cpp"
+ } else if (accel_mode==2) {
+  *trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
+  *n_regions_in=n_regions[IOCheckIdx];
+ } else if (accel_mode==3)
+  runTestAfterInit(inputAOV, readyForData, copyInputAOV, outcomeInRam, errorInTask, regions, n_regions);
 }
