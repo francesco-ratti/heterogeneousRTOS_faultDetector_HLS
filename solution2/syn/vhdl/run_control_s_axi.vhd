@@ -37,6 +37,7 @@ port (
     errorInTask_ce0       :in   STD_LOGIC;
     errorInTask_we0       :in   STD_LOGIC;
     errorInTask_d0        :in   STD_LOGIC_VECTOR(7 downto 0);
+    errorInTask_q0        :out  STD_LOGIC_VECTOR(7 downto 0);
     inputAOV              :out  STD_LOGIC_VECTOR(63 downto 0);
     accel_mode            :out  STD_LOGIC_VECTOR(7 downto 0);
     trainedRegion_i       :out  STD_LOGIC_VECTOR(767 downto 0);
@@ -342,8 +343,12 @@ architecture behave of run_control_s_axi is
     signal int_errorInTask_ce0 : STD_LOGIC;
     signal int_errorInTask_be0 : UNSIGNED(3 downto 0);
     signal int_errorInTask_d0  : UNSIGNED(31 downto 0);
+    signal int_errorInTask_q0  : UNSIGNED(31 downto 0);
     signal int_errorInTask_address1 : UNSIGNED(1 downto 0);
     signal int_errorInTask_ce1 : STD_LOGIC;
+    signal int_errorInTask_we1 : STD_LOGIC;
+    signal int_errorInTask_be1 : UNSIGNED(3 downto 0);
+    signal int_errorInTask_d1  : UNSIGNED(31 downto 0);
     signal int_errorInTask_q1  : UNSIGNED(31 downto 0);
     signal int_errorInTask_read : STD_LOGIC;
     signal int_errorInTask_write : STD_LOGIC;
@@ -399,7 +404,7 @@ begin
 int_errorInTask : run_control_s_axi_ram
 generic map (
      MEM_STYLE => "auto",
-     MEM_TYPE  => "S2P",
+     MEM_TYPE  => "T2P",
      BYTES     => 4,
      DEPTH     => 4,
      AWIDTH    => log2(4))
@@ -409,12 +414,12 @@ port map (
      ce0       => int_errorInTask_ce0,
      we0       => int_errorInTask_be0,
      d0        => int_errorInTask_d0,
-     q0        => open,
+     q0        => int_errorInTask_q0,
      clk1      => ACLK,
      address1  => int_errorInTask_address1,
      ce1       => int_errorInTask_ce1,
-     we1       => (others=>'0'),
-     d1        => (others=>'0'),
+     we1       => int_errorInTask_be1,
+     d1        => int_errorInTask_d1,
      q1        => int_errorInTask_q1);
 -- int_outcomeInRam
 int_outcomeInRam : run_control_s_axi_ram
@@ -1229,8 +1234,12 @@ port map (
     int_errorInTask_ce0  <= errorInTask_ce0;
     int_errorInTask_be0  <= SHIFT_LEFT(TO_UNSIGNED(1, 4), TO_INTEGER(UNSIGNED(errorInTask_address0(1 downto 0)))) when errorInTask_we0 = '1' else (others=>'0');
     int_errorInTask_d0   <= UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0);
+    errorInTask_q0       <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_errorInTask_q0, TO_INTEGER(int_errorInTask_shift0) * 8)(7 downto 0));
     int_errorInTask_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
     int_errorInTask_ce1  <= '1' when ar_hs = '1' or (int_errorInTask_write = '1' and WVALID  = '1') else '0';
+    int_errorInTask_we1  <= '1' when int_errorInTask_write = '1' and w_hs = '1' else '0';
+    int_errorInTask_be1  <= UNSIGNED(WSTRB) when int_errorInTask_we1 = '1' else (others=>'0');
+    int_errorInTask_d1   <= UNSIGNED(WDATA);
     -- outcomeInRam
     int_outcomeInRam_address0 <= UNSIGNED(outcomeInRam_address0);
     int_outcomeInRam_ce0 <= outcomeInRam_ce0;
@@ -1249,6 +1258,21 @@ port map (
                     int_errorInTask_read <= '1';
                 else
                     int_errorInTask_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_errorInTask_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_ERRORINTASK_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_ERRORINTASK_HIGH) then
+                    int_errorInTask_write <= '1';
+                elsif (w_hs = '1') then
+                    int_errorInTask_write <= '0';
                 end if;
             end if;
         end if;

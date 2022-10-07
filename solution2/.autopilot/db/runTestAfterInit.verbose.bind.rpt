@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTestAfterInit'
 ================================================================
-* Date:           Fri Oct  7 15:00:49 2022
+* Date:           Fri Oct  7 18:54:23 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -29,19 +29,17 @@
     |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline |
     |   min   |   max   |    min   |    max    | min | max |   Type   |
     +---------+---------+----------+-----------+-----+-----+----------+
-    |       90|      656|  1.620 us|  11.808 us|   73|  584|  dataflow|
+    |       72|      676|  1.296 us|  12.168 us|   73|  677|  dataflow|
     +---------+---------+----------+-----------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
-        +------------------------------------------------+-------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
-        |                                                |                                     |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
-        |                    Instance                    |                Module               |   min   |   max   |    min   |    max    | min | max |   Type  |
-        +------------------------------------------------+-------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
-        |grp_runTestAfterInit_Block_entry10_proc_fu_122  |runTestAfterInit_Block_entry10_proc  |       72|       72|  1.296 us|   1.296 us|   72|   72|       no|
-        |grp_run_test_fu_132                             |run_test                             |        7|      583|  0.126 us|  10.494 us|    7|  583|       no|
-        |grp_writeOutcome_fu_162                         |writeOutcome                         |       17|       17|  0.306 us|   0.306 us|   17|   17|       no|
-        +------------------------------------------------+-------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
+        |                                                |                                      |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+        |                    Instance                    |                Module                |   min   |   max   |    min   |    max    | min | max |   Type  |
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
+        |grp_runTestAfterInit_Block_entry12_proc4_fu_62  |runTestAfterInit_Block_entry12_proc4  |       72|      676|  1.296 us|  12.168 us|   72|  676|       no|
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+-----------+-----+-----+---------+
 
         * Loop: 
         N/A
@@ -72,84 +70,31 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 6
+* Number of FSM states : 2
 * Pipeline : 0
 * Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 6, States = { 1 2 3 4 5 6 }
+  DF-Pipeline-0: Size = 2, States = { 1 2 }
 
 * FSM state transitions: 
 1 --> 2 
-2 --> 3 
-3 --> 4 
-4 --> 5 
-5 --> 6 
-6 --> 
+2 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 13.1>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV"   --->   Operation 7 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%contr_AOV_7_c = alloca i64 1"   --->   Operation 8 'alloca' 'contr_AOV_7_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%contr_AOV_6_c = alloca i64 1"   --->   Operation 9 'alloca' 'contr_AOV_6_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%contr_AOV_5_c = alloca i64 1"   --->   Operation 10 'alloca' 'contr_AOV_5_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%contr_AOV_4_c = alloca i64 1"   --->   Operation 11 'alloca' 'contr_AOV_4_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%contr_AOV_3_c = alloca i64 1"   --->   Operation 12 'alloca' 'contr_AOV_3_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%contr_AOV_2_c = alloca i64 1"   --->   Operation 13 'alloca' 'contr_AOV_2_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%contr_AOV_1_c = alloca i64 1"   --->   Operation 14 'alloca' 'contr_AOV_1_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%contr_AOV_c = alloca i64 1"   --->   Operation 15 'alloca' 'contr_AOV_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 16 [2/2] (13.1ns)   --->   "%call_ret = call i298 @runTestAfterInit_Block_entry10_proc, i64 %inputAOV_read, i512 %gmem, i8 %n_regions_V"   --->   Operation 16 'call' 'call_ret' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV"   --->   Operation 3 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [2/2] (13.1ns)   --->   "%call_ln0 = call void @runTestAfterInit_Block_entry12_proc4, i64 %inputAOV_read, i512 %gmem, i8 %errorInTask, i288 %outcomeInRam, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3"   --->   Operation 4 'call' 'call_ln0' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 2 <SV = 1> <Delay = 2.32>
-ST_2 : Operation 17 [1/2] (2.32ns)   --->   "%call_ret = call i298 @runTestAfterInit_Block_entry10_proc, i64 %inputAOV_read, i512 %gmem, i8 %n_regions_V"   --->   Operation 17 'call' 'call_ret' <Predicate = true> <Delay = 2.32> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%agg_tmp8_0_cast_loc_channel = extractvalue i298 %call_ret"   --->   Operation 18 'extractvalue' 'agg_tmp8_0_cast_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 6> <Depth = 2> <FIFO>
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%agg_tmp8_0_loc_channel = extractvalue i298 %call_ret"   --->   Operation 19 'extractvalue' 'agg_tmp8_0_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_21_cast_loc_channel = extractvalue i298 %call_ret"   --->   Operation 20 'extractvalue' 'tmp_21_cast_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 4> <Depth = 2> <FIFO>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%agg_tmp12_loc_channel = extractvalue i298 %call_ret"   --->   Operation 21 'extractvalue' 'agg_tmp12_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%n_regions_V_load_loc_channel = extractvalue i298 %call_ret"   --->   Operation 22 'extractvalue' 'n_regions_V_load_loc_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%contr_AOV_c17_channel = extractvalue i298 %call_ret"   --->   Operation 23 'extractvalue' 'contr_AOV_c17_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%contr_AOV_1_c18_channel = extractvalue i298 %call_ret"   --->   Operation 24 'extractvalue' 'contr_AOV_1_c18_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%contr_AOV_2_c19_channel = extractvalue i298 %call_ret"   --->   Operation 25 'extractvalue' 'contr_AOV_2_c19_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%contr_AOV_3_c20_channel = extractvalue i298 %call_ret"   --->   Operation 26 'extractvalue' 'contr_AOV_3_c20_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%contr_AOV_4_c21_channel = extractvalue i298 %call_ret"   --->   Operation 27 'extractvalue' 'contr_AOV_4_c21_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%contr_AOV_5_c22_channel = extractvalue i298 %call_ret"   --->   Operation 28 'extractvalue' 'contr_AOV_5_c22_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%contr_AOV_6_c23_channel = extractvalue i298 %call_ret"   --->   Operation 29 'extractvalue' 'contr_AOV_6_c23_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%contr_AOV_7_c24_channel = extractvalue i298 %call_ret"   --->   Operation 30 'extractvalue' 'contr_AOV_7_c24_channel' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-
-State 3 <SV = 2> <Delay = 11.3>
-ST_3 : Operation 31 [2/2] (11.3ns)   --->   "%error = call i1 @run_test, i32 %regions, i6 %agg_tmp8_0_cast_loc_channel, i32 %regions_1, i32 %regions_2, i32 %regions_3, i8 %n_regions_V_load_loc_channel, i32 %contr_AOV_c17_channel, i32 %contr_AOV_1_c18_channel, i32 %contr_AOV_2_c19_channel, i32 %contr_AOV_3_c20_channel, i32 %contr_AOV_4_c21_channel, i32 %contr_AOV_5_c22_channel, i32 %contr_AOV_6_c23_channel, i32 %contr_AOV_7_c24_channel, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:576]   --->   Operation 31 'call' 'error' <Predicate = true> <Delay = 11.3> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
-
-State 4 <SV = 3> <Delay = 11.7>
-ST_4 : Operation 32 [1/2] (11.7ns)   --->   "%error = call i1 @run_test, i32 %regions, i6 %agg_tmp8_0_cast_loc_channel, i32 %regions_1, i32 %regions_2, i32 %regions_3, i8 %n_regions_V_load_loc_channel, i32 %contr_AOV_c17_channel, i32 %contr_AOV_1_c18_channel, i32 %contr_AOV_2_c19_channel, i32 %contr_AOV_3_c20_channel, i32 %contr_AOV_4_c21_channel, i32 %contr_AOV_5_c22_channel, i32 %contr_AOV_6_c23_channel, i32 %contr_AOV_7_c24_channel, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:576]   --->   Operation 32 'call' 'error' <Predicate = true> <Delay = 11.7> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
-
-State 5 <SV = 4> <Delay = 6.88>
-ST_5 : Operation 33 [2/2] (6.88ns)   --->   "%call_ln577 = call void @writeOutcome, i8 %errorInTask, i4 %tmp_21_cast_loc_channel, i8 %agg_tmp8_0_loc_channel, i16 %agg_tmp12_loc_channel, i1 %error, i288 %outcomeInRam, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 33 'call' 'call_ln577' <Predicate = true> <Delay = 6.88> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-
-State 6 <SV = 5> <Delay = 0.00>
-ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_7_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_7_c, i32 %contr_AOV_7_c"   --->   Operation 34 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_7_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%empty_51 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_6_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_6_c, i32 %contr_AOV_6_c"   --->   Operation 36 'specchannel' 'empty_51' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_6_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%empty_52 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_5_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_5_c, i32 %contr_AOV_5_c"   --->   Operation 38 'specchannel' 'empty_52' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_5_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%empty_53 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_4_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_4_c, i32 %contr_AOV_4_c"   --->   Operation 40 'specchannel' 'empty_53' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_4_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%empty_54 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_3_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_3_c, i32 %contr_AOV_3_c"   --->   Operation 42 'specchannel' 'empty_54' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_3_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%empty_55 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_2_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_2_c, i32 %contr_AOV_2_c"   --->   Operation 44 'specchannel' 'empty_55' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_2_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_OC_1_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_1_c, i32 %contr_AOV_1_c"   --->   Operation 46 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_1_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%empty_57 = specchannel i32 @_ssdm_op_SpecChannel, void @contr_OC_AOV_c_str, i32 1, void @p_str, void @p_str, i32 2, i32 0, i32 %contr_AOV_c, i32 %contr_AOV_c"   --->   Operation 48 'specchannel' 'empty_57' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_20"   --->   Operation 50 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 51 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 52 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_5, i32 0, i32 0, void @empty_20, i32 1, i32 0, void @empty_20, void @empty_20, void @empty_20, i32 0, i32 0, i32 0, i32 0, void @empty_20, void @empty_20, i32 4294967295, i32 0"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %errorInTask, void @empty_5, i32 0, i32 0, void @empty_20, i32 1, i32 0, void @empty_20, void @empty_20, void @empty_20, i32 0, i32 0, i32 0, i32 0, void @empty_20, void @empty_20, i32 4294967295, i32 0"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_12, i32 0, i32 0, void @empty_20, i32 64, i32 0, void @empty_0, void @empty_8, void @empty_20, i32 16, i32 16, i32 16, i32 16, void @empty_20, void @empty_20, i32 4294967295, i32 0"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 56 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 57 [1/2] (0.00ns)   --->   "%call_ln577 = call void @writeOutcome, i8 %errorInTask, i4 %tmp_21_cast_loc_channel, i8 %agg_tmp8_0_loc_channel, i16 %agg_tmp12_loc_channel, i1 %error, i288 %outcomeInRam, i32 %contr_AOV_c, i32 %contr_AOV_1_c, i32 %contr_AOV_2_c, i32 %contr_AOV_3_c, i32 %contr_AOV_4_c, i32 %contr_AOV_5_c, i32 %contr_AOV_6_c, i32 %contr_AOV_7_c" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 57 'call' 'call_ln577' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%ret_ln584 = ret" [detector_solid/abs_solid_detector.cpp:584]   --->   Operation 58 'ret' 'ret_ln584' <Predicate = true> <Delay = 0.00>
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_0"   --->   Operation 5 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 6 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 7 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_16, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %errorInTask, void @empty_16, i32 0, i32 0, void @empty_0, i32 1, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_12, i32 0, i32 0, void @empty_0, i32 64, i32 0, void @empty_11, void @empty_10, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i288 %outcomeInRam"   --->   Operation 11 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln0 = call void @runTestAfterInit_Block_entry12_proc4, i64 %inputAOV_read, i512 %gmem, i8 %errorInTask, i288 %outcomeInRam, i8 %n_regions_V, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%ret_ln586 = ret" [detector_solid/abs_solid_detector.cpp:586]   --->   Operation 13 'ret' 'ret_ln586' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -166,7 +111,7 @@ Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
 Port [ inputAOV]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ outcomeInRam]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[0]; IO mode=ap_memory:ce=0
-Port [ errorInTask]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[0]; IO mode=ap_memory:ce=0
+Port [ errorInTask]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[2]; IO mode=ap_memory:ce=0
 Port [ n_regions_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 Port [ regions]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 Port [ regions_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
@@ -178,55 +123,16 @@ Port [ regions_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; 
 
 <LifeTime>
 <method=bitvector/>
-inputAOV_read                (read                  ) [ 0010000]
-contr_AOV_7_c                (alloca                ) [ 0011111]
-contr_AOV_6_c                (alloca                ) [ 0011111]
-contr_AOV_5_c                (alloca                ) [ 0011111]
-contr_AOV_4_c                (alloca                ) [ 0011111]
-contr_AOV_3_c                (alloca                ) [ 0011111]
-contr_AOV_2_c                (alloca                ) [ 0011111]
-contr_AOV_1_c                (alloca                ) [ 0011111]
-contr_AOV_c                  (alloca                ) [ 0011111]
-call_ret                     (call                  ) [ 0000000]
-agg_tmp8_0_cast_loc_channel  (extractvalue          ) [ 0001100]
-agg_tmp8_0_loc_channel       (extractvalue          ) [ 0001111]
-tmp_21_cast_loc_channel      (extractvalue          ) [ 0001111]
-agg_tmp12_loc_channel        (extractvalue          ) [ 0001111]
-n_regions_V_load_loc_channel (extractvalue          ) [ 0001100]
-contr_AOV_c17_channel        (extractvalue          ) [ 0001100]
-contr_AOV_1_c18_channel      (extractvalue          ) [ 0001100]
-contr_AOV_2_c19_channel      (extractvalue          ) [ 0001100]
-contr_AOV_3_c20_channel      (extractvalue          ) [ 0001100]
-contr_AOV_4_c21_channel      (extractvalue          ) [ 0001100]
-contr_AOV_5_c22_channel      (extractvalue          ) [ 0001100]
-contr_AOV_6_c23_channel      (extractvalue          ) [ 0001100]
-contr_AOV_7_c24_channel      (extractvalue          ) [ 0001100]
-error                        (call                  ) [ 0000011]
-empty                        (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_51                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_52                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_53                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_54                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_55                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_56                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-empty_57                     (specchannel           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-specdataflowpipeline_ln0     (specdataflowpipeline  ) [ 0000000]
-specmemcore_ln0              (specmemcore           ) [ 0000000]
-specmemcore_ln0              (specmemcore           ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-specinterface_ln0            (specinterface         ) [ 0000000]
-specbramwithbyteenable_ln0   (specbramwithbyteenable) [ 0000000]
-call_ln577                   (call                  ) [ 0000000]
-ret_ln584                    (ret                   ) [ 0000000]
+inputAOV_read              (read                  ) [ 001]
+specdataflowpipeline_ln0   (specdataflowpipeline  ) [ 000]
+specmemcore_ln0            (specmemcore           ) [ 000]
+specmemcore_ln0            (specmemcore           ) [ 000]
+specinterface_ln0          (specinterface         ) [ 000]
+specinterface_ln0          (specinterface         ) [ 000]
+specinterface_ln0          (specinterface         ) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+call_ln0                   (call                  ) [ 000]
+ret_ln586                  (ret                   ) [ 000]
 </LifeTime>
 
 <model>
@@ -265,7 +171,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="errorInTask"/><MemPortTyVec>0 </MemPortTyVec>
+<StgValue><ssdm name="errorInTask"/><MemPortTyVec>2 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -334,34 +240,34 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="21" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="runTestAfterInit_Block_entry12_proc4"/></StgValue>
 </bind>
 </comp>
 
 <comp id="22" class="1001" name="const_22">
 <pin_list>
-<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="runTestAfterInit_Block_entry10_proc"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
 </bind>
 </comp>
 
 <comp id="24" class="1001" name="const_24">
 <pin_list>
-<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="run_test"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="26" class="1001" name="const_26">
 <pin_list>
-<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="writeOutcome"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -370,7 +276,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+<StgValue><ssdm name="empty_0"/></StgValue>
 </bind>
 </comp>
 
@@ -379,7 +285,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_7_c_str"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
 </bind>
 </comp>
 
@@ -397,7 +303,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -415,7 +321,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
 </bind>
 </comp>
 
@@ -424,7 +330,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+<StgValue><ssdm name="empty_16"/></StgValue>
 </bind>
 </comp>
 
@@ -433,7 +339,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -442,7 +348,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="empty_12"/></StgValue>
 </bind>
 </comp>
 
@@ -460,7 +366,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_6_c_str"/></StgValue>
+<StgValue><ssdm name="empty_11"/></StgValue>
 </bind>
 </comp>
 
@@ -469,7 +375,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_5_c_str"/></StgValue>
+<StgValue><ssdm name="empty_10"/></StgValue>
 </bind>
 </comp>
 
@@ -478,7 +384,7 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_4_c_str"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -487,229 +393,15 @@ ret_ln584                    (ret                   ) [ 0000000]
 <pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_3_c_str"/></StgValue>
-</bind>
-</comp>
-
-<comp id="56" class="1001" name="const_56">
-<pin_list>
-<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_2_c_str"/></StgValue>
-</bind>
-</comp>
-
-<comp id="58" class="1001" name="const_58">
-<pin_list>
-<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="contr_OC_AOV_OC_1_c_str"/></StgValue>
-</bind>
-</comp>
-
-<comp id="60" class="1001" name="const_60">
-<pin_list>
-<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="contr_OC_AOV_c_str"/></StgValue>
-</bind>
-</comp>
-
-<comp id="62" class="1001" name="const_62">
-<pin_list>
-<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
-</bind>
-</comp>
-
-<comp id="64" class="1001" name="const_64">
-<pin_list>
-<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="empty_20"/></StgValue>
-</bind>
-</comp>
-
-<comp id="66" class="1001" name="const_66">
-<pin_list>
-<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
-</bind>
-</comp>
-
-<comp id="68" class="1001" name="const_68">
-<pin_list>
-<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name=""/></StgValue>
-</bind>
-</comp>
-
-<comp id="70" class="1001" name="const_70">
-<pin_list>
-<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name=""/></StgValue>
-</bind>
-</comp>
-
-<comp id="72" class="1001" name="const_72">
-<pin_list>
-<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="empty_5"/></StgValue>
-</bind>
-</comp>
-
-<comp id="74" class="1001" name="const_74">
-<pin_list>
-<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="empty_12"/></StgValue>
-</bind>
-</comp>
-
-<comp id="76" class="1001" name="const_76">
-<pin_list>
-<pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name=""/></StgValue>
-</bind>
-</comp>
-
-<comp id="78" class="1001" name="const_78">
-<pin_list>
-<pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="empty_0"/></StgValue>
-</bind>
-</comp>
-
-<comp id="80" class="1001" name="const_80">
-<pin_list>
-<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="empty_8"/></StgValue>
-</bind>
-</comp>
-
-<comp id="82" class="1001" name="const_82">
-<pin_list>
-<pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
 <StgValue><ssdm name="_ssdm_op_SpecBRAMWithByteEnable"/></StgValue>
 </bind>
 </comp>
 
-<comp id="84" class="1004" name="contr_AOV_7_c_fu_84">
+<comp id="56" class="1004" name="inputAOV_read_read_fu_56">
 <pin_list>
-<pin id="85" dir="0" index="0" bw="1" slack="0"/>
-<pin id="86" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_7_c/1 "/>
-</bind>
-</comp>
-
-<comp id="88" class="1004" name="contr_AOV_6_c_fu_88">
-<pin_list>
-<pin id="89" dir="0" index="0" bw="1" slack="0"/>
-<pin id="90" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_6_c/1 "/>
-</bind>
-</comp>
-
-<comp id="92" class="1004" name="contr_AOV_5_c_fu_92">
-<pin_list>
-<pin id="93" dir="0" index="0" bw="1" slack="0"/>
-<pin id="94" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_5_c/1 "/>
-</bind>
-</comp>
-
-<comp id="96" class="1004" name="contr_AOV_4_c_fu_96">
-<pin_list>
-<pin id="97" dir="0" index="0" bw="1" slack="0"/>
-<pin id="98" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_4_c/1 "/>
-</bind>
-</comp>
-
-<comp id="100" class="1004" name="contr_AOV_3_c_fu_100">
-<pin_list>
-<pin id="101" dir="0" index="0" bw="1" slack="0"/>
-<pin id="102" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_3_c/1 "/>
-</bind>
-</comp>
-
-<comp id="104" class="1004" name="contr_AOV_2_c_fu_104">
-<pin_list>
-<pin id="105" dir="0" index="0" bw="1" slack="0"/>
-<pin id="106" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_2_c/1 "/>
-</bind>
-</comp>
-
-<comp id="108" class="1004" name="contr_AOV_1_c_fu_108">
-<pin_list>
-<pin id="109" dir="0" index="0" bw="1" slack="0"/>
-<pin id="110" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_1_c/1 "/>
-</bind>
-</comp>
-
-<comp id="112" class="1004" name="contr_AOV_c_fu_112">
-<pin_list>
-<pin id="113" dir="0" index="0" bw="1" slack="0"/>
-<pin id="114" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opcode="alloca(26) " fcode="alloca"/>
-<opset="contr_AOV_c/1 "/>
-</bind>
-</comp>
-
-<comp id="116" class="1004" name="inputAOV_read_read_fu_116">
-<pin_list>
-<pin id="117" dir="0" index="0" bw="64" slack="0"/>
-<pin id="118" dir="0" index="1" bw="64" slack="0"/>
-<pin id="119" dir="1" index="2" bw="64" slack="0"/>
+<pin id="57" dir="0" index="0" bw="64" slack="0"/>
+<pin id="58" dir="0" index="1" bw="64" slack="0"/>
+<pin id="59" dir="1" index="2" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -717,631 +409,66 @@ ret_ln584                    (ret                   ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="122" class="1004" name="grp_runTestAfterInit_Block_entry10_proc_fu_122">
+<comp id="62" class="1004" name="grp_runTestAfterInit_Block_entry12_proc4_fu_62">
 <pin_list>
-<pin id="123" dir="0" index="0" bw="298" slack="0"/>
-<pin id="124" dir="0" index="1" bw="64" slack="0"/>
-<pin id="125" dir="0" index="2" bw="512" slack="0"/>
-<pin id="126" dir="0" index="3" bw="8" slack="0"/>
-<pin id="127" dir="1" index="4" bw="298" slack="0"/>
+<pin id="63" dir="0" index="0" bw="0" slack="0"/>
+<pin id="64" dir="0" index="1" bw="64" slack="0"/>
+<pin id="65" dir="0" index="2" bw="512" slack="0"/>
+<pin id="66" dir="0" index="3" bw="8" slack="0"/>
+<pin id="67" dir="0" index="4" bw="288" slack="0"/>
+<pin id="68" dir="0" index="5" bw="8" slack="0"/>
+<pin id="69" dir="0" index="6" bw="32" slack="0"/>
+<pin id="70" dir="0" index="7" bw="32" slack="0"/>
+<pin id="71" dir="0" index="8" bw="32" slack="0"/>
+<pin id="72" dir="0" index="9" bw="32" slack="0"/>
+<pin id="73" dir="1" index="10" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ret/1 "/>
+<opset="call_ln0/1 "/>
 </bind>
 </comp>
 
-<comp id="132" class="1004" name="grp_run_test_fu_132">
+<comp id="84" class="1005" name="inputAOV_read_reg_84">
 <pin_list>
-<pin id="133" dir="0" index="0" bw="1" slack="0"/>
-<pin id="134" dir="0" index="1" bw="32" slack="0"/>
-<pin id="135" dir="0" index="2" bw="6" slack="1"/>
-<pin id="136" dir="0" index="3" bw="32" slack="0"/>
-<pin id="137" dir="0" index="4" bw="32" slack="0"/>
-<pin id="138" dir="0" index="5" bw="32" slack="0"/>
-<pin id="139" dir="0" index="6" bw="8" slack="1"/>
-<pin id="140" dir="0" index="7" bw="32" slack="1"/>
-<pin id="141" dir="0" index="8" bw="32" slack="1"/>
-<pin id="142" dir="0" index="9" bw="32" slack="1"/>
-<pin id="143" dir="0" index="10" bw="32" slack="1"/>
-<pin id="144" dir="0" index="11" bw="32" slack="1"/>
-<pin id="145" dir="0" index="12" bw="32" slack="1"/>
-<pin id="146" dir="0" index="13" bw="32" slack="1"/>
-<pin id="147" dir="0" index="14" bw="32" slack="1"/>
-<pin id="148" dir="0" index="15" bw="32" slack="2"/>
-<pin id="149" dir="0" index="16" bw="32" slack="2"/>
-<pin id="150" dir="0" index="17" bw="32" slack="2"/>
-<pin id="151" dir="0" index="18" bw="32" slack="2"/>
-<pin id="152" dir="0" index="19" bw="32" slack="2"/>
-<pin id="153" dir="0" index="20" bw="32" slack="2"/>
-<pin id="154" dir="0" index="21" bw="32" slack="2"/>
-<pin id="155" dir="0" index="22" bw="32" slack="2"/>
-<pin id="156" dir="1" index="23" bw="1" slack="1"/>
-</pin_list>
-<bind>
-<opcode="call(48) " fcode="call"/>
-<opset="error/3 "/>
-</bind>
-</comp>
-
-<comp id="162" class="1004" name="grp_writeOutcome_fu_162">
-<pin_list>
-<pin id="163" dir="0" index="0" bw="0" slack="0"/>
-<pin id="164" dir="0" index="1" bw="8" slack="0"/>
-<pin id="165" dir="0" index="2" bw="4" slack="3"/>
-<pin id="166" dir="0" index="3" bw="8" slack="3"/>
-<pin id="167" dir="0" index="4" bw="16" slack="3"/>
-<pin id="168" dir="0" index="5" bw="1" slack="1"/>
-<pin id="169" dir="0" index="6" bw="288" slack="0"/>
-<pin id="170" dir="0" index="7" bw="32" slack="4"/>
-<pin id="171" dir="0" index="8" bw="32" slack="4"/>
-<pin id="172" dir="0" index="9" bw="32" slack="4"/>
-<pin id="173" dir="0" index="10" bw="32" slack="4"/>
-<pin id="174" dir="0" index="11" bw="32" slack="4"/>
-<pin id="175" dir="0" index="12" bw="32" slack="4"/>
-<pin id="176" dir="0" index="13" bw="32" slack="4"/>
-<pin id="177" dir="0" index="14" bw="32" slack="4"/>
-<pin id="178" dir="1" index="15" bw="0" slack="2147483647"/>
-</pin_list>
-<bind>
-<opcode="call(48) " fcode="call"/>
-<opset="call_ln577/5 "/>
-</bind>
-</comp>
-
-<comp id="182" class="1004" name="agg_tmp8_0_cast_loc_channel_fu_182">
-<pin_list>
-<pin id="183" dir="0" index="0" bw="298" slack="0"/>
-<pin id="184" dir="1" index="1" bw="6" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="agg_tmp8_0_cast_loc_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="186" class="1004" name="agg_tmp8_0_loc_channel_fu_186">
-<pin_list>
-<pin id="187" dir="0" index="0" bw="298" slack="0"/>
-<pin id="188" dir="1" index="1" bw="8" slack="3"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="agg_tmp8_0_loc_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="190" class="1004" name="tmp_21_cast_loc_channel_fu_190">
-<pin_list>
-<pin id="191" dir="0" index="0" bw="298" slack="0"/>
-<pin id="192" dir="1" index="1" bw="4" slack="3"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="tmp_21_cast_loc_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="194" class="1004" name="agg_tmp12_loc_channel_fu_194">
-<pin_list>
-<pin id="195" dir="0" index="0" bw="298" slack="0"/>
-<pin id="196" dir="1" index="1" bw="16" slack="3"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="agg_tmp12_loc_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="198" class="1004" name="n_regions_V_load_loc_channel_fu_198">
-<pin_list>
-<pin id="199" dir="0" index="0" bw="298" slack="0"/>
-<pin id="200" dir="1" index="1" bw="8" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="n_regions_V_load_loc_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="202" class="1004" name="contr_AOV_c17_channel_fu_202">
-<pin_list>
-<pin id="203" dir="0" index="0" bw="298" slack="0"/>
-<pin id="204" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_c17_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="206" class="1004" name="contr_AOV_1_c18_channel_fu_206">
-<pin_list>
-<pin id="207" dir="0" index="0" bw="298" slack="0"/>
-<pin id="208" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_1_c18_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="210" class="1004" name="contr_AOV_2_c19_channel_fu_210">
-<pin_list>
-<pin id="211" dir="0" index="0" bw="298" slack="0"/>
-<pin id="212" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_2_c19_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="214" class="1004" name="contr_AOV_3_c20_channel_fu_214">
-<pin_list>
-<pin id="215" dir="0" index="0" bw="298" slack="0"/>
-<pin id="216" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_3_c20_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="218" class="1004" name="contr_AOV_4_c21_channel_fu_218">
-<pin_list>
-<pin id="219" dir="0" index="0" bw="298" slack="0"/>
-<pin id="220" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_4_c21_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="222" class="1004" name="contr_AOV_5_c22_channel_fu_222">
-<pin_list>
-<pin id="223" dir="0" index="0" bw="298" slack="0"/>
-<pin id="224" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_5_c22_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="226" class="1004" name="contr_AOV_6_c23_channel_fu_226">
-<pin_list>
-<pin id="227" dir="0" index="0" bw="298" slack="0"/>
-<pin id="228" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_6_c23_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="230" class="1004" name="contr_AOV_7_c24_channel_fu_230">
-<pin_list>
-<pin id="231" dir="0" index="0" bw="298" slack="0"/>
-<pin id="232" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="contr_AOV_7_c24_channel/2 "/>
-</bind>
-</comp>
-
-<comp id="234" class="1005" name="inputAOV_read_reg_234">
-<pin_list>
-<pin id="235" dir="0" index="0" bw="64" slack="1"/>
-<pin id="236" dir="1" index="1" bw="64" slack="1"/>
+<pin id="85" dir="0" index="0" bw="64" slack="1"/>
+<pin id="86" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
 <opset="inputAOV_read "/>
 </bind>
 </comp>
 
-<comp id="239" class="1005" name="contr_AOV_7_c_reg_239">
-<pin_list>
-<pin id="240" dir="0" index="0" bw="32" slack="2"/>
-<pin id="241" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_7_c "/>
-</bind>
-</comp>
-
-<comp id="245" class="1005" name="contr_AOV_6_c_reg_245">
-<pin_list>
-<pin id="246" dir="0" index="0" bw="32" slack="2"/>
-<pin id="247" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_6_c "/>
-</bind>
-</comp>
-
-<comp id="251" class="1005" name="contr_AOV_5_c_reg_251">
-<pin_list>
-<pin id="252" dir="0" index="0" bw="32" slack="2"/>
-<pin id="253" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_5_c "/>
-</bind>
-</comp>
-
-<comp id="257" class="1005" name="contr_AOV_4_c_reg_257">
-<pin_list>
-<pin id="258" dir="0" index="0" bw="32" slack="2"/>
-<pin id="259" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_4_c "/>
-</bind>
-</comp>
-
-<comp id="263" class="1005" name="contr_AOV_3_c_reg_263">
-<pin_list>
-<pin id="264" dir="0" index="0" bw="32" slack="2"/>
-<pin id="265" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_3_c "/>
-</bind>
-</comp>
-
-<comp id="269" class="1005" name="contr_AOV_2_c_reg_269">
-<pin_list>
-<pin id="270" dir="0" index="0" bw="32" slack="2"/>
-<pin id="271" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_2_c "/>
-</bind>
-</comp>
-
-<comp id="275" class="1005" name="contr_AOV_1_c_reg_275">
-<pin_list>
-<pin id="276" dir="0" index="0" bw="32" slack="2"/>
-<pin id="277" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_1_c "/>
-</bind>
-</comp>
-
-<comp id="281" class="1005" name="contr_AOV_c_reg_281">
-<pin_list>
-<pin id="282" dir="0" index="0" bw="32" slack="2"/>
-<pin id="283" dir="1" index="1" bw="32" slack="2"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_c "/>
-</bind>
-</comp>
-
-<comp id="287" class="1005" name="agg_tmp8_0_cast_loc_channel_reg_287">
-<pin_list>
-<pin id="288" dir="0" index="0" bw="6" slack="1"/>
-<pin id="289" dir="1" index="1" bw="6" slack="1"/>
-</pin_list>
-<bind>
-<opset="agg_tmp8_0_cast_loc_channel "/>
-</bind>
-</comp>
-
-<comp id="292" class="1005" name="agg_tmp8_0_loc_channel_reg_292">
-<pin_list>
-<pin id="293" dir="0" index="0" bw="8" slack="3"/>
-<pin id="294" dir="1" index="1" bw="8" slack="3"/>
-</pin_list>
-<bind>
-<opset="agg_tmp8_0_loc_channel "/>
-</bind>
-</comp>
-
-<comp id="297" class="1005" name="tmp_21_cast_loc_channel_reg_297">
-<pin_list>
-<pin id="298" dir="0" index="0" bw="4" slack="3"/>
-<pin id="299" dir="1" index="1" bw="4" slack="3"/>
-</pin_list>
-<bind>
-<opset="tmp_21_cast_loc_channel "/>
-</bind>
-</comp>
-
-<comp id="302" class="1005" name="agg_tmp12_loc_channel_reg_302">
-<pin_list>
-<pin id="303" dir="0" index="0" bw="16" slack="3"/>
-<pin id="304" dir="1" index="1" bw="16" slack="3"/>
-</pin_list>
-<bind>
-<opset="agg_tmp12_loc_channel "/>
-</bind>
-</comp>
-
-<comp id="307" class="1005" name="n_regions_V_load_loc_channel_reg_307">
-<pin_list>
-<pin id="308" dir="0" index="0" bw="8" slack="1"/>
-<pin id="309" dir="1" index="1" bw="8" slack="1"/>
-</pin_list>
-<bind>
-<opset="n_regions_V_load_loc_channel "/>
-</bind>
-</comp>
-
-<comp id="312" class="1005" name="contr_AOV_c17_channel_reg_312">
-<pin_list>
-<pin id="313" dir="0" index="0" bw="32" slack="1"/>
-<pin id="314" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_c17_channel "/>
-</bind>
-</comp>
-
-<comp id="317" class="1005" name="contr_AOV_1_c18_channel_reg_317">
-<pin_list>
-<pin id="318" dir="0" index="0" bw="32" slack="1"/>
-<pin id="319" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_1_c18_channel "/>
-</bind>
-</comp>
-
-<comp id="322" class="1005" name="contr_AOV_2_c19_channel_reg_322">
-<pin_list>
-<pin id="323" dir="0" index="0" bw="32" slack="1"/>
-<pin id="324" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_2_c19_channel "/>
-</bind>
-</comp>
-
-<comp id="327" class="1005" name="contr_AOV_3_c20_channel_reg_327">
-<pin_list>
-<pin id="328" dir="0" index="0" bw="32" slack="1"/>
-<pin id="329" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_3_c20_channel "/>
-</bind>
-</comp>
-
-<comp id="332" class="1005" name="contr_AOV_4_c21_channel_reg_332">
-<pin_list>
-<pin id="333" dir="0" index="0" bw="32" slack="1"/>
-<pin id="334" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_4_c21_channel "/>
-</bind>
-</comp>
-
-<comp id="337" class="1005" name="contr_AOV_5_c22_channel_reg_337">
-<pin_list>
-<pin id="338" dir="0" index="0" bw="32" slack="1"/>
-<pin id="339" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_5_c22_channel "/>
-</bind>
-</comp>
-
-<comp id="342" class="1005" name="contr_AOV_6_c23_channel_reg_342">
-<pin_list>
-<pin id="343" dir="0" index="0" bw="32" slack="1"/>
-<pin id="344" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_6_c23_channel "/>
-</bind>
-</comp>
-
-<comp id="347" class="1005" name="contr_AOV_7_c24_channel_reg_347">
-<pin_list>
-<pin id="348" dir="0" index="0" bw="32" slack="1"/>
-<pin id="349" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="contr_AOV_7_c24_channel "/>
-</bind>
-</comp>
-
-<comp id="352" class="1005" name="error_reg_352">
-<pin_list>
-<pin id="353" dir="0" index="0" bw="1" slack="1"/>
-<pin id="354" dir="1" index="1" bw="1" slack="1"/>
-</pin_list>
-<bind>
-<opset="error "/>
-</bind>
-</comp>
-
 </comp_list>
 
 <net_list>
-<net id="87"><net_src comp="20" pin="0"/><net_sink comp="84" pin=0"/></net>
+<net id="60"><net_src comp="18" pin="0"/><net_sink comp="56" pin=0"/></net>
 
-<net id="91"><net_src comp="20" pin="0"/><net_sink comp="88" pin=0"/></net>
+<net id="61"><net_src comp="2" pin="0"/><net_sink comp="56" pin=1"/></net>
 
-<net id="95"><net_src comp="20" pin="0"/><net_sink comp="92" pin=0"/></net>
+<net id="74"><net_src comp="20" pin="0"/><net_sink comp="62" pin=0"/></net>
 
-<net id="99"><net_src comp="20" pin="0"/><net_sink comp="96" pin=0"/></net>
+<net id="75"><net_src comp="56" pin="2"/><net_sink comp="62" pin=1"/></net>
 
-<net id="103"><net_src comp="20" pin="0"/><net_sink comp="100" pin=0"/></net>
+<net id="76"><net_src comp="0" pin="0"/><net_sink comp="62" pin=2"/></net>
 
-<net id="107"><net_src comp="20" pin="0"/><net_sink comp="104" pin=0"/></net>
+<net id="77"><net_src comp="6" pin="0"/><net_sink comp="62" pin=3"/></net>
 
-<net id="111"><net_src comp="20" pin="0"/><net_sink comp="108" pin=0"/></net>
+<net id="78"><net_src comp="4" pin="0"/><net_sink comp="62" pin=4"/></net>
 
-<net id="115"><net_src comp="20" pin="0"/><net_sink comp="112" pin=0"/></net>
+<net id="79"><net_src comp="8" pin="0"/><net_sink comp="62" pin=5"/></net>
 
-<net id="120"><net_src comp="18" pin="0"/><net_sink comp="116" pin=0"/></net>
+<net id="80"><net_src comp="10" pin="0"/><net_sink comp="62" pin=6"/></net>
 
-<net id="121"><net_src comp="2" pin="0"/><net_sink comp="116" pin=1"/></net>
+<net id="81"><net_src comp="12" pin="0"/><net_sink comp="62" pin=7"/></net>
 
-<net id="128"><net_src comp="22" pin="0"/><net_sink comp="122" pin=0"/></net>
+<net id="82"><net_src comp="14" pin="0"/><net_sink comp="62" pin=8"/></net>
 
-<net id="129"><net_src comp="116" pin="2"/><net_sink comp="122" pin=1"/></net>
+<net id="83"><net_src comp="16" pin="0"/><net_sink comp="62" pin=9"/></net>
 
-<net id="130"><net_src comp="0" pin="0"/><net_sink comp="122" pin=2"/></net>
+<net id="87"><net_src comp="56" pin="2"/><net_sink comp="84" pin=0"/></net>
 
-<net id="131"><net_src comp="8" pin="0"/><net_sink comp="122" pin=3"/></net>
-
-<net id="157"><net_src comp="24" pin="0"/><net_sink comp="132" pin=0"/></net>
-
-<net id="158"><net_src comp="10" pin="0"/><net_sink comp="132" pin=1"/></net>
-
-<net id="159"><net_src comp="12" pin="0"/><net_sink comp="132" pin=3"/></net>
-
-<net id="160"><net_src comp="14" pin="0"/><net_sink comp="132" pin=4"/></net>
-
-<net id="161"><net_src comp="16" pin="0"/><net_sink comp="132" pin=5"/></net>
-
-<net id="179"><net_src comp="26" pin="0"/><net_sink comp="162" pin=0"/></net>
-
-<net id="180"><net_src comp="6" pin="0"/><net_sink comp="162" pin=1"/></net>
-
-<net id="181"><net_src comp="4" pin="0"/><net_sink comp="162" pin=6"/></net>
-
-<net id="185"><net_src comp="122" pin="4"/><net_sink comp="182" pin=0"/></net>
-
-<net id="189"><net_src comp="122" pin="4"/><net_sink comp="186" pin=0"/></net>
-
-<net id="193"><net_src comp="122" pin="4"/><net_sink comp="190" pin=0"/></net>
-
-<net id="197"><net_src comp="122" pin="4"/><net_sink comp="194" pin=0"/></net>
-
-<net id="201"><net_src comp="122" pin="4"/><net_sink comp="198" pin=0"/></net>
-
-<net id="205"><net_src comp="122" pin="4"/><net_sink comp="202" pin=0"/></net>
-
-<net id="209"><net_src comp="122" pin="4"/><net_sink comp="206" pin=0"/></net>
-
-<net id="213"><net_src comp="122" pin="4"/><net_sink comp="210" pin=0"/></net>
-
-<net id="217"><net_src comp="122" pin="4"/><net_sink comp="214" pin=0"/></net>
-
-<net id="221"><net_src comp="122" pin="4"/><net_sink comp="218" pin=0"/></net>
-
-<net id="225"><net_src comp="122" pin="4"/><net_sink comp="222" pin=0"/></net>
-
-<net id="229"><net_src comp="122" pin="4"/><net_sink comp="226" pin=0"/></net>
-
-<net id="233"><net_src comp="122" pin="4"/><net_sink comp="230" pin=0"/></net>
-
-<net id="237"><net_src comp="116" pin="2"/><net_sink comp="234" pin=0"/></net>
-
-<net id="238"><net_src comp="234" pin="1"/><net_sink comp="122" pin=1"/></net>
-
-<net id="242"><net_src comp="84" pin="1"/><net_sink comp="239" pin=0"/></net>
-
-<net id="243"><net_src comp="239" pin="1"/><net_sink comp="132" pin=22"/></net>
-
-<net id="244"><net_src comp="239" pin="1"/><net_sink comp="162" pin=14"/></net>
-
-<net id="248"><net_src comp="88" pin="1"/><net_sink comp="245" pin=0"/></net>
-
-<net id="249"><net_src comp="245" pin="1"/><net_sink comp="132" pin=21"/></net>
-
-<net id="250"><net_src comp="245" pin="1"/><net_sink comp="162" pin=13"/></net>
-
-<net id="254"><net_src comp="92" pin="1"/><net_sink comp="251" pin=0"/></net>
-
-<net id="255"><net_src comp="251" pin="1"/><net_sink comp="132" pin=20"/></net>
-
-<net id="256"><net_src comp="251" pin="1"/><net_sink comp="162" pin=12"/></net>
-
-<net id="260"><net_src comp="96" pin="1"/><net_sink comp="257" pin=0"/></net>
-
-<net id="261"><net_src comp="257" pin="1"/><net_sink comp="132" pin=19"/></net>
-
-<net id="262"><net_src comp="257" pin="1"/><net_sink comp="162" pin=11"/></net>
-
-<net id="266"><net_src comp="100" pin="1"/><net_sink comp="263" pin=0"/></net>
-
-<net id="267"><net_src comp="263" pin="1"/><net_sink comp="132" pin=18"/></net>
-
-<net id="268"><net_src comp="263" pin="1"/><net_sink comp="162" pin=10"/></net>
-
-<net id="272"><net_src comp="104" pin="1"/><net_sink comp="269" pin=0"/></net>
-
-<net id="273"><net_src comp="269" pin="1"/><net_sink comp="132" pin=17"/></net>
-
-<net id="274"><net_src comp="269" pin="1"/><net_sink comp="162" pin=9"/></net>
-
-<net id="278"><net_src comp="108" pin="1"/><net_sink comp="275" pin=0"/></net>
-
-<net id="279"><net_src comp="275" pin="1"/><net_sink comp="132" pin=16"/></net>
-
-<net id="280"><net_src comp="275" pin="1"/><net_sink comp="162" pin=8"/></net>
-
-<net id="284"><net_src comp="112" pin="1"/><net_sink comp="281" pin=0"/></net>
-
-<net id="285"><net_src comp="281" pin="1"/><net_sink comp="132" pin=15"/></net>
-
-<net id="286"><net_src comp="281" pin="1"/><net_sink comp="162" pin=7"/></net>
-
-<net id="290"><net_src comp="182" pin="1"/><net_sink comp="287" pin=0"/></net>
-
-<net id="291"><net_src comp="287" pin="1"/><net_sink comp="132" pin=2"/></net>
-
-<net id="295"><net_src comp="186" pin="1"/><net_sink comp="292" pin=0"/></net>
-
-<net id="296"><net_src comp="292" pin="1"/><net_sink comp="162" pin=3"/></net>
-
-<net id="300"><net_src comp="190" pin="1"/><net_sink comp="297" pin=0"/></net>
-
-<net id="301"><net_src comp="297" pin="1"/><net_sink comp="162" pin=2"/></net>
-
-<net id="305"><net_src comp="194" pin="1"/><net_sink comp="302" pin=0"/></net>
-
-<net id="306"><net_src comp="302" pin="1"/><net_sink comp="162" pin=4"/></net>
-
-<net id="310"><net_src comp="198" pin="1"/><net_sink comp="307" pin=0"/></net>
-
-<net id="311"><net_src comp="307" pin="1"/><net_sink comp="132" pin=6"/></net>
-
-<net id="315"><net_src comp="202" pin="1"/><net_sink comp="312" pin=0"/></net>
-
-<net id="316"><net_src comp="312" pin="1"/><net_sink comp="132" pin=7"/></net>
-
-<net id="320"><net_src comp="206" pin="1"/><net_sink comp="317" pin=0"/></net>
-
-<net id="321"><net_src comp="317" pin="1"/><net_sink comp="132" pin=8"/></net>
-
-<net id="325"><net_src comp="210" pin="1"/><net_sink comp="322" pin=0"/></net>
-
-<net id="326"><net_src comp="322" pin="1"/><net_sink comp="132" pin=9"/></net>
-
-<net id="330"><net_src comp="214" pin="1"/><net_sink comp="327" pin=0"/></net>
-
-<net id="331"><net_src comp="327" pin="1"/><net_sink comp="132" pin=10"/></net>
-
-<net id="335"><net_src comp="218" pin="1"/><net_sink comp="332" pin=0"/></net>
-
-<net id="336"><net_src comp="332" pin="1"/><net_sink comp="132" pin=11"/></net>
-
-<net id="340"><net_src comp="222" pin="1"/><net_sink comp="337" pin=0"/></net>
-
-<net id="341"><net_src comp="337" pin="1"/><net_sink comp="132" pin=12"/></net>
-
-<net id="345"><net_src comp="226" pin="1"/><net_sink comp="342" pin=0"/></net>
-
-<net id="346"><net_src comp="342" pin="1"/><net_sink comp="132" pin=13"/></net>
-
-<net id="350"><net_src comp="230" pin="1"/><net_sink comp="347" pin=0"/></net>
-
-<net id="351"><net_src comp="347" pin="1"/><net_sink comp="132" pin=14"/></net>
-
-<net id="355"><net_src comp="132" pin="23"/><net_sink comp="352" pin=0"/></net>
-
-<net id="356"><net_src comp="352" pin="1"/><net_sink comp="162" pin=5"/></net>
+<net id="88"><net_src comp="84" pin="1"/><net_sink comp="62" pin=1"/></net>
 
 </net_list>
 
@@ -1350,36 +477,20 @@ ret_ln584                    (ret                   ) [ 0000000]
 
 * FSMD analyzer results:
   - Output states:
-	Port: outcomeInRam | {5 6 }
-	Port: errorInTask | {5 6 }
+	Port: outcomeInRam | {1 2 }
+	Port: errorInTask | {1 2 }
  - Input state : 
 	Port: runTestAfterInit : gmem | {1 2 }
 	Port: runTestAfterInit : inputAOV | {1 }
+	Port: runTestAfterInit : errorInTask | {1 2 }
 	Port: runTestAfterInit : n_regions_V | {1 2 }
-	Port: runTestAfterInit : regions | {3 4 }
-	Port: runTestAfterInit : regions_1 | {3 4 }
-	Port: runTestAfterInit : regions_2 | {3 4 }
-	Port: runTestAfterInit : regions_3 | {3 4 }
+	Port: runTestAfterInit : regions | {1 2 }
+	Port: runTestAfterInit : regions_1 | {1 2 }
+	Port: runTestAfterInit : regions_2 | {1 2 }
+	Port: runTestAfterInit : regions_3 | {1 2 }
   - Chain level:
 	State 1
 	State 2
-		agg_tmp8_0_cast_loc_channel : 1
-		agg_tmp8_0_loc_channel : 1
-		tmp_21_cast_loc_channel : 1
-		agg_tmp12_loc_channel : 1
-		n_regions_V_load_loc_channel : 1
-		contr_AOV_c17_channel : 1
-		contr_AOV_1_c18_channel : 1
-		contr_AOV_2_c19_channel : 1
-		contr_AOV_3_c20_channel : 1
-		contr_AOV_4_c21_channel : 1
-		contr_AOV_5_c22_channel : 1
-		contr_AOV_6_c23_channel : 1
-		contr_AOV_7_c24_channel : 1
-	State 3
-	State 4
-	State 5
-	State 6
 
 
 ============================================================
@@ -1390,68 +501,30 @@ ret_ln584                    (ret                   ) [ 0000000]
 |----------|------------------------------------------------|---------|---------|---------|---------|---------|
 | Operation|                 Functional Unit                |   BRAM  |  Delay  |    FF   |   LUT   |   URAM  |
 |----------|------------------------------------------------|---------|---------|---------|---------|---------|
-|          | grp_runTestAfterInit_Block_entry10_proc_fu_122 |    0    |  3.176  |   808   |    18   |    0    |
-|   call   |               grp_run_test_fu_132              |    0    |  61.94  |   1594  |   1413  |    0    |
-|          |             grp_writeOutcome_fu_162            |    0    | 18.8996 |   832   |   233   |    0    |
+|   call   | grp_runTestAfterInit_Block_entry12_proc4_fu_62 |    0    | 84.8878 |   4030  |   1681  |    0    |
 |----------|------------------------------------------------|---------|---------|---------|---------|---------|
-|   read   |            inputAOV_read_read_fu_116           |    0    |    0    |    0    |    0    |    0    |
+|   read   |            inputAOV_read_read_fu_56            |    0    |    0    |    0    |    0    |    0    |
 |----------|------------------------------------------------|---------|---------|---------|---------|---------|
-|          |       agg_tmp8_0_cast_loc_channel_fu_182       |    0    |    0    |    0    |    0    |    0    |
-|          |          agg_tmp8_0_loc_channel_fu_186         |    0    |    0    |    0    |    0    |    0    |
-|          |         tmp_21_cast_loc_channel_fu_190         |    0    |    0    |    0    |    0    |    0    |
-|          |          agg_tmp12_loc_channel_fu_194          |    0    |    0    |    0    |    0    |    0    |
-|          |       n_regions_V_load_loc_channel_fu_198      |    0    |    0    |    0    |    0    |    0    |
-|          |          contr_AOV_c17_channel_fu_202          |    0    |    0    |    0    |    0    |    0    |
-|extractvalue|         contr_AOV_1_c18_channel_fu_206         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_2_c19_channel_fu_210         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_3_c20_channel_fu_214         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_4_c21_channel_fu_218         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_5_c22_channel_fu_222         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_6_c23_channel_fu_226         |    0    |    0    |    0    |    0    |    0    |
-|          |         contr_AOV_7_c24_channel_fu_230         |    0    |    0    |    0    |    0    |    0    |
-|----------|------------------------------------------------|---------|---------|---------|---------|---------|
-|   Total  |                                                |    0    | 84.0156 |   3234  |   1664  |    0    |
+|   Total  |                                                |    0    | 84.8878 |   4030  |   1681  |    0    |
 |----------|------------------------------------------------|---------|---------|---------|---------|---------|
 
 Memories:
 N/A
 
 * Register list:
-+------------------------------------+--------+
-|                                    |   FF   |
-+------------------------------------+--------+
-|    agg_tmp12_loc_channel_reg_302   |   16   |
-| agg_tmp8_0_cast_loc_channel_reg_287|    6   |
-|   agg_tmp8_0_loc_channel_reg_292   |    8   |
-|   contr_AOV_1_c18_channel_reg_317  |   32   |
-|        contr_AOV_1_c_reg_275       |   32   |
-|   contr_AOV_2_c19_channel_reg_322  |   32   |
-|        contr_AOV_2_c_reg_269       |   32   |
-|   contr_AOV_3_c20_channel_reg_327  |   32   |
-|        contr_AOV_3_c_reg_263       |   32   |
-|   contr_AOV_4_c21_channel_reg_332  |   32   |
-|        contr_AOV_4_c_reg_257       |   32   |
-|   contr_AOV_5_c22_channel_reg_337  |   32   |
-|        contr_AOV_5_c_reg_251       |   32   |
-|   contr_AOV_6_c23_channel_reg_342  |   32   |
-|        contr_AOV_6_c_reg_245       |   32   |
-|   contr_AOV_7_c24_channel_reg_347  |   32   |
-|        contr_AOV_7_c_reg_239       |   32   |
-|    contr_AOV_c17_channel_reg_312   |   32   |
-|         contr_AOV_c_reg_281        |   32   |
-|            error_reg_352           |    1   |
-|        inputAOV_read_reg_234       |   64   |
-|n_regions_V_load_loc_channel_reg_307|    8   |
-|   tmp_21_cast_loc_channel_reg_297  |    4   |
-+------------------------------------+--------+
-|                Total               |   619  |
-+------------------------------------+--------+
++--------------------+--------+
+|                    |   FF   |
++--------------------+--------+
+|inputAOV_read_reg_84|   64   |
++--------------------+--------+
+|        Total       |   64   |
++--------------------+--------+
 
 * Multiplexer (MUX) list: 
 |------------------------------------------------|------|------|------|--------||---------||---------|
 |                      Comp                      |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
 |------------------------------------------------|------|------|------|--------||---------||---------|
-| grp_runTestAfterInit_Block_entry10_proc_fu_122 |  p1  |   2  |  64  |   128  ||    9    |
+| grp_runTestAfterInit_Block_entry12_proc4_fu_62 |  p1  |   2  |  64  |   128  ||    9    |
 |------------------------------------------------|------|------|------|--------||---------||---------|
 |                      Total                     |      |      |      |   128  ||  1.588  ||    9    |
 |------------------------------------------------|------|------|------|--------||---------||---------|
@@ -1462,10 +535,10 @@ N/A
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  |  Delay |   FF   |   LUT  |  URAM  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    0   |   84   |  3234  |  1664  |    0   |
+|  Function |    0   |   84   |  4030  |  1681  |    0   |
 |   Memory  |    -   |    -   |    -   |    -   |    -   |
 |Multiplexer|    -   |    1   |    -   |    9   |    -   |
-|  Register |    -   |    -   |   619  |    -   |    -   |
+|  Register |    -   |    -   |   64   |    -   |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    0   |   85   |  3853  |  1673  |    0   |
+|   Total   |    0   |   86   |  4094  |  1690  |    0   |
 +-----------+--------+--------+--------+--------+--------+

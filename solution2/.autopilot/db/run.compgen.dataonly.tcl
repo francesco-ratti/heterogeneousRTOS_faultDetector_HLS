@@ -3,7 +3,7 @@
 set axilite_register_dict [dict create]
 set port_control {
 errorInTask { 
-	dir O
+	dir IO
 	width 8
 	depth 16
 	mode ap_memory

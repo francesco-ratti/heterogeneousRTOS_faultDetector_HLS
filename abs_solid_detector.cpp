@@ -74,8 +74,9 @@ bool hasRegion(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, 
 #pragma HLS PIPELINE II=4
 		for(int j=0; j < MAX_AOV_DIM; j++){
 			if(regions[i].min[j] <= d[j] && regions[i].max[j] >= d[j]) {
-				return true;
-			}
+				if (j==MAX_AOV_DIM-1)
+					return true;
+			} else break;
 		}
 	}
 	return false;
@@ -534,7 +535,7 @@ void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 	//memcpy((void*) &(outcomeptr[checkId]), (void*) &out, sizeof(out));
 	//if (error) {
 	//		memcpy(outcomeInRam, &outcome, sizeof(outcome));
-	*errorInTask=error;
+	*errorInTask = error;
 	//toScheduler.write(taskId);
 	//}
 }
@@ -572,10 +573,11 @@ void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInp
 	//read_train(&contr, inputAOV, /*readyForData, copyInputAOV*/);
 	memcpy(&contr, inputAOV, sizeof(controlStr));
 	//if (!errorInTask[taskId]) {
-	//	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
-	run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
-	writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
-	//	} else if (contr.command==COMMAND_TRAIN) {
+	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
+		run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
+		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
+	}
+	//else if (contr.command==COMMAND_TRAIN) {
 	//		insert_point(regions[contr.checkId],
 	//				n_regions[contr.checkId],
 	//				contr.AOV);
@@ -648,8 +650,8 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 		//	hls::stream< controlStr > &trainStream,
 		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in /*, hls::stream< ap_uint<8> > &toScheduler*/) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
-//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
-//#pragma HLS interface s_axilite port = readyForData //bundle=A
+	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
+	//#pragma HLS interface s_axilite port = readyForData //bundle=A
 #pragma HLS interface s_axilite port = accel_mode //bundle=A
 #pragma HLS interface m_axi port = inputAOV //bundle=A
 #pragma HLS interface s_axilite port = trainedRegion_i //bundle=A
@@ -665,10 +667,9 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 	//#pragma HLS INTERFACE axis port=trainStream
 	/*#pragma HLS INTERFACE axis port=toScheduler*/
 
-#pragma HLS reset variable=errorInTask
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2  //should be MAX_REGIONS
 
-//	#pragma HLS PIPELINE II=8
+	//	#pragma HLS PIPELINE II=8
 
 	//#pragma HLS reset variable=data
 	//#pragma HLS reset variable=n_regions
@@ -699,27 +700,27 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 
 		//memcpy(regions, trainedRegions, sizeof(regions)); vitis tries to optimise it, causing resource violation!
 
-//		//*readyForData=0;
-//		for (int i=0; i<MAX_CHECKS; i++) {
-//			//	#pragma HLS PIPELINE off
-//			for (int j=0; j<MAX_REGIONS; j++) {
-//#pragma HLS PIPELINE off
-//				*(((unsigned int*) regions)+trainedRegionOffset) = trainedRegion;
-//				*(((unsigned int*) n_regions)+n_regions_in_offset) = n_regions_in;
+		//		//*readyForData=0;
+		//		for (int i=0; i<MAX_CHECKS; i++) {
+		//			//	#pragma HLS PIPELINE off
+		//			for (int j=0; j<MAX_REGIONS; j++) {
+		//#pragma HLS PIPELINE off
+		//				*(((unsigned int*) regions)+trainedRegionOffset) = trainedRegion;
+		//				*(((unsigned int*) n_regions)+n_regions_in_offset) = n_regions_in;
 		regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
 		n_regions[IOCheckIdx]=*n_regions_in;
-//			}
-//		}
-//
-//		for (int i=0; i<MAX_CHECKS; i++) {
-//#pragma HLS PIPELINE off
-//			n_regions [i] = n_regions_in [i];
-//		}
+		//			}
+		//		}
+		//
+		//		for (int i=0; i<MAX_CHECKS; i++) {
+		//#pragma HLS PIPELINE off
+		//			n_regions [i] = n_regions_in [i];
+		//		}
 		//	init(trainedRegions, n_regions_in, regions, n_regions);
 
 		//
-//		if (trainedRegionOffset==((sizeof(regions)/4)-1))
-//			fsmstate=STATE_READY;
+		//		if (trainedRegionOffset==((sizeof(regions)/4)-1))
+		//			fsmstate=STATE_READY;
 	} else if (accel_mode==MODE_OUT) {
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];

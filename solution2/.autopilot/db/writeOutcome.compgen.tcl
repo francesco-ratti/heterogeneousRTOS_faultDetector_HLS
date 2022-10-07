@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 86
+set ID 75
 set hasByteEnable 0
 set MemName run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -90,7 +90,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 87 \
+    id 76 \
     name errorInTask \
     reset_level 1 \
     sync_rst true \
@@ -109,7 +109,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 92 \
+    id 81 \
     name outcomeInRam \
     reset_level 1 \
     sync_rst true \
@@ -127,7 +127,67 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 88 \
+    id 77 \
+    name errorInTask1 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_errorInTask1 \
+    op interface \
+    ports { errorInTask1 { I 4 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 78 \
+    name checkId \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_checkId \
+    op interface \
+    ports { checkId { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 79 \
+    name uniId \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_uniId \
+    op interface \
+    ports { uniId { I 16 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 80 \
+    name error \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_error \
+    op interface \
+    ports { error { I 1 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 82 \
     name p_read \
     type other \
     dir I \
@@ -135,14 +195,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read \
     op interface \
-    ports { p_read { I 4 vector } } \
+    ports { p_read { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 89 \
+    id 83 \
     name p_read1 \
     type other \
     dir I \
@@ -150,14 +210,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read1 \
     op interface \
-    ports { p_read1 { I 8 vector } } \
+    ports { p_read1 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 90 \
+    id 84 \
     name p_read2 \
     type other \
     dir I \
@@ -165,14 +225,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read2 \
     op interface \
-    ports { p_read2 { I 16 vector } } \
+    ports { p_read2 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 91 \
+    id 85 \
     name p_read3 \
     type other \
     dir I \
@@ -180,127 +240,67 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read3 \
     op interface \
-    ports { p_read3 { I 1 vector } } \
+    ports { p_read3 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 93 \
-    name contr_AOV \
-    type fifo \
+    id 86 \
+    name p_read4 \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV \
+    corename dc_p_read4 \
     op interface \
-    ports { contr_AOV_dout { I 32 vector } contr_AOV_num_data_valid { I 2 vector } contr_AOV_fifo_cap { I 2 vector } contr_AOV_empty_n { I 1 bit } contr_AOV_read { O 1 bit } } \
+    ports { p_read4 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 94 \
-    name contr_AOV_1 \
-    type fifo \
+    id 87 \
+    name p_read5 \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_1 \
+    corename dc_p_read5 \
     op interface \
-    ports { contr_AOV_1_dout { I 32 vector } contr_AOV_1_num_data_valid { I 2 vector } contr_AOV_1_fifo_cap { I 2 vector } contr_AOV_1_empty_n { I 1 bit } contr_AOV_1_read { O 1 bit } } \
+    ports { p_read5 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 95 \
-    name contr_AOV_2 \
-    type fifo \
+    id 88 \
+    name p_read6 \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_2 \
+    corename dc_p_read6 \
     op interface \
-    ports { contr_AOV_2_dout { I 32 vector } contr_AOV_2_num_data_valid { I 2 vector } contr_AOV_2_fifo_cap { I 2 vector } contr_AOV_2_empty_n { I 1 bit } contr_AOV_2_read { O 1 bit } } \
+    ports { p_read6 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 96 \
-    name contr_AOV_3 \
-    type fifo \
+    id 89 \
+    name p_read7 \
+    type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_3 \
+    corename dc_p_read7 \
     op interface \
-    ports { contr_AOV_3_dout { I 32 vector } contr_AOV_3_num_data_valid { I 2 vector } contr_AOV_3_fifo_cap { I 2 vector } contr_AOV_3_empty_n { I 1 bit } contr_AOV_3_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 97 \
-    name contr_AOV_4 \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_contr_AOV_4 \
-    op interface \
-    ports { contr_AOV_4_dout { I 32 vector } contr_AOV_4_num_data_valid { I 2 vector } contr_AOV_4_fifo_cap { I 2 vector } contr_AOV_4_empty_n { I 1 bit } contr_AOV_4_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 98 \
-    name contr_AOV_5 \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_contr_AOV_5 \
-    op interface \
-    ports { contr_AOV_5_dout { I 32 vector } contr_AOV_5_num_data_valid { I 2 vector } contr_AOV_5_fifo_cap { I 2 vector } contr_AOV_5_empty_n { I 1 bit } contr_AOV_5_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 99 \
-    name contr_AOV_6 \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_contr_AOV_6 \
-    op interface \
-    ports { contr_AOV_6_dout { I 32 vector } contr_AOV_6_num_data_valid { I 2 vector } contr_AOV_6_fifo_cap { I 2 vector } contr_AOV_6_empty_n { I 1 bit } contr_AOV_6_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 100 \
-    name contr_AOV_7 \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_contr_AOV_7 \
-    op interface \
-    ports { contr_AOV_7_dout { I 32 vector } contr_AOV_7_num_data_valid { I 2 vector } contr_AOV_7_fifo_cap { I 2 vector } contr_AOV_7_empty_n { I 1 bit } contr_AOV_7_read { O 1 bit } } \
+    ports { p_read7 { I 32 vector } } \
 } "
 }
 
@@ -314,7 +314,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
 } "
 }
 

@@ -1,5 +1,4 @@
 set SynModuleInfo {
-  {SRCNAME runTestAfterInit_Block_entry10_proc MODELNAME runTestAfterInit_Block_entry10_proc RTLNAME run_runTestAfterInit_Block_entry10_proc}
   {SRCNAME run_test_Pipeline_is_valid_label2 MODELNAME run_test_Pipeline_is_valid_label2 RTLNAME run_run_test_Pipeline_is_valid_label2
     SUBMODULES {
       {MODELNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
@@ -19,17 +18,8 @@ set SynModuleInfo {
       {MODELNAME run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W RTLNAME run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME runTestAfterInit MODELNAME runTestAfterInit RTLNAME run_runTestAfterInit
-    SUBMODULES {
-      {MODELNAME run_fifo_w6_d2_S RTLNAME run_fifo_w6_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w8_d3_S RTLNAME run_fifo_w8_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w4_d3_S RTLNAME run_fifo_w4_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w16_d3_S RTLNAME run_fifo_w16_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w8_d2_S RTLNAME run_fifo_w8_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w32_d2_S RTLNAME run_fifo_w32_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w1_d2_S RTLNAME run_fifo_w1_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-    }
-  }
+  {SRCNAME runTestAfterInit_Block_entry12_proc4 MODELNAME runTestAfterInit_Block_entry12_proc4 RTLNAME run_runTestAfterInit_Block_entry12_proc4}
+  {SRCNAME runTestAfterInit MODELNAME runTestAfterInit RTLNAME run_runTestAfterInit}
   {SRCNAME run MODELNAME run RTLNAME run IS_TOP 1
     SUBMODULES {
       {MODELNAME run_regions_RAM_AUTO_1R1W RTLNAME run_regions_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}

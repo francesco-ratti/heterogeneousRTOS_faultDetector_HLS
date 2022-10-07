@@ -34,6 +34,7 @@ module run_control_s_axi
     input  wire                          errorInTask_ce0,
     input  wire                          errorInTask_we0,
     input  wire [7:0]                    errorInTask_d0,
+    output wire [7:0]                    errorInTask_q0,
     output wire [63:0]                   inputAOV,
     output wire [7:0]                    accel_mode,
     output wire [767:0]                  trainedRegion_i,
@@ -342,8 +343,12 @@ localparam
     wire                          int_errorInTask_ce0;
     wire [3:0]                    int_errorInTask_be0;
     wire [31:0]                   int_errorInTask_d0;
+    wire [31:0]                   int_errorInTask_q0;
     wire [1:0]                    int_errorInTask_address1;
     wire                          int_errorInTask_ce1;
+    wire                          int_errorInTask_we1;
+    wire [3:0]                    int_errorInTask_be1;
+    wire [31:0]                   int_errorInTask_d1;
     wire [31:0]                   int_errorInTask_q1;
     reg                           int_errorInTask_read;
     reg                           int_errorInTask_write;
@@ -363,7 +368,7 @@ localparam
 // int_errorInTask
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
-    .MEM_TYPE  ( "S2P" ),
+    .MEM_TYPE  ( "T2P" ),
     .BYTES     ( 4 ),
     .DEPTH     ( 4 )
 ) int_errorInTask (
@@ -372,12 +377,12 @@ run_control_s_axi_ram #(
     .ce0       ( int_errorInTask_ce0 ),
     .we0       ( int_errorInTask_be0 ),
     .d0        ( int_errorInTask_d0 ),
-    .q0        (  ),
+    .q0        ( int_errorInTask_q0 ),
     .clk1      ( ACLK ),
     .address1  ( int_errorInTask_address1 ),
     .ce1       ( int_errorInTask_ce1 ),
-    .we1       ( {4{1'b0}} ),
-    .d1        ( {8{1'b0}} ),
+    .we1       ( int_errorInTask_be1 ),
+    .d1        ( int_errorInTask_d1 ),
     .q1        ( int_errorInTask_q1 )
 );
 // int_outcomeInRam
@@ -1165,8 +1170,12 @@ assign int_errorInTask_address0  = errorInTask_address0 >> 2;
 assign int_errorInTask_ce0       = errorInTask_ce0;
 assign int_errorInTask_be0       = errorInTask_we0 << errorInTask_address0[1:0];
 assign int_errorInTask_d0        = {4{errorInTask_d0}};
+assign errorInTask_q0            = int_errorInTask_q0 >> (int_errorInTask_shift0 * 8);
 assign int_errorInTask_address1  = ar_hs? raddr[3:2] : waddr[3:2];
 assign int_errorInTask_ce1       = ar_hs | (int_errorInTask_write & WVALID);
+assign int_errorInTask_we1       = int_errorInTask_write & w_hs;
+assign int_errorInTask_be1       = int_errorInTask_we1 ? WSTRB : 'b0;
+assign int_errorInTask_d1        = WDATA;
 // outcomeInRam
 assign int_outcomeInRam_address0 = outcomeInRam_address0;
 assign int_outcomeInRam_ce0      = outcomeInRam_ce0;
@@ -1183,6 +1192,18 @@ always @(posedge ACLK) begin
             int_errorInTask_read <= 1'b1;
         else
             int_errorInTask_read <= 1'b0;
+    end
+end
+
+// int_errorInTask_write
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_errorInTask_write <= 1'b0;
+    else if (ACLK_EN) begin
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_ERRORINTASK_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_ERRORINTASK_HIGH)
+            int_errorInTask_write <= 1'b1;
+        else if (w_hs)
+            int_errorInTask_write <= 1'b0;
     end
 end
 

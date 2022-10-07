@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 85 \
+    id 74 \
     name outcome_AOV \
     reset_level 1 \
     sync_rst true \
@@ -29,120 +29,120 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 77 \
-    name contr_AOV_load \
+    id 66 \
+    name p_read \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_load \
+    corename dc_p_read \
     op interface \
-    ports { contr_AOV_load { I 32 vector } } \
+    ports { p_read { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 78 \
-    name contr_AOV_1_load \
+    id 67 \
+    name p_read1 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_1_load \
+    corename dc_p_read1 \
     op interface \
-    ports { contr_AOV_1_load { I 32 vector } } \
+    ports { p_read1 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 79 \
-    name contr_AOV_2_load \
+    id 68 \
+    name p_read2 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_2_load \
+    corename dc_p_read2 \
     op interface \
-    ports { contr_AOV_2_load { I 32 vector } } \
+    ports { p_read2 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 80 \
-    name contr_AOV_3_load \
+    id 69 \
+    name p_read3 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_3_load \
+    corename dc_p_read3 \
     op interface \
-    ports { contr_AOV_3_load { I 32 vector } } \
+    ports { p_read3 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 81 \
-    name contr_AOV_4_load \
+    id 70 \
+    name p_read4 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_4_load \
+    corename dc_p_read4 \
     op interface \
-    ports { contr_AOV_4_load { I 32 vector } } \
+    ports { p_read4 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 82 \
-    name contr_AOV_5_load \
+    id 71 \
+    name p_read5 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_5_load \
+    corename dc_p_read5 \
     op interface \
-    ports { contr_AOV_5_load { I 32 vector } } \
+    ports { p_read5 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 83 \
-    name contr_AOV_6_load \
+    id 72 \
+    name p_read6 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_6_load \
+    corename dc_p_read6 \
     op interface \
-    ports { contr_AOV_6_load { I 32 vector } } \
+    ports { p_read6 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 84 \
-    name contr_AOV_7_load \
+    id 73 \
+    name p_read7 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_contr_AOV_7_load \
+    corename dc_p_read7 \
     op interface \
-    ports { contr_AOV_7_load { I 32 vector } } \
+    ports { p_read7 { I 32 vector } } \
 } "
 }
 
