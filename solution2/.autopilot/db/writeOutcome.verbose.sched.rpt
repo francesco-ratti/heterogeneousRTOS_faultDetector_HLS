@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome'
 ================================================================
-* Date:           Fri Oct  7 00:39:06 2022
+* Date:           Fri Oct  7 15:00:48 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -133,14 +133,14 @@ ST_7 : Operation 44 [1/2] (2.32ns)   --->   "%outcome_AOV_load_6 = load i3 %outc
 ST_7 : Operation 45 [1/2] (2.32ns)   --->   "%outcome_AOV_load_7 = load i3 %outcome_AOV_addr_7"   --->   Operation 45 'load' 'outcome_AOV_load_7' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_7 : Operation 46 [1/1] (0.00ns)   --->   "%outcomeInRam_addr = getelementptr i288 %outcomeInRam, i64 0, i64 0"   --->   Operation 46 'getelementptr' 'outcomeInRam_addr' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 47 [1/1] (0.00ns)   --->   "%empty = bitcast i32 %outcome_AOV_load"   --->   Operation 47 'bitcast' 'empty' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%empty_45 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 48 'bitcast' 'empty_45' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%empty_46 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 49 'bitcast' 'empty_46' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%empty_47 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 50 'bitcast' 'empty_47' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%empty_48 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 51 'bitcast' 'empty_48' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 52 [1/1] (0.00ns)   --->   "%empty_49 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 52 'bitcast' 'empty_49' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%empty_50 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 53 'bitcast' 'empty_50' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%empty_51 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 54 'bitcast' 'empty_51' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_51, i32 %empty_50, i32 %empty_49, i32 %empty_48, i32 %empty_47, i32 %empty_46, i32 %empty_45, i32 %empty, i16 %p_read_2, i8 0, i8 %p_read_3"   --->   Operation 55 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%empty_43 = bitcast i32 %outcome_AOV_load_1"   --->   Operation 48 'bitcast' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%empty_44 = bitcast i32 %outcome_AOV_load_2"   --->   Operation 49 'bitcast' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%empty_45 = bitcast i32 %outcome_AOV_load_3"   --->   Operation 50 'bitcast' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%empty_46 = bitcast i32 %outcome_AOV_load_4"   --->   Operation 51 'bitcast' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 52 [1/1] (0.00ns)   --->   "%empty_47 = bitcast i32 %outcome_AOV_load_5"   --->   Operation 52 'bitcast' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%empty_48 = bitcast i32 %outcome_AOV_load_6"   --->   Operation 53 'bitcast' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%empty_49 = bitcast i32 %outcome_AOV_load_7"   --->   Operation 54 'bitcast' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_35_i = bitconcatenate i288 @_ssdm_op_BitConcatenate.i288.i32.i32.i32.i32.i32.i32.i32.i32.i16.i8.i8, i32 %empty_49, i32 %empty_48, i32 %empty_47, i32 %empty_46, i32 %empty_45, i32 %empty_44, i32 %empty_43, i32 %empty, i16 %p_read_2, i8 0, i8 %p_read_3"   --->   Operation 55 'bitconcatenate' 'tmp_35_i' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 56 [2/2] (3.25ns)   --->   "%store_ln0 = store void @_ssdm_op_Write.bram.i288, i4 %outcomeInRam_addr, i288 %tmp_35_i, i36 68719476735"   --->   Operation 56 'store' 'store_ln0' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 288> <Depth = 16> <RAM>
 
 State 8 <SV = 7> <Delay = 5.95>
@@ -156,14 +156,15 @@ ST_8 : Operation 65 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface 
 ST_8 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV_1, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %contr_AOV, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 68 [1/1] (0.00ns)   --->   "%errorInTask1_cast_i = zext i4 %p_read63"   --->   Operation 68 'zext' 'errorInTask1_cast_i' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 69 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i1 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 69 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 69 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 69 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 70 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 70 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %errorInTask, void @empty_10, i32 0, i32 0, void @empty_12, i32 1, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 71 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_10, i32 0, i32 0, void @empty_12, i32 1, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 71 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %errorInTask, void @empty_5, i32 0, i32 0, void @empty_20, i32 1, i32 0, void @empty_20, void @empty_20, void @empty_20, i32 0, i32 0, i32 0, i32 0, void @empty_20, void @empty_20, i32 4294967295, i32 0"   --->   Operation 71 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_5, i32 0, i32 0, void @empty_20, i32 1, i32 0, void @empty_20, void @empty_20, void @empty_20, i32 0, i32 0, i32 0, i32 0, void @empty_20, void @empty_20, i32 4294967295, i32 0"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_8 : Operation 73 [1/2] (3.25ns)   --->   "%store_ln0 = store void @_ssdm_op_Write.bram.i288, i4 %outcomeInRam_addr, i288 %tmp_35_i, i36 68719476735"   --->   Operation 73 'store' 'store_ln0' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 288> <Depth = 16> <RAM>
-ST_8 : Operation 74 [1/1] (0.00ns)   --->   "%errorInTask_addr = getelementptr i1 %errorInTask, i64 0, i64 %errorInTask1_cast_i" [detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577]   --->   Operation 74 'getelementptr' 'errorInTask_addr' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 75 [1/1] (2.32ns)   --->   "%store_ln537 = store i1 %p_read_1, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577]   --->   Operation 75 'store' 'store_ln537' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 1> <Depth = 16> <RAM>
-ST_8 : Operation 76 [1/1] (0.00ns)   --->   "%ret_ln577 = ret" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 76 'ret' 'ret_ln577' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 74 [1/1] (0.00ns)   --->   "%zext_ln537 = zext i1 %p_read_1" [detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577]   --->   Operation 74 'zext' 'zext_ln537' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%errorInTask_addr = getelementptr i8 %errorInTask, i64 0, i64 %errorInTask1_cast_i" [detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577]   --->   Operation 75 'getelementptr' 'errorInTask_addr' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [1/1] (2.32ns)   --->   "%store_ln537 = store i8 %zext_ln537, i4 %errorInTask_addr" [detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577]   --->   Operation 76 'store' 'store_ln537' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 77 [1/1] (0.00ns)   --->   "%ret_ln577 = ret" [detector_solid/abs_solid_detector.cpp:577]   --->   Operation 77 'ret' 'ret_ln577' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -204,7 +205,7 @@ The critical path consists of the following:
  <State 8>: 5.96ns
 The critical path consists of the following:
 	wire read operation ('p_read_1') on port 'p_read3' [17]  (3.63 ns)
-	'store' operation ('store_ln537', detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577) of variable 'p_read_1' on array 'errorInTask' [71]  (2.32 ns)
+	'store' operation ('store_ln537', detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577) of variable 'zext_ln537', detector_solid/abs_solid_detector.cpp:537->detector_solid/abs_solid_detector.cpp:577 on array 'errorInTask' [72]  (2.32 ns)
 
 
 ============================================================

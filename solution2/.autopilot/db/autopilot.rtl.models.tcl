@@ -1,6 +1,5 @@
 set SynModuleInfo {
-  {SRCNAME read_train MODELNAME read_train RTLNAME run_read_train}
-  {SRCNAME runTestAfterInit_Block_entry79_proc MODELNAME runTestAfterInit_Block_entry79_proc RTLNAME run_runTestAfterInit_Block_entry79_proc}
+  {SRCNAME runTestAfterInit_Block_entry10_proc MODELNAME runTestAfterInit_Block_entry10_proc RTLNAME run_runTestAfterInit_Block_entry10_proc}
   {SRCNAME run_test_Pipeline_is_valid_label2 MODELNAME run_test_Pipeline_is_valid_label2 RTLNAME run_run_test_Pipeline_is_valid_label2
     SUBMODULES {
       {MODELNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
@@ -22,12 +21,11 @@ set SynModuleInfo {
   }
   {SRCNAME runTestAfterInit MODELNAME runTestAfterInit RTLNAME run_runTestAfterInit
     SUBMODULES {
-      {MODELNAME run_fifo_w8_d2_S RTLNAME run_fifo_w8_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w4_d4_S RTLNAME run_fifo_w4_d4_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w16_d4_S RTLNAME run_fifo_w16_d4_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w32_d3_S RTLNAME run_fifo_w32_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w8_d3_S RTLNAME run_fifo_w8_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w6_d2_S RTLNAME run_fifo_w6_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w8_d3_S RTLNAME run_fifo_w8_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w4_d3_S RTLNAME run_fifo_w4_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w16_d3_S RTLNAME run_fifo_w16_d3_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w8_d2_S RTLNAME run_fifo_w8_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w32_d2_S RTLNAME run_fifo_w32_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
       {MODELNAME run_fifo_w1_d2_S RTLNAME run_fifo_w1_d2_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
     }

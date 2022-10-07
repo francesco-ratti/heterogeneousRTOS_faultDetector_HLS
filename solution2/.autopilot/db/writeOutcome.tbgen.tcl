@@ -13,7 +13,7 @@ set hasInterrupt 0
 set C_modelName {writeOutcome}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ errorInTask int 1 regular {array 16 { 0 } 0 1 }  }
+	{ errorInTask int 8 regular {array 16 { 0 } 0 1 }  }
 	{ p_read int 4 regular  }
 	{ p_read1 int 8 regular  }
 	{ p_read2 int 16 regular  }
@@ -29,7 +29,7 @@ set C_modelArgList {
 	{ contr_AOV_7 float 32 regular {fifo 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "errorInTask", "interface" : "memory", "bitwidth" : 1, "direction" : "WRITEONLY"} , 
+	{ "Name" : "errorInTask", "interface" : "memory", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 4, "direction" : "READONLY"} , 
  	{ "Name" : "p_read1", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "p_read2", "interface" : "wire", "bitwidth" : 16, "direction" : "READONLY"} , 
@@ -56,7 +56,7 @@ set portList {
 	{ errorInTask_address0 sc_out sc_lv 4 signal 0 } 
 	{ errorInTask_ce0 sc_out sc_logic 1 signal 0 } 
 	{ errorInTask_we0 sc_out sc_logic 1 signal 0 } 
-	{ errorInTask_d0 sc_out sc_lv 1 signal 0 } 
+	{ errorInTask_d0 sc_out sc_lv 8 signal 0 } 
 	{ p_read sc_in sc_lv 4 signal 1 } 
 	{ p_read1 sc_in sc_lv 8 signal 2 } 
 	{ p_read2 sc_in sc_lv 16 signal 3 } 
@@ -117,7 +117,7 @@ set NewPortList {[
  	{ "name": "errorInTask_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "errorInTask", "role": "address0" }} , 
  	{ "name": "errorInTask_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "errorInTask", "role": "ce0" }} , 
  	{ "name": "errorInTask_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "errorInTask", "role": "we0" }} , 
- 	{ "name": "errorInTask_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "errorInTask", "role": "d0" }} , 
+ 	{ "name": "errorInTask_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "errorInTask", "role": "d0" }} , 
  	{ "name": "p_read", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "p_read", "role": "default" }} , 
  	{ "name": "p_read1", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_read1", "role": "default" }} , 
  	{ "name": "p_read2", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "p_read2", "role": "default" }} , 
@@ -184,9 +184,9 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "O"},
-			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "1"},
+			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "3", "DependentChanType" : "1"},
 			{"Name" : "p_read1", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "3", "DependentChanType" : "1"},
-			{"Name" : "p_read2", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "1"},
+			{"Name" : "p_read2", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "3", "DependentChanType" : "1"},
 			{"Name" : "p_read3", "Type" : "None", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "2", "DependentChanType" : "1"},
 			{"Name" : "outcomeInRam", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "contr_AOV", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "2", "DependentChanType" : "2",
@@ -214,7 +214,7 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "contr_AOV_7_blk_n", "Type" : "RtlSignal"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.outcome_AOV_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_270", "Parent" : "0", "Child" : ["3", "4"],
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_269", "Parent" : "0", "Child" : ["3", "4"],
 		"CDFG" : "writeOutcome_Pipeline_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -240,8 +240,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "outcome_AOV", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_270.mux_84_32_1_1_U77", "Parent" : "2"},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_270.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"}]}
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_269.mux_84_32_1_1_U76", "Parent" : "2"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_269.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -282,7 +282,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	errorInTask { ap_memory {  { errorInTask_address0 mem_address 1 4 }  { errorInTask_ce0 mem_ce 1 1 }  { errorInTask_we0 mem_we 1 1 }  { errorInTask_d0 mem_din 1 1 } } }
+	errorInTask { ap_memory {  { errorInTask_address0 mem_address 1 4 }  { errorInTask_ce0 mem_ce 1 1 }  { errorInTask_we0 mem_we 1 1 }  { errorInTask_d0 mem_din 1 8 } } }
 	p_read { ap_none {  { p_read in_data 0 4 } } }
 	p_read1 { ap_none {  { p_read1 in_data 0 8 } } }
 	p_read2 { ap_none {  { p_read2 in_data 0 16 } } }

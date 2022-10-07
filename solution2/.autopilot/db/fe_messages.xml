@@ -4,12 +4,6 @@
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:577:45" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:577:60" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-113" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:577:74" msg_body="Either use an argument of the function or declare the variable inside the dataflow loop body"/>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:487:9" msg_body="unused parameter 'readyForData'">
-        <args ClangWarningOption="unused-parameter"/>
-    </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:488:9" msg_body="unused parameter 'copyInputAOV'">
-        <args ClangWarningOption="unused-parameter"/>
-    </msg>
     <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:518:69" msg_body="unused parameter 'taskId'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
@@ -654,12 +648,6 @@
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:650:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_ctrl_hs port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:651:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = copyInputAOV" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:652:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = readyForData" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:653:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = accel_mode" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>

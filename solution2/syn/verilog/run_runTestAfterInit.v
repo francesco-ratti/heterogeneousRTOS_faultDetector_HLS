@@ -180,8 +180,8 @@ input  [287:0] outcomeInRam_q0;
 output  [35:0] outcomeInRam_we0;
 output  [3:0] errorInTask_address0;
 output   errorInTask_ce0;
-output  [0:0] errorInTask_d0;
-input  [0:0] errorInTask_q0;
+output  [7:0] errorInTask_d0;
+input  [7:0] errorInTask_q0;
 output   errorInTask_we0;
 output  [5:0] n_regions_V_address0;
 output   n_regions_V_ce0;
@@ -242,120 +242,110 @@ output   ap_ready;
 output   ap_idle;
 input   ap_continue;
 
-wire    read_train_U0_ap_start;
-wire    read_train_U0_ap_done;
-wire    read_train_U0_ap_continue;
-wire    read_train_U0_ap_idle;
-wire    read_train_U0_ap_ready;
-wire    read_train_U0_m_axi_gmem_AWVALID;
-wire   [63:0] read_train_U0_m_axi_gmem_AWADDR;
-wire   [0:0] read_train_U0_m_axi_gmem_AWID;
-wire   [31:0] read_train_U0_m_axi_gmem_AWLEN;
-wire   [2:0] read_train_U0_m_axi_gmem_AWSIZE;
-wire   [1:0] read_train_U0_m_axi_gmem_AWBURST;
-wire   [1:0] read_train_U0_m_axi_gmem_AWLOCK;
-wire   [3:0] read_train_U0_m_axi_gmem_AWCACHE;
-wire   [2:0] read_train_U0_m_axi_gmem_AWPROT;
-wire   [3:0] read_train_U0_m_axi_gmem_AWQOS;
-wire   [3:0] read_train_U0_m_axi_gmem_AWREGION;
-wire   [0:0] read_train_U0_m_axi_gmem_AWUSER;
-wire    read_train_U0_m_axi_gmem_WVALID;
-wire   [511:0] read_train_U0_m_axi_gmem_WDATA;
-wire   [63:0] read_train_U0_m_axi_gmem_WSTRB;
-wire    read_train_U0_m_axi_gmem_WLAST;
-wire   [0:0] read_train_U0_m_axi_gmem_WID;
-wire   [0:0] read_train_U0_m_axi_gmem_WUSER;
-wire    read_train_U0_m_axi_gmem_ARVALID;
-wire   [63:0] read_train_U0_m_axi_gmem_ARADDR;
-wire   [0:0] read_train_U0_m_axi_gmem_ARID;
-wire   [31:0] read_train_U0_m_axi_gmem_ARLEN;
-wire   [2:0] read_train_U0_m_axi_gmem_ARSIZE;
-wire   [1:0] read_train_U0_m_axi_gmem_ARBURST;
-wire   [1:0] read_train_U0_m_axi_gmem_ARLOCK;
-wire   [3:0] read_train_U0_m_axi_gmem_ARCACHE;
-wire   [2:0] read_train_U0_m_axi_gmem_ARPROT;
-wire   [3:0] read_train_U0_m_axi_gmem_ARQOS;
-wire   [3:0] read_train_U0_m_axi_gmem_ARREGION;
-wire   [0:0] read_train_U0_m_axi_gmem_ARUSER;
-wire    read_train_U0_m_axi_gmem_RREADY;
-wire    read_train_U0_m_axi_gmem_BREADY;
-wire   [7:0] read_train_U0_ap_return_0;
-wire   [3:0] read_train_U0_ap_return_1;
-wire   [15:0] read_train_U0_ap_return_2;
-wire   [31:0] read_train_U0_ap_return_3;
-wire   [31:0] read_train_U0_ap_return_4;
-wire   [31:0] read_train_U0_ap_return_5;
-wire   [31:0] read_train_U0_ap_return_6;
-wire   [31:0] read_train_U0_ap_return_7;
-wire   [31:0] read_train_U0_ap_return_8;
-wire   [31:0] read_train_U0_ap_return_9;
-wire   [31:0] read_train_U0_ap_return_10;
-wire    ap_channel_done_contr_AOV_7_c25_channel;
-wire    contr_AOV_7_c25_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_7_c25_channel;
-wire    ap_sync_channel_write_contr_AOV_7_c25_channel;
-wire    ap_channel_done_contr_AOV_6_c24_channel;
-wire    contr_AOV_6_c24_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_6_c24_channel;
-wire    ap_sync_channel_write_contr_AOV_6_c24_channel;
-wire    ap_channel_done_contr_AOV_5_c23_channel;
-wire    contr_AOV_5_c23_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_5_c23_channel;
-wire    ap_sync_channel_write_contr_AOV_5_c23_channel;
-wire    ap_channel_done_contr_AOV_4_c22_channel;
-wire    contr_AOV_4_c22_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_4_c22_channel;
-wire    ap_sync_channel_write_contr_AOV_4_c22_channel;
-wire    ap_channel_done_contr_AOV_3_c21_channel;
-wire    contr_AOV_3_c21_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_3_c21_channel;
-wire    ap_sync_channel_write_contr_AOV_3_c21_channel;
-wire    ap_channel_done_contr_AOV_2_c20_channel;
-wire    contr_AOV_2_c20_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_2_c20_channel;
-wire    ap_sync_channel_write_contr_AOV_2_c20_channel;
-wire    ap_channel_done_contr_AOV_1_c19_channel;
-wire    contr_AOV_1_c19_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_1_c19_channel;
-wire    ap_sync_channel_write_contr_AOV_1_c19_channel;
-wire    ap_channel_done_contr_AOV_c18_channel;
-wire    contr_AOV_c18_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_AOV_c18_channel;
-wire    ap_sync_channel_write_contr_AOV_c18_channel;
-wire    ap_channel_done_contr_uniId_V;
-wire    contr_uniId_V_full_n;
-reg    ap_sync_reg_channel_write_contr_uniId_V;
-wire    ap_sync_channel_write_contr_uniId_V;
-wire    ap_channel_done_contr_taskId_V;
-wire    contr_taskId_V_full_n;
-reg    ap_sync_reg_channel_write_contr_taskId_V;
-wire    ap_sync_channel_write_contr_taskId_V;
-wire    ap_channel_done_contr_checkId_V;
-wire    contr_checkId_V_full_n;
-reg    ap_sync_reg_channel_write_contr_checkId_V;
-wire    ap_sync_channel_write_contr_checkId_V;
-wire    runTestAfterInit_Block_entry79_proc_U0_ap_start;
-wire    runTestAfterInit_Block_entry79_proc_U0_ap_done;
-wire    runTestAfterInit_Block_entry79_proc_U0_ap_continue;
-wire    runTestAfterInit_Block_entry79_proc_U0_ap_idle;
-wire    runTestAfterInit_Block_entry79_proc_U0_ap_ready;
-wire   [5:0] runTestAfterInit_Block_entry79_proc_U0_n_regions_V_address0;
-wire    runTestAfterInit_Block_entry79_proc_U0_n_regions_V_ce0;
-wire   [7:0] runTestAfterInit_Block_entry79_proc_U0_ap_return_0;
-wire   [5:0] runTestAfterInit_Block_entry79_proc_U0_ap_return_1;
-wire   [7:0] runTestAfterInit_Block_entry79_proc_U0_ap_return_2;
+wire    runTestAfterInit_Block_entry10_proc_U0_ap_start;
+wire    runTestAfterInit_Block_entry10_proc_U0_ap_done;
+wire    runTestAfterInit_Block_entry10_proc_U0_ap_continue;
+wire    runTestAfterInit_Block_entry10_proc_U0_ap_idle;
+wire    runTestAfterInit_Block_entry10_proc_U0_ap_ready;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWVALID;
+wire   [63:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWADDR;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWID;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWLEN;
+wire   [2:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWSIZE;
+wire   [1:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWBURST;
+wire   [1:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWLOCK;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWCACHE;
+wire   [2:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWPROT;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWQOS;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWREGION;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWUSER;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WVALID;
+wire   [511:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WDATA;
+wire   [63:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WSTRB;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WLAST;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WID;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WUSER;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARVALID;
+wire   [63:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARADDR;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARID;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLEN;
+wire   [2:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARSIZE;
+wire   [1:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARBURST;
+wire   [1:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLOCK;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARCACHE;
+wire   [2:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARPROT;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARQOS;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARREGION;
+wire   [0:0] runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARUSER;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_RREADY;
+wire    runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_BREADY;
+wire   [5:0] runTestAfterInit_Block_entry10_proc_U0_n_regions_V_address0;
+wire    runTestAfterInit_Block_entry10_proc_U0_n_regions_V_ce0;
+wire   [5:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_0;
+wire   [7:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_1;
+wire   [3:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_2;
+wire   [15:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_3;
+wire   [7:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_4;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_5;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_6;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_7;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_8;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_9;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_10;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_11;
+wire   [31:0] runTestAfterInit_Block_entry10_proc_U0_ap_return_12;
+wire    ap_channel_done_contr_AOV_7_c24_channel;
+wire    contr_AOV_7_c24_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_7_c24_channel;
+wire    ap_sync_channel_write_contr_AOV_7_c24_channel;
+wire    ap_channel_done_contr_AOV_6_c23_channel;
+wire    contr_AOV_6_c23_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_6_c23_channel;
+wire    ap_sync_channel_write_contr_AOV_6_c23_channel;
+wire    ap_channel_done_contr_AOV_5_c22_channel;
+wire    contr_AOV_5_c22_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_5_c22_channel;
+wire    ap_sync_channel_write_contr_AOV_5_c22_channel;
+wire    ap_channel_done_contr_AOV_4_c21_channel;
+wire    contr_AOV_4_c21_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_4_c21_channel;
+wire    ap_sync_channel_write_contr_AOV_4_c21_channel;
+wire    ap_channel_done_contr_AOV_3_c20_channel;
+wire    contr_AOV_3_c20_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_3_c20_channel;
+wire    ap_sync_channel_write_contr_AOV_3_c20_channel;
+wire    ap_channel_done_contr_AOV_2_c19_channel;
+wire    contr_AOV_2_c19_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_2_c19_channel;
+wire    ap_sync_channel_write_contr_AOV_2_c19_channel;
+wire    ap_channel_done_contr_AOV_1_c18_channel;
+wire    contr_AOV_1_c18_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_1_c18_channel;
+wire    ap_sync_channel_write_contr_AOV_1_c18_channel;
+wire    ap_channel_done_contr_AOV_c17_channel;
+wire    contr_AOV_c17_channel_full_n;
+reg    ap_sync_reg_channel_write_contr_AOV_c17_channel;
+wire    ap_sync_channel_write_contr_AOV_c17_channel;
 wire    ap_channel_done_n_regions_V_load_loc_channel;
 wire    n_regions_V_load_loc_channel_full_n;
 reg    ap_sync_reg_channel_write_n_regions_V_load_loc_channel;
 wire    ap_sync_channel_write_n_regions_V_load_loc_channel;
-wire    ap_channel_done_contr_checkId_V_load_cast_loc_channel;
-wire    contr_checkId_V_load_cast_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel;
-wire    ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel;
-wire    ap_channel_done_contr_checkId_V_load_loc_channel;
-wire    contr_checkId_V_load_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel;
-wire    ap_sync_channel_write_contr_checkId_V_load_loc_channel;
+wire    ap_channel_done_agg_tmp12_loc_channel;
+wire    agg_tmp12_loc_channel_full_n;
+reg    ap_sync_reg_channel_write_agg_tmp12_loc_channel;
+wire    ap_sync_channel_write_agg_tmp12_loc_channel;
+wire    ap_channel_done_tmp_21_cast_loc_channel;
+wire    tmp_21_cast_loc_channel_full_n;
+reg    ap_sync_reg_channel_write_tmp_21_cast_loc_channel;
+wire    ap_sync_channel_write_tmp_21_cast_loc_channel;
+wire    ap_channel_done_agg_tmp8_0_loc_channel;
+wire    agg_tmp8_0_loc_channel_full_n;
+reg    ap_sync_reg_channel_write_agg_tmp8_0_loc_channel;
+wire    ap_sync_channel_write_agg_tmp8_0_loc_channel;
+wire    ap_channel_done_agg_tmp8_0_cast_loc_channel;
+wire    agg_tmp8_0_cast_loc_channel_full_n;
+reg    ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel;
+wire    ap_sync_channel_write_agg_tmp8_0_cast_loc_channel;
 wire    run_test_U0_ap_start;
 wire    run_test_U0_ap_done;
 wire    run_test_U0_ap_continue;
@@ -395,7 +385,7 @@ wire    writeOutcome_U0_ap_ready;
 wire   [3:0] writeOutcome_U0_errorInTask_address0;
 wire    writeOutcome_U0_errorInTask_ce0;
 wire    writeOutcome_U0_errorInTask_we0;
-wire   [0:0] writeOutcome_U0_errorInTask_d0;
+wire   [7:0] writeOutcome_U0_errorInTask_d0;
 wire   [3:0] writeOutcome_U0_outcomeInRam_address0;
 wire    writeOutcome_U0_outcomeInRam_ce0;
 wire   [35:0] writeOutcome_U0_outcomeInRam_we0;
@@ -408,62 +398,58 @@ wire    writeOutcome_U0_contr_AOV_4_read;
 wire    writeOutcome_U0_contr_AOV_5_read;
 wire    writeOutcome_U0_contr_AOV_6_read;
 wire    writeOutcome_U0_contr_AOV_7_read;
-wire   [7:0] contr_checkId_V_dout;
-wire   [1:0] contr_checkId_V_num_data_valid;
-wire   [1:0] contr_checkId_V_fifo_cap;
-wire    contr_checkId_V_empty_n;
-wire   [3:0] contr_taskId_V_dout;
-wire   [2:0] contr_taskId_V_num_data_valid;
-wire   [2:0] contr_taskId_V_fifo_cap;
-wire    contr_taskId_V_empty_n;
-wire   [15:0] contr_uniId_V_dout;
-wire   [2:0] contr_uniId_V_num_data_valid;
-wire   [2:0] contr_uniId_V_fifo_cap;
-wire    contr_uniId_V_empty_n;
-wire   [31:0] contr_AOV_c18_channel_dout;
-wire   [2:0] contr_AOV_c18_channel_num_data_valid;
-wire   [2:0] contr_AOV_c18_channel_fifo_cap;
-wire    contr_AOV_c18_channel_empty_n;
-wire   [31:0] contr_AOV_1_c19_channel_dout;
-wire   [2:0] contr_AOV_1_c19_channel_num_data_valid;
-wire   [2:0] contr_AOV_1_c19_channel_fifo_cap;
-wire    contr_AOV_1_c19_channel_empty_n;
-wire   [31:0] contr_AOV_2_c20_channel_dout;
-wire   [2:0] contr_AOV_2_c20_channel_num_data_valid;
-wire   [2:0] contr_AOV_2_c20_channel_fifo_cap;
-wire    contr_AOV_2_c20_channel_empty_n;
-wire   [31:0] contr_AOV_3_c21_channel_dout;
-wire   [2:0] contr_AOV_3_c21_channel_num_data_valid;
-wire   [2:0] contr_AOV_3_c21_channel_fifo_cap;
-wire    contr_AOV_3_c21_channel_empty_n;
-wire   [31:0] contr_AOV_4_c22_channel_dout;
-wire   [2:0] contr_AOV_4_c22_channel_num_data_valid;
-wire   [2:0] contr_AOV_4_c22_channel_fifo_cap;
-wire    contr_AOV_4_c22_channel_empty_n;
-wire   [31:0] contr_AOV_5_c23_channel_dout;
-wire   [2:0] contr_AOV_5_c23_channel_num_data_valid;
-wire   [2:0] contr_AOV_5_c23_channel_fifo_cap;
-wire    contr_AOV_5_c23_channel_empty_n;
-wire   [31:0] contr_AOV_6_c24_channel_dout;
-wire   [2:0] contr_AOV_6_c24_channel_num_data_valid;
-wire   [2:0] contr_AOV_6_c24_channel_fifo_cap;
-wire    contr_AOV_6_c24_channel_empty_n;
-wire   [31:0] contr_AOV_7_c25_channel_dout;
-wire   [2:0] contr_AOV_7_c25_channel_num_data_valid;
-wire   [2:0] contr_AOV_7_c25_channel_fifo_cap;
-wire    contr_AOV_7_c25_channel_empty_n;
-wire   [7:0] contr_checkId_V_load_loc_channel_dout;
-wire   [2:0] contr_checkId_V_load_loc_channel_num_data_valid;
-wire   [2:0] contr_checkId_V_load_loc_channel_fifo_cap;
-wire    contr_checkId_V_load_loc_channel_empty_n;
-wire   [5:0] contr_checkId_V_load_cast_loc_channel_dout;
-wire   [1:0] contr_checkId_V_load_cast_loc_channel_num_data_valid;
-wire   [1:0] contr_checkId_V_load_cast_loc_channel_fifo_cap;
-wire    contr_checkId_V_load_cast_loc_channel_empty_n;
+wire   [5:0] agg_tmp8_0_cast_loc_channel_dout;
+wire   [1:0] agg_tmp8_0_cast_loc_channel_num_data_valid;
+wire   [1:0] agg_tmp8_0_cast_loc_channel_fifo_cap;
+wire    agg_tmp8_0_cast_loc_channel_empty_n;
+wire   [7:0] agg_tmp8_0_loc_channel_dout;
+wire   [2:0] agg_tmp8_0_loc_channel_num_data_valid;
+wire   [2:0] agg_tmp8_0_loc_channel_fifo_cap;
+wire    agg_tmp8_0_loc_channel_empty_n;
+wire   [3:0] tmp_21_cast_loc_channel_dout;
+wire   [2:0] tmp_21_cast_loc_channel_num_data_valid;
+wire   [2:0] tmp_21_cast_loc_channel_fifo_cap;
+wire    tmp_21_cast_loc_channel_empty_n;
+wire   [15:0] agg_tmp12_loc_channel_dout;
+wire   [2:0] agg_tmp12_loc_channel_num_data_valid;
+wire   [2:0] agg_tmp12_loc_channel_fifo_cap;
+wire    agg_tmp12_loc_channel_empty_n;
 wire   [7:0] n_regions_V_load_loc_channel_dout;
 wire   [1:0] n_regions_V_load_loc_channel_num_data_valid;
 wire   [1:0] n_regions_V_load_loc_channel_fifo_cap;
 wire    n_regions_V_load_loc_channel_empty_n;
+wire   [31:0] contr_AOV_c17_channel_dout;
+wire   [1:0] contr_AOV_c17_channel_num_data_valid;
+wire   [1:0] contr_AOV_c17_channel_fifo_cap;
+wire    contr_AOV_c17_channel_empty_n;
+wire   [31:0] contr_AOV_1_c18_channel_dout;
+wire   [1:0] contr_AOV_1_c18_channel_num_data_valid;
+wire   [1:0] contr_AOV_1_c18_channel_fifo_cap;
+wire    contr_AOV_1_c18_channel_empty_n;
+wire   [31:0] contr_AOV_2_c19_channel_dout;
+wire   [1:0] contr_AOV_2_c19_channel_num_data_valid;
+wire   [1:0] contr_AOV_2_c19_channel_fifo_cap;
+wire    contr_AOV_2_c19_channel_empty_n;
+wire   [31:0] contr_AOV_3_c20_channel_dout;
+wire   [1:0] contr_AOV_3_c20_channel_num_data_valid;
+wire   [1:0] contr_AOV_3_c20_channel_fifo_cap;
+wire    contr_AOV_3_c20_channel_empty_n;
+wire   [31:0] contr_AOV_4_c21_channel_dout;
+wire   [1:0] contr_AOV_4_c21_channel_num_data_valid;
+wire   [1:0] contr_AOV_4_c21_channel_fifo_cap;
+wire    contr_AOV_4_c21_channel_empty_n;
+wire   [31:0] contr_AOV_5_c22_channel_dout;
+wire   [1:0] contr_AOV_5_c22_channel_num_data_valid;
+wire   [1:0] contr_AOV_5_c22_channel_fifo_cap;
+wire    contr_AOV_5_c22_channel_empty_n;
+wire   [31:0] contr_AOV_6_c23_channel_dout;
+wire   [1:0] contr_AOV_6_c23_channel_num_data_valid;
+wire   [1:0] contr_AOV_6_c23_channel_fifo_cap;
+wire    contr_AOV_6_c23_channel_empty_n;
+wire   [31:0] contr_AOV_7_c24_channel_dout;
+wire   [1:0] contr_AOV_7_c24_channel_num_data_valid;
+wire   [1:0] contr_AOV_7_c24_channel_fifo_cap;
+wire    contr_AOV_7_c24_channel_empty_n;
 wire    contr_AOV_c_full_n;
 wire   [31:0] contr_AOV_c_dout;
 wire   [1:0] contr_AOV_c_num_data_valid;
@@ -509,78 +495,75 @@ wire   [1:0] error_num_data_valid;
 wire   [1:0] error_fifo_cap;
 wire    error_empty_n;
 wire    ap_sync_ready;
-reg    ap_sync_reg_read_train_U0_ap_ready;
-wire    ap_sync_read_train_U0_ap_ready;
-reg    ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready;
-wire    ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready;
+reg    ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready;
+wire    ap_sync_runTestAfterInit_Block_entry10_proc_U0_ap_ready;
 reg    ap_sync_reg_run_test_U0_ap_ready;
 wire    ap_sync_run_test_U0_ap_ready;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_sync_reg_channel_write_contr_AOV_7_c25_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_6_c24_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_5_c23_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_4_c22_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_3_c21_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_2_c20_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_1_c19_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_AOV_c18_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_uniId_V = 1'b0;
-#0 ap_sync_reg_channel_write_contr_taskId_V = 1'b0;
-#0 ap_sync_reg_channel_write_contr_checkId_V = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_7_c24_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_6_c23_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_5_c22_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_4_c21_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_3_c20_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_2_c19_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_1_c18_channel = 1'b0;
+#0 ap_sync_reg_channel_write_contr_AOV_c17_channel = 1'b0;
 #0 ap_sync_reg_channel_write_n_regions_V_load_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel = 1'b0;
-#0 ap_sync_reg_read_train_U0_ap_ready = 1'b0;
-#0 ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready = 1'b0;
+#0 ap_sync_reg_channel_write_agg_tmp12_loc_channel = 1'b0;
+#0 ap_sync_reg_channel_write_tmp_21_cast_loc_channel = 1'b0;
+#0 ap_sync_reg_channel_write_agg_tmp8_0_loc_channel = 1'b0;
+#0 ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel = 1'b0;
+#0 ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_run_test_U0_ap_ready = 1'b0;
 end
 
-run_read_train read_train_U0(
+run_runTestAfterInit_Block_entry10_proc runTestAfterInit_Block_entry10_proc_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(read_train_U0_ap_start),
-    .ap_done(read_train_U0_ap_done),
-    .ap_continue(read_train_U0_ap_continue),
-    .ap_idle(read_train_U0_ap_idle),
-    .ap_ready(read_train_U0_ap_ready),
-    .m_axi_gmem_AWVALID(read_train_U0_m_axi_gmem_AWVALID),
+    .ap_start(runTestAfterInit_Block_entry10_proc_U0_ap_start),
+    .ap_done(runTestAfterInit_Block_entry10_proc_U0_ap_done),
+    .ap_continue(runTestAfterInit_Block_entry10_proc_U0_ap_continue),
+    .ap_idle(runTestAfterInit_Block_entry10_proc_U0_ap_idle),
+    .ap_ready(runTestAfterInit_Block_entry10_proc_U0_ap_ready),
+    .inputAOV(inputAOV),
+    .m_axi_gmem_AWVALID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWVALID),
     .m_axi_gmem_AWREADY(1'b0),
-    .m_axi_gmem_AWADDR(read_train_U0_m_axi_gmem_AWADDR),
-    .m_axi_gmem_AWID(read_train_U0_m_axi_gmem_AWID),
-    .m_axi_gmem_AWLEN(read_train_U0_m_axi_gmem_AWLEN),
-    .m_axi_gmem_AWSIZE(read_train_U0_m_axi_gmem_AWSIZE),
-    .m_axi_gmem_AWBURST(read_train_U0_m_axi_gmem_AWBURST),
-    .m_axi_gmem_AWLOCK(read_train_U0_m_axi_gmem_AWLOCK),
-    .m_axi_gmem_AWCACHE(read_train_U0_m_axi_gmem_AWCACHE),
-    .m_axi_gmem_AWPROT(read_train_U0_m_axi_gmem_AWPROT),
-    .m_axi_gmem_AWQOS(read_train_U0_m_axi_gmem_AWQOS),
-    .m_axi_gmem_AWREGION(read_train_U0_m_axi_gmem_AWREGION),
-    .m_axi_gmem_AWUSER(read_train_U0_m_axi_gmem_AWUSER),
-    .m_axi_gmem_WVALID(read_train_U0_m_axi_gmem_WVALID),
+    .m_axi_gmem_AWADDR(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WVALID),
     .m_axi_gmem_WREADY(1'b0),
-    .m_axi_gmem_WDATA(read_train_U0_m_axi_gmem_WDATA),
-    .m_axi_gmem_WSTRB(read_train_U0_m_axi_gmem_WSTRB),
-    .m_axi_gmem_WLAST(read_train_U0_m_axi_gmem_WLAST),
-    .m_axi_gmem_WID(read_train_U0_m_axi_gmem_WID),
-    .m_axi_gmem_WUSER(read_train_U0_m_axi_gmem_WUSER),
-    .m_axi_gmem_ARVALID(read_train_U0_m_axi_gmem_ARVALID),
+    .m_axi_gmem_WDATA(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARVALID),
     .m_axi_gmem_ARREADY(m_axi_gmem_ARREADY),
-    .m_axi_gmem_ARADDR(read_train_U0_m_axi_gmem_ARADDR),
-    .m_axi_gmem_ARID(read_train_U0_m_axi_gmem_ARID),
-    .m_axi_gmem_ARLEN(read_train_U0_m_axi_gmem_ARLEN),
-    .m_axi_gmem_ARSIZE(read_train_U0_m_axi_gmem_ARSIZE),
-    .m_axi_gmem_ARBURST(read_train_U0_m_axi_gmem_ARBURST),
-    .m_axi_gmem_ARLOCK(read_train_U0_m_axi_gmem_ARLOCK),
-    .m_axi_gmem_ARCACHE(read_train_U0_m_axi_gmem_ARCACHE),
-    .m_axi_gmem_ARPROT(read_train_U0_m_axi_gmem_ARPROT),
-    .m_axi_gmem_ARQOS(read_train_U0_m_axi_gmem_ARQOS),
-    .m_axi_gmem_ARREGION(read_train_U0_m_axi_gmem_ARREGION),
-    .m_axi_gmem_ARUSER(read_train_U0_m_axi_gmem_ARUSER),
+    .m_axi_gmem_ARADDR(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARUSER),
     .m_axi_gmem_RVALID(m_axi_gmem_RVALID),
-    .m_axi_gmem_RREADY(read_train_U0_m_axi_gmem_RREADY),
+    .m_axi_gmem_RREADY(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_RREADY),
     .m_axi_gmem_RDATA(m_axi_gmem_RDATA),
     .m_axi_gmem_RLAST(m_axi_gmem_RLAST),
     .m_axi_gmem_RID(m_axi_gmem_RID),
@@ -588,39 +571,26 @@ run_read_train read_train_U0(
     .m_axi_gmem_RUSER(m_axi_gmem_RUSER),
     .m_axi_gmem_RRESP(m_axi_gmem_RRESP),
     .m_axi_gmem_BVALID(1'b0),
-    .m_axi_gmem_BREADY(read_train_U0_m_axi_gmem_BREADY),
+    .m_axi_gmem_BREADY(runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_BREADY),
     .m_axi_gmem_BRESP(2'd0),
     .m_axi_gmem_BID(1'd0),
     .m_axi_gmem_BUSER(1'd0),
-    .inputAOV(inputAOV),
-    .ap_return_0(read_train_U0_ap_return_0),
-    .ap_return_1(read_train_U0_ap_return_1),
-    .ap_return_2(read_train_U0_ap_return_2),
-    .ap_return_3(read_train_U0_ap_return_3),
-    .ap_return_4(read_train_U0_ap_return_4),
-    .ap_return_5(read_train_U0_ap_return_5),
-    .ap_return_6(read_train_U0_ap_return_6),
-    .ap_return_7(read_train_U0_ap_return_7),
-    .ap_return_8(read_train_U0_ap_return_8),
-    .ap_return_9(read_train_U0_ap_return_9),
-    .ap_return_10(read_train_U0_ap_return_10)
-);
-
-run_runTestAfterInit_Block_entry79_proc runTestAfterInit_Block_entry79_proc_U0(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(runTestAfterInit_Block_entry79_proc_U0_ap_start),
-    .ap_done(runTestAfterInit_Block_entry79_proc_U0_ap_done),
-    .ap_continue(runTestAfterInit_Block_entry79_proc_U0_ap_continue),
-    .ap_idle(runTestAfterInit_Block_entry79_proc_U0_ap_idle),
-    .ap_ready(runTestAfterInit_Block_entry79_proc_U0_ap_ready),
-    .p_read(contr_checkId_V_dout),
-    .n_regions_V_address0(runTestAfterInit_Block_entry79_proc_U0_n_regions_V_address0),
-    .n_regions_V_ce0(runTestAfterInit_Block_entry79_proc_U0_n_regions_V_ce0),
+    .n_regions_V_address0(runTestAfterInit_Block_entry10_proc_U0_n_regions_V_address0),
+    .n_regions_V_ce0(runTestAfterInit_Block_entry10_proc_U0_n_regions_V_ce0),
     .n_regions_V_q0(n_regions_V_q0),
-    .ap_return_0(runTestAfterInit_Block_entry79_proc_U0_ap_return_0),
-    .ap_return_1(runTestAfterInit_Block_entry79_proc_U0_ap_return_1),
-    .ap_return_2(runTestAfterInit_Block_entry79_proc_U0_ap_return_2)
+    .ap_return_0(runTestAfterInit_Block_entry10_proc_U0_ap_return_0),
+    .ap_return_1(runTestAfterInit_Block_entry10_proc_U0_ap_return_1),
+    .ap_return_2(runTestAfterInit_Block_entry10_proc_U0_ap_return_2),
+    .ap_return_3(runTestAfterInit_Block_entry10_proc_U0_ap_return_3),
+    .ap_return_4(runTestAfterInit_Block_entry10_proc_U0_ap_return_4),
+    .ap_return_5(runTestAfterInit_Block_entry10_proc_U0_ap_return_5),
+    .ap_return_6(runTestAfterInit_Block_entry10_proc_U0_ap_return_6),
+    .ap_return_7(runTestAfterInit_Block_entry10_proc_U0_ap_return_7),
+    .ap_return_8(runTestAfterInit_Block_entry10_proc_U0_ap_return_8),
+    .ap_return_9(runTestAfterInit_Block_entry10_proc_U0_ap_return_9),
+    .ap_return_10(runTestAfterInit_Block_entry10_proc_U0_ap_return_10),
+    .ap_return_11(runTestAfterInit_Block_entry10_proc_U0_ap_return_11),
+    .ap_return_12(runTestAfterInit_Block_entry10_proc_U0_ap_return_12)
 );
 
 run_run_test run_test_U0(
@@ -634,7 +604,7 @@ run_run_test run_test_U0(
     .regions_address0(run_test_U0_regions_address0),
     .regions_ce0(run_test_U0_regions_ce0),
     .regions_q0(regions_q0),
-    .p_read1(contr_checkId_V_load_cast_loc_channel_dout),
+    .p_read1(agg_tmp8_0_cast_loc_channel_dout),
     .regions_1_address0(run_test_U0_regions_1_address0),
     .regions_1_ce0(run_test_U0_regions_1_ce0),
     .regions_1_q0(regions_1_q0),
@@ -645,14 +615,14 @@ run_run_test run_test_U0(
     .regions_3_ce0(run_test_U0_regions_3_ce0),
     .regions_3_q0(regions_3_q0),
     .p_read2(n_regions_V_load_loc_channel_dout),
-    .p_read3(contr_AOV_c18_channel_dout),
-    .p_read4(contr_AOV_1_c19_channel_dout),
-    .p_read5(contr_AOV_2_c20_channel_dout),
-    .p_read6(contr_AOV_3_c21_channel_dout),
-    .p_read7(contr_AOV_4_c22_channel_dout),
-    .p_read8(contr_AOV_5_c23_channel_dout),
-    .p_read9(contr_AOV_6_c24_channel_dout),
-    .p_read10(contr_AOV_7_c25_channel_dout),
+    .p_read3(contr_AOV_c17_channel_dout),
+    .p_read4(contr_AOV_1_c18_channel_dout),
+    .p_read5(contr_AOV_2_c19_channel_dout),
+    .p_read6(contr_AOV_3_c20_channel_dout),
+    .p_read7(contr_AOV_4_c21_channel_dout),
+    .p_read8(contr_AOV_5_c22_channel_dout),
+    .p_read9(contr_AOV_6_c23_channel_dout),
+    .p_read10(contr_AOV_7_c24_channel_dout),
     .contr_AOV_c_din(run_test_U0_contr_AOV_c_din),
     .contr_AOV_c_num_data_valid(contr_AOV_c_num_data_valid),
     .contr_AOV_c_fifo_cap(contr_AOV_c_fifo_cap),
@@ -708,9 +678,9 @@ run_writeOutcome writeOutcome_U0(
     .errorInTask_ce0(writeOutcome_U0_errorInTask_ce0),
     .errorInTask_we0(writeOutcome_U0_errorInTask_we0),
     .errorInTask_d0(writeOutcome_U0_errorInTask_d0),
-    .p_read(contr_taskId_V_dout),
-    .p_read1(contr_checkId_V_load_loc_channel_dout),
-    .p_read2(contr_uniId_V_dout),
+    .p_read(tmp_21_cast_loc_channel_dout),
+    .p_read1(agg_tmp8_0_loc_channel_dout),
+    .p_read2(agg_tmp12_loc_channel_dout),
     .p_read3(error_dout),
     .outcomeInRam_address0(writeOutcome_U0_outcomeInRam_address0),
     .outcomeInRam_ce0(writeOutcome_U0_outcomeInRam_ce0),
@@ -758,199 +728,64 @@ run_writeOutcome writeOutcome_U0(
     .contr_AOV_7_read(writeOutcome_U0_contr_AOV_7_read)
 );
 
-run_fifo_w8_d2_S contr_checkId_V_U(
+run_fifo_w6_d2_S agg_tmp8_0_cast_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_0),
-    .if_full_n(contr_checkId_V_full_n),
-    .if_write(ap_channel_done_contr_checkId_V),
-    .if_dout(contr_checkId_V_dout),
-    .if_num_data_valid(contr_checkId_V_num_data_valid),
-    .if_fifo_cap(contr_checkId_V_fifo_cap),
-    .if_empty_n(contr_checkId_V_empty_n),
-    .if_read(runTestAfterInit_Block_entry79_proc_U0_ap_ready)
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_0),
+    .if_full_n(agg_tmp8_0_cast_loc_channel_full_n),
+    .if_write(ap_channel_done_agg_tmp8_0_cast_loc_channel),
+    .if_dout(agg_tmp8_0_cast_loc_channel_dout),
+    .if_num_data_valid(agg_tmp8_0_cast_loc_channel_num_data_valid),
+    .if_fifo_cap(agg_tmp8_0_cast_loc_channel_fifo_cap),
+    .if_empty_n(agg_tmp8_0_cast_loc_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
 );
 
-run_fifo_w4_d4_S contr_taskId_V_U(
+run_fifo_w8_d3_S agg_tmp8_0_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_1),
-    .if_full_n(contr_taskId_V_full_n),
-    .if_write(ap_channel_done_contr_taskId_V),
-    .if_dout(contr_taskId_V_dout),
-    .if_num_data_valid(contr_taskId_V_num_data_valid),
-    .if_fifo_cap(contr_taskId_V_fifo_cap),
-    .if_empty_n(contr_taskId_V_empty_n),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_1),
+    .if_full_n(agg_tmp8_0_loc_channel_full_n),
+    .if_write(ap_channel_done_agg_tmp8_0_loc_channel),
+    .if_dout(agg_tmp8_0_loc_channel_dout),
+    .if_num_data_valid(agg_tmp8_0_loc_channel_num_data_valid),
+    .if_fifo_cap(agg_tmp8_0_loc_channel_fifo_cap),
+    .if_empty_n(agg_tmp8_0_loc_channel_empty_n),
     .if_read(writeOutcome_U0_ap_ready)
 );
 
-run_fifo_w16_d4_S contr_uniId_V_U(
+run_fifo_w4_d3_S tmp_21_cast_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_2),
-    .if_full_n(contr_uniId_V_full_n),
-    .if_write(ap_channel_done_contr_uniId_V),
-    .if_dout(contr_uniId_V_dout),
-    .if_num_data_valid(contr_uniId_V_num_data_valid),
-    .if_fifo_cap(contr_uniId_V_fifo_cap),
-    .if_empty_n(contr_uniId_V_empty_n),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_2),
+    .if_full_n(tmp_21_cast_loc_channel_full_n),
+    .if_write(ap_channel_done_tmp_21_cast_loc_channel),
+    .if_dout(tmp_21_cast_loc_channel_dout),
+    .if_num_data_valid(tmp_21_cast_loc_channel_num_data_valid),
+    .if_fifo_cap(tmp_21_cast_loc_channel_fifo_cap),
+    .if_empty_n(tmp_21_cast_loc_channel_empty_n),
     .if_read(writeOutcome_U0_ap_ready)
 );
 
-run_fifo_w32_d3_S contr_AOV_c18_channel_U(
+run_fifo_w16_d3_S agg_tmp12_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_3),
-    .if_full_n(contr_AOV_c18_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_c18_channel),
-    .if_dout(contr_AOV_c18_channel_dout),
-    .if_num_data_valid(contr_AOV_c18_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_c18_channel_fifo_cap),
-    .if_empty_n(contr_AOV_c18_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_1_c19_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_4),
-    .if_full_n(contr_AOV_1_c19_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_1_c19_channel),
-    .if_dout(contr_AOV_1_c19_channel_dout),
-    .if_num_data_valid(contr_AOV_1_c19_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_1_c19_channel_fifo_cap),
-    .if_empty_n(contr_AOV_1_c19_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_2_c20_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_5),
-    .if_full_n(contr_AOV_2_c20_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_2_c20_channel),
-    .if_dout(contr_AOV_2_c20_channel_dout),
-    .if_num_data_valid(contr_AOV_2_c20_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_2_c20_channel_fifo_cap),
-    .if_empty_n(contr_AOV_2_c20_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_3_c21_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_6),
-    .if_full_n(contr_AOV_3_c21_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_3_c21_channel),
-    .if_dout(contr_AOV_3_c21_channel_dout),
-    .if_num_data_valid(contr_AOV_3_c21_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_3_c21_channel_fifo_cap),
-    .if_empty_n(contr_AOV_3_c21_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_4_c22_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_7),
-    .if_full_n(contr_AOV_4_c22_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_4_c22_channel),
-    .if_dout(contr_AOV_4_c22_channel_dout),
-    .if_num_data_valid(contr_AOV_4_c22_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_4_c22_channel_fifo_cap),
-    .if_empty_n(contr_AOV_4_c22_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_5_c23_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_8),
-    .if_full_n(contr_AOV_5_c23_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_5_c23_channel),
-    .if_dout(contr_AOV_5_c23_channel_dout),
-    .if_num_data_valid(contr_AOV_5_c23_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_5_c23_channel_fifo_cap),
-    .if_empty_n(contr_AOV_5_c23_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_6_c24_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_9),
-    .if_full_n(contr_AOV_6_c24_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_6_c24_channel),
-    .if_dout(contr_AOV_6_c24_channel_dout),
-    .if_num_data_valid(contr_AOV_6_c24_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_6_c24_channel_fifo_cap),
-    .if_empty_n(contr_AOV_6_c24_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w32_d3_S contr_AOV_7_c25_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(read_train_U0_ap_return_10),
-    .if_full_n(contr_AOV_7_c25_channel_full_n),
-    .if_write(ap_channel_done_contr_AOV_7_c25_channel),
-    .if_dout(contr_AOV_7_c25_channel_dout),
-    .if_num_data_valid(contr_AOV_7_c25_channel_num_data_valid),
-    .if_fifo_cap(contr_AOV_7_c25_channel_fifo_cap),
-    .if_empty_n(contr_AOV_7_c25_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
-);
-
-run_fifo_w8_d3_S contr_checkId_V_load_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runTestAfterInit_Block_entry79_proc_U0_ap_return_0),
-    .if_full_n(contr_checkId_V_load_loc_channel_full_n),
-    .if_write(ap_channel_done_contr_checkId_V_load_loc_channel),
-    .if_dout(contr_checkId_V_load_loc_channel_dout),
-    .if_num_data_valid(contr_checkId_V_load_loc_channel_num_data_valid),
-    .if_fifo_cap(contr_checkId_V_load_loc_channel_fifo_cap),
-    .if_empty_n(contr_checkId_V_load_loc_channel_empty_n),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_3),
+    .if_full_n(agg_tmp12_loc_channel_full_n),
+    .if_write(ap_channel_done_agg_tmp12_loc_channel),
+    .if_dout(agg_tmp12_loc_channel_dout),
+    .if_num_data_valid(agg_tmp12_loc_channel_num_data_valid),
+    .if_fifo_cap(agg_tmp12_loc_channel_fifo_cap),
+    .if_empty_n(agg_tmp12_loc_channel_empty_n),
     .if_read(writeOutcome_U0_ap_ready)
-);
-
-run_fifo_w6_d2_S contr_checkId_V_load_cast_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runTestAfterInit_Block_entry79_proc_U0_ap_return_1),
-    .if_full_n(contr_checkId_V_load_cast_loc_channel_full_n),
-    .if_write(ap_channel_done_contr_checkId_V_load_cast_loc_channel),
-    .if_dout(contr_checkId_V_load_cast_loc_channel_dout),
-    .if_num_data_valid(contr_checkId_V_load_cast_loc_channel_num_data_valid),
-    .if_fifo_cap(contr_checkId_V_load_cast_loc_channel_fifo_cap),
-    .if_empty_n(contr_checkId_V_load_cast_loc_channel_empty_n),
-    .if_read(run_test_U0_ap_ready)
 );
 
 run_fifo_w8_d2_S n_regions_V_load_loc_channel_U(
@@ -958,13 +793,133 @@ run_fifo_w8_d2_S n_regions_V_load_loc_channel_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runTestAfterInit_Block_entry79_proc_U0_ap_return_2),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_4),
     .if_full_n(n_regions_V_load_loc_channel_full_n),
     .if_write(ap_channel_done_n_regions_V_load_loc_channel),
     .if_dout(n_regions_V_load_loc_channel_dout),
     .if_num_data_valid(n_regions_V_load_loc_channel_num_data_valid),
     .if_fifo_cap(n_regions_V_load_loc_channel_fifo_cap),
     .if_empty_n(n_regions_V_load_loc_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_c17_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_5),
+    .if_full_n(contr_AOV_c17_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_c17_channel),
+    .if_dout(contr_AOV_c17_channel_dout),
+    .if_num_data_valid(contr_AOV_c17_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_c17_channel_fifo_cap),
+    .if_empty_n(contr_AOV_c17_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_1_c18_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_6),
+    .if_full_n(contr_AOV_1_c18_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_1_c18_channel),
+    .if_dout(contr_AOV_1_c18_channel_dout),
+    .if_num_data_valid(contr_AOV_1_c18_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_1_c18_channel_fifo_cap),
+    .if_empty_n(contr_AOV_1_c18_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_2_c19_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_7),
+    .if_full_n(contr_AOV_2_c19_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_2_c19_channel),
+    .if_dout(contr_AOV_2_c19_channel_dout),
+    .if_num_data_valid(contr_AOV_2_c19_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_2_c19_channel_fifo_cap),
+    .if_empty_n(contr_AOV_2_c19_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_3_c20_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_8),
+    .if_full_n(contr_AOV_3_c20_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_3_c20_channel),
+    .if_dout(contr_AOV_3_c20_channel_dout),
+    .if_num_data_valid(contr_AOV_3_c20_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_3_c20_channel_fifo_cap),
+    .if_empty_n(contr_AOV_3_c20_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_4_c21_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_9),
+    .if_full_n(contr_AOV_4_c21_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_4_c21_channel),
+    .if_dout(contr_AOV_4_c21_channel_dout),
+    .if_num_data_valid(contr_AOV_4_c21_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_4_c21_channel_fifo_cap),
+    .if_empty_n(contr_AOV_4_c21_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_5_c22_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_10),
+    .if_full_n(contr_AOV_5_c22_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_5_c22_channel),
+    .if_dout(contr_AOV_5_c22_channel_dout),
+    .if_num_data_valid(contr_AOV_5_c22_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_5_c22_channel_fifo_cap),
+    .if_empty_n(contr_AOV_5_c22_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_6_c23_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_11),
+    .if_full_n(contr_AOV_6_c23_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_6_c23_channel),
+    .if_dout(contr_AOV_6_c23_channel_dout),
+    .if_num_data_valid(contr_AOV_6_c23_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_6_c23_channel_fifo_cap),
+    .if_empty_n(contr_AOV_6_c23_channel_empty_n),
+    .if_read(run_test_U0_ap_ready)
+);
+
+run_fifo_w32_d2_S contr_AOV_7_c24_channel_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runTestAfterInit_Block_entry10_proc_U0_ap_return_12),
+    .if_full_n(contr_AOV_7_c24_channel_full_n),
+    .if_write(ap_channel_done_contr_AOV_7_c24_channel),
+    .if_dout(contr_AOV_7_c24_channel_dout),
+    .if_num_data_valid(contr_AOV_7_c24_channel_num_data_valid),
+    .if_fifo_cap(contr_AOV_7_c24_channel_fifo_cap),
+    .if_empty_n(contr_AOV_7_c24_channel_empty_n),
     .if_read(run_test_U0_ap_ready)
 );
 
@@ -1105,156 +1060,132 @@ run_fifo_w1_d2_S error_U(
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_1_c19_channel <= 1'b0;
+        ap_sync_reg_channel_write_agg_tmp12_loc_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_1_c19_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_agg_tmp12_loc_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_1_c19_channel <= ap_sync_channel_write_contr_AOV_1_c19_channel;
+            ap_sync_reg_channel_write_agg_tmp12_loc_channel <= ap_sync_channel_write_agg_tmp12_loc_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_2_c20_channel <= 1'b0;
+        ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_2_c20_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_2_c20_channel <= ap_sync_channel_write_contr_AOV_2_c20_channel;
+            ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel <= ap_sync_channel_write_agg_tmp8_0_cast_loc_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_3_c21_channel <= 1'b0;
+        ap_sync_reg_channel_write_agg_tmp8_0_loc_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_3_c21_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_agg_tmp8_0_loc_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_3_c21_channel <= ap_sync_channel_write_contr_AOV_3_c21_channel;
+            ap_sync_reg_channel_write_agg_tmp8_0_loc_channel <= ap_sync_channel_write_agg_tmp8_0_loc_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_4_c22_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_1_c18_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_4_c22_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_1_c18_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_4_c22_channel <= ap_sync_channel_write_contr_AOV_4_c22_channel;
+            ap_sync_reg_channel_write_contr_AOV_1_c18_channel <= ap_sync_channel_write_contr_AOV_1_c18_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_5_c23_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_2_c19_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_5_c23_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_2_c19_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_5_c23_channel <= ap_sync_channel_write_contr_AOV_5_c23_channel;
+            ap_sync_reg_channel_write_contr_AOV_2_c19_channel <= ap_sync_channel_write_contr_AOV_2_c19_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_6_c24_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_3_c20_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_6_c24_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_3_c20_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_6_c24_channel <= ap_sync_channel_write_contr_AOV_6_c24_channel;
+            ap_sync_reg_channel_write_contr_AOV_3_c20_channel <= ap_sync_channel_write_contr_AOV_3_c20_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_7_c25_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_4_c21_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_7_c25_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_4_c21_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_7_c25_channel <= ap_sync_channel_write_contr_AOV_7_c25_channel;
+            ap_sync_reg_channel_write_contr_AOV_4_c21_channel <= ap_sync_channel_write_contr_AOV_4_c21_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_AOV_c18_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_5_c22_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_AOV_c18_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_5_c22_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_AOV_c18_channel <= ap_sync_channel_write_contr_AOV_c18_channel;
+            ap_sync_reg_channel_write_contr_AOV_5_c22_channel <= ap_sync_channel_write_contr_AOV_5_c22_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_checkId_V <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_6_c23_channel <= 1'b0;
     end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_checkId_V <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_6_c23_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_checkId_V <= ap_sync_channel_write_contr_checkId_V;
+            ap_sync_reg_channel_write_contr_AOV_6_c23_channel <= ap_sync_channel_write_contr_AOV_6_c23_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_7_c24_channel <= 1'b0;
     end else begin
-        if (((runTestAfterInit_Block_entry79_proc_U0_ap_done & runTestAfterInit_Block_entry79_proc_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_7_c24_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel <= ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel;
+            ap_sync_reg_channel_write_contr_AOV_7_c24_channel <= ap_sync_channel_write_contr_AOV_7_c24_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel <= 1'b0;
+        ap_sync_reg_channel_write_contr_AOV_c17_channel <= 1'b0;
     end else begin
-        if (((runTestAfterInit_Block_entry79_proc_U0_ap_done & runTestAfterInit_Block_entry79_proc_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_contr_AOV_c17_channel <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel <= ap_sync_channel_write_contr_checkId_V_load_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_taskId_V <= 1'b0;
-    end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_taskId_V <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_contr_taskId_V <= ap_sync_channel_write_contr_taskId_V;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_contr_uniId_V <= 1'b0;
-    end else begin
-        if (((read_train_U0_ap_done & read_train_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_contr_uniId_V <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_contr_uniId_V <= ap_sync_channel_write_contr_uniId_V;
+            ap_sync_reg_channel_write_contr_AOV_c17_channel <= ap_sync_channel_write_contr_AOV_c17_channel;
         end
     end
 end
@@ -1263,7 +1194,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_n_regions_V_load_loc_channel <= 1'b0;
     end else begin
-        if (((runTestAfterInit_Block_entry79_proc_U0_ap_done & runTestAfterInit_Block_entry79_proc_U0_ap_continue) == 1'b1)) begin
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_n_regions_V_load_loc_channel <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_n_regions_V_load_loc_channel <= ap_sync_channel_write_n_regions_V_load_loc_channel;
@@ -1273,24 +1204,24 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_read_train_U0_ap_ready <= 1'b0;
+        ap_sync_reg_channel_write_tmp_21_cast_loc_channel <= 1'b0;
     end else begin
-        if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_read_train_U0_ap_ready <= 1'b0;
+        if (((runTestAfterInit_Block_entry10_proc_U0_ap_done & runTestAfterInit_Block_entry10_proc_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_tmp_21_cast_loc_channel <= 1'b0;
         end else begin
-            ap_sync_reg_read_train_U0_ap_ready <= ap_sync_read_train_U0_ap_ready;
+            ap_sync_reg_channel_write_tmp_21_cast_loc_channel <= ap_sync_channel_write_tmp_21_cast_loc_channel;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready <= 1'b0;
+        ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready <= 1'b0;
     end else begin
         if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready <= 1'b0;
+            ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready <= 1'b0;
         end else begin
-            ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready <= ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready;
+            ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready <= ap_sync_runTestAfterInit_Block_entry10_proc_U0_ap_ready;
         end
     end
 end
@@ -1307,73 +1238,67 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_channel_done_contr_AOV_1_c19_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_1_c19_channel ^ 1'b1));
+assign ap_channel_done_agg_tmp12_loc_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_agg_tmp12_loc_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_2_c20_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_2_c20_channel ^ 1'b1));
+assign ap_channel_done_agg_tmp8_0_cast_loc_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_3_c21_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_3_c21_channel ^ 1'b1));
+assign ap_channel_done_agg_tmp8_0_loc_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_agg_tmp8_0_loc_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_4_c22_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_4_c22_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_1_c18_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_1_c18_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_5_c23_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_5_c23_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_2_c19_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_2_c19_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_6_c24_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_6_c24_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_3_c20_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_3_c20_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_7_c25_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_7_c25_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_4_c21_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_4_c21_channel ^ 1'b1));
 
-assign ap_channel_done_contr_AOV_c18_channel = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_c18_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_5_c22_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_5_c22_channel ^ 1'b1));
 
-assign ap_channel_done_contr_checkId_V = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_checkId_V ^ 1'b1));
+assign ap_channel_done_contr_AOV_6_c23_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_6_c23_channel ^ 1'b1));
 
-assign ap_channel_done_contr_checkId_V_load_cast_loc_channel = (runTestAfterInit_Block_entry79_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_7_c24_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_7_c24_channel ^ 1'b1));
 
-assign ap_channel_done_contr_checkId_V_load_loc_channel = (runTestAfterInit_Block_entry79_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel ^ 1'b1));
+assign ap_channel_done_contr_AOV_c17_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_contr_AOV_c17_channel ^ 1'b1));
 
-assign ap_channel_done_contr_taskId_V = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_taskId_V ^ 1'b1));
+assign ap_channel_done_n_regions_V_load_loc_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_n_regions_V_load_loc_channel ^ 1'b1));
 
-assign ap_channel_done_contr_uniId_V = (read_train_U0_ap_done & (ap_sync_reg_channel_write_contr_uniId_V ^ 1'b1));
-
-assign ap_channel_done_n_regions_V_load_loc_channel = (runTestAfterInit_Block_entry79_proc_U0_ap_done & (ap_sync_reg_channel_write_n_regions_V_load_loc_channel ^ 1'b1));
+assign ap_channel_done_tmp_21_cast_loc_channel = (runTestAfterInit_Block_entry10_proc_U0_ap_done & (ap_sync_reg_channel_write_tmp_21_cast_loc_channel ^ 1'b1));
 
 assign ap_done = writeOutcome_U0_ap_done;
 
-assign ap_idle = (writeOutcome_U0_ap_idle & run_test_U0_ap_idle & runTestAfterInit_Block_entry79_proc_U0_ap_idle & read_train_U0_ap_idle & (error_empty_n ^ 1'b1) & (n_regions_V_load_loc_channel_empty_n ^ 1'b1) & (contr_checkId_V_load_cast_loc_channel_empty_n ^ 1'b1) & (contr_checkId_V_load_loc_channel_empty_n ^ 1'b1) & (contr_AOV_7_c25_channel_empty_n ^ 1'b1) & (contr_AOV_6_c24_channel_empty_n ^ 1'b1) & (contr_AOV_5_c23_channel_empty_n ^ 1'b1) & (contr_AOV_4_c22_channel_empty_n ^ 1'b1) & (contr_AOV_3_c21_channel_empty_n ^ 1'b1) & (contr_AOV_2_c20_channel_empty_n ^ 1'b1) & (contr_AOV_1_c19_channel_empty_n ^ 1'b1) & (contr_AOV_c18_channel_empty_n ^ 1'b1) & (contr_uniId_V_empty_n ^ 1'b1) & (contr_taskId_V_empty_n ^ 1'b1) & (contr_checkId_V_empty_n ^ 1'b1));
+assign ap_idle = (writeOutcome_U0_ap_idle & run_test_U0_ap_idle & runTestAfterInit_Block_entry10_proc_U0_ap_idle & (error_empty_n ^ 1'b1) & (contr_AOV_7_c24_channel_empty_n ^ 1'b1) & (contr_AOV_6_c23_channel_empty_n ^ 1'b1) & (contr_AOV_5_c22_channel_empty_n ^ 1'b1) & (contr_AOV_4_c21_channel_empty_n ^ 1'b1) & (contr_AOV_3_c20_channel_empty_n ^ 1'b1) & (contr_AOV_2_c19_channel_empty_n ^ 1'b1) & (contr_AOV_1_c18_channel_empty_n ^ 1'b1) & (contr_AOV_c17_channel_empty_n ^ 1'b1) & (n_regions_V_load_loc_channel_empty_n ^ 1'b1) & (tmp_21_cast_loc_channel_empty_n ^ 1'b1) & (1'b1 ^ agg_tmp12_loc_channel_empty_n) & (1'b1 ^ agg_tmp8_0_loc_channel_empty_n) & (1'b1 ^ agg_tmp8_0_cast_loc_channel_empty_n));
 
 assign ap_ready = ap_sync_ready;
 
-assign ap_sync_channel_write_contr_AOV_1_c19_channel = ((contr_AOV_1_c19_channel_full_n & ap_channel_done_contr_AOV_1_c19_channel) | ap_sync_reg_channel_write_contr_AOV_1_c19_channel);
+assign ap_sync_channel_write_agg_tmp12_loc_channel = ((ap_channel_done_agg_tmp12_loc_channel & agg_tmp12_loc_channel_full_n) | ap_sync_reg_channel_write_agg_tmp12_loc_channel);
 
-assign ap_sync_channel_write_contr_AOV_2_c20_channel = ((contr_AOV_2_c20_channel_full_n & ap_channel_done_contr_AOV_2_c20_channel) | ap_sync_reg_channel_write_contr_AOV_2_c20_channel);
+assign ap_sync_channel_write_agg_tmp8_0_cast_loc_channel = ((ap_channel_done_agg_tmp8_0_cast_loc_channel & agg_tmp8_0_cast_loc_channel_full_n) | ap_sync_reg_channel_write_agg_tmp8_0_cast_loc_channel);
 
-assign ap_sync_channel_write_contr_AOV_3_c21_channel = ((contr_AOV_3_c21_channel_full_n & ap_channel_done_contr_AOV_3_c21_channel) | ap_sync_reg_channel_write_contr_AOV_3_c21_channel);
+assign ap_sync_channel_write_agg_tmp8_0_loc_channel = ((ap_channel_done_agg_tmp8_0_loc_channel & agg_tmp8_0_loc_channel_full_n) | ap_sync_reg_channel_write_agg_tmp8_0_loc_channel);
 
-assign ap_sync_channel_write_contr_AOV_4_c22_channel = ((contr_AOV_4_c22_channel_full_n & ap_channel_done_contr_AOV_4_c22_channel) | ap_sync_reg_channel_write_contr_AOV_4_c22_channel);
+assign ap_sync_channel_write_contr_AOV_1_c18_channel = ((contr_AOV_1_c18_channel_full_n & ap_channel_done_contr_AOV_1_c18_channel) | ap_sync_reg_channel_write_contr_AOV_1_c18_channel);
 
-assign ap_sync_channel_write_contr_AOV_5_c23_channel = ((contr_AOV_5_c23_channel_full_n & ap_channel_done_contr_AOV_5_c23_channel) | ap_sync_reg_channel_write_contr_AOV_5_c23_channel);
+assign ap_sync_channel_write_contr_AOV_2_c19_channel = ((contr_AOV_2_c19_channel_full_n & ap_channel_done_contr_AOV_2_c19_channel) | ap_sync_reg_channel_write_contr_AOV_2_c19_channel);
 
-assign ap_sync_channel_write_contr_AOV_6_c24_channel = ((contr_AOV_6_c24_channel_full_n & ap_channel_done_contr_AOV_6_c24_channel) | ap_sync_reg_channel_write_contr_AOV_6_c24_channel);
+assign ap_sync_channel_write_contr_AOV_3_c20_channel = ((contr_AOV_3_c20_channel_full_n & ap_channel_done_contr_AOV_3_c20_channel) | ap_sync_reg_channel_write_contr_AOV_3_c20_channel);
 
-assign ap_sync_channel_write_contr_AOV_7_c25_channel = ((contr_AOV_7_c25_channel_full_n & ap_channel_done_contr_AOV_7_c25_channel) | ap_sync_reg_channel_write_contr_AOV_7_c25_channel);
+assign ap_sync_channel_write_contr_AOV_4_c21_channel = ((contr_AOV_4_c21_channel_full_n & ap_channel_done_contr_AOV_4_c21_channel) | ap_sync_reg_channel_write_contr_AOV_4_c21_channel);
 
-assign ap_sync_channel_write_contr_AOV_c18_channel = ((contr_AOV_c18_channel_full_n & ap_channel_done_contr_AOV_c18_channel) | ap_sync_reg_channel_write_contr_AOV_c18_channel);
+assign ap_sync_channel_write_contr_AOV_5_c22_channel = ((contr_AOV_5_c22_channel_full_n & ap_channel_done_contr_AOV_5_c22_channel) | ap_sync_reg_channel_write_contr_AOV_5_c22_channel);
 
-assign ap_sync_channel_write_contr_checkId_V = ((contr_checkId_V_full_n & ap_channel_done_contr_checkId_V) | ap_sync_reg_channel_write_contr_checkId_V);
+assign ap_sync_channel_write_contr_AOV_6_c23_channel = ((contr_AOV_6_c23_channel_full_n & ap_channel_done_contr_AOV_6_c23_channel) | ap_sync_reg_channel_write_contr_AOV_6_c23_channel);
 
-assign ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel = ((contr_checkId_V_load_cast_loc_channel_full_n & ap_channel_done_contr_checkId_V_load_cast_loc_channel) | ap_sync_reg_channel_write_contr_checkId_V_load_cast_loc_channel);
+assign ap_sync_channel_write_contr_AOV_7_c24_channel = ((contr_AOV_7_c24_channel_full_n & ap_channel_done_contr_AOV_7_c24_channel) | ap_sync_reg_channel_write_contr_AOV_7_c24_channel);
 
-assign ap_sync_channel_write_contr_checkId_V_load_loc_channel = ((contr_checkId_V_load_loc_channel_full_n & ap_channel_done_contr_checkId_V_load_loc_channel) | ap_sync_reg_channel_write_contr_checkId_V_load_loc_channel);
-
-assign ap_sync_channel_write_contr_taskId_V = ((contr_taskId_V_full_n & ap_channel_done_contr_taskId_V) | ap_sync_reg_channel_write_contr_taskId_V);
-
-assign ap_sync_channel_write_contr_uniId_V = ((contr_uniId_V_full_n & ap_channel_done_contr_uniId_V) | ap_sync_reg_channel_write_contr_uniId_V);
+assign ap_sync_channel_write_contr_AOV_c17_channel = ((contr_AOV_c17_channel_full_n & ap_channel_done_contr_AOV_c17_channel) | ap_sync_reg_channel_write_contr_AOV_c17_channel);
 
 assign ap_sync_channel_write_n_regions_V_load_loc_channel = ((n_regions_V_load_loc_channel_full_n & ap_channel_done_n_regions_V_load_loc_channel) | ap_sync_reg_channel_write_n_regions_V_load_loc_channel);
 
-assign ap_sync_read_train_U0_ap_ready = (read_train_U0_ap_ready | ap_sync_reg_read_train_U0_ap_ready);
+assign ap_sync_channel_write_tmp_21_cast_loc_channel = ((tmp_21_cast_loc_channel_full_n & ap_channel_done_tmp_21_cast_loc_channel) | ap_sync_reg_channel_write_tmp_21_cast_loc_channel);
 
-assign ap_sync_ready = (ap_sync_run_test_U0_ap_ready & ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready & ap_sync_read_train_U0_ap_ready);
+assign ap_sync_ready = (ap_sync_run_test_U0_ap_ready & ap_sync_runTestAfterInit_Block_entry10_proc_U0_ap_ready);
 
-assign ap_sync_runTestAfterInit_Block_entry79_proc_U0_ap_ready = (runTestAfterInit_Block_entry79_proc_U0_ap_ready | ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready);
+assign ap_sync_runTestAfterInit_Block_entry10_proc_U0_ap_ready = (runTestAfterInit_Block_entry10_proc_U0_ap_ready | ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready);
 
 assign ap_sync_run_test_U0_ap_ready = (run_test_U0_ap_ready | ap_sync_reg_run_test_U0_ap_ready);
 
@@ -1385,29 +1310,29 @@ assign errorInTask_d0 = writeOutcome_U0_errorInTask_d0;
 
 assign errorInTask_we0 = writeOutcome_U0_errorInTask_we0;
 
-assign m_axi_gmem_ARADDR = read_train_U0_m_axi_gmem_ARADDR;
+assign m_axi_gmem_ARADDR = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARADDR;
 
-assign m_axi_gmem_ARBURST = read_train_U0_m_axi_gmem_ARBURST;
+assign m_axi_gmem_ARBURST = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARBURST;
 
-assign m_axi_gmem_ARCACHE = read_train_U0_m_axi_gmem_ARCACHE;
+assign m_axi_gmem_ARCACHE = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARCACHE;
 
-assign m_axi_gmem_ARID = read_train_U0_m_axi_gmem_ARID;
+assign m_axi_gmem_ARID = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARID;
 
-assign m_axi_gmem_ARLEN = read_train_U0_m_axi_gmem_ARLEN;
+assign m_axi_gmem_ARLEN = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLEN;
 
-assign m_axi_gmem_ARLOCK = read_train_U0_m_axi_gmem_ARLOCK;
+assign m_axi_gmem_ARLOCK = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARLOCK;
 
-assign m_axi_gmem_ARPROT = read_train_U0_m_axi_gmem_ARPROT;
+assign m_axi_gmem_ARPROT = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARPROT;
 
-assign m_axi_gmem_ARQOS = read_train_U0_m_axi_gmem_ARQOS;
+assign m_axi_gmem_ARQOS = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARQOS;
 
-assign m_axi_gmem_ARREGION = read_train_U0_m_axi_gmem_ARREGION;
+assign m_axi_gmem_ARREGION = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARREGION;
 
-assign m_axi_gmem_ARSIZE = read_train_U0_m_axi_gmem_ARSIZE;
+assign m_axi_gmem_ARSIZE = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARSIZE;
 
-assign m_axi_gmem_ARUSER = read_train_U0_m_axi_gmem_ARUSER;
+assign m_axi_gmem_ARUSER = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARUSER;
 
-assign m_axi_gmem_ARVALID = read_train_U0_m_axi_gmem_ARVALID;
+assign m_axi_gmem_ARVALID = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_ARVALID;
 
 assign m_axi_gmem_AWADDR = 64'd0;
 
@@ -1435,7 +1360,7 @@ assign m_axi_gmem_AWVALID = 1'b0;
 
 assign m_axi_gmem_BREADY = 1'b0;
 
-assign m_axi_gmem_RREADY = read_train_U0_m_axi_gmem_RREADY;
+assign m_axi_gmem_RREADY = runTestAfterInit_Block_entry10_proc_U0_m_axi_gmem_RREADY;
 
 assign m_axi_gmem_WDATA = 512'd0;
 
@@ -1449,11 +1374,11 @@ assign m_axi_gmem_WUSER = 1'd0;
 
 assign m_axi_gmem_WVALID = 1'b0;
 
-assign n_regions_V_address0 = runTestAfterInit_Block_entry79_proc_U0_n_regions_V_address0;
+assign n_regions_V_address0 = runTestAfterInit_Block_entry10_proc_U0_n_regions_V_address0;
 
 assign n_regions_V_address1 = 6'd0;
 
-assign n_regions_V_ce0 = runTestAfterInit_Block_entry79_proc_U0_n_regions_V_ce0;
+assign n_regions_V_ce0 = runTestAfterInit_Block_entry10_proc_U0_n_regions_V_ce0;
 
 assign n_regions_V_ce1 = 1'b0;
 
@@ -1472,10 +1397,6 @@ assign outcomeInRam_ce0 = writeOutcome_U0_outcomeInRam_ce0;
 assign outcomeInRam_d0 = writeOutcome_U0_outcomeInRam_d0;
 
 assign outcomeInRam_we0 = writeOutcome_U0_outcomeInRam_we0;
-
-assign read_train_U0_ap_continue = (ap_sync_channel_write_contr_uniId_V & ap_sync_channel_write_contr_taskId_V & ap_sync_channel_write_contr_checkId_V & ap_sync_channel_write_contr_AOV_c18_channel & ap_sync_channel_write_contr_AOV_7_c25_channel & ap_sync_channel_write_contr_AOV_6_c24_channel & ap_sync_channel_write_contr_AOV_5_c23_channel & ap_sync_channel_write_contr_AOV_4_c22_channel & ap_sync_channel_write_contr_AOV_3_c21_channel & ap_sync_channel_write_contr_AOV_2_c20_channel & ap_sync_channel_write_contr_AOV_1_c19_channel);
-
-assign read_train_U0_ap_start = ((ap_sync_reg_read_train_U0_ap_ready ^ 1'b1) & ap_start);
 
 assign regions_1_address0 = run_test_U0_regions_1_address0;
 
@@ -1541,16 +1462,16 @@ assign regions_we0 = 1'b0;
 
 assign regions_we1 = 1'b0;
 
-assign runTestAfterInit_Block_entry79_proc_U0_ap_continue = (ap_sync_channel_write_n_regions_V_load_loc_channel & ap_sync_channel_write_contr_checkId_V_load_loc_channel & ap_sync_channel_write_contr_checkId_V_load_cast_loc_channel);
+assign runTestAfterInit_Block_entry10_proc_U0_ap_continue = (ap_sync_channel_write_tmp_21_cast_loc_channel & ap_sync_channel_write_n_regions_V_load_loc_channel & ap_sync_channel_write_contr_AOV_c17_channel & ap_sync_channel_write_contr_AOV_7_c24_channel & ap_sync_channel_write_contr_AOV_6_c23_channel & ap_sync_channel_write_contr_AOV_5_c22_channel & ap_sync_channel_write_contr_AOV_4_c21_channel & ap_sync_channel_write_contr_AOV_3_c20_channel & ap_sync_channel_write_contr_AOV_2_c19_channel & ap_sync_channel_write_contr_AOV_1_c18_channel & ap_sync_channel_write_agg_tmp8_0_loc_channel & ap_sync_channel_write_agg_tmp8_0_cast_loc_channel & ap_sync_channel_write_agg_tmp12_loc_channel);
 
-assign runTestAfterInit_Block_entry79_proc_U0_ap_start = ((ap_sync_reg_runTestAfterInit_Block_entry79_proc_U0_ap_ready ^ 1'b1) & contr_checkId_V_empty_n & ap_start);
+assign runTestAfterInit_Block_entry10_proc_U0_ap_start = ((ap_sync_reg_runTestAfterInit_Block_entry10_proc_U0_ap_ready ^ 1'b1) & ap_start);
 
 assign run_test_U0_ap_continue = error_full_n;
 
-assign run_test_U0_ap_start = (n_regions_V_load_loc_channel_empty_n & (ap_sync_reg_run_test_U0_ap_ready ^ 1'b1) & contr_checkId_V_load_cast_loc_channel_empty_n & contr_AOV_c18_channel_empty_n & contr_AOV_7_c25_channel_empty_n & contr_AOV_6_c24_channel_empty_n & contr_AOV_5_c23_channel_empty_n & contr_AOV_4_c22_channel_empty_n & contr_AOV_3_c21_channel_empty_n & contr_AOV_2_c20_channel_empty_n & contr_AOV_1_c19_channel_empty_n & ap_start);
+assign run_test_U0_ap_start = (n_regions_V_load_loc_channel_empty_n & (ap_sync_reg_run_test_U0_ap_ready ^ 1'b1) & contr_AOV_c17_channel_empty_n & contr_AOV_7_c24_channel_empty_n & contr_AOV_6_c23_channel_empty_n & contr_AOV_5_c22_channel_empty_n & contr_AOV_4_c21_channel_empty_n & contr_AOV_3_c20_channel_empty_n & contr_AOV_2_c19_channel_empty_n & contr_AOV_1_c18_channel_empty_n & ap_start & agg_tmp8_0_cast_loc_channel_empty_n);
 
 assign writeOutcome_U0_ap_continue = ap_continue;
 
-assign writeOutcome_U0_ap_start = (error_empty_n & contr_uniId_V_empty_n & contr_taskId_V_empty_n & contr_checkId_V_load_loc_channel_empty_n);
+assign writeOutcome_U0_ap_start = (tmp_21_cast_loc_channel_empty_n & error_empty_n & agg_tmp8_0_loc_channel_empty_n & agg_tmp12_loc_channel_empty_n);
 
 endmodule //run_runTestAfterInit

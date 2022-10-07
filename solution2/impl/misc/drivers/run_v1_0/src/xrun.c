@@ -93,40 +93,6 @@ u64 XRun_Get_inputAOV(XRun *InstancePtr) {
     return Data;
 }
 
-void XRun_Set_readyForData(XRun *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_READYFORDATA_DATA, Data);
-}
-
-u32 XRun_Get_readyForData(XRun *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_READYFORDATA_DATA);
-    return Data;
-}
-
-void XRun_Set_copyInputAOV(XRun *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYINPUTAOV_DATA, Data);
-}
-
-u32 XRun_Get_copyInputAOV(XRun *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYINPUTAOV_DATA);
-    return Data;
-}
-
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -93,7 +93,7 @@ run_mux_84_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 4 ),
     .dout_WIDTH( 32 ))
-mux_84_32_1_1_U77(
+mux_84_32_1_1_U76(
     .din0(contr_AOV_load),
     .din1(contr_AOV_1_load),
     .din2(contr_AOV_2_load),

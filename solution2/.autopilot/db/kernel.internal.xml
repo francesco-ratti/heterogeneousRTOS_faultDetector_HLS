@@ -5,17 +5,15 @@
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x800" dataWidth="32"/>
     </ports>
     <args>
-    <arg id="0" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x10" size="0x10" type="bool*"/>
+    <arg id="0" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x10" size="0x10" type="char*"/>
     <arg id="1" name="outcomeInRam" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x240" offset="0x400" size="0x400" type="OutcomeStr*"/>
     <arg id="2" name="inputAOV" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x20" size="0x8" type="void*"/>
-    <arg id="3" name="readyForData" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x2C" size="0x4" type="void*"/>
-    <arg id="4" name="copyInputAOV" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x34" size="0x4" type="void*"/>
-    <arg id="5" name="accel_mode" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x3C" size="0x4" type="unsigned int"/>
-    <arg id="6" name="trainedRegion_i" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x60" offset="0x44" size="0x60" type="int768"/>
-    <arg id="7" name="trainedRegion_o" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0xA8" size="0x60" type="void*"/>
-    <arg id="8" name="IOCheckIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x170" size="0x4" type="unsigned int"/>
-    <arg id="9" name="IORegionIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x178" size="0x4" type="unsigned int"/>
-    <arg id="10" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x180" size="0x4" type="void*"/>
+    <arg id="3" name="accel_mode" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x2C" size="0x4" type="unsigned int"/>
+    <arg id="4" name="trainedRegion_i" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x60" offset="0x34" size="0x60" type="int768"/>
+    <arg id="5" name="trainedRegion_o" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x98" size="0x60" type="void*"/>
+    <arg id="6" name="IOCheckIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x160" size="0x4" type="unsigned int"/>
+    <arg id="7" name="IORegionIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x168" size="0x4" type="unsigned int"/>
+    <arg id="8" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x170" size="0x4" type="void*"/>
     </args>
     <compileWorkGroupSize x="1" y="1" z="1"/>
     <maxWorkGroupSize x="1" y="1" z="1"/>

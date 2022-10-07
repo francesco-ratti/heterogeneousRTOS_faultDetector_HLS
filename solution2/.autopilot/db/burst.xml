@@ -1,6 +1,5 @@
 <VitisHLS:BurstInfo>
-    <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:577:87" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="entry.load.50" VarName="error" ParentFunc="runTestAfterInit(controlStr*, char*, char*, OutcomeStr*, bool*, REGION_T (*) [16], ap_uint&lt;8&gt;*)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:577:87" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="entry.load.54" VarName="error" ParentFunc="runTestAfterInit(controlStr*, OutcomeStr*, char*, REGION_T (*) [16], ap_uint&lt;8&gt;*)"/>
     <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:550:9" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="land.end.store.2" VarName="error" ParentFunc="run_test(bool*, REGION_T*, ap_uint&lt;8&gt;, float*)"/>
-    <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:537:14" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="memcpy-split1.store.38" VarName="errorInTask" ParentFunc="writeOutcome(bool*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;16&gt;, bool, OutcomeStr*, float*)"/>
 </VitisHLS:BurstInfo>
 

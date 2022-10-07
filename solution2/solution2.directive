@@ -5,11 +5,6 @@
                 <option name="name" value="run"/>
             </pragma>
         </directive>
-        <directive functionName="run" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="run"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

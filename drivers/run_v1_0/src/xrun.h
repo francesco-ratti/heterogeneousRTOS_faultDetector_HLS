@@ -188,10 +188,6 @@ void XRun_DisableAutoRestart(XRun *InstancePtr);
 
 void XRun_Set_inputAOV(XRun *InstancePtr, u64 Data);
 u64 XRun_Get_inputAOV(XRun *InstancePtr);
-void XRun_Set_readyForData(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_readyForData(XRun *InstancePtr);
-void XRun_Set_copyInputAOV(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_copyInputAOV(XRun *InstancePtr);
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_accel_mode(XRun *InstancePtr);
 void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data);
@@ -231,18 +227,14 @@ void XRun_InterruptClear(XRun *InstancePtr, u32 Mask);
 u32 XRun_InterruptGetEnabled(XRun *InstancePtr);
 u32 XRun_InterruptGetStatus(XRun *InstancePtr);
 
+
 void FAULTDETECTOR_setTrainedRegion(XRun *InstancePtr, region_t* region);
 region_t FAULTDETECTOR_getTrainedRegion(XRun *InstancePtr);
-char FAULTDETECTOR_isReadyForNextControl(XRun *InstancePtr);
-void FAULTDETECTOR_processNextControl(XRun *InstancePtr);
-FAULTDETECTOR_OutcomeStr FAULTDETECTOR_getLastError(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeStr* dest);
-/*void FAULTDETECTOR_MoveRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS]);
-void FAULTDETECTOR_MoveNRegions(XRun *InstancePtr, u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);*/
+FAULTDETECTOR_OutcomeStr FAULTDETECTOR_getLastFault(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeStr* dest);
 char FAULTDETECTOR_isFault(XRun *InstancePtr, u8 taskId);
 void FAULTDETECTOR_resetFault(XRun *InstancePtr, u8 taskId);
-void FAULTDETECTOR_initHW(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
+void FAULTDETECTOR_initRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
 void FAULTDETECTOR_dumpRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]);
-
 
 #ifdef __cplusplus
 }

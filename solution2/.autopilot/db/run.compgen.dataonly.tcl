@@ -4,7 +4,7 @@ set axilite_register_dict [dict create]
 set port_control {
 errorInTask { 
 	dir O
-	width 1
+	width 8
 	depth 16
 	mode ap_memory
 	offset 16
@@ -22,7 +22,7 @@ inputAOV {
 	offset 32
 	offset_end 43
 }
-readyForData { 
+accel_mode { 
 	dir I
 	width 8
 	depth 1
@@ -30,39 +30,39 @@ readyForData {
 	offset 44
 	offset_end 51
 }
-copyInputAOV { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 52
-	offset_end 59
-}
-accel_mode { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 60
-	offset_end 67
-}
 trainedRegion_i { 
 	dir I
 	width 768
 	depth 1
 	mode ap_none
-	offset 68
-	offset_end 167
+	offset 52
+	offset_end 151
 }
 trainedRegion_o { 
 	dir O
 	width 768
 	depth 1
 	mode ap_none
-	offset 168
-	offset_end 267
+	offset 152
+	offset_end 251
 }
 IOCheckIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 352
+	offset_end 359
+}
+IORegionIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 360
+	offset_end 367
+}
+n_regions_in_i { 
 	dir I
 	width 8
 	depth 1
@@ -70,29 +70,13 @@ IOCheckIdx {
 	offset 368
 	offset_end 375
 }
-IORegionIdx { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 376
-	offset_end 383
-}
-n_regions_in_i { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 384
-	offset_end 391
-}
 n_regions_in_o { 
 	dir O
 	width 8
 	depth 1
 	mode ap_none
-	offset 392
-	offset_end 399
+	offset 376
+	offset_end 383
 }
 outcomeInRam { 
 	dir O

@@ -1,8 +1,8 @@
 <root versionMajor = "1" versionMinor = "5">
   <kernel src_name="run" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
-      <arg id="0" access_type="w" src_name="errorInTask" src_type="bool*" src_isptr="1" src_bitwidth="1" src_size_or_depth="16">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="1" hw_size_or_depth="16" hw_kernel_support="true">
+      <arg id="0" access_type="w" src_name="errorInTask" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="16">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="16" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16"/>
         </hw>
       </arg>
@@ -20,44 +20,34 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32"/>
         </hw>
       </arg>
-      <arg id="3" access_type="" src_name="readyForData" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+      <arg id="3" access_type="r" src_name="accel_mode" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="44"/>
         </hw>
       </arg>
-      <arg id="4" access_type="" src_name="copyInputAOV" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
+      <arg id="4" access_type="r" src_name="trainedRegion_i" src_type="REGION_T" src_isptr="1" src_bitwidth="768" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="768" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52"/>
         </hw>
       </arg>
-      <arg id="5" access_type="r" src_name="accel_mode" src_type="char" src_isptr="0" src_bitwidth="8" src_size_or_depth="1">
+      <arg id="5" access_type="w" src_name="trainedRegion_o" src_type="REGION_T*" src_isptr="1" src_bitwidth="768" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="768" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="152"/>
+        </hw>
+      </arg>
+      <arg id="6" access_type="r" src_name="IOCheckIdx" src_type="ap_uint&lt;8&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="60"/>
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="352"/>
         </hw>
       </arg>
-      <arg id="6" access_type="r" src_name="trainedRegion_i" src_type="REGION_T" src_isptr="1" src_bitwidth="768" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="768" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="68"/>
+      <arg id="7" access_type="r" src_name="IORegionIdx" src_type="ap_uint&lt;8&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="360"/>
         </hw>
       </arg>
-      <arg id="7" access_type="w" src_name="trainedRegion_o" src_type="REGION_T*" src_isptr="1" src_bitwidth="768" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="768" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="168"/>
-        </hw>
-      </arg>
-      <arg id="8" access_type="r" src_name="IOCheckIdx" src_type="ap_uint&lt;8&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+      <arg id="8" access_type="rw" src_name="n_regions_in" src_type="ap_uint&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="368"/>
-        </hw>
-      </arg>
-      <arg id="9" access_type="r" src_name="IORegionIdx" src_type="ap_uint&lt;8&gt;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="376"/>
-        </hw>
-      </arg>
-      <arg id="10" access_type="rw" src_name="n_regions_in" src_type="ap_uint&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="384"/>
         </hw>
       </arg>
     </args>

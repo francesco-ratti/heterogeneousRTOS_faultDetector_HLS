@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665095949495">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665147651750">
   <ports id="1" name="regions" type="PortType" coreName="RAM" coreId="62" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
   <ports id="2" name="p_read1" type="PortType" coreId="3621216858" bitwidth="6">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="regions_1" type="PortType" coreName="RAM" coreId="176" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="3" name="regions_1" type="PortType" coreName="RAM" coreId="0" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="4" name="regions_2" type="PortType" coreName="RAM" coreId="1769104758" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="4" name="regions_2" type="PortType" coreName="RAM" coreId="0" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="5" name="regions_3" type="PortType" coreName="RAM" coreId="4202229248" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="5" name="regions_3" type="PortType" coreName="RAM" coreId="2227721360" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="6" name="p_read2" type="PortType" originalName="n_regions.V" coreId="4202444016" bitwidth="8">
+  <ports id="6" name="p_read2" type="PortType" originalName="n_regions.V" coreId="1599294536" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="p_read3" type="PortType" coreId="2667569424" bitwidth="32">
+  <ports id="7" name="p_read3" type="PortType" coreId="1330007625" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="8" name="p_read4" type="PortType" coreId="4294967040" bitwidth="32">
+  <ports id="8" name="p_read4" type="PortType" coreId="2228692032" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="9" name="p_read5" type="PortType" coreId="72561465" bitwidth="32">
+  <ports id="9" name="p_read5" type="PortType" coreId="698286592" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="10" name="p_read6" type="PortType" coreId="4202446072" bitwidth="32">
+  <ports id="10" name="p_read6" type="PortType" coreId="2228708144" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="11" name="p_read7" type="PortType" coreId="72585363" bitwidth="32">
+  <ports id="11" name="p_read7" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="12" name="p_read8" type="PortType" coreId="72695395" bitwidth="32">
+  <ports id="12" name="p_read8" type="PortType" coreId="2228708144" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="13" name="p_read9" type="PortType" coreId="72704572" bitwidth="32">
+  <ports id="13" name="p_read9" type="PortType" coreId="2228707104" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="14" name="p_read10" type="PortType" coreId="4294967295" bitwidth="32">
+  <ports id="14" name="p_read10" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="15" name="contr_AOV_c" type="PortType" coreName="FIFO_SRL" coreId="4202455664" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
+  <ports id="15" name="contr_AOV_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="16" name="contr_AOV_1_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
@@ -57,13 +57,13 @@
   <ports id="19" name="contr_AOV_4_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="20" name="contr_AOV_5_c" type="PortType" coreName="FIFO_SRL" coreId="4202697920" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
+  <ports id="20" name="contr_AOV_5_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="21" name="contr_AOV_6_c" type="PortType" coreName="FIFO_SRL" coreId="1397508187" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
+  <ports id="21" name="contr_AOV_6_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="22" name="contr_AOV_7_c" type="PortType" coreName="FIFO_SRL" coreId="4202703104" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
+  <ports id="22" name="contr_AOV_7_c" type="PortType" coreName="FIFO_SRL" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="32" name="ap_return" direction="DirOut">
@@ -236,7 +236,7 @@
       <dataOutputObjs>bitcast</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="p_read_19" rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_U53" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="p_read_19" rtlName="fcmp_32ns_32ns_1_2_no_dsp_1_U52" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="32" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read4</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
@@ -291,13 +291,13 @@
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>contr_AOV_c</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="tmp_3" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_3_fu_284_p3" coreId="0" contextFuncName="hasRegion" bitwidth="9" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="tmp_3" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_3_fu_284_p3" coreId="2228959056" contextFuncName="hasRegion" bitwidth="9" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="targetBlock" rtlName="grp_run_test_Pipeline_is_valid_label2_fu_225" coreId="4202675888" bitwidth="1" opcode="call" nodeLatency="1" m_display="0" m_delay="7.73" m_topoIndex="17" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="targetBlock" rtlName="grp_run_test_Pipeline_is_valid_label2_fu_225" coreId="0" bitwidth="1" opcode="call" nodeLatency="1" m_display="0" m_delay="7.73" m_topoIndex="17" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
@@ -309,7 +309,7 @@
       <dataOutputObjs>br</dataOutputObjs>
       <constName>run_test_Pipeline_is_valid_label2</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="br_ln0" coreId="0" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="21" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="br_ln0" coreId="2228975440" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="21" m_clusterGroupNumber="-1">
       <dataInputObjs>call</dataInputObjs>
       <controlInputObjs>run_test.exit</controlInputObjs>
       <controlInputObjs>land.rhs.i</controlInputObjs>
@@ -329,7 +329,7 @@
       <dataOutputObjs>br</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="br_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4202659504" contextFuncName="hasRegion" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="br_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2228959056" contextFuncName="hasRegion" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>icmp</dataInputObjs>
       <controlInputObjs>for.body3.i.i.preheader</controlInputObjs>
@@ -354,12 +354,12 @@
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="trunc_ln76" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_fu_302_p1" coreId="4202672048" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="trunc_ln76" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_fu_302_p1" coreId="2228971600" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="trunc_ln76_16" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_16_fu_307_p1" coreId="4202621760" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="trunc_ln76_16" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_16_fu_307_p1" coreId="2228752000" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -370,18 +370,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="bitcast_ln76_3" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_3_fu_318_p1" coreId="4202621760" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="bitcast_ln76_3" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_3_fu_318_p1" coreId="0" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="trunc_ln76_17" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_17_fu_321_p1" coreId="4202621760" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="trunc_ln76_17" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_17_fu_321_p1" coreId="2228765232" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="trunc_ln76_18" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_18_fu_326_p1" coreId="4202621760" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="trunc_ln76_18" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_18_fu_326_p1" coreId="2229030848" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -392,18 +392,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="bitcast_ln76_5" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_5_fu_337_p1" coreId="4202621760" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="bitcast_ln76_5" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_5_fu_337_p1" coreId="0" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="trunc_ln76_19" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_19_fu_340_p1" coreId="72397297" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="trunc_ln76_19" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_19_fu_340_p1" coreId="0" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="trunc_ln76_20" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_20_fu_345_p1" coreId="4202369152" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="trunc_ln76_20" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_20_fu_345_p1" coreId="2228987456" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -414,13 +414,13 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="bitcast_ln76_7" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_7_fu_356_p1" coreId="4202525088" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="bitcast_ln76_7" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_7_fu_356_p1" coreId="2228989744" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="trunc_ln76_21" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_21_fu_359_p1" coreId="4202369152" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="trunc_ln76_21" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_21_fu_359_p1" coreId="2228984704" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
@@ -436,18 +436,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="bitcast_ln76_9" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_9_fu_375_p1" coreId="72370366" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="bitcast_ln76_9" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_9_fu_375_p1" coreId="2228989216" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="trunc_ln76_23" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_23_fu_378_p1" coreId="4202689016" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="trunc_ln76_23" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_23_fu_378_p1" coreId="2228994856" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="trunc_ln76_24" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_24_fu_383_p1" coreId="0" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="trunc_ln76_24" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_24_fu_383_p1" coreId="2228598576" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -458,18 +458,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="bitcast_ln76_11" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_11_fu_394_p1" coreId="0" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="bitcast_ln76_11" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_11_fu_394_p1" coreId="698221376" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="77" name="trunc_ln76_25" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_25_fu_397_p1" coreId="0" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="77" name="trunc_ln76_25" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_25_fu_397_p1" coreId="2228714688" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="trunc_ln76_26" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_26_fu_402_p1" coreId="0" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="trunc_ln76_26" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_26_fu_402_p1" coreId="2228752000" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -480,18 +480,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="bitcast_ln76_13" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_13_fu_413_p1" coreId="0" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="bitcast_ln76_13" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_13_fu_413_p1" coreId="2228796016" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="81" name="trunc_ln76_27" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_27_fu_416_p1" coreId="4202713760" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="81" name="trunc_ln76_27" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_27_fu_416_p1" coreId="0" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="trunc_ln76_28" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_28_fu_421_p1" coreId="4202353536" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="trunc_ln76_28" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_28_fu_421_p1" coreId="0" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -502,18 +502,18 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bitcast_ln76_15" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_15_fu_432_p1" coreId="4202685808" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bitcast_ln76_15" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln76_15_fu_432_p1" coreId="2228869128" contextFuncName="hasRegion" bitwidth="32" opcode="bitcast" nodeLabel="1.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="trunc_ln76_29" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_29_fu_435_p1" coreId="72371550" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="trunc_ln76_29" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_29_fu_435_p1" coreId="2228869128" contextFuncName="hasRegion" bitwidth="31" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="trunc_ln76_30" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_30_fu_440_p1" coreId="4202690960" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="trunc_ln76_30" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln76_30_fu_440_p1" coreId="2228997472" contextFuncName="hasRegion" bitwidth="23" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -524,7 +524,7 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="targetBlock1" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245" coreId="4202692728" contextFuncName="hasRegion" bitwidth="4" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.07" m_topoIndex="56" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="targetBlock1" lineNumber="76" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245" coreId="0" contextFuncName="hasRegion" bitwidth="4" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="5.07" m_topoIndex="56" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="76" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
@@ -582,7 +582,7 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>run_test.exit</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="92" name="br_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4202719416" contextFuncName="hasRegion" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="59" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="92" name="br_ln72" lineNumber="72" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2229016736" contextFuncName="hasRegion" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="59" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="72" fileDirectory="/home/francesco/workspace" functionName="hasRegion"/>
       <controlInputObjs>run_test.exit</controlInputObjs>
     </node_objs>
@@ -597,7 +597,7 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="phi_ln550" lineNumber="550" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="run_test" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="phi_ln550" lineNumber="550" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="2229018416" contextFuncName="run_test" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="576" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="550" fileDirectory="/home/francesco/workspace" functionName="run_test"/>
       <dataOutputObjs>ret</dataOutputObjs>
@@ -606,7 +606,7 @@
       <controlInputObjs>for.body3.i.i.preheader</controlInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="95" name="_ln576" lineNumber="576" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4202697920" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="95" name="_ln576" lineNumber="576" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTestAfterInit" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="576" fileDirectory="/home/francesco/workspace" functionName="runTestAfterInit"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>ap_return</dataOutputObjs>

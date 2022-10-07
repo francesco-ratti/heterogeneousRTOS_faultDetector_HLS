@@ -30,11 +30,11 @@
 <Worst-caseRealTimeLatency>11.808 us</Worst-caseRealTimeLatency>
 <DataflowPipelineThroughput>
 <range>
-<min>71</min>
+<min>73</min>
 <max>584</max>
 </range>
 </DataflowPipelineThroughput>
-<Interval-min>71</Interval-min>
+<Interval-min>73</Interval-min>
 <Interval-max>584</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -42,8 +42,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>3890</FF>
-<LUT>4358</LUT>
+<FF>3766</FF>
+<LUT>4127</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
@@ -670,7 +670,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -681,7 +681,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>1</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

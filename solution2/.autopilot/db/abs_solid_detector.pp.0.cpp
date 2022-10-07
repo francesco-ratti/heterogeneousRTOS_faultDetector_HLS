@@ -30158,29 +30158,8 @@ namespace hls {
 
 };
 # 474 "detector_solid/abs_solid_detector.cpp" 2
-# 483 "detector_solid/abs_solid_detector.cpp"
-void read_train(
-
-  controlStr* dest,
-  controlStr* inputAOV,
-  char* readyForData,
-  char* copyInputAOV) {
-
-
-
-
-
- memcpy(dest, inputAOV, sizeof(controlStr));
-
-
-
-
-
-
-
-}
 # 518 "detector_solid/abs_solid_detector.cpp"
-void writeOutcome(bool* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, OutcomeStr* outcomeInRam, float data[8]) {
+void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, OutcomeStr* outcomeInRam, float data[8]) {
 # 528 "detector_solid/abs_solid_detector.cpp"
  OutcomeStr outcome;
  outcome.checkId=checkId;
@@ -30200,8 +30179,8 @@ void run_test(bool* error, region_t regions[16], ap_uint<8> n_regions, float dat
  *error = !(is_valid(data) && hasRegion(regions, n_regions, data));
 }
 
-void runTestAfterInit(controlStr* inputAOV, char* readyForData, char* copyInputAOV,
-  OutcomeStr * outcomeInRam, bool errorInTask[16], region_t regions[64][16], ap_uint<8> n_regions[64]
+void runTestAfterInit(controlStr* inputAOV,
+  OutcomeStr * outcomeInRam, char errorInTask[16], region_t regions[64][16], ap_uint<8> n_regions[64]
 ) {
 
 #pragma HLS dataflow
@@ -30219,8 +30198,8 @@ void runTestAfterInit(controlStr* inputAOV, char* readyForData, char* copyInputA
  bool error;
 
 
- read_train(&contr, inputAOV, readyForData, copyInputAOV);
 
+ memcpy(&contr, inputAOV, sizeof(controlStr));
 
 
  run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
@@ -30236,7 +30215,7 @@ void runTestAfterInit(controlStr* inputAOV, char* readyForData, char* copyInputA
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
 # 647 "detector_solid/abs_solid_detector.cpp"
-__attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV, char* readyForData, char* copyInputAOV,
+__attribute__((sdx_kernel("run", 0))) void run(char errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV,
 
   char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in ) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
@@ -30248,8 +30227,8 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
 # 649 "detector_solid/abs_solid_detector.cpp"
 
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
-#pragma HLS interface s_axilite port = copyInputAOV
-#pragma HLS interface s_axilite port = readyForData
+
+
 #pragma HLS interface s_axilite port = accel_mode
 #pragma HLS interface m_axi port = inputAOV
 #pragma HLS interface s_axilite port = trainedRegion_i
@@ -30277,5 +30256,5 @@ __attribute__((sdx_kernel("run", 0))) void run(bool errorInTask[16], OutcomeStr 
   *trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
   *n_regions_in=n_regions[IOCheckIdx];
  } else if (accel_mode==3)
-  runTestAfterInit(inputAOV, readyForData, copyInputAOV, outcomeInRam, errorInTask, regions, n_regions);
+  runTestAfterInit(inputAOV, outcomeInRam, errorInTask, regions, n_regions);
 }

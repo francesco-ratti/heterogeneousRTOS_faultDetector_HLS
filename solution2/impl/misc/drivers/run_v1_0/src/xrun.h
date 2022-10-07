@@ -156,10 +156,6 @@ void XRun_DisableAutoRestart(XRun *InstancePtr);
 
 void XRun_Set_inputAOV(XRun *InstancePtr, u64 Data);
 u64 XRun_Get_inputAOV(XRun *InstancePtr);
-void XRun_Set_readyForData(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_readyForData(XRun *InstancePtr);
-void XRun_Set_copyInputAOV(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_copyInputAOV(XRun *InstancePtr);
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_accel_mode(XRun *InstancePtr);
 void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data);

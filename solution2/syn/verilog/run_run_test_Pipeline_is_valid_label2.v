@@ -111,7 +111,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U6(
+fcmp_32ns_32ns_1_2_no_dsp_1_U5(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(p_x_assign_fu_167_p10),
@@ -127,7 +127,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U7(
+fcmp_32ns_32ns_1_2_no_dsp_1_U6(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(p_x_assign_fu_167_p10),
@@ -150,7 +150,7 @@ run_mux_84_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 4 ),
     .dout_WIDTH( 32 ))
-mux_84_32_1_1_U8(
+mux_84_32_1_1_U7(
     .din0(p_read3),
     .din1(p_read4),
     .din2(p_read5),

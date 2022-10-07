@@ -398,7 +398,7 @@ begin
         grp_fu_614_p_dout0 => grp_fu_614_p2,
         grp_fu_614_p_ce => grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_245_grp_fu_614_p_ce);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U53 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U52 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,

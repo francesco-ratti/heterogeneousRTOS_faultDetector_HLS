@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 140
+set ID 138
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -80,7 +80,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 141
+set ID 139
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -175,7 +175,7 @@ set axilite_register_dict [dict create]
 set port_control {
 errorInTask { 
 	dir O
-	width 1
+	width 8
 	depth 16
 	mode ap_memory
 	offset 16
@@ -193,7 +193,7 @@ inputAOV {
 	offset 32
 	offset_end 43
 }
-readyForData { 
+accel_mode { 
 	dir I
 	width 8
 	depth 1
@@ -201,39 +201,39 @@ readyForData {
 	offset 44
 	offset_end 51
 }
-copyInputAOV { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 52
-	offset_end 59
-}
-accel_mode { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 60
-	offset_end 67
-}
 trainedRegion_i { 
 	dir I
 	width 768
 	depth 1
 	mode ap_none
-	offset 68
-	offset_end 167
+	offset 52
+	offset_end 151
 }
 trainedRegion_o { 
 	dir O
 	width 768
 	depth 1
 	mode ap_none
-	offset 168
-	offset_end 267
+	offset 152
+	offset_end 251
 }
 IOCheckIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 352
+	offset_end 359
+}
+IORegionIdx { 
+	dir I
+	width 8
+	depth 1
+	mode ap_none
+	offset 360
+	offset_end 367
+}
+n_regions_in_i { 
 	dir I
 	width 8
 	depth 1
@@ -241,29 +241,13 @@ IOCheckIdx {
 	offset 368
 	offset_end 375
 }
-IORegionIdx { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 376
-	offset_end 383
-}
-n_regions_in_i { 
-	dir I
-	width 8
-	depth 1
-	mode ap_none
-	offset 384
-	offset_end 391
-}
 n_regions_in_o { 
 	dir O
 	width 8
 	depth 1
 	mode ap_none
-	offset 392
-	offset_end 399
+	offset 376
+	offset_end 383
 }
 outcomeInRam { 
 	dir O
@@ -291,7 +275,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 142 \
+			id 140 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
