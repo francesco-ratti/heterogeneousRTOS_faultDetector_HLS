@@ -27,7 +27,17 @@ module run_run_test_Pipeline_is_valid_label2 (
         grp_fu_508_p_din1,
         grp_fu_508_p_opcode,
         grp_fu_508_p_dout0,
-        grp_fu_508_p_ce
+        grp_fu_508_p_ce,
+        grp_fu_512_p_din0,
+        grp_fu_512_p_din1,
+        grp_fu_512_p_opcode,
+        grp_fu_512_p_dout0,
+        grp_fu_512_p_ce,
+        grp_fu_516_p_din0,
+        grp_fu_516_p_din1,
+        grp_fu_516_p_opcode,
+        grp_fu_516_p_dout0,
+        grp_fu_516_p_ce
 );
 
 parameter    ap_ST_fsm_state1 = 2'd1;
@@ -53,6 +63,16 @@ output  [31:0] grp_fu_508_p_din1;
 output  [4:0] grp_fu_508_p_opcode;
 input  [0:0] grp_fu_508_p_dout0;
 output   grp_fu_508_p_ce;
+output  [31:0] grp_fu_512_p_din0;
+output  [31:0] grp_fu_512_p_din1;
+output  [4:0] grp_fu_512_p_opcode;
+input  [0:0] grp_fu_512_p_dout0;
+output   grp_fu_512_p_ce;
+output  [31:0] grp_fu_516_p_din0;
+output  [31:0] grp_fu_516_p_din1;
+output  [4:0] grp_fu_516_p_opcode;
+input  [0:0] grp_fu_516_p_dout0;
+output   grp_fu_516_p_ce;
 
 reg ap_idle;
 reg[0:0] ap_return;
@@ -83,8 +103,6 @@ reg   [3:0] ap_sig_allocacmp_i_1;
 wire   [31:0] bitcast_ln89_fu_192_p1;
 wire   [7:0] tmp_s_fu_196_p4;
 wire   [22:0] trunc_ln89_fu_206_p1;
-wire   [0:0] grp_fu_137_p2;
-wire   [0:0] grp_fu_142_p2;
 wire   [0:0] or_ln89_fu_222_p2;
 wire   [0:0] or_ln89_2_fu_226_p2;
 wire   [0:0] and_ln89_fu_232_p2;
@@ -105,38 +123,6 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 2 ),
-    .din0_WIDTH( 32 ),
-    .din1_WIDTH( 32 ),
-    .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U2(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .din0(p_x_assign_fu_167_p10),
-    .din1(32'd2139095040),
-    .ce(1'b1),
-    .opcode(5'd1),
-    .dout(grp_fu_137_p2)
-);
-
-run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 2 ),
-    .din0_WIDTH( 32 ),
-    .din1_WIDTH( 32 ),
-    .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U3(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .din0(p_x_assign_fu_167_p10),
-    .din1(32'd4286578688),
-    .ce(1'b1),
-    .opcode(5'd1),
-    .dout(grp_fu_142_p2)
-);
-
 run_mux_84_32_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
@@ -150,7 +136,7 @@ run_mux_84_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 4 ),
     .dout_WIDTH( 32 ))
-mux_84_32_1_1_U4(
+mux_84_32_1_1_U107(
     .din0(p_read1),
     .din1(p_read2),
     .din2(p_read3),
@@ -348,6 +334,22 @@ assign grp_fu_508_p_din1 = 32'd0;
 
 assign grp_fu_508_p_opcode = 5'd8;
 
+assign grp_fu_512_p_ce = 1'b1;
+
+assign grp_fu_512_p_din0 = p_x_assign_fu_167_p10;
+
+assign grp_fu_512_p_din1 = 32'd2139095040;
+
+assign grp_fu_512_p_opcode = 5'd1;
+
+assign grp_fu_516_p_ce = 1'b1;
+
+assign grp_fu_516_p_din0 = p_x_assign_fu_167_p10;
+
+assign grp_fu_516_p_din1 = 32'd4286578688;
+
+assign grp_fu_516_p_opcode = 5'd1;
+
 assign icmp_ln87_fu_155_p2 = ((ap_sig_allocacmp_i_1 == 4'd8) ? 1'b1 : 1'b0);
 
 assign icmp_ln89_1_fu_216_p2 = ((trunc_ln89_fu_206_p1 == 23'd0) ? 1'b1 : 1'b0);
@@ -356,7 +358,7 @@ assign icmp_ln89_fu_210_p2 = ((tmp_s_fu_196_p4 != 8'd255) ? 1'b1 : 1'b0);
 
 assign or_ln89_1_fu_238_p2 = (grp_fu_508_p_dout0 | and_ln89_fu_232_p2);
 
-assign or_ln89_2_fu_226_p2 = (grp_fu_142_p2 | grp_fu_137_p2);
+assign or_ln89_2_fu_226_p2 = (grp_fu_516_p_dout0 | grp_fu_512_p_dout0);
 
 assign or_ln89_fu_222_p2 = (icmp_ln89_reg_271 | icmp_ln89_1_reg_276);
 

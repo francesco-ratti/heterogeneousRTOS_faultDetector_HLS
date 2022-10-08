@@ -1113,7 +1113,7 @@ for.body3.i.split:2 %speclooptripcount_ln73 = speclooptripcount void @_ssdm_op_S
 
 <Node id="69" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body3.i.split:3 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19
+for.body3.i.split:3 %specloopname_ln72 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln72"/></StgValue>
@@ -8553,7 +8553,7 @@ for.cond.cleanup.i.loopexit.exitStub:1 %ret_ln0 = ret i1 %merge
 </dataflow>
 <dataflow id="681" from="_ssdm_op_SpecLoopName" to="specloopname_ln72" fromId="680" toId="94">
 </dataflow>
-<dataflow id="683" from="empty_19" to="specloopname_ln72" fromId="682" toId="94">
+<dataflow id="683" from="empty_11" to="specloopname_ln72" fromId="682" toId="94">
 </dataflow>
 <dataflow id="684" from="tmp_15" to="or_ln76_3" fromId="73" toId="95">
 </dataflow>

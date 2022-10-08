@@ -58,6 +58,6 @@
   <xd:arg xd:name="IORegionIdx" xd:originalName="IORegionIdx" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x168" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x170" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x178" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="2" xd:worst-case="679" xd:average-case="21"/>
-  <xd:resourceEstimates xd:LUT="9446" xd:FF="7208" xd:BRAM="0" xd:DSP="0"/>
+  <xd:latencyEstimates xd:best-case="2" xd:worst-case="1280" xd:average-case="28"/>
+  <xd:resourceEstimates xd:LUT="21213" xd:FF="15141" xd:BRAM="0" xd:DSP="22"/>
 </xd:acceleratorMap>

@@ -428,7 +428,7 @@ for.body.i.split:10 %tmp_2 = fcmp_oeq  i32 %p_x_assign, i32 -inf
 
 <Node id="28" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split:0 %specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13
+for.body.i.split:0 %specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln87"/></StgValue>

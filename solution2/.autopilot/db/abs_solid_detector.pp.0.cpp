@@ -30206,27 +30206,26 @@ void runTestAfterInit(controlStr* inputAOV,
   run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
   writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, outcomeInRam, contr.AOV);
  }
-
-
-
-
-
-
+ else if (contr.command==3) {
+  insert_point(regions[contr.checkId],
+    n_regions[contr.checkId],
+    contr.AOV);
+ }
 }
-# 633 "detector_solid/abs_solid_detector.cpp"
+# 632 "detector_solid/abs_solid_detector.cpp"
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
-# 649 "detector_solid/abs_solid_detector.cpp"
+# 648 "detector_solid/abs_solid_detector.cpp"
 __attribute__((sdx_kernel("run", 0))) void run(char errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV,
 
   char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in ) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 651 "detector_solid/abs_solid_detector.cpp"
+# 650 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution2/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 651 "detector_solid/abs_solid_detector.cpp"
+# 650 "detector_solid/abs_solid_detector.cpp"
 
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 
@@ -30247,12 +30246,12 @@ __attribute__((sdx_kernel("run", 0))) void run(char errorInTask[16], OutcomeStr 
 
 
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2
-# 699 "detector_solid/abs_solid_detector.cpp"
+# 698 "detector_solid/abs_solid_detector.cpp"
  if (accel_mode==1) {
-# 710 "detector_solid/abs_solid_detector.cpp"
+# 709 "detector_solid/abs_solid_detector.cpp"
   regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
   n_regions[IOCheckIdx]=*n_regions_in;
-# 724 "detector_solid/abs_solid_detector.cpp"
+# 723 "detector_solid/abs_solid_detector.cpp"
  } else if (accel_mode==2) {
   *trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
   *n_regions_in=n_regions[IOCheckIdx];

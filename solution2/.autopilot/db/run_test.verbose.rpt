@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run_test'
 ================================================================
-* Date:           Fri Oct  7 18:54:25 2022
+* Date:           Fri Oct  7 19:28:27 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -59,10 +59,10 @@
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |        -|    -|     404|   1377|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       -|     99|    -|
+|Multiplexer      |        -|    -|       -|    117|    -|
 |Register         |        -|    -|     271|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     675|   1615|    0|
+|Total            |        0|    0|     675|   1633|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -74,7 +74,6 @@
     +----------------------------------------------+-----------------------------------+---------+----+-----+------+-----+
     |                   Instance                   |               Module              | BRAM_18K| DSP|  FF |  LUT | URAM|
     +----------------------------------------------+-----------------------------------+---------+----+-----+------+-----+
-    |fcmp_32ns_32ns_1_2_no_dsp_1_U49               |fcmp_32ns_32ns_1_2_no_dsp_1        |        0|   0|    0|     0|    0|
     |grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145  |run_test_Pipeline_VITIS_LOOP_72_1  |        0|   0|  388|  1220|    0|
     |grp_run_test_Pipeline_is_valid_label2_fu_125  |run_test_Pipeline_is_valid_label2  |        0|   0|   16|   157|    0|
     +----------------------------------------------+-----------------------------------+---------+----+-----+------+-----+
@@ -95,7 +94,7 @@
     |          Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------------+----------+----+---+----+------------+------------+
     |ap_block_state3_on_subcall_done  |       and|   0|  0|   2|           1|           1|
-    |ap_condition_222                 |       and|   0|  0|   2|           1|           1|
+    |ap_condition_232                 |       and|   0|  0|   2|           1|           1|
     |ap_predicate_op53_call_state3    |       and|   0|  0|   2|           1|           1|
     |icmp_ln1073_fu_193_p2            |      icmp|   0|  0|  11|           8|           1|
     |icmp_ln76_11_fu_268_p2           |      icmp|   0|  0|  15|          23|           1|
@@ -106,7 +105,7 @@
     |icmp_ln76_3_fu_211_p2            |      icmp|   0|  0|  15|          23|           1|
     |icmp_ln76_6_fu_230_p2            |      icmp|   0|  0|  15|          23|           1|
     |icmp_ln76_7_fu_249_p2            |      icmp|   0|  0|  15|          23|           1|
-    |ap_condition_218                 |        or|   0|  0|   2|           1|           1|
+    |ap_condition_228                 |        or|   0|  0|   2|           1|           1|
     +---------------------------------+----------+----+---+----+------------+------------+
     |Total                            |          |   0|  0| 139|         196|          13|
     +---------------------------------+----------+----+---+----+------------+------------+
@@ -122,8 +121,10 @@
     |grp_fu_508_opcode                   |  14|          3|    5|         15|
     |grp_fu_508_p0                       |  14|          3|   32|         96|
     |grp_fu_508_p1                       |  14|          3|   32|         96|
+    |grp_fu_512_ce                       |   9|          2|    1|          2|
+    |grp_fu_516_ce                       |   9|          2|    1|          2|
     +------------------------------------+----+-----------+-----+-----------+
-    |Total                               |  99|         21|   73|        219|
+    |Total                               | 117|         25|   75|        223|
     +------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -174,6 +175,21 @@
 |ap_idle                 |  out|    1|  ap_ctrl_hs|              run_test|  return value|
 |ap_ready                |  out|    1|  ap_ctrl_hs|              run_test|  return value|
 |ap_return               |  out|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_609_p_din0       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_609_p_din1       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_609_p_opcode     |  out|    5|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_609_p_dout0      |   in|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_609_p_ce         |  out|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_613_p_din0       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_613_p_din1       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_613_p_opcode     |  out|    5|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_613_p_dout0      |   in|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_613_p_ce         |  out|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_617_p_din0       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_617_p_din1       |  out|   32|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_617_p_opcode     |  out|    5|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_617_p_dout0      |   in|    1|  ap_ctrl_hs|              run_test|  return value|
+|grp_fu_617_p_ce         |  out|    1|  ap_ctrl_hs|              run_test|  return value|
 |regions_min_0_address0  |  out|   12|   ap_memory|         regions_min_0|         array|
 |regions_min_0_ce0       |  out|    1|   ap_memory|         regions_min_0|         array|
 |regions_min_0_q0        |   in|   32|   ap_memory|         regions_min_0|         array|
@@ -1496,6 +1512,30 @@ ret_ln552                 (ret           ) [ 0000]
 </bind>
 </comp>
 
+<comp id="512" class="1004" name="grp_fu_512">
+<pin_list>
+<pin id="513" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="514" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="515" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="fcmp(46) " fcode="fcmp"/>
+<opset="tmp_1/1 "/>
+</bind>
+</comp>
+
+<comp id="516" class="1004" name="grp_fu_516">
+<pin_list>
+<pin id="517" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="518" dir="0" index="1" bw="32" slack="2147483647"/>
+<pin id="519" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="fcmp(46) " fcode="fcmp"/>
+<opset="tmp_2/1 "/>
+</bind>
+</comp>
+
 </comp_list>
 
 <net_list>
@@ -1938,7 +1978,9 @@ ret_ln552                 (ret           ) [ 0000]
 |          |             trunc_ln76_29_fu_335             |    0    |    0    |    0    |
 |          |             trunc_ln76_30_fu_340             |    0    |    0    |    0    |
 |----------|----------------------------------------------|---------|---------|---------|
-|   fcmp   |                  grp_fu_508                  |    0    |    0    |    0    |
+|          |                  grp_fu_508                  |    0    |    0    |    0    |
+|   fcmp   |                  grp_fu_512                  |    0    |    0    |    0    |
+|          |                  grp_fu_516                  |    0    |    0    |    0    |
 |----------|----------------------------------------------|---------|---------|---------|
 |   Total  |                                              | 18.3482 |   1059  |   1156  |
 |----------|----------------------------------------------|---------|---------|---------|

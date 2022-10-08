@@ -30,7 +30,17 @@ port (
     grp_fu_508_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     grp_fu_508_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
     grp_fu_508_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
-    grp_fu_508_p_ce : OUT STD_LOGIC );
+    grp_fu_508_p_ce : OUT STD_LOGIC;
+    grp_fu_512_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_512_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_512_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
+    grp_fu_512_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
+    grp_fu_512_p_ce : OUT STD_LOGIC;
+    grp_fu_516_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_516_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_516_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
+    grp_fu_516_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
+    grp_fu_516_p_ce : OUT STD_LOGIC );
 end;
 
 
@@ -87,8 +97,6 @@ attribute shreg_extract : string;
     signal bitcast_ln89_fu_192_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal tmp_s_fu_196_p4 : STD_LOGIC_VECTOR (7 downto 0);
     signal trunc_ln89_fu_206_p1 : STD_LOGIC_VECTOR (22 downto 0);
-    signal grp_fu_137_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_fu_142_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal or_ln89_fu_222_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal or_ln89_2_fu_226_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln89_fu_232_p2 : STD_LOGIC_VECTOR (0 downto 0);
@@ -167,39 +175,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fcmp_32ns_32ns_1_2_no_dsp_1_U2 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
-    generic map (
-        ID => 1,
-        NUM_STAGE => 2,
-        din0_WIDTH => 32,
-        din1_WIDTH => 32,
-        dout_WIDTH => 1)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        din0 => p_x_assign_fu_167_p10,
-        din1 => ap_const_lv32_7F800000,
-        ce => ap_const_logic_1,
-        opcode => ap_const_lv5_1,
-        dout => grp_fu_137_p2);
-
-    fcmp_32ns_32ns_1_2_no_dsp_1_U3 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
-    generic map (
-        ID => 1,
-        NUM_STAGE => 2,
-        din0_WIDTH => 32,
-        din1_WIDTH => 32,
-        dout_WIDTH => 1)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        din0 => p_x_assign_fu_167_p10,
-        din1 => ap_const_lv32_FF800000,
-        ce => ap_const_logic_1,
-        opcode => ap_const_lv5_1,
-        dout => grp_fu_142_p2);
-
-    mux_84_32_1_1_U4 : component run_mux_84_32_1_1
+    mux_84_32_1_1_U107 : component run_mux_84_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -439,11 +415,19 @@ begin
     grp_fu_508_p_din0 <= p_x_assign_fu_167_p10;
     grp_fu_508_p_din1 <= ap_const_lv32_0;
     grp_fu_508_p_opcode <= ap_const_lv5_8;
+    grp_fu_512_p_ce <= ap_const_logic_1;
+    grp_fu_512_p_din0 <= p_x_assign_fu_167_p10;
+    grp_fu_512_p_din1 <= ap_const_lv32_7F800000;
+    grp_fu_512_p_opcode <= ap_const_lv5_1;
+    grp_fu_516_p_ce <= ap_const_logic_1;
+    grp_fu_516_p_din0 <= p_x_assign_fu_167_p10;
+    grp_fu_516_p_din1 <= ap_const_lv32_FF800000;
+    grp_fu_516_p_opcode <= ap_const_lv5_1;
     icmp_ln87_fu_155_p2 <= "1" when (ap_sig_allocacmp_i_1 = ap_const_lv4_8) else "0";
     icmp_ln89_1_fu_216_p2 <= "1" when (trunc_ln89_fu_206_p1 = ap_const_lv23_0) else "0";
     icmp_ln89_fu_210_p2 <= "0" when (tmp_s_fu_196_p4 = ap_const_lv8_FF) else "1";
     or_ln89_1_fu_238_p2 <= (grp_fu_508_p_dout0 or and_ln89_fu_232_p2);
-    or_ln89_2_fu_226_p2 <= (grp_fu_142_p2 or grp_fu_137_p2);
+    or_ln89_2_fu_226_p2 <= (grp_fu_516_p_dout0 or grp_fu_512_p_dout0);
     or_ln89_fu_222_p2 <= (icmp_ln89_reg_271 or icmp_ln89_1_reg_276);
     tmp_s_fu_196_p4 <= bitcast_ln89_fu_192_p1(30 downto 23);
     trunc_ln89_fu_206_p1 <= bitcast_ln89_fu_192_p1(23 - 1 downto 0);

@@ -577,12 +577,11 @@ void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInp
 		run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
 		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
 	}
-	//else if (contr.command==COMMAND_TRAIN) {
-	//		insert_point(regions[contr.checkId],
-	//				n_regions[contr.checkId],
-	//				contr.AOV);
-	//	}
-	//}
+	else if (contr.command==COMMAND_TRAIN) {
+		insert_point(regions[contr.checkId],
+				n_regions[contr.checkId],
+				contr.AOV);
+	}
 }
 
 //void run_train(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, float data_key[MAX_AOV_DIM]) {

@@ -36,7 +36,22 @@ module run_run_test (
         p_read6,
         p_read7,
         p_read8,
-        ap_return
+        ap_return,
+        grp_fu_609_p_din0,
+        grp_fu_609_p_din1,
+        grp_fu_609_p_opcode,
+        grp_fu_609_p_dout0,
+        grp_fu_609_p_ce,
+        grp_fu_613_p_din0,
+        grp_fu_613_p_din1,
+        grp_fu_613_p_opcode,
+        grp_fu_613_p_dout0,
+        grp_fu_613_p_ce,
+        grp_fu_617_p_din0,
+        grp_fu_617_p_din1,
+        grp_fu_617_p_opcode,
+        grp_fu_617_p_dout0,
+        grp_fu_617_p_ce
 );
 
 parameter    ap_ST_fsm_state1 = 3'd1;
@@ -72,6 +87,21 @@ input  [31:0] p_read6;
 input  [31:0] p_read7;
 input  [31:0] p_read8;
 output  [0:0] ap_return;
+output  [31:0] grp_fu_609_p_din0;
+output  [31:0] grp_fu_609_p_din1;
+output  [4:0] grp_fu_609_p_opcode;
+input  [0:0] grp_fu_609_p_dout0;
+output   grp_fu_609_p_ce;
+output  [31:0] grp_fu_613_p_din0;
+output  [31:0] grp_fu_613_p_din1;
+output  [4:0] grp_fu_613_p_opcode;
+input  [0:0] grp_fu_613_p_dout0;
+output   grp_fu_613_p_ce;
+output  [31:0] grp_fu_617_p_din0;
+output  [31:0] grp_fu_617_p_din1;
+output  [4:0] grp_fu_617_p_opcode;
+input  [0:0] grp_fu_617_p_dout0;
+output   grp_fu_617_p_ce;
 
 reg ap_done;
 reg ap_idle;
@@ -127,6 +157,14 @@ wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_din0;
 wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_din1;
 wire   [4:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_opcode;
 wire    grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_ce;
+wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din0;
+wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din1;
+wire   [4:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_opcode;
+wire    grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_ce;
+wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din0;
+wire   [31:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din1;
+wire   [4:0] grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_opcode;
+wire    grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_ce;
 wire    grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_start;
 wire    grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_done;
 wire    grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_idle;
@@ -167,18 +205,19 @@ wire   [31:0] bitcast_ln76_13_fu_313_p1;
 wire   [22:0] trunc_ln76_28_fu_321_p1;
 wire   [31:0] bitcast_ln76_15_fu_332_p1;
 wire   [22:0] trunc_ln76_30_fu_340_p1;
-wire   [0:0] grp_fu_508_p2;
 reg   [31:0] grp_fu_508_p0;
 reg   [31:0] grp_fu_508_p1;
 reg    grp_fu_508_ce;
 reg   [4:0] grp_fu_508_opcode;
+reg    grp_fu_512_ce;
+reg    grp_fu_516_ce;
 reg   [0:0] ap_return_preg;
 reg   [2:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
 reg    ap_ST_fsm_state3_blk;
-reg    ap_condition_218;
-reg    ap_condition_222;
+reg    ap_condition_228;
+reg    ap_condition_232;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -208,8 +247,18 @@ run_run_test_Pipeline_is_valid_label2 grp_run_test_Pipeline_is_valid_label2_fu_1
     .grp_fu_508_p_din0(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_din0),
     .grp_fu_508_p_din1(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_din1),
     .grp_fu_508_p_opcode(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_opcode),
-    .grp_fu_508_p_dout0(grp_fu_508_p2),
-    .grp_fu_508_p_ce(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_ce)
+    .grp_fu_508_p_dout0(grp_fu_609_p_dout0),
+    .grp_fu_508_p_ce(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_508_p_ce),
+    .grp_fu_512_p_din0(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din0),
+    .grp_fu_512_p_din1(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din1),
+    .grp_fu_512_p_opcode(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_opcode),
+    .grp_fu_512_p_dout0(grp_fu_613_p_dout0),
+    .grp_fu_512_p_ce(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_ce),
+    .grp_fu_516_p_din0(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din0),
+    .grp_fu_516_p_din1(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din1),
+    .grp_fu_516_p_opcode(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_opcode),
+    .grp_fu_516_p_dout0(grp_fu_617_p_dout0),
+    .grp_fu_516_p_ce(grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_ce)
 );
 
 run_run_test_Pipeline_VITIS_LOOP_72_1 grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145(
@@ -261,24 +310,8 @@ run_run_test_Pipeline_VITIS_LOOP_72_1 grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_1
     .grp_fu_508_p_din0(grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_grp_fu_508_p_din0),
     .grp_fu_508_p_din1(grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_grp_fu_508_p_din1),
     .grp_fu_508_p_opcode(grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_grp_fu_508_p_opcode),
-    .grp_fu_508_p_dout0(grp_fu_508_p2),
+    .grp_fu_508_p_dout0(grp_fu_609_p_dout0),
     .grp_fu_508_p_ce(grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_grp_fu_508_p_ce)
-);
-
-run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 2 ),
-    .din0_WIDTH( 32 ),
-    .din1_WIDTH( 32 ),
-    .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U49(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .din0(grp_fu_508_p0),
-    .din1(grp_fu_508_p1),
-    .ce(grp_fu_508_ce),
-    .opcode(grp_fu_508_opcode),
-    .dout(grp_fu_508_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -407,9 +440,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        if ((1'b1 == ap_condition_222)) begin
+        if ((1'b1 == ap_condition_232)) begin
             ap_phi_mux_phi_ln551_phi_fu_114_p6 = 1'd0;
-        end else if ((1'b1 == ap_condition_218)) begin
+        end else if ((1'b1 == ap_condition_228)) begin
             ap_phi_mux_phi_ln551_phi_fu_114_p6 = 1'd1;
         end else begin
             ap_phi_mux_phi_ln551_phi_fu_114_p6 = phi_ln551_reg_110;
@@ -476,6 +509,22 @@ always @ (*) begin
 end
 
 always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state2)) begin
+        grp_fu_512_ce = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_ce;
+    end else begin
+        grp_fu_512_ce = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state2)) begin
+        grp_fu_516_ce = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_ce;
+    end else begin
+        grp_fu_516_ce = 1'b1;
+    end
+end
+
+always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
             if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
@@ -515,11 +564,11 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_condition_218 = (((icmp_ln1073_reg_421 == 1'd1) & (targetBlock_reg_417 == 1'd1)) | ((targetBlock_reg_417 == 1'd1) & (grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_return == 1'd1)));
+    ap_condition_228 = (((icmp_ln1073_reg_421 == 1'd1) & (targetBlock_reg_417 == 1'd1)) | ((targetBlock_reg_417 == 1'd1) & (grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_return == 1'd1)));
 end
 
 always @ (*) begin
-    ap_condition_222 = ((icmp_ln1073_reg_421 == 1'd0) & (targetBlock_reg_417 == 1'd1) & (grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_return == 1'd0));
+    ap_condition_232 = ((icmp_ln1073_reg_421 == 1'd0) & (targetBlock_reg_417 == 1'd1) & (grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_return == 1'd0));
 end
 
 always @ (*) begin
@@ -541,6 +590,30 @@ assign bitcast_ln76_5_fu_237_p1 = p_read3;
 assign bitcast_ln76_7_fu_256_p1 = p_read4;
 
 assign bitcast_ln76_9_fu_275_p1 = p_read5;
+
+assign grp_fu_609_p_ce = grp_fu_508_ce;
+
+assign grp_fu_609_p_din0 = grp_fu_508_p0;
+
+assign grp_fu_609_p_din1 = grp_fu_508_p1;
+
+assign grp_fu_609_p_opcode = grp_fu_508_opcode;
+
+assign grp_fu_613_p_ce = grp_fu_512_ce;
+
+assign grp_fu_613_p_din0 = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din0;
+
+assign grp_fu_613_p_din1 = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_din1;
+
+assign grp_fu_613_p_opcode = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_512_p_opcode;
+
+assign grp_fu_617_p_ce = grp_fu_516_ce;
+
+assign grp_fu_617_p_din0 = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din0;
+
+assign grp_fu_617_p_din1 = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_din1;
+
+assign grp_fu_617_p_opcode = grp_run_test_Pipeline_is_valid_label2_fu_125_grp_fu_516_p_opcode;
 
 assign grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_start = grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145_ap_start_reg;
 
