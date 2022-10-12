@@ -516,7 +516,7 @@ struct controlStr {
 //		toScheduler.write(taskId);
 //}
 
-void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, float data[MAX_AOV_DIM]) {
+void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, float data[MAX_AOV_DIM], ap_uint<8> *failedTask) {
 	//#pragma HLS PIPELINE II=8
 	//#pragma HLS inline off
 	//	OutcomeStr out;
@@ -536,6 +536,8 @@ void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 	//if (error) {
 	//		memcpy(outcomeInRam, &outcome, sizeof(outcome));
 	*errorInTask = error;
+	if (error)
+		*failedTask=taskId;
 	//toScheduler.write(taskId);
 	//}
 }
@@ -552,7 +554,7 @@ void run_test(bool* error, region_t regions[MAX_REGIONS], ap_uint<8> n_regions, 
 }
 
 void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInputAOV,*/
-		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS]
+		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], ap_uint<8> *failedTask
 ) {
 
 #pragma HLS dataflow
@@ -575,7 +577,7 @@ void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInp
 	//if (!errorInTask[taskId]) {
 	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
 		run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
-		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV);
+		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV, failedTask);
 	}
 	else if (contr.command==COMMAND_TRAIN) {
 		insert_point(regions[contr.checkId],
@@ -647,16 +649,20 @@ static ap_uint<8> n_regions[MAX_CHECKS];
 
 void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], controlStr* inputAOV,/* char* readyForData, char* copyInputAOV,*/
 		//	hls::stream< controlStr > &trainStream,
-		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in /*, hls::stream< ap_uint<8> > &toScheduler*/) {
+		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, ap_uint<8> *failedTask /*, hls::stream< ap_uint<8> > &toScheduler*/) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
+#pragma HLS INTERFACE mode=s_axilite port=return
 	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
 	//#pragma HLS interface s_axilite port = readyForData //bundle=A
 #pragma HLS interface s_axilite port = accel_mode //bundle=A
-#pragma HLS interface m_axi port = inputAOV //bundle=A
+#pragma HLS interface m_axi port = inputAOV offset=slave//bundle=A
 #pragma HLS interface s_axilite port = trainedRegion_i //bundle=A
 #pragma HLS interface s_axilite port = trainedRegion_o //bundle=A
 #pragma HLS interface s_axilite port = IOCheckIdx //bundle=A
 #pragma HLS interface s_axilite port = IORegionIdx
+
+#pragma HLS INTERFACE ap_hs port=failedTask // bundle=pippo
+//#pragma HLS INTERFACE ap_hs port = failedTask
 
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 
@@ -724,5 +730,5 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
 	} else if (accel_mode==MODE_RUN)
-		runTestAfterInit(inputAOV, /*readyForData, copyInputAOV,*/ outcomeInRam, /*toScheduler,*/ errorInTask, regions, n_regions);
+		runTestAfterInit(inputAOV, /*readyForData, copyInputAOV,*/ outcomeInRam, /*toScheduler,*/ errorInTask, regions, n_regions, failedTask);
 }

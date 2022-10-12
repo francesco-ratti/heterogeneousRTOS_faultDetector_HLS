@@ -26,9 +26,10 @@ set SynModuleInfo {
       {MODELNAME run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W RTLNAME run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME runTestAfterInit_Block_entry14_proc5 MODELNAME runTestAfterInit_Block_entry14_proc5 RTLNAME run_runTestAfterInit_Block_entry14_proc5
+  {SRCNAME runTestAfterInit_Block_entry15_proc5 MODELNAME runTestAfterInit_Block_entry15_proc5 RTLNAME run_runTestAfterInit_Block_entry15_proc5
     SUBMODULES {
       {MODELNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME run_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME run_regslice_forward RTLNAME run_regslice_forward BINDTYPE interface TYPE interface_regslice INSTNAME run_regslice_forward_U}
     }
   }
   {SRCNAME runTestAfterInit MODELNAME runTestAfterInit RTLNAME run_runTestAfterInit}

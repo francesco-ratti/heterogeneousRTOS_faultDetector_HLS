@@ -22,22 +22,22 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>17</Best-caseLatency>
-<Average-caseLatency>17</Average-caseLatency>
-<Worst-caseLatency>17</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.306 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.306 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.306 us</Worst-caseRealTimeLatency>
-<Interval-min>17</Interval-min>
-<Interval-max>17</Interval-max>
+<Best-caseLatency>18</Best-caseLatency>
+<Average-caseLatency>18</Average-caseLatency>
+<Worst-caseLatency>18</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.324 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.324 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.324 us</Worst-caseRealTimeLatency>
+<Interval-min>18</Interval-min>
+<Interval-max>18</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>271</FF>
-<LUT>231</LUT>
+<FF>272</FF>
+<LUT>247</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
@@ -175,6 +175,17 @@
 <RtlPorts>
 <name>checkId</name>
 <Object>checkId</Object>
+<Type>scalar</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>taskId</name>
+<Object>taskId</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -336,6 +347,39 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask_ap_vld</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask_ap_ack</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
 </RtlPorts>
 </InterfaceSummary>
 

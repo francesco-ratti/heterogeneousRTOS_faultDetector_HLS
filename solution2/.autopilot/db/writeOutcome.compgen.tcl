@@ -109,7 +109,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 182 \
+    id 183 \
     name outcomeInRam \
     reset_level 1 \
     sync_rst true \
@@ -158,6 +158,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 180 \
+    name taskId \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_taskId \
+    op interface \
+    ports { taskId { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 181 \
     name uniId \
     type other \
     dir I \
@@ -172,7 +187,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 181 \
+    id 182 \
     name error \
     type other \
     dir I \
@@ -187,7 +202,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 183 \
+    id 184 \
     name p_read \
     type other \
     dir I \
@@ -202,7 +217,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 184 \
+    id 185 \
     name p_read1 \
     type other \
     dir I \
@@ -217,7 +232,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 185 \
+    id 186 \
     name p_read2 \
     type other \
     dir I \
@@ -232,7 +247,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 186 \
+    id 187 \
     name p_read3 \
     type other \
     dir I \
@@ -247,7 +262,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 187 \
+    id 188 \
     name p_read4 \
     type other \
     dir I \
@@ -262,7 +277,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 188 \
+    id 189 \
     name p_read5 \
     type other \
     dir I \
@@ -277,7 +292,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 189 \
+    id 190 \
     name p_read6 \
     type other \
     dir I \
@@ -292,7 +307,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 190 \
+    id 191 \
     name p_read7 \
     type other \
     dir I \
@@ -301,6 +316,21 @@ eval "cg_default_interface_gen_dc { \
     corename dc_p_read7 \
     op interface \
     ports { p_read7 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 192 \
+    name failedTask \
+    type other \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_failedTask \
+    op interface \
+    ports { failedTask { O 8 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
 } "
 }
 

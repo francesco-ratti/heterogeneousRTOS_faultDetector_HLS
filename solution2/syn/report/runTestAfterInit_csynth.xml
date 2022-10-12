@@ -23,10 +23,10 @@
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>73</Best-caseLatency>
-<Average-caseLatency>194</Average-caseLatency>
+<Average-caseLatency>195</Average-caseLatency>
 <Worst-caseLatency>1277</Worst-caseLatency>
 <Best-caseRealTimeLatency>1.314 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>3.492 us</Average-caseRealTimeLatency>
+<Average-caseRealTimeLatency>3.510 us</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>22.986 us</Worst-caseRealTimeLatency>
 <DataflowPipelineThroughput>
 <range>
@@ -43,8 +43,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>22</DSP>
-<FF>10044</FF>
-<LUT>13670</LUT>
+<FF>10045</FF>
+<LUT>13692</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -692,6 +692,39 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask_ap_vld</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>failedTask_ap_ack</name>
+<Object>failedTask</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>

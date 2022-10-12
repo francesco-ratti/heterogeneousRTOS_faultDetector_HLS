@@ -329,10 +329,10 @@ for.body.i.split:3 %bitcast_ln89 = bitcast i32 %p_x_assign
 
 <Node id="32" bw="8" op_0_bw="8" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body.i.split:4 %tmp_67 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln89, i32 23, i32 30
+for.body.i.split:4 %tmp_s = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln89, i32 23, i32 30
 
 ]]></Node>
-<StgValue><ssdm name="tmp_67"/></StgValue>
+<StgValue><ssdm name="tmp_s"/></StgValue>
 </operation>
 
 <operation id="26" st_id="1" stage="1" lat="1">
@@ -361,7 +361,7 @@ for.body.i.split:5 %trunc_ln89 = trunc i32 %bitcast_ln89
 
 <Node id="34" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-for.body.i.split:6 %icmp_ln89 = icmp_ne  i8 %tmp_67, i8 255
+for.body.i.split:6 %icmp_ln89 = icmp_ne  i8 %tmp_s, i8 255
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln89"/></StgValue>
@@ -393,10 +393,10 @@ for.body.i.split:7 %icmp_ln89_2 = icmp_eq  i23 %trunc_ln89, i23 0
 
 <Node id="37" bw="1" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body.i.split:9 %tmp_s = fcmp_oeq  i32 %p_x_assign, i32 inf
+for.body.i.split:9 %tmp_90 = fcmp_oeq  i32 %p_x_assign, i32 inf
 
 ]]></Node>
-<StgValue><ssdm name="tmp_s"/></StgValue>
+<StgValue><ssdm name="tmp_90"/></StgValue>
 </operation>
 
 <operation id="30" st_id="1" stage="2" lat="2">
@@ -428,7 +428,7 @@ for.body.i.split:10 %tmp_91 = fcmp_oeq  i32 %p_x_assign, i32 -inf
 
 <Node id="28" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.i.split:0 %specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24
+for.body.i.split:0 %specloopname_ln87 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln87"/></StgValue>
@@ -476,10 +476,10 @@ for.body.i.split:8 %or_ln89 = or i1 %icmp_ln89_2, i1 %icmp_ln89
 
 <Node id="37" bw="1" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-for.body.i.split:9 %tmp_s = fcmp_oeq  i32 %p_x_assign, i32 inf
+for.body.i.split:9 %tmp_90 = fcmp_oeq  i32 %p_x_assign, i32 inf
 
 ]]></Node>
-<StgValue><ssdm name="tmp_s"/></StgValue>
+<StgValue><ssdm name="tmp_90"/></StgValue>
 </operation>
 
 <operation id="35" st_id="2" stage="1" lat="2">
@@ -508,7 +508,7 @@ for.body.i.split:10 %tmp_91 = fcmp_oeq  i32 %p_x_assign, i32 -inf
 
 <Node id="39" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-for.body.i.split:11 %or_ln89_3 = or i1 %tmp_s, i1 %tmp_91
+for.body.i.split:11 %or_ln89_3 = or i1 %tmp_90, i1 %tmp_91
 
 ]]></Node>
 <StgValue><ssdm name="or_ln89_3"/></StgValue>
@@ -758,17 +758,17 @@ insert_point_label4.exitStub:1 %ret_ln0 = ret i1 %merge
 </dataflow>
 <dataflow id="124" from="p_x_assign" to="bitcast_ln89" fromId="22" toId="24">
 </dataflow>
-<dataflow id="126" from="_ssdm_op_PartSelect.i8.i32.i32.i32" to="tmp_67" fromId="125" toId="25">
+<dataflow id="126" from="_ssdm_op_PartSelect.i8.i32.i32.i32" to="tmp_s" fromId="125" toId="25">
 </dataflow>
-<dataflow id="127" from="bitcast_ln89" to="tmp_67" fromId="24" toId="25">
+<dataflow id="127" from="bitcast_ln89" to="tmp_s" fromId="24" toId="25">
 </dataflow>
-<dataflow id="129" from="StgValue_128" to="tmp_67" fromId="128" toId="25">
+<dataflow id="129" from="StgValue_128" to="tmp_s" fromId="128" toId="25">
 </dataflow>
-<dataflow id="131" from="StgValue_130" to="tmp_67" fromId="130" toId="25">
+<dataflow id="131" from="StgValue_130" to="tmp_s" fromId="130" toId="25">
 </dataflow>
 <dataflow id="132" from="bitcast_ln89" to="trunc_ln89" fromId="24" toId="26">
 </dataflow>
-<dataflow id="133" from="tmp_67" to="icmp_ln89" fromId="25" toId="27">
+<dataflow id="133" from="tmp_s" to="icmp_ln89" fromId="25" toId="27">
 </dataflow>
 <dataflow id="135" from="StgValue_134" to="icmp_ln89" fromId="134" toId="27">
 </dataflow>
@@ -776,9 +776,9 @@ insert_point_label4.exitStub:1 %ret_ln0 = ret i1 %merge
 </dataflow>
 <dataflow id="138" from="StgValue_137" to="icmp_ln89_2" fromId="137" toId="28">
 </dataflow>
-<dataflow id="139" from="p_x_assign" to="tmp_s" fromId="22" toId="29">
+<dataflow id="139" from="p_x_assign" to="tmp_90" fromId="22" toId="29">
 </dataflow>
-<dataflow id="141" from="StgValue_140" to="tmp_s" fromId="140" toId="29">
+<dataflow id="141" from="StgValue_140" to="tmp_90" fromId="140" toId="29">
 </dataflow>
 <dataflow id="142" from="p_x_assign" to="tmp_91" fromId="22" toId="30">
 </dataflow>
@@ -786,7 +786,7 @@ insert_point_label4.exitStub:1 %ret_ln0 = ret i1 %merge
 </dataflow>
 <dataflow id="146" from="_ssdm_op_SpecLoopName" to="specloopname_ln87" fromId="145" toId="31">
 </dataflow>
-<dataflow id="148" from="empty_24" to="specloopname_ln87" fromId="147" toId="31">
+<dataflow id="148" from="empty_11" to="specloopname_ln87" fromId="147" toId="31">
 </dataflow>
 <dataflow id="149" from="p_x_assign" to="cmp_i_i1" fromId="22" toId="32">
 </dataflow>
@@ -796,15 +796,15 @@ insert_point_label4.exitStub:1 %ret_ln0 = ret i1 %merge
 </dataflow>
 <dataflow id="152" from="icmp_ln89" to="or_ln89" fromId="27" toId="33">
 </dataflow>
-<dataflow id="153" from="p_x_assign" to="tmp_s" fromId="22" toId="34">
+<dataflow id="153" from="p_x_assign" to="tmp_90" fromId="22" toId="34">
 </dataflow>
-<dataflow id="154" from="StgValue_140" to="tmp_s" fromId="140" toId="34">
+<dataflow id="154" from="StgValue_140" to="tmp_90" fromId="140" toId="34">
 </dataflow>
 <dataflow id="155" from="p_x_assign" to="tmp_91" fromId="22" toId="35">
 </dataflow>
 <dataflow id="156" from="StgValue_143" to="tmp_91" fromId="143" toId="35">
 </dataflow>
-<dataflow id="157" from="tmp_s" to="or_ln89_3" fromId="34" toId="36">
+<dataflow id="157" from="tmp_90" to="or_ln89_3" fromId="34" toId="36">
 </dataflow>
 <dataflow id="158" from="tmp_91" to="or_ln89_3" fromId="35" toId="36">
 </dataflow>

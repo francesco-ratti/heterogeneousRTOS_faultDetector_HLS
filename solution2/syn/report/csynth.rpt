@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Fri Oct  7 19:28:31 2022
+    * Date:           Wed Oct 12 10:20:21 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
@@ -19,9 +19,9 @@
     |                     Modules                     |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
     |                     & Loops                     |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
     +-------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |+ run                                            |  Timing|  -0.55|     1280|  2.304e+04|         -|     1281|     -|        no|  64 (22%)|  22 (10%)|  15141 (14%)|  21213 (39%)|    -|
-    | + runTestAfterInit*                             |  Timing|  -0.55|     1277|  2.299e+04|         -|     1278|     -|  dataflow|         -|  22 (10%)|   10044 (9%)|  13670 (25%)|    -|
-    |  + runTestAfterInit_Block_entry14_proc5         |  Timing|  -0.55|     1277|  2.299e+04|         -|     1277|     -|        no|         -|  22 (10%)|   10044 (9%)|  13670 (25%)|    -|
+    |+ run                                            |  Timing|  -0.55|     1280|  2.304e+04|         -|     1281|     -|        no|  64 (22%)|  22 (10%)|  15142 (14%)|  21237 (39%)|    -|
+    | + runTestAfterInit*                             |  Timing|  -0.55|     1277|  2.299e+04|         -|     1278|     -|  dataflow|         -|  22 (10%)|   10045 (9%)|  13692 (25%)|    -|
+    |  + runTestAfterInit_Block_entry15_proc5         |  Timing|  -0.55|     1277|  2.299e+04|         -|     1277|     -|        no|         -|  22 (10%)|   10045 (9%)|  13692 (25%)|    -|
     |   + insert_point                                |  Timing|  -0.55|     1204|  2.167e+04|         -|     1204|     -|        no|         -|  22 (10%)|    7927 (7%)|  10911 (20%)|    -|
     |    + insert_point_Pipeline_is_valid_label2      |       -|   5.14|       19|    342.000|         -|       19|     -|        no|         -|         -|     16 (~0%)|    157 (~0%)|    -|
     |     o is_valid_label2                           |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
@@ -36,7 +36,7 @@
     |     o is_valid_label2                           |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
     |    + run_test_Pipeline_VITIS_LOOP_72_1          |       -|   2.87|      562|  1.012e+04|         -|      562|     -|        no|         -|         -|    388 (~0%)|    1220 (2%)|    -|
     |     o VITIS_LOOP_72_1                           |      II|  13.14|      560|  1.008e+04|        33|       33|    16|       yes|         -|         -|            -|            -|    -|
-    |   + writeOutcome                                |       -|   6.19|       17|    306.000|         -|       17|     -|        no|         -|         -|    271 (~0%)|    231 (~0%)|    -|
+    |   + writeOutcome                                |       -|   6.19|       18|    324.000|         -|       18|     -|        no|         -|         -|    272 (~0%)|    247 (~0%)|    -|
     |    + writeOutcome_Pipeline_1                    |       -|   8.51|       10|    180.000|         -|       10|     -|        no|         -|         -|      6 (~0%)|     91 (~0%)|    -|
     |     o Loop 1                                    |       -|  13.14|        8|    144.000|         1|        1|     8|       yes|         -|         -|            -|            -|    -|
     +-------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
@@ -125,6 +125,13 @@
 | s_axi_control | n_regions_in_o     | 0x178  | 32    | R      | Data signal of n_regions_in_o    |                                                                      |
 +---------------+--------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
+* REGISTER
++------------+-------+----------+
+| Interface  | Mode  | Bitwidth |
++------------+-------+----------+
+| failedTask | ap_hs | 8        |
++------------+-------+----------+
+
 * TOP LEVEL CONTROL
 +-----------+------------+-----------+
 | Interface | Type       | Ports     |
@@ -152,71 +159,75 @@
 | IOCheckIdx      | in        | ap_uint<8>  |
 | IORegionIdx     | in        | ap_uint<8>  |
 | n_regions_in    | inout     | ap_uint<8>* |
+| failedTask      | out       | ap_uint<8>* |
 +-----------------+-----------+-------------+
 
 * SW-to-HW Mapping
-+-----------------+---------------+-----------+----------+----------------------------------------------+
-| Argument        | HW Interface  | HW Type   | HW Usage | HW Info                                      |
-+-----------------+---------------+-----------+----------+----------------------------------------------+
-| errorInTask     | s_axi_control | memory    |          | name=errorInTask offset=16 range=16          |
-| outcomeInRam    | s_axi_control | memory    |          | name=outcomeInRam offset=1024 range=1024     |
-| inputAOV        | m_axi_gmem    | interface |          |                                              |
-| inputAOV        | s_axi_control | register  | offset   | name=inputAOV_1 offset=0x20 range=32         |
-| inputAOV        | s_axi_control | register  | offset   | name=inputAOV_2 offset=0x24 range=32         |
-| accel_mode      | s_axi_control | register  |          | name=accel_mode offset=0x2c range=32         |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_1 offset=0x34 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_2 offset=0x38 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_3 offset=0x3c range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_4 offset=0x40 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_5 offset=0x44 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_6 offset=0x48 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_7 offset=0x4c range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_8 offset=0x50 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_9 offset=0x54 range=32  |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_10 offset=0x58 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_11 offset=0x5c range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_12 offset=0x60 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_13 offset=0x64 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_14 offset=0x68 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_15 offset=0x6c range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_16 offset=0x70 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_17 offset=0x74 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_18 offset=0x78 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_19 offset=0x7c range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_20 offset=0x80 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_21 offset=0x84 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_22 offset=0x88 range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_23 offset=0x8c range=32 |
-| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_24 offset=0x90 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_1 offset=0x98 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_2 offset=0x9c range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_3 offset=0xa0 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_4 offset=0xa4 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_5 offset=0xa8 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_6 offset=0xac range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_7 offset=0xb0 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_8 offset=0xb4 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_9 offset=0xb8 range=32  |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_10 offset=0xbc range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_11 offset=0xc0 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_12 offset=0xc4 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_13 offset=0xc8 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_14 offset=0xcc range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_15 offset=0xd0 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_16 offset=0xd4 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_17 offset=0xd8 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_18 offset=0xdc range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_19 offset=0xe0 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_20 offset=0xe4 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_21 offset=0xe8 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_22 offset=0xec range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_23 offset=0xf0 range=32 |
-| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_24 offset=0xf4 range=32 |
-| IOCheckIdx      | s_axi_control | register  |          | name=IOCheckIdx offset=0x160 range=32        |
-| IORegionIdx     | s_axi_control | register  |          | name=IORegionIdx offset=0x168 range=32       |
-| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_i offset=0x170 range=32    |
-| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_o offset=0x178 range=32    |
-+-----------------+---------------+-----------+----------+----------------------------------------------+
++-----------------+-------------------+-----------+----------+----------------------------------------------+
+| Argument        | HW Interface      | HW Type   | HW Usage | HW Info                                      |
++-----------------+-------------------+-----------+----------+----------------------------------------------+
+| errorInTask     | s_axi_control     | memory    |          | name=errorInTask offset=16 range=16          |
+| outcomeInRam    | s_axi_control     | memory    |          | name=outcomeInRam offset=1024 range=1024     |
+| inputAOV        | m_axi_gmem        | interface |          |                                              |
+| inputAOV        | s_axi_control     | register  | offset   | name=inputAOV_1 offset=0x20 range=32         |
+| inputAOV        | s_axi_control     | register  | offset   | name=inputAOV_2 offset=0x24 range=32         |
+| accel_mode      | s_axi_control     | register  |          | name=accel_mode offset=0x2c range=32         |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_1 offset=0x34 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_2 offset=0x38 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_3 offset=0x3c range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_4 offset=0x40 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_5 offset=0x44 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_6 offset=0x48 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_7 offset=0x4c range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_8 offset=0x50 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_9 offset=0x54 range=32  |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_10 offset=0x58 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_11 offset=0x5c range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_12 offset=0x60 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_13 offset=0x64 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_14 offset=0x68 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_15 offset=0x6c range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_16 offset=0x70 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_17 offset=0x74 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_18 offset=0x78 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_19 offset=0x7c range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_20 offset=0x80 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_21 offset=0x84 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_22 offset=0x88 range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_23 offset=0x8c range=32 |
+| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_24 offset=0x90 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_1 offset=0x98 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_2 offset=0x9c range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_3 offset=0xa0 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_4 offset=0xa4 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_5 offset=0xa8 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_6 offset=0xac range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_7 offset=0xb0 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_8 offset=0xb4 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_9 offset=0xb8 range=32  |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_10 offset=0xbc range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_11 offset=0xc0 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_12 offset=0xc4 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_13 offset=0xc8 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_14 offset=0xcc range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_15 offset=0xd0 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_16 offset=0xd4 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_17 offset=0xd8 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_18 offset=0xdc range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_19 offset=0xe0 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_20 offset=0xe4 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_21 offset=0xe8 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_22 offset=0xec range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_23 offset=0xf0 range=32 |
+| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_24 offset=0xf4 range=32 |
+| IOCheckIdx      | s_axi_control     | register  |          | name=IOCheckIdx offset=0x160 range=32        |
+| IORegionIdx     | s_axi_control     | register  |          | name=IORegionIdx offset=0x168 range=32       |
+| n_regions_in    | s_axi_control     | register  |          | name=n_regions_in_i offset=0x170 range=32    |
+| n_regions_in    | s_axi_control     | register  |          | name=n_regions_in_o offset=0x178 range=32    |
+| failedTask      | failedTask        | port      |          |                                              |
+| failedTask      | failedTask_ap_vld | port      |          |                                              |
+| failedTask      | failedTask_ap_ack | port      |          |                                              |
++-----------------+-------------------+-----------+----------+----------------------------------------------+
 
 
 ================================================================
@@ -233,10 +244,10 @@
 | Name                                            | DSP | Pragma | Variable    | Op   | Impl    | Latency |
 +-------------------------------------------------+-----+--------+-------------+------+---------+---------+
 | + run                                           | 22  |        |             |      |         |         |
-|   add_ln724_fu_1215_p2                          | -   |        | add_ln724   | add  | fabric  | 0       |
-|   add_ln709_fu_1283_p2                          | -   |        | add_ln709   | add  | fabric  | 0       |
+|   add_ln730_fu_1221_p2                          | -   |        | add_ln730   | add  | fabric  | 0       |
+|   add_ln715_fu_1289_p2                          | -   |        | add_ln715   | add  | fabric  | 0       |
 |  + runTestAfterInit                             | 22  |        |             |      |         |         |
-|   + runTestAfterInit_Block_entry14_proc5        | 22  |        |             |      |         |         |
+|   + runTestAfterInit_Block_entry15_proc5        | 22  |        |             |      |         |         |
 |    + insert_point                               | 22  |        |             |      |         |         |
 |      add_ln260_fu_1010_p2                       | -   |        | add_ln260   | add  | fabric  | 0       |
 |      add_ln886_fu_1029_p2                       | -   |        | add_ln886   | add  | fabric  | 0       |
@@ -344,7 +355,7 @@
 |   regions_5_U                            | 8    | -    |        | regions_5   | ram_t2p | auto | 1       |
 |   n_regions_V_U                          | -    | -    |        | n_regions_V | ram_1p  | auto | 1       |
 |  + runTestAfterInit                      | 0    | 0    |        |             |         |      |         |
-|   + runTestAfterInit_Block_entry14_proc5 | 0    | 0    |        |             |         |      |         |
+|   + runTestAfterInit_Block_entry15_proc5 | 0    | 0    |        |             |         |      |         |
 |    + writeOutcome                        | 0    | 0    |        |             |         |      |         |
 |      outcome_AOV_U                       | -    | -    |        | outcome_AOV | ram_s2p | auto | 1       |
 +------------------------------------------+------+------+--------+-------------+---------+------+---------+
@@ -357,7 +368,7 @@
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Type     | Options | Location                                                      | Messages                                                                                                                                                                           |
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dataflow |         | detector_solid/abs_solid_detector.cpp:558 in runtestafterinit | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
+| dataflow |         | detector_solid/abs_solid_detector.cpp:560 in runtestafterinit | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Valid Pragma Syntax
@@ -369,18 +380,20 @@
 | inline          |                                        | detector_solid/abs_solid_detector.cpp:96 in update_train_regions         |
 | loop_tripcount  | min=0 max=136                          | detector_solid/abs_solid_detector.cpp:281 in insert_point                |
 | pipeline        | II=8                                   | detector_solid/abs_solid_detector.cpp:282 in insert_point                |
-| array_partition | variable=contr.AOV complete            | detector_solid/abs_solid_detector.cpp:568 in runtestafterinit, contr.AOV |
-| interface       | mode=ap_ctrl_hs port=return            | detector_solid/abs_solid_detector.cpp:651 in run, return                 |
-| interface       | s_axilite port = accel_mode            | detector_solid/abs_solid_detector.cpp:654 in run                         |
-| interface       | m_axi port = inputAOV                  | detector_solid/abs_solid_detector.cpp:655 in run                         |
-| interface       | s_axilite port = trainedRegion_i       | detector_solid/abs_solid_detector.cpp:656 in run                         |
-| interface       | s_axilite port = trainedRegion_o       | detector_solid/abs_solid_detector.cpp:657 in run                         |
-| interface       | s_axilite port = IOCheckIdx            | detector_solid/abs_solid_detector.cpp:658 in run                         |
-| interface       | s_axilite port = IORegionIdx           | detector_solid/abs_solid_detector.cpp:659 in run                         |
-| interface       | s_axilite port = n_regions_in          | detector_solid/abs_solid_detector.cpp:661 in run                         |
-| interface       | s_axilite port = errorInTask           | detector_solid/abs_solid_detector.cpp:663 in run                         |
-| interface       | s_axilite port=outcomeInRam            | detector_solid/abs_solid_detector.cpp:664 in run, outcomeInRam           |
-| array_partition | variable=regions dim=2 cyclic factor=2 | detector_solid/abs_solid_detector.cpp:669 in run, regions                |
+| array_partition | variable=contr.AOV complete            | detector_solid/abs_solid_detector.cpp:570 in runtestafterinit, contr.AOV |
+| interface       | mode=ap_ctrl_hs port=return            | detector_solid/abs_solid_detector.cpp:653 in run, return                 |
+| interface       | mode=s_axilite port=return             | detector_solid/abs_solid_detector.cpp:654 in run, return                 |
+| interface       | s_axilite port = accel_mode            | detector_solid/abs_solid_detector.cpp:657 in run                         |
+| interface       | m_axi port = inputAOV offset=slave     | detector_solid/abs_solid_detector.cpp:658 in run                         |
+| interface       | s_axilite port = trainedRegion_i       | detector_solid/abs_solid_detector.cpp:659 in run                         |
+| interface       | s_axilite port = trainedRegion_o       | detector_solid/abs_solid_detector.cpp:660 in run                         |
+| interface       | s_axilite port = IOCheckIdx            | detector_solid/abs_solid_detector.cpp:661 in run                         |
+| interface       | s_axilite port = IORegionIdx           | detector_solid/abs_solid_detector.cpp:662 in run                         |
+| interface       | ap_hs port=failedTask                  | detector_solid/abs_solid_detector.cpp:664 in run, failedTask             |
+| interface       | s_axilite port = n_regions_in          | detector_solid/abs_solid_detector.cpp:667 in run                         |
+| interface       | s_axilite port = errorInTask           | detector_solid/abs_solid_detector.cpp:669 in run                         |
+| interface       | s_axilite port=outcomeInRam            | detector_solid/abs_solid_detector.cpp:670 in run, outcomeInRam           |
+| array_partition | variable=regions dim=2 cyclic factor=2 | detector_solid/abs_solid_detector.cpp:675 in run, regions                |
 +-----------------+----------------------------------------+--------------------------------------------------------------------------+
 
 

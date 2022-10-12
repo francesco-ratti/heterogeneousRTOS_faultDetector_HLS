@@ -23,6 +23,7 @@ set C_modelArgList {
 	{ IOCheckIdx int 8 regular {axi_slave 0}  }
 	{ IORegionIdx int 8 regular {axi_slave 0}  }
 	{ n_regions_in int 8 regular {axi_slave 2}  }
+	{ failedTask int 8 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputAOV","offset": { "type": "dynamic","port_name": "inputAOV","bundle": "control"},"direction": "READONLY"}]}]} , 
@@ -34,9 +35,10 @@ set C_modelArgMapList {[
  	{ "Name" : "trainedRegion_o", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 768, "direction" : "WRITEONLY", "offset" : {"out":152}, "offset_end" : {"out":251}} , 
  	{ "Name" : "IOCheckIdx", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "offset" : {"in":352}, "offset_end" : {"in":359}} , 
  	{ "Name" : "IORegionIdx", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "offset" : {"in":360}, "offset_end" : {"in":367}} , 
- 	{ "Name" : "n_regions_in", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 8, "direction" : "READWRITE", "offset" : {"in":368, "out":376}, "offset_end" : {"in":375, "out":383}} ]}
+ 	{ "Name" : "n_regions_in", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 8, "direction" : "READWRITE", "offset" : {"in":368, "out":376}, "offset_end" : {"in":375, "out":383}} , 
+ 	{ "Name" : "failedTask", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 65
+set portNum 68
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
@@ -85,6 +87,9 @@ set portList {
 	{ m_axi_gmem_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_gmem_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem_BUSER sc_in sc_lv 1 signal 0 } 
+	{ failedTask sc_out sc_lv 8 signal 10 } 
+	{ failedTask_ap_vld sc_out sc_logic 1 outvld 10 } 
+	{ failedTask_ap_ack sc_in sc_logic 1 outacc 10 } 
 	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_AWADDR sc_in sc_lv 11 signal -1 } 
@@ -169,10 +174,13 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_BREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BREADY" }} , 
  	{ "name": "m_axi_gmem_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "gmem", "role": "BRESP" }} , 
  	{ "name": "m_axi_gmem_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BID" }} , 
- 	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }}  ]}
+ 	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }} , 
+ 	{ "name": "failedTask", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "failedTask", "role": "default" }} , 
+ 	{ "name": "failedTask_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "failedTask", "role": "ap_vld" }} , 
+ 	{ "name": "failedTask_ap_ack", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "failedTask", "role": "ap_ack" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "57", "58", "59", "60", "61", "62", "63", "64"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "58", "59", "60", "61", "62", "63", "64", "65", "66"],
 		"CDFG" : "run",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -189,13 +197,13 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "gmem", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "gmem", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "errorInTask", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "errorInTask", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "outcomeInRam", "Type" : "Memory", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "outcomeInRam", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "outcomeInRam", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "inputAOV", "Type" : "None", "Direction" : "I"},
 			{"Name" : "accel_mode", "Type" : "None", "Direction" : "I"},
 			{"Name" : "trainedRegion_i", "Type" : "None", "Direction" : "I"},
@@ -203,27 +211,30 @@ set RtlHierarchyInfo {[
 			{"Name" : "IOCheckIdx", "Type" : "None", "Direction" : "I"},
 			{"Name" : "IORegionIdx", "Type" : "None", "Direction" : "I"},
 			{"Name" : "n_regions_in", "Type" : "None", "Direction" : "IO"},
+			{"Name" : "failedTask", "Type" : "HS", "Direction" : "O",
+				"SubConnect" : [
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "failedTask", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions_2", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions_2", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions_2", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions_4", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions_4", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions_4", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions_1", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions_1", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions_1", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions_3", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions_3", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions_3", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "regions_5", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "regions_5", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "regions_5", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1101", "Port" : "n_regions_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]}]},
+					{"ID" : "8", "SubInstance" : "grp_runTestAfterInit_fu_1105", "Port" : "n_regions_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regions_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regions_2_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regions_4_U", "Parent" : "0"},
@@ -231,7 +242,7 @@ set RtlHierarchyInfo {[
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regions_3_U", "Parent" : "0"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regions_5_U", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.n_regions_V_U", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101", "Parent" : "0", "Child" : ["9"],
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105", "Parent" : "0", "Child" : ["9"],
 		"CDFG" : "runTestAfterInit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
@@ -246,43 +257,46 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"InputProcess" : [
-			{"ID" : "9", "Name" : "runTestAfterInit_Block_entry14_proc5_U0"}],
+			{"ID" : "9", "Name" : "runTestAfterInit_Block_entry15_proc5_U0"}],
 		"OutputProcess" : [
-			{"ID" : "9", "Name" : "runTestAfterInit_Block_entry14_proc5_U0"}],
+			{"ID" : "9", "Name" : "runTestAfterInit_Block_entry15_proc5_U0"}],
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "gmem"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "gmem"}]},
 			{"Name" : "inputAOV", "Type" : "None", "Direction" : "I"},
 			{"Name" : "outcomeInRam", "Type" : "Memory", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "outcomeInRam"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "outcomeInRam"}]},
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "errorInTask"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "errorInTask"}]},
+			{"Name" : "failedTask", "Type" : "HS", "Direction" : "O",
+				"SubConnect" : [
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "failedTask"}]},
 			{"Name" : "regions", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions"}]},
 			{"Name" : "regions_1", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions_1"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions_1"}]},
 			{"Name" : "regions_2", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions_2"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions_2"}]},
 			{"Name" : "regions_3", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions_3"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions_3"}]},
 			{"Name" : "regions_4", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions_4"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions_4"}]},
 			{"Name" : "regions_5", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "regions_5"}]},
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "regions_5"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry14_proc5_U0", "Port" : "n_regions_V"}]}]},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0", "Parent" : "8", "Child" : ["10", "41", "49", "54", "55", "56"],
-		"CDFG" : "runTestAfterInit_Block_entry14_proc5",
+					{"ID" : "9", "SubInstance" : "runTestAfterInit_Block_entry15_proc5_U0", "Port" : "n_regions_V"}]}]},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0", "Parent" : "8", "Child" : ["10", "41", "49", "54", "55", "56", "57"],
+		"CDFG" : "runTestAfterInit_Block_entry15_proc5",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -303,36 +317,39 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "49", "SubInstance" : "grp_writeOutcome_fu_224", "Port" : "errorInTask", "Inst_start_state" : "76", "Inst_end_state" : "77"}]},
+					{"ID" : "49", "SubInstance" : "grp_writeOutcome_fu_226", "Port" : "errorInTask", "Inst_start_state" : "76", "Inst_end_state" : "77"}]},
 			{"Name" : "outcomeInRam", "Type" : "Memory", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "49", "SubInstance" : "grp_writeOutcome_fu_224", "Port" : "outcomeInRam", "Inst_start_state" : "76", "Inst_end_state" : "77"}]},
+					{"ID" : "49", "SubInstance" : "grp_writeOutcome_fu_226", "Port" : "outcomeInRam", "Inst_start_state" : "76", "Inst_end_state" : "77"}]},
+			{"Name" : "failedTask", "Type" : "HS", "Direction" : "O",
+				"SubConnect" : [
+					{"ID" : "49", "SubInstance" : "grp_writeOutcome_fu_226", "Port" : "failedTask", "Inst_start_state" : "76", "Inst_end_state" : "77"}]},
 			{"Name" : "regions", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "41", "SubInstance" : "grp_run_test_fu_201", "Port" : "regions_min_0", "Inst_start_state" : "74", "Inst_end_state" : "75"},
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_min_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "41", "SubInstance" : "grp_run_test_fu_203", "Port" : "regions_min_0", "Inst_start_state" : "74", "Inst_end_state" : "75"},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_min_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "regions_1", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "41", "SubInstance" : "grp_run_test_fu_201", "Port" : "regions_min_1", "Inst_start_state" : "74", "Inst_end_state" : "75"},
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_min_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "41", "SubInstance" : "grp_run_test_fu_203", "Port" : "regions_min_1", "Inst_start_state" : "74", "Inst_end_state" : "75"},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_min_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "regions_2", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "41", "SubInstance" : "grp_run_test_fu_201", "Port" : "regions_max_0", "Inst_start_state" : "74", "Inst_end_state" : "75"},
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_max_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "41", "SubInstance" : "grp_run_test_fu_203", "Port" : "regions_max_0", "Inst_start_state" : "74", "Inst_end_state" : "75"},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_max_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "regions_3", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "41", "SubInstance" : "grp_run_test_fu_201", "Port" : "regions_max_1", "Inst_start_state" : "74", "Inst_end_state" : "75"},
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_max_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "41", "SubInstance" : "grp_run_test_fu_203", "Port" : "regions_max_1", "Inst_start_state" : "74", "Inst_end_state" : "75"},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_max_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "regions_4", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_center_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_center_0", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "regions_5", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "regions_center_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "regions_center_1", "Inst_start_state" : "72", "Inst_end_state" : "73"}]},
 			{"Name" : "n_regions_V", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_174", "Port" : "n_regions", "Inst_start_state" : "72", "Inst_end_state" : "73"}]}]},
-	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174", "Parent" : "9", "Child" : ["11", "14", "17", "33", "39", "40"],
+					{"ID" : "10", "SubInstance" : "grp_insert_point_fu_176", "Port" : "n_regions", "Inst_start_state" : "72", "Inst_end_state" : "73"}]}]},
+	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176", "Parent" : "9", "Child" : ["11", "14", "17", "33", "39", "40"],
 		"CDFG" : "insert_point",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -387,7 +404,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "d_read_43", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_44", "Type" : "None", "Direction" : "I"},
 			{"Name" : "d_read_45", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "11", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_is_valid_label2_fu_750", "Parent" : "10", "Child" : ["12", "13"],
+	{"ID" : "11", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_is_valid_label2_fu_750", "Parent" : "10", "Child" : ["12", "13"],
 		"CDFG" : "insert_point_Pipeline_is_valid_label2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -412,9 +429,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "d_read_14", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "is_valid_label2", "PipelineType" : "NotSupport"}]},
-	{"ID" : "12", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_is_valid_label2_fu_750.mux_84_32_1_1_U4", "Parent" : "11"},
-	{"ID" : "13", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_is_valid_label2_fu_750.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
-	{"ID" : "14", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label4_fu_770", "Parent" : "10", "Child" : ["15", "16"],
+	{"ID" : "12", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_is_valid_label2_fu_750.mux_84_32_1_1_U4", "Parent" : "11"},
+	{"ID" : "13", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_is_valid_label2_fu_750.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
+	{"ID" : "14", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label4_fu_770", "Parent" : "10", "Child" : ["15", "16"],
 		"CDFG" : "insert_point_Pipeline_insert_point_label4",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -447,9 +464,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "n_regions_load_cast", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "insert_point_label4", "PipelineType" : "NotSupport"}]},
-	{"ID" : "15", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label4_fu_770.mux_84_32_1_1_U14", "Parent" : "14"},
-	{"ID" : "16", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label4_fu_770.flow_control_loop_pipe_sequential_init_U", "Parent" : "14"},
-	{"ID" : "17", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796", "Parent" : "10", "Child" : ["18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32"],
+	{"ID" : "15", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label4_fu_770.mux_84_32_1_1_U14", "Parent" : "14"},
+	{"ID" : "16", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label4_fu_770.flow_control_loop_pipe_sequential_init_U", "Parent" : "14"},
+	{"ID" : "17", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796", "Parent" : "10", "Child" : ["18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32"],
 		"CDFG" : "insert_point_Pipeline_VITIS_LOOP_279_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -476,22 +493,22 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_279_1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_pp0_stage1", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage1_subdone", "LastState" : "ap_ST_fsm_pp0_stage6", "LastStateIter" : "ap_enable_reg_pp0_iter5", "LastStateBlock" : "ap_block_pp0_stage6_subdone", "QuitState" : "ap_ST_fsm_pp0_stage5", "QuitStateIter" : "ap_enable_reg_pp0_iter5", "QuitStateBlock" : "ap_block_pp0_stage5_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "18", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U32", "Parent" : "17"},
-	{"ID" : "19", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U33", "Parent" : "17"},
-	{"ID" : "20", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U34", "Parent" : "17"},
-	{"ID" : "21", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U35", "Parent" : "17"},
-	{"ID" : "22", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.faddfsub_32ns_32ns_32_4_full_dsp_1_U36", "Parent" : "17"},
-	{"ID" : "23", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.faddfsub_32ns_32ns_32_4_full_dsp_1_U37", "Parent" : "17"},
-	{"ID" : "24", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fadd_32ns_32ns_32_4_full_dsp_1_U38", "Parent" : "17"},
-	{"ID" : "25", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fmul_32ns_32ns_32_2_max_dsp_1_U40", "Parent" : "17"},
-	{"ID" : "26", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U44", "Parent" : "17"},
-	{"ID" : "27", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U45", "Parent" : "17"},
-	{"ID" : "28", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U46", "Parent" : "17"},
-	{"ID" : "29", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U47", "Parent" : "17"},
-	{"ID" : "30", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U48", "Parent" : "17"},
-	{"ID" : "31", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U49", "Parent" : "17"},
-	{"ID" : "32", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
-	{"ID" : "33", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815", "Parent" : "10", "Child" : ["34", "35", "36", "37", "38"],
+	{"ID" : "18", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U32", "Parent" : "17"},
+	{"ID" : "19", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U33", "Parent" : "17"},
+	{"ID" : "20", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U34", "Parent" : "17"},
+	{"ID" : "21", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fsub_32ns_32ns_32_4_full_dsp_1_U35", "Parent" : "17"},
+	{"ID" : "22", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.faddfsub_32ns_32ns_32_4_full_dsp_1_U36", "Parent" : "17"},
+	{"ID" : "23", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.faddfsub_32ns_32ns_32_4_full_dsp_1_U37", "Parent" : "17"},
+	{"ID" : "24", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fadd_32ns_32ns_32_4_full_dsp_1_U38", "Parent" : "17"},
+	{"ID" : "25", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.fmul_32ns_32ns_32_2_max_dsp_1_U40", "Parent" : "17"},
+	{"ID" : "26", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U44", "Parent" : "17"},
+	{"ID" : "27", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U45", "Parent" : "17"},
+	{"ID" : "28", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U46", "Parent" : "17"},
+	{"ID" : "29", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U47", "Parent" : "17"},
+	{"ID" : "30", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U48", "Parent" : "17"},
+	{"ID" : "31", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.mux_21_32_1_1_U49", "Parent" : "17"},
+	{"ID" : "32", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
+	{"ID" : "33", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815", "Parent" : "10", "Child" : ["34", "35", "36", "37", "38"],
 		"CDFG" : "insert_point_Pipeline_insert_point_label6",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -519,14 +536,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "insert_point_label6", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "2", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter5", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter5", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "34", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U67", "Parent" : "33"},
-	{"ID" : "35", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U68", "Parent" : "33"},
-	{"ID" : "36", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U69", "Parent" : "33"},
-	{"ID" : "37", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U70", "Parent" : "33"},
-	{"ID" : "38", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.grp_insert_point_Pipeline_insert_point_label6_fu_815.flow_control_loop_pipe_sequential_init_U", "Parent" : "33"},
-	{"ID" : "39", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.faddfsub_32ns_32ns_32_4_full_dsp_1_U84", "Parent" : "10"},
-	{"ID" : "40", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_insert_point_fu_174.fmul_32ns_32ns_32_2_max_dsp_1_U85", "Parent" : "10"},
-	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201", "Parent" : "9", "Child" : ["42", "45"],
+	{"ID" : "34", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U67", "Parent" : "33"},
+	{"ID" : "35", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U68", "Parent" : "33"},
+	{"ID" : "36", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U69", "Parent" : "33"},
+	{"ID" : "37", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815.mux_21_32_1_1_U70", "Parent" : "33"},
+	{"ID" : "38", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.grp_insert_point_Pipeline_insert_point_label6_fu_815.flow_control_loop_pipe_sequential_init_U", "Parent" : "33"},
+	{"ID" : "39", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.faddfsub_32ns_32ns_32_4_full_dsp_1_U84", "Parent" : "10"},
+	{"ID" : "40", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_insert_point_fu_176.fmul_32ns_32ns_32_2_max_dsp_1_U85", "Parent" : "10"},
+	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203", "Parent" : "9", "Child" : ["42", "45"],
 		"CDFG" : "run_test",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -563,7 +580,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_read6", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_read7", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_read8", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "42", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_is_valid_label2_fu_125", "Parent" : "41", "Child" : ["43", "44"],
+	{"ID" : "42", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_is_valid_label2_fu_125", "Parent" : "41", "Child" : ["43", "44"],
 		"CDFG" : "run_test_Pipeline_is_valid_label2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -588,9 +605,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_read8", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "is_valid_label2", "PipelineType" : "NotSupport"}]},
-	{"ID" : "43", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_is_valid_label2_fu_125.mux_84_32_1_1_U107", "Parent" : "42"},
-	{"ID" : "44", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_is_valid_label2_fu_125.flow_control_loop_pipe_sequential_init_U", "Parent" : "42"},
-	{"ID" : "45", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145", "Parent" : "41", "Child" : ["46", "47", "48"],
+	{"ID" : "43", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_is_valid_label2_fu_125.mux_84_32_1_1_U107", "Parent" : "42"},
+	{"ID" : "44", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_is_valid_label2_fu_125.flow_control_loop_pipe_sequential_init_U", "Parent" : "42"},
+	{"ID" : "45", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145", "Parent" : "41", "Child" : ["46", "47", "48"],
 		"CDFG" : "run_test_Pipeline_VITIS_LOOP_72_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -637,16 +654,16 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_read8", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_72_1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "46", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.mux_21_32_1_1_U117", "Parent" : "45"},
-	{"ID" : "47", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.mux_21_32_1_1_U118", "Parent" : "45"},
-	{"ID" : "48", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_run_test_fu_201.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "45"},
-	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_writeOutcome_fu_224", "Parent" : "9", "Child" : ["50", "51"],
+	{"ID" : "46", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.mux_21_32_1_1_U117", "Parent" : "45"},
+	{"ID" : "47", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.mux_21_32_1_1_U118", "Parent" : "45"},
+	{"ID" : "48", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_run_test_fu_203.grp_run_test_Pipeline_VITIS_LOOP_72_1_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "45"},
+	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_writeOutcome_fu_226", "Parent" : "9", "Child" : ["50", "51"],
 		"CDFG" : "writeOutcome",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "17", "EstimateLatencyMax" : "17",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -658,6 +675,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "errorInTask1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "checkId", "Type" : "None", "Direction" : "I"},
+			{"Name" : "taskId", "Type" : "None", "Direction" : "I"},
 			{"Name" : "uniId", "Type" : "None", "Direction" : "I"},
 			{"Name" : "error", "Type" : "None", "Direction" : "I"},
 			{"Name" : "outcomeInRam", "Type" : "Memory", "Direction" : "O"},
@@ -668,9 +686,12 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_read4", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_read5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_read6", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read7", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "50", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_writeOutcome_fu_224.outcome_AOV_U", "Parent" : "49"},
-	{"ID" : "51", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_writeOutcome_fu_224.grp_writeOutcome_Pipeline_1_fu_259", "Parent" : "49", "Child" : ["52", "53"],
+			{"Name" : "p_read7", "Type" : "None", "Direction" : "I"},
+			{"Name" : "failedTask", "Type" : "HS", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "failedTask_blk_n", "Type" : "RtlSignal"}]}]},
+	{"ID" : "50", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_writeOutcome_fu_226.outcome_AOV_U", "Parent" : "49"},
+	{"ID" : "51", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_writeOutcome_fu_226.grp_writeOutcome_Pipeline_1_fu_279", "Parent" : "49", "Child" : ["52", "53"],
 		"CDFG" : "writeOutcome_Pipeline_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -696,19 +717,21 @@ set RtlHierarchyInfo {[
 			{"Name" : "outcome_AOV", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "52", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_writeOutcome_fu_224.grp_writeOutcome_Pipeline_1_fu_259.mux_84_32_1_1_U166", "Parent" : "51"},
-	{"ID" : "53", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.grp_writeOutcome_fu_224.grp_writeOutcome_Pipeline_1_fu_259.flow_control_loop_pipe_sequential_init_U", "Parent" : "51"},
-	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U191", "Parent" : "9"},
-	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U192", "Parent" : "9"},
-	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1101.runTestAfterInit_Block_entry14_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U193", "Parent" : "9"},
-	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
-	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem_m_axi_U", "Parent" : "0"},
-	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U219", "Parent" : "0"},
-	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U220", "Parent" : "0"},
-	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U221", "Parent" : "0"},
-	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U222", "Parent" : "0"},
-	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U223", "Parent" : "0"},
-	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U224", "Parent" : "0"}]}
+	{"ID" : "52", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_writeOutcome_fu_226.grp_writeOutcome_Pipeline_1_fu_279.mux_84_32_1_1_U166", "Parent" : "51"},
+	{"ID" : "53", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.grp_writeOutcome_fu_226.grp_writeOutcome_Pipeline_1_fu_279.flow_control_loop_pipe_sequential_init_U", "Parent" : "51"},
+	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U193", "Parent" : "9"},
+	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U194", "Parent" : "9"},
+	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U195", "Parent" : "9"},
+	{"ID" : "57", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_runTestAfterInit_fu_1105.runTestAfterInit_Block_entry15_proc5_U0.regslice_forward_failedTask_U", "Parent" : "9"},
+	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
+	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem_m_axi_U", "Parent" : "0"},
+	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U224", "Parent" : "0"},
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U225", "Parent" : "0"},
+	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U226", "Parent" : "0"},
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U227", "Parent" : "0"},
+	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U228", "Parent" : "0"},
+	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_21_32_1_1_U229", "Parent" : "0"},
+	{"ID" : "66", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_forward_failedTask_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -723,6 +746,7 @@ set ArgLastReadFirstWriteLatency {
 		IOCheckIdx {Type I LastRead 0 FirstWrite -1}
 		IORegionIdx {Type I LastRead 0 FirstWrite -1}
 		n_regions_in {Type IO LastRead 3 FirstWrite 1}
+		failedTask {Type O LastRead -1 FirstWrite 7}
 		regions {Type IO LastRead -1 FirstWrite -1}
 		regions_2 {Type IO LastRead -1 FirstWrite -1}
 		regions_4 {Type IO LastRead -1 FirstWrite -1}
@@ -735,6 +759,7 @@ set ArgLastReadFirstWriteLatency {
 		inputAOV {Type I LastRead 0 FirstWrite -1}
 		outcomeInRam {Type O LastRead -1 FirstWrite 6}
 		errorInTask {Type IO LastRead 71 FirstWrite 7}
+		failedTask {Type O LastRead -1 FirstWrite 7}
 		regions {Type IO LastRead 28 FirstWrite -1}
 		regions_1 {Type IO LastRead 28 FirstWrite -1}
 		regions_2 {Type IO LastRead 30 FirstWrite -1}
@@ -742,11 +767,12 @@ set ArgLastReadFirstWriteLatency {
 		regions_4 {Type IO LastRead 9 FirstWrite -1}
 		regions_5 {Type IO LastRead 12 FirstWrite -1}
 		n_regions_V {Type IO LastRead 72 FirstWrite 2}}
-	runTestAfterInit_Block_entry14_proc5 {
+	runTestAfterInit_Block_entry15_proc5 {
 		inputAOV {Type I LastRead 0 FirstWrite -1}
 		gmem {Type I LastRead 70 FirstWrite -1}
 		errorInTask {Type IO LastRead 71 FirstWrite 7}
 		outcomeInRam {Type O LastRead -1 FirstWrite 6}
+		failedTask {Type O LastRead -1 FirstWrite 7}
 		regions {Type IO LastRead 28 FirstWrite -1}
 		regions_1 {Type IO LastRead 28 FirstWrite -1}
 		regions_2 {Type IO LastRead 30 FirstWrite -1}
@@ -877,6 +903,7 @@ set ArgLastReadFirstWriteLatency {
 		errorInTask {Type O LastRead -1 FirstWrite 7}
 		errorInTask1 {Type I LastRead 7 FirstWrite -1}
 		checkId {Type I LastRead 6 FirstWrite -1}
+		taskId {Type I LastRead 7 FirstWrite -1}
 		uniId {Type I LastRead 6 FirstWrite -1}
 		error {Type I LastRead 7 FirstWrite -1}
 		outcomeInRam {Type O LastRead -1 FirstWrite 6}
@@ -887,7 +914,8 @@ set ArgLastReadFirstWriteLatency {
 		p_read4 {Type I LastRead 0 FirstWrite -1}
 		p_read5 {Type I LastRead 0 FirstWrite -1}
 		p_read6 {Type I LastRead 0 FirstWrite -1}
-		p_read7 {Type I LastRead 0 FirstWrite -1}}
+		p_read7 {Type I LastRead 0 FirstWrite -1}
+		failedTask {Type O LastRead -1 FirstWrite 7}}
 	writeOutcome_Pipeline_1 {
 		p_read {Type I LastRead 0 FirstWrite -1}
 		p_read1 {Type I LastRead 0 FirstWrite -1}
@@ -911,6 +939,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	gmem { m_axi {  { m_axi_gmem_AWVALID VALID 1 1 }  { m_axi_gmem_AWREADY READY 0 1 }  { m_axi_gmem_AWADDR ADDR 1 64 }  { m_axi_gmem_AWID ID 1 1 }  { m_axi_gmem_AWLEN SIZE 1 8 }  { m_axi_gmem_AWSIZE BURST 1 3 }  { m_axi_gmem_AWBURST LOCK 1 2 }  { m_axi_gmem_AWLOCK CACHE 1 2 }  { m_axi_gmem_AWCACHE PROT 1 4 }  { m_axi_gmem_AWPROT QOS 1 3 }  { m_axi_gmem_AWQOS REGION 1 4 }  { m_axi_gmem_AWREGION USER 1 4 }  { m_axi_gmem_AWUSER DATA 1 1 }  { m_axi_gmem_WVALID VALID 1 1 }  { m_axi_gmem_WREADY READY 0 1 }  { m_axi_gmem_WDATA FIFONUM 1 512 }  { m_axi_gmem_WSTRB STRB 1 64 }  { m_axi_gmem_WLAST LAST 1 1 }  { m_axi_gmem_WID ID 1 1 }  { m_axi_gmem_WUSER DATA 1 1 }  { m_axi_gmem_ARVALID VALID 1 1 }  { m_axi_gmem_ARREADY READY 0 1 }  { m_axi_gmem_ARADDR ADDR 1 64 }  { m_axi_gmem_ARID ID 1 1 }  { m_axi_gmem_ARLEN SIZE 1 8 }  { m_axi_gmem_ARSIZE BURST 1 3 }  { m_axi_gmem_ARBURST LOCK 1 2 }  { m_axi_gmem_ARLOCK CACHE 1 2 }  { m_axi_gmem_ARCACHE PROT 1 4 }  { m_axi_gmem_ARPROT QOS 1 3 }  { m_axi_gmem_ARQOS REGION 1 4 }  { m_axi_gmem_ARREGION USER 1 4 }  { m_axi_gmem_ARUSER DATA 1 1 }  { m_axi_gmem_RVALID VALID 0 1 }  { m_axi_gmem_RREADY READY 1 1 }  { m_axi_gmem_RDATA FIFONUM 0 512 }  { m_axi_gmem_RLAST LAST 0 1 }  { m_axi_gmem_RID ID 0 1 }  { m_axi_gmem_RUSER DATA 0 1 }  { m_axi_gmem_RRESP RESP 0 2 }  { m_axi_gmem_BVALID VALID 0 1 }  { m_axi_gmem_BREADY READY 1 1 }  { m_axi_gmem_BRESP RESP 0 2 }  { m_axi_gmem_BID ID 0 1 }  { m_axi_gmem_BUSER DATA 0 1 } } }
+	failedTask { ap_hs {  { failedTask out_data 1 8 }  { failedTask_ap_vld out_vld 1 1 }  { failedTask_ap_ack out_acc 0 1 } } }
 }
 
 set maxi_interface_dict [dict create]

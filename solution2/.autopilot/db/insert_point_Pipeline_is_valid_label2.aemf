@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665163704069">
-  <ports id="1" name="d_read" type="PortType" coreId="1869635878" bitwidth="32">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665562813919">
+  <ports id="1" name="d_read" type="PortType" coreId="1952801851" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="2" name="d_read_8" type="PortType" coreId="1869635878" bitwidth="32">
+  <ports id="2" name="d_read_8" type="PortType" coreId="1952801851" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="3" name="d_read_9" type="PortType" coreId="108" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="d_read_10" type="PortType" coreId="3172973559" bitwidth="32">
+  <ports id="4" name="d_read_10" type="PortType" coreId="1330007625" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="d_read_11" type="PortType" coreId="1303135088" bitwidth="32">
+  <ports id="5" name="d_read_11" type="PortType" coreId="1135064994" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="d_read_12" type="PortType" coreId="1303154080" bitwidth="32">
+  <ports id="6" name="d_read_12" type="PortType" coreId="3115205504" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="d_read_13" type="PortType" coreId="1303142104" bitwidth="32">
+  <ports id="7" name="d_read_13" type="PortType" coreId="3115082608" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="8" name="d_read_14" type="PortType" coreId="3172583750" bitwidth="32">
+  <ports id="8" name="d_read_14" type="PortType" coreId="1920103779" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="18" name="ap_return" direction="DirOut">
@@ -90,33 +90,33 @@
   <edges source_obj="//@blocks.1/@node_objs.1" sink_obj="//@ports.8"/>
   <blocks id="20" name="newFuncRoot" type="BlockType">
     <controlOutputObjs>for.body.i</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="i" originalName="i" coreId="3938506920" bitwidth="4" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="i" originalName="i" coreId="1440840600" bitwidth="4" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataOutputObjs>store</dataOutputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <dataOutputObjs>store</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="d_read_1" coreId="4004218840" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="d_read_1" coreId="1488759896" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_14</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="d_read_2" coreId="2197437664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="d_read_2" coreId="3824938208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_13</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="d_read_3" coreId="2197437664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="d_read_3" coreId="3824938208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_12</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="d_read_4" coreId="2197437664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="d_read_4" coreId="3824938208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_11</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="d_read_5" coreId="2197437664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="d_read_5" coreId="3824938208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_10</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="d_read_6" coreId="2197437664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="d_read_6" coreId="3824938208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>d_read_9</dataInputObjs>
       <dataOutputObjs>mux</dataOutputObjs>
     </node_objs>
@@ -132,7 +132,7 @@
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln0" coreId="1303351360" opcode="br" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln0" coreId="3115119312" opcode="br" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
       <controlInputObjs>for.body.i</controlInputObjs>
     </node_objs>
   </blocks>
@@ -141,13 +141,13 @@
     <controlInputObjs>for.body.i.split</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="merge" coreId="779251572" bitwidth="1" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="merge" coreId="3115225184" bitwidth="1" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
       <dataOutputObjs>ret</dataOutputObjs>
       <controlInputObjs>for.body.i</controlInputObjs>
       <controlInputObjs>for.body.i.split</controlInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="_ln0" coreId="0" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="_ln0" coreId="1134892313" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>ap_return</dataOutputObjs>
     </node_objs>
@@ -161,7 +161,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>insert_point_label4.exitStub</controlOutputObjs>
       <controlOutputObjs>for.body.i.split</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="i_2" lineNumber="87" originalName="i" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="176" contextFuncName="is_valid" bitwidth="4" opcode="load" m_display="1" m_isLCDNode="true" m_isStartOfPath="true" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="i_2" lineNumber="87" originalName="i" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3115075664" contextFuncName="is_valid" bitwidth="4" opcode="load" m_display="1" m_isLCDNode="true" m_isStartOfPath="true" m_topoIndex="12" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="87" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>or</dataInputObjs>
@@ -181,7 +181,7 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="br_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1303145536" contextFuncName="is_valid" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="br_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3115249800" contextFuncName="is_valid" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="87" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>for.body.i.split</controlInputObjs>
@@ -219,19 +219,19 @@
         <dataOutputObjs>or</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="bitcast_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln89_fu_192_p1" coreId="1303190440" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="bitcast_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="bitcast_ln89_fu_192_p1" coreId="3115146528" contextFuncName="is_valid" bitwidth="32" opcode="bitcast" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="89" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="tmp_67" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_67_fu_196_p4" coreId="0" contextFuncName="is_valid" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="tmp_s" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="tmp_s_fu_196_p4" coreId="1135078295" contextFuncName="is_valid" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="89" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="trunc_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln89_fu_206_p1" coreId="0" contextFuncName="is_valid" bitwidth="23" opcode="trunc" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="trunc_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="trunc_ln89_fu_206_p1" coreId="256" contextFuncName="is_valid" bitwidth="23" opcode="trunc" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="89" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -254,7 +254,7 @@
         <dataInputObjs>icmp</dataInputObjs>
         <dataOutputObjs>and</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="tmp_s" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="tmp_90" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="FCompare" implIndex="auto" control="no" opType="fcmp" coreId="19" contextFuncName="is_valid" bitwidth="1" opcode="fcmp" nodeLatency="1" m_display="0" m_delay="5.43" m_topoIndex="23" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="89" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataOutputObjs>or</dataOutputObjs>
@@ -285,7 +285,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <dataOutputObjs>load</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="br_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1752394094" contextFuncName="is_valid" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="br_ln89" lineNumber="89" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1702258035" contextFuncName="is_valid" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="29" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="89" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>or</dataInputObjs>
         <controlInputObjs>for.inc.i</controlInputObjs>
@@ -302,12 +302,12 @@
       <controlInputObjs>for.body.i.split</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>for.body.i</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="i_write_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3172581787" contextFuncName="is_valid" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="i_write_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1985966953" contextFuncName="is_valid" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="87" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1303164896" contextFuncName="is_valid" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln87" lineNumber="87" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3115075384" contextFuncName="is_valid" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="87" fileDirectory="/home/francesco/workspace" functionName="is_valid"/>
         <controlInputObjs>for.body.i</controlInputObjs>
       </node_objs>
@@ -357,9 +357,6 @@
   <expressionNodes realName="icmp_ln89_2_fu_216">
     <nodeIds>35</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_67_fu_196">
-    <nodeIds>32</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="trunc_ln89_fu_206">
     <nodeIds>33</nodeIds>
   </expressionNodes>
@@ -374,6 +371,9 @@
   </expressionNodes>
   <expressionNodes realName="p_x_assign_fu_167">
     <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_s_fu_196">
+    <nodeIds>32</nodeIds>
   </expressionNodes>
   <expressionNodes realName="merge_phi_fu_124">
     <nodeIds>47</nodeIds>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'insert_point_Pipeline_insert_point_label6'
 ================================================================
-* Date:           Fri Oct  7 19:28:25 2022
+* Date:           Wed Oct 12 10:20:15 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -135,7 +135,7 @@
     |ap_loop_exit_ready_pp0_iter2_reg       |   9|          2|    1|          2|
     |ap_loop_exit_ready_pp0_iter3_reg       |   9|          2|    1|          2|
     |ap_loop_exit_ready_pp0_iter4_reg       |   9|          2|    1|          2|
-    |ap_phi_reg_pp0_iter1_empty_54_reg_216  |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_empty_55_reg_216  |  14|          3|   32|         96|
     |ap_phi_reg_pp0_iter2_empty_reg_226     |  14|          3|   32|         96|
     |ap_sig_allocacmp_i_3                   |   9|          2|    4|          8|
     |grp_fu_247_opcode                      |  14|          3|    5|         15|
@@ -168,11 +168,11 @@
     |ap_loop_exit_ready_pp0_iter2_reg            |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter3_reg            |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter4_reg            |   1|   0|    1|          0|
-    |ap_phi_reg_pp0_iter1_empty_54_reg_216       |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_empty_55_reg_216       |  32|   0|   32|          0|
     |ap_phi_reg_pp0_iter1_empty_reg_226          |  32|   0|   32|          0|
     |ap_phi_reg_pp0_iter2_empty_reg_226          |  32|   0|   32|          0|
     |conv_reg_630                                |  32|   0|   32|          0|
-    |empty_54_reg_216                            |  32|   0|   32|          0|
+    |empty_55_reg_216                            |  32|   0|   32|          0|
     |i_fu_64                                     |   4|   0|    4|          0|
     |icmp_ln365_reg_531                          |   1|   0|    1|          0|
     |regions_center_0_addr_reg_575               |  12|   0|   12|          0|
@@ -376,7 +376,7 @@ ST_2 : Operation 63 [1/2] (3.25ns)   --->   "%regions_max_1_load_8 = load i12 %r
 ST_2 : Operation 64 [1/1] (1.58ns)   --->   "%tmp_97 = mux i32 @_ssdm_op_Mux.ap_auto.2float.i1, i32 %regions_max_0_load_8, i32 %regions_max_1_load_8, i1 %trunc_ln268_5_read" [detector_solid/abs_solid_detector.cpp:369]   --->   Operation 64 'mux' 'tmp_97' <Predicate = (!icmp_ln365)> <Delay = 1.58> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
 
 State 3 <SV = 2> <Delay = 7.99>
-ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%specloopname_ln365 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6" [detector_solid/abs_solid_detector.cpp:365]   --->   Operation 65 'specloopname' 'specloopname_ln365' <Predicate = (!icmp_ln365)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%specloopname_ln365 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18" [detector_solid/abs_solid_detector.cpp:365]   --->   Operation 65 'specloopname' 'specloopname_ln365' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%bitcast_ln366 = bitcast i32 %tmp_s" [detector_solid/abs_solid_detector.cpp:366]   --->   Operation 66 'bitcast' 'bitcast_ln366' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_93 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln366, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:366]   --->   Operation 67 'partselect' 'tmp_93' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%trunc_ln366 = trunc i32 %bitcast_ln366" [detector_solid/abs_solid_detector.cpp:366]   --->   Operation 68 'trunc' 'trunc_ln366' <Predicate = (!icmp_ln365)> <Delay = 0.00>
@@ -402,7 +402,7 @@ ST_4 : Operation 85 [1/1] (3.25ns)   --->   "%store_ln367 = store i32 %tmp_s, i1
 ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln367 = br void %arrayidx13747.exit" [detector_solid/abs_solid_detector.cpp:367]   --->   Operation 86 'br' 'br_ln367' <Predicate = (and_ln366_1 & !trunc_ln268_5_read)> <Delay = 0.00>
 ST_4 : Operation 87 [1/1] (3.25ns)   --->   "%store_ln367 = store i32 %tmp_s, i12 %regions_min_1_addr_8" [detector_solid/abs_solid_detector.cpp:367]   --->   Operation 87 'store' 'store_ln367' <Predicate = (and_ln366_1 & trunc_ln268_5_read)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
 ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln367 = br void %arrayidx13747.exit" [detector_solid/abs_solid_detector.cpp:367]   --->   Operation 88 'br' 'br_ln367' <Predicate = (and_ln366_1 & trunc_ln268_5_read)> <Delay = 0.00>
-ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%empty_54 = phi i32 %tmp_s, void %arrayidx13747.exit, i32 %tmp_92, void %for.body127.split" [detector_solid/abs_solid_detector.cpp:366]   --->   Operation 89 'phi' 'empty_54' <Predicate = (!icmp_ln365)> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%empty_55 = phi i32 %tmp_s, void %arrayidx13747.exit, i32 %tmp_92, void %for.body127.split" [detector_solid/abs_solid_detector.cpp:366]   --->   Operation 89 'phi' 'empty_55' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%bitcast_ln369 = bitcast i32 %tmp_96" [detector_solid/abs_solid_detector.cpp:369]   --->   Operation 90 'bitcast' 'bitcast_ln369' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_98 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln369, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:369]   --->   Operation 91 'partselect' 'tmp_98' <Predicate = (!icmp_ln365)> <Delay = 0.00>
 ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%trunc_ln369 = trunc i32 %bitcast_ln369" [detector_solid/abs_solid_detector.cpp:369]   --->   Operation 92 'trunc' 'trunc_ln369' <Predicate = (!icmp_ln365)> <Delay = 0.00>
@@ -429,16 +429,16 @@ ST_4 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln372 = br i1 %trunc_ln268_5_r
 
 State 5 <SV = 4> <Delay = 10.5>
 ST_5 : Operation 113 [1/1] (0.00ns)   --->   "%empty = phi i32 %tmp_96, void %arrayidx16089.exit, i32 %tmp_97, void %if.end150" [detector_solid/abs_solid_detector.cpp:369]   --->   Operation 113 'phi' 'empty' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 114 [4/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_54" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 114 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 114 [4/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 114 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 6 <SV = 5> <Delay = 10.5>
-ST_6 : Operation 115 [3/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_54" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 115 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 115 [3/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 115 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 7 <SV = 6> <Delay = 10.5>
-ST_7 : Operation 116 [2/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_54" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 116 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 116 [2/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 116 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 8 <SV = 7> <Delay = 10.5>
-ST_8 : Operation 117 [1/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_54" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 117 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 117 [1/4] (10.5ns)   --->   "%add = fadd i32 %empty, i32 %empty_55" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 117 'fadd' 'add' <Predicate = true> <Delay = 10.5> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 3> <II = 1> <Delay = 10.5> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 9 <SV = 8> <Delay = 12.3>
 ST_9 : Operation 118 [2/2] (12.3ns)   --->   "%conv = fmul i32 %add, i32 0.5" [detector_solid/abs_solid_detector.cpp:372]   --->   Operation 118 'fmul' 'conv' <Predicate = true> <Delay = 12.3> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 12.3> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
@@ -546,7 +546,7 @@ store_ln367           (store            ) [ 000000000000]
 br_ln367              (br               ) [ 000000000000]
 store_ln367           (store            ) [ 000000000000]
 br_ln367              (br               ) [ 000000000000]
-empty_54              (phi              ) [ 011011111000]
+empty_55              (phi              ) [ 011011111000]
 bitcast_ln369         (bitcast          ) [ 000000000000]
 tmp_98                (partselect       ) [ 000000000000]
 trunc_ln369           (trunc            ) [ 000000000000]
@@ -819,7 +819,7 @@ ret_ln0               (ret              ) [ 000000000000]
 <pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_6"/></StgValue>
+<StgValue><ssdm name="empty_18"/></StgValue>
 </bind>
 </comp>
 
@@ -1160,17 +1160,17 @@ ret_ln0               (ret              ) [ 000000000000]
 </bind>
 </comp>
 
-<comp id="216" class="1005" name="empty_54_reg_216">
+<comp id="216" class="1005" name="empty_55_reg_216">
 <pin_list>
 <pin id="217" dir="0" index="0" bw="32" slack="1"/>
 <pin id="218" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="empty_54 (phireg) "/>
+<opset="empty_55 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="219" class="1004" name="empty_54_phi_fu_219">
+<comp id="219" class="1004" name="empty_55_phi_fu_219">
 <pin_list>
 <pin id="220" dir="0" index="0" bw="32" slack="2"/>
 <pin id="221" dir="0" index="1" bw="0" slack="2147483647"/>
@@ -1180,7 +1180,7 @@ ret_ln0               (ret              ) [ 000000000000]
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="empty_54/4 "/>
+<opset="empty_55/4 "/>
 </bind>
 </comp>
 
@@ -2528,7 +2528,7 @@ N/A
 |     and_ln366_1_reg_617     |    1   |
 |     and_ln369_1_reg_621     |    1   |
 |         conv_reg_630        |   32   |
-|       empty_54_reg_216      |   32   |
+|       empty_55_reg_216      |   32   |
 |        empty_reg_226        |   32   |
 |          i_reg_512          |    4   |
 |      icmp_ln365_reg_531     |    1   |

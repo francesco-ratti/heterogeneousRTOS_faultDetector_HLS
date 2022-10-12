@@ -17,10 +17,12 @@ run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W
 run_fcmp_32ns_32ns_1_2_no_dsp_1
 run_fcmp_32ns_32ns_1_2_no_dsp_1
 run_fcmp_32ns_32ns_1_2_no_dsp_1
+run_regslice_forward
 run_regions_RAM_AUTO_1R1W
 run_n_regions_V_RAM_AUTO_1R1W
 run_gmem_m_axi
 run_control_s_axi
+run_regslice_forward
 insert_point_Pipeline_is_valid_label2
 insert_point_Pipeline_insert_point_label4
 insert_point_Pipeline_VITIS_LOOP_279_1
@@ -31,6 +33,6 @@ run_test_Pipeline_VITIS_LOOP_72_1
 run_test
 writeOutcome_Pipeline_1
 writeOutcome
-runTestAfterInit_Block_entry14_proc5
+runTestAfterInit_Block_entry15_proc5
 runTestAfterInit
 run
