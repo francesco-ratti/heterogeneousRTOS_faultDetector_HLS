@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Wed Oct 12 10:20:21 2022
+    * Date:           Fri Oct 14 18:01:33 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
@@ -19,9 +19,10 @@
     |                     Modules                     |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
     |                     & Loops                     |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
     +-------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |+ run                                            |  Timing|  -0.55|     1280|  2.304e+04|         -|     1281|     -|        no|  64 (22%)|  22 (10%)|  15142 (14%)|  21237 (39%)|    -|
-    | + runTestAfterInit*                             |  Timing|  -0.55|     1277|  2.299e+04|         -|     1278|     -|  dataflow|         -|  22 (10%)|   10045 (9%)|  13692 (25%)|    -|
-    |  + runTestAfterInit_Block_entry15_proc5         |  Timing|  -0.55|     1277|  2.299e+04|         -|     1277|     -|        no|         -|  22 (10%)|   10045 (9%)|  13692 (25%)|    -|
+    |+ run                                            |  Timing|  -0.55|     1284|  2.311e+04|         -|     1285|     -|        no|  64 (22%)|  22 (10%)|  15436 (14%)|  21953 (41%)|    -|
+    | + runTestAfterInit*                             |  Timing|  -0.55|     1281|  2.306e+04|         -|     1282|     -|  dataflow|         -|  22 (10%)|   10339 (9%)|  14408 (27%)|    -|
+    |  + runTestAfterInit_Block_entry92_proc6         |  Timing|  -0.55|     1281|  2.306e+04|         -|     1281|     -|        no|         -|  22 (10%)|   10339 (9%)|  14408 (27%)|    -|
+    |   + resetError                                  |       -|   5.97|        2|     36.000|         -|        2|     -|        no|         -|         -|      7 (~0%)|     58 (~0%)|    -|
     |   + insert_point                                |  Timing|  -0.55|     1204|  2.167e+04|         -|     1204|     -|        no|         -|  22 (10%)|    7927 (7%)|  10911 (20%)|    -|
     |    + insert_point_Pipeline_is_valid_label2      |       -|   5.14|       19|    342.000|         -|       19|     -|        no|         -|         -|     16 (~0%)|    157 (~0%)|    -|
     |     o is_valid_label2                           |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
@@ -36,7 +37,7 @@
     |     o is_valid_label2                           |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
     |    + run_test_Pipeline_VITIS_LOOP_72_1          |       -|   2.87|      562|  1.012e+04|         -|      562|     -|        no|         -|         -|    388 (~0%)|    1220 (2%)|    -|
     |     o VITIS_LOOP_72_1                           |      II|  13.14|      560|  1.008e+04|        33|       33|    16|       yes|         -|         -|            -|            -|    -|
-    |   + writeOutcome                                |       -|   6.19|       18|    324.000|         -|       18|     -|        no|         -|         -|    272 (~0%)|    247 (~0%)|    -|
+    |   + writeOutcome                                |       -|   5.97|       18|    324.000|         -|       18|     -|        no|         -|         -|    292 (~0%)|    303 (~0%)|    -|
     |    + writeOutcome_Pipeline_1                    |       -|   8.51|       10|    180.000|         -|       10|     -|        no|         -|         -|      6 (~0%)|     91 (~0%)|    -|
     |     o Loop 1                                    |       -|  13.14|        8|    144.000|         1|        1|     8|       yes|         -|         -|            -|            -|    -|
     +-------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
@@ -50,7 +51,7 @@
 | Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
 |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
 +------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
-| m_axi_gmem | 320 -> 512 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
+| m_axi_gmem | 352 -> 512 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
 +------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
@@ -129,7 +130,7 @@
 +------------+-------+----------+
 | Interface  | Mode  | Bitwidth |
 +------------+-------+----------+
-| failedTask | ap_hs | 8        |
+| failedTask | ap_hs | 16       |
 +------------+-------+----------+
 
 * TOP LEVEL CONTROL
@@ -147,20 +148,20 @@
 == SW I/O Information
 ================================================================
 * Top Function Arguments
-+-----------------+-----------+-------------+
-| Argument        | Direction | Datatype    |
-+-----------------+-----------+-------------+
-| errorInTask     | inout     | char*       |
-| outcomeInRam    | out       | OutcomeStr* |
-| inputAOV        | in        | controlStr* |
-| accel_mode      | in        | char        |
-| trainedRegion_i | in        | REGION_T    |
-| trainedRegion_o | out       | REGION_T*   |
-| IOCheckIdx      | in        | ap_uint<8>  |
-| IORegionIdx     | in        | ap_uint<8>  |
-| n_regions_in    | inout     | ap_uint<8>* |
-| failedTask      | out       | ap_uint<8>* |
-+-----------------+-----------+-------------+
++-----------------+-----------+--------------+
+| Argument        | Direction | Datatype     |
++-----------------+-----------+--------------+
+| errorInTask     | inout     | char*        |
+| outcomeInRam    | out       | OutcomeStr*  |
+| inputAOV        | in        | controlStr*  |
+| accel_mode      | in        | char         |
+| trainedRegion_i | in        | REGION_T     |
+| trainedRegion_o | out       | REGION_T*    |
+| IOCheckIdx      | in        | ap_uint<8>   |
+| IORegionIdx     | in        | ap_uint<8>   |
+| n_regions_in    | inout     | ap_uint<8>*  |
+| failedTask      | out       | taskFailure* |
++-----------------+-----------+--------------+
 
 * SW-to-HW Mapping
 +-----------------+-------------------+-----------+----------+----------------------------------------------+
@@ -244,10 +245,10 @@
 | Name                                            | DSP | Pragma | Variable    | Op   | Impl    | Latency |
 +-------------------------------------------------+-----+--------+-------------+------+---------+---------+
 | + run                                           | 22  |        |             |      |         |         |
-|   add_ln730_fu_1221_p2                          | -   |        | add_ln730   | add  | fabric  | 0       |
-|   add_ln715_fu_1289_p2                          | -   |        | add_ln715   | add  | fabric  | 0       |
+|   add_ln752_fu_1287_p2                          | -   |        | add_ln752   | add  | fabric  | 0       |
+|   add_ln737_fu_1355_p2                          | -   |        | add_ln737   | add  | fabric  | 0       |
 |  + runTestAfterInit                             | 22  |        |             |      |         |         |
-|   + runTestAfterInit_Block_entry15_proc5        | 22  |        |             |      |         |         |
+|   + runTestAfterInit_Block_entry92_proc6        | 22  |        |             |      |         |         |
 |    + insert_point                               | 22  |        |             |      |         |         |
 |      add_ln260_fu_1010_p2                       | -   |        | add_ln260   | add  | fabric  | 0       |
 |      add_ln886_fu_1029_p2                       | -   |        | add_ln886   | add  | fabric  | 0       |
@@ -261,66 +262,66 @@
 |     + insert_point_Pipeline_VITIS_LOOP_279_1    | 17  |        |             |      |         |         |
 |       add_ln312_fu_1368_p2                      | -   |        | add_ln312   | add  | fabric  | 0       |
 |       add_ln313_fu_1401_p2                      | -   |        | add_ln313   | add  | fabric  | 0       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d1          | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d2          | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | sub         | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub2        | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | distance_1  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d1_1        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d2_1        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | sub79_1     | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub91_1     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | distance_2  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d1_2        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d2_2        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | sub79_2     | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | ov_8        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub91_2     | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | ov_9        | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | overlap_2   | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | distance_3  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d1_3        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d2_3        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | sub79_3     | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub91_3     | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | overlap_3   | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d_4         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | distance_4  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d1_4        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | d2_4        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub79_4     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_16       | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | sub91_4     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_17       | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | overlap_4   | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d_5         | fsub | fulldsp | 3       |
-|       fadd_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | distance_5  | fadd | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d1_5        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | d2_5        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub79_5     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_20       | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | sub91_5     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_21       | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | overlap_5   | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U32        | 2   |        | d_6         | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | mul_6       | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | distance_6  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | d1_6        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | d2_6        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | sub79_6     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_24       | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U33        | 2   |        | sub91_6     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | ov_25       | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | overlap_6   | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | d_7         | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U40         | 3   |        | mul_7       | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | distance_7  | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U34        | 2   |        | d1_7        | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U35        | 2   |        | d2_7        | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U36    | 2   |        | sub79_7     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | ov_28       | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | sub91_7     | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U37    | 2   |        | ov_29       | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d1          | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d2          | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | sub         | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub2        | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | distance_1  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d1_1        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d2_1        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | sub79_1     | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub91_1     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | distance_2  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d1_2        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d2_2        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | sub79_2     | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | ov_8        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub91_2     | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | ov_9        | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | overlap_2   | fmul | maxdsp  | 1       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | distance_3  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d1_3        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d2_3        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | sub79_3     | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub91_3     | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | overlap_3   | fmul | maxdsp  | 1       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d_4         | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | distance_4  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d1_4        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | d2_4        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub79_4     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_16       | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | sub91_4     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_17       | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | overlap_4   | fmul | maxdsp  | 1       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d_5         | fsub | fulldsp | 3       |
+|       fadd_32ns_32ns_32_4_full_dsp_1_U42        | 2   |        | distance_5  | fadd | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d1_5        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | d2_5        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub79_5     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_20       | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | sub91_5     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_21       | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | overlap_5   | fmul | maxdsp  | 1       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U36        | 2   |        | d_6         | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | mul_6       | fmul | maxdsp  | 1       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | distance_6  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | d1_6        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | d2_6        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | sub79_6     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_24       | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U37        | 2   |        | sub91_6     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | ov_25       | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | overlap_6   | fmul | maxdsp  | 1       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | d_7         | fsub | fulldsp | 3       |
+|       fmul_32ns_32ns_32_2_max_dsp_1_U44         | 3   |        | mul_7       | fmul | maxdsp  | 1       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | distance_7  | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U38        | 2   |        | d1_7        | fsub | fulldsp | 3       |
+|       fsub_32ns_32ns_32_4_full_dsp_1_U39        | 2   |        | d2_7        | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U40    | 2   |        | sub79_7     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | ov_28       | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | sub91_7     | fsub | fulldsp | 3       |
+|       faddfsub_32ns_32ns_32_4_full_dsp_1_U41    | 2   |        | ov_29       | fsub | fulldsp | 3       |
 |       i_real_4_fu_2173_p2                       | -   |        | i_real_4    | add  | fabric  | 0       |
 |       k_real_fu_1430_p2                         | -   |        | k_real      | add  | fabric  | 0       |
 |       k_real_2_fu_1436_p2                       | -   |        | k_real_2    | add  | fabric  | 0       |
@@ -355,7 +356,7 @@
 |   regions_5_U                            | 8    | -    |        | regions_5   | ram_t2p | auto | 1       |
 |   n_regions_V_U                          | -    | -    |        | n_regions_V | ram_1p  | auto | 1       |
 |  + runTestAfterInit                      | 0    | 0    |        |             |         |      |         |
-|   + runTestAfterInit_Block_entry15_proc5 | 0    | 0    |        |             |         |      |         |
+|   + runTestAfterInit_Block_entry92_proc6 | 0    | 0    |        |             |         |      |         |
 |    + writeOutcome                        | 0    | 0    |        |             |         |      |         |
 |      outcome_AOV_U                       | -    | -    |        | outcome_AOV | ram_s2p | auto | 1       |
 +------------------------------------------+------+------+--------+-------------+---------+------+---------+
@@ -368,32 +369,34 @@
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Type     | Options | Location                                                      | Messages                                                                                                                                                                           |
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dataflow |         | detector_solid/abs_solid_detector.cpp:560 in runtestafterinit | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
+| dataflow |         | detector_solid/abs_solid_detector.cpp:577 in runtestafterinit | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
 +----------+---------+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Valid Pragma Syntax
-+-----------------+----------------------------------------+--------------------------------------------------------------------------+
-| Type            | Options                                | Location                                                                 |
-+-----------------+----------------------------------------+--------------------------------------------------------------------------+
-| loop_tripcount  | min=0 max=16                           | detector_solid/abs_solid_detector.cpp:73 in hasregion                    |
-| pipeline        | II=4                                   | detector_solid/abs_solid_detector.cpp:74 in hasregion                    |
-| inline          |                                        | detector_solid/abs_solid_detector.cpp:96 in update_train_regions         |
-| loop_tripcount  | min=0 max=136                          | detector_solid/abs_solid_detector.cpp:281 in insert_point                |
-| pipeline        | II=8                                   | detector_solid/abs_solid_detector.cpp:282 in insert_point                |
-| array_partition | variable=contr.AOV complete            | detector_solid/abs_solid_detector.cpp:570 in runtestafterinit, contr.AOV |
-| interface       | mode=ap_ctrl_hs port=return            | detector_solid/abs_solid_detector.cpp:653 in run, return                 |
-| interface       | mode=s_axilite port=return             | detector_solid/abs_solid_detector.cpp:654 in run, return                 |
-| interface       | s_axilite port = accel_mode            | detector_solid/abs_solid_detector.cpp:657 in run                         |
-| interface       | m_axi port = inputAOV offset=slave     | detector_solid/abs_solid_detector.cpp:658 in run                         |
-| interface       | s_axilite port = trainedRegion_i       | detector_solid/abs_solid_detector.cpp:659 in run                         |
-| interface       | s_axilite port = trainedRegion_o       | detector_solid/abs_solid_detector.cpp:660 in run                         |
-| interface       | s_axilite port = IOCheckIdx            | detector_solid/abs_solid_detector.cpp:661 in run                         |
-| interface       | s_axilite port = IORegionIdx           | detector_solid/abs_solid_detector.cpp:662 in run                         |
-| interface       | ap_hs port=failedTask                  | detector_solid/abs_solid_detector.cpp:664 in run, failedTask             |
-| interface       | s_axilite port = n_regions_in          | detector_solid/abs_solid_detector.cpp:667 in run                         |
-| interface       | s_axilite port = errorInTask           | detector_solid/abs_solid_detector.cpp:669 in run                         |
-| interface       | s_axilite port=outcomeInRam            | detector_solid/abs_solid_detector.cpp:670 in run, outcomeInRam           |
-| array_partition | variable=regions dim=2 cyclic factor=2 | detector_solid/abs_solid_detector.cpp:675 in run, regions                |
-+-----------------+----------------------------------------+--------------------------------------------------------------------------+
++-----------------+------------------------------------------+--------------------------------------------------------------------------+
+| Type            | Options                                  | Location                                                                 |
++-----------------+------------------------------------------+--------------------------------------------------------------------------+
+| loop_tripcount  | min=0 max=16                             | detector_solid/abs_solid_detector.cpp:73 in hasregion                    |
+| pipeline        | II=4                                     | detector_solid/abs_solid_detector.cpp:74 in hasregion                    |
+| inline          |                                          | detector_solid/abs_solid_detector.cpp:96 in update_train_regions         |
+| loop_tripcount  | min=0 max=136                            | detector_solid/abs_solid_detector.cpp:281 in insert_point                |
+| pipeline        | II=8                                     | detector_solid/abs_solid_detector.cpp:282 in insert_point                |
+| array_partition | variable=contr.AOV complete              | detector_solid/abs_solid_detector.cpp:587 in runtestafterinit, contr.AOV |
+| interface       | mode=ap_ctrl_hs port=return              | detector_solid/abs_solid_detector.cpp:673 in run, return                 |
+| interface       | mode=s_axilite port=return               | detector_solid/abs_solid_detector.cpp:674 in run, return                 |
+| interface       | s_axilite port = accel_mode              | detector_solid/abs_solid_detector.cpp:677 in run                         |
+| interface       | m_axi port = inputAOV offset=slave       | detector_solid/abs_solid_detector.cpp:678 in run                         |
+| interface       | s_axilite port = trainedRegion_i         | detector_solid/abs_solid_detector.cpp:679 in run                         |
+| interface       | s_axilite port = trainedRegion_o         | detector_solid/abs_solid_detector.cpp:680 in run                         |
+| interface       | s_axilite port = IOCheckIdx              | detector_solid/abs_solid_detector.cpp:681 in run                         |
+| interface       | s_axilite port = IORegionIdx             | detector_solid/abs_solid_detector.cpp:682 in run                         |
+| interface       | ap_hs port=failedTask                    | detector_solid/abs_solid_detector.cpp:684 in run, failedTask             |
+| interface       | s_axilite port = n_regions_in            | detector_solid/abs_solid_detector.cpp:687 in run                         |
+| interface       | s_axilite port = errorInTask             | detector_solid/abs_solid_detector.cpp:689 in run                         |
+| interface       | s_axilite port=outcomeInRam              | detector_solid/abs_solid_detector.cpp:690 in run, outcomeInRam           |
+| array_partition | variable=regions dim=2 cyclic factor=2   | detector_solid/abs_solid_detector.cpp:695 in run, regions                |
+| array_partition | variable=failedTaskExecutionIds complete | detector_solid/abs_solid_detector.cpp:696 in run, failedTaskExecutionIds |
+| reset           | variable=failedTaskExecutionIds          | detector_solid/abs_solid_detector.cpp:701 in run, failedTaskExecutionIds |
++-----------------+------------------------------------------+--------------------------------------------------------------------------+
 
 

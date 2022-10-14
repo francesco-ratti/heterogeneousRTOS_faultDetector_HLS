@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTestAfterInit'" level="0">
-<item name = "Date">Wed Oct 12 10:20:11 2022
+<item name = "Date">Fri Oct 14 18:01:23 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">73, 1277, 1.314 us, 22.986 us, 74, 1278, dataflow</column>
+<column name="">73, 1281, 1.314 us, 23.058 us, 74, 1282, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runTestAfterInit_Block_entry15_proc5_fu_68">runTestAfterInit_Block_entry15_proc5, 73, 1277, 1.314 us, 22.986 us, 73, 1277, no</column>
+<column name="grp_runTestAfterInit_Block_entry92_proc6_fu_102">runTestAfterInit_Block_entry92_proc6, 73, 1281, 1.314 us, 23.058 us, 73, 1281, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

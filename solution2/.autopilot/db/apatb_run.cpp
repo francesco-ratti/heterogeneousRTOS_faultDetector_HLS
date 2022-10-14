@@ -351,7 +351,7 @@ void set_string(std::string list, std::string* class_list) {
 
 
 struct __cosim_s36__ { char data[36]; };
-struct __cosim_s40__ { char data[40]; };
+struct __cosim_s44__ { char data[44]; };
 struct __cosim_s96__ { char data[96]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
@@ -622,7 +622,7 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
           exit(1);
         }
         if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          std::vector<sc_bv<8> > failedTask_pc_buffer(1);
+          std::vector<sc_bv<16> > failedTask_pc_buffer(1);
           int i = 0;
           bool has_unknown_value = false;
           rtl_tv_out_file >> AESL_token; //data
@@ -646,7 +646,8 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
                  << endl; 
           }
   
-          if (i > 0) {((char*)__xlx_apatb_param_failedTask)[0*1+0] = failedTask_pc_buffer[0].range(7, 0).to_int64();
+          if (i > 0) {((char*)__xlx_apatb_param_failedTask)[0*2+0] = failedTask_pc_buffer[0].range(7, 0).to_int64();
+((char*)__xlx_apatb_param_failedTask)[0*2+1] = failedTask_pc_buffer[0].range(15, 8).to_int64();
 }
         } // end transaction
       } // end file is good
@@ -823,7 +824,7 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 aesl_fh.write(AUTOTB_TVIN_failedTask, begin_str(AESL_transaction));
 {
 auto *pos = (unsigned char*)__xlx_apatb_param_failedTask;
-aesl_fh.write(AUTOTB_TVIN_failedTask, formatData(pos, 8));
+aesl_fh.write(AUTOTB_TVIN_failedTask, formatData(pos, 16));
 }
   tcl_file.set_num(1, &tcl_file.failedTask_depth);
 aesl_fh.write(AUTOTB_TVIN_failedTask, end_str());
@@ -923,7 +924,7 @@ aesl_fh.write(AUTOTB_TVOUT_n_regions_in, end_str());
 aesl_fh.write(AUTOTB_TVOUT_failedTask, begin_str(AESL_transaction));
 {
 auto *pos = (unsigned char*)__xlx_apatb_param_failedTask;
-aesl_fh.write(AUTOTB_TVOUT_failedTask, formatData(pos, 8));
+aesl_fh.write(AUTOTB_TVOUT_failedTask, formatData(pos, 16));
 }
   tcl_file.set_num(1, &tcl_file.failedTask_depth);
 aesl_fh.write(AUTOTB_TVOUT_failedTask, end_str());

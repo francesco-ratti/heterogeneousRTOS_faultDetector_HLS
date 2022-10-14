@@ -58,7 +58,7 @@
   <xd:arg xd:name="IORegionIdx" xd:originalName="IORegionIdx" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x168" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x170" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(n_regions_in)" xd:originalName="n_regions_in" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x178" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="*(failedTask)" xd:originalName="failedTask" xd:direction="out" xd:interfaceRef="failedTask" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="8"/>
-  <xd:latencyEstimates xd:best-case="2" xd:worst-case="1280" xd:average-case="28"/>
-  <xd:resourceEstimates xd:LUT="21237" xd:FF="15142" xd:BRAM="0" xd:DSP="22"/>
+  <xd:arg xd:name="*(failedTask)" xd:originalName="failedTask" xd:direction="out" xd:interfaceRef="failedTask" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="16"/>
+  <xd:latencyEstimates xd:best-case="2" xd:worst-case="1284" xd:average-case="30"/>
+  <xd:resourceEstimates xd:LUT="21953" xd:FF="15436" xd:BRAM="0" xd:DSP="22"/>
 </xd:acceleratorMap>

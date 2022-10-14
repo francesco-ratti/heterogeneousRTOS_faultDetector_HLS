@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665763286036">
+  <ports id="1" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="3729331168" bitwidth="8" direction="DirInOut" iftype="IfTypeRegister" arraysize="16">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="errorInTask1" type="PortType" originalName="errorInTask" coreId="2107468080" bitwidth="4">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="failedTaskExecutionId_V_read" type="PortType" originalName="failedTaskExecutionId.V" coreId="51" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="executionId" type="PortType" coreId="108" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="25" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="27" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="30" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="31" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="32" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="35" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="37" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="40" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="42" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="43" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="44" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="45" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="46" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="48" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="49" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="84" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.2"/>
+  <edges id="85" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="86" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="87" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="-32" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@ports.0"/>
+  <blocks id="17" name="entry" type="BlockType">
+    <controlOutputObjs>if.end</controlOutputObjs>
+    <controlOutputObjs>if.then</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="executionId_read" coreId="2022926872" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>executionId</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="failedTaskExecutionId_V_read_1" originalName="failedTaskExecutionId.V" coreId="2105432760" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>failedTaskExecutionId_V_read</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="errorInTask1_read" coreId="190573792" bitwidth="4" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>errorInTask1</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="errorInTask1_cast" rtlName="errorInTask1_cast_fu_68_p1" coreId="190573792" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="errorInTask_addr" lineNumber="568" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="190573792" contextFuncName="resetError" bitwidth="4" opcode="getelementptr" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="568" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>errorInTask</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>errorInTask</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="errorInTask_load" lineNumber="568" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="resetError" bitwidth="8" opcode="load" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="568" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="icmp_ln568" lineNumber="568" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln568_fu_73_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="resetError" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="568" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="icmp_ln1069" lineNumber="1069" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="icmp_ln1069_fu_79_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="operator_ne_8_false" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1069" fileDirectory="/home/francesco/workspace" functionName="operator!=&amp;lt;8, false&amp;gt;"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="or_ln568" lineNumber="568" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="or_ln568_fu_85_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="resetError" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="568" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="br_ln568" lineNumber="568" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1769239916" contextFuncName="resetError" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="568" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>or</dataInputObjs>
+      <controlInputObjs>if.then</controlInputObjs>
+      <controlInputObjs>if.end</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h">
+      <validLinenumbers>1069</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+      <validLinenumbers>568</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="20" name="if.then" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>if.end</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="errorInTask_addr_write_ln569" lineNumber="569" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="resetError" opcode="store" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="569" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln570" lineNumber="570" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3729426488" contextFuncName="resetError" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="570" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+      <controlInputObjs>if.end</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+      <validLinenumbers>569</validLinenumbers>
+      <validLinenumbers>570</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="22" name="if.end" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlInputObjs>if.then</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="_ln571" lineNumber="571" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1397508187" contextFuncName="resetError" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="571" fileDirectory="/home/francesco/workspace" functionName="resetError"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+      <validLinenumbers>571</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <regnodes realName="or_ln568_reg_96">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="errorInTask_addr_reg_91">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <expressionNodes realName="errorInTask1_cast_fu_68">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln568_fu_85">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="errorInTask_addr_gep_fu_54">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1069_fu_79">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln568_fu_73">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="errorInTask1_read_read_fu_36">
+    <nodeIds>7</nodeIds>
+  </ioNodes>
+  <ioNodes realName="executionId_read_read_fu_42">
+    <nodeIds>5</nodeIds>
+  </ioNodes>
+  <ioNodes realName="failedTaskExecutionId_V_read_1_read_fu_48">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="errorInTask">
+    <nodeIds>12</nodeIds>
+    <nodeIds>18</nodeIds>
+  </memoryPorts>
+  <ioPorts name="errorInTask(p0)">
+    <contents name="load">
+      <nodeIds>12</nodeIds>
+    </contents>
+    <contents name="store">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="errorInTask1">
+    <contents name="read">
+      <nodeIds>7</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="executionId">
+    <contents name="read">
+      <nodeIds>5</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="failedTaskExecutionId_V_read">
+    <contents name="read">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="2"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="18" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="18" stage="1" latency="2"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="resetError" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="2">
+      <basicBlocks>17</basicBlocks>
+      <basicBlocks>20</basicBlocks>
+      <basicBlocks>22</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

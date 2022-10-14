@@ -11,10 +11,10 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="1024"/>
         </hw>
       </arg>
-      <arg id="2" access_type="r" src_name="inputAOV" src_type="controlStr*" src_isptr="1" src_bitwidth="320" src_size_or_depth="1">
+      <arg id="2" access_type="r" src_name="inputAOV" src_type="controlStr*" src_isptr="1" src_bitwidth="352" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="MAXI" hw_name="gmem" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512"/>
-          <constraint constraint_type="bitwidth" orig_bitwidth="320" final_bitwidth="512"/>
+          <constraint constraint_type="bitwidth" orig_bitwidth="352" final_bitwidth="512"/>
         </hw>
         <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32"/>
@@ -50,8 +50,8 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="368"/>
         </hw>
       </arg>
-      <arg id="9" access_type="w" src_name="failedTask" src_type="ap_uint&lt;8&gt;*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="failedTask" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
+      <arg id="9" access_type="w" src_name="failedTask" src_type="taskFailure*" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="failedTask" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_hs" register_option="0"/>
         </hw>
       </arg>

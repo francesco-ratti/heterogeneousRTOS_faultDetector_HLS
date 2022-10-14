@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 176
+set ID 180
 set hasByteEnable 0
 set MemName run_writeOutcome_outcome_AOV_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -90,14 +90,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 177 \
+    id 181 \
     name errorInTask \
     reset_level 1 \
     sync_rst true \
-    dir O \
+    dir IO \
     corename errorInTask \
     op interface \
-    ports { errorInTask_address0 { O 4 vector } errorInTask_ce0 { O 1 bit } errorInTask_we0 { O 1 bit } errorInTask_d0 { O 8 vector } } \
+    ports { errorInTask_address0 { O 4 vector } errorInTask_ce0 { O 1 bit } errorInTask_we0 { O 1 bit } errorInTask_d0 { O 8 vector } errorInTask_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'errorInTask'"
@@ -109,7 +109,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 183 \
+    id 190 \
     name outcomeInRam \
     reset_level 1 \
     sync_rst true \
@@ -127,7 +127,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 178 \
+    id 182 \
     name errorInTask1 \
     type other \
     dir I \
@@ -142,7 +142,37 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 179 \
+    id 183 \
+    name p_read \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_read \
+    op interface \
+    ports { p_read { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 184 \
+    name failedTaskExecutionId_read \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_failedTaskExecutionId_read \
+    op interface \
+    ports { failedTaskExecutionId_read { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 185 \
     name checkId \
     type other \
     dir I \
@@ -157,7 +187,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 180 \
+    id 186 \
     name taskId \
     type other \
     dir I \
@@ -172,7 +202,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 181 \
+    id 187 \
+    name executionId \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_executionId \
+    op interface \
+    ports { executionId { I 8 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 188 \
     name uniId \
     type other \
     dir I \
@@ -187,7 +232,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 182 \
+    id 189 \
     name error \
     type other \
     dir I \
@@ -202,22 +247,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 184 \
-    name p_read \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_read \
-    op interface \
-    ports { p_read { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 185 \
+    id 191 \
     name p_read1 \
     type other \
     dir I \
@@ -232,7 +262,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 186 \
+    id 192 \
     name p_read2 \
     type other \
     dir I \
@@ -247,7 +277,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 187 \
+    id 193 \
     name p_read3 \
     type other \
     dir I \
@@ -262,7 +292,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 188 \
+    id 194 \
     name p_read4 \
     type other \
     dir I \
@@ -277,7 +307,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 189 \
+    id 195 \
     name p_read5 \
     type other \
     dir I \
@@ -292,7 +322,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 190 \
+    id 196 \
     name p_read6 \
     type other \
     dir I \
@@ -307,7 +337,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 191 \
+    id 197 \
     name p_read7 \
     type other \
     dir I \
@@ -322,7 +352,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 192 \
+    id 198 \
+    name p_read8 \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_read8 \
+    op interface \
+    ports { p_read8 { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 199 \
     name failedTask \
     type other \
     dir O \
@@ -330,7 +375,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_failedTask \
     op interface \
-    ports { failedTask { O 8 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
+    ports { failedTask { O 16 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
 } "
 }
 
@@ -348,6 +393,20 @@ eval "cg_default_interface_gen_dc { \
 } "
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id -2 \
+    name ap_return \
+    type ap_return \
+    reset_level 1 \
+    sync_rst true \
+    corename ap_return \
+    op interface \
+    ports { ap_return { O 8 vector } } \
+} "
+}
+
 
 # Adapter definition:
 set PortName ap_clk
@@ -355,7 +414,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -2 \
+    id -3 \
     name ${PortName} \
     reset_level 1 \
     sync_rst true \
@@ -375,7 +434,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -3 \
+    id -4 \
     name ${PortName} \
     reset_level 1 \
     sync_rst true \

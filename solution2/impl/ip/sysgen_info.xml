@@ -3,7 +3,7 @@
   <CTypeInfo>
       <RtlPort>
         <name>failedTask</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
@@ -24,6 +24,6 @@
   <modelParameters>
     <combinational>0</combinational>
     <latency>2</latency>
-    <II>3 ~ 1281</II>
+    <II>3 ~ 1285</II>
   </modelParameters>
 </AdditionalInfo>

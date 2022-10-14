@@ -457,7 +457,7 @@ ap_uint<2> fsmstate=STATE_UNINITIALISED;
 
 struct OutcomeStr {
 	ap_uint<8> checkId;
-	char gap0;
+	ap_uint<8> executionId;
 	ap_uint<16> uniId;
 	float AOV[MAX_AOV_DIM];
 };
@@ -465,10 +465,16 @@ struct OutcomeStr {
 struct controlStr {
 	ap_uint<8> checkId;
 	ap_uint<8> taskId;
+	ap_uint<8> executionId;
 	ap_uint<16> uniId;
 	char command;
-	char gap0[3];
+	char gap0[2];
 	float AOV[MAX_AOV_DIM];
+};
+
+struct taskFailure {
+	ap_uint<8> taskId;
+	ap_uint<8> executionId;
 };
 
 #include "hls_math.h"
@@ -516,7 +522,7 @@ struct controlStr {
 //		toScheduler.write(taskId);
 //}
 
-void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, float data[MAX_AOV_DIM], ap_uint<8> *failedTask) {
+void writeOutcome(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<8> executionId, ap_uint<16> uniId, bool error, /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, float data[MAX_AOV_DIM], taskFailure *failedTask) {
 	//#pragma HLS PIPELINE II=8
 	//#pragma HLS inline off
 	//	OutcomeStr out;
@@ -529,15 +535,20 @@ void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_u
 	OutcomeStr outcome;
 	outcome.checkId=checkId;
 	outcome.uniId=uniId;
+	outcome.executionId=executionId;
 	memcpy((void*) &(outcome.AOV), (void*) data, sizeOfInputData);
-	memcpy(outcomeInRam, &outcome, sizeof(outcome));
 
-	//memcpy((void*) &(outcomeptr[checkId]), (void*) &out, sizeof(out));
-	//if (error) {
-	//		memcpy(outcomeInRam, &outcome, sizeof(outcome));
-	*errorInTask = error;
-	if (error)
-		*failedTask=taskId;
+	//if (!(*errorInTask)) {
+	if (!(*errorInTask && (*failedTaskExecutionId)==executionId)) {
+		memcpy(outcomeInRam, &outcome, sizeof(outcome));
+		*errorInTask = error;
+
+		if (error) {
+			*failedTaskExecutionId=executionId;
+			failedTask->taskId=taskId;
+			failedTask->executionId=executionId;
+		}
+	}
 	//toScheduler.write(taskId);
 	//}
 }
@@ -553,8 +564,14 @@ void run_test(bool* error, region_t regions[MAX_REGIONS], ap_uint<8> n_regions, 
 	*error = !(is_valid(data) && hasRegion(regions, n_regions, data));//find_region(regions, n_regions, data) < 0 ) ;
 }
 
+void resetError(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> executionId) {
+	if (*errorInTask && (*failedTaskExecutionId)!=executionId) {
+		*errorInTask=0;
+	}
+}
+
 void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInputAOV,*/
-		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], ap_uint<8> *failedTask
+		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask
 ) {
 
 #pragma HLS dataflow
@@ -575,11 +592,12 @@ void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInp
 	//read_train(&contr, inputAOV, /*readyForData, copyInputAOV*/);
 	memcpy(&contr, inputAOV, sizeof(controlStr));
 	//if (!errorInTask[taskId]) {
-	if (contr.command==COMMAND_TEST && !errorInTask[contr.taskId]) {
+	if (contr.command==COMMAND_TEST) {
 		run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
-		writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV, failedTask);
+		writeOutcome(&(errorInTask[contr.taskId]), &(failedTaskExecutionIds[contr.taskId]), contr.checkId, contr.taskId, contr.executionId, contr.uniId, error, /* toScheduler,*/ outcomeInRam, contr.AOV, failedTask);
 	}
 	else if (contr.command==COMMAND_TRAIN) {
+		resetError(&(errorInTask[contr.taskId]), &(failedTaskExecutionIds[contr.taskId]), contr.executionId);
 		insert_point(regions[contr.checkId],
 				n_regions[contr.checkId],
 				contr.AOV);
@@ -633,6 +651,7 @@ void runTestAfterInit(controlStr* inputAOV, /*char* readyForData,  char* copyInp
 //}
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 static ap_uint<8> n_regions[MAX_CHECKS];
+static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 
 
 //void runT(controlStr* inputAOV, char* copyInputAOV,
@@ -647,9 +666,10 @@ static ap_uint<8> n_regions[MAX_CHECKS];
 #define MODE_OUT 2
 #define MODE_RUN 3
 
+
 void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], controlStr* inputAOV,/* char* readyForData, char* copyInputAOV,*/
 		//	hls::stream< controlStr > &trainStream,
-		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, ap_uint<8> *failedTask /*, hls::stream< ap_uint<8> > &toScheduler*/) {
+		char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask /*, hls::stream< ap_uint<8> > &toScheduler*/) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
 	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
@@ -662,7 +682,7 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 #pragma HLS interface s_axilite port = IORegionIdx
 
 #pragma HLS INTERFACE ap_hs port=failedTask // bundle=pippo
-//#pragma HLS INTERFACE ap_hs port = failedTask
+	//#pragma HLS INTERFACE ap_hs port = failedTask
 
 #pragma HLS interface s_axilite port = n_regions_in //bundle=A
 
@@ -673,10 +693,12 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 	/*#pragma HLS INTERFACE axis port=toScheduler*/
 
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2  //should be MAX_REGIONS
+#pragma HLS array_partition variable=failedTaskExecutionIds complete  //should be MAX_REGIONS
+
 
 	//	#pragma HLS PIPELINE II=8
 
-	//#pragma HLS reset variable=data
+	#pragma HLS reset variable=failedTaskExecutionIds
 	//#pragma HLS reset variable=n_regions
 
 
@@ -730,5 +752,5 @@ void run(char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], contro
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
 	} else if (accel_mode==MODE_RUN)
-		runTestAfterInit(inputAOV, /*readyForData, copyInputAOV,*/ outcomeInRam, /*toScheduler,*/ errorInTask, regions, n_regions, failedTask);
+		runTestAfterInit(inputAOV, /*readyForData, copyInputAOV,*/ outcomeInRam, /*toScheduler,*/ errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask);
 }

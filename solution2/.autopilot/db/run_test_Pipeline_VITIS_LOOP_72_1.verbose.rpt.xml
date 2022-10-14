@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run_test_Pipeline_VITIS_LOOP_72_1'" level="0">
-<item name = "Date">Wed Oct 12 10:20:16 2022
+<item name = "Date">Fri Oct 14 18:01:29 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -62,8 +62,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mux_21_32_1_1_U117">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U118">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U121">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U122">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

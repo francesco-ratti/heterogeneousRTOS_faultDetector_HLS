@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'insert_point'
 ================================================================
-* Date:           Wed Oct 12 10:20:15 2022
+* Date:           Fri Oct 14 18:01:28 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -76,8 +76,8 @@
     +------------------------------------------------------+-------------------------------------------+---------+----+------+------+-----+
     |                       Instance                       |                   Module                  | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +------------------------------------------------------+-------------------------------------------+---------+----+------+------+-----+
-    |faddfsub_32ns_32ns_32_4_full_dsp_1_U84                |faddfsub_32ns_32ns_32_4_full_dsp_1         |        0|   2|   227|   403|    0|
-    |fmul_32ns_32ns_32_2_max_dsp_1_U85                     |fmul_32ns_32ns_32_2_max_dsp_1              |        0|   3|   128|   320|    0|
+    |faddfsub_32ns_32ns_32_4_full_dsp_1_U88                |faddfsub_32ns_32ns_32_4_full_dsp_1         |        0|   2|   227|   403|    0|
+    |fmul_32ns_32ns_32_2_max_dsp_1_U89                     |fmul_32ns_32ns_32_2_max_dsp_1              |        0|   3|   128|   320|    0|
     |grp_insert_point_Pipeline_VITIS_LOOP_279_1_fu_796     |insert_point_Pipeline_VITIS_LOOP_279_1     |        0|  17|  5769|  7452|    0|
     |grp_insert_point_Pipeline_insert_point_label4_fu_770  |insert_point_Pipeline_insert_point_label4  |        0|   0|     6|   103|    0|
     |grp_insert_point_Pipeline_insert_point_label6_fu_815  |insert_point_Pipeline_insert_point_label6  |        0|   0|   651|   536|    0|
@@ -313,21 +313,21 @@
 |ap_done                    |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_614_p_din0          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_614_p_din1          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_614_p_opcode        |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_614_p_dout0         |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_614_p_ce            |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_618_p_din0          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_618_p_din1          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_618_p_opcode        |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_618_p_dout0         |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_618_p_ce            |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_622_p_din0          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_622_p_din1          |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_622_p_opcode        |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_622_p_dout0         |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
-|grp_fu_622_p_ce            |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1089_p_din0         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1089_p_din1         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1089_p_opcode       |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1089_p_dout0        |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1089_p_ce           |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1093_p_din0         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1093_p_din1         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1093_p_opcode       |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1093_p_dout0        |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1093_p_ce           |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1097_p_din0         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1097_p_din1         |  out|   32|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1097_p_opcode       |  out|    5|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1097_p_dout0        |   in|    1|  ap_ctrl_hs|          insert_point|  return value|
+|grp_fu_1097_p_ce           |  out|    1|  ap_ctrl_hs|          insert_point|  return value|
 |regions_min_0_address0     |  out|   12|   ap_memory|         regions_min_0|         array|
 |regions_min_0_ce0          |  out|    1|   ap_memory|         regions_min_0|         array|
 |regions_min_0_we0          |  out|    1|   ap_memory|         regions_min_0|         array|

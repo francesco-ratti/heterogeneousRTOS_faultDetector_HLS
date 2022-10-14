@@ -181,7 +181,7 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 struct __cosim_s36__ { char data[36]; };
-struct __cosim_s40__ { char data[40]; };
+struct __cosim_s44__ { char data[44]; };
 struct __cosim_s96__ { char data[96]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };

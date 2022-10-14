@@ -889,7 +889,7 @@ if.end150:6 %tmp_97 = mux i32 @_ssdm_op_Mux.ap_auto.2float.i1, i32 %regions_max_
 
 <Node id="41" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body127.split:15 %specloopname_ln365 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18
+for.body127.split:15 %specloopname_ln365 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln365"/></StgValue>

@@ -15711,7 +15711,7 @@ insert_point_label6.exitStub:2 %ret_ln0 = ret
 
 <Node id="41" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.body23_ifconv:6 %specpipeline_ln282 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_0
+for.body23_ifconv:6 %specpipeline_ln282 = specpipeline void @_ssdm_op_SpecPipeline, i32 8, i32 0, i32 0, i32 0, void @empty_2
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln282"/></StgValue>
@@ -15743,7 +15743,7 @@ for.body23_ifconv:7 %speclooptripcount_ln281 = speclooptripcount void @_ssdm_op_
 
 <Node id="43" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body23_ifconv:8 %specloopname_ln301 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9
+for.body23_ifconv:8 %specloopname_ln301 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln301"/></StgValue>

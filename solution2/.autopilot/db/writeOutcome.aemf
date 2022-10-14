@@ -1,197 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665562817863">
-  <ports id="1" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="62" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665763290220">
+  <ports id="1" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="62" bitwidth="8" direction="DirInOut" iftype="IfTypeRegister" arraysize="16">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="errorInTask1" type="PortType" coreId="3621216858" bitwidth="4">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="p_read" type="PortType" coreId="3743730656" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="failedTaskExecutionId_read" type="PortType" coreId="3742963856" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="checkId" type="PortType" originalName="outcome.checkId.V" coreId="3743510192" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="taskId" type="PortType" coreId="3743373232" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="7" name="executionId" type="PortType" originalName="outcome.executionId.V" coreId="711755639" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="8" name="uniId" type="PortType" originalName="outcome.uniId.V" coreId="711755047" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="9" name="error" type="PortType" coreId="3743511296" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="10" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="710060549" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="2" name="errorInTask1" type="PortType" coreId="0" bitwidth="4">
+  <ports id="11" name="p_read1" type="PortType" coreId="6775156" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="checkId" type="PortType" originalName="outcome.checkId.V" coreId="4228300630" bitwidth="8">
+  <ports id="12" name="p_read2" type="PortType" coreId="710816556" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="taskId" type="PortType" coreId="4294967295" bitwidth="8">
+  <ports id="13" name="p_read3" type="PortType" coreId="3742614704" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="uniId" type="PortType" originalName="outcome.uniId.V" coreId="108" bitwidth="16">
+  <ports id="14" name="p_read4" type="PortType" coreId="1869833586" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="error" type="PortType" coreId="0" bitwidth="1">
+  <ports id="15" name="p_read5" type="PortType" coreId="3743758224" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="108" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
-    <dataInputObjs>getelementptr</dataInputObjs>
-  </ports>
-  <ports id="8" name="p_read" type="PortType" coreId="3129040624" bitwidth="32">
+  <ports id="16" name="p_read6" type="PortType" coreId="757935405" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="9" name="p_read1" type="PortType" coreId="3129000896" bitwidth="32">
+  <ports id="17" name="p_read7" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="10" name="p_read2" type="PortType" coreId="0" bitwidth="32">
+  <ports id="18" name="p_read8" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="11" name="p_read3" type="PortType" coreId="3128679376" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="12" name="p_read4" type="PortType" coreId="3128842272" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="13" name="p_read5" type="PortType" coreId="1769104758" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="14" name="p_read6" type="PortType" coreId="0" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="15" name="p_read7" type="PortType" coreId="0" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="16" name="failedTask" type="PortType" coreId="0" bitwidth="8" direction="DirOut">
+  <ports id="19" name="failedTask" type="PortType" coreId="0" bitwidth="16" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <edges id="77" source_obj="//@ports.14" sink_obj="//@blocks.0/@node_objs.0"/>
-  <edges id="79" source_obj="//@ports.13" sink_obj="//@blocks.0/@node_objs.1"/>
-  <edges id="81" source_obj="//@ports.12" sink_obj="//@blocks.0/@node_objs.2"/>
-  <edges id="83" source_obj="//@ports.11" sink_obj="//@blocks.0/@node_objs.3"/>
-  <edges id="85" source_obj="//@ports.10" sink_obj="//@blocks.0/@node_objs.4"/>
-  <edges id="87" source_obj="//@ports.9" sink_obj="//@blocks.0/@node_objs.5"/>
-  <edges id="89" source_obj="//@ports.8" sink_obj="//@blocks.0/@node_objs.6"/>
-  <edges id="91" source_obj="//@ports.7" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="94" source_obj="//@ports.5" sink_obj="//@blocks.0/@node_objs.8"/>
-  <edges id="97" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="100" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.10"/>
-  <edges id="102" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.11"/>
-  <edges id="105" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.12"/>
-  <edges id="106" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.13"/>
-  <edges id="111" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="112" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="113" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="114" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="115" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="116" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="117" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="118" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="119" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="120" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.16"/>
-  <edges id="124" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.17"/>
-  <edges id="125" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.18"/>
-  <edges id="128" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.0/@node_objs.19"/>
-  <edges id="129" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.20"/>
-  <edges id="133" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.0/@node_objs.21"/>
-  <edges id="134" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.22"/>
-  <edges id="138" source_obj="//@blocks.0/@node_objs.22" sink_obj="//@blocks.0/@node_objs.23"/>
-  <edges id="139" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.24"/>
-  <edges id="143" source_obj="//@blocks.0/@node_objs.24" sink_obj="//@blocks.0/@node_objs.25"/>
-  <edges id="144" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.26"/>
-  <edges id="148" source_obj="//@blocks.0/@node_objs.26" sink_obj="//@blocks.0/@node_objs.27"/>
-  <edges id="149" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.28"/>
-  <edges id="153" source_obj="//@blocks.0/@node_objs.28" sink_obj="//@blocks.0/@node_objs.29"/>
-  <edges id="154" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.30"/>
-  <edges id="158" source_obj="//@blocks.0/@node_objs.30" sink_obj="//@blocks.0/@node_objs.31"/>
-  <edges id="159" source_obj="//@blocks.0/@node_objs.32" sink_obj="//@ports.6"/>
-  <edges id="162" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.33"/>
-  <edges id="163" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.0/@node_objs.34"/>
-  <edges id="164" source_obj="//@blocks.0/@node_objs.21" sink_obj="//@blocks.0/@node_objs.35"/>
-  <edges id="165" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.0/@node_objs.36"/>
-  <edges id="166" source_obj="//@blocks.0/@node_objs.25" sink_obj="//@blocks.0/@node_objs.37"/>
-  <edges id="167" source_obj="//@blocks.0/@node_objs.27" sink_obj="//@blocks.0/@node_objs.38"/>
-  <edges id="168" source_obj="//@blocks.0/@node_objs.29" sink_obj="//@blocks.0/@node_objs.39"/>
-  <edges id="169" source_obj="//@blocks.0/@node_objs.31" sink_obj="//@blocks.0/@node_objs.40"/>
-  <edges id="172" source_obj="//@blocks.0/@node_objs.40" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="173" source_obj="//@blocks.0/@node_objs.39" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="174" source_obj="//@blocks.0/@node_objs.38" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="175" source_obj="//@blocks.0/@node_objs.37" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="176" source_obj="//@blocks.0/@node_objs.36" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="177" source_obj="//@blocks.0/@node_objs.35" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="178" source_obj="//@blocks.0/@node_objs.34" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="179" source_obj="//@blocks.0/@node_objs.33" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="180" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="183" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.41"/>
-  <edges id="186" source_obj="//@blocks.0/@node_objs.32" sink_obj="//@blocks.0/@node_objs.42"/>
-  <edges id="187" source_obj="//@blocks.0/@node_objs.41" sink_obj="//@blocks.0/@node_objs.42"/>
-  <edges id="190" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.43"/>
-  <edges id="191" source_obj="//@blocks.0/@node_objs.44" sink_obj="//@ports.0"/>
-  <edges id="193" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.44"/>
-  <edges id="194" source_obj="//@blocks.0/@node_objs.43" sink_obj="//@blocks.0/@node_objs.45"/>
-  <edges id="195" source_obj="//@blocks.0/@node_objs.44" sink_obj="//@blocks.0/@node_objs.45"/>
-  <edges id="196" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.46"/>
-  <edges id="197" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.0/@node_objs.46"/>
-  <edges id="198" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.46"/>
-  <edges id="201" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@ports.15"/>
-  <edges id="202" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.1/@node_objs.0"/>
-  <edges id="203" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.1"/>
-  <edges id="264" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
-  <edges id="265" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.2"/>
-  <edges id="266" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
-  <edges id="267" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.17"/>
-  <edges id="268" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.19"/>
-  <edges id="269" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.21"/>
-  <edges id="270" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.23"/>
-  <edges id="271" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.25"/>
-  <edges id="272" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.27"/>
-  <edges id="273" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.29"/>
-  <edges id="274" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.31"/>
-  <blocks id="69" name="entry" type="BlockType">
+  <ports id="29" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="91" source_obj="//@ports.17" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="93" source_obj="//@ports.16" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="95" source_obj="//@ports.15" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="97" source_obj="//@ports.14" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="99" source_obj="//@ports.13" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="101" source_obj="//@ports.12" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="103" source_obj="//@ports.11" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="105" source_obj="//@ports.10" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="108" source_obj="//@ports.8" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="111" source_obj="//@ports.7" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="114" source_obj="//@ports.6" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="116" source_obj="//@ports.5" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="118" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="120" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="122" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="125" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.15"/>
+  <edges id="126" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.16"/>
+  <edges id="131" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="132" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="133" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="134" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="135" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="136" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="137" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="138" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="139" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="140" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="143" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="144" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="145" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.0/@node_objs.21"/>
+  <edges id="148" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.22"/>
+  <edges id="149" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.22"/>
+  <edges id="150" source_obj="//@blocks.0/@node_objs.21" sink_obj="//@blocks.0/@node_objs.23"/>
+  <edges id="151" source_obj="//@blocks.0/@node_objs.22" sink_obj="//@blocks.0/@node_objs.23"/>
+  <edges id="152" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="153" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="155" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="158" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="159" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="162" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="163" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.4"/>
+  <edges id="167" source_obj="//@blocks.1/@node_objs.4" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="168" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.6"/>
+  <edges id="172" source_obj="//@blocks.1/@node_objs.6" sink_obj="//@blocks.1/@node_objs.7"/>
+  <edges id="173" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.8"/>
+  <edges id="177" source_obj="//@blocks.1/@node_objs.8" sink_obj="//@blocks.1/@node_objs.9"/>
+  <edges id="178" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.10"/>
+  <edges id="182" source_obj="//@blocks.1/@node_objs.10" sink_obj="//@blocks.1/@node_objs.11"/>
+  <edges id="183" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.12"/>
+  <edges id="187" source_obj="//@blocks.1/@node_objs.12" sink_obj="//@blocks.1/@node_objs.13"/>
+  <edges id="188" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.1/@node_objs.14"/>
+  <edges id="192" source_obj="//@blocks.1/@node_objs.14" sink_obj="//@blocks.1/@node_objs.15"/>
+  <edges id="193" source_obj="//@blocks.1/@node_objs.16" sink_obj="//@ports.9"/>
+  <edges id="196" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.17"/>
+  <edges id="197" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@blocks.1/@node_objs.18"/>
+  <edges id="198" source_obj="//@blocks.1/@node_objs.5" sink_obj="//@blocks.1/@node_objs.19"/>
+  <edges id="199" source_obj="//@blocks.1/@node_objs.7" sink_obj="//@blocks.1/@node_objs.20"/>
+  <edges id="200" source_obj="//@blocks.1/@node_objs.9" sink_obj="//@blocks.1/@node_objs.21"/>
+  <edges id="201" source_obj="//@blocks.1/@node_objs.11" sink_obj="//@blocks.1/@node_objs.22"/>
+  <edges id="202" source_obj="//@blocks.1/@node_objs.13" sink_obj="//@blocks.1/@node_objs.23"/>
+  <edges id="203" source_obj="//@blocks.1/@node_objs.15" sink_obj="//@blocks.1/@node_objs.24"/>
+  <edges id="206" source_obj="//@blocks.1/@node_objs.24" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="207" source_obj="//@blocks.1/@node_objs.23" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="208" source_obj="//@blocks.1/@node_objs.22" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="209" source_obj="//@blocks.1/@node_objs.21" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="210" source_obj="//@blocks.1/@node_objs.20" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="211" source_obj="//@blocks.1/@node_objs.19" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="212" source_obj="//@blocks.1/@node_objs.18" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="213" source_obj="//@blocks.1/@node_objs.17" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="214" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="215" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="216" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.1/@node_objs.25"/>
+  <edges id="219" source_obj="//@blocks.1/@node_objs.16" sink_obj="//@blocks.1/@node_objs.26"/>
+  <edges id="220" source_obj="//@blocks.1/@node_objs.25" sink_obj="//@blocks.1/@node_objs.26"/>
+  <edges id="223" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.1/@node_objs.27"/>
+  <edges id="224" source_obj="//@blocks.1/@node_objs.27" sink_obj="//@blocks.1/@node_objs.28"/>
+  <edges id="225" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.1/@node_objs.28"/>
+  <edges id="226" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.1/@node_objs.29"/>
+  <edges id="227" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.1/@node_objs.29"/>
+  <edges id="228" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.29"/>
+  <edges id="231" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="232" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="235" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@ports.18"/>
+  <edges id="236" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="237" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="238" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="239" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="240" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="241" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="242" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="243" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="244" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="305" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.3"/>
+  <edges id="306" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="307" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="308" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.3"/>
+  <edges id="309" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="310" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="311" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="312" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="313" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.7"/>
+  <edges id="314" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.9"/>
+  <edges id="315" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.11"/>
+  <edges id="316" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.13"/>
+  <edges id="317" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.1/@node_objs.15"/>
+  <edges id="318" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.1/@node_objs.28"/>
+  <edges source_obj="//@blocks.3/@node_objs.1" sink_obj="//@ports.19"/>
+  <edges id="-140" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@ports.0"/>
+  <blocks id="50" name="entry" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>if.end7</controlOutputObjs>
     <controlOutputObjs>if.then</controlOutputObjs>
-    <controlOutputObjs>if.end</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="p_read_9" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_read_6" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>p_read8</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="p_read_7" coreId="3743683248" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read7</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="p_read_10" coreId="1081633036" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="p_read_8" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read6</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="p_read_11" coreId="3128152064" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="p_read_9" coreId="3744276432" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read5</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_read_12" coreId="3128152624" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_read_10" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read4</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="p_read_13" coreId="3128153208" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_read_11" coreId="3744227520" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read3</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="p_read_14" coreId="3128247664" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="p_read_12" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read2</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="p_read_15" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="p_read_13" coreId="3744243888" bitwidth="32" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read1</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_read_16" coreId="3129499920" bitwidth="32" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
-      <dataInputObjs>p_read</dataInputObjs>
-      <dataOutputObjs>call</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="error_read" coreId="0" bitwidth="1" opcode="read" nodeLabel="7.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="error_read" coreId="0" bitwidth="1" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
       <dataInputObjs>error</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
       <dataOutputObjs>br</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="uniId_read" coreId="3128247664" bitwidth="16" opcode="read" nodeLabel="6.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="uniId_read" coreId="3744227520" bitwidth="16" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
       <dataInputObjs>uniId</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="taskId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="7.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
-      <dataInputObjs>taskId</dataInputObjs>
-      <dataOutputObjs>write</dataOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="executionId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <dataInputObjs>executionId</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="checkId_read" coreId="3129497440" bitwidth="8" opcode="read" nodeLabel="6.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="taskId_read" coreId="3744241392" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <dataInputObjs>taskId</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="checkId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
       <dataInputObjs>checkId</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="errorInTask1_read" coreId="0" bitwidth="4" opcode="read" nodeLabel="7.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="failedTaskExecutionId_read_1" coreId="3744143280" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <dataInputObjs>failedTaskExecutionId_read</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_read66" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <dataInputObjs>p_read</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="errorInTask1_read" coreId="3744159664" bitwidth="4" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
       <dataInputObjs>errorInTask1</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="errorInTask1_cast" rtlName="errorInTask1_cast_fu_354_p1" coreId="3129364768" bitwidth="64" opcode="zext" nodeLabel="7.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="errorInTask1_cast" rtlName="errorInTask1_cast_fu_337_p1" coreId="0" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="outcome_AOV" lineNumber="529" originalName="outcome.AOV" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="outcome_AOV_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" contextFuncName="writeOutcome" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="529" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="outcome_AOV" lineNumber="535" originalName="outcome.AOV" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="outcome_AOV_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" contextFuncName="writeOutcome" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="535" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -203,7 +260,7 @@
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="_ln0" rtlName="grp_writeOutcome_Pipeline_1_fu_279" coreId="3129381152" opcode="call" nodeLatency="1" m_display="0" m_delay="4.62" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="_ln0" rtlName="grp_writeOutcome_Pipeline_1_fu_315" coreId="0" opcode="call" nodeLatency="1" m_display="0" m_delay="4.62" m_topoIndex="12" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
@@ -215,116 +272,168 @@
       <dataInputObjs>alloca</dataInputObjs>
       <constName>writeOutcome_Pipeline_1</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="outcome_AOV_addr" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="errorInTask_addr" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744157152" contextFuncName="writeOutcome" bitwidth="4" opcode="getelementptr" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>errorInTask</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>errorInTask</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="errorInTask_load" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" bitwidth="8" opcode="load" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="icmp_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln542_fu_342_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="writeOutcome" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="icmp_ln1065" lineNumber="1065" fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="icmp_ln1065_fu_348_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="operator_eq_8_false" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h" linenumber="1065" fileDirectory="/home/francesco/workspace" functionName="operator==&amp;lt;8, false&amp;gt;"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="and_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="and_ln542_fu_354_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="writeOutcome" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="br_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>and</dataInputObjs>
+      <controlInputObjs>if.then</controlInputObjs>
+      <controlInputObjs>if.end7</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h">
+      <validLinenumbers>1065</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+      <validLinenumbers>535</validLinenumbers>
+      <validLinenumbers>542</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="81" name="if.then" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>if.then4</controlOutputObjs>
+    <controlOutputObjs>if.end7</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="outcome_AOV_addr" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="outcome_AOV_load" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="12" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="outcome_AOV_load" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="29" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="outcome_AOV_addr_1" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="outcome_AOV_addr_1" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="outcome_AOV_load_1" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="14" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="outcome_AOV_load_1" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="31" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="outcome_AOV_addr_2" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="outcome_AOV_addr_2" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="outcome_AOV_load_2" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="16" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="outcome_AOV_load_2" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="33" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="outcome_AOV_addr_3" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="outcome_AOV_addr_3" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="outcome_AOV_load_3" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="18" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="outcome_AOV_load_3" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="35" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="outcome_AOV_addr_4" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="outcome_AOV_addr_4" coreId="3744002896" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="outcome_AOV_load_4" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="20" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="outcome_AOV_load_4" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="37" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="outcome_AOV_addr_5" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="outcome_AOV_addr_5" coreId="3744002896" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="outcome_AOV_load_5" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="22" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="outcome_AOV_load_5" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="39" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="outcome_AOV_addr_6" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="outcome_AOV_addr_6" coreId="711256354" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="outcome_AOV_load_6" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="24" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="outcome_AOV_load_6" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="41" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="outcome_AOV_addr_7" coreId="3128688832" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="outcome_AOV_addr_7" coreId="3743967904" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="outcome_AOV_load_7" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="26" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="outcome_AOV_load_7" coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" bitwidth="32" opcode="load" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="43" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="outcomeInRam_addr" coreId="1081903714" bitwidth="4" opcode="getelementptr" nodeLabel="6.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="67" name="outcomeInRam_addr" coreId="0" bitwidth="4" opcode="getelementptr" nodeLabel="6.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
       <dataOutputObjs>outcomeInRam</dataOutputObjs>
       <dataOutputObjs>store</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="empty" rtlName="empty_fu_301_p1" coreId="3128373520" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="empty" rtlName="empty_fu_365_p1" coreId="3743967904" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="empty_48" rtlName="empty_48_fu_304_p1" coreId="3128374104" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="empty_48" rtlName="empty_48_fu_368_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="empty_49" rtlName="empty_49_fu_307_p1" coreId="3127827664" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="empty_49" rtlName="empty_49_fu_371_p1" coreId="3743981776" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="empty_50" rtlName="empty_50_fu_310_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="empty_50" rtlName="empty_50_fu_374_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="empty_51" rtlName="empty_51_fu_313_p1" coreId="176" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="empty_51" rtlName="empty_51_fu_377_p1" coreId="3743683248" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="empty_52" rtlName="empty_52_fu_316_p1" coreId="1081211413" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="empty_52" rtlName="empty_52_fu_380_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="empty_53" rtlName="empty_53_fu_319_p1" coreId="3127827664" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="empty_53" rtlName="empty_53_fu_383_p1" coreId="176" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="empty_54" rtlName="empty_54_fu_323_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="75" name="empty_54" rtlName="empty_54_fu_387_p1" coreId="3744176192" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="tmp_s" rtlName="outcomeInRam_d0" coreId="3128753792" bitwidth="288" opcode="bitconcatenate" nodeLabel="6.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="tmp_s" rtlName="outcomeInRam_d0" coreId="711351226" bitwidth="288" opcode="bitconcatenate" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
@@ -333,72 +442,86 @@
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>store</dataOutputObjs>
-      <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="outcomeInRam_addr_write_ln0" coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" opcode="store" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="39" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="77" name="outcomeInRam_addr_write_ln0" coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" opcode="store" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="54" m_clusterGroupNumber="-1">
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataInputObjs>bitconcatenate</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="zext_ln538" lineNumber="538" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="errorInTask_d0" coreId="1081638861" contextFuncName="writeOutcome" bitwidth="8" opcode="zext" nodeLabel="7.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="538" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="zext_ln544" lineNumber="544" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="errorInTask_d0" coreId="78" contextFuncName="writeOutcome" bitwidth="8" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="544" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>store</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="errorInTask_addr" lineNumber="538" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" bitwidth="4" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="538" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
-      <dataInputObjs>zext</dataInputObjs>
-      <dataOutputObjs>errorInTask</dataOutputObjs>
-      <dataOutputObjs>store</dataOutputObjs>
-      <constName>empty</constName>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="67" name="errorInTask_addr_write_ln538" lineNumber="538" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" opcode="store" nodeLabel="7.0" m_display="0" m_delay="2.32" m_topoIndex="46" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="538" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="79" name="errorInTask_addr_write_ln544" lineNumber="544" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" opcode="store" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="544" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>getelementptr</dataInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="br_ln539" lineNumber="539" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="539" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="br_ln546" lineNumber="546" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744177120" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="546" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
-      <controlInputObjs>if.end</controlInputObjs>
-      <controlInputObjs>if.then</controlInputObjs>
+      <controlInputObjs>if.end7</controlInputObjs>
+      <controlInputObjs>if.then4</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>529</validLinenumbers>
-      <validLinenumbers>538</validLinenumbers>
-      <validLinenumbers>539</validLinenumbers>
+      <validLinenumbers>544</validLinenumbers>
+      <validLinenumbers>546</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="72" name="if.then" type="BlockType">
-    <controlInputObjs>entry</controlInputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>if.end</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="failedTask_write_ln540" lineNumber="540" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3128932880" contextFuncName="writeOutcome" opcode="write" nodeLabel="7.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="540" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
-      <dataInputObjs>read</dataInputObjs>
-      <dataOutputObjs>failedTask</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="br_ln540" lineNumber="540" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1953394531" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="540" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
-      <controlInputObjs>if.end</controlInputObjs>
-    </node_objs>
-    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>540</validLinenumbers>
-    </fileValidLineNumbers>
-  </blocks>
-  <blocks id="74" name="if.end" type="BlockType">
-    <controlInputObjs>entry</controlInputObjs>
+  <blocks id="85" name="if.then4" type="BlockType">
     <controlInputObjs>if.then</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="_ln543" lineNumber="543" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3128581248" contextFuncName="writeOutcome" opcode="ret" nodeLabel="8.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="543" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>if.end7</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="p_0_0_010_partset" lineNumber="549" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="failedTask" coreId="0" contextFuncName="writeOutcome" bitwidth="16" opcode="bitconcatenate" nodeLabel="7.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="549" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="failedTask_write_ln549" lineNumber="549" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744178944" contextFuncName="writeOutcome" opcode="write" nodeLabel="7.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="549" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataOutputObjs>failedTask</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="br_ln550" lineNumber="550" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="550" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <controlInputObjs>if.end7</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>543</validLinenumbers>
+      <validLinenumbers>549</validLinenumbers>
+      <validLinenumbers>550</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="88" name="if.end7" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlInputObjs>if.then</controlInputObjs>
+    <controlInputObjs>if.then4</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="phi_ln554" lineNumber="554" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3742511824" contextFuncName="writeOutcome" bitwidth="8" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="554" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>ret</dataOutputObjs>
+      <controlInputObjs>if.then4</controlInputObjs>
+      <controlInputObjs>entry</controlInputObjs>
+      <controlInputObjs>if.then</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="_ln554" lineNumber="554" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="ret" nodeLabel="8.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="554" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>ap_return</dataOutputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
+      <validLinenumbers>554</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
@@ -410,378 +533,464 @@
   <ScheduleInfo time="6"/>
   <ScheduleInfo time="7"/>
   <ScheduleInfo time="8"/>
-  <regnodes realName="tmp_s_reg_479">
-    <nodeIds>63</nodeIds>
+  <regnodes realName="p_read_13_reg_457">
+    <nodeIds>28</nodeIds>
   </regnodes>
-  <regnodes realName="outcome_AOV_addr_1_reg_409">
-    <nodeIds>40</nodeIds>
+  <regnodes realName="errorInTask_addr_reg_462">
+    <nodeIds>44</nodeIds>
   </regnodes>
-  <regnodes realName="outcome_AOV_load_1_reg_419">
-    <nodeIds>41</nodeIds>
+  <regnodes realName="p_read_12_reg_452">
+    <nodeIds>27</nodeIds>
   </regnodes>
-  <regnodes realName="p_read_12_reg_379">
+  <regnodes realName="p_read_6_reg_422">
     <nodeIds>21</nodeIds>
   </regnodes>
-  <regnodes realName="p_read_13_reg_384">
+  <regnodes realName="outcome_AOV_addr_7_reg_567">
+    <nodeIds>65</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_addr_5_reg_547">
+    <nodeIds>61</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_addr_4_reg_542">
+    <nodeIds>59</nodeIds>
+  </regnodes>
+  <regnodes realName="checkId_read_reg_488">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="p_read_11_reg_447">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="p_read_7_reg_427">
     <nodeIds>22</nodeIds>
   </regnodes>
-  <regnodes realName="outcome_AOV_addr_2_reg_424">
-    <nodeIds>42</nodeIds>
-  </regnodes>
-  <regnodes realName="p_read_14_reg_389">
-    <nodeIds>23</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_addr_7_reg_469">
-    <nodeIds>52</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_load_reg_414">
-    <nodeIds>39</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_addr_5_reg_449">
-    <nodeIds>48</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_load_4_reg_454">
-    <nodeIds>47</nodeIds>
-  </regnodes>
-  <regnodes realName="outcomeInRam_addr_reg_474">
-    <nodeIds>54</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_addr_4_reg_444">
-    <nodeIds>46</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_load_5_reg_459">
-    <nodeIds>49</nodeIds>
-  </regnodes>
-  <regnodes realName="p_read_15_reg_394">
-    <nodeIds>24</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_addr_3_reg_429">
-    <nodeIds>44</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_load_2_reg_434">
-    <nodeIds>43</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_load_3_reg_439">
-    <nodeIds>45</nodeIds>
-  </regnodes>
-  <regnodes realName="p_read_9_reg_364">
-    <nodeIds>18</nodeIds>
-  </regnodes>
-  <regnodes realName="outcome_AOV_addr_6_reg_464">
-    <nodeIds>50</nodeIds>
-  </regnodes>
-  <regnodes realName="p_read_16_reg_399">
+  <regnodes realName="p_read_10_reg_442">
     <nodeIds>25</nodeIds>
   </regnodes>
-  <regnodes realName="p_read_10_reg_369">
-    <nodeIds>19</nodeIds>
+  <regnodes realName="outcome_AOV_addr_3_reg_527">
+    <nodeIds>57</nodeIds>
   </regnodes>
-  <regnodes realName="outcome_AOV_addr_reg_404">
-    <nodeIds>38</nodeIds>
+  <regnodes realName="outcome_AOV_addr_6_reg_562">
+    <nodeIds>63</nodeIds>
   </regnodes>
-  <regnodes realName="p_read_11_reg_374">
-    <nodeIds>20</nodeIds>
+  <regnodes realName="outcome_AOV_addr_reg_502">
+    <nodeIds>51</nodeIds>
   </regnodes>
-  <expressionNodes realName="errorInTask_addr_gep_fu_266">
-    <nodeIds>66</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_3_gep_fu_213">
-    <nodeIds>44</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_5_gep_fu_229">
-    <nodeIds>48</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_alloca_fu_90">
-    <nodeIds>36</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln538_fu_359">
-    <nodeIds>65</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_1_gep_fu_197">
-    <nodeIds>40</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_7_gep_fu_245">
-    <nodeIds>52</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_gep_fu_180">
-    <nodeIds>38</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_52_fu_316">
-    <nodeIds>60</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="errorInTask1_cast_fu_354">
-    <nodeIds>31</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_fu_301">
+  <regnodes realName="outcome_AOV_addr_1_reg_507">
+    <nodeIds>53</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_s_reg_577">
+    <nodeIds>76</nodeIds>
+  </regnodes>
+  <regnodes realName="error_read_reg_467">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="p_read66_reg_493">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_1_reg_517">
+    <nodeIds>54</nodeIds>
+  </regnodes>
+  <regnodes realName="phi_ln554_reg_304">
+    <nodeIds>86</nodeIds>
+  </regnodes>
+  <regnodes realName="outcomeInRam_addr_reg_572">
+    <nodeIds>67</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_addr_2_reg_522">
     <nodeIds>55</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_reg_512">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_5_reg_557">
+    <nodeIds>62</nodeIds>
+  </regnodes>
+  <regnodes realName="p_read_9_reg_437">
+    <nodeIds>24</nodeIds>
+  </regnodes>
+  <regnodes realName="uniId_read_reg_471">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="executionId_read_reg_476">
+    <nodeIds>31</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_2_reg_532">
+    <nodeIds>56</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_3_reg_537">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="taskId_read_reg_483">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="outcome_AOV_load_4_reg_552">
+    <nodeIds>60</nodeIds>
+  </regnodes>
+  <regnodes realName="p_read_8_reg_432">
+    <nodeIds>23</nodeIds>
+  </regnodes>
+  <expressionNodes realName="empty_48_fu_368">
+    <nodeIds>69</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_4_gep_fu_221">
+  <expressionNodes realName="empty_52_fu_380">
+    <nodeIds>73</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_53_fu_383">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln542_fu_342">
     <nodeIds>46</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_53_fu_319">
-    <nodeIds>61</nodeIds>
+  <expressionNodes realName="zext_ln544_fu_360">
+    <nodeIds>78</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="outcomeInRam_addr_gep_fu_253">
-    <nodeIds>54</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_2_gep_fu_205">
-    <nodeIds>42</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_s_fu_327">
-    <nodeIds>63</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_51_fu_313">
-    <nodeIds>59</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_54_fu_323">
-    <nodeIds>62</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_49_fu_307">
+  <expressionNodes realName="outcome_AOV_addr_3_gep_fu_251">
     <nodeIds>57</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_50_fu_310">
-    <nodeIds>58</nodeIds>
+  <expressionNodes realName="errorInTask_addr_gep_fu_205">
+    <nodeIds>44</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_48_fu_304">
-    <nodeIds>56</nodeIds>
+  <expressionNodes realName="outcomeInRam_addr_gep_fu_291">
+    <nodeIds>67</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="outcome_AOV_addr_6_gep_fu_237">
-    <nodeIds>50</nodeIds>
+  <expressionNodes realName="outcome_AOV_addr_5_gep_fu_267">
+    <nodeIds>61</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_writeOutcome_Pipeline_1_fu_279">
-    <nodeIds>37</nodeIds>
-  </moduleNodes>
-  <ioNodes realName="write_ln540_write_fu_172">
+  <expressionNodes realName="outcome_AOV_addr_2_gep_fu_243">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_fu_365">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_addr_7_gep_fu_283">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_alloca_fu_98">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_54_fu_387">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_addr_4_gep_fu_259">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_addr_gep_fu_218">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_addr_1_gep_fu_235">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_s_fu_391">
+    <nodeIds>76</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_49_fu_371">
     <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="phi_ln554_phi_fu_307">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln542_fu_354">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="errorInTask1_cast_fu_337">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="outcome_AOV_addr_6_gep_fu_275">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1065_fu_348">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_50_fu_374">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_0_0_010_partset_fu_415">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_51_fu_377">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_writeOutcome_Pipeline_1_fu_315">
+    <nodeIds>43</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="failedTaskExecutionId_read_1_read_fu_186">
+    <nodeIds>34</nodeIds>
   </ioNodes>
-  <ioNodes realName="errorInTask1_read_read_fu_166">
-    <nodeIds>30</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_11_read_fu_106">
-    <nodeIds>20</nodeIds>
-  </ioNodes>
-  <ioNodes realName="checkId_read_read_fu_148">
-    <nodeIds>29</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_10_read_fu_100">
-    <nodeIds>19</nodeIds>
-  </ioNodes>
-  <ioNodes realName="taskId_read_read_fu_160">
-    <nodeIds>28</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_14_read_fu_124">
-    <nodeIds>23</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_16_read_fu_136">
-    <nodeIds>25</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_9_read_fu_94">
-    <nodeIds>18</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_12_read_fu_112">
+  <ioNodes realName="p_read_6_read_fu_102">
     <nodeIds>21</nodeIds>
   </ioNodes>
-  <ioNodes realName="p_read_15_read_fu_130">
-    <nodeIds>24</nodeIds>
+  <ioNodes realName="p_read_10_read_fu_126">
+    <nodeIds>25</nodeIds>
   </ioNodes>
-  <ioNodes realName="p_read_13_read_fu_118">
-    <nodeIds>22</nodeIds>
+  <ioNodes realName="taskId_read_read_fu_174">
+    <nodeIds>32</nodeIds>
   </ioNodes>
-  <ioNodes realName="error_read_read_fu_154">
+  <ioNodes realName="p_read_11_read_fu_132">
     <nodeIds>26</nodeIds>
   </ioNodes>
-  <ioNodes realName="uniId_read_read_fu_142">
+  <ioNodes realName="p_read66_read_fu_192">
+    <nodeIds>35</nodeIds>
+  </ioNodes>
+  <ioNodes realName="checkId_read_read_fu_180">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="executionId_read_read_fu_168">
+    <nodeIds>31</nodeIds>
+  </ioNodes>
+  <ioNodes realName="error_read_read_fu_156">
+    <nodeIds>29</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_read_13_read_fu_144">
+    <nodeIds>28</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_read_12_read_fu_138">
     <nodeIds>27</nodeIds>
   </ioNodes>
+  <ioNodes realName="p_read_9_read_fu_120">
+    <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_read_8_read_fu_114">
+    <nodeIds>23</nodeIds>
+  </ioNodes>
+  <ioNodes realName="errorInTask1_read_read_fu_150">
+    <nodeIds>36</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_read_7_read_fu_108">
+    <nodeIds>22</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln549_write_fu_198">
+    <nodeIds>83</nodeIds>
+  </ioNodes>
+  <ioNodes realName="uniId_read_read_fu_162">
+    <nodeIds>30</nodeIds>
+  </ioNodes>
   <memoryPorts dataString="errorInTask">
-    <nodeIds>67</nodeIds>
+    <nodeIds>45</nodeIds>
+    <nodeIds>79</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="outcomeInRam">
-    <nodeIds>64</nodeIds>
+    <nodeIds>77</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="outcome_AOV">
-    <nodeIds>41</nodeIds>
-    <nodeIds>45</nodeIds>
-    <nodeIds>49</nodeIds>
-    <nodeIds>53</nodeIds>
+    <nodeIds>54</nodeIds>
+    <nodeIds>58</nodeIds>
+    <nodeIds>62</nodeIds>
+    <nodeIds>66</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="outcome_AOV" portID="1">
-    <nodeIds>39</nodeIds>
-    <nodeIds>43</nodeIds>
-    <nodeIds>47</nodeIds>
-    <nodeIds>51</nodeIds>
+    <nodeIds>52</nodeIds>
+    <nodeIds>56</nodeIds>
+    <nodeIds>60</nodeIds>
+    <nodeIds>64</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="outcome_AOV" portID="100">
-    <nodeIds>37</nodeIds>
+    <nodeIds>43</nodeIds>
   </memoryPorts>
   <ioPorts name="checkId">
     <contents name="read">
-      <nodeIds>29</nodeIds>
+      <nodeIds>33</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="error">
     <contents name="read">
-      <nodeIds>26</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="errorInTask(p0)">
+    <contents name="load">
+      <nodeIds>45</nodeIds>
+    </contents>
     <contents name="store">
-      <nodeIds>67</nodeIds>
+      <nodeIds>79</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="errorInTask1">
     <contents name="read">
-      <nodeIds>30</nodeIds>
+      <nodeIds>36</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="executionId">
+    <contents name="read">
+      <nodeIds>31</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="failedTask">
     <contents name="write">
-      <nodeIds>70</nodeIds>
+      <nodeIds>83</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="failedTaskExecutionId_read">
+    <contents name="read">
+      <nodeIds>34</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="outcomeInRam(p0)">
     <contents name="store">
-      <nodeIds>64</nodeIds>
+      <nodeIds>77</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read">
     <contents name="read">
-      <nodeIds>25</nodeIds>
+      <nodeIds>35</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read1">
     <contents name="read">
-      <nodeIds>24</nodeIds>
+      <nodeIds>28</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read2">
     <contents name="read">
-      <nodeIds>23</nodeIds>
+      <nodeIds>27</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read3">
     <contents name="read">
-      <nodeIds>22</nodeIds>
+      <nodeIds>26</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read4">
     <contents name="read">
-      <nodeIds>21</nodeIds>
+      <nodeIds>25</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read5">
     <contents name="read">
-      <nodeIds>20</nodeIds>
+      <nodeIds>24</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read6">
     <contents name="read">
-      <nodeIds>19</nodeIds>
+      <nodeIds>23</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="p_read7">
     <contents name="read">
-      <nodeIds>18</nodeIds>
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_read8">
+    <contents name="read">
+      <nodeIds>21</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="taskId">
     <contents name="read">
-      <nodeIds>28</nodeIds>
+      <nodeIds>32</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="uniId">
     <contents name="read">
-      <nodeIds>27</nodeIds>
+      <nodeIds>30</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>87</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="18" stage="1" latency="1"/>
-      <operations id="19" stage="1" latency="1"/>
-      <operations id="20" stage="1" latency="1"/>
       <operations id="21" stage="1" latency="1"/>
       <operations id="22" stage="1" latency="1"/>
       <operations id="23" stage="1" latency="1"/>
       <operations id="24" stage="1" latency="1"/>
       <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
       <operations id="36" stage="1" latency="1"/>
-      <operations id="37" stage="2" latency="2"/>
-    </states>
-    <states id="2">
-      <operations id="37" stage="1" latency="2"/>
-    </states>
-    <states id="3">
-      <operations id="38" stage="1" latency="1"/>
-      <operations id="39" stage="2" latency="2"/>
-      <operations id="40" stage="1" latency="1"/>
-      <operations id="41" stage="2" latency="2"/>
-    </states>
-    <states id="4">
-      <operations id="39" stage="1" latency="2"/>
-      <operations id="41" stage="1" latency="2"/>
+      <operations id="37" stage="1" latency="1"/>
       <operations id="42" stage="1" latency="1"/>
       <operations id="43" stage="2" latency="2"/>
       <operations id="44" stage="1" latency="1"/>
       <operations id="45" stage="2" latency="2"/>
     </states>
-    <states id="5">
-      <operations id="43" stage="1" latency="2"/>
-      <operations id="45" stage="1" latency="2"/>
-      <operations id="46" stage="1" latency="1"/>
-      <operations id="47" stage="2" latency="2"/>
-      <operations id="48" stage="1" latency="1"/>
-      <operations id="49" stage="2" latency="2"/>
-    </states>
-    <states id="6">
-      <operations id="47" stage="1" latency="2"/>
-      <operations id="49" stage="1" latency="2"/>
-      <operations id="50" stage="1" latency="1"/>
-      <operations id="51" stage="2" latency="2"/>
-      <operations id="52" stage="1" latency="1"/>
-      <operations id="53" stage="2" latency="2"/>
-    </states>
-    <states id="7">
-      <operations id="27" stage="1" latency="1"/>
+    <states id="2">
+      <operations id="20" stage="1" latency="1"/>
       <operations id="29" stage="1" latency="1"/>
-      <operations id="51" stage="1" latency="2"/>
-      <operations id="53" stage="1" latency="2"/>
-      <operations id="54" stage="1" latency="1"/>
-      <operations id="55" stage="1" latency="1"/>
-      <operations id="56" stage="1" latency="1"/>
-      <operations id="57" stage="1" latency="1"/>
-      <operations id="58" stage="1" latency="1"/>
-      <operations id="59" stage="1" latency="1"/>
-      <operations id="60" stage="1" latency="1"/>
-      <operations id="61" stage="1" latency="1"/>
-      <operations id="62" stage="1" latency="1"/>
-      <operations id="63" stage="1" latency="1"/>
-      <operations id="64" stage="2" latency="2"/>
-    </states>
-    <states id="8">
-      <operations id="17" stage="1" latency="1"/>
-      <operations id="26" stage="1" latency="1"/>
-      <operations id="28" stage="1" latency="1"/>
       <operations id="30" stage="1" latency="1"/>
       <operations id="31" stage="1" latency="1"/>
       <operations id="32" stage="1" latency="1"/>
       <operations id="33" stage="1" latency="1"/>
       <operations id="34" stage="1" latency="1"/>
       <operations id="35" stage="1" latency="1"/>
-      <operations id="64" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="2"/>
+      <operations id="45" stage="1" latency="2"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="2" latency="2"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="52" stage="1" latency="2"/>
+      <operations id="54" stage="1" latency="2"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="2" latency="2"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="56" stage="1" latency="2"/>
+      <operations id="58" stage="1" latency="2"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="2" latency="2"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="60" stage="1" latency="2"/>
+      <operations id="62" stage="1" latency="2"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="2" latency="2"/>
       <operations id="65" stage="1" latency="1"/>
-      <operations id="66" stage="1" latency="1"/>
+      <operations id="66" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="64" stage="1" latency="2"/>
+      <operations id="66" stage="1" latency="2"/>
       <operations id="67" stage="1" latency="1"/>
       <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
       <operations id="70" stage="1" latency="1"/>
       <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="2" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="77" stage="1" latency="2"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
     </states>
     <states id="9">
-      <operations id="73" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
     </transitions>
     <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="9">
       <condition id="-1"/>
     </transitions>
     <transitions inState="3" outState="4">
@@ -804,10 +1013,11 @@
     </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="writeOutcome" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="18" mMaxLatency="18">
-      <basicBlocks>69</basicBlocks>
-      <basicBlocks>72</basicBlocks>
-      <basicBlocks>74</basicBlocks>
+    <cfgRegions mId="1" mTag="writeOutcome" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="12" mMaxLatency="18">
+      <basicBlocks>50</basicBlocks>
+      <basicBlocks>81</basicBlocks>
+      <basicBlocks>85</basicBlocks>
+      <basicBlocks>88</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

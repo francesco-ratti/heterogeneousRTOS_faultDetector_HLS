@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome_Pipeline_1'
 ================================================================
-* Date:           Wed Oct 12 10:20:17 2022
+* Date:           Fri Oct 14 18:01:30 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -73,7 +73,7 @@
     +--------------------+---------------+---------+----+---+----+-----+
     |      Instance      |     Module    | BRAM_18K| DSP| FF| LUT| URAM|
     +--------------------+---------------+---------+----+---+----+-----+
-    |mux_84_32_1_1_U166  |mux_84_32_1_1  |        0|   0|  0|  42|    0|
+    |mux_84_32_1_1_U170  |mux_84_32_1_1  |        0|   0|  0|  42|    0|
     +--------------------+---------------+---------+----+---+----+-----+
     |Total               |               |        0|   0|  0|  42|    0|
     +--------------------+---------------+---------+----+---+----+-----+
@@ -134,7 +134,6 @@
 |ap_done               |  out|    1|  ap_ctrl_hs|  writeOutcome_Pipeline_1|  return value|
 |ap_idle               |  out|    1|  ap_ctrl_hs|  writeOutcome_Pipeline_1|  return value|
 |ap_ready              |  out|    1|  ap_ctrl_hs|  writeOutcome_Pipeline_1|  return value|
-|p_read                |   in|   32|     ap_none|                   p_read|        scalar|
 |p_read1               |   in|   32|     ap_none|                  p_read1|        scalar|
 |p_read2               |   in|   32|     ap_none|                  p_read2|        scalar|
 |p_read3               |   in|   32|     ap_none|                  p_read3|        scalar|
@@ -142,6 +141,7 @@
 |p_read5               |   in|   32|     ap_none|                  p_read5|        scalar|
 |p_read6               |   in|   32|     ap_none|                  p_read6|        scalar|
 |p_read7               |   in|   32|     ap_none|                  p_read7|        scalar|
+|p_read8               |   in|   32|     ap_none|                  p_read8|        scalar|
 |outcome_AOV_address0  |  out|    3|   ap_memory|              outcome_AOV|         array|
 |outcome_AOV_ce0       |  out|    1|   ap_memory|              outcome_AOV|         array|
 |outcome_AOV_we0       |  out|    1|   ap_memory|              outcome_AOV|         array|

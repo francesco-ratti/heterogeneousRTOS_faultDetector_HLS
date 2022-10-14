@@ -34,10 +34,10 @@ newFuncRoot:0 %loop_index3 = alloca i32 1
 
 <Node id="11" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:1 %p_read_1 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read7
+newFuncRoot:1 %p_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read8
 
 ]]></Node>
-<StgValue><ssdm name="p_read_1"/></StgValue>
+<StgValue><ssdm name="p_read"/></StgValue>
 </operation>
 
 <operation id="6" st_id="1" stage="1" lat="1">
@@ -49,10 +49,10 @@ newFuncRoot:1 %p_read_1 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read7
 
 <Node id="12" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:2 %p_read_2 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read6
+newFuncRoot:2 %p_read_1 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read7
 
 ]]></Node>
-<StgValue><ssdm name="p_read_2"/></StgValue>
+<StgValue><ssdm name="p_read_1"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -64,10 +64,10 @@ newFuncRoot:2 %p_read_2 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read6
 
 <Node id="13" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:3 %p_read_3 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read5
+newFuncRoot:3 %p_read_2 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read6
 
 ]]></Node>
-<StgValue><ssdm name="p_read_3"/></StgValue>
+<StgValue><ssdm name="p_read_2"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -79,10 +79,10 @@ newFuncRoot:3 %p_read_3 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read5
 
 <Node id="14" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:4 %p_read_4 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read4
+newFuncRoot:4 %p_read_3 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read5
 
 ]]></Node>
-<StgValue><ssdm name="p_read_4"/></StgValue>
+<StgValue><ssdm name="p_read_3"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -94,10 +94,10 @@ newFuncRoot:4 %p_read_4 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read4
 
 <Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:5 %p_read_5 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read3
+newFuncRoot:5 %p_read_4 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read4
 
 ]]></Node>
-<StgValue><ssdm name="p_read_5"/></StgValue>
+<StgValue><ssdm name="p_read_4"/></StgValue>
 </operation>
 
 <operation id="10" st_id="1" stage="1" lat="1">
@@ -109,10 +109,10 @@ newFuncRoot:5 %p_read_5 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read3
 
 <Node id="16" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:6 %p_read_6 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read2
+newFuncRoot:6 %p_read_5 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read3
 
 ]]></Node>
-<StgValue><ssdm name="p_read_6"/></StgValue>
+<StgValue><ssdm name="p_read_5"/></StgValue>
 </operation>
 
 <operation id="11" st_id="1" stage="1" lat="1">
@@ -124,10 +124,10 @@ newFuncRoot:6 %p_read_6 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read2
 
 <Node id="17" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:7 %p_read_7 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read1
+newFuncRoot:7 %p_read24 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read2
 
 ]]></Node>
-<StgValue><ssdm name="p_read_7"/></StgValue>
+<StgValue><ssdm name="p_read24"/></StgValue>
 </operation>
 
 <operation id="12" st_id="1" stage="1" lat="1">
@@ -139,10 +139,10 @@ newFuncRoot:7 %p_read_7 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read1
 
 <Node id="18" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-newFuncRoot:8 %p_read_8 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read
+newFuncRoot:8 %p_read13 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read1
 
 ]]></Node>
-<StgValue><ssdm name="p_read_8"/></StgValue>
+<StgValue><ssdm name="p_read13"/></StgValue>
 </operation>
 
 <operation id="13" st_id="1" stage="1" lat="1">
@@ -291,7 +291,7 @@ load-store-loop2.split:0 %loop_index3_cast = zext i4 %loop_index3_load
 
 <Node id="30" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="4">
 <![CDATA[
-load-store-loop2.split:1 %tmp = mux i32 @_ssdm_op_Mux.ap_auto.8float.i4, i32 %p_read_8, i32 %p_read_7, i32 %p_read_6, i32 %p_read_5, i32 %p_read_4, i32 %p_read_3, i32 %p_read_2, i32 %p_read_1, i4 %loop_index3_load
+load-store-loop2.split:1 %tmp = mux i32 @_ssdm_op_Mux.ap_auto.8float.i4, i32 %p_read13, i32 %p_read24, i32 %p_read_5, i32 %p_read_4, i32 %p_read_3, i32 %p_read_2, i32 %p_read_1, i32 %p_read, i4 %loop_index3_load
 
 ]]></Node>
 <StgValue><ssdm name="tmp"/></StgValue>

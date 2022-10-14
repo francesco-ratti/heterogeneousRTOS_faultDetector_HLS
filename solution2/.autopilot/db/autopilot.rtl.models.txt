@@ -23,6 +23,7 @@ run_n_regions_V_RAM_AUTO_1R1W
 run_gmem_m_axi
 run_control_s_axi
 run_regslice_forward
+resetError
 insert_point_Pipeline_is_valid_label2
 insert_point_Pipeline_insert_point_label4
 insert_point_Pipeline_VITIS_LOOP_279_1
@@ -33,6 +34,6 @@ run_test_Pipeline_VITIS_LOOP_72_1
 run_test
 writeOutcome_Pipeline_1
 writeOutcome
-runTestAfterInit_Block_entry15_proc5
+runTestAfterInit_Block_entry92_proc6
 runTestAfterInit
 run

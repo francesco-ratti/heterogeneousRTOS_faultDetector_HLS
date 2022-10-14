@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 230
+set ID 237
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -80,7 +80,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 231
+set ID 238
 set hasByteEnable 0
 set MemName run_n_regions_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -275,7 +275,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 232 \
+			id 239 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -298,7 +298,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 234 \
+    id 241 \
     name failedTask \
     type other \
     dir O \
@@ -306,7 +306,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_failedTask \
     op interface \
-    ports { failedTask { O 8 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
+    ports { failedTask { O 16 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
 } "
 }
 
@@ -361,7 +361,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 235
+set ID 242
 set RegSliceName run_regslice_forward
 set RegSliceInstName run_regslice_forward_U
 set CoreName ap_simcore_run_regslice_forward

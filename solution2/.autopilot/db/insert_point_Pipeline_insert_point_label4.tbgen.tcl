@@ -167,7 +167,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "n_regions_load_cast", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "insert_point_label4", "PipelineType" : "NotSupport"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_84_32_1_1_U14", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_84_32_1_1_U18", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 

@@ -449,7 +449,7 @@ for.inc.split:8 %regions_center_1_addr = getelementptr i32 %regions_center_1, i6
 
 <Node id="47" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc.split:9 %specloopname_ln259 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10
+for.inc.split:9 %specloopname_ln259 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln259"/></StgValue>

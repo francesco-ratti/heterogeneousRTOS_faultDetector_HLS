@@ -124,7 +124,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "d_read_14", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "is_valid_label2", "PipelineType" : "NotSupport"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_84_32_1_1_U4", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_84_32_1_1_U8", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 

@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 4
+set id 8
 set name run_mux_84_32_1_1
 set corename simcore_mux
 set op mux
@@ -77,7 +77,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 6 \
+    id 10 \
     name d_read \
     type other \
     dir I \
@@ -92,7 +92,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 7 \
+    id 11 \
     name d_read_8 \
     type other \
     dir I \
@@ -107,7 +107,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 8 \
+    id 12 \
     name d_read_9 \
     type other \
     dir I \
@@ -122,7 +122,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 9 \
+    id 13 \
     name d_read_10 \
     type other \
     dir I \
@@ -137,7 +137,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 10 \
+    id 14 \
     name d_read_11 \
     type other \
     dir I \
@@ -152,7 +152,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 11 \
+    id 15 \
     name d_read_12 \
     type other \
     dir I \
@@ -167,7 +167,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 12 \
+    id 16 \
     name d_read_13 \
     type other \
     dir I \
@@ -182,7 +182,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 13 \
+    id 17 \
     name d_read_14 \
     type other \
     dir I \

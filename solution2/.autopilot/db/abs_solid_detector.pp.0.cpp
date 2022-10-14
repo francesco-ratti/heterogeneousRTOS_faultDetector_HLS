@@ -12986,7 +12986,7 @@ ap_uint<2> fsmstate=0;
 
 struct OutcomeStr {
  ap_uint<8> checkId;
- char gap0;
+ ap_uint<8> executionId;
  ap_uint<16> uniId;
  float AOV[8];
 };
@@ -12994,10 +12994,16 @@ struct OutcomeStr {
 struct controlStr {
  ap_uint<8> checkId;
  ap_uint<8> taskId;
+ ap_uint<8> executionId;
  ap_uint<16> uniId;
  char command;
- char gap0[3];
+ char gap0[2];
  float AOV[8];
+};
+
+struct taskFailure {
+ ap_uint<8> taskId;
+ ap_uint<8> executionId;
 };
 
 
@@ -30158,32 +30164,43 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 475 "detector_solid/abs_solid_detector.cpp" 2
-# 519 "detector_solid/abs_solid_detector.cpp"
-void writeOutcome(char* errorInTask, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<16> uniId, bool error, OutcomeStr* outcomeInRam, float data[8], ap_uint<8> *failedTask) {
-# 529 "detector_solid/abs_solid_detector.cpp"
+# 481 "detector_solid/abs_solid_detector.cpp" 2
+# 525 "detector_solid/abs_solid_detector.cpp"
+void writeOutcome(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> checkId, ap_uint<8> taskId, ap_uint<8> executionId, ap_uint<16> uniId, bool error, OutcomeStr* outcomeInRam, float data[8], taskFailure *failedTask) {
+# 535 "detector_solid/abs_solid_detector.cpp"
  OutcomeStr outcome;
  outcome.checkId=checkId;
  outcome.uniId=uniId;
+ outcome.executionId=executionId;
  memcpy((void*) &(outcome.AOV), (void*) data, sizeof(float)*8);
- memcpy(outcomeInRam, &outcome, sizeof(outcome));
 
 
+ if (!(*errorInTask && (*failedTaskExecutionId)==executionId)) {
+  memcpy(outcomeInRam, &outcome, sizeof(outcome));
+  *errorInTask = error;
 
-
- *errorInTask = error;
- if (error)
-  *failedTask=taskId;
+  if (error) {
+   *failedTaskExecutionId=executionId;
+   failedTask->taskId=taskId;
+   failedTask->executionId=executionId;
+  }
+ }
 
 
 }
-# 552 "detector_solid/abs_solid_detector.cpp"
+# 563 "detector_solid/abs_solid_detector.cpp"
 void run_test(bool* error, region_t regions[16], ap_uint<8> n_regions, float data[8]) {
  *error = !(is_valid(data) && hasRegion(regions, n_regions, data));
 }
 
+void resetError(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> executionId) {
+ if (*errorInTask && (*failedTaskExecutionId)!=executionId) {
+  *errorInTask=0;
+ }
+}
+
 void runTestAfterInit(controlStr* inputAOV,
-  OutcomeStr * outcomeInRam, char errorInTask[16], region_t regions[64][16], ap_uint<8> n_regions[64], ap_uint<8> *failedTask
+  OutcomeStr * outcomeInRam, char errorInTask[16], ap_uint<8> failedTaskExecutionIds[16], region_t regions[64][16], ap_uint<8> n_regions[64], taskFailure *failedTask
 ) {
 
 #pragma HLS dataflow
@@ -30204,30 +30221,32 @@ void runTestAfterInit(controlStr* inputAOV,
 
  memcpy(&contr, inputAOV, sizeof(controlStr));
 
- if (contr.command==2 && !errorInTask[contr.taskId]) {
+ if (contr.command==2) {
   run_test(&error, regions[contr.checkId], n_regions[contr.checkId], contr.AOV);
-  writeOutcome(&(errorInTask[contr.taskId]), contr.checkId, contr.taskId, contr.uniId, error, outcomeInRam, contr.AOV, failedTask);
+  writeOutcome(&(errorInTask[contr.taskId]), &(failedTaskExecutionIds[contr.taskId]), contr.checkId, contr.taskId, contr.executionId, contr.uniId, error, outcomeInRam, contr.AOV, failedTask);
  }
  else if (contr.command==3) {
+  resetError(&(errorInTask[contr.taskId]), &(failedTaskExecutionIds[contr.taskId]), contr.executionId);
   insert_point(regions[contr.checkId],
     n_regions[contr.checkId],
     contr.AOV);
  }
 }
-# 634 "detector_solid/abs_solid_detector.cpp"
+# 652 "detector_solid/abs_solid_detector.cpp"
 static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
-# 650 "detector_solid/abs_solid_detector.cpp"
+static ap_uint<8> failedTaskExecutionIds[16];
+# 670 "detector_solid/abs_solid_detector.cpp"
 __attribute__((sdx_kernel("run", 0))) void run(char errorInTask[16], OutcomeStr outcomeInRam[16], controlStr* inputAOV,
 
-  char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, ap_uint<8> *failedTask ) {
+  char accel_mode, region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask ) {
 #line 18 "/home/francesco/workspace/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 652 "detector_solid/abs_solid_detector.cpp"
+# 672 "detector_solid/abs_solid_detector.cpp"
 
 #line 6 "/home/francesco/workspace/detector_solid/solution2/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=run
-# 652 "detector_solid/abs_solid_detector.cpp"
+# 672 "detector_solid/abs_solid_detector.cpp"
 
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
@@ -30252,15 +30271,21 @@ __attribute__((sdx_kernel("run", 0))) void run(char errorInTask[16], OutcomeStr 
 
 
 #pragma HLS array_partition variable=regions dim=2 cyclic factor=2
-# 704 "detector_solid/abs_solid_detector.cpp"
+#pragma HLS array_partition variable=failedTaskExecutionIds complete
+
+
+
+
+#pragma HLS reset variable=failedTaskExecutionIds
+# 726 "detector_solid/abs_solid_detector.cpp"
  if (accel_mode==1) {
-# 715 "detector_solid/abs_solid_detector.cpp"
+# 737 "detector_solid/abs_solid_detector.cpp"
   regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
   n_regions[IOCheckIdx]=*n_regions_in;
-# 729 "detector_solid/abs_solid_detector.cpp"
+# 751 "detector_solid/abs_solid_detector.cpp"
  } else if (accel_mode==2) {
   *trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
   *n_regions_in=n_regions[IOCheckIdx];
  } else if (accel_mode==3)
-  runTestAfterInit(inputAOV, outcomeInRam, errorInTask, regions, n_regions, failedTask);
+  runTestAfterInit(inputAOV, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask);
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run'" level="0">
-<item name = "Date">Wed Oct 12 10:20:19 2022
+<item name = "Date">Fri Oct 14 18:01:32 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2, 1280, 36.000 ns, 23.040 us, 3, 1281, no</column>
+<column name="">2, 1284, 36.000 ns, 23.112 us, 3, 1285, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runTestAfterInit_fu_1105">runTestAfterInit, 73, 1277, 1.314 us, 22.986 us, 74, 1278, dataflow</column>
+<column name="grp_runTestAfterInit_fu_1139">runTestAfterInit, 73, 1281, 1.314 us, 23.058 us, 74, 1282, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,12 +50,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 200, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">16, 22, 13550, 19531, 0</column>
+<column name="Instance">16, 22, 13844, 20247, 0</column>
 <column name="Memory">48, -, 8, 8, 0</column>
 <column name="Multiplexer">-, -, -, 1498, -</column>
 <column name="Register">-, -, 1584, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">22, 10, 14, 39, 0</specialColumn>
+<specialColumn name="Utilization (%)">22, 10, 14, 41, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -64,13 +64,13 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 16, 0, 1884, 3462, 0</column>
 <column name="gmem_m_axi_U">gmem_m_axi, 0, 0, 1621, 2323, 0</column>
-<column name="mux_21_32_1_1_U224">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U225">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U226">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U227">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U228">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="mux_21_32_1_1_U229">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
-<column name="grp_runTestAfterInit_fu_1105">runTestAfterInit, 0, 22, 10045, 13692, 0</column>
+<column name="mux_21_32_1_1_U231">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U232">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U233">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U234">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U235">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="mux_21_32_1_1_U236">mux_21_32_1_1, 0, 0, 0, 9, 0</column>
+<column name="grp_runTestAfterInit_fu_1139">runTestAfterInit, 0, 22, 10339, 14408, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -94,26 +94,26 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln715_fu_1289_p2">+, 0, 0, 12, 12, 12</column>
-<column name="add_ln730_fu_1221_p2">+, 0, 0, 12, 12, 12</column>
+<column name="add_ln737_fu_1355_p2">+, 0, 0, 12, 12, 12</column>
+<column name="add_ln752_fu_1287_p2">+, 0, 0, 12, 12, 12</column>
 <column name="ap_block_state3_on_subcall_done">and, 0, 0, 2, 1, 1</column>
-<column name="grp_runTestAfterInit_fu_1105_failedTask_ap_ack">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_runTestAfterInit_fu_1105_ap_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_runTestAfterInit_fu_1105_ap_ready">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln715_1_fu_1327_p2">or, 0, 0, 12, 12, 2</column>
-<column name="or_ln715_2_fu_1343_p2">or, 0, 0, 12, 12, 2</column>
-<column name="or_ln715_3_fu_1359_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln715_4_fu_1375_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln715_5_fu_1391_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln715_6_fu_1407_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln715_fu_1311_p2">or, 0, 0, 12, 12, 1</column>
-<column name="or_ln730_1_fu_1755_p2">or, 0, 0, 12, 12, 2</column>
-<column name="or_ln730_2_fu_1770_p2">or, 0, 0, 12, 12, 2</column>
-<column name="or_ln730_3_fu_1785_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln730_4_fu_1800_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln730_5_fu_1815_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln730_6_fu_1830_p2">or, 0, 0, 12, 12, 3</column>
-<column name="or_ln730_fu_1243_p2">or, 0, 0, 12, 12, 1</column>
+<column name="grp_runTestAfterInit_fu_1139_failedTask_ap_ack">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_runTestAfterInit_fu_1139_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_runTestAfterInit_fu_1139_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln737_1_fu_1393_p2">or, 0, 0, 12, 12, 2</column>
+<column name="or_ln737_2_fu_1409_p2">or, 0, 0, 12, 12, 2</column>
+<column name="or_ln737_3_fu_1425_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln737_4_fu_1441_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln737_5_fu_1457_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln737_6_fu_1473_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln737_fu_1377_p2">or, 0, 0, 12, 12, 1</column>
+<column name="or_ln752_1_fu_1821_p2">or, 0, 0, 12, 12, 2</column>
+<column name="or_ln752_2_fu_1836_p2">or, 0, 0, 12, 12, 2</column>
+<column name="or_ln752_3_fu_1851_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln752_4_fu_1866_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln752_5_fu_1881_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln752_6_fu_1896_p2">or, 0, 0, 12, 12, 3</column>
+<column name="or_ln752_fu_1309_p2">or, 0, 0, 12, 12, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -182,86 +182,86 @@
 <column name="ap_rst_n_inv">1, 0, 1, 0</column>
 <column name="ap_rst_reg_1">1, 0, 1, 0</column>
 <column name="ap_rst_reg_2">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_runTestAfterInit_fu_1105_ap_done">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_runTestAfterInit_fu_1105_ap_ready">1, 0, 1, 0</column>
-<column name="bitcast_ln715_10_reg_2291">32, 0, 32, 0</column>
-<column name="bitcast_ln715_11_reg_2297">32, 0, 32, 0</column>
-<column name="bitcast_ln715_12_reg_2303">32, 0, 32, 0</column>
-<column name="bitcast_ln715_13_reg_2309">32, 0, 32, 0</column>
-<column name="bitcast_ln715_14_reg_2315">32, 0, 32, 0</column>
-<column name="bitcast_ln715_15_reg_2321">32, 0, 32, 0</column>
-<column name="bitcast_ln715_18_reg_2327">32, 0, 32, 0</column>
-<column name="bitcast_ln715_19_reg_2333">32, 0, 32, 0</column>
-<column name="bitcast_ln715_20_reg_2339">32, 0, 32, 0</column>
-<column name="bitcast_ln715_21_reg_2345">32, 0, 32, 0</column>
-<column name="bitcast_ln715_22_reg_2351">32, 0, 32, 0</column>
-<column name="bitcast_ln715_23_reg_2357">32, 0, 32, 0</column>
-<column name="bitcast_ln715_2_reg_2255">32, 0, 32, 0</column>
-<column name="bitcast_ln715_3_reg_2261">32, 0, 32, 0</column>
-<column name="bitcast_ln715_4_reg_2267">32, 0, 32, 0</column>
-<column name="bitcast_ln715_5_reg_2273">32, 0, 32, 0</column>
-<column name="bitcast_ln715_6_reg_2279">32, 0, 32, 0</column>
-<column name="bitcast_ln715_7_reg_2285">32, 0, 32, 0</column>
-<column name="grp_runTestAfterInit_fu_1105_ap_start_reg">1, 0, 1, 0</column>
-<column name="inputAOV_read_reg_1980">64, 0, 64, 0</column>
+<column name="ap_sync_reg_grp_runTestAfterInit_fu_1139_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_runTestAfterInit_fu_1139_ap_ready">1, 0, 1, 0</column>
+<column name="bitcast_ln737_10_reg_2357">32, 0, 32, 0</column>
+<column name="bitcast_ln737_11_reg_2363">32, 0, 32, 0</column>
+<column name="bitcast_ln737_12_reg_2369">32, 0, 32, 0</column>
+<column name="bitcast_ln737_13_reg_2375">32, 0, 32, 0</column>
+<column name="bitcast_ln737_14_reg_2381">32, 0, 32, 0</column>
+<column name="bitcast_ln737_15_reg_2387">32, 0, 32, 0</column>
+<column name="bitcast_ln737_18_reg_2393">32, 0, 32, 0</column>
+<column name="bitcast_ln737_19_reg_2399">32, 0, 32, 0</column>
+<column name="bitcast_ln737_20_reg_2405">32, 0, 32, 0</column>
+<column name="bitcast_ln737_21_reg_2411">32, 0, 32, 0</column>
+<column name="bitcast_ln737_22_reg_2417">32, 0, 32, 0</column>
+<column name="bitcast_ln737_23_reg_2423">32, 0, 32, 0</column>
+<column name="bitcast_ln737_2_reg_2321">32, 0, 32, 0</column>
+<column name="bitcast_ln737_3_reg_2327">32, 0, 32, 0</column>
+<column name="bitcast_ln737_4_reg_2333">32, 0, 32, 0</column>
+<column name="bitcast_ln737_5_reg_2339">32, 0, 32, 0</column>
+<column name="bitcast_ln737_6_reg_2345">32, 0, 32, 0</column>
+<column name="bitcast_ln737_7_reg_2351">32, 0, 32, 0</column>
+<column name="grp_runTestAfterInit_fu_1139_ap_start_reg">1, 0, 1, 0</column>
+<column name="inputAOV_read_reg_2046">64, 0, 64, 0</column>
 <column name="n_regions_in_o_preg">8, 0, 8, 0</column>
-<column name="regions_1_addr_10_reg_2105">9, 0, 12, 3</column>
-<column name="regions_1_addr_11_reg_2110">9, 0, 12, 3</column>
-<column name="regions_1_addr_12_reg_2115">9, 0, 12, 3</column>
-<column name="regions_1_addr_13_reg_2120">9, 0, 12, 3</column>
-<column name="regions_1_addr_14_reg_2125">9, 0, 12, 3</column>
-<column name="regions_1_addr_15_reg_2130">9, 0, 12, 3</column>
-<column name="regions_2_addr_2_reg_2135">9, 0, 12, 3</column>
-<column name="regions_2_addr_3_reg_2140">9, 0, 12, 3</column>
-<column name="regions_2_addr_4_reg_2145">9, 0, 12, 3</column>
-<column name="regions_2_addr_5_reg_2150">9, 0, 12, 3</column>
-<column name="regions_2_addr_6_reg_2155">9, 0, 12, 3</column>
-<column name="regions_2_addr_7_reg_2160">9, 0, 12, 3</column>
-<column name="regions_3_addr_10_reg_2165">9, 0, 12, 3</column>
-<column name="regions_3_addr_11_reg_2170">9, 0, 12, 3</column>
-<column name="regions_3_addr_12_reg_2175">9, 0, 12, 3</column>
-<column name="regions_3_addr_13_reg_2180">9, 0, 12, 3</column>
-<column name="regions_3_addr_14_reg_2185">9, 0, 12, 3</column>
-<column name="regions_3_addr_15_reg_2190">9, 0, 12, 3</column>
-<column name="regions_4_addr_2_reg_2195">9, 0, 12, 3</column>
-<column name="regions_4_addr_3_reg_2200">9, 0, 12, 3</column>
-<column name="regions_4_addr_4_reg_2205">9, 0, 12, 3</column>
-<column name="regions_4_addr_5_reg_2210">9, 0, 12, 3</column>
-<column name="regions_4_addr_6_reg_2215">9, 0, 12, 3</column>
-<column name="regions_4_addr_7_reg_2220">9, 0, 12, 3</column>
-<column name="regions_5_addr_10_reg_2225">9, 0, 12, 3</column>
-<column name="regions_5_addr_11_reg_2230">9, 0, 12, 3</column>
-<column name="regions_5_addr_12_reg_2235">9, 0, 12, 3</column>
-<column name="regions_5_addr_13_reg_2240">9, 0, 12, 3</column>
-<column name="regions_5_addr_14_reg_2245">9, 0, 12, 3</column>
-<column name="regions_5_addr_15_reg_2250">9, 0, 12, 3</column>
-<column name="regions_addr_2_reg_2075">9, 0, 12, 3</column>
-<column name="regions_addr_3_reg_2080">9, 0, 12, 3</column>
-<column name="regions_addr_4_reg_2085">9, 0, 12, 3</column>
-<column name="regions_addr_5_reg_2090">9, 0, 12, 3</column>
-<column name="regions_addr_6_reg_2095">9, 0, 12, 3</column>
-<column name="regions_addr_7_reg_2100">9, 0, 12, 3</column>
-<column name="shl_ln730_reg_1995">9, 0, 12, 3</column>
-<column name="tmp_43_reg_2423">32, 0, 32, 0</column>
-<column name="tmp_44_reg_2428">32, 0, 32, 0</column>
-<column name="tmp_45_reg_2513">32, 0, 32, 0</column>
-<column name="tmp_46_reg_2518">32, 0, 32, 0</column>
-<column name="tmp_47_reg_2603">32, 0, 32, 0</column>
-<column name="tmp_48_reg_2608">32, 0, 32, 0</column>
-<column name="tmp_51_reg_2433">32, 0, 32, 0</column>
-<column name="tmp_52_reg_2438">32, 0, 32, 0</column>
-<column name="tmp_53_reg_2523">32, 0, 32, 0</column>
-<column name="tmp_54_reg_2528">32, 0, 32, 0</column>
-<column name="tmp_55_reg_2613">32, 0, 32, 0</column>
-<column name="tmp_56_reg_2618">32, 0, 32, 0</column>
-<column name="tmp_59_reg_2443">32, 0, 32, 0</column>
-<column name="tmp_60_reg_2448">32, 0, 32, 0</column>
-<column name="tmp_61_reg_2533">32, 0, 32, 0</column>
-<column name="tmp_62_reg_2538">32, 0, 32, 0</column>
-<column name="tmp_63_reg_2623">32, 0, 32, 0</column>
-<column name="tmp_64_reg_2628">32, 0, 32, 0</column>
-<column name="trunc_ln650_reg_1985">1, 0, 1, 0</column>
-<column name="zext_ln587_reg_2070">8, 0, 64, 56</column>
+<column name="regions_1_addr_10_reg_2171">9, 0, 12, 3</column>
+<column name="regions_1_addr_11_reg_2176">9, 0, 12, 3</column>
+<column name="regions_1_addr_12_reg_2181">9, 0, 12, 3</column>
+<column name="regions_1_addr_13_reg_2186">9, 0, 12, 3</column>
+<column name="regions_1_addr_14_reg_2191">9, 0, 12, 3</column>
+<column name="regions_1_addr_15_reg_2196">9, 0, 12, 3</column>
+<column name="regions_2_addr_2_reg_2201">9, 0, 12, 3</column>
+<column name="regions_2_addr_3_reg_2206">9, 0, 12, 3</column>
+<column name="regions_2_addr_4_reg_2211">9, 0, 12, 3</column>
+<column name="regions_2_addr_5_reg_2216">9, 0, 12, 3</column>
+<column name="regions_2_addr_6_reg_2221">9, 0, 12, 3</column>
+<column name="regions_2_addr_7_reg_2226">9, 0, 12, 3</column>
+<column name="regions_3_addr_10_reg_2231">9, 0, 12, 3</column>
+<column name="regions_3_addr_11_reg_2236">9, 0, 12, 3</column>
+<column name="regions_3_addr_12_reg_2241">9, 0, 12, 3</column>
+<column name="regions_3_addr_13_reg_2246">9, 0, 12, 3</column>
+<column name="regions_3_addr_14_reg_2251">9, 0, 12, 3</column>
+<column name="regions_3_addr_15_reg_2256">9, 0, 12, 3</column>
+<column name="regions_4_addr_2_reg_2261">9, 0, 12, 3</column>
+<column name="regions_4_addr_3_reg_2266">9, 0, 12, 3</column>
+<column name="regions_4_addr_4_reg_2271">9, 0, 12, 3</column>
+<column name="regions_4_addr_5_reg_2276">9, 0, 12, 3</column>
+<column name="regions_4_addr_6_reg_2281">9, 0, 12, 3</column>
+<column name="regions_4_addr_7_reg_2286">9, 0, 12, 3</column>
+<column name="regions_5_addr_10_reg_2291">9, 0, 12, 3</column>
+<column name="regions_5_addr_11_reg_2296">9, 0, 12, 3</column>
+<column name="regions_5_addr_12_reg_2301">9, 0, 12, 3</column>
+<column name="regions_5_addr_13_reg_2306">9, 0, 12, 3</column>
+<column name="regions_5_addr_14_reg_2311">9, 0, 12, 3</column>
+<column name="regions_5_addr_15_reg_2316">9, 0, 12, 3</column>
+<column name="regions_addr_2_reg_2141">9, 0, 12, 3</column>
+<column name="regions_addr_3_reg_2146">9, 0, 12, 3</column>
+<column name="regions_addr_4_reg_2151">9, 0, 12, 3</column>
+<column name="regions_addr_5_reg_2156">9, 0, 12, 3</column>
+<column name="regions_addr_6_reg_2161">9, 0, 12, 3</column>
+<column name="regions_addr_7_reg_2166">9, 0, 12, 3</column>
+<column name="shl_ln752_reg_2061">9, 0, 12, 3</column>
+<column name="tmp_43_reg_2489">32, 0, 32, 0</column>
+<column name="tmp_44_reg_2494">32, 0, 32, 0</column>
+<column name="tmp_45_reg_2579">32, 0, 32, 0</column>
+<column name="tmp_46_reg_2584">32, 0, 32, 0</column>
+<column name="tmp_47_reg_2669">32, 0, 32, 0</column>
+<column name="tmp_48_reg_2674">32, 0, 32, 0</column>
+<column name="tmp_51_reg_2499">32, 0, 32, 0</column>
+<column name="tmp_52_reg_2504">32, 0, 32, 0</column>
+<column name="tmp_53_reg_2589">32, 0, 32, 0</column>
+<column name="tmp_54_reg_2594">32, 0, 32, 0</column>
+<column name="tmp_55_reg_2679">32, 0, 32, 0</column>
+<column name="tmp_56_reg_2684">32, 0, 32, 0</column>
+<column name="tmp_59_reg_2509">32, 0, 32, 0</column>
+<column name="tmp_60_reg_2514">32, 0, 32, 0</column>
+<column name="tmp_61_reg_2599">32, 0, 32, 0</column>
+<column name="tmp_62_reg_2604">32, 0, 32, 0</column>
+<column name="tmp_63_reg_2689">32, 0, 32, 0</column>
+<column name="tmp_64_reg_2694">32, 0, 32, 0</column>
+<column name="trunc_ln670_reg_2051">1, 0, 1, 0</column>
+<column name="zext_ln587_reg_2136">8, 0, 64, 56</column>
 </table>
 </item>
 </section>
@@ -336,7 +336,7 @@
 <column name="m_axi_gmem_BRESP">in, 2, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BID">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_BUSER">in, 1, m_axi, gmem, pointer</column>
-<column name="failedTask">out, 8, ap_hs, failedTask, pointer</column>
+<column name="failedTask">out, 16, ap_hs, failedTask, pointer</column>
 <column name="failedTask_ap_vld">out, 1, ap_hs, failedTask, pointer</column>
 <column name="failedTask_ap_ack">in, 1, ap_hs, failedTask, pointer</column>
 </table>
