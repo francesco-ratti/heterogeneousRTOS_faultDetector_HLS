@@ -23,5 +23,6 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+drivers/run_v1_0/src \
 source \
 

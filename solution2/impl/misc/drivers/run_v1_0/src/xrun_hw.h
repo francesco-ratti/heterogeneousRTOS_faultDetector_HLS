@@ -30,10 +30,16 @@
 //         bit 7~0 - accel_mode[7:0] (Read/Write)
 //         others  - reserved
 // 0x014 : reserved
-// 0x018 : Data signal of copying
-//         bit 7~0 - copying[7:0] (Read)
+// 0x018 : Data signal of data_in_vld_i
+//         bit 7~0 - data_in_vld_i[7:0] (Read/Write)
 //         others  - reserved
 // 0x01c : reserved
+// 0x020 : Data signal of data_in_vld_o
+//         bit 7~0 - data_in_vld_o[7:0] (Read)
+//         others  - reserved
+// 0x024 : Control signal of data_in_vld_o
+//         bit 0  - data_in_vld_o_ap_vld (Read/COR)
+//         others - reserved
 // 0x028 : Data signal of inputData
 //         bit 31~0 - inputData[31:0] (Read/Write)
 // 0x02c : Data signal of inputData
@@ -185,8 +191,11 @@
 #define XRUN_CONTROL_ADDR_ISR                   0x00c
 #define XRUN_CONTROL_ADDR_ACCEL_MODE_DATA       0x010
 #define XRUN_CONTROL_BITS_ACCEL_MODE_DATA       8
-#define XRUN_CONTROL_ADDR_COPYING_DATA          0x018
-#define XRUN_CONTROL_BITS_COPYING_DATA          8
+#define XRUN_CONTROL_ADDR_DATA_IN_VLD_I_DATA    0x018
+#define XRUN_CONTROL_BITS_DATA_IN_VLD_I_DATA    8
+#define XRUN_CONTROL_ADDR_DATA_IN_VLD_O_DATA    0x020
+#define XRUN_CONTROL_BITS_DATA_IN_VLD_O_DATA    8
+#define XRUN_CONTROL_ADDR_DATA_IN_VLD_O_CTRL    0x024
 #define XRUN_CONTROL_ADDR_INPUTDATA_DATA        0x028
 #define XRUN_CONTROL_BITS_INPUTDATA_DATA        64
 #define XRUN_CONTROL_ADDR_IOCHECKIDX_DATA       0x034

@@ -168,7 +168,10 @@ void XRun_DisableAutoRestart(XRun *InstancePtr);
 
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_accel_mode(XRun *InstancePtr);
-u32 XRun_Get_copying(XRun *InstancePtr);
+void XRun_Set_data_in_vld_i(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_data_in_vld_i(XRun *InstancePtr);
+u32 XRun_Get_data_in_vld_o(XRun *InstancePtr);
+u32 XRun_Get_data_in_vld_o_vld(XRun *InstancePtr);
 void XRun_Set_inputData(XRun *InstancePtr, u64 Data);
 u64 XRun_Get_inputData(XRun *InstancePtr);
 void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data);

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 1110
+set ID 157
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -102,13 +102,21 @@ accel_mode {
 	offset 16
 	offset_end 23
 }
-copying { 
-	dir O
+data_in_vld_i { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
 	offset 24
 	offset_end 31
+}
+data_in_vld_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_vld
+	offset 32
+	offset_end 39
 }
 inputData { 
 	dir I
@@ -205,7 +213,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 1111 \
+			id 158 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -228,7 +236,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1113 \
+    id 160 \
     name failedTask \
     type other \
     dir O \
@@ -291,7 +299,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # RegSlice definition:
-set ID 1114
+set ID 161
 set RegSliceName run_regslice_forward
 set RegSliceInstName run_regslice_forward_U
 set CoreName ap_simcore_run_regslice_forward

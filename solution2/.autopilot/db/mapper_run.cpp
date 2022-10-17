@@ -186,8 +186,8 @@ struct __cosim_s96__ { char data[96]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
 struct __cosim_s128__ { char data[128]; };
-extern "C" void run(__cosim_s64__*, char, volatile void *, int, char*, __cosim_s64__*, __cosim_s96__*, volatile void *, __cosim_s1__, __cosim_s1__, volatile void *, volatile void *);
-extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * __xlx_apatb_param_copying, volatile void * __xlx_apatb_param_inputData, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_failedTask) {
+extern "C" void run(__cosim_s64__*, volatile void *, volatile void *, int, char*, __cosim_s64__*, __cosim_s96__*, volatile void *, __cosim_s1__, __cosim_s1__, volatile void *, volatile void *);
+extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_accel_mode, volatile void * __xlx_apatb_param_data_in_vld, volatile void * __xlx_apatb_param_inputData, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_failedTask) {
   // Collect __xlx_inputData__tmp_vec
   vector<sc_bv<512> >__xlx_inputData__tmp_vec;
   for (int j = 0, e = 1; j != e; ++j) {
@@ -338,7 +338,7 @@ extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * 
     ((long long*)__xlx_outcomeInRam__input_buffer)[i*5+4] = __xlx_outcomeInRam__tmp_vec[i].range(287, 256).to_uint64();
   }
   // DUT call
-  run(__xlx_inputData__input_buffer, __xlx_apatb_param_accel_mode, __xlx_apatb_param_copying, __xlx_offset_byte_param_inputData, __xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, *__xlx_apatb_param_IOCheckIdx, *__xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
+  run(__xlx_inputData__input_buffer, __xlx_apatb_param_accel_mode, __xlx_apatb_param_data_in_vld, __xlx_offset_byte_param_inputData, __xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, *__xlx_apatb_param_IOCheckIdx, *__xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
 // print __xlx_apatb_param_inputData
   sc_bv<512>*__xlx_inputData_output_buffer = new sc_bv<512>[__xlx_size_param_inputData];
   for (int i = 0; i < __xlx_size_param_inputData; ++i) {

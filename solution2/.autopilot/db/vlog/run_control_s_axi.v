@@ -33,7 +33,9 @@ module run_control_s_axi
     output wire                          flush,
     input  wire                          flush_done,
     output wire [7:0]                    accel_mode,
-    input  wire [7:0]                    copying,
+    output wire [7:0]                    data_in_vld_i,
+    input  wire [7:0]                    data_in_vld_o,
+    input  wire                          data_in_vld_o_ap_vld,
     output wire [63:0]                   inputData,
     output wire [7:0]                    IOCheckIdx,
     input  wire [3:0]                    errorInTask_address0,
@@ -83,10 +85,16 @@ module run_control_s_axi
 //         bit 7~0 - accel_mode[7:0] (Read/Write)
 //         others  - reserved
 // 0x014 : reserved
-// 0x018 : Data signal of copying
-//         bit 7~0 - copying[7:0] (Read)
+// 0x018 : Data signal of data_in_vld_i
+//         bit 7~0 - data_in_vld_i[7:0] (Read/Write)
 //         others  - reserved
 // 0x01c : reserved
+// 0x020 : Data signal of data_in_vld_o
+//         bit 7~0 - data_in_vld_o[7:0] (Read)
+//         others  - reserved
+// 0x024 : Control signal of data_in_vld_o
+//         bit 0  - data_in_vld_o_ap_vld (Read/COR)
+//         others - reserved
 // 0x028 : Data signal of inputData
 //         bit 31~0 - inputData[31:0] (Read/Write)
 // 0x02c : Data signal of inputData
@@ -240,8 +248,10 @@ localparam
     ADDR_ISR                     = 11'h00c,
     ADDR_ACCEL_MODE_DATA_0       = 11'h010,
     ADDR_ACCEL_MODE_CTRL         = 11'h014,
-    ADDR_COPYING_DATA_0          = 11'h018,
-    ADDR_COPYING_CTRL            = 11'h01c,
+    ADDR_DATA_IN_VLD_I_DATA_0    = 11'h018,
+    ADDR_DATA_IN_VLD_I_CTRL      = 11'h01c,
+    ADDR_DATA_IN_VLD_O_DATA_0    = 11'h020,
+    ADDR_DATA_IN_VLD_O_CTRL      = 11'h024,
     ADDR_INPUTDATA_DATA_0        = 11'h028,
     ADDR_INPUTDATA_DATA_1        = 11'h02c,
     ADDR_INPUTDATA_CTRL          = 11'h030,
@@ -347,7 +357,9 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [7:0]                    int_accel_mode = 'b0;
-    reg  [7:0]                    int_copying = 'b0;
+    reg  [7:0]                    int_data_in_vld_i = 'b0;
+    reg                           int_data_in_vld_o_ap_vld;
+    reg  [7:0]                    int_data_in_vld_o = 'b0;
     reg  [63:0]                   int_inputData = 'b0;
     reg  [7:0]                    int_IOCheckIdx = 'b0;
     reg  [767:0]                  int_trainedRegion_i = 'b0;
@@ -535,8 +547,14 @@ always @(posedge ACLK) begin
                 ADDR_ACCEL_MODE_DATA_0: begin
                     rdata <= int_accel_mode[7:0];
                 end
-                ADDR_COPYING_DATA_0: begin
-                    rdata <= int_copying[7:0];
+                ADDR_DATA_IN_VLD_I_DATA_0: begin
+                    rdata <= int_data_in_vld_i[7:0];
+                end
+                ADDR_DATA_IN_VLD_O_DATA_0: begin
+                    rdata <= int_data_in_vld_o[7:0];
+                end
+                ADDR_DATA_IN_VLD_O_CTRL: begin
+                    rdata[0] <= int_data_in_vld_o_ap_vld;
                 end
                 ADDR_INPUTDATA_DATA_0: begin
                     rdata <= int_inputData[31:0];
@@ -721,6 +739,7 @@ assign flush             = int_flush;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign sw_reset          = int_sw_reset && int_flush_done;
 assign accel_mode        = int_accel_mode;
+assign data_in_vld_i     = int_data_in_vld_i;
 assign inputData         = int_inputData;
 assign IOCheckIdx        = int_IOCheckIdx;
 assign trainedRegion_i   = int_trainedRegion_i;
@@ -902,13 +921,35 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_copying
+// int_data_in_vld_i[7:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_copying <= 0;
+        int_data_in_vld_i[7:0] <= 0;
     else if (ACLK_EN) begin
-        if (ap_done)
-            int_copying <= copying;
+        if (w_hs && waddr == ADDR_DATA_IN_VLD_I_DATA_0)
+            int_data_in_vld_i[7:0] <= (WDATA[31:0] & wmask) | (int_data_in_vld_i[7:0] & ~wmask);
+    end
+end
+
+// int_data_in_vld_o
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_data_in_vld_o <= 0;
+    else if (ACLK_EN) begin
+        if (data_in_vld_o_ap_vld)
+            int_data_in_vld_o <= data_in_vld_o;
+    end
+end
+
+// int_data_in_vld_o_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_data_in_vld_o_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (data_in_vld_o_ap_vld)
+            int_data_in_vld_o_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_DATA_IN_VLD_O_CTRL)
+            int_data_in_vld_o_ap_vld <= 1'b0; // clear on read
     end
 end
 

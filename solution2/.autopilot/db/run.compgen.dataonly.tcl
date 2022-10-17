@@ -10,13 +10,21 @@ accel_mode {
 	offset 16
 	offset_end 23
 }
-copying { 
-	dir O
+data_in_vld_i { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
 	offset 24
 	offset_end 31
+}
+data_in_vld_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_vld
+	offset 32
+	offset_end 39
 }
 inputData { 
 	dir I

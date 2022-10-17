@@ -13,6 +13,7 @@ set hasInterrupt 0
 set C_modelName {writeOutcome}
 set C_modelType { int 8 }
 set C_modelArgList {
+	{ bubble uint 1 regular  }
 	{ errorInTask int 8 regular {array 16 { 2 } 1 1 }  }
 	{ errorInTask1 int 4 regular  }
 	{ p_read int 8 regular  }
@@ -34,7 +35,8 @@ set C_modelArgList {
 	{ failedTask int 16 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "errorInTask", "interface" : "memory", "bitwidth" : 8, "direction" : "READWRITE"} , 
+	{ "Name" : "bubble", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
+ 	{ "Name" : "errorInTask", "interface" : "memory", "bitwidth" : 8, "direction" : "READWRITE"} , 
  	{ "Name" : "errorInTask1", "interface" : "wire", "bitwidth" : 4, "direction" : "READONLY"} , 
  	{ "Name" : "p_read", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "failedTaskExecutionId_read", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
@@ -55,7 +57,7 @@ set C_modelArgMapList {[
  	{ "Name" : "failedTask", "interface" : "wire", "bitwidth" : 16, "direction" : "WRITEONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 8} ]}
 # RTL Port declarations: 
-set portNum 35
+set portNum 36
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -63,34 +65,35 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ errorInTask_address0 sc_out sc_lv 4 signal 0 } 
-	{ errorInTask_ce0 sc_out sc_logic 1 signal 0 } 
-	{ errorInTask_we0 sc_out sc_logic 1 signal 0 } 
-	{ errorInTask_d0 sc_out sc_lv 8 signal 0 } 
-	{ errorInTask_q0 sc_in sc_lv 8 signal 0 } 
-	{ errorInTask1 sc_in sc_lv 4 signal 1 } 
-	{ p_read sc_in sc_lv 8 signal 2 } 
-	{ failedTaskExecutionId_read sc_in sc_lv 8 signal 3 } 
-	{ checkId sc_in sc_lv 8 signal 4 } 
-	{ taskId sc_in sc_lv 8 signal 5 } 
-	{ executionId sc_in sc_lv 8 signal 6 } 
-	{ uniId sc_in sc_lv 16 signal 7 } 
-	{ error sc_in sc_lv 1 signal 8 } 
-	{ outcomeInRam_address0 sc_out sc_lv 4 signal 9 } 
-	{ outcomeInRam_ce0 sc_out sc_logic 1 signal 9 } 
-	{ outcomeInRam_we0 sc_out sc_lv 36 signal 9 } 
-	{ outcomeInRam_d0 sc_out sc_lv 288 signal 9 } 
-	{ p_read1 sc_in sc_lv 32 signal 10 } 
-	{ p_read2 sc_in sc_lv 32 signal 11 } 
-	{ p_read3 sc_in sc_lv 32 signal 12 } 
-	{ p_read4 sc_in sc_lv 32 signal 13 } 
-	{ p_read5 sc_in sc_lv 32 signal 14 } 
-	{ p_read6 sc_in sc_lv 32 signal 15 } 
-	{ p_read7 sc_in sc_lv 32 signal 16 } 
-	{ p_read8 sc_in sc_lv 32 signal 17 } 
-	{ failedTask sc_out sc_lv 16 signal 18 } 
-	{ failedTask_ap_vld sc_out sc_logic 1 outvld 18 } 
-	{ failedTask_ap_ack sc_in sc_logic 1 outacc 18 } 
+	{ bubble sc_in sc_lv 1 signal 0 } 
+	{ errorInTask_address0 sc_out sc_lv 4 signal 1 } 
+	{ errorInTask_ce0 sc_out sc_logic 1 signal 1 } 
+	{ errorInTask_we0 sc_out sc_logic 1 signal 1 } 
+	{ errorInTask_d0 sc_out sc_lv 8 signal 1 } 
+	{ errorInTask_q0 sc_in sc_lv 8 signal 1 } 
+	{ errorInTask1 sc_in sc_lv 4 signal 2 } 
+	{ p_read sc_in sc_lv 8 signal 3 } 
+	{ failedTaskExecutionId_read sc_in sc_lv 8 signal 4 } 
+	{ checkId sc_in sc_lv 8 signal 5 } 
+	{ taskId sc_in sc_lv 8 signal 6 } 
+	{ executionId sc_in sc_lv 8 signal 7 } 
+	{ uniId sc_in sc_lv 16 signal 8 } 
+	{ error sc_in sc_lv 1 signal 9 } 
+	{ outcomeInRam_address0 sc_out sc_lv 4 signal 10 } 
+	{ outcomeInRam_ce0 sc_out sc_logic 1 signal 10 } 
+	{ outcomeInRam_we0 sc_out sc_lv 36 signal 10 } 
+	{ outcomeInRam_d0 sc_out sc_lv 288 signal 10 } 
+	{ p_read1 sc_in sc_lv 32 signal 11 } 
+	{ p_read2 sc_in sc_lv 32 signal 12 } 
+	{ p_read3 sc_in sc_lv 32 signal 13 } 
+	{ p_read4 sc_in sc_lv 32 signal 14 } 
+	{ p_read5 sc_in sc_lv 32 signal 15 } 
+	{ p_read6 sc_in sc_lv 32 signal 16 } 
+	{ p_read7 sc_in sc_lv 32 signal 17 } 
+	{ p_read8 sc_in sc_lv 32 signal 18 } 
+	{ failedTask sc_out sc_lv 16 signal 19 } 
+	{ failedTask_ap_vld sc_out sc_logic 1 outvld 19 } 
+	{ failedTask_ap_ack sc_in sc_logic 1 outacc 19 } 
 	{ ap_return sc_out sc_lv 8 signal -1 } 
 }
 set NewPortList {[ 
@@ -100,6 +103,7 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "bubble", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "bubble", "role": "default" }} , 
  	{ "name": "errorInTask_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "errorInTask", "role": "address0" }} , 
  	{ "name": "errorInTask_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "errorInTask", "role": "ce0" }} , 
  	{ "name": "errorInTask_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "errorInTask", "role": "we0" }} , 
@@ -137,7 +141,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1", "EstimateLatencyMax" : "16",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -146,6 +150,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
+			{"Name" : "bubble", "Type" : "None", "Direction" : "I"},
 			{"Name" : "errorInTask", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "errorInTask1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_read", "Type" : "None", "Direction" : "I"},
@@ -166,49 +171,26 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_read8", "Type" : "None", "Direction" : "I"},
 			{"Name" : "failedTask", "Type" : "HS", "Direction" : "O",
 				"BlockSignal" : [
-					{"Name" : "failedTask_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.outcome_AOV_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_315", "Parent" : "0", "Child" : ["3", "4"],
-		"CDFG" : "writeOutcome_Pipeline_1",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
-		"IsBlackBox" : "0",
-		"Port" : [
-			{"Name" : "p_read1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read2", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read3", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read4", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read5", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read6", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read7", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_read8", "Type" : "None", "Direction" : "I"},
-			{"Name" : "outcome_AOV", "Type" : "Memory", "Direction" : "O"}],
+					{"Name" : "failedTask_blk_n", "Type" : "RtlSignal"}]}],
 		"Loop" : [
-			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_315.mux_84_32_1_1_U889", "Parent" : "2"},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_writeOutcome_Pipeline_1_fu_315.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"}]}
+			{"Name" : "Loop 1", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "9", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state2"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state3"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state2_blk"}}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.outcome_AOV_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_84_32_1_1_U47", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	writeOutcome {
-		errorInTask {Type IO LastRead 0 FirstWrite 1}
+		bubble {Type I LastRead 0 FirstWrite -1}
+		errorInTask {Type IO LastRead 1 FirstWrite 2}
 		errorInTask1 {Type I LastRead 0 FirstWrite -1}
-		p_read {Type I LastRead 1 FirstWrite -1}
-		failedTaskExecutionId_read {Type I LastRead 1 FirstWrite -1}
-		checkId {Type I LastRead 1 FirstWrite -1}
-		taskId {Type I LastRead 1 FirstWrite -1}
-		executionId {Type I LastRead 1 FirstWrite -1}
-		uniId {Type I LastRead 1 FirstWrite -1}
-		error {Type I LastRead 1 FirstWrite -1}
+		p_read {Type I LastRead 0 FirstWrite -1}
+		failedTaskExecutionId_read {Type I LastRead 0 FirstWrite -1}
+		checkId {Type I LastRead 0 FirstWrite -1}
+		taskId {Type I LastRead 0 FirstWrite -1}
+		executionId {Type I LastRead 0 FirstWrite -1}
+		uniId {Type I LastRead 0 FirstWrite -1}
+		error {Type I LastRead 0 FirstWrite -1}
 		outcomeInRam {Type O LastRead -1 FirstWrite 6}
 		p_read1 {Type I LastRead 0 FirstWrite -1}
 		p_read2 {Type I LastRead 0 FirstWrite -1}
@@ -218,29 +200,20 @@ set ArgLastReadFirstWriteLatency {
 		p_read6 {Type I LastRead 0 FirstWrite -1}
 		p_read7 {Type I LastRead 0 FirstWrite -1}
 		p_read8 {Type I LastRead 0 FirstWrite -1}
-		failedTask {Type O LastRead -1 FirstWrite 7}}
-	writeOutcome_Pipeline_1 {
-		p_read1 {Type I LastRead 0 FirstWrite -1}
-		p_read2 {Type I LastRead 0 FirstWrite -1}
-		p_read3 {Type I LastRead 0 FirstWrite -1}
-		p_read4 {Type I LastRead 0 FirstWrite -1}
-		p_read5 {Type I LastRead 0 FirstWrite -1}
-		p_read6 {Type I LastRead 0 FirstWrite -1}
-		p_read7 {Type I LastRead 0 FirstWrite -1}
-		p_read8 {Type I LastRead 0 FirstWrite -1}
-		outcome_AOV {Type O LastRead -1 FirstWrite 0}}}
+		failedTask {Type O LastRead -1 FirstWrite 7}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "12", "Max" : "18"}
-	, {"Name" : "Interval", "Min" : "12", "Max" : "18"}
+	{"Name" : "Latency", "Min" : "1", "Max" : "16"}
+	, {"Name" : "Interval", "Min" : "1", "Max" : "16"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
+	bubble { ap_none {  { bubble in_data 0 1 } } }
 	errorInTask { ap_memory {  { errorInTask_address0 mem_address 1 4 }  { errorInTask_ce0 mem_ce 1 1 }  { errorInTask_we0 mem_we 1 1 }  { errorInTask_d0 mem_din 1 8 }  { errorInTask_q0 in_data 0 8 } } }
 	errorInTask1 { ap_none {  { errorInTask1 in_data 0 4 } } }
 	p_read { ap_none {  { p_read in_data 0 8 } } }

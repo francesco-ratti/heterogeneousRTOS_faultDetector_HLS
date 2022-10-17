@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'run_test'
 ================================================================
-* Date:           Mon Oct 17 15:14:54 2022
+* Date:           Mon Oct 17 23:06:59 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -20,29 +20,31 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  18.00 ns|  11.369 ns|     4.86 ns|
+    |ap_clk  |  18.00 ns|  10.273 ns|     4.86 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+-----------+-----+-----+---------+
-    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
-    |   min   |   max   |    min   |    max    | min | max |   Type  |
-    +---------+---------+----------+-----------+-----+-----+---------+
-    |        7|      791|  0.126 us|  14.238 us|    7|  791|       no|
-    +---------+---------+----------+-----------+-----+-----+---------+
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|      777|  18.000 ns|  13.986 us|    1|  777|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
-        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
-        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
-        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
-        |- VITIS_LOOP_49_1  |        0|      769|   13 ~ 48|          -|          -|  0 ~ 16|        no|
-        +-------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        +--------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- is_valid_label2   |        2|       17|         2|          -|          -|   1 ~ 8|        no|
+        |- VITIS_LOOP_55_1   |        0|      757|    9 ~ 47|          -|          -|  0 ~ 16|        no|
+        | + VITIS_LOOP_61_2  |        7|       44|         5|          -|          -|   1 ~ 8|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+--------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -54,7 +56,7 @@ ExposeGlobal: 0
 ============================================================
 IsTopModel: 0
 ResetActiveHigh: 1
-IsCombinational: 2
+IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
 HasMFsm: 0
@@ -70,82 +72,180 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 4
+* Number of FSM states : 9
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
-1 --> 2 
-2 --> 4 3 
-3 --> 4 
-4 --> 3 
+1 --> 9 2 
+2 --> 3 4 
+3 --> 2 9 
+4 --> 5 9 
+5 --> 6 
+6 --> 7 
+7 --> 8 9 
+8 --> 9 
+9 --> 5 4 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 11.3>
-ST_1 : Operation 5 [1/1] (3.63ns)   --->   "%p_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read10"   --->   Operation 5 'read' 'p_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 6 [1/1] (3.63ns)   --->   "%p_read_14 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read9"   --->   Operation 6 'read' 'p_read_14' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 7 [1/1] (3.63ns)   --->   "%p_read_15 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read8"   --->   Operation 7 'read' 'p_read_15' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 8 [1/1] (3.63ns)   --->   "%p_read_16 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read7"   --->   Operation 8 'read' 'p_read_16' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 9 [1/1] (3.63ns)   --->   "%p_read_17 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read6"   --->   Operation 9 'read' 'p_read_17' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 10 [1/1] (3.63ns)   --->   "%p_read_18 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read5"   --->   Operation 10 'read' 'p_read_18' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 11 [1/1] (3.63ns)   --->   "%p_read_19 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read4"   --->   Operation 11 'read' 'p_read_19' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 12 [1/1] (3.63ns)   --->   "%p_read_20 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read3"   --->   Operation 12 'read' 'p_read_20' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 13 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_7_c, i32 %p_read"   --->   Operation 13 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 14 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_6_c, i32 %p_read_14"   --->   Operation 14 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 15 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_5_c, i32 %p_read_15"   --->   Operation 15 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 16 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_4_c, i32 %p_read_16"   --->   Operation 16 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 17 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_3_c, i32 %p_read_17"   --->   Operation 17 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 18 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_2_c, i32 %p_read_18"   --->   Operation 18 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 19 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_1_c, i32 %p_read_19"   --->   Operation 19 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 20 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.floatP0A, i32 %AOV_c, i32 %p_read_20"   --->   Operation 20 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 21 [2/2] (7.73ns)   --->   "%targetBlock = call i1 @run_test_Pipeline_is_valid_label2, i32 %p_read_20, i32 %p_read_19, i32 %p_read_18, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read"   --->   Operation 21 'call' 'targetBlock' <Predicate = true> <Delay = 7.73> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 1 <SV = 0> <Delay = 1.70>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_10 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read8" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 10 'read' 'p_read_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_read_11 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read7" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 11 'read' 'p_read_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read_12 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read6" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 12 'read' 'p_read_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read_13 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read5" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 13 'read' 'p_read_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_read_14 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read4" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 14 'read' 'p_read_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%p_read_15 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read3" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 15 'read' 'p_read_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_read_16 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read2" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 16 'read' 'p_read_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_read_17 = read i32 @_ssdm_op_Read.ap_auto.float, i32 %p_read1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 17 'read' 'p_read_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%n_regions_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %n_regions" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 18 'read' 'n_regions_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%regions_max_1_offset_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %regions_max_1_offset" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 19 'read' 'regions_max_1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%regions_max_0_offset_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %regions_max_0_offset" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 20 'read' 'regions_max_0_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%regions_min_1_offset_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %regions_min_1_offset" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 21 'read' 'regions_min_1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%regions_min_0_offset_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %regions_min_0_offset" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 22 'read' 'regions_min_0_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%p_read43 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 23 'read' 'p_read43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%bubble_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %bubble" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 24 'read' 'bubble_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_5 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %regions_max_1_offset_read, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 25 'bitconcatenate' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_11 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %regions_max_0_offset_read, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 26 'bitconcatenate' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_12 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %regions_min_1_offset_read, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 27 'bitconcatenate' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_13 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %regions_min_0_offset_read, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 28 'bitconcatenate' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (1.70ns)   --->   "%br_ln458 = br i1 %bubble_read, void %for.body.i.preheader, void %return" [detector_solid/abs_solid_detector.cpp:458]   --->   Operation 29 'br' 'br_ln458' <Predicate = true> <Delay = 1.70>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 30 'alloca' 'i' <Predicate = (!bubble_read)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (1.58ns)   --->   "%store_ln76 = store i4 0, i4 %i" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 31 'store' 'store_ln76' <Predicate = (!bubble_read)> <Delay = 1.58>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln76 = br void %for.body.i" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 32 'br' 'br_ln76' <Predicate = (!bubble_read)> <Delay = 0.00>
 
-State 2 <SV = 1> <Delay = 9.58>
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_7_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 23 [1/1] (3.63ns)   --->   "%p_read_21 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read2"   --->   Operation 23 'read' 'p_read_21' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_2 : Operation 24 [1/1] (3.63ns)   --->   "%p_read_22 = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %p_read1"   --->   Operation 24 'read' 'p_read_22' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_6_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_5_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_4_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_3_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_2_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_1_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AOV_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %p_read_22, i3 0" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 32 'bitconcatenate' 'tmp_3' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 33 [1/2] (7.99ns)   --->   "%targetBlock = call i1 @run_test_Pipeline_is_valid_label2, i32 %p_read_20, i32 %p_read_19, i32 %p_read_18, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read"   --->   Operation 33 'call' 'targetBlock' <Predicate = true> <Delay = 7.99> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 34 [1/1] (1.58ns)   --->   "%br_ln0 = br i1 %targetBlock, void %run_test.exit, void %land.rhs.i"   --->   Operation 34 'br' 'br_ln0' <Predicate = true> <Delay = 1.58>
-ST_2 : Operation 35 [1/1] (1.55ns)   --->   "%icmp_ln1073 = icmp_eq  i8 %p_read_21, i8 0"   --->   Operation 35 'icmp' 'icmp_ln1073' <Predicate = (targetBlock)> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln49 = br i1 %icmp_ln1073, void %VITIS_LOOP_55_2.i.i.preheader, void %for.cond.cleanup.i.i" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 36 'br' 'br_ln49' <Predicate = (targetBlock)> <Delay = 0.00>
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%i_1 = alloca i32 1"   --->   Operation 37 'alloca' 'i_1' <Predicate = (targetBlock & !icmp_ln1073)> <Delay = 0.00>
-ST_2 : Operation 38 [1/1] (1.58ns)   --->   "%store_ln1073 = store i8 0, i8 %i_1"   --->   Operation 38 'store' 'store_ln1073' <Predicate = (targetBlock & !icmp_ln1073)> <Delay = 1.58>
-ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln1073 = br void %VITIS_LOOP_55_2.i.i"   --->   Operation 39 'br' 'br_ln1073' <Predicate = (targetBlock & !icmp_ln1073)> <Delay = 0.00>
+State 2 <SV = 1> <Delay = 7.73>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%i_2 = load i4 %i" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 33 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.30ns)   --->   "%icmp_ln76 = icmp_eq  i4 %i_2, i4 8" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 34 'icmp' 'icmp_ln76' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4"   --->   Operation 35 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (1.73ns)   --->   "%add_ln76 = add i4 %i_2, i4 1" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 36 'add' 'add_ln76' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln76 = br i1 %icmp_ln76, void %for.body.i.split, void %land.rhs" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 37 'br' 'br_ln76' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (2.30ns)   --->   "%p_x_assign = mux i32 @_ssdm_op_Mux.ap_auto.8float.i4, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read_13, i32 %p_read_12, i32 %p_read_11, i32 %p_read_10, i4 %i_2" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 38 'mux' 'p_x_assign' <Predicate = (!icmp_ln76)> <Delay = 2.30> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [2/2] (5.43ns)   --->   "%cmp_i_i = fcmp_uno  i32 %p_x_assign, i32 0" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:612]   --->   Operation 39 'fcmp' 'cmp_i_i' <Predicate = (!icmp_ln76)> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%bitcast_ln79 = bitcast i32 %p_x_assign" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 40 'bitcast' 'bitcast_ln79' <Predicate = (!icmp_ln76)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_3 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln79, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 41 'partselect' 'tmp_3' <Predicate = (!icmp_ln76)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%trunc_ln79 = trunc i32 %bitcast_ln79" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 42 'trunc' 'trunc_ln79' <Predicate = (!icmp_ln76)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (1.55ns)   --->   "%icmp_ln79 = icmp_ne  i8 %tmp_3, i8 255" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 43 'icmp' 'icmp_ln79' <Predicate = (!icmp_ln76)> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (2.44ns)   --->   "%icmp_ln79_1 = icmp_eq  i23 %trunc_ln79, i23 0" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 44 'icmp' 'icmp_ln79_1' <Predicate = (!icmp_ln76)> <Delay = 2.44> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [2/2] (5.43ns)   --->   "%tmp_4 = fcmp_oeq  i32 %p_x_assign, i32 inf" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 45 'fcmp' 'tmp_4' <Predicate = (!icmp_ln76)> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [2/2] (5.43ns)   --->   "%tmp_6 = fcmp_oeq  i32 %p_x_assign, i32 -inf" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 46 'fcmp' 'tmp_6' <Predicate = (!icmp_ln76)> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (1.55ns)   --->   "%icmp_ln1073 = icmp_eq  i8 %n_regions_read, i8 0"   --->   Operation 47 'icmp' 'icmp_ln1073' <Predicate = (icmp_ln76)> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%br_ln55 = br i1 %icmp_ln1073, void %VITIS_LOOP_61_2.i.preheader, void %for.cond.cleanup.i" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 48 'br' 'br_ln55' <Predicate = (icmp_ln76)> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%i_1 = alloca i32 1"   --->   Operation 49 'alloca' 'i_1' <Predicate = (icmp_ln76 & !icmp_ln1073)> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (1.58ns)   --->   "%store_ln1073 = store i8 0, i8 %i_1"   --->   Operation 50 'store' 'store_ln1073' <Predicate = (icmp_ln76 & !icmp_ln1073)> <Delay = 1.58>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln1073 = br void %VITIS_LOOP_61_2.i"   --->   Operation 51 'br' 'br_ln1073' <Predicate = (icmp_ln76 & !icmp_ln1073)> <Delay = 0.00>
 
-State 3 <SV = 2> <Delay = 1.91>
-ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%i = load i8 %i_1"   --->   Operation 40 'load' 'i' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
-ST_3 : Operation 41 [1/1] (1.55ns)   --->   "%icmp_ln1073_1 = icmp_ult  i8 %i, i8 %p_read_21"   --->   Operation 41 'icmp' 'icmp_ln1073_1' <Predicate = (!icmp_ln1073)> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 42 [1/1] (1.91ns)   --->   "%add_ln49 = add i8 %i, i8 1" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 42 'add' 'add_ln49' <Predicate = (!icmp_ln1073)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%br_ln49 = br i1 %icmp_ln1073_1, void %for.cond.cleanup.i.i.loopexit, void %VITIS_LOOP_55_2.i.split.i" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 43 'br' 'br_ln49' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
-ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln1073 = trunc i8 %i"   --->   Operation 44 'trunc' 'trunc_ln1073' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_8 = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32.i32, i8 %i, i32 1, i32 7"   --->   Operation 45 'partselect' 'tmp_8' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln59 = zext i7 %tmp_8" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 46 'zext' 'zext_ln59' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_3 : Operation 47 [1/1] (1.82ns)   --->   "%add_ln59 = add i9 %tmp_3, i9 %zext_ln59" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 47 'add' 'add_ln59' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %add_ln59, i3 0" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 48 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_3 : Operation 49 [2/2] (0.00ns)   --->   "%targetBlock1 = call i2 @run_test_Pipeline_VITIS_LOOP_55_2, i12 %tmp_s, i32 %regions, i32 %regions_2, i32 %regions_3, i32 %regions_4, i1 %trunc_ln1073, i32 %p_read_20, i32 %p_read_19, i32 %p_read_18, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 49 'call' 'targetBlock1' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.cond.cleanup.i.i"   --->   Operation 50 'br' 'br_ln0' <Predicate = (!icmp_ln1073 & !icmp_ln1073_1)> <Delay = 0.00>
-ST_3 : Operation 51 [1/1] (1.58ns)   --->   "%br_ln49 = br void %run_test.exit" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 51 'br' 'br_ln49' <Predicate = (!icmp_ln1073_1) | (icmp_ln1073)> <Delay = 1.58>
+State 3 <SV = 2> <Delay = 7.99>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%specloopname_ln76 = specloopname void @_ssdm_op_SpecLoopName, void @empty_22" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 52 'specloopname' 'specloopname_ln76' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [1/2] (5.43ns)   --->   "%cmp_i_i = fcmp_uno  i32 %p_x_assign, i32 0" [/home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:612]   --->   Operation 53 'fcmp' 'cmp_i_i' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node or_ln79_1)   --->   "%or_ln79 = or i1 %icmp_ln79_1, i1 %icmp_ln79" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 54 'or' 'or_ln79' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/2] (5.43ns)   --->   "%tmp_4 = fcmp_oeq  i32 %p_x_assign, i32 inf" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 55 'fcmp' 'tmp_4' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 56 [1/2] (5.43ns)   --->   "%tmp_6 = fcmp_oeq  i32 %p_x_assign, i32 -inf" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 56 'fcmp' 'tmp_6' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node or_ln79_1)   --->   "%or_ln79_2 = or i1 %tmp_4, i1 %tmp_6" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 57 'or' 'or_ln79_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node or_ln79_1)   --->   "%and_ln79 = and i1 %or_ln79, i1 %or_ln79_2" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 58 'and' 'and_ln79' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 59 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln79_1 = or i1 %and_ln79, i1 %cmp_i_i" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 59 'or' 'or_ln79_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln79 = br i1 %or_ln79_1, void %for.inc.i, void %return.loopexit58" [detector_solid/abs_solid_detector.cpp:79]   --->   Operation 60 'br' 'br_ln79' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (1.58ns)   --->   "%store_ln76 = store i4 %add_ln76, i4 %i" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 61 'store' 'store_ln76' <Predicate = (!or_ln79_1)> <Delay = 1.58>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln76 = br void %for.body.i" [detector_solid/abs_solid_detector.cpp:76]   --->   Operation 62 'br' 'br_ln76' <Predicate = (!or_ln79_1)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (1.70ns)   --->   "%br_ln0 = br void %return"   --->   Operation 63 'br' 'br_ln0' <Predicate = (or_ln79_1)> <Delay = 1.70>
 
-State 4 <SV = 3> <Delay = 10.6>
-ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%speclooptripcount_ln53 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 0, i64 16, i64 8" [detector_solid/abs_solid_detector.cpp:53]   --->   Operation 52 'speclooptripcount' 'speclooptripcount_ln53' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%specloopname_ln49 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 53 'specloopname' 'specloopname_ln49' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_4 : Operation 54 [1/2] (8.11ns)   --->   "%targetBlock1 = call i2 @run_test_Pipeline_VITIS_LOOP_55_2, i12 %tmp_s, i32 %regions, i32 %regions_2, i32 %regions_3, i32 %regions_4, i1 %trunc_ln1073, i32 %p_read_20, i32 %p_read_19, i32 %p_read_18, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 54 'call' 'targetBlock1' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1)> <Delay = 8.11> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_4 : Operation 55 [1/1] (0.95ns)   --->   "%cond = icmp_eq  i2 %targetBlock1, i2 1" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 55 'icmp' 'cond' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln59 = br i1 %cond, void %for.inc19.i.i, void %run_test.exit.loopexit" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 56 'br' 'br_ln59' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
-ST_4 : Operation 57 [1/1] (1.58ns)   --->   "%store_ln49 = store i8 %add_ln49, i8 %i_1" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 57 'store' 'store_ln49' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1 & !cond)> <Delay = 1.58>
-ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln49 = br void %VITIS_LOOP_55_2.i.i" [detector_solid/abs_solid_detector.cpp:49]   --->   Operation 58 'br' 'br_ln49' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1 & !cond)> <Delay = 0.00>
-ST_4 : Operation 59 [1/1] (1.58ns)   --->   "%br_ln0 = br void %run_test.exit"   --->   Operation 59 'br' 'br_ln0' <Predicate = (targetBlock & !icmp_ln1073 & icmp_ln1073_1 & cond)> <Delay = 1.58>
-ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%phi_ln451 = phi i1 1, void %for.cond.cleanup.i.i, i1 1, void %entry, i1 0, void %run_test.exit.loopexit" [detector_solid/abs_solid_detector.cpp:451->detector_solid/abs_solid_detector.cpp:496]   --->   Operation 60 'phi' 'phi_ln451' <Predicate = (cond) | (!icmp_ln1073_1) | (icmp_ln1073) | (!targetBlock)> <Delay = 0.00>
-ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%ret_ln496 = ret i1 %phi_ln451" [detector_solid/abs_solid_detector.cpp:496]   --->   Operation 61 'ret' 'ret_ln496' <Predicate = (cond) | (!icmp_ln1073_1) | (icmp_ln1073) | (!targetBlock)> <Delay = 0.00>
+State 4 <SV = 2> <Delay = 1.91>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%i_3 = load i8 %i_1"   --->   Operation 64 'load' 'i_3' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%trunc_ln1073 = trunc i8 %i_3"   --->   Operation 65 'trunc' 'trunc_ln1073' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (1.55ns)   --->   "%icmp_ln1073_1 = icmp_ult  i8 %i_3, i8 %n_regions_read"   --->   Operation 66 'icmp' 'icmp_ln1073_1' <Predicate = (!icmp_ln1073)> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 67 [1/1] (1.91ns)   --->   "%add_ln55 = add i8 %i_3, i8 1" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 67 'add' 'add_ln55' <Predicate = (!icmp_ln1073)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln55 = br i1 %icmp_ln1073_1, void %for.cond.cleanup.i.loopexit, void %VITIS_LOOP_61_2.i.split" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 68 'br' 'br_ln55' <Predicate = (!icmp_ln1073)> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (0.00ns)   --->   "%speclooptripcount_ln59 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 0, i64 16, i64 8" [detector_solid/abs_solid_detector.cpp:59]   --->   Operation 69 'speclooptripcount' 'speclooptripcount_ln59' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 70 'specloopname' 'specloopname_ln55' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_14 = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32.i32, i8 %i_3, i32 1, i32 7"   --->   Operation 71 'partselect' 'tmp_14' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln65 = zext i7 %tmp_14" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 72 'zext' 'zext_ln65' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (1.82ns)   --->   "%add_ln65 = add i9 %tmp_13, i9 %zext_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 73 'add' 'add_ln65' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_15 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %add_ln65, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 74 'bitconcatenate' 'tmp_15' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "%zext_ln65_1 = zext i7 %tmp_14" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 75 'zext' 'zext_ln65_1' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 76 [1/1] (1.82ns)   --->   "%add_ln65_1 = add i9 %tmp_12, i9 %zext_ln65_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 76 'add' 'add_ln65_1' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_16 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %add_ln65_1, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 77 'bitconcatenate' 'tmp_16' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (0.00ns)   --->   "%zext_ln65_2 = zext i7 %tmp_14" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 78 'zext' 'zext_ln65_2' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 79 [1/1] (1.82ns)   --->   "%add_ln65_2 = add i9 %tmp_11, i9 %zext_ln65_2" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 79 'add' 'add_ln65_2' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_17 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %add_ln65_2, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 80 'bitconcatenate' 'tmp_17' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 81 [1/1] (0.00ns)   --->   "%zext_ln65_3 = zext i7 %tmp_14" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 81 'zext' 'zext_ln65_3' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 82 [1/1] (1.82ns)   --->   "%add_ln65_3 = add i9 %tmp_5, i9 %zext_ln65_3" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 82 'add' 'add_ln65_3' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_18 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i9.i3, i9 %add_ln65_3, i3 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 83 'bitconcatenate' 'tmp_18' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 84 [1/1] (1.58ns)   --->   "%br_ln61 = br void %for.body3.i.split" [detector_solid/abs_solid_detector.cpp:61]   --->   Operation 84 'br' 'br_ln61' <Predicate = (!icmp_ln1073 & icmp_ln1073_1)> <Delay = 1.58>
+ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.cond.cleanup.i"   --->   Operation 85 'br' 'br_ln0' <Predicate = (!icmp_ln1073 & !icmp_ln1073_1)> <Delay = 0.00>
+ST_4 : Operation 86 [1/1] (1.70ns)   --->   "%br_ln55 = br void %return" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 86 'br' 'br_ln55' <Predicate = (!icmp_ln1073_1) | (icmp_ln1073)> <Delay = 1.70>
+
+State 5 <SV = 3> <Delay = 4.80>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "%j = phi i64 %add_ln61, void %for.inc.i4, i64 0, void %VITIS_LOOP_61_2.i.split" [detector_solid/abs_solid_detector.cpp:61]   --->   Operation 87 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 88 [1/1] (0.00ns)   --->   "%trunc_ln65 = trunc i64 %j" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 88 'trunc' 'trunc_ln65' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 89 [1/1] (1.54ns)   --->   "%add_ln65_4 = add i12 %tmp_15, i12 %trunc_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 89 'add' 'add_ln65_4' <Predicate = true> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln65_4 = zext i12 %add_ln65_4" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 90 'zext' 'zext_ln65_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [1/1] (0.00ns)   --->   "%regions_min_0_addr = getelementptr i32 %regions_min_0, i64 0, i64 %zext_ln65_4" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 91 'getelementptr' 'regions_min_0_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 92 [1/1] (1.54ns)   --->   "%add_ln65_5 = add i12 %tmp_16, i12 %trunc_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 92 'add' 'add_ln65_5' <Predicate = true> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 93 [1/1] (0.00ns)   --->   "%zext_ln65_5 = zext i12 %add_ln65_5" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 93 'zext' 'zext_ln65_5' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 94 [1/1] (0.00ns)   --->   "%regions_min_1_addr = getelementptr i32 %regions_min_1, i64 0, i64 %zext_ln65_5" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 94 'getelementptr' 'regions_min_1_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 95 [1/1] (1.54ns)   --->   "%add_ln65_6 = add i12 %tmp_17, i12 %trunc_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 95 'add' 'add_ln65_6' <Predicate = true> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 96 [1/1] (1.54ns)   --->   "%add_ln65_7 = add i12 %tmp_18, i12 %trunc_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 96 'add' 'add_ln65_7' <Predicate = true> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 97 [2/2] (3.25ns)   --->   "%regions_min_0_load = load i12 %regions_min_0_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 97 'load' 'regions_min_0_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_5 : Operation 98 [2/2] (3.25ns)   --->   "%regions_min_1_load = load i12 %regions_min_1_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 98 'load' 'regions_min_1_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_5 : Operation 99 [1/1] (2.30ns)   --->   "%tmp_1 = mux i32 @_ssdm_op_Mux.ap_auto.8f32.i64, i32 %p_read_17, i32 %p_read_16, i32 %p_read_15, i32 %p_read_14, i32 %p_read_13, i32 %p_read_12, i32 %p_read_11, i32 %p_read_10, i64 %j" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 99 'mux' 'tmp_1' <Predicate = true> <Delay = 2.30> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 100 [1/1] (3.52ns)   --->   "%add_ln61 = add i64 %j, i64 1" [detector_solid/abs_solid_detector.cpp:61]   --->   Operation 100 'add' 'add_ln61' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 4> <Delay = 10.2>
+ST_6 : Operation 101 [1/2] (3.25ns)   --->   "%regions_min_0_load = load i12 %regions_min_0_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 101 'load' 'regions_min_0_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_6 : Operation 102 [1/2] (3.25ns)   --->   "%regions_min_1_load = load i12 %regions_min_1_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 102 'load' 'regions_min_1_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_6 : Operation 103 [1/1] (1.58ns)   --->   "%tmp = mux i32 @_ssdm_op_Mux.ap_auto.2float.i1, i32 %regions_min_0_load, i32 %regions_min_1_load, i1 %trunc_ln1073" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 103 'mux' 'tmp' <Predicate = true> <Delay = 1.58> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "%bitcast_ln65 = bitcast i32 %tmp" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 104 'bitcast' 'bitcast_ln65' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_7 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln65, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 105 'partselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%trunc_ln65_1 = trunc i32 %bitcast_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 106 'trunc' 'trunc_ln65_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (1.55ns)   --->   "%icmp_ln65 = icmp_ne  i8 %tmp_7, i8 255" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 107 'icmp' 'icmp_ln65' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 108 [1/1] (2.44ns)   --->   "%icmp_ln65_1 = icmp_eq  i23 %trunc_ln65_1, i23 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 108 'icmp' 'icmp_ln65_1' <Predicate = true> <Delay = 2.44> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [2/2] (5.43ns)   --->   "%tmp_9 = fcmp_ole  i32 %tmp, i32 %tmp_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 109 'fcmp' 'tmp_9' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 5> <Delay = 6.40>
+ST_7 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln65_6 = zext i12 %add_ln65_6" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 110 'zext' 'zext_ln65_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%regions_max_0_addr = getelementptr i32 %regions_max_0, i64 0, i64 %zext_ln65_6" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 111 'getelementptr' 'regions_max_0_addr' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 112 [1/1] (0.00ns)   --->   "%zext_ln65_7 = zext i12 %add_ln65_7" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 112 'zext' 'zext_ln65_7' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 113 [1/1] (0.00ns)   --->   "%regions_max_1_addr = getelementptr i32 %regions_max_1, i64 0, i64 %zext_ln65_7" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 113 'getelementptr' 'regions_max_1_addr' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 114 [1/1] (0.00ns)   --->   "%speclooptripcount_ln63 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1, i64 8, i64 4" [detector_solid/abs_solid_detector.cpp:63]   --->   Operation 114 'speclooptripcount' 'speclooptripcount_ln63' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 115 [1/1] (0.00ns)   --->   "%specloopname_ln61 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [detector_solid/abs_solid_detector.cpp:61]   --->   Operation 115 'specloopname' 'specloopname_ln61' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 116 [1/1] (0.00ns)   --->   "%bitcast_ln65_1 = bitcast i32 %tmp_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 116 'bitcast' 'bitcast_ln65_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_8 = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln65_1, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 117 'partselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 118 [1/1] (0.00ns)   --->   "%trunc_ln65_2 = trunc i32 %bitcast_ln65_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 118 'trunc' 'trunc_ln65_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node and_ln65_1)   --->   "%or_ln65 = or i1 %icmp_ln65_1, i1 %icmp_ln65" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 119 'or' 'or_ln65' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 120 [1/1] (1.55ns)   --->   "%icmp_ln65_2 = icmp_ne  i8 %tmp_8, i8 255" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 120 'icmp' 'icmp_ln65_2' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 121 [1/1] (2.44ns)   --->   "%icmp_ln65_3 = icmp_eq  i23 %trunc_ln65_2, i23 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 121 'icmp' 'icmp_ln65_3' <Predicate = true> <Delay = 2.44> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node and_ln65_1)   --->   "%or_ln65_1 = or i1 %icmp_ln65_3, i1 %icmp_ln65_2" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 122 'or' 'or_ln65_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node and_ln65_1)   --->   "%and_ln65 = and i1 %or_ln65, i1 %or_ln65_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 123 'and' 'and_ln65' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 124 [1/2] (5.43ns)   --->   "%tmp_9 = fcmp_ole  i32 %tmp, i32 %tmp_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 124 'fcmp' 'tmp_9' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 125 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln65_1 = and i1 %and_ln65, i1 %tmp_9" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 125 'and' 'and_ln65_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln65 = br i1 %and_ln65_1, void %for.inc19.i, void %land.lhs.true.i" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 126 'br' 'br_ln65' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 127 [2/2] (3.25ns)   --->   "%regions_max_0_load = load i12 %regions_max_0_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 127 'load' 'regions_max_0_load' <Predicate = (and_ln65_1)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_7 : Operation 128 [2/2] (3.25ns)   --->   "%regions_max_1_load = load i12 %regions_max_1_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 128 'load' 'regions_max_1_load' <Predicate = (and_ln65_1)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+
+State 8 <SV = 6> <Delay = 10.2>
+ST_8 : Operation 129 [1/2] (3.25ns)   --->   "%regions_max_0_load = load i12 %regions_max_0_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 129 'load' 'regions_max_0_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_8 : Operation 130 [1/2] (3.25ns)   --->   "%regions_max_1_load = load i12 %regions_max_1_addr" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 130 'load' 'regions_max_1_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_8 : Operation 131 [1/1] (1.58ns)   --->   "%tmp_2 = mux i32 @_ssdm_op_Mux.ap_auto.2float.i1, i32 %regions_max_0_load, i32 %regions_max_1_load, i1 %trunc_ln1073" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 131 'mux' 'tmp_2' <Predicate = true> <Delay = 1.58> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 132 [1/1] (0.00ns)   --->   "%bitcast_ln65_2 = bitcast i32 %tmp_2" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 132 'bitcast' 'bitcast_ln65_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_s = partselect i8 @_ssdm_op_PartSelect.i8.i32.i32.i32, i32 %bitcast_ln65_2, i32 23, i32 30" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 133 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 134 [1/1] (0.00ns)   --->   "%trunc_ln65_3 = trunc i32 %bitcast_ln65_2" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 134 'trunc' 'trunc_ln65_3' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 135 [1/1] (1.55ns)   --->   "%icmp_ln65_4 = icmp_ne  i8 %tmp_s, i8 255" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 135 'icmp' 'icmp_ln65_4' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 136 [1/1] (2.44ns)   --->   "%icmp_ln65_5 = icmp_eq  i23 %trunc_ln65_3, i23 0" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 136 'icmp' 'icmp_ln65_5' <Predicate = true> <Delay = 2.44> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 137 [2/2] (5.43ns)   --->   "%tmp_10 = fcmp_oge  i32 %tmp_2, i32 %tmp_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 137 'fcmp' 'tmp_10' <Predicate = true> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 7> <Delay = 7.99>
+ST_9 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node and_ln65_2)   --->   "%or_ln65_2 = or i1 %icmp_ln65_5, i1 %icmp_ln65_4" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 138 'or' 'or_ln65_2' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 139 [1/2] (5.43ns)   --->   "%tmp_10 = fcmp_oge  i32 %tmp_2, i32 %tmp_1" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 139 'fcmp' 'tmp_10' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1)> <Delay = 5.43> <CoreInst = "FCompare">   --->   Core 19 'FCompare' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 140 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln65_2 = and i1 %or_ln65_2, i1 %tmp_10" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 140 'and' 'and_ln65_2' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1)> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln65 = br i1 %and_ln65_2, void %for.inc19.i, void %if.then.i" [detector_solid/abs_solid_detector.cpp:65]   --->   Operation 141 'br' 'br_ln65' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1)> <Delay = 0.00>
+ST_9 : Operation 142 [1/1] (2.77ns)   --->   "%icmp_ln66 = icmp_eq  i64 %j, i64 7" [detector_solid/abs_solid_detector.cpp:66]   --->   Operation 142 'icmp' 'icmp_ln66' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1 & and_ln65_2)> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 143 [1/1] (0.00ns)   --->   "%br_ln66 = br i1 %icmp_ln66, void %for.inc.i4, void %return.loopexit" [detector_solid/abs_solid_detector.cpp:66]   --->   Operation 143 'br' 'br_ln66' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1 & and_ln65_2)> <Delay = 0.00>
+ST_9 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln61 = br void %for.body3.i.split" [detector_solid/abs_solid_detector.cpp:61]   --->   Operation 144 'br' 'br_ln61' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1 & and_ln65_2 & !icmp_ln66)> <Delay = 0.00>
+ST_9 : Operation 145 [1/1] (1.70ns)   --->   "%br_ln0 = br void %return"   --->   Operation 145 'br' 'br_ln0' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & and_ln65_1 & and_ln65_2 & icmp_ln66)> <Delay = 1.70>
+ST_9 : Operation 146 [1/1] (1.58ns)   --->   "%store_ln55 = store i8 %add_ln55, i8 %i_1" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 146 'store' 'store_ln55' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & !and_ln65_2) | (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & !and_ln65_1)> <Delay = 1.58>
+ST_9 : Operation 147 [1/1] (0.00ns)   --->   "%br_ln55 = br void %VITIS_LOOP_61_2.i" [detector_solid/abs_solid_detector.cpp:55]   --->   Operation 147 'br' 'br_ln55' <Predicate = (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & !and_ln65_2) | (!bubble_read & icmp_ln76 & !icmp_ln1073 & icmp_ln1073_1 & !and_ln65_1)> <Delay = 0.00>
+ST_9 : Operation 148 [1/1] (0.00ns)   --->   "%phi_ln461 = phi i1 %p_read43, void %entry, i1 1, void %for.cond.cleanup.i, i1 0, void %return.loopexit, i1 1, void %return.loopexit58" [detector_solid/abs_solid_detector.cpp:461]   --->   Operation 148 'phi' 'phi_ln461' <Predicate = (and_ln65_1 & and_ln65_2 & icmp_ln66) | (!icmp_ln1073_1) | (icmp_ln1073) | (!icmp_ln76) | (bubble_read)> <Delay = 0.00>
+ST_9 : Operation 149 [1/1] (0.00ns)   --->   "%ret_ln461 = ret i1 %phi_ln461" [detector_solid/abs_solid_detector.cpp:461]   --->   Operation 149 'ret' 'ret_ln461' <Predicate = (and_ln65_1 & and_ln65_2 & icmp_ln66) | (!icmp_ln1073_1) | (icmp_ln1073) | (!icmp_ln76) | (bubble_read)> <Delay = 0.00>
 
 
 ============================================================
@@ -153,25 +253,56 @@ ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%ret_ln496 = ret i1 %phi_ln451" [de
 ============================================================
 Target clock period: 18ns, clock uncertainty: 4.86ns.
 
- <State 1>: 11.4ns
+ <State 1>: 1.71ns
 The critical path consists of the following:
-	wire read operation ('p_read') on port 'p_read10' [24]  (3.63 ns)
-	'call' operation ('targetBlock') to 'run_test_Pipeline_is_valid_label2' [50]  (7.73 ns)
+	wire read operation ('bubble_read', detector_solid/abs_solid_detector.cpp:65) on port 'bubble' (detector_solid/abs_solid_detector.cpp:65) [34]  (0 ns)
+	multiplexor before 'phi' operation ('phi_ln461', detector_solid/abs_solid_detector.cpp:461) with incoming values : ('p_read43', detector_solid/abs_solid_detector.cpp:65) [167]  (1.71 ns)
 
- <State 2>: 9.59ns
+ <State 2>: 7.73ns
 The critical path consists of the following:
-	'call' operation ('targetBlock') to 'run_test_Pipeline_is_valid_label2' [50]  (8 ns)
-	multiplexor before 'phi' operation ('phi_ln451', detector_solid/abs_solid_detector.cpp:451->detector_solid/abs_solid_detector.cpp:496) [85]  (1.59 ns)
+	'load' operation ('i', detector_solid/abs_solid_detector.cpp:76) on local variable 'i' [45]  (0 ns)
+	'mux' operation ('__x', detector_solid/abs_solid_detector.cpp:79) [52]  (2.3 ns)
+	'fcmp' operation ('cmp_i_i', /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:612) [53]  (5.43 ns)
 
- <State 3>: 1.92ns
+ <State 3>: 8ns
 The critical path consists of the following:
-	'load' operation ('i') on local variable 'i' [60]  (0 ns)
-	'add' operation ('add_ln49', detector_solid/abs_solid_detector.cpp:49) [62]  (1.92 ns)
+	'fcmp' operation ('cmp_i_i', /home/francesco/tools/Xilinx/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:612) [53]  (5.43 ns)
+	'or' operation ('or_ln79_1', detector_solid/abs_solid_detector.cpp:79) [64]  (0.978 ns)
+	blocking operation 1.59 ns on control path)
 
- <State 4>: 10.7ns
+ <State 4>: 1.92ns
 The critical path consists of the following:
-	'call' operation ('targetBlock1', detector_solid/abs_solid_detector.cpp:59) to 'run_test_Pipeline_VITIS_LOOP_55_2' [72]  (8.12 ns)
-	'icmp' operation ('cond', detector_solid/abs_solid_detector.cpp:59) [73]  (0.959 ns)
+	'load' operation ('i') on local variable 'i' [79]  (0 ns)
+	'add' operation ('add_ln55', detector_solid/abs_solid_detector.cpp:55) [82]  (1.92 ns)
+
+ <State 5>: 4.8ns
+The critical path consists of the following:
+	'phi' operation ('j', detector_solid/abs_solid_detector.cpp:61) with incoming values : ('add_ln61', detector_solid/abs_solid_detector.cpp:61) [102]  (0 ns)
+	'add' operation ('add_ln65_4', detector_solid/abs_solid_detector.cpp:65) [104]  (1.55 ns)
+	'getelementptr' operation ('regions_min_0_addr', detector_solid/abs_solid_detector.cpp:65) [106]  (0 ns)
+	'load' operation ('regions_min_0_load', detector_solid/abs_solid_detector.cpp:65) on array 'regions_min_0' [118]  (3.25 ns)
+
+ <State 6>: 10.3ns
+The critical path consists of the following:
+	'load' operation ('regions_min_0_load', detector_solid/abs_solid_detector.cpp:65) on array 'regions_min_0' [118]  (3.25 ns)
+	'mux' operation ('tmp', detector_solid/abs_solid_detector.cpp:65) [120]  (1.59 ns)
+	'fcmp' operation ('tmp_9', detector_solid/abs_solid_detector.cpp:65) [135]  (5.43 ns)
+
+ <State 7>: 6.41ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_9', detector_solid/abs_solid_detector.cpp:65) [135]  (5.43 ns)
+	'and' operation ('and_ln65_1', detector_solid/abs_solid_detector.cpp:65) [136]  (0.978 ns)
+
+ <State 8>: 10.3ns
+The critical path consists of the following:
+	'load' operation ('regions_max_0_load', detector_solid/abs_solid_detector.cpp:65) on array 'regions_max_0' [140]  (3.25 ns)
+	'mux' operation ('tmp_2', detector_solid/abs_solid_detector.cpp:65) [142]  (1.59 ns)
+	'fcmp' operation ('tmp_10', detector_solid/abs_solid_detector.cpp:65) [149]  (5.43 ns)
+
+ <State 9>: 8ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_10', detector_solid/abs_solid_detector.cpp:65) [149]  (5.43 ns)
+	'and' operation ('and_ln65_2', detector_solid/abs_solid_detector.cpp:65) [150]  (0.978 ns)
 	blocking operation 1.59 ns on control path)
 
 
@@ -187,6 +318,11 @@ N/A
 	State 2
 	State 3
 	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
 
 
 ============================================================

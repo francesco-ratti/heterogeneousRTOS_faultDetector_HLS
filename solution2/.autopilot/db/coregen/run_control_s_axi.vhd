@@ -36,7 +36,9 @@ port (
     flush                 :out  STD_LOGIC;
     flush_done            :in   STD_LOGIC;
     accel_mode            :out  STD_LOGIC_VECTOR(7 downto 0);
-    copying               :in   STD_LOGIC_VECTOR(7 downto 0);
+    data_in_vld_i         :out  STD_LOGIC_VECTOR(7 downto 0);
+    data_in_vld_o         :in   STD_LOGIC_VECTOR(7 downto 0);
+    data_in_vld_o_ap_vld  :in   STD_LOGIC;
     inputData             :out  STD_LOGIC_VECTOR(63 downto 0);
     IOCheckIdx            :out  STD_LOGIC_VECTOR(7 downto 0);
     errorInTask_address0  :in   STD_LOGIC_VECTOR(3 downto 0);
@@ -88,10 +90,16 @@ end entity run_control_s_axi;
 --         bit 7~0 - accel_mode[7:0] (Read/Write)
 --         others  - reserved
 -- 0x014 : reserved
--- 0x018 : Data signal of copying
---         bit 7~0 - copying[7:0] (Read)
+-- 0x018 : Data signal of data_in_vld_i
+--         bit 7~0 - data_in_vld_i[7:0] (Read/Write)
 --         others  - reserved
 -- 0x01c : reserved
+-- 0x020 : Data signal of data_in_vld_o
+--         bit 7~0 - data_in_vld_o[7:0] (Read)
+--         others  - reserved
+-- 0x024 : Control signal of data_in_vld_o
+--         bit 0  - data_in_vld_o_ap_vld (Read/COR)
+--         others - reserved
 -- 0x028 : Data signal of inputData
 --         bit 31~0 - inputData[31:0] (Read/Write)
 -- 0x02c : Data signal of inputData
@@ -248,8 +256,10 @@ architecture behave of run_control_s_axi is
     constant ADDR_ISR                     : INTEGER := 16#00c#;
     constant ADDR_ACCEL_MODE_DATA_0       : INTEGER := 16#010#;
     constant ADDR_ACCEL_MODE_CTRL         : INTEGER := 16#014#;
-    constant ADDR_COPYING_DATA_0          : INTEGER := 16#018#;
-    constant ADDR_COPYING_CTRL            : INTEGER := 16#01c#;
+    constant ADDR_DATA_IN_VLD_I_DATA_0    : INTEGER := 16#018#;
+    constant ADDR_DATA_IN_VLD_I_CTRL      : INTEGER := 16#01c#;
+    constant ADDR_DATA_IN_VLD_O_DATA_0    : INTEGER := 16#020#;
+    constant ADDR_DATA_IN_VLD_O_CTRL      : INTEGER := 16#024#;
     constant ADDR_INPUTDATA_DATA_0        : INTEGER := 16#028#;
     constant ADDR_INPUTDATA_DATA_1        : INTEGER := 16#02c#;
     constant ADDR_INPUTDATA_CTRL          : INTEGER := 16#030#;
@@ -347,7 +357,9 @@ architecture behave of run_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_accel_mode      : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_copying         : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_data_in_vld_i   : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_data_in_vld_o_ap_vld : STD_LOGIC;
+    signal int_data_in_vld_o   : UNSIGNED(7 downto 0) := (others => '0');
     signal int_inputData       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_IOCheckIdx      : UNSIGNED(7 downto 0) := (others => '0');
     signal int_trainedRegion_i : UNSIGNED(767 downto 0) := (others => '0');
@@ -586,8 +598,12 @@ port map (
                         rdata_data(1 downto 0) <= int_isr;
                     when ADDR_ACCEL_MODE_DATA_0 =>
                         rdata_data <= RESIZE(int_accel_mode(7 downto 0), 32);
-                    when ADDR_COPYING_DATA_0 =>
-                        rdata_data <= RESIZE(int_copying(7 downto 0), 32);
+                    when ADDR_DATA_IN_VLD_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_data_in_vld_i(7 downto 0), 32);
+                    when ADDR_DATA_IN_VLD_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_data_in_vld_o(7 downto 0), 32);
+                    when ADDR_DATA_IN_VLD_O_CTRL =>
+                        rdata_data(0) <= int_data_in_vld_o_ap_vld;
                     when ADDR_INPUTDATA_DATA_0 =>
                         rdata_data <= RESIZE(int_inputData(31 downto 0), 32);
                     when ADDR_INPUTDATA_DATA_1 =>
@@ -717,6 +733,7 @@ port map (
     auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     sw_reset             <= int_sw_reset and int_flush_done;
     accel_mode           <= STD_LOGIC_VECTOR(int_accel_mode);
+    data_in_vld_i        <= STD_LOGIC_VECTOR(int_data_in_vld_i);
     inputData            <= STD_LOGIC_VECTOR(int_inputData);
     IOCheckIdx           <= STD_LOGIC_VECTOR(int_IOCheckIdx);
     trainedRegion_i      <= STD_LOGIC_VECTOR(int_trainedRegion_i);
@@ -950,11 +967,37 @@ port map (
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DATA_IN_VLD_I_DATA_0) then
+                    int_data_in_vld_i(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_data_in_vld_i(7 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_copying <= (others => '0');
+                int_data_in_vld_o <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (ap_done = '1') then
-                    int_copying <= UNSIGNED(copying);
+                if (data_in_vld_o_ap_vld = '1') then
+                    int_data_in_vld_o <= UNSIGNED(data_in_vld_o);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_data_in_vld_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (data_in_vld_o_ap_vld = '1') then
+                    int_data_in_vld_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_DATA_IN_VLD_O_CTRL) then
+                    int_data_in_vld_o_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
