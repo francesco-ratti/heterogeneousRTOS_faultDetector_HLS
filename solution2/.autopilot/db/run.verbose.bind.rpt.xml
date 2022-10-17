@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'run'" level="0">
-<item name = "Date">Mon Oct 17 23:07:00 2022
+<item name = "Date">Tue Oct 18 00:12:48 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -31,11 +31,14 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runTest_fu_1348">runTest, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_read_data_fu_1406">read_data, 2, 93, 36.000 ns, 1.674 us, 2, 93, no</column>
+<column name="grp_insert_point_fu_1427">insert_point, 1, 1198, 18.000 ns, 21.564 us, 1, 1198, no</column>
+<column name="grp_runTest_fu_1838">runTest, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- pipelined_loop_train">?, ?, 7 ~ 1295, -, -, ?, no</column>
 </table>
 </item>
 </section>

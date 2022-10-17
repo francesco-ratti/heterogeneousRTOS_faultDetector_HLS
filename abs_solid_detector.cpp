@@ -239,7 +239,10 @@ void update_train_regions(region_t regions[MAX_REGIONS], const int id, const flo
 //	}
 //}
 
-void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
+void insert_point(bool bubble, region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
+#pragma HLS INLINE off
+	if (bubble)
+		return;
 
 	//int id = find_region(regions, n_regions, d);
 
@@ -268,7 +271,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			for(int i=0; i_real < n_regions-1; i++){
 				//#pragma HLS unroll
 #pragma HLS loop_tripcount min=0 max=136
-#pragma HLS PIPELINE II=8
+				//#pragma HLS PIPELINE II=8
 
 
 
@@ -457,7 +460,7 @@ void writeOutcome(bool bubble, volatile char &errorInTask, ap_uint<8>* failedTas
 void run_test(bool bubble, bool* error, region_t regions[MAX_REGIONS], ap_uint<8> n_regions, float data[MAX_AOV_DIM]) {
 	if (bubble)
 		return;
-		*error = !(is_valid(data) && hasRegion(regions, n_regions, data));//find_region(regions, n_regions, data) < 0 ) ;
+	*error = !(is_valid(data) && hasRegion(regions, n_regions, data));//find_region(regions, n_regions, data) < 0 ) ;
 }
 
 //void resetError(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> executionId) {
@@ -474,7 +477,7 @@ void setProcessingState(volatile char* processing, bool value) {
 }
 
 bool read_data(volatile char* in_vld, ap_uint<8> *checkId, ap_uint<8> *taskId, ap_uint<8> *executionId, ap_uint<16> *uniId, float AOV[MAX_AOV_DIM], controlStr* inputAOV /*volatile char* copying*/) {
-
+#pragma HLS INLINE off
 
 	if (!(*in_vld))
 		return true; //BUBBLE
@@ -635,28 +638,84 @@ void runTest(volatile char *mode, volatile controlStr* inputAOV, volatile char* 
 		}
 	}
 	//FINISH PROCESSING WHAT IS LEFT IN THE PIPELINE
-	//END1
-	writeOutcome(bubblePing, errorInTask[taskIdPing], &(failedTaskExecutionIds[taskIdPing]), checkIdPing, taskIdPing, executionIdPing, uniIdPing, errorPing, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
-	run_test(bubblePong, &errorPong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
-	//END2
-	writeOutcome(bubblePong, errorInTask[taskIdPong], &(failedTaskExecutionIds[taskIdPong]), checkIdPong, taskIdPong, executionIdPong, uniIdPong, errorPong, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
+
+	switch (stat) {
+	case PING:
+		run_test(bubblePong, &errorPong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
+		writeOutcome(bubblePing, errorInTask[taskIdPing], &(failedTaskExecutionIds[taskIdPing]), checkIdPing, taskIdPing, executionIdPing, uniIdPing, errorPing, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
+
+		writeOutcome(bubblePong, errorInTask[taskIdPong], &(failedTaskExecutionIds[taskIdPong]), checkIdPong, taskIdPong, executionIdPong, uniIdPong, errorPong, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
+		break;
+	case PONG:
+		run_test(bubblePung, &errorPung, regions[checkIdPung], n_regions[checkIdPung], AOVPung);
+		writeOutcome(bubblePong, errorInTask[taskIdPong], &(failedTaskExecutionIds[taskIdPong]), checkIdPong, taskIdPong, executionIdPong, uniIdPong, errorPong, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
+
+		writeOutcome(bubblePung, errorInTask[taskIdPung], &(failedTaskExecutionIds[taskIdPung]), checkIdPung, taskIdPung, executionIdPung, uniIdPung, errorPung, /* toScheduler,*/ outcomeInRam, AOVPung, failedTask);
+	case PUNG:
+		run_test(bubblePing, &errorPing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+		writeOutcome(bubblePung, errorInTask[taskIdPung], &(failedTaskExecutionIds[taskIdPung]), checkIdPung, taskIdPung, executionIdPung, uniIdPung, errorPung, /* toScheduler,*/ outcomeInRam, AOVPung, failedTask);
+
+		writeOutcome(bubblePing, errorInTask[taskIdPing], &(failedTaskExecutionIds[taskIdPing]), checkIdPing, taskIdPing, executionIdPing, uniIdPing, errorPing, /* toScheduler,*/ outcomeInRam, AOVPing, failedTask);
+	}
 }
-//void runTrain(controlStr* inputAOV, /*char* readyForData,  char* copyInputAOV,*/
-//		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, char* copying
-//) {
-//#pragma HLS DATAFLOW
-//	ap_uint<8> checkId;
-//	ap_uint<8> taskId;
-//	ap_uint<8> executionId;
-//	ap_uint<16> uniId;
-//	float AOV[MAX_AOV_DIM];
-//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
+
+
+void runTrain(volatile char *mode, volatile controlStr* inputAOV, volatile char* data_in_vld, /*char* readyForData,  char* copyInputAOV,*/
+		/*OutcomeStr * outcomeInRam,*/ /* hls::stream< ap_uint<8> > &toScheduler,*/ /*volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS],*/ region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS] /*volatile char* copying*/) {
+
+	bool ping=false;
+
+	//Ping
+	bool errorPing;
+	ap_uint<8> checkIdPing;
+	ap_uint<8> taskIdPing;
+	ap_uint<8> executionIdPing;
+	ap_uint<16> uniIdPing;
+	float AOVPing[MAX_AOV_DIM];
+#pragma HLS ARRAY_PARTITION variable=AOVPing type=complete
+
+//	//Pong
+//	bool errorPong;
+//	ap_uint<8> checkIdPong;
+//	ap_uint<8> taskIdPong;
+//	ap_uint<8> executionIdPong;
+//	ap_uint<16> uniIdPong;
+//	float AOVPong[MAX_AOV_DIM];
+//#pragma HLS ARRAY_PARTITION variable=AOVPong type=complete
+
+//	//______________________________________
+//	//PIPO BUFFER
+	bool bubblePing;//=true;
+//	bool bubblePong;//=true;
 //
-//	read_data(&checkId, &taskId, &executionId, &uniId, AOV, inputAOV, copying);
-//	insert_point(regions[checkId],
-//			n_regions[checkId],
-//			AOV);
-//}
+//	//INIT PHASE CAN BE AVOIDED USING BUBBLES
+//	//IT1
+//	bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+//	//WE'RE READY. LOOP BODY
+//
+	pipelined_loop_train: while((*mode)==MODE_TRAIN) {
+		bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+		insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+
+//#pragma HLS pipeline off
+//		if (ping) {
+//			bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+//			insert_point(bubblePong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
+//		} else {
+//			bubblePong=read_data(data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
+//			insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+//		}
+//		ping=!ping;
+	}
+//	//FINISH PROCESSING WHAT IS LEFT IN THE PIPELINE
+//	//END1
+//	if (ping)
+//		insert_point(bubblePong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
+//	else
+//		insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+}
+
+
 
 //void runAfterInit(char* computeMode, controlStr* inputTest, controlStr* inputTrain, char* copyingTest, char* copyingTrain,
 //		OutcomeStr * outcomeInRam, char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask
@@ -781,29 +840,35 @@ void run(volatile char* accel_mode, /*volatile char* copying,*/ volatile char* d
 
 #pragma HLS array_partition variable=n_regions complete
 
-	if ((*accel_mode)==MODE_INIT) {
+	switch (*accel_mode) {
+	case MODE_INIT:
 		regions[IOCheckIdx][IORegionIdx]=trainedRegion_i;
 		n_regions[IOCheckIdx]=*n_regions_in;
-	} else if ((*accel_mode)==MODE_OUT) {
+		break;
+	case MODE_OUT:
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
-	} else if ((*accel_mode)==MODE_TEST) {
-		//		for (int i=0; i<3; i++) {
-		//#pragma HLS pipeline rewind
-		//			bool error;
-		//			ap_uint<8> checkId;
-		//			ap_uint<8> taskId;
-		//			ap_uint<8> executionId;
-		//			ap_uint<16> uniId;
-		//			float AOV[MAX_AOV_DIM];
-		//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
-		//
-		//			read_data(&checkId, &taskId, &executionId, &uniId, AOV, inputData, copying);
-		//			run_test(&error, regions[checkId], n_regions[checkId], AOV);
-		//			writeOutcome(&(errorInTask[taskId]), &(failedTaskExecutionIds[taskId]), checkId, taskId, executionId, uniId, error, /* toScheduler,*/ outcomeInRam, AOV, failedTask);
-		//		}
+		break;
+	case MODE_TEST:
 		runTest(accel_mode, inputData, data_in_vld, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask/*, copying*/);
-	} else if ((*accel_mode)==MODE_TRAIN) {
-		//runTrain(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+		break;
+	case MODE_TRAIN:
+		runTrain(accel_mode, inputData, data_in_vld, /*outcomeInRam,*/ regions, n_regions/*, copying*/);
+		break;
 	}
 }
+//		for (int i=0; i<3; i++) {
+//#pragma HLS pipeline rewind
+//			bool error;
+//			ap_uint<8> checkId;
+//			ap_uint<8> taskId;
+//			ap_uint<8> executionId;
+//			ap_uint<16> uniId;
+//			float AOV[MAX_AOV_DIM];
+//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
+//
+//			read_data(&checkId, &taskId, &executionId, &uniId, AOV, inputData, copying);
+//			run_test(&error, regions[checkId], n_regions[checkId], AOV);
+//			writeOutcome(&(errorInTask[taskId]), &(failedTaskExecutionIds[taskId]), checkId, taskId, executionId, uniId, error, /* toScheduler,*/ outcomeInRam, AOV, failedTask);
+//		}
+

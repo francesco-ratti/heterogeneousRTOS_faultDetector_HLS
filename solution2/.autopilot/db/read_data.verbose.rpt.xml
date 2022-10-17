@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'read_data'" level="0">
-<item name = "Date">Mon Oct 17 23:07:00 2022
+<item name = "Date">Tue Oct 18 00:12:49 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -79,19 +79,19 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="empty_61_fu_950_p2">+, 0, 0, 13, 4, 1</column>
+<column name="empty_67_fu_950_p2">+, 0, 0, 13, 4, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
 <column name="exitcond1_fu_944_p2">icmp, 0, 0, 9, 4, 5</column>
-<column name="icmp_ln479_fu_655_p2">icmp, 0, 0, 11, 8, 1</column>
-<column name="icmp_ln486_fu_814_p2">icmp, 0, 0, 11, 8, 1</column>
-<column name="select_ln495_1_fu_1051_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_2_fu_1058_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_3_fu_1065_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_4_fu_1072_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_5_fu_1079_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_6_fu_1086_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_7_fu_1093_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln495_fu_1044_p3">select, 0, 0, 32, 1, 32</column>
+<column name="icmp_ln482_fu_655_p2">icmp, 0, 0, 11, 8, 1</column>
+<column name="icmp_ln489_fu_814_p2">icmp, 0, 0, 11, 8, 1</column>
+<column name="select_ln498_1_fu_1051_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_2_fu_1058_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_3_fu_1065_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_4_fu_1072_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_5_fu_1079_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_6_fu_1086_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_7_fu_1093_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln498_fu_1044_p3">select, 0, 0, 32, 1, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -118,10 +118,10 @@
 <column name="gmem_blk_n_AR">9, 2, 1, 2</column>
 <column name="gmem_blk_n_R">9, 2, 1, 2</column>
 <column name="loop_index_fu_178">9, 2, 4, 8</column>
-<column name="phi_ln495_1_reg_516">9, 2, 8, 16</column>
-<column name="phi_ln495_2_reg_569">9, 2, 8, 16</column>
-<column name="phi_ln495_3_reg_622">9, 2, 8, 16</column>
-<column name="phi_ln495_reg_463">9, 2, 16, 32</column>
+<column name="phi_ln498_1_reg_516">9, 2, 8, 16</column>
+<column name="phi_ln498_2_reg_569">9, 2, 8, 16</column>
+<column name="phi_ln498_3_reg_622">9, 2, 8, 16</column>
+<column name="phi_ln498_reg_463">9, 2, 16, 32</column>
 <column name="write_flag12_2_reg_430">9, 2, 1, 2</column>
 <column name="write_flag15_2_reg_452">9, 2, 1, 2</column>
 <column name="write_flag18_2_reg_483">9, 2, 1, 2</column>
@@ -164,28 +164,28 @@
 <column name="ap_return_7_preg">32, 0, 32, 0</column>
 <column name="ap_return_8_preg">32, 0, 32, 0</column>
 <column name="ap_return_9_preg">32, 0, 32, 0</column>
-<column name="empty_60_reg_1288">8, 0, 8, 0</column>
-<column name="empty_61_reg_1511">4, 0, 4, 0</column>
-<column name="empty_62_reg_1521">3, 0, 3, 0</column>
+<column name="empty_66_reg_1288">8, 0, 8, 0</column>
+<column name="empty_67_reg_1511">4, 0, 4, 0</column>
+<column name="empty_68_reg_1521">3, 0, 3, 0</column>
 <column name="executionId_reg_1298">8, 0, 8, 0</column>
-<column name="icmp_ln479_reg_1178">1, 0, 1, 0</column>
-<column name="icmp_ln486_reg_1313">1, 0, 1, 0</column>
+<column name="icmp_ln482_reg_1178">1, 0, 1, 0</column>
+<column name="icmp_ln489_reg_1313">1, 0, 1, 0</column>
 <column name="loop_index_fu_178">4, 0, 4, 0</column>
-<column name="phi_ln495_1_reg_516">8, 0, 8, 0</column>
-<column name="phi_ln495_2_reg_569">8, 0, 8, 0</column>
-<column name="phi_ln495_3_reg_622">8, 0, 8, 0</column>
-<column name="phi_ln495_reg_463">16, 0, 16, 0</column>
+<column name="phi_ln498_1_reg_516">8, 0, 8, 0</column>
+<column name="phi_ln498_2_reg_569">8, 0, 8, 0</column>
+<column name="phi_ln498_3_reg_622">8, 0, 8, 0</column>
+<column name="phi_ln498_reg_463">16, 0, 16, 0</column>
 <column name="retval_0_reg_642">1, 0, 1, 0</column>
 <column name="taskId_reg_1293">8, 0, 8, 0</column>
-<column name="tmp_67_reg_1258">32, 0, 32, 0</column>
-<column name="tmp_68_reg_1263">32, 0, 32, 0</column>
-<column name="tmp_69_reg_1268">32, 0, 32, 0</column>
-<column name="tmp_70_reg_1273">32, 0, 32, 0</column>
-<column name="tmp_71_reg_1278">32, 0, 32, 0</column>
-<column name="tmp_72_reg_1283">32, 0, 32, 0</column>
-<column name="tmp_73_reg_1308">8, 0, 8, 0</column>
+<column name="tmp_131_reg_1263">32, 0, 32, 0</column>
+<column name="tmp_132_reg_1268">32, 0, 32, 0</column>
+<column name="tmp_133_reg_1273">32, 0, 32, 0</column>
+<column name="tmp_134_reg_1278">32, 0, 32, 0</column>
+<column name="tmp_135_reg_1283">32, 0, 32, 0</column>
+<column name="tmp_136_reg_1308">8, 0, 8, 0</column>
+<column name="tmp_72_reg_1253">32, 0, 32, 0</column>
 <column name="tmp_reg_1248">32, 0, 32, 0</column>
-<column name="tmp_s_reg_1253">32, 0, 32, 0</column>
+<column name="tmp_s_reg_1258">32, 0, 32, 0</column>
 <column name="uniId_reg_1303">16, 0, 16, 0</column>
 <column name="write_flag12_0_fu_242">1, 0, 1, 0</column>
 <column name="write_flag12_2_reg_430">1, 0, 1, 0</column>

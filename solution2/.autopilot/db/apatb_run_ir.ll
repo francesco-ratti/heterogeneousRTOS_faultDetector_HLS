@@ -299,12 +299,12 @@ entry:
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* %8, [16 x %struct.OutcomeStr]* align 512 %9)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* %10, %struct.REGION_T* align 512 %11)
   call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<8>"(%"struct.ap_uint<8>"* %12, %"struct.ap_uint<8>"* align 512 %13)
-  call fastcc void @onebyonecpy_hls.p0struct.taskFailure.206(%struct.taskFailure* %14, i16* align 512 %15)
+  call fastcc void @onebyonecpy_hls.p0struct.taskFailure.276(%struct.taskFailure* %14, i16* align 512 %15)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @onebyonecpy_hls.p0struct.taskFailure.206(%struct.taskFailure* noalias, i16* noalias readonly align 512) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0struct.taskFailure.276(%struct.taskFailure* noalias, i16* noalias readonly align 512) unnamed_addr #2 {
 entry:
   %2 = icmp eq %struct.taskFailure* %0, null
   %3 = icmp eq i16* %1, null
@@ -337,7 +337,7 @@ entry:
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* %8, [16 x %struct.OutcomeStr]* align 512 %9)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* %10, %struct.REGION_T* align 512 %11)
   call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<8>"(%"struct.ap_uint<8>"* %12, %"struct.ap_uint<8>"* align 512 %13)
-  call fastcc void @onebyonecpy_hls.p0struct.taskFailure.206(%struct.taskFailure* %14, i16* align 512 %15)
+  call fastcc void @onebyonecpy_hls.p0struct.taskFailure.276(%struct.taskFailure* %14, i16* align 512 %15)
   ret void
 }
 
