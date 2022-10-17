@@ -116,6 +116,18 @@ typedef struct {
     u32 word_8;
 } XRun_Outcomeinram;
 
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+    u32 word_8;
+} XRun_Sw_reset;
+
 /***************** Macros (Inline Functions) Definitions *********************/
 #ifndef __linux__
 #define XRun_WriteReg(BaseAddress, RegOffset, Data) \
@@ -154,15 +166,16 @@ u32 XRun_IsReady(XRun *InstancePtr);
 void XRun_EnableAutoRestart(XRun *InstancePtr);
 void XRun_DisableAutoRestart(XRun *InstancePtr);
 
-void XRun_Set_inputAOV(XRun *InstancePtr, u64 Data);
-u64 XRun_Get_inputAOV(XRun *InstancePtr);
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_accel_mode(XRun *InstancePtr);
+u32 XRun_Get_copying(XRun *InstancePtr);
+void XRun_Set_inputData(XRun *InstancePtr, u64 Data);
+u64 XRun_Get_inputData(XRun *InstancePtr);
+void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data);
+u32 XRun_Get_IOCheckIdx(XRun *InstancePtr);
 void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data);
 XRun_Trainedregion_i XRun_Get_trainedRegion_i(XRun *InstancePtr);
 XRun_Trainedregion_o XRun_Get_trainedRegion_o(XRun *InstancePtr);
-void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data);
-u32 XRun_Get_IOCheckIdx(XRun *InstancePtr);
 void XRun_Set_IORegionIdx(XRun *InstancePtr, u32 Data);
 u32 XRun_Get_IORegionIdx(XRun *InstancePtr);
 void XRun_Set_n_regions_in_i(XRun *InstancePtr, u32 Data);

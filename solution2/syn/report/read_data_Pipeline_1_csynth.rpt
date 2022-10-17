@@ -1,0 +1,163 @@
+
+
+================================================================
+== Vitis HLS Report for 'read_data_Pipeline_1'
+================================================================
+* Date:           Mon Oct 17 15:14:57 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        detector_solid
+* Solution:       solution2 (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  18.00 ns|  3.323 ns|     4.86 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       10|       10|  0.180 us|  0.180 us|   10|   10|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |        8|        8|         2|          1|          1|     8|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     24|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     36|    -|
+|Register         |        -|    -|     266|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     266|     60|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |empty_fu_175_p2      |         +|   0|  0|  13|           4|           1|
+    |exitcond1_fu_169_p2  |      icmp|   0|  0|   9|           4|           5|
+    |ap_enable_pp0        |       xor|   0|  0|   2|           1|           2|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  24|           9|           8|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------+----+-----------+-----+-----------+
+    |               Name               | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                       |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1           |   9|          2|    1|          2|
+    |ap_sig_allocacmp_loop_index_load  |   9|          2|    4|          8|
+    |loop_index_fu_56                  |   9|          2|    4|          8|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Total                             |  36|          8|   10|         20|
+    +----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |AOV_0_out_0_fu_60        |  32|   0|   32|          0|
+    |AOV_1_out_0_fu_64        |  32|   0|   32|          0|
+    |AOV_2_out_0_fu_68        |  32|   0|   32|          0|
+    |AOV_3_out_0_fu_72        |  32|   0|   32|          0|
+    |AOV_4_out_0_fu_76        |  32|   0|   32|          0|
+    |AOV_5_out_0_fu_80        |  32|   0|   32|          0|
+    |AOV_6_out_0_fu_84        |  32|   0|   32|          0|
+    |AOV_7_out_0_fu_88        |  32|   0|   32|          0|
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |empty_194_reg_330        |   3|   0|    3|          0|
+    |loop_index_fu_56         |   4|   0|    4|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 266|   0|  266|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+----------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++------------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  read_data_Pipeline_1|  return value|
+|dest_AOV_address0       |  out|    3|   ap_memory|              dest_AOV|         array|
+|dest_AOV_ce0            |  out|    1|   ap_memory|              dest_AOV|         array|
+|dest_AOV_q0             |   in|   32|   ap_memory|              dest_AOV|         array|
+|AOV_7_out_0_out         |  out|   32|      ap_vld|       AOV_7_out_0_out|       pointer|
+|AOV_7_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_7_out_0_out|       pointer|
+|AOV_6_out_0_out         |  out|   32|      ap_vld|       AOV_6_out_0_out|       pointer|
+|AOV_6_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_6_out_0_out|       pointer|
+|AOV_5_out_0_out         |  out|   32|      ap_vld|       AOV_5_out_0_out|       pointer|
+|AOV_5_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_5_out_0_out|       pointer|
+|AOV_4_out_0_out         |  out|   32|      ap_vld|       AOV_4_out_0_out|       pointer|
+|AOV_4_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_4_out_0_out|       pointer|
+|AOV_3_out_0_out         |  out|   32|      ap_vld|       AOV_3_out_0_out|       pointer|
+|AOV_3_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_3_out_0_out|       pointer|
+|AOV_2_out_0_out         |  out|   32|      ap_vld|       AOV_2_out_0_out|       pointer|
+|AOV_2_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_2_out_0_out|       pointer|
+|AOV_1_out_0_out         |  out|   32|      ap_vld|       AOV_1_out_0_out|       pointer|
+|AOV_1_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_1_out_0_out|       pointer|
+|AOV_0_out_0_out         |  out|   32|      ap_vld|       AOV_0_out_0_out|       pointer|
+|AOV_0_out_0_out_ap_vld  |  out|    1|      ap_vld|       AOV_0_out_0_out|       pointer|
++------------------------+-----+-----+------------+----------------------+--------------+
+

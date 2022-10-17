@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1665763290220">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666012505373">
   <ports id="1" name="errorInTask" type="PortType" coreName="RAM_1P" coreId="62" bitwidth="8" direction="DirInOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>getelementptr</dataInputObjs>
     <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -7,55 +7,55 @@
   <ports id="2" name="errorInTask1" type="PortType" coreId="3621216858" bitwidth="4">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="p_read" type="PortType" coreId="3743730656" bitwidth="8">
+  <ports id="3" name="p_read" type="PortType" coreId="1313423963" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="failedTaskExecutionId_read" type="PortType" coreId="3742963856" bitwidth="8">
+  <ports id="4" name="failedTaskExecutionId_read" type="PortType" coreId="4101377280" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="checkId" type="PortType" originalName="outcome.checkId.V" coreId="3743510192" bitwidth="8">
+  <ports id="5" name="checkId" type="PortType" originalName="outcome.checkId.V" coreId="4101753280" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="taskId" type="PortType" coreId="3743373232" bitwidth="8">
+  <ports id="6" name="taskId" type="PortType" coreId="4101833424" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="executionId" type="PortType" originalName="outcome.executionId.V" coreId="711755639" bitwidth="8">
+  <ports id="7" name="executionId" type="PortType" originalName="outcome.executionId.V" coreId="1145391171" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="8" name="uniId" type="PortType" originalName="outcome.uniId.V" coreId="711755047" bitwidth="16">
+  <ports id="8" name="uniId" type="PortType" originalName="outcome.uniId.V" coreId="0" bitwidth="16">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="9" name="error" type="PortType" coreId="3743511296" bitwidth="1">
+  <ports id="9" name="error" type="PortType" coreId="0" bitwidth="1">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="10" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="710060549" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
+  <ports id="10" name="outcomeInRam" type="PortType" coreName="RAM_1P" coreId="0" bitwidth="288" direction="DirOut" iftype="IfTypeRegister" arraysize="16">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="11" name="p_read1" type="PortType" coreId="6775156" bitwidth="32">
+  <ports id="11" name="p_read1" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="12" name="p_read2" type="PortType" coreId="710816556" bitwidth="32">
+  <ports id="12" name="p_read2" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="13" name="p_read3" type="PortType" coreId="3742614704" bitwidth="32">
+  <ports id="13" name="p_read3" type="PortType" coreId="4102301792" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="14" name="p_read4" type="PortType" coreId="1869833586" bitwidth="32">
+  <ports id="14" name="p_read4" type="PortType" coreId="1397508187" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="15" name="p_read5" type="PortType" coreId="3743758224" bitwidth="32">
+  <ports id="15" name="p_read5" type="PortType" coreId="4102306976" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="16" name="p_read6" type="PortType" coreId="757935405" bitwidth="32">
+  <ports id="16" name="p_read6" type="PortType" coreId="0" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="17" name="p_read7" type="PortType" coreId="0" bitwidth="32">
+  <ports id="17" name="p_read7" type="PortType" coreId="4100687200" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="18" name="p_read8" type="PortType" coreId="0" bitwidth="32">
+  <ports id="18" name="p_read8" type="PortType" coreId="1330007625" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="19" name="failedTask" type="PortType" coreId="0" bitwidth="16" direction="DirOut">
+  <ports id="19" name="failedTask" type="PortType" coreId="4102426640" bitwidth="16" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="29" name="ap_return" direction="DirOut">
@@ -178,77 +178,77 @@
       <dataInputObjs>p_read8</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="p_read_7" coreId="3743683248" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="p_read_7" coreId="1330007625" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read7</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="p_read_8" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="p_read_8" coreId="4102394176" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read6</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="p_read_9" coreId="3744276432" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="p_read_9" coreId="1953394531" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read5</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_read_10" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="p_read_10" coreId="4102377552" bitwidth="32" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read4</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_read_11" coreId="3744227520" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_read_11" coreId="93" bitwidth="32" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read3</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="p_read_12" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="p_read_12" coreId="4102391424" bitwidth="32" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read2</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="p_read_13" coreId="3744243888" bitwidth="32" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="p_read_13" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read1</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="error_read" coreId="0" bitwidth="1" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="error_read" coreId="4102347616" bitwidth="1" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
       <dataInputObjs>error</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
       <dataOutputObjs>br</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="uniId_read" coreId="3744227520" bitwidth="16" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="uniId_read" coreId="0" bitwidth="16" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
       <dataInputObjs>uniId</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="executionId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="executionId_read" coreId="4102363984" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
       <dataInputObjs>executionId</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="taskId_read" coreId="3744241392" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="taskId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
       <dataInputObjs>taskId</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="checkId_read" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="checkId_read" coreId="4102347616" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
       <dataInputObjs>checkId</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="failedTaskExecutionId_read_1" coreId="3744143280" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="failedTaskExecutionId_read_1" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
       <dataInputObjs>failedTaskExecutionId_read</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_read66" coreId="0" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_read66" coreId="4102361488" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read</dataInputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
       <dataOutputObjs>phi</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="errorInTask1_read" coreId="3744159664" bitwidth="4" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="errorInTask1_read" coreId="0" bitwidth="4" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
       <dataInputObjs>errorInTask1</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="errorInTask1_cast" rtlName="errorInTask1_cast_fu_337_p1" coreId="0" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="errorInTask1_cast" rtlName="errorInTask1_cast_fu_337_p1" coreId="4102271632" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="outcome_AOV" lineNumber="535" originalName="outcome.AOV" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="outcome_AOV_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" contextFuncName="writeOutcome" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="535" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="outcome_AOV" lineNumber="428" originalName="outcome.AOV" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="outcome_AOV_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" contextFuncName="writeOutcome" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="428" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -260,7 +260,7 @@
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="_ln0" rtlName="grp_writeOutcome_Pipeline_1_fu_315" coreId="0" opcode="call" nodeLatency="1" m_display="0" m_delay="4.62" m_topoIndex="12" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="_ln0" rtlName="grp_writeOutcome_Pipeline_1_fu_315" coreId="4102288016" opcode="call" nodeLatency="1" m_display="0" m_delay="4.62" m_topoIndex="12" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
@@ -272,8 +272,8 @@
       <dataInputObjs>alloca</dataInputObjs>
       <constName>writeOutcome_Pipeline_1</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="errorInTask_addr" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744157152" contextFuncName="writeOutcome" bitwidth="4" opcode="getelementptr" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="errorInTask_addr" lineNumber="435" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" bitwidth="4" opcode="getelementptr" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="435" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>errorInTask</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
@@ -281,13 +281,13 @@
       <dataOutputObjs>errorInTask</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="errorInTask_load" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" bitwidth="8" opcode="load" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="14" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="errorInTask_load" lineNumber="435" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" bitwidth="8" opcode="load" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="435" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="icmp_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln542_fu_342_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="writeOutcome" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="22" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="icmp_ln435" lineNumber="435" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln435_fu_342_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="writeOutcome" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="435" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>and</dataOutputObjs>
       <constName>empty</constName>
@@ -298,14 +298,14 @@
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>and</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="and_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="and_ln542_fu_354_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="writeOutcome" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="24" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="and_ln435" lineNumber="435" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="and_ln435_fu_354_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="writeOutcome" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="435" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>icmp</dataInputObjs>
       <dataInputObjs>icmp</dataInputObjs>
       <dataOutputObjs>br</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="br_ln542" lineNumber="542" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="25" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="542" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="br_ln435" lineNumber="435" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="1397508187" contextFuncName="writeOutcome" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="435" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>and</dataInputObjs>
       <controlInputObjs>if.then</controlInputObjs>
       <controlInputObjs>if.end7</controlInputObjs>
@@ -314,8 +314,8 @@
       <validLinenumbers>1065</validLinenumbers>
     </fileValidLineNumbers>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>535</validLinenumbers>
-      <validLinenumbers>542</validLinenumbers>
+      <validLinenumbers>428</validLinenumbers>
+      <validLinenumbers>435</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <blocks id="81" name="if.then" type="BlockType">
@@ -324,7 +324,7 @@
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>if.then4</controlOutputObjs>
     <controlOutputObjs>if.end7</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="outcome_AOV_addr" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="outcome_AOV_addr" coreId="4102233824" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -333,7 +333,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="outcome_AOV_addr_1" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="outcome_AOV_addr_1" coreId="4102247696" bitwidth="3" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -342,7 +342,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="outcome_AOV_addr_2" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="outcome_AOV_addr_2" coreId="4101878192" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -351,7 +351,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="outcome_AOV_addr_3" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="outcome_AOV_addr_3" coreId="4101442992" bitwidth="3" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -360,7 +360,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="outcome_AOV_addr_4" coreId="3744002896" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="outcome_AOV_addr_4" coreId="1330007625" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -369,7 +369,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="outcome_AOV_addr_5" coreId="3744002896" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="outcome_AOV_addr_5" coreId="1953394531" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -378,7 +378,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="outcome_AOV_addr_6" coreId="711256354" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="outcome_AOV_addr_6" coreId="4100861392" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -387,7 +387,7 @@
       <dataInputObjs>getelementptr</dataInputObjs>
       <dataOutputObjs>bitcast</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="outcome_AOV_addr_7" coreId="3743967904" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="outcome_AOV_addr_7" coreId="0" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>load</dataOutputObjs>
       <constName>empty</constName>
@@ -401,39 +401,39 @@
       <dataOutputObjs>store</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="empty" rtlName="empty_fu_365_p1" coreId="3743967904" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="empty" rtlName="empty_fu_365_p1" coreId="4102428944" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="empty_48" rtlName="empty_48_fu_368_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="empty_52" rtlName="empty_52_fu_368_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="empty_49" rtlName="empty_49_fu_371_p1" coreId="3743981776" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="empty_53" rtlName="empty_53_fu_371_p1" coreId="4294967040" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="empty_50" rtlName="empty_50_fu_374_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="empty_54" rtlName="empty_54_fu_374_p1" coreId="4101445456" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="empty_51" rtlName="empty_51_fu_377_p1" coreId="3743683248" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="empty_55" rtlName="empty_55_fu_377_p1" coreId="6775156" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="empty_52" rtlName="empty_52_fu_380_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="empty_56" rtlName="empty_56_fu_380_p1" coreId="4101444528" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="empty_53" rtlName="empty_53_fu_383_p1" coreId="176" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="empty_57" rtlName="empty_57_fu_383_p1" coreId="154833357" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="75" name="empty_54" rtlName="empty_54_fu_387_p1" coreId="3744176192" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="75" name="empty_58" rtlName="empty_58_fu_387_p1" coreId="0" bitwidth="32" opcode="bitcast" nodeLabel="6.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="tmp_s" rtlName="outcomeInRam_d0" coreId="711351226" bitwidth="288" opcode="bitconcatenate" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="tmp_s" rtlName="outcomeInRam_d0" coreId="0" bitwidth="288" opcode="bitconcatenate" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
       <dataInputObjs>bitcast</dataInputObjs>
@@ -452,25 +452,25 @@
       <dataInputObjs>bitconcatenate</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="zext_ln544" lineNumber="544" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="errorInTask_d0" coreId="78" contextFuncName="writeOutcome" bitwidth="8" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="544" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="zext_ln437" lineNumber="437" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="errorInTask_d0" coreId="155109560" contextFuncName="writeOutcome" bitwidth="8" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="437" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>store</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="79" name="errorInTask_addr_write_ln544" lineNumber="544" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" opcode="store" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="27" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="544" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="79" name="errorInTask_addr_write_ln437" lineNumber="437" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreName="RAM_1P" implIndex="auto" control="no" opType="ram_1p" coreId="86" contextFuncName="writeOutcome" opcode="store" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="437" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>getelementptr</dataInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="br_ln546" lineNumber="546" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744177120" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="55" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="546" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="80" name="br_ln439" lineNumber="439" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4101084528" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="439" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
       <controlInputObjs>if.end7</controlInputObjs>
       <controlInputObjs>if.then4</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>544</validLinenumbers>
-      <validLinenumbers>546</validLinenumbers>
+      <validLinenumbers>437</validLinenumbers>
+      <validLinenumbers>439</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <blocks id="85" name="if.then4" type="BlockType">
@@ -478,24 +478,24 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>if.end7</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="p_0_0_010_partset" lineNumber="549" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="failedTask" coreId="0" contextFuncName="writeOutcome" bitwidth="16" opcode="bitconcatenate" nodeLabel="7.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="549" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="p_0_0_010_partset" lineNumber="442" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="failedTask" coreId="1868767266" contextFuncName="writeOutcome" bitwidth="16" opcode="bitconcatenate" nodeLabel="7.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="442" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="failedTask_write_ln549" lineNumber="549" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3744178944" contextFuncName="writeOutcome" opcode="write" nodeLabel="7.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="549" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="failedTask_write_ln442" lineNumber="442" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4101444400" contextFuncName="writeOutcome" opcode="write" nodeLabel="7.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="442" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>bitconcatenate</dataInputObjs>
       <dataOutputObjs>failedTask</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="br_ln550" lineNumber="550" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="58" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="550" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="br_ln443" lineNumber="443" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4102296288" contextFuncName="writeOutcome" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="443" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <controlInputObjs>if.end7</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>549</validLinenumbers>
-      <validLinenumbers>550</validLinenumbers>
+      <validLinenumbers>442</validLinenumbers>
+      <validLinenumbers>443</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <blocks id="88" name="if.end7" type="BlockType">
@@ -505,8 +505,8 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="phi_ln554" lineNumber="554" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3742511824" contextFuncName="writeOutcome" bitwidth="8" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="554" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="phi_ln447" lineNumber="447" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" bitwidth="8" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="447" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
@@ -515,13 +515,13 @@
       <controlInputObjs>entry</controlInputObjs>
       <controlInputObjs>if.then</controlInputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="_ln554" lineNumber="554" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="writeOutcome" opcode="ret" nodeLabel="8.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="554" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="_ln447" lineNumber="447" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4102294112" contextFuncName="writeOutcome" opcode="ret" nodeLabel="8.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="447" fileDirectory="/home/francesco/workspace" functionName="writeOutcome"/>
       <dataInputObjs>phi</dataInputObjs>
       <dataOutputObjs>ap_return</dataOutputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>554</validLinenumbers>
+      <validLinenumbers>447</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
@@ -581,6 +581,9 @@
   <regnodes realName="tmp_s_reg_577">
     <nodeIds>76</nodeIds>
   </regnodes>
+  <regnodes realName="phi_ln447_reg_304">
+    <nodeIds>86</nodeIds>
+  </regnodes>
   <regnodes realName="error_read_reg_467">
     <nodeIds>29</nodeIds>
   </regnodes>
@@ -589,9 +592,6 @@
   </regnodes>
   <regnodes realName="outcome_AOV_load_1_reg_517">
     <nodeIds>54</nodeIds>
-  </regnodes>
-  <regnodes realName="phi_ln554_reg_304">
-    <nodeIds>86</nodeIds>
   </regnodes>
   <regnodes realName="outcomeInRam_addr_reg_572">
     <nodeIds>67</nodeIds>
@@ -629,21 +629,6 @@
   <regnodes realName="p_read_8_reg_432">
     <nodeIds>23</nodeIds>
   </regnodes>
-  <expressionNodes realName="empty_48_fu_368">
-    <nodeIds>69</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_52_fu_380">
-    <nodeIds>73</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_53_fu_383">
-    <nodeIds>74</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln542_fu_342">
-    <nodeIds>46</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="zext_ln544_fu_360">
-    <nodeIds>78</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="outcome_AOV_addr_3_gep_fu_251">
     <nodeIds>57</nodeIds>
   </expressionNodes>
@@ -659,23 +644,44 @@
   <expressionNodes realName="outcome_AOV_addr_2_gep_fu_243">
     <nodeIds>55</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_56_fu_380">
+    <nodeIds>73</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="empty_fu_365">
     <nodeIds>68</nodeIds>
   </expressionNodes>
   <expressionNodes realName="outcome_AOV_addr_7_gep_fu_283">
     <nodeIds>65</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_57_fu_383">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="outcome_AOV_alloca_fu_98">
     <nodeIds>42</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_54_fu_387">
+  <expressionNodes realName="and_ln435_fu_354">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_52_fu_368">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_58_fu_387">
     <nodeIds>75</nodeIds>
   </expressionNodes>
   <expressionNodes realName="outcome_AOV_addr_4_gep_fu_259">
     <nodeIds>59</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_53_fu_371">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_54_fu_374">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="outcome_AOV_addr_gep_fu_218">
     <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln437_fu_360">
+    <nodeIds>78</nodeIds>
   </expressionNodes>
   <expressionNodes realName="outcome_AOV_addr_1_gep_fu_235">
     <nodeIds>53</nodeIds>
@@ -683,14 +689,8 @@
   <expressionNodes realName="tmp_s_fu_391">
     <nodeIds>76</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_49_fu_371">
-    <nodeIds>70</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="phi_ln554_phi_fu_307">
-    <nodeIds>86</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="and_ln542_fu_354">
-    <nodeIds>48</nodeIds>
+  <expressionNodes realName="icmp_ln435_fu_342">
+    <nodeIds>46</nodeIds>
   </expressionNodes>
   <expressionNodes realName="errorInTask1_cast_fu_337">
     <nodeIds>37</nodeIds>
@@ -701,13 +701,13 @@
   <expressionNodes realName="icmp_ln1065_fu_348">
     <nodeIds>47</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_50_fu_374">
-    <nodeIds>71</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="p_0_0_010_partset_fu_415">
     <nodeIds>82</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_51_fu_377">
+  <expressionNodes realName="phi_ln447_phi_fu_307">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_55_fu_377">
     <nodeIds>72</nodeIds>
   </expressionNodes>
   <moduleNodes realName="grp_writeOutcome_Pipeline_1_fu_315">
@@ -743,6 +743,9 @@
   <ioNodes realName="p_read_13_read_fu_144">
     <nodeIds>28</nodeIds>
   </ioNodes>
+  <ioNodes realName="write_ln442_write_fu_198">
+    <nodeIds>83</nodeIds>
+  </ioNodes>
   <ioNodes realName="p_read_12_read_fu_138">
     <nodeIds>27</nodeIds>
   </ioNodes>
@@ -757,9 +760,6 @@
   </ioNodes>
   <ioNodes realName="p_read_7_read_fu_108">
     <nodeIds>22</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln549_write_fu_198">
-    <nodeIds>83</nodeIds>
   </ioNodes>
   <ioNodes realName="uniId_read_read_fu_162">
     <nodeIds>30</nodeIds>

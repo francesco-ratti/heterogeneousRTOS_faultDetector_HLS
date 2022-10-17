@@ -18,14 +18,16 @@ using namespace sc_core;
 using namespace sc_dt;
 
 // wrapc file define:
+#define AUTOTB_TVIN_accel_mode "../tv/cdatafile/c.run.autotvin_accel_mode.dat"
+#define AUTOTB_TVOUT_accel_mode "../tv/cdatafile/c.run.autotvout_accel_mode.dat"
+#define AUTOTB_TVIN_copying "../tv/cdatafile/c.run.autotvin_copying.dat"
+#define AUTOTB_TVOUT_copying "../tv/cdatafile/c.run.autotvout_copying.dat"
+#define AUTOTB_TVIN_inputData "../tv/cdatafile/c.run.autotvin_inputData.dat"
+#define AUTOTB_TVOUT_inputData "../tv/cdatafile/c.run.autotvout_inputData.dat"
 #define AUTOTB_TVIN_errorInTask "../tv/cdatafile/c.run.autotvin_errorInTask.dat"
 #define AUTOTB_TVOUT_errorInTask "../tv/cdatafile/c.run.autotvout_errorInTask.dat"
 #define AUTOTB_TVIN_outcomeInRam "../tv/cdatafile/c.run.autotvin_outcomeInRam.dat"
 #define AUTOTB_TVOUT_outcomeInRam "../tv/cdatafile/c.run.autotvout_outcomeInRam.dat"
-#define AUTOTB_TVIN_inputAOV "../tv/cdatafile/c.run.autotvin_inputAOV.dat"
-#define AUTOTB_TVOUT_inputAOV "../tv/cdatafile/c.run.autotvout_inputAOV.dat"
-#define AUTOTB_TVIN_accel_mode "../tv/cdatafile/c.run.autotvin_accel_mode.dat"
-#define AUTOTB_TVOUT_accel_mode "../tv/cdatafile/c.run.autotvout_accel_mode.dat"
 #define AUTOTB_TVIN_trainedRegion_i "../tv/cdatafile/c.run.autotvin_trainedRegion_i.dat"
 #define AUTOTB_TVOUT_trainedRegion_i "../tv/cdatafile/c.run.autotvout_trainedRegion_i.dat"
 #define AUTOTB_TVIN_trainedRegion_o "../tv/cdatafile/c.run.autotvin_trainedRegion_o.dat"
@@ -44,10 +46,11 @@ using namespace sc_dt;
 #define INTER_TCL "../tv/cdatafile/ref.tcl"
 
 // tvout file define:
+#define AUTOTB_TVOUT_PC_accel_mode "../tv/rtldatafile/rtl.run.autotvout_accel_mode.dat"
+#define AUTOTB_TVOUT_PC_copying "../tv/rtldatafile/rtl.run.autotvout_copying.dat"
+#define AUTOTB_TVOUT_PC_inputData "../tv/rtldatafile/rtl.run.autotvout_inputData.dat"
 #define AUTOTB_TVOUT_PC_errorInTask "../tv/rtldatafile/rtl.run.autotvout_errorInTask.dat"
 #define AUTOTB_TVOUT_PC_outcomeInRam "../tv/rtldatafile/rtl.run.autotvout_outcomeInRam.dat"
-#define AUTOTB_TVOUT_PC_inputAOV "../tv/rtldatafile/rtl.run.autotvout_inputAOV.dat"
-#define AUTOTB_TVOUT_PC_accel_mode "../tv/rtldatafile/rtl.run.autotvout_accel_mode.dat"
 #define AUTOTB_TVOUT_PC_trainedRegion_i "../tv/rtldatafile/rtl.run.autotvout_trainedRegion_i.dat"
 #define AUTOTB_TVOUT_PC_trainedRegion_o "../tv/rtldatafile/rtl.run.autotvout_trainedRegion_o.dat"
 #define AUTOTB_TVOUT_PC_IOCheckIdx "../tv/rtldatafile/rtl.run.autotvout_IOCheckIdx.dat"
@@ -284,10 +287,11 @@ class INTER_TCL_FILE {
   public:
 INTER_TCL_FILE(const char* name) {
   mName = name; 
+  accel_mode_depth = 0;
+  copying_depth = 0;
+  inputData_depth = 0;
   errorInTask_depth = 0;
   outcomeInRam_depth = 0;
-  inputAOV_depth = 0;
-  accel_mode_depth = 0;
   trainedRegion_i_depth = 0;
   trainedRegion_o_depth = 0;
   IOCheckIdx_depth = 0;
@@ -312,10 +316,11 @@ INTER_TCL_FILE(const char* name) {
 }
 string get_depth_list () {
   stringstream total_list;
+  total_list << "{accel_mode " << accel_mode_depth << "}\n";
+  total_list << "{copying " << copying_depth << "}\n";
+  total_list << "{inputData " << inputData_depth << "}\n";
   total_list << "{errorInTask " << errorInTask_depth << "}\n";
   total_list << "{outcomeInRam " << outcomeInRam_depth << "}\n";
-  total_list << "{inputAOV " << inputAOV_depth << "}\n";
-  total_list << "{accel_mode " << accel_mode_depth << "}\n";
   total_list << "{trainedRegion_i " << trainedRegion_i_depth << "}\n";
   total_list << "{trainedRegion_o " << trainedRegion_o_depth << "}\n";
   total_list << "{IOCheckIdx " << IOCheckIdx_depth << "}\n";
@@ -332,10 +337,11 @@ void set_string(std::string list, std::string* class_list) {
   (*class_list) = list;
 }
   public:
+    int accel_mode_depth;
+    int copying_depth;
+    int inputData_depth;
     int errorInTask_depth;
     int outcomeInRam_depth;
-    int inputAOV_depth;
-    int accel_mode_depth;
     int trainedRegion_i_depth;
     int trainedRegion_o_depth;
     int IOCheckIdx_depth;
@@ -350,14 +356,14 @@ void set_string(std::string list, std::string* class_list) {
 };
 
 
-struct __cosim_s36__ { char data[36]; };
 struct __cosim_s44__ { char data[44]; };
+struct __cosim_s36__ { char data[36]; };
 struct __cosim_s96__ { char data[96]; };
 struct __cosim_s1__ { char data[1]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void run_hw_stub_wrapper(volatile void *, volatile void *, volatile void *, char, __cosim_s96__*, volatile void *, __cosim_s1__*, __cosim_s1__*, volatile void *, volatile void *);
+extern "C" void run_hw_stub_wrapper(char, volatile void *, volatile void *, volatile void *, volatile void *, __cosim_s96__*, volatile void *, __cosim_s1__*, __cosim_s1__*, volatile void *, volatile void *);
 
-extern "C" void apatb_run_hw(volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, volatile void * __xlx_apatb_param_inputAOV, char __xlx_apatb_param_accel_mode, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_failedTask) {
+extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * __xlx_apatb_param_copying, volatile void * __xlx_apatb_param_inputData, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_failedTask) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -497,6 +503,54 @@ tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
     } // end post check logic bolck
   #endif
 {
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_copying);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<8> > copying_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              copying_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "copying" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {((char*)__xlx_apatb_param_copying)[0*1+0] = copying_pc_buffer[0].range(7, 0).to_int64();
+}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  {
       static ifstream rtl_tv_out_file;
       if (!rtl_tv_out_file.is_open()) {
         rtl_tv_out_file.open(AUTOTB_TVOUT_PC_trainedRegion_o);
@@ -661,7 +715,7 @@ static INTER_TCL_FILE tcl_file(INTER_TCL);
 std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
 CodeState = DUMP_INPUTS;
-unsigned __xlx_offset_byte_param_inputAOV = 0;
+unsigned __xlx_offset_byte_param_inputData = 0;
 unsigned __xlx_offset_byte_param_errorInTask = 0;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -731,10 +785,10 @@ aesl_fh.write(AUTOTB_TVIN_outcomeInRam, end_str());
 aesl_fh.touch(AUTOTB_TVIN_gmem);
 {
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
-__xlx_offset_byte_param_inputAOV = 0*64;
-if (__xlx_apatb_param_inputAOV) {
+__xlx_offset_byte_param_inputData = 0*64;
+if (__xlx_apatb_param_inputData) {
 for (size_t i = 0; i < 1; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_inputAOV + i * 64;
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_inputData + i * 64;
 std::string s = formatData(pos, 512);
 aesl_fh.write(AUTOTB_TVIN_gmem, s);
 }
@@ -742,17 +796,6 @@ aesl_fh.write(AUTOTB_TVIN_gmem, s);
 tcl_file.set_num(1, &tcl_file.gmem_depth);
 aesl_fh.write(AUTOTB_TVIN_gmem, end_str());
 }
-// print inputAOV Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_inputAOV, begin_str(AESL_transaction));
-{
-auto *pos = (unsigned char*)&__xlx_offset_byte_param_inputAOV;
-aesl_fh.write(AUTOTB_TVIN_inputAOV, formatData(pos, 32));
-}
-  tcl_file.set_num(1, &tcl_file.inputAOV_depth);
-aesl_fh.write(AUTOTB_TVIN_inputAOV, end_str());
-}
-
 // print accel_mode Transactions
 {
 aesl_fh.write(AUTOTB_TVIN_accel_mode, begin_str(AESL_transaction));
@@ -762,6 +805,28 @@ aesl_fh.write(AUTOTB_TVIN_accel_mode, formatData(pos, 8));
 }
   tcl_file.set_num(1, &tcl_file.accel_mode_depth);
 aesl_fh.write(AUTOTB_TVIN_accel_mode, end_str());
+}
+
+// print copying Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_copying, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_copying;
+aesl_fh.write(AUTOTB_TVIN_copying, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.copying_depth);
+aesl_fh.write(AUTOTB_TVIN_copying, end_str());
+}
+
+// print inputData Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_inputData, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_offset_byte_param_inputData;
+aesl_fh.write(AUTOTB_TVIN_inputData, formatData(pos, 32));
+}
+  tcl_file.set_num(1, &tcl_file.inputData_depth);
+aesl_fh.write(AUTOTB_TVIN_inputData, end_str());
 }
 
 // print trainedRegion_i Transactions
@@ -831,7 +896,7 @@ aesl_fh.write(AUTOTB_TVIN_failedTask, end_str());
 }
 
 CodeState = CALL_C_DUT;
-run_hw_stub_wrapper(__xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_inputAOV, __xlx_apatb_param_accel_mode, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, __xlx_apatb_param_IOCheckIdx, __xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
+run_hw_stub_wrapper(__xlx_apatb_param_accel_mode, __xlx_apatb_param_copying, __xlx_apatb_param_inputData, __xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, __xlx_apatb_param_IOCheckIdx, __xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -897,6 +962,17 @@ aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, end_str());
 }
 
 #endif
+// print copying Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_copying, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_copying;
+aesl_fh.write(AUTOTB_TVOUT_copying, formatData(pos, 8));
+}
+  tcl_file.set_num(1, &tcl_file.copying_depth);
+aesl_fh.write(AUTOTB_TVOUT_copying, end_str());
+}
+
 // print trainedRegion_o Transactions
 {
 aesl_fh.write(AUTOTB_TVOUT_trainedRegion_o, begin_str(AESL_transaction));
