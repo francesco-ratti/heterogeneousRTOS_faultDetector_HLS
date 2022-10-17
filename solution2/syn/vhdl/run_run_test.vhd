@@ -325,7 +325,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fcmp_32ns_32ns_1_2_no_dsp_1_U116 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U364 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -341,7 +341,7 @@ begin
         opcode => grp_fu_295_opcode,
         dout => grp_fu_295_p2);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U117 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U365 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -357,7 +357,7 @@ begin
         opcode => ap_const_lv5_1,
         dout => grp_fu_300_p2);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U118 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U366 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -373,7 +373,7 @@ begin
         opcode => ap_const_lv5_1,
         dout => grp_fu_305_p2);
 
-    mux_84_32_1_1_U119 : component run_mux_84_32_1_1
+    mux_84_32_1_1_U367 : component run_mux_84_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -399,7 +399,7 @@ begin
         din8 => i_fu_116,
         dout => p_x_assign_fu_362_p10);
 
-    mux_864_32_1_1_U120 : component run_mux_864_32_1_1
+    mux_864_32_1_1_U368 : component run_mux_864_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -425,7 +425,7 @@ begin
         din8 => j_reg_266,
         dout => tmp_1_fu_575_p10);
 
-    mux_21_32_1_1_U121 : component run_mux_21_32_1_1
+    mux_21_32_1_1_U369 : component run_mux_21_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -439,7 +439,7 @@ begin
         din2 => trunc_ln1073_reg_884,
         dout => tmp_fu_595_p4);
 
-    mux_21_32_1_1_U122 : component run_mux_21_32_1_1
+    mux_21_32_1_1_U370 : component run_mux_21_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

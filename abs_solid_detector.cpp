@@ -271,7 +271,7 @@ void insert_point(bool bubble, region_t regions[MAX_REGIONS], ap_uint<8> &n_regi
 			for(int i=0; i_real < n_regions-1; i++){
 				//#pragma HLS unroll
 #pragma HLS loop_tripcount min=0 max=136
-				//#pragma HLS PIPELINE II=8
+#pragma HLS PIPELINE II=8
 
 
 
@@ -476,11 +476,13 @@ void setProcessingState(volatile char* processing, bool value) {
 		(*processing)=0x0;
 }
 
-bool read_data(volatile char* in_vld, ap_uint<8> *checkId, ap_uint<8> *taskId, ap_uint<8> *executionId, ap_uint<16> *uniId, float AOV[MAX_AOV_DIM], controlStr* inputAOV /*volatile char* copying*/) {
+void read_data(bool* bubble, volatile char* in_vld, ap_uint<8> *checkId, ap_uint<8> *taskId, ap_uint<8> *executionId, ap_uint<16> *uniId, float AOV[MAX_AOV_DIM], controlStr* inputAOV /*volatile char* copying*/) {
 #pragma HLS INLINE off
 
-	if (!(*in_vld))
-		return true; //BUBBLE
+	if (!(*in_vld)) {
+		*bubble=true;
+		return; //BUBBLE
+	}
 
 
 	//setProcessingState(copying, true);
@@ -494,7 +496,6 @@ bool read_data(volatile char* in_vld, ap_uint<8> *checkId, ap_uint<8> *taskId, a
 	*executionId=dest.executionId;
 	*uniId=dest.uniId;
 	memcpy(AOV, dest.AOV, sizeOfInputData);
-	return false;
 }
 
 //void runTest(controlStr* inputAOV, /*char* readyForData,  char* copyInputAOV,*/
@@ -605,30 +606,30 @@ void runTest(volatile char *mode, volatile controlStr* inputAOV, volatile char* 
 	bool bubblePung=true;
 	//INIT PHASE CAN BE AVOIDED USING BUBBLES
 	//IT1
-	bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+	read_data(&bubblePing, data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
 	//IT2
 	run_test(bubblePing, &errorPing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
-	bubblePong=read_data(data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
+	read_data(&bubblePong, data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
 	//WE'RE READY. LOOP BODY
-	pipelined_loop: while((*mode)==MODE_TEST) {
+	pipelined_loop_test: while((*mode)==MODE_TEST) {
 #pragma HLS pipeline off
 		switch (stat) {
 		case PING:
-			bubblePung=read_data(data_in_vld, &checkIdPung, &taskIdPung, &executionIdPung, &uniIdPung, AOVPung, (controlStr*)inputAOV);
+			read_data(&bubblePung, data_in_vld, &checkIdPung, &taskIdPung, &executionIdPung, &uniIdPung, AOVPung, (controlStr*)inputAOV);
 			run_test(bubblePong, &errorPong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
 			writeOutcome(bubblePing, errorInTask[taskIdPing], &(failedTaskExecutionIds[taskIdPing]), checkIdPing, taskIdPing, executionIdPing, uniIdPing, errorPing, /* toScheduler,*/ outcomeInRam, AOVPing, failedTask);
 
 			stat=PONG;
 			break;
 		case PONG:
-			bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+			read_data(&bubblePing, data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
 			run_test(bubblePung, &errorPung, regions[checkIdPung], n_regions[checkIdPung], AOVPung);
 			writeOutcome(bubblePong, errorInTask[taskIdPong], &(failedTaskExecutionIds[taskIdPong]), checkIdPong, taskIdPong, executionIdPong, uniIdPong, errorPong, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
 
 			stat=PUNG;
 			break;
 		case PUNG:
-			bubblePong=read_data(data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
+			read_data(&bubblePong, data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
 			run_test(bubblePing, &errorPing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
 			writeOutcome(bubblePung, errorInTask[taskIdPung], &(failedTaskExecutionIds[taskIdPung]), checkIdPung, taskIdPung, executionIdPung, uniIdPung, errorPung, /* toScheduler,*/ outcomeInRam, AOVPung, failedTask);
 
@@ -651,19 +652,39 @@ void runTest(volatile char *mode, volatile controlStr* inputAOV, volatile char* 
 		writeOutcome(bubblePong, errorInTask[taskIdPong], &(failedTaskExecutionIds[taskIdPong]), checkIdPong, taskIdPong, executionIdPong, uniIdPong, errorPong, /* toScheduler,*/ outcomeInRam, AOVPong, failedTask);
 
 		writeOutcome(bubblePung, errorInTask[taskIdPung], &(failedTaskExecutionIds[taskIdPung]), checkIdPung, taskIdPung, executionIdPung, uniIdPung, errorPung, /* toScheduler,*/ outcomeInRam, AOVPung, failedTask);
+		break;
 	case PUNG:
 		run_test(bubblePing, &errorPing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
 		writeOutcome(bubblePung, errorInTask[taskIdPung], &(failedTaskExecutionIds[taskIdPung]), checkIdPung, taskIdPung, executionIdPung, uniIdPung, errorPung, /* toScheduler,*/ outcomeInRam, AOVPung, failedTask);
 
 		writeOutcome(bubblePing, errorInTask[taskIdPing], &(failedTaskExecutionIds[taskIdPing]), checkIdPing, taskIdPing, executionIdPing, uniIdPing, errorPing, /* toScheduler,*/ outcomeInRam, AOVPing, failedTask);
+		break;
 	}
 }
 
+void trainPipelineBody(
+		bool &bubblePong,
+		bool &bubblePing,
+		ap_uint<8> &checkIdPing,
+		float AOVPing[MAX_AOV_DIM],
+		ap_uint<8> & checkIdPong,
+		ap_uint<8> &taskIdPong,
+		ap_uint<8> &executionIdPong,
+		ap_uint<16> &uniIdPong,
+		float AOVPong[MAX_AOV_DIM],
+		volatile controlStr* inputAOV,
+		region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS],
+		volatile char* data_in_vld
+) {
+#pragma HLS DATAFLOW
+	read_data(&bubblePong, data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
+	insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+}
 
 void runTrain(volatile char *mode, volatile controlStr* inputAOV, volatile char* data_in_vld, /*char* readyForData,  char* copyInputAOV,*/
 		/*OutcomeStr * outcomeInRam,*/ /* hls::stream< ap_uint<8> > &toScheduler,*/ /*volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS],*/ region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS] /*volatile char* copying*/) {
 
-	bool ping=false;
+	ap_uint<1> stat=0;
 
 	//Ping
 	bool errorPing;
@@ -674,45 +695,77 @@ void runTrain(volatile char *mode, volatile controlStr* inputAOV, volatile char*
 	float AOVPing[MAX_AOV_DIM];
 #pragma HLS ARRAY_PARTITION variable=AOVPing type=complete
 
-//	//Pong
-//	bool errorPong;
-//	ap_uint<8> checkIdPong;
-//	ap_uint<8> taskIdPong;
-//	ap_uint<8> executionIdPong;
-//	ap_uint<16> uniIdPong;
-//	float AOVPong[MAX_AOV_DIM];
-//#pragma HLS ARRAY_PARTITION variable=AOVPong type=complete
+	//Pong
+	bool errorPong;
+	ap_uint<8> checkIdPong;
+	ap_uint<8> taskIdPong;
+	ap_uint<8> executionIdPong;
+	ap_uint<16> uniIdPong;
+	float AOVPong[MAX_AOV_DIM];
+#pragma HLS ARRAY_PARTITION variable=AOVPong type=complete
 
-//	//______________________________________
-//	//PIPO BUFFER
-	bool bubblePing;//=true;
-//	bool bubblePong;//=true;
-//
-//	//INIT PHASE CAN BE AVOIDED USING BUBBLES
-//	//IT1
-//	bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
-//	//WE'RE READY. LOOP BODY
-//
+	//______________________________________
+	//PIPO BUFFER
+	bool bubblePing=true;
+	bool bubblePong=true;
+	char falseChar=0;
+
+	//INIT PHASE CAN BE AVOIDED USING BUBBLES
+	//	read_data(&bubblePing, data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+
+	//	//WE'RE READY. LOOP BODY
 	pipelined_loop_train: while((*mode)==MODE_TRAIN) {
-		bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
-		insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+		//		bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+		//		insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
 
-//#pragma HLS pipeline off
-//		if (ping) {
-//			bubblePing=read_data(data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
+#pragma HLS pipeline off
+#pragma HLS INLINE off
+
+		switch (stat) {
+		case PING:
+#pragma HLS INLINE off
+
+			trainPipelineBody(bubblePong,bubblePing,checkIdPing,AOVPing,
+					checkIdPong,taskIdPong,executionIdPong,uniIdPong,
+					AOVPong, inputAOV, regions, n_regions, data_in_vld
+			);
+			//			read_data(&bubblePong, data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
+			//			insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+			stat=PONG;
+			break;
+
+		case PONG:
+#pragma HLS INLINE off
+
+			trainPipelineBody(bubblePing,bubblePong,checkIdPong,AOVPong,
+					checkIdPing,taskIdPing,executionIdPing,uniIdPing,
+					AOVPing, inputAOV, regions, n_regions, data_in_vld
+			);
+//			read_data(&bubblePing, data_in_vld, &checkIdPing, &taskIdPing, &executionIdPing, &uniIdPing, AOVPing, (controlStr*)inputAOV);
 //			insert_point(bubblePong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
-//		} else {
-//			bubblePong=read_data(data_in_vld, &checkIdPong, &taskIdPong, &executionIdPong, &uniIdPong, AOVPong, (controlStr*)inputAOV);
-//			insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
-//		}
-//		ping=!ping;
+			stat=PING;
+			break;
+
+		default: break;
+		}
 	}
-//	//FINISH PROCESSING WHAT IS LEFT IN THE PIPELINE
-//	//END1
-//	if (ping)
-//		insert_point(bubblePong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
-//	else
-//		insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+	//	//FINISH PROCESSING WHAT IS LEFT IN THE PIPELINE
+	switch (stat) {
+	case PING:
+		//insert_point(bubblePing, regions[checkIdPing], n_regions[checkIdPing], AOVPing);
+		trainPipelineBody(bubblePong,bubblePing,checkIdPing,AOVPing,
+				checkIdPong,taskIdPong,executionIdPong,uniIdPong,
+				AOVPong, inputAOV, regions, n_regions, &falseChar
+		);
+		break;
+	case PONG:
+		//insert_point(bubblePong, regions[checkIdPong], n_regions[checkIdPong], AOVPong);
+		trainPipelineBody(bubblePing,bubblePong,checkIdPong,AOVPong,
+				checkIdPing,taskIdPing,executionIdPing,uniIdPing,
+				AOVPing, inputAOV, regions, n_regions, &falseChar
+		);
+		break;
+	}
 }
 
 

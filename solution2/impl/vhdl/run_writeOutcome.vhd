@@ -229,7 +229,7 @@ begin
         ce1 => outcome_AOV_ce1,
         q1 => outcome_AOV_q1);
 
-    mux_84_32_1_1_U143 : component run_mux_84_32_1_1
+    mux_84_32_1_1_U391 : component run_mux_84_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

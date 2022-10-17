@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'writeOutcome'
 ================================================================
-* Date:           Tue Oct 18 00:12:46 2022
+* Date:           Tue Oct 18 01:31:55 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        detector_solid
@@ -109,8 +109,8 @@ ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%bubble_read = read i1 @_ssdm_op_Re
 ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%errorInTask1_cast = zext i4 %errorInTask1_read"   --->   Operation 28 'zext' 'errorInTask1_cast' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i8 %errorInTask, i64 666, i64 207, i64 1"   --->   Operation 29 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i288 %outcomeInRam, i64 666, i64 207, i64 1"   --->   Operation 30 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %errorInTask, void @empty_24, i32 0, i32 0, void @empty_22, i32 1, i32 0, void @empty_22, void @empty_22, void @empty_22, i32 0, i32 0, i32 0, i32 0, void @empty_22, void @empty_22, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_24, i32 0, i32 0, void @empty_22, i32 1, i32 0, void @empty_22, void @empty_22, void @empty_22, i32 0, i32 0, i32 0, i32 0, void @empty_22, void @empty_22, i32 4294967295, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %errorInTask, void @empty_22, i32 0, i32 0, void @empty_21, i32 1, i32 0, void @empty_21, void @empty_21, void @empty_21, i32 0, i32 0, i32 0, i32 0, void @empty_21, void @empty_21, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeInRam, void @empty_22, i32 0, i32 0, void @empty_21, i32 1, i32 0, void @empty_21, void @empty_21, void @empty_21, i32 0, i32 0, i32 0, i32 0, void @empty_21, void @empty_21, i32 4294967295, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 33 [1/1] (2.32ns)   --->   "%outcome_AOV = alloca i64 1" [detector_solid/abs_solid_detector.cpp:437]   --->   Operation 33 'alloca' 'outcome_AOV' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
 ST_1 : Operation 34 [1/1] (1.58ns)   --->   "%br_ln436 = br i1 %bubble_read, void %load-store-loop2.preheader, void %if.end9" [detector_solid/abs_solid_detector.cpp:436]   --->   Operation 34 'br' 'br_ln436' <Predicate = true> <Delay = 1.58>
 ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%loop_index3 = alloca i32 1"   --->   Operation 35 'alloca' 'loop_index3' <Predicate = (!bubble_read)> <Delay = 0.00>
@@ -604,7 +604,7 @@ ret_ln457                    (ret                   ) [ 0000000000]
 <pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_24"/></StgValue>
+<StgValue><ssdm name="empty_22"/></StgValue>
 </bind>
 </comp>
 
@@ -622,7 +622,7 @@ ret_ln457                    (ret                   ) [ 0000000000]
 <pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_22"/></StgValue>
+<StgValue><ssdm name="empty_21"/></StgValue>
 </bind>
 </comp>
 

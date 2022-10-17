@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_insert_point_fu_1427/grp_insert_point_Pipeline_VITIS_LOOP_271_1_fu_904/grp_insert_point_Pipeline_VITIS_LOOP_271_1_fu_904_activity": {
+				"grp_runTest_fu_1503/grp_read_data_fu_483/grp_read_data_fu_483_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -23,7 +23,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_insert_point_fu_1427/grp_insert_point_Pipeline_insert_point_label6_fu_928/grp_insert_point_Pipeline_insert_point_label6_fu_928_activity": {
+				"grp_runTest_fu_1503/grp_runTest_fu_1503_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -33,7 +33,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_insert_point_fu_1427/grp_insert_point_fu_1427_activity": {
+				"grp_runTest_fu_1503/grp_run_test_fu_519/grp_run_test_fu_519_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -43,7 +43,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_read_data_fu_1406/grp_read_data_fu_1406_activity": {
+				"grp_runTest_fu_1503/grp_writeOutcome_fu_547/grp_writeOutcome_fu_547_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -53,7 +53,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1838/grp_read_data_fu_493/grp_read_data_fu_493_activity": {
+				"grp_runTrain_fu_1352/grp_runTrain_fu_1352_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -63,7 +63,29 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1838/grp_runTest_fu_1838_activity": {
+				"grp_runTrain_fu_1352/grp_trainPipelineBody_fu_366/grp_trainPipelineBody_fu_366_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_runTrain_fu_1352/grp_trainPipelineBody_fu_366/read_data_1_U0/read_data_1_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_runTrain_fu_1352/grp_trainPipelineBody_fu_366/trainPipelineBody_Block_entry174_proc_U0/grp_insert_point_fu_354/grp_insert_point_Pipeline_VITIS_LOOP_271_1_fu_995/grp_insert_point_Pipeline_VITIS_LOOP_271_1_fu_995_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -73,7 +95,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1838/grp_run_test_fu_527/grp_run_test_fu_527_activity": {
+				"grp_runTrain_fu_1352/grp_trainPipelineBody_fu_366/trainPipelineBody_Block_entry174_proc_U0/grp_insert_point_fu_354/grp_insert_point_fu_354_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -83,10 +105,11 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1838/grp_writeOutcome_fu_555/grp_writeOutcome_fu_555_activity": {
+				"grp_runTrain_fu_1352/grp_trainPipelineBody_fu_366/trainPipelineBody_Block_entry174_proc_U0/trainPipelineBody_Block_entry174_proc_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
 						"AP_DONE": { "actual": "ap_done"},
 						"AP_READY": { "actual": "ap_ready"},
 						"AP_RESET": { "actual": "ap_rst"},

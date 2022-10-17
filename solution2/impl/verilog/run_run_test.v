@@ -239,7 +239,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U116(
+fcmp_32ns_32ns_1_2_no_dsp_1_U364(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_295_p0),
@@ -255,7 +255,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U117(
+fcmp_32ns_32ns_1_2_no_dsp_1_U365(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(p_x_assign_fu_362_p10),
@@ -271,7 +271,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U118(
+fcmp_32ns_32ns_1_2_no_dsp_1_U366(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(p_x_assign_fu_362_p10),
@@ -294,7 +294,7 @@ run_mux_84_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 4 ),
     .dout_WIDTH( 32 ))
-mux_84_32_1_1_U119(
+mux_84_32_1_1_U367(
     .din0(p_read1),
     .din1(p_read2),
     .din2(p_read3),
@@ -320,7 +320,7 @@ run_mux_864_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 64 ),
     .dout_WIDTH( 32 ))
-mux_864_32_1_1_U120(
+mux_864_32_1_1_U368(
     .din0(p_read1),
     .din1(p_read2),
     .din2(p_read3),
@@ -340,7 +340,7 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U121(
+mux_21_32_1_1_U369(
     .din0(regions_min_0_q0),
     .din1(regions_min_1_q0),
     .din2(trunc_ln1073_reg_884),
@@ -354,7 +354,7 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U122(
+mux_21_32_1_1_U370(
     .din0(regions_max_0_q0),
     .din1(regions_max_1_q0),
     .din2(trunc_ln1073_reg_884),
