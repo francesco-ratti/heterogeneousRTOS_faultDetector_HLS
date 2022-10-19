@@ -659,8 +659,24 @@ void run(char accel_mode, char* copying, controlStr* inputData, char errorInTask
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
 	} else if (accel_mode==MODE_TEST) {
-		runTest(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
-	} else if (accel_mode==MODE_TRAIN) {
-		runTrain(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
-	}
+		//runTest(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+		for (int i=0; i<3; i++) {
+			#pragma HLS pipeline rewind
+					bool error;
+
+		ap_uint<8> checkId;
+		ap_uint<8> taskId;
+		ap_uint<8> executionId;
+		ap_uint<16> uniId;
+		float AOV[MAX_AOV_DIM];
+#pragma HLS ARRAY_PARTITION variable=AOV type=complete
+
+		read_data(&checkId, &taskId, &executionId, &uniId, AOV, inputAOV, copying);
+		run_test(&error, regions[checkId], n_regions[checkId], AOV);
+		writeOutcome(&(errorInTask[taskId]), &(failedTaskExecutionIds[taskId]), checkId, taskId, executionId, uniId, error, /* toScheduler,*/ outcomeInRam, AOV, failedTask);
+		}
+		
+	} // else if (accel_mode==MODE_TRAIN) {
+		// runTrain(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+	// }
 }
