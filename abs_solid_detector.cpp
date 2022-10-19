@@ -481,8 +481,15 @@ void read_data(ap_uint<8> *checkId, ap_uint<8> *taskId, ap_uint<8> *executionId,
 void runTest(controlStr* inputAOV, /*char* readyForData,  char* copyInputAOV,*/
 		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, char* copying
 ) {
-
-#pragma HLS DATAFLOW
+#pragma HLS DATAFLOW -disable_start_propagation
+#pragma HLS stable variable=inputAOV
+#pragma HLS stable variable=outcomeInRam
+#pragma HLS stable variable=errorInTask
+#pragma HLS stable variable=failedTaskExecutionIds
+#pragma HLS stable variable=regions
+#pragma HLS stable variable=n_regions
+#pragma HLS stable variable=failedTask
+#pragma HLS stable variable=copying
 		bool error;
 
 		ap_uint<8> checkId;
