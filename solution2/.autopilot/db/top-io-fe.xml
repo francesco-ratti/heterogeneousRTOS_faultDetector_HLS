@@ -25,12 +25,12 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52"/>
         </hw>
       </arg>
-      <arg id="4" access_type="" src_name="errorInTask" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="16">
+      <arg id="4" access_type="rw" src_name="errorInTask" src_type="char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="16">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="8" hw_size_or_depth="16" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64"/>
         </hw>
       </arg>
-      <arg id="5" access_type="" src_name="outcomeInRam" src_type="OutcomeStr*" src_isptr="1" src_bitwidth="288" src_size_or_depth="16">
+      <arg id="5" access_type="w" src_name="outcomeInRam" src_type="OutcomeStr*" src_isptr="1" src_bitwidth="288" src_size_or_depth="16">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="288" hw_size_or_depth="16" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="1024"/>
         </hw>
@@ -60,9 +60,9 @@
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="396"/>
         </hw>
       </arg>
-      <arg id="11" access_type="" src_name="failedTask" src_type="taskFailure*" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
+      <arg id="11" access_type="w" src_name="failedTask" src_type="taskFailure*" src_isptr="1" src_bitwidth="16" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="412"/>
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="416"/>
         </hw>
       </arg>
     </args>

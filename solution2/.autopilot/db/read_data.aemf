@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666275437873">
-  <ports id="1" name="copyDest" type="PortType" coreName="FIFO_SRL" coreId="1852142702" bitwidth="320" direction="DirOut" iftype="IfTypeRom">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666286355502">
+  <ports id="1" name="copyDest" type="PortType" coreName="FIFO_SRL" coreId="1702129263" bitwidth="320" direction="DirOut" iftype="IfTypeRom">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="2" name="gmem" type="PortType" coreId="45" bitwidth="512" iftype="IfTypeFifo">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="3" name="inputAOV" type="PortType" coreId="1852142702" bitwidth="64">
+  <ports id="3" name="inputAOV" type="PortType" coreId="1702129263" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="startCopy" type="PortType" coreId="3247720168" bitwidth="8">
+  <ports id="4" name="startCopy" type="PortType" coreId="3919903832" bitwidth="8">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="copying" type="PortType" coreId="1852142702" bitwidth="8" direction="DirOut">
+  <ports id="5" name="copying" type="PortType" coreId="3902404168" bitwidth="8" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
     <dataInputObjs>write</dataInputObjs>
   </ports>
@@ -50,20 +50,20 @@
   <edges id="165" edge_type="VirtEdge" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
   <blocks id="21" name="entry" type="BlockType">
     <controlOutputObjs>while.body</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="inputAOV_read" coreId="3296910272" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="inputAOV_read" coreId="3948553248" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>inputAOV</dataInputObjs>
       <dataOutputObjs>partselect</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="p_cast" rtlName="p_cast_fu_116_p4" coreId="3287625416" bitwidth="58" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="p_cast" rtlName="p_cast_fu_116_p4" coreId="3948553248" bitwidth="58" opcode="partselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>sext</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="p_cast_cast" rtlName="p_cast_cast_fu_126_p1" coreId="3296910272" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="p_cast_cast" rtlName="p_cast_cast_fu_126_p1" coreId="3949625240" bitwidth="64" opcode="sext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="gmem_addr" coreId="3296910272" bitwidth="512" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="gmem_addr" coreId="3948553248" bitwidth="512" opcode="getelementptr" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>gmem</dataInputObjs>
       <dataInputObjs>sext</dataInputObjs>
       <dataOutputObjs>readreq</dataOutputObjs>
@@ -79,36 +79,36 @@
       <dataOutputObjs>partselect</dataOutputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="tmp_s" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="tmp_s_fu_137_p4" coreId="3287618696" contextFuncName="write" bitwidth="256" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="tmp_s" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="tmp_s_fu_137_p4" coreId="0" contextFuncName="write" bitwidth="256" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\franc" functionName="write"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp_53" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="tmp_53_fu_147_p4" coreId="3296910272" contextFuncName="write" bitwidth="40" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp_53" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="tmp_53_fu_147_p4" coreId="3949621880" contextFuncName="write" bitwidth="40" opcode="partselect" nodeLabel="70.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\franc" functionName="write"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="trunc_ln174" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="trunc_ln174_fu_157_p1" coreId="3287623736" contextFuncName="write" bitwidth="24" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="trunc_ln174" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="trunc_ln174_fu_157_p1" coreId="3949611800" contextFuncName="write" bitwidth="24" opcode="trunc" nodeLabel="70.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\franc" functionName="write"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="or_ln174_s" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="or_ln174_s_fu_161_p4" coreId="3287620376" contextFuncName="write" bitwidth="320" opcode="bitconcatenate" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="or_ln174_s" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." rtlName="or_ln174_s_fu_161_p4" coreId="3949621290" contextFuncName="write" bitwidth="320" opcode="bitconcatenate" nodeLabel="70.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\franc" functionName="write"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataInputObjs>partselect</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="br_ln509" lineNumber="509" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3296910272" contextFuncName="read_data" opcode="br" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="509" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="br_ln521" lineNumber="521" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3948553248" contextFuncName="read_data" opcode="br" nodeLabel="70.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="521" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <controlInputObjs>while.body</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>509</validLinenumbers>
+      <validLinenumbers>521</validLinenumbers>
     </fileValidLineNumbers>
     <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h">
       <validLinenumbers>174</validLinenumbers>
@@ -121,38 +121,38 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>if.end</controlOutputObjs>
     <controlOutputObjs>if.then</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="startCopy_read" lineNumber="511" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3296910272" contextFuncName="read_data" bitwidth="8" opcode="read" nodeLabel="71.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="511" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="startCopy_read" lineNumber="523" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3948553248" contextFuncName="read_data" bitwidth="8" opcode="read" nodeLabel="71.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="523" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <dataInputObjs>startCopy</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="icmp_ln511" lineNumber="511" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln511_fu_171_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="read_data" bitwidth="1" opcode="icmp" nodeLabel="71.0" m_display="0" m_delay="1.55" m_topoIndex="13" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="511" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="icmp_ln523" lineNumber="523" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="icmp_ln523_fu_171_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="read_data" bitwidth="1" opcode="icmp" nodeLabel="71.0" m_display="0" m_delay="1.55" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="523" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>br</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln511" lineNumber="511" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="read_data" opcode="br" nodeLabel="71.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="511" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln523" lineNumber="523" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3948553248" contextFuncName="read_data" opcode="br" nodeLabel="71.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="523" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <dataInputObjs>icmp</dataInputObjs>
       <controlInputObjs>if.then</controlInputObjs>
       <controlInputObjs>if.end</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>511</validLinenumbers>
+      <validLinenumbers>523</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <blocks id="31" name="if.then" type="BlockType">
     <controlInputObjs>while.body</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>if.end</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="copying_write_ln500" lineNumber="500" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="setProcessingState" opcode="write" nodeLabel="71.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="500" fileDirectory="C:\Users\franc" functionName="setProcessingState"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="copying_write_ln512" lineNumber="512" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3949615160" contextFuncName="setProcessingState" opcode="write" nodeLabel="71.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="512" fileDirectory="C:\Users\franc" functionName="setProcessingState"/>
       <dataOutputObjs>copying</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="copying_write_ln502" lineNumber="502" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="setProcessingState" opcode="write" nodeLabel="72.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="502" fileDirectory="C:\Users\franc" functionName="setProcessingState"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="copying_write_ln514" lineNumber="514" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3949622146" contextFuncName="setProcessingState" opcode="write" nodeLabel="72.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="514" fileDirectory="C:\Users\franc" functionName="setProcessingState"/>
       <dataOutputObjs>copying</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
@@ -161,14 +161,14 @@
       <dataInputObjs>bitconcatenate</dataInputObjs>
       <dataOutputObjs>copyDest</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="br_ln517" lineNumber="517" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="read_data" opcode="br" nodeLabel="72.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="517" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="br_ln529" lineNumber="529" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3949616250" contextFuncName="read_data" opcode="br" nodeLabel="72.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="529" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <controlInputObjs>if.end</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>500</validLinenumbers>
-      <validLinenumbers>502</validLinenumbers>
-      <validLinenumbers>517</validLinenumbers>
+      <validLinenumbers>512</validLinenumbers>
+      <validLinenumbers>514</validLinenumbers>
+      <validLinenumbers>529</validLinenumbers>
     </fileValidLineNumbers>
     <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h">
       <validLinenumbers>174</validLinenumbers>
@@ -180,12 +180,12 @@
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>br</controlOutputObjs>
     <controlOutputObjs>while.body</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln509" lineNumber="509" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="read_data" opcode="br" nodeLabel="72.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="509" fileDirectory="C:\Users\franc" functionName="read_data"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln521" lineNumber="521" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="3948553248" contextFuncName="read_data" opcode="br" nodeLabel="72.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="521" fileDirectory="C:\Users\franc" functionName="read_data"/>
       <controlInputObjs>while.body</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
-      <validLinenumbers>509</validLinenumbers>
+      <validLinenumbers>521</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
@@ -264,17 +264,17 @@
   <regnodes realName="gmem_addr_reg_177">
     <nodeIds>13</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln511_reg_188">
-    <nodeIds>24</nodeIds>
-  </regnodes>
   <regnodes realName="or_ln174_s_reg_183">
     <nodeIds>19</nodeIds>
   </regnodes>
+  <regnodes realName="icmp_ln523_reg_188">
+    <nodeIds>24</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln523_fu_171">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="p_cast_fu_116">
     <nodeIds>11</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln511_fu_171">
-    <nodeIds>24</nodeIds>
   </expressionNodes>
   <expressionNodes realName="gmem_addr_fu_130">
     <nodeIds>13</nodeIds>
@@ -812,7 +812,7 @@
       <basicBlocks>21</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="3" mTag="VITIS_LOOP_509_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+    <cfgRegions mId="3" mTag="VITIS_LOOP_521_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
       <basicBlocks>26</basicBlocks>
       <basicBlocks>31</basicBlocks>
       <basicBlocks>33</basicBlocks>

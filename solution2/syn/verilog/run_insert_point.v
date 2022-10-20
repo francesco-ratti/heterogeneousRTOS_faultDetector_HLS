@@ -416,16 +416,16 @@ reg   [11:0] regions_center_0_addr_24_reg_3427;
 reg   [11:0] regions_center_1_addr_32_reg_3432;
 wire   [3:0] add_ln348_fu_2540_p2;
 reg   [3:0] add_ln348_reg_3440;
-wire   [31:0] tmp_114_fu_2546_p4;
-reg   [31:0] tmp_114_reg_3445;
+wire   [31:0] tmp_116_fu_2546_p4;
+reg   [31:0] tmp_116_reg_3445;
 wire    ap_CS_fsm_state8;
-wire   [31:0] tmp_115_fu_2556_p4;
-reg   [31:0] tmp_115_reg_3454;
-wire   [31:0] tmp_116_fu_2648_p4;
-reg   [31:0] tmp_116_reg_3464;
+wire   [31:0] tmp_117_fu_2556_p4;
+reg   [31:0] tmp_117_reg_3454;
+wire   [31:0] tmp_118_fu_2648_p4;
+reg   [31:0] tmp_118_reg_3464;
 wire    ap_CS_fsm_state10;
-wire   [31:0] tmp_117_fu_2658_p4;
-reg   [31:0] tmp_117_reg_3473;
+wire   [31:0] tmp_119_fu_2658_p4;
+reg   [31:0] tmp_119_reg_3473;
 wire   [31:0] grp_fu_1011_p2;
 reg   [31:0] add_reg_3483;
 wire    ap_CS_fsm_state15;
@@ -497,10 +497,10 @@ wire   [31:0] grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_di
 wire   [31:0] grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_din1;
 wire   [4:0] grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_opcode;
 wire    grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_ce;
-reg   [31:0] empty_55_reg_955;
+reg   [31:0] empty_58_reg_955;
 wire    ap_CS_fsm_state9;
 wire   [0:0] and_ln349_1_fu_2642_p2;
-reg   [31:0] empty_56_reg_965;
+reg   [31:0] empty_59_reg_965;
 wire    ap_CS_fsm_state11;
 wire   [0:0] and_ln352_1_fu_2744_p2;
 reg   [7:0] n_regions_new_0_reg_975;
@@ -1042,7 +1042,7 @@ mux_21_32_1_1_U51(
     .din0(regions_min_0_q1),
     .din1(regions_min_1_q1),
     .din2(trunc_ln251_2_reg_3088),
-    .dout(tmp_114_fu_2546_p4)
+    .dout(tmp_116_fu_2546_p4)
 );
 
 run_mux_21_32_1_1 #(
@@ -1056,7 +1056,7 @@ mux_21_32_1_1_U52(
     .din0(regions_min_0_q0),
     .din1(regions_min_1_q0),
     .din2(trunc_ln251_reg_3082),
-    .dout(tmp_115_fu_2556_p4)
+    .dout(tmp_117_fu_2556_p4)
 );
 
 run_mux_21_32_1_1 #(
@@ -1070,7 +1070,7 @@ mux_21_32_1_1_U53(
     .din0(regions_max_0_q1),
     .din1(regions_max_1_q0),
     .din2(trunc_ln251_2_reg_3088),
-    .dout(tmp_116_fu_2648_p4)
+    .dout(tmp_118_fu_2648_p4)
 );
 
 run_mux_21_32_1_1 #(
@@ -1084,7 +1084,7 @@ mux_21_32_1_1_U54(
     .din0(regions_max_0_q0),
     .din1(regions_max_1_q1),
     .din2(trunc_ln251_reg_3082),
-    .dout(tmp_117_fu_2658_p4)
+    .dout(tmp_119_fu_2658_p4)
 );
 
 always @ (posedge ap_clk) begin
@@ -1110,9 +1110,9 @@ end
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
         if ((1'd0 == and_ln349_1_fu_2642_p2)) begin
-            empty_55_reg_955 <= tmp_115_reg_3454;
+            empty_58_reg_955 <= tmp_117_reg_3454;
         end else if ((1'd1 == and_ln349_1_fu_2642_p2)) begin
-            empty_55_reg_955 <= tmp_114_reg_3445;
+            empty_58_reg_955 <= tmp_116_reg_3445;
         end
     end
 end
@@ -1120,9 +1120,9 @@ end
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state11)) begin
         if ((1'd0 == and_ln352_1_fu_2744_p2)) begin
-            empty_56_reg_965 <= tmp_117_reg_3473;
+            empty_59_reg_965 <= tmp_119_reg_3473;
         end else if ((1'd1 == and_ln352_1_fu_2744_p2)) begin
-            empty_56_reg_965 <= tmp_116_reg_3464;
+            empty_59_reg_965 <= tmp_118_reg_3464;
         end
     end
 end
@@ -1346,15 +1346,15 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        tmp_114_reg_3445 <= tmp_114_fu_2546_p4;
-        tmp_115_reg_3454 <= tmp_115_fu_2556_p4;
+        tmp_116_reg_3445 <= tmp_116_fu_2546_p4;
+        tmp_117_reg_3454 <= tmp_117_fu_2556_p4;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state10)) begin
-        tmp_116_reg_3464 <= tmp_116_fu_2648_p4;
-        tmp_117_reg_3473 <= tmp_117_fu_2658_p4;
+        tmp_118_reg_3464 <= tmp_118_fu_2648_p4;
+        tmp_119_reg_3473 <= tmp_119_fu_2658_p4;
     end
 end
 
@@ -1483,7 +1483,7 @@ always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
         grp_fu_1011_p0 = grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        grp_fu_1011_p0 = empty_56_reg_965;
+        grp_fu_1011_p0 = empty_59_reg_965;
     end else begin
         grp_fu_1011_p0 = 'bx;
     end
@@ -1493,7 +1493,7 @@ always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
         grp_fu_1011_p1 = grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state12)) begin
-        grp_fu_1011_p1 = empty_55_reg_955;
+        grp_fu_1011_p1 = empty_58_reg_955;
     end else begin
         grp_fu_1011_p1 = 'bx;
     end
@@ -1553,9 +1553,9 @@ always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
         grp_fu_1022_p0 = grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state10)) begin
-        grp_fu_1022_p0 = tmp_116_fu_2648_p4;
+        grp_fu_1022_p0 = tmp_118_fu_2648_p4;
     end else if ((1'b1 == ap_CS_fsm_state8)) begin
-        grp_fu_1022_p0 = tmp_114_fu_2546_p4;
+        grp_fu_1022_p0 = tmp_116_fu_2546_p4;
     end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_1022_p0 = p_x_assign_fu_1431_p10;
     end else begin
@@ -1567,9 +1567,9 @@ always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
         grp_fu_1022_p1 = grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state10)) begin
-        grp_fu_1022_p1 = tmp_117_fu_2658_p4;
+        grp_fu_1022_p1 = tmp_119_fu_2658_p4;
     end else if ((1'b1 == ap_CS_fsm_state8)) begin
-        grp_fu_1022_p1 = tmp_115_fu_2556_p4;
+        grp_fu_1022_p1 = tmp_117_fu_2556_p4;
     end else if ((1'b1 == ap_CS_fsm_state2)) begin
         grp_fu_1022_p1 = 32'd0;
     end else begin
@@ -1971,7 +1971,7 @@ always @ (*) begin
     end else if (((1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state22))) begin
         regions_max_0_d1 = reg_1049;
     end else if ((1'b1 == ap_CS_fsm_state11)) begin
-        regions_max_0_d1 = tmp_116_reg_3464;
+        regions_max_0_d1 = tmp_118_reg_3464;
     end else begin
         regions_max_0_d1 = 'bx;
     end
@@ -2089,7 +2089,7 @@ always @ (*) begin
     end else if (((1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state22))) begin
         regions_max_1_d1 = reg_1049;
     end else if ((1'b1 == ap_CS_fsm_state11)) begin
-        regions_max_1_d1 = tmp_116_reg_3464;
+        regions_max_1_d1 = tmp_118_reg_3464;
     end else begin
         regions_max_1_d1 = 'bx;
     end
@@ -2193,7 +2193,7 @@ always @ (*) begin
     end else if (((1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state22))) begin
         regions_min_0_d1 = reg_1037;
     end else if ((1'b1 == ap_CS_fsm_state9)) begin
-        regions_min_0_d1 = tmp_114_reg_3445;
+        regions_min_0_d1 = tmp_116_reg_3445;
     end else begin
         regions_min_0_d1 = 'bx;
     end
@@ -2313,7 +2313,7 @@ always @ (*) begin
     end else if (((1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state22))) begin
         regions_min_1_d1 = reg_1037;
     end else if ((1'b1 == ap_CS_fsm_state9)) begin
-        regions_min_1_d1 = tmp_114_reg_3445;
+        regions_min_1_d1 = tmp_116_reg_3445;
     end else begin
         regions_min_1_d1 = 'bx;
     end
@@ -2595,13 +2595,13 @@ assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
 
 assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
-assign bitcast_ln349_1_fu_2583_p1 = tmp_115_reg_3454;
+assign bitcast_ln349_1_fu_2583_p1 = tmp_117_reg_3454;
 
-assign bitcast_ln349_fu_2566_p1 = tmp_114_reg_3445;
+assign bitcast_ln349_fu_2566_p1 = tmp_116_reg_3445;
 
-assign bitcast_ln352_1_fu_2685_p1 = tmp_117_reg_3473;
+assign bitcast_ln352_1_fu_2685_p1 = tmp_119_reg_3473;
 
-assign bitcast_ln352_fu_2668_p1 = tmp_116_reg_3464;
+assign bitcast_ln352_fu_2668_p1 = tmp_118_reg_3464;
 
 assign bitcast_ln73_fu_1448_p1 = p_x_assign_fu_1431_p10;
 

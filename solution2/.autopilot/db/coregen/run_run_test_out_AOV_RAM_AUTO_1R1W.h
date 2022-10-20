@@ -3,8 +3,8 @@
 // Tool Version Limit: 2022.04
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
-#ifndef __run_run_test_outcome_AOV_RAM_AUTO_1R1W_H__
-#define __run_run_test_outcome_AOV_RAM_AUTO_1R1W_H__
+#ifndef __run_run_test_out_AOV_RAM_AUTO_1R1W_H__
+#define __run_run_test_out_AOV_RAM_AUTO_1R1W_H__
 
 
 #include <systemc>
@@ -17,7 +17,7 @@ using namespace sc_dt;
 #include <iostream>
 #include <fstream>
 
-struct run_run_test_outcome_AOV_RAM_AUTO_1R1W_ram : public sc_core::sc_module {
+struct run_run_test_out_AOV_RAM_AUTO_1R1W_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 32;
   static const unsigned AddressRange = 8;
@@ -41,7 +41,7 @@ sc_core::sc_in<bool> clk;
 sc_lv<DataWidth> ram[AddressRange];
 
 
-   SC_CTOR(run_run_test_outcome_AOV_RAM_AUTO_1R1W_ram) {
+   SC_CTOR(run_run_test_out_AOV_RAM_AUTO_1R1W_ram) {
 
 
 SC_METHOD(prc_write_0);
@@ -92,7 +92,7 @@ void prc_write_1()
 }; //endmodule
 
 
-SC_MODULE(run_run_test_outcome_AOV_RAM_AUTO_1R1W) {
+SC_MODULE(run_run_test_out_AOV_RAM_AUTO_1R1W) {
 
 
 static const unsigned DataWidth = 32;
@@ -111,11 +111,11 @@ sc_core::sc_in<sc_logic> reset;
 sc_core::sc_in<bool> clk;
 
 
-run_run_test_outcome_AOV_RAM_AUTO_1R1W_ram* meminst;
+run_run_test_out_AOV_RAM_AUTO_1R1W_ram* meminst;
 
 
-SC_CTOR(run_run_test_outcome_AOV_RAM_AUTO_1R1W) {
-meminst = new run_run_test_outcome_AOV_RAM_AUTO_1R1W_ram("run_run_test_outcome_AOV_RAM_AUTO_1R1W_ram");
+SC_CTOR(run_run_test_out_AOV_RAM_AUTO_1R1W) {
+meminst = new run_run_test_out_AOV_RAM_AUTO_1R1W_ram("run_run_test_out_AOV_RAM_AUTO_1R1W_ram");
 meminst->address0(address0);
 meminst->ce0(ce0);
 meminst->q0(q0);
@@ -129,7 +129,7 @@ meminst->q1(q1);
 meminst->reset(reset);
 meminst->clk(clk);
 }
-~run_run_test_outcome_AOV_RAM_AUTO_1R1W() {
+~run_run_test_out_AOV_RAM_AUTO_1R1W() {
     delete meminst;
 }
 

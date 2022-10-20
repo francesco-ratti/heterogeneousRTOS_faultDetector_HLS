@@ -45,6 +45,7 @@ port (
     errorInTask_ce0       :in   STD_LOGIC;
     errorInTask_we0       :in   STD_LOGIC;
     errorInTask_d0        :in   STD_LOGIC_VECTOR(7 downto 0);
+    errorInTask_q0        :out  STD_LOGIC_VECTOR(7 downto 0);
     trainedRegion_i       :out  STD_LOGIC_VECTOR(767 downto 0);
     trainedRegion_o       :in   STD_LOGIC_VECTOR(767 downto 0);
     IOCheckIdx            :out  STD_LOGIC_VECTOR(7 downto 0);
@@ -52,11 +53,9 @@ port (
     n_regions_in_i        :out  STD_LOGIC_VECTOR(7 downto 0);
     n_regions_in_o        :in   STD_LOGIC_VECTOR(7 downto 0);
     failedTask            :out  STD_LOGIC_VECTOR(15 downto 0);
-    failedTask_ap_vld     :out  STD_LOGIC;
-    failedTask_ap_ack     :in   STD_LOGIC;
     outcomeInRam_address0 :in   STD_LOGIC_VECTOR(3 downto 0);
     outcomeInRam_ce0      :in   STD_LOGIC;
-    outcomeInRam_we0      :in   STD_LOGIC;
+    outcomeInRam_we0      :in   STD_LOGIC_VECTOR(35 downto 0);
     outcomeInRam_d0       :in   STD_LOGIC_VECTOR(287 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
@@ -223,13 +222,10 @@ end entity run_control_s_axi;
 --         bit 7~0 - n_regions_in_o[7:0] (Read)
 --         others  - reserved
 -- 0x198 : reserved
--- 0x19c : Data signal of failedTask
+-- 0x1a0 : Data signal of failedTask
 --         bit 15~0 - failedTask[15:0] (Read/Write)
 --         others   - reserved
--- 0x1a0 : Control signal of failedTask
---         bit 0  - failedTask_ap_vld (Read/Write/COH)
---         bit 1  - failedTask_ap_ack (Read)
---         others - reserved
+-- 0x1a4 : reserved
 -- 0x040 ~
 -- 0x04f : Memory 'errorInTask' (16 * 8b)
 --         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -332,8 +328,8 @@ architecture behave of run_control_s_axi is
     constant ADDR_N_REGIONS_IN_I_CTRL     : INTEGER := 16#190#;
     constant ADDR_N_REGIONS_IN_O_DATA_0   : INTEGER := 16#194#;
     constant ADDR_N_REGIONS_IN_O_CTRL     : INTEGER := 16#198#;
-    constant ADDR_FAILEDTASK_DATA_0       : INTEGER := 16#19c#;
-    constant ADDR_FAILEDTASK_CTRL         : INTEGER := 16#1a0#;
+    constant ADDR_FAILEDTASK_DATA_0       : INTEGER := 16#1a0#;
+    constant ADDR_FAILEDTASK_CTRL         : INTEGER := 16#1a4#;
     constant ADDR_ERRORINTASK_BASE        : INTEGER := 16#040#;
     constant ADDR_ERRORINTASK_HIGH        : INTEGER := 16#04f#;
     constant ADDR_OUTCOMEINRAM_BASE       : INTEGER := 16#400#;
@@ -382,8 +378,6 @@ architecture behave of run_control_s_axi is
     signal int_n_regions_in_i  : UNSIGNED(7 downto 0) := (others => '0');
     signal int_n_regions_in_o  : UNSIGNED(7 downto 0) := (others => '0');
     signal int_failedTask      : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_failedTask_ap_vld : STD_LOGIC;
-    signal int_failedTask_ap_ack : STD_LOGIC;
     -- memory signals
     signal int_errorInTask_address0 : UNSIGNED(1 downto 0);
     signal int_errorInTask_ce0 : STD_LOGIC;
@@ -736,9 +730,6 @@ port map (
                         rdata_data <= RESIZE(int_n_regions_in_o(7 downto 0), 32);
                     when ADDR_FAILEDTASK_DATA_0 =>
                         rdata_data <= RESIZE(int_failedTask(15 downto 0), 32);
-                    when ADDR_FAILEDTASK_CTRL =>
-                        rdata_data(1) <= not int_failedTask_ap_vld;
-                        rdata_data(0) <= int_failedTask_ap_vld;
                     when others =>
                         NULL;
                     end case;
@@ -769,8 +760,6 @@ port map (
     IORegionIdx          <= STD_LOGIC_VECTOR(int_IORegionIdx);
     n_regions_in_i       <= STD_LOGIC_VECTOR(int_n_regions_in_i);
     failedTask           <= STD_LOGIC_VECTOR(int_failedTask);
-    failedTask_ap_vld    <= int_failedTask_ap_vld;
-    int_failedTask_ap_ack <= failedTask_ap_ack;
 
     process (ACLK)
     begin
@@ -1391,26 +1380,14 @@ port map (
         end if;
     end process;
 
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_failedTask_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_FAILEDTASK_CTRL and WSTRB(0) = '1' and WDATA(0) = '1') then
-                    int_failedTask_ap_vld <= '1';
-                elsif (int_failedTask_ap_ack = '1') then
-                    int_failedTask_ap_vld <= '0'; -- clear on handshake
-                end if;
-            end if;
-        end if;
-    end process;
-
 
 -- ----------------------- Memory logic ------------------
     -- errorInTask
     int_errorInTask_address0 <= SHIFT_RIGHT(UNSIGNED(errorInTask_address0), 2)(1 downto 0);
     int_errorInTask_ce0  <= errorInTask_ce0;
+    int_errorInTask_be0  <= SHIFT_LEFT(TO_UNSIGNED(1, 4), TO_INTEGER(UNSIGNED(errorInTask_address0(1 downto 0)))) when errorInTask_we0 = '1' else (others=>'0');
+    int_errorInTask_d0   <= UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0);
+    errorInTask_q0       <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_errorInTask_q0, TO_INTEGER(int_errorInTask_shift0) * 8)(7 downto 0));
     int_errorInTask_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
     int_errorInTask_ce1  <= '1' when ar_hs = '1' or (int_errorInTask_write = '1' and WVALID  = '1') else '0';
     int_errorInTask_we1  <= '1' when int_errorInTask_write = '1' and w_hs = '1' else '0';

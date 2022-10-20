@@ -37,8 +37,8 @@
 <Resources>
 <BRAM_18K>48</BRAM_18K>
 <DSP>22</DSP>
-<FF>15372</FF>
-<LUT>25197</LUT>
+<FF>15828</FF>
+<LUT>25436</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

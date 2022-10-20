@@ -59,6 +59,11 @@ port (
     m_axi_gmem_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
     inputAOV : IN STD_LOGIC_VECTOR (63 downto 0);
     startCopy : IN STD_LOGIC_VECTOR (7 downto 0);
+    errorInTask_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    errorInTask_ce0 : OUT STD_LOGIC;
+    errorInTask_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    errorInTask_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    errorInTask_we0 : OUT STD_LOGIC;
     copying : OUT STD_LOGIC_VECTOR (7 downto 0);
     p_ZL9n_regions_0_i : IN STD_LOGIC_VECTOR (7 downto 0);
     p_ZL9n_regions_0_o : OUT STD_LOGIC_VECTOR (7 downto 0);
@@ -255,7 +260,6 @@ port (
     startCopy_ap_ack : OUT STD_LOGIC;
     copying_ap_vld : OUT STD_LOGIC;
     ap_start : IN STD_LOGIC;
-    ap_done : OUT STD_LOGIC;
     p_ZL9n_regions_0_i_ap_vld : IN STD_LOGIC;
     p_ZL9n_regions_0_o_ap_vld : OUT STD_LOGIC;
     p_ZL9n_regions_1_i_ap_vld : IN STD_LOGIC;
@@ -384,6 +388,7 @@ port (
     p_ZL9n_regions_62_o_ap_vld : OUT STD_LOGIC;
     p_ZL9n_regions_63_i_ap_vld : IN STD_LOGIC;
     p_ZL9n_regions_63_o_ap_vld : OUT STD_LOGIC;
+    ap_done : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_continue : IN STD_LOGIC );
@@ -391,6 +396,7 @@ end;
 
 
 architecture behav of run_runTest is 
+    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_logic_1 : STD_LOGIC := '1';
@@ -398,7 +404,6 @@ architecture behav of run_runTest is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
-    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_lv512_lc_1 : STD_LOGIC_VECTOR (511 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
@@ -445,14 +450,13 @@ attribute shreg_extract : string;
     signal read_data_U0_startCopy_ap_ack : STD_LOGIC;
     signal read_data_U0_copying : STD_LOGIC_VECTOR (7 downto 0);
     signal read_data_U0_copying_ap_vld : STD_LOGIC;
-    signal ap_sync_continue : STD_LOGIC;
     signal run_test_U0_ap_start : STD_LOGIC;
     signal run_test_U0_ap_done : STD_LOGIC;
     signal run_test_U0_ap_continue : STD_LOGIC;
     signal run_test_U0_ap_idle : STD_LOGIC;
     signal run_test_U0_ap_ready : STD_LOGIC;
     signal run_test_U0_copyDest_read : STD_LOGIC;
-    signal run_test_U0_outcomeStream_din : STD_LOGIC_VECTOR (287 downto 0);
+    signal run_test_U0_outcomeStream_din : STD_LOGIC_VECTOR (296 downto 0);
     signal run_test_U0_outcomeStream_write : STD_LOGIC;
     signal run_test_U0_p_ZL9n_regions_0_o : STD_LOGIC_VECTOR (7 downto 0);
     signal run_test_U0_p_ZL9n_regions_1_o : STD_LOGIC_VECTOR (7 downto 0);
@@ -572,6 +576,10 @@ attribute shreg_extract : string;
     signal writeOutcome_U0_ap_continue : STD_LOGIC;
     signal writeOutcome_U0_ap_idle : STD_LOGIC;
     signal writeOutcome_U0_ap_ready : STD_LOGIC;
+    signal writeOutcome_U0_errorInTask_address0 : STD_LOGIC_VECTOR (3 downto 0);
+    signal writeOutcome_U0_errorInTask_ce0 : STD_LOGIC;
+    signal writeOutcome_U0_errorInTask_we0 : STD_LOGIC;
+    signal writeOutcome_U0_errorInTask_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal writeOutcome_U0_outcomeStream_read : STD_LOGIC;
     signal ap_sync_reg_writeOutcome_U0_ap_start : STD_LOGIC := '0';
     signal copyDest_full_n : STD_LOGIC;
@@ -580,11 +588,10 @@ attribute shreg_extract : string;
     signal copyDest_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal copyDest_empty_n : STD_LOGIC;
     signal outcomeStream_full_n : STD_LOGIC;
-    signal outcomeStream_dout : STD_LOGIC_VECTOR (287 downto 0);
+    signal outcomeStream_dout : STD_LOGIC_VECTOR (296 downto 0);
     signal outcomeStream_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal outcomeStream_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal outcomeStream_empty_n : STD_LOGIC;
-    signal ap_sync_done : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
     component run_read_data IS
@@ -670,7 +677,7 @@ attribute shreg_extract : string;
         copyDest_fifo_cap : IN STD_LOGIC_VECTOR (1 downto 0);
         copyDest_empty_n : IN STD_LOGIC;
         copyDest_read : OUT STD_LOGIC;
-        outcomeStream_din : OUT STD_LOGIC_VECTOR (287 downto 0);
+        outcomeStream_din : OUT STD_LOGIC_VECTOR (296 downto 0);
         outcomeStream_num_data_valid : IN STD_LOGIC_VECTOR (1 downto 0);
         outcomeStream_fifo_cap : IN STD_LOGIC_VECTOR (1 downto 0);
         outcomeStream_full_n : IN STD_LOGIC;
@@ -875,7 +882,12 @@ attribute shreg_extract : string;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        outcomeStream_dout : IN STD_LOGIC_VECTOR (287 downto 0);
+        errorInTask_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+        errorInTask_ce0 : OUT STD_LOGIC;
+        errorInTask_we0 : OUT STD_LOGIC;
+        errorInTask_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        errorInTask_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        outcomeStream_dout : IN STD_LOGIC_VECTOR (296 downto 0);
         outcomeStream_num_data_valid : IN STD_LOGIC_VECTOR (1 downto 0);
         outcomeStream_fifo_cap : IN STD_LOGIC_VECTOR (1 downto 0);
         outcomeStream_empty_n : IN STD_LOGIC;
@@ -900,16 +912,16 @@ attribute shreg_extract : string;
     end component;
 
 
-    component run_fifo_w288_d1_S IS
+    component run_fifo_w297_d1_S IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (287 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (296 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (287 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (296 downto 0);
         if_num_data_valid : OUT STD_LOGIC_VECTOR (1 downto 0);
         if_fifo_cap : OUT STD_LOGIC_VECTOR (1 downto 0);
         if_empty_n : OUT STD_LOGIC;
@@ -1203,6 +1215,11 @@ begin
         ap_continue => writeOutcome_U0_ap_continue,
         ap_idle => writeOutcome_U0_ap_idle,
         ap_ready => writeOutcome_U0_ap_ready,
+        errorInTask_address0 => writeOutcome_U0_errorInTask_address0,
+        errorInTask_ce0 => writeOutcome_U0_errorInTask_ce0,
+        errorInTask_we0 => writeOutcome_U0_errorInTask_we0,
+        errorInTask_d0 => writeOutcome_U0_errorInTask_d0,
+        errorInTask_q0 => errorInTask_q0,
         outcomeStream_dout => outcomeStream_dout,
         outcomeStream_num_data_valid => outcomeStream_num_data_valid,
         outcomeStream_fifo_cap => outcomeStream_fifo_cap,
@@ -1224,7 +1241,7 @@ begin
         if_empty_n => copyDest_empty_n,
         if_read => run_test_U0_copyDest_read);
 
-    outcomeStream_U : component run_fifo_w288_d1_S
+    outcomeStream_U : component run_fifo_w297_d1_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -1270,13 +1287,15 @@ begin
         end if;
     end process;
 
-    ap_done <= ap_sync_done;
+    ap_done <= writeOutcome_U0_ap_done;
     ap_idle <= (writeOutcome_U0_ap_idle and run_test_U0_ap_idle and read_data_U0_ap_idle);
     ap_ready <= read_data_U0_ap_ready;
-    ap_sync_continue <= (ap_sync_done and ap_continue);
-    ap_sync_done <= (writeOutcome_U0_ap_done and run_test_U0_ap_done and read_data_U0_ap_done);
     copying <= read_data_U0_copying;
     copying_ap_vld <= read_data_U0_copying_ap_vld;
+    errorInTask_address0 <= writeOutcome_U0_errorInTask_address0;
+    errorInTask_ce0 <= writeOutcome_U0_errorInTask_ce0;
+    errorInTask_d0 <= writeOutcome_U0_errorInTask_d0;
+    errorInTask_we0 <= writeOutcome_U0_errorInTask_we0;
     m_axi_gmem_ARADDR <= read_data_U0_m_axi_gmem_ARADDR;
     m_axi_gmem_ARBURST <= read_data_U0_m_axi_gmem_ARBURST;
     m_axi_gmem_ARCACHE <= read_data_U0_m_axi_gmem_ARCACHE;
@@ -1437,7 +1456,7 @@ begin
     p_ZL9n_regions_8_o_ap_vld <= ap_const_logic_1;
     p_ZL9n_regions_9_o <= run_test_U0_p_ZL9n_regions_9_o;
     p_ZL9n_regions_9_o_ap_vld <= ap_const_logic_1;
-    read_data_U0_ap_continue <= ap_sync_continue;
+    read_data_U0_ap_continue <= ap_const_logic_1;
     read_data_U0_ap_start <= ap_start;
     regions_1_address0 <= run_test_U0_regions_1_address0;
     regions_1_address1 <= run_test_U0_regions_1_address1;
@@ -1487,9 +1506,9 @@ begin
     regions_d1 <= run_test_U0_regions_d1;
     regions_we0 <= run_test_U0_regions_we0;
     regions_we1 <= run_test_U0_regions_we1;
-    run_test_U0_ap_continue <= ap_sync_continue;
+    run_test_U0_ap_continue <= ap_const_logic_1;
     run_test_U0_ap_start <= (ap_sync_reg_run_test_U0_ap_start or ap_start);
     startCopy_ap_ack <= read_data_U0_startCopy_ap_ack;
-    writeOutcome_U0_ap_continue <= ap_sync_continue;
+    writeOutcome_U0_ap_continue <= ap_continue;
     writeOutcome_U0_ap_start <= (ap_sync_reg_writeOutcome_U0_ap_start or ap_start);
 end behav;

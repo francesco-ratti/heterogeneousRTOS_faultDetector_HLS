@@ -16,7 +16,7 @@
     <arg id="8" name="IOCheckIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x17C" size="0x4" type="unsigned int"/>
     <arg id="9" name="IORegionIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x184" size="0x4" type="unsigned int"/>
     <arg id="10" name="n_regions_in" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x18C" size="0x4" type="void*"/>
-    <arg id="11" name="failedTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x19C" size="0x4" type="void*"/>
+    <arg id="11" name="failedTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x2" offset="0x1A0" size="0x8" type="taskFailure*"/>
     </args>
     <compileWorkGroupSize x="1" y="1" z="1"/>
     <maxWorkGroupSize x="1" y="1" z="1"/>

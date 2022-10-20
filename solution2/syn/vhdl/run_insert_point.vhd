@@ -358,18 +358,18 @@ attribute shreg_extract : string;
     signal regions_center_1_addr_32_reg_3432 : STD_LOGIC_VECTOR (11 downto 0);
     signal add_ln348_fu_2540_p2 : STD_LOGIC_VECTOR (3 downto 0);
     signal add_ln348_reg_3440 : STD_LOGIC_VECTOR (3 downto 0);
-    signal tmp_114_fu_2546_p4 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_114_reg_3445 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_116_fu_2546_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_116_reg_3445 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state8 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state8 : signal is "none";
-    signal tmp_115_fu_2556_p4 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_115_reg_3454 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_116_fu_2648_p4 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_116_reg_3464 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_117_fu_2556_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_117_reg_3454 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_118_fu_2648_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_118_reg_3464 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state10 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state10 : signal is "none";
-    signal tmp_117_fu_2658_p4 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_117_reg_3473 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_119_fu_2658_p4 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_119_reg_3473 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_1011_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal add_reg_3483 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state15 : STD_LOGIC;
@@ -445,11 +445,11 @@ attribute shreg_extract : string;
     signal grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_din1 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_opcode : STD_LOGIC_VECTOR (4 downto 0);
     signal grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1032_p_ce : STD_LOGIC;
-    signal empty_55_reg_955 : STD_LOGIC_VECTOR (31 downto 0);
+    signal empty_58_reg_955 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
     signal and_ln349_1_fu_2642_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal empty_56_reg_965 : STD_LOGIC_VECTOR (31 downto 0);
+    signal empty_59_reg_965 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state11 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state11 : signal is "none";
     signal and_ln352_1_fu_2744_p2 : STD_LOGIC_VECTOR (0 downto 0);
@@ -1178,7 +1178,7 @@ begin
         din0 => regions_min_0_q1,
         din1 => regions_min_1_q1,
         din2 => trunc_ln251_2_reg_3088,
-        dout => tmp_114_fu_2546_p4);
+        dout => tmp_116_fu_2546_p4);
 
     mux_21_32_1_1_U52 : component run_mux_21_32_1_1
     generic map (
@@ -1192,7 +1192,7 @@ begin
         din0 => regions_min_0_q0,
         din1 => regions_min_1_q0,
         din2 => trunc_ln251_reg_3082,
-        dout => tmp_115_fu_2556_p4);
+        dout => tmp_117_fu_2556_p4);
 
     mux_21_32_1_1_U53 : component run_mux_21_32_1_1
     generic map (
@@ -1206,7 +1206,7 @@ begin
         din0 => regions_max_0_q1,
         din1 => regions_max_1_q0,
         din2 => trunc_ln251_2_reg_3088,
-        dout => tmp_116_fu_2648_p4);
+        dout => tmp_118_fu_2648_p4);
 
     mux_21_32_1_1_U54 : component run_mux_21_32_1_1
     generic map (
@@ -1220,7 +1220,7 @@ begin
         din0 => regions_max_0_q0,
         din1 => regions_max_1_q1,
         din2 => trunc_ln251_reg_3082,
-        dout => tmp_117_fu_2658_p4);
+        dout => tmp_119_fu_2658_p4);
 
 
 
@@ -1254,27 +1254,27 @@ begin
     end process;
 
 
-    empty_55_reg_955_assign_proc : process (ap_clk)
+    empty_58_reg_955_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state9)) then
                 if ((ap_const_lv1_0 = and_ln349_1_fu_2642_p2)) then 
-                    empty_55_reg_955 <= tmp_115_reg_3454;
+                    empty_58_reg_955 <= tmp_117_reg_3454;
                 elsif ((ap_const_lv1_1 = and_ln349_1_fu_2642_p2)) then 
-                    empty_55_reg_955 <= tmp_114_reg_3445;
+                    empty_58_reg_955 <= tmp_116_reg_3445;
                 end if;
             end if; 
         end if;
     end process;
 
-    empty_56_reg_965_assign_proc : process (ap_clk)
+    empty_59_reg_965_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state11)) then
                 if ((ap_const_lv1_0 = and_ln352_1_fu_2744_p2)) then 
-                    empty_56_reg_965 <= tmp_117_reg_3473;
+                    empty_59_reg_965 <= tmp_119_reg_3473;
                 elsif ((ap_const_lv1_1 = and_ln352_1_fu_2744_p2)) then 
-                    empty_56_reg_965 <= tmp_116_reg_3464;
+                    empty_59_reg_965 <= tmp_118_reg_3464;
                 end if;
             end if; 
         end if;
@@ -1536,8 +1536,8 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state8)) then
-                tmp_114_reg_3445 <= tmp_114_fu_2546_p4;
-                tmp_115_reg_3454 <= tmp_115_fu_2556_p4;
+                tmp_116_reg_3445 <= tmp_116_fu_2546_p4;
+                tmp_117_reg_3454 <= tmp_117_fu_2556_p4;
             end if;
         end if;
     end process;
@@ -1545,8 +1545,8 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state10)) then
-                tmp_116_reg_3464 <= tmp_116_fu_2648_p4;
-                tmp_117_reg_3473 <= tmp_117_fu_2658_p4;
+                tmp_118_reg_3464 <= tmp_118_fu_2648_p4;
+                tmp_119_reg_3473 <= tmp_119_fu_2658_p4;
             end if;
         end if;
     end process;
@@ -1896,10 +1896,10 @@ begin
         end if; 
     end process;
 
-    bitcast_ln349_1_fu_2583_p1 <= tmp_115_reg_3454;
-    bitcast_ln349_fu_2566_p1 <= tmp_114_reg_3445;
-    bitcast_ln352_1_fu_2685_p1 <= tmp_117_reg_3473;
-    bitcast_ln352_fu_2668_p1 <= tmp_116_reg_3464;
+    bitcast_ln349_1_fu_2583_p1 <= tmp_117_reg_3454;
+    bitcast_ln349_fu_2566_p1 <= tmp_116_reg_3445;
+    bitcast_ln352_1_fu_2685_p1 <= tmp_119_reg_3473;
+    bitcast_ln352_fu_2668_p1 <= tmp_118_reg_3464;
     bitcast_ln73_fu_1448_p1 <= p_x_assign_fu_1431_p10;
     empty_fu_1590_p1 <= n_regions_i(1 - 1 downto 0);
 
@@ -1925,24 +1925,24 @@ begin
     end process;
 
 
-    grp_fu_1011_p0_assign_proc : process(grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din0, empty_56_reg_965, ap_CS_fsm_state5, ap_CS_fsm_state12)
+    grp_fu_1011_p0_assign_proc : process(grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din0, empty_59_reg_965, ap_CS_fsm_state5, ap_CS_fsm_state12)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
             grp_fu_1011_p0 <= grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state12)) then 
-            grp_fu_1011_p0 <= empty_56_reg_965;
+            grp_fu_1011_p0 <= empty_59_reg_965;
         else 
             grp_fu_1011_p0 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    grp_fu_1011_p1_assign_proc : process(grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din1, empty_55_reg_955, ap_CS_fsm_state5, ap_CS_fsm_state12)
+    grp_fu_1011_p1_assign_proc : process(grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din1, empty_58_reg_955, ap_CS_fsm_state5, ap_CS_fsm_state12)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
             grp_fu_1011_p1 <= grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1011_p_din1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state12)) then 
-            grp_fu_1011_p1 <= empty_55_reg_955;
+            grp_fu_1011_p1 <= empty_58_reg_955;
         else 
             grp_fu_1011_p1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
@@ -2009,14 +2009,14 @@ begin
     end process;
 
 
-    grp_fu_1022_p0_assign_proc : process(ap_CS_fsm_state2, p_x_assign_fu_1431_p10, tmp_114_fu_2546_p4, ap_CS_fsm_state8, tmp_116_fu_2648_p4, ap_CS_fsm_state10, grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din0, ap_CS_fsm_state5)
+    grp_fu_1022_p0_assign_proc : process(ap_CS_fsm_state2, p_x_assign_fu_1431_p10, tmp_116_fu_2546_p4, ap_CS_fsm_state8, tmp_118_fu_2648_p4, ap_CS_fsm_state10, grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din0, ap_CS_fsm_state5)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
             grp_fu_1022_p0 <= grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
-            grp_fu_1022_p0 <= tmp_116_fu_2648_p4;
+            grp_fu_1022_p0 <= tmp_118_fu_2648_p4;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            grp_fu_1022_p0 <= tmp_114_fu_2546_p4;
+            grp_fu_1022_p0 <= tmp_116_fu_2546_p4;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_1022_p0 <= p_x_assign_fu_1431_p10;
         else 
@@ -2025,14 +2025,14 @@ begin
     end process;
 
 
-    grp_fu_1022_p1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state8, tmp_115_fu_2556_p4, ap_CS_fsm_state10, tmp_117_fu_2658_p4, grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din1, ap_CS_fsm_state5)
+    grp_fu_1022_p1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state8, tmp_117_fu_2556_p4, ap_CS_fsm_state10, tmp_119_fu_2658_p4, grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din1, ap_CS_fsm_state5)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
             grp_fu_1022_p1 <= grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_grp_fu_1022_p_din1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
-            grp_fu_1022_p1 <= tmp_117_fu_2658_p4;
+            grp_fu_1022_p1 <= tmp_119_fu_2658_p4;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            grp_fu_1022_p1 <= tmp_115_fu_2556_p4;
+            grp_fu_1022_p1 <= tmp_117_fu_2556_p4;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
             grp_fu_1022_p1 <= ap_const_lv32_0;
         else 
@@ -2578,7 +2578,7 @@ begin
     end process;
 
 
-    regions_max_0_d1_assign_proc : process(ap_CS_fsm_state22, reg_1049, tmp_116_reg_3464, regions_max_1_load_17_reg_3506, regions_max_1_load_19_reg_3542, ap_CS_fsm_state11, ap_CS_fsm_state25, ap_CS_fsm_state23, ap_CS_fsm_state24)
+    regions_max_0_d1_assign_proc : process(ap_CS_fsm_state22, reg_1049, tmp_118_reg_3464, regions_max_1_load_17_reg_3506, regions_max_1_load_19_reg_3542, ap_CS_fsm_state11, ap_CS_fsm_state25, ap_CS_fsm_state23, ap_CS_fsm_state24)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state24)) then 
             regions_max_0_d1 <= regions_max_1_load_19_reg_3542;
@@ -2587,7 +2587,7 @@ begin
         elsif (((ap_const_logic_1 = ap_CS_fsm_state25) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
             regions_max_0_d1 <= reg_1049;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state11)) then 
-            regions_max_0_d1 <= tmp_116_reg_3464;
+            regions_max_0_d1 <= tmp_118_reg_3464;
         else 
             regions_max_0_d1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
@@ -2712,7 +2712,7 @@ begin
     end process;
 
 
-    regions_max_1_d1_assign_proc : process(ap_CS_fsm_state22, reg_1049, tmp_116_reg_3464, regions_max_1_load_17_reg_3506, regions_max_1_load_19_reg_3542, ap_CS_fsm_state11, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state27)
+    regions_max_1_d1_assign_proc : process(ap_CS_fsm_state22, reg_1049, tmp_118_reg_3464, regions_max_1_load_17_reg_3506, regions_max_1_load_19_reg_3542, ap_CS_fsm_state11, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state27)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state27)) then 
             regions_max_1_d1 <= regions_max_1_load_19_reg_3542;
@@ -2721,7 +2721,7 @@ begin
         elsif (((ap_const_logic_1 = ap_CS_fsm_state25) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
             regions_max_1_d1 <= reg_1049;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state11)) then 
-            regions_max_1_d1 <= tmp_116_reg_3464;
+            regions_max_1_d1 <= tmp_118_reg_3464;
         else 
             regions_max_1_d1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
@@ -2832,7 +2832,7 @@ begin
     end process;
 
 
-    regions_min_0_d1_assign_proc : process(reg_1037, ap_CS_fsm_state22, tmp_114_reg_3445, regions_min_1_load_17_reg_3494, regions_min_1_load_19_reg_3530, ap_CS_fsm_state9, ap_CS_fsm_state25, ap_CS_fsm_state23, ap_CS_fsm_state24)
+    regions_min_0_d1_assign_proc : process(reg_1037, ap_CS_fsm_state22, tmp_116_reg_3445, regions_min_1_load_17_reg_3494, regions_min_1_load_19_reg_3530, ap_CS_fsm_state9, ap_CS_fsm_state25, ap_CS_fsm_state23, ap_CS_fsm_state24)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state24)) then 
             regions_min_0_d1 <= regions_min_1_load_19_reg_3530;
@@ -2841,7 +2841,7 @@ begin
         elsif (((ap_const_logic_1 = ap_CS_fsm_state25) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
             regions_min_0_d1 <= reg_1037;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            regions_min_0_d1 <= tmp_114_reg_3445;
+            regions_min_0_d1 <= tmp_116_reg_3445;
         else 
             regions_min_0_d1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
@@ -2968,7 +2968,7 @@ begin
     end process;
 
 
-    regions_min_1_d1_assign_proc : process(reg_1037, ap_CS_fsm_state22, tmp_114_reg_3445, regions_min_1_load_17_reg_3494, regions_min_1_load_19_reg_3530, ap_CS_fsm_state9, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state27)
+    regions_min_1_d1_assign_proc : process(reg_1037, ap_CS_fsm_state22, tmp_116_reg_3445, regions_min_1_load_17_reg_3494, regions_min_1_load_19_reg_3530, ap_CS_fsm_state9, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state27)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state27)) then 
             regions_min_1_d1 <= regions_min_1_load_19_reg_3530;
@@ -2977,7 +2977,7 @@ begin
         elsif (((ap_const_logic_1 = ap_CS_fsm_state25) or (ap_const_logic_1 = ap_CS_fsm_state22))) then 
             regions_min_1_d1 <= reg_1037;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            regions_min_1_d1 <= tmp_114_reg_3445;
+            regions_min_1_d1 <= tmp_116_reg_3445;
         else 
             regions_min_1_d1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 

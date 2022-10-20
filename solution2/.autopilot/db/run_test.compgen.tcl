@@ -361,7 +361,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 # Memory (RAM/ROM)  definition:
 set ID 93
 set hasByteEnable 0
-set MemName run_run_test_outcome_AOV_RAM_AUTO_1R1W
+set MemName run_run_test_out_AOV_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 32
@@ -584,7 +584,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_outcomeStream \
     op interface \
-    ports { outcomeStream_din { O 288 vector } outcomeStream_num_data_valid { I 2 vector } outcomeStream_fifo_cap { I 2 vector } outcomeStream_full_n { I 1 bit } outcomeStream_write { O 1 bit } } \
+    ports { outcomeStream_din { O 297 vector } outcomeStream_num_data_valid { I 2 vector } outcomeStream_fifo_cap { I 2 vector } outcomeStream_full_n { I 1 bit } outcomeStream_write { O 1 bit } } \
 } "
 }
 

@@ -383,7 +383,184 @@ static AESL_FILE_HANDLER aesl_fh;
     static unsigned AESL_transaction_pc = 0;
     string AESL_token;
     string AESL_num;
+#ifdef USE_BINARY_TV_FILE
 {
+transaction<8> tr(16);
+aesl_fh.read(AUTOTB_TVOUT_PC_errorInTask, tr.p, tr.tbytes);
+if (little_endian()) { tr.reorder(); }
+tr.send<1>((char*)__xlx_apatb_param_errorInTask, 16);
+}
+#else
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_errorInTask);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<8> > errorInTask_pc_buffer(16);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              errorInTask_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "errorInTask" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {{
+            int i = 0;
+            for (int j = 0, e = 16; j < e; j += 1, ++i) {((char*)__xlx_apatb_param_errorInTask)[j*1+0] = errorInTask_pc_buffer[i].range(7, 0).to_int64();
+}}}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  #endif
+#ifdef USE_BINARY_TV_FILE
+{
+transaction<288> tr(16);
+aesl_fh.read(AUTOTB_TVOUT_PC_outcomeInRam, tr.p, tr.tbytes);
+if (little_endian()) { tr.reorder(); }
+tr.send<36>((char*)__xlx_apatb_param_outcomeInRam, 16);
+}
+#else
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_outcomeInRam);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<288> > outcomeInRam_pc_buffer(16);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              outcomeInRam_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "outcomeInRam" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {{
+            int i = 0;
+            for (int j = 0, e = 16; j < e; j += 1, ++i) {((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+0] = outcomeInRam_pc_buffer[i].range(31,0).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+1] = outcomeInRam_pc_buffer[i].range(63,32).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+2] = outcomeInRam_pc_buffer[i].range(95,64).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+3] = outcomeInRam_pc_buffer[i].range(127,96).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+4] = outcomeInRam_pc_buffer[i].range(159,128).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+5] = outcomeInRam_pc_buffer[i].range(191,160).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+6] = outcomeInRam_pc_buffer[i].range(223,192).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+7] = outcomeInRam_pc_buffer[i].range(255,224).to_int64();
+((int*)(((__cosim_s36__*)__xlx_apatb_param_outcomeInRam) + j))[0*9+8] = outcomeInRam_pc_buffer[i].range(287,256).to_int64();
+}}}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  #endif
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_failedTask);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<16> > failedTask_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              failedTask_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "failedTask" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {{
+            int i = 0;
+            for (int j = 0, e = 1; j < e; j += 1, ++i) {((char*)__xlx_apatb_param_failedTask)[j*2+0] = failedTask_pc_buffer[i].range(7, 0).to_int64();
+((char*)__xlx_apatb_param_failedTask)[j*2+1] = failedTask_pc_buffer[i].range(15, 8).to_int64();
+}}}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  {
       static ifstream rtl_tv_out_file;
       if (!rtl_tv_out_file.is_open()) {
         rtl_tv_out_file.open(AUTOTB_TVOUT_PC_copying);
@@ -614,6 +791,25 @@ aesl_fh.write(AUTOTB_TVIN_outcomeInRam, end_str());
 }
 
 #endif
+unsigned __xlx_offset_byte_param_failedTask = 0;
+// print failedTask Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_failedTask, begin_str(AESL_transaction));
+{
+  __xlx_offset_byte_param_failedTask = 0*2;
+if (__xlx_apatb_param_failedTask) {
+for (size_t i = 0; i < 1; ++i) {
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_failedTask + i * 2;
+std::string s = formatData(pos, 16);
+aesl_fh.write(AUTOTB_TVIN_failedTask, s);
+}
+}
+}
+
+  tcl_file.set_num(1, &tcl_file.failedTask_depth);
+aesl_fh.write(AUTOTB_TVIN_failedTask, end_str());
+}
+
 aesl_fh.touch(AUTOTB_TVIN_gmem);
 {
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
@@ -727,20 +923,91 @@ aesl_fh.write(AUTOTB_TVIN_n_regions_in, formatData(pos, 8));
 aesl_fh.write(AUTOTB_TVIN_n_regions_in, end_str());
 }
 
-// print failedTask Transactions
-{
-aesl_fh.write(AUTOTB_TVIN_failedTask, begin_str(AESL_transaction));
-{
-auto *pos = (unsigned char*)__xlx_apatb_param_failedTask;
-aesl_fh.write(AUTOTB_TVIN_failedTask, formatData(pos, 16));
-}
-  tcl_file.set_num(1, &tcl_file.failedTask_depth);
-aesl_fh.write(AUTOTB_TVIN_failedTask, end_str());
-}
-
 CodeState = CALL_C_DUT;
 run_hw_stub_wrapper(__xlx_apatb_param_accel_mode, __xlx_apatb_param_copying, __xlx_apatb_param_inputData, __xlx_apatb_param_startCopy, __xlx_apatb_param_errorInTask, __xlx_apatb_param_outcomeInRam, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, __xlx_apatb_param_IOCheckIdx, __xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
 CodeState = DUMP_OUTPUTS;
+#ifdef USE_BINARY_TV_FILE
+{
+aesl_fh.touch(AUTOTB_TVOUT_errorInTask, 'b');
+transaction<8> tr(16);
+  __xlx_offset_byte_param_errorInTask = 0*1;
+  if (__xlx_apatb_param_errorInTask) {
+tr.import<1>((char*)__xlx_apatb_param_errorInTask, 16, 0);
+  }
+aesl_fh.write(AUTOTB_TVOUT_errorInTask, tr.p, tr.tbytes);
+}
+
+  tcl_file.set_num(16, &tcl_file.errorInTask_depth);
+#else
+// print errorInTask Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_errorInTask, begin_str(AESL_transaction));
+{
+  __xlx_offset_byte_param_errorInTask = 0*1;
+if (__xlx_apatb_param_errorInTask) {
+for (size_t i = 0; i < 16; ++i) {
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_errorInTask + i * 1;
+std::string s = formatData(pos, 8);
+aesl_fh.write(AUTOTB_TVOUT_errorInTask, s);
+}
+}
+}
+
+  tcl_file.set_num(16, &tcl_file.errorInTask_depth);
+aesl_fh.write(AUTOTB_TVOUT_errorInTask, end_str());
+}
+
+#endif
+#ifdef USE_BINARY_TV_FILE
+{
+aesl_fh.touch(AUTOTB_TVOUT_outcomeInRam, 'b');
+transaction<288> tr(16);
+  __xlx_offset_byte_param_outcomeInRam = 0*36;
+  if (__xlx_apatb_param_outcomeInRam) {
+tr.import<36>((char*)__xlx_apatb_param_outcomeInRam, 16, 0);
+  }
+aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, tr.p, tr.tbytes);
+}
+
+  tcl_file.set_num(16, &tcl_file.outcomeInRam_depth);
+#else
+// print outcomeInRam Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, begin_str(AESL_transaction));
+{
+  __xlx_offset_byte_param_outcomeInRam = 0*36;
+if (__xlx_apatb_param_outcomeInRam) {
+for (size_t i = 0; i < 16; ++i) {
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_outcomeInRam + i * 36;
+std::string s = formatData(pos, 288);
+aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, s);
+}
+}
+}
+
+  tcl_file.set_num(16, &tcl_file.outcomeInRam_depth);
+aesl_fh.write(AUTOTB_TVOUT_outcomeInRam, end_str());
+}
+
+#endif
+// print failedTask Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_failedTask, begin_str(AESL_transaction));
+{
+  __xlx_offset_byte_param_failedTask = 0*2;
+if (__xlx_apatb_param_failedTask) {
+for (size_t i = 0; i < 1; ++i) {
+unsigned char *pos = (unsigned char*)__xlx_apatb_param_failedTask + i * 2;
+std::string s = formatData(pos, 16);
+aesl_fh.write(AUTOTB_TVOUT_failedTask, s);
+}
+}
+}
+
+  tcl_file.set_num(1, &tcl_file.failedTask_depth);
+aesl_fh.write(AUTOTB_TVOUT_failedTask, end_str());
+}
+
 // print copying Transactions
 {
 aesl_fh.write(AUTOTB_TVOUT_copying, begin_str(AESL_transaction));

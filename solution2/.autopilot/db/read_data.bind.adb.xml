@@ -1807,7 +1807,7 @@ entry:1 %specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableCont
 
 <Node id="8" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_10, i32 0, i32 0, void @empty_6, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0
+entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_35, i32 0, i32 0, void @empty_34, i32 0, i32 0, void @empty_34, void @empty_34, void @empty_34, i32 0, i32 0, i32 0, i32 0, void @empty_34, void @empty_34, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -1822,7 +1822,7 @@ entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %c
 
 <Node id="9" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_5, i32 0, i32 0, void @empty_6, i32 64, i32 0, void @empty_7, void @empty_12, void @empty_6, i32 16, i32 16, i32 16, i32 16, void @empty_6, void @empty_6, i32 4294967295, i32 0
+entry:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_33, i32 0, i32 0, void @empty_34, i32 64, i32 0, void @empty_22, void @empty_29, void @empty_34, i32 16, i32 16, i32 16, i32 16, void @empty_34, void @empty_34, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -1912,10 +1912,10 @@ entry:13 %or_ln174_s = bitconcatenate i320 @_ssdm_op_BitConcatenate.i320.i256.i4
 
 <Node id="20" bw="0" op_0_bw="0">
 <![CDATA[
-entry:14 %br_ln509 = br void %while.body
+entry:14 %br_ln521 = br void %while.body
 
 ]]></Node>
-<StgValue><ssdm name="br_ln509"/></StgValue>
+<StgValue><ssdm name="br_ln521"/></StgValue>
 </operation>
 </state>
 
@@ -1930,10 +1930,10 @@ entry:14 %br_ln509 = br void %while.body
 
 <Node id="22" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-while.body:0 %specloopname_ln511 = specloopname void @_ssdm_op_SpecLoopName, void @empty
+while.body:0 %specloopname_ln523 = specloopname void @_ssdm_op_SpecLoopName, void @empty_27
 
 ]]></Node>
-<StgValue><ssdm name="specloopname_ln511"/></StgValue>
+<StgValue><ssdm name="specloopname_ln523"/></StgValue>
 </operation>
 
 <operation id="159" st_id="72" stage="1" lat="1">
@@ -1960,10 +1960,10 @@ while.body:1 %startCopy_read = read i8 @_ssdm_op_Read.ap_auto.volatile.i8P0A, i8
 
 <Node id="24" bw="1" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-while.body:2 %icmp_ln511 = icmp_eq  i8 %startCopy_read, i8 0
+while.body:2 %icmp_ln523 = icmp_eq  i8 %startCopy_read, i8 0
 
 ]]></Node>
-<StgValue><ssdm name="icmp_ln511"/></StgValue>
+<StgValue><ssdm name="icmp_ln523"/></StgValue>
 </operation>
 
 <operation id="161" st_id="72" stage="1" lat="1">
@@ -1975,33 +1975,33 @@ while.body:2 %icmp_ln511 = icmp_eq  i8 %startCopy_read, i8 0
 
 <Node id="25" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-while.body:3 %br_ln511 = br i1 %icmp_ln511, void %if.then, void %if.end
+while.body:3 %br_ln523 = br i1 %icmp_ln523, void %if.then, void %if.end
 
 ]]></Node>
-<StgValue><ssdm name="br_ln511"/></StgValue>
+<StgValue><ssdm name="br_ln523"/></StgValue>
 </operation>
 
 <operation id="162" st_id="72" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="icmp_ln511" val="0"/>
+<or_exp><and_exp><literal name="icmp_ln523" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="27" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
 <![CDATA[
-if.then:0 %write_ln500 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 255
+if.then:0 %write_ln512 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 255
 
 ]]></Node>
-<StgValue><ssdm name="write_ln500"/></StgValue>
+<StgValue><ssdm name="write_ln512"/></StgValue>
 </operation>
 
 <operation id="163" st_id="72" stage="1" lat="1">
 <core>FIFO_SRL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="icmp_ln511" val="0"/>
+<or_exp><and_exp><literal name="icmp_ln523" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2020,32 +2020,32 @@ if.then:2 %write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i320P0A, i3
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="icmp_ln511" val="0"/>
+<or_exp><and_exp><literal name="icmp_ln523" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="28" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="0">
 <![CDATA[
-if.then:1 %write_ln502 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 0
+if.then:1 %write_ln514 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 0
 
 ]]></Node>
-<StgValue><ssdm name="write_ln502"/></StgValue>
+<StgValue><ssdm name="write_ln514"/></StgValue>
 </operation>
 
 <operation id="165" st_id="73" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="icmp_ln511" val="0"/>
+<or_exp><and_exp><literal name="icmp_ln523" val="0"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="30" bw="0" op_0_bw="0">
 <![CDATA[
-if.then:3 %br_ln517 = br void %if.end
+if.then:3 %br_ln529 = br void %if.end
 
 ]]></Node>
-<StgValue><ssdm name="br_ln517"/></StgValue>
+<StgValue><ssdm name="br_ln529"/></StgValue>
 </operation>
 
 <operation id="166" st_id="73" stage="1" lat="1">
@@ -2057,10 +2057,10 @@ if.then:3 %br_ln517 = br void %if.end
 
 <Node id="32" bw="0" op_0_bw="0">
 <![CDATA[
-if.end:0 %br_ln509 = br void %while.body
+if.end:0 %br_ln521 = br void %while.body
 
 ]]></Node>
-<StgValue><ssdm name="br_ln509"/></StgValue>
+<StgValue><ssdm name="br_ln521"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -2540,23 +2540,23 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="481" from="copyDest" to="specinterface_ln0" fromId="241" toId="150">
 </dataflow>
-<dataflow id="483" from="empty_10" to="specinterface_ln0" fromId="482" toId="150">
+<dataflow id="483" from="empty_35" to="specinterface_ln0" fromId="482" toId="150">
 </dataflow>
 <dataflow id="485" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
 <dataflow id="486" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
-<dataflow id="488" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="488" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
 <dataflow id="489" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
 <dataflow id="490" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
-<dataflow id="491" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="491" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
-<dataflow id="492" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="492" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
-<dataflow id="493" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="493" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
 <dataflow id="494" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
@@ -2566,9 +2566,9 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="497" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="150">
 </dataflow>
-<dataflow id="498" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="498" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
-<dataflow id="499" from="empty_6" to="specinterface_ln0" fromId="487" toId="150">
+<dataflow id="499" from="empty_34" to="specinterface_ln0" fromId="487" toId="150">
 </dataflow>
 <dataflow id="501" from="StgValue_500" to="specinterface_ln0" fromId="500" toId="150">
 </dataflow>
@@ -2578,23 +2578,23 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="504" from="gmem" to="specinterface_ln0" fromId="242" toId="151">
 </dataflow>
-<dataflow id="506" from="empty_5" to="specinterface_ln0" fromId="505" toId="151">
+<dataflow id="506" from="empty_33" to="specinterface_ln0" fromId="505" toId="151">
 </dataflow>
 <dataflow id="507" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="151">
 </dataflow>
 <dataflow id="508" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="151">
 </dataflow>
-<dataflow id="509" from="empty_6" to="specinterface_ln0" fromId="487" toId="151">
+<dataflow id="509" from="empty_34" to="specinterface_ln0" fromId="487" toId="151">
 </dataflow>
 <dataflow id="511" from="StgValue_510" to="specinterface_ln0" fromId="510" toId="151">
 </dataflow>
 <dataflow id="512" from="StgValue_484" to="specinterface_ln0" fromId="484" toId="151">
 </dataflow>
-<dataflow id="514" from="empty_7" to="specinterface_ln0" fromId="513" toId="151">
+<dataflow id="514" from="empty_22" to="specinterface_ln0" fromId="513" toId="151">
 </dataflow>
-<dataflow id="516" from="empty_12" to="specinterface_ln0" fromId="515" toId="151">
+<dataflow id="516" from="empty_29" to="specinterface_ln0" fromId="515" toId="151">
 </dataflow>
-<dataflow id="517" from="empty_6" to="specinterface_ln0" fromId="487" toId="151">
+<dataflow id="517" from="empty_34" to="specinterface_ln0" fromId="487" toId="151">
 </dataflow>
 <dataflow id="519" from="StgValue_518" to="specinterface_ln0" fromId="518" toId="151">
 </dataflow>
@@ -2604,9 +2604,9 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="522" from="StgValue_518" to="specinterface_ln0" fromId="518" toId="151">
 </dataflow>
-<dataflow id="523" from="empty_6" to="specinterface_ln0" fromId="487" toId="151">
+<dataflow id="523" from="empty_34" to="specinterface_ln0" fromId="487" toId="151">
 </dataflow>
-<dataflow id="524" from="empty_6" to="specinterface_ln0" fromId="487" toId="151">
+<dataflow id="524" from="empty_34" to="specinterface_ln0" fromId="487" toId="151">
 </dataflow>
 <dataflow id="525" from="StgValue_500" to="specinterface_ln0" fromId="500" toId="151">
 </dataflow>
@@ -2642,25 +2642,25 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="549" from="trunc_ln174" to="or_ln174_s" fromId="155" toId="156">
 </dataflow>
-<dataflow id="551" from="_ssdm_op_SpecLoopName" to="specloopname_ln511" fromId="550" toId="158">
+<dataflow id="551" from="_ssdm_op_SpecLoopName" to="specloopname_ln523" fromId="550" toId="158">
 </dataflow>
-<dataflow id="553" from="empty" to="specloopname_ln511" fromId="552" toId="158">
+<dataflow id="553" from="empty_27" to="specloopname_ln523" fromId="552" toId="158">
 </dataflow>
 <dataflow id="555" from="_ssdm_op_Read.ap_auto.volatile.i8P0A" to="startCopy_read" fromId="554" toId="159">
 </dataflow>
 <dataflow id="556" from="startCopy" to="startCopy_read" fromId="244" toId="159">
 </dataflow>
-<dataflow id="557" from="startCopy_read" to="icmp_ln511" fromId="159" toId="160">
+<dataflow id="557" from="startCopy_read" to="icmp_ln523" fromId="159" toId="160">
 </dataflow>
-<dataflow id="559" from="StgValue_558" to="icmp_ln511" fromId="558" toId="160">
+<dataflow id="559" from="StgValue_558" to="icmp_ln523" fromId="558" toId="160">
 </dataflow>
-<dataflow id="560" from="icmp_ln511" to="br_ln511" fromId="160" toId="161">
+<dataflow id="560" from="icmp_ln523" to="br_ln523" fromId="160" toId="161">
 </dataflow>
-<dataflow id="562" from="_ssdm_op_Write.ap_auto.volatile.i8P0A" to="write_ln500" fromId="561" toId="162">
+<dataflow id="562" from="_ssdm_op_Write.ap_auto.volatile.i8P0A" to="write_ln512" fromId="561" toId="162">
 </dataflow>
-<dataflow id="563" from="copying" to="write_ln500" fromId="245" toId="162">
+<dataflow id="563" from="copying" to="write_ln512" fromId="245" toId="162">
 </dataflow>
-<dataflow id="565" from="StgValue_564" to="write_ln500" fromId="564" toId="162">
+<dataflow id="565" from="StgValue_564" to="write_ln512" fromId="564" toId="162">
 </dataflow>
 <dataflow id="567" from="_ssdm_op_Write.ap_fifo.volatile.i320P0A" to="write_ln174" fromId="566" toId="163">
 </dataflow>
@@ -2668,15 +2668,15 @@ if.end:0 %br_ln509 = br void %while.body
 </dataflow>
 <dataflow id="569" from="or_ln174_s" to="write_ln174" fromId="156" toId="163">
 </dataflow>
-<dataflow id="570" from="_ssdm_op_Write.ap_auto.volatile.i8P0A" to="write_ln502" fromId="561" toId="164">
+<dataflow id="570" from="_ssdm_op_Write.ap_auto.volatile.i8P0A" to="write_ln514" fromId="561" toId="164">
 </dataflow>
-<dataflow id="571" from="copying" to="write_ln502" fromId="245" toId="164">
+<dataflow id="571" from="copying" to="write_ln514" fromId="245" toId="164">
 </dataflow>
-<dataflow id="572" from="StgValue_558" to="write_ln502" fromId="558" toId="164">
+<dataflow id="572" from="StgValue_558" to="write_ln514" fromId="558" toId="164">
 </dataflow>
-<dataflow id="573" from="icmp_ln511" to="StgValue_72" fromId="160" toId="72">
+<dataflow id="573" from="icmp_ln523" to="StgValue_72" fromId="160" toId="72">
 </dataflow>
-<dataflow id="574" from="icmp_ln511" to="StgValue_73" fromId="160" toId="73">
+<dataflow id="574" from="icmp_ln523" to="StgValue_73" fromId="160" toId="73">
 </dataflow>
 </dataflows>
 

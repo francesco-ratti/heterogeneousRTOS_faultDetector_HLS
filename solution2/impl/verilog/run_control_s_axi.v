@@ -42,6 +42,7 @@ module run_control_s_axi
     input  wire                          errorInTask_ce0,
     input  wire                          errorInTask_we0,
     input  wire [7:0]                    errorInTask_d0,
+    output wire [7:0]                    errorInTask_q0,
     output wire [767:0]                  trainedRegion_i,
     input  wire [767:0]                  trainedRegion_o,
     output wire [7:0]                    IOCheckIdx,
@@ -49,11 +50,9 @@ module run_control_s_axi
     output wire [7:0]                    n_regions_in_i,
     input  wire [7:0]                    n_regions_in_o,
     output wire [15:0]                   failedTask,
-    output wire                          failedTask_ap_vld,
-    input  wire                          failedTask_ap_ack,
     input  wire [3:0]                    outcomeInRam_address0,
     input  wire                          outcomeInRam_ce0,
-    input  wire                          outcomeInRam_we0,
+    input  wire [35:0]                   outcomeInRam_we0,
     input  wire [287:0]                  outcomeInRam_d0,
     output wire                          ap_start,
     input  wire                          ap_done,
@@ -218,13 +217,10 @@ module run_control_s_axi
 //         bit 7~0 - n_regions_in_o[7:0] (Read)
 //         others  - reserved
 // 0x198 : reserved
-// 0x19c : Data signal of failedTask
+// 0x1a0 : Data signal of failedTask
 //         bit 15~0 - failedTask[15:0] (Read/Write)
 //         others   - reserved
-// 0x1a0 : Control signal of failedTask
-//         bit 0  - failedTask_ap_vld (Read/Write/COH)
-//         bit 1  - failedTask_ap_ack (Read)
-//         others - reserved
+// 0x1a4 : reserved
 // 0x040 ~
 // 0x04f : Memory 'errorInTask' (16 * 8b)
 //         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -324,8 +320,8 @@ localparam
     ADDR_N_REGIONS_IN_I_CTRL     = 11'h190,
     ADDR_N_REGIONS_IN_O_DATA_0   = 11'h194,
     ADDR_N_REGIONS_IN_O_CTRL     = 11'h198,
-    ADDR_FAILEDTASK_DATA_0       = 11'h19c,
-    ADDR_FAILEDTASK_CTRL         = 11'h1a0,
+    ADDR_FAILEDTASK_DATA_0       = 11'h1a0,
+    ADDR_FAILEDTASK_CTRL         = 11'h1a4,
     ADDR_ERRORINTASK_BASE        = 11'h040,
     ADDR_ERRORINTASK_HIGH        = 11'h04f,
     ADDR_OUTCOMEINRAM_BASE       = 11'h400,
@@ -382,8 +378,6 @@ localparam
     reg  [7:0]                    int_n_regions_in_i = 'b0;
     reg  [7:0]                    int_n_regions_in_o = 'b0;
     reg  [15:0]                   int_failedTask = 'b0;
-    reg                           int_failedTask_ap_vld;
-    wire                          int_failedTask_ap_ack;
     // memory signals
     wire [1:0]                    int_errorInTask_address0;
     wire                          int_errorInTask_ce0;
@@ -743,10 +737,6 @@ always @(posedge ACLK) begin
                 ADDR_FAILEDTASK_DATA_0: begin
                     rdata <= int_failedTask[15:0];
                 end
-                ADDR_FAILEDTASK_CTRL: begin
-                    rdata[0] <= int_failedTask_ap_vld;
-                    rdata[1] <= ~int_failedTask_ap_vld;
-                end
             endcase
         end
         else if (int_errorInTask_read) begin
@@ -760,25 +750,23 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt             = int_interrupt;
-assign ap_start              = int_ap_start;
-assign task_ap_done          = (ap_done && !auto_restart_status) || auto_restart_done;
-assign task_ap_ready         = ap_ready && !int_auto_restart;
-assign flush                 = int_flush;
-assign auto_restart_done     = auto_restart_status && (ap_idle && !int_ap_idle);
-assign sw_reset              = int_sw_reset && int_flush_done;
-assign accel_mode            = int_accel_mode;
-assign inputData             = int_inputData;
-assign startCopy             = int_startCopy;
-assign startCopy_ap_vld      = int_startCopy_ap_vld;
-assign int_startCopy_ap_ack  = startCopy_ap_ack;
-assign trainedRegion_i       = int_trainedRegion_i;
-assign IOCheckIdx            = int_IOCheckIdx;
-assign IORegionIdx           = int_IORegionIdx;
-assign n_regions_in_i        = int_n_regions_in_i;
-assign failedTask            = int_failedTask;
-assign failedTask_ap_vld     = int_failedTask_ap_vld;
-assign int_failedTask_ap_ack = failedTask_ap_ack;
+assign interrupt            = int_interrupt;
+assign ap_start             = int_ap_start;
+assign task_ap_done         = (ap_done && !auto_restart_status) || auto_restart_done;
+assign task_ap_ready        = ap_ready && !int_auto_restart;
+assign flush                = int_flush;
+assign auto_restart_done    = auto_restart_status && (ap_idle && !int_ap_idle);
+assign sw_reset             = int_sw_reset && int_flush_done;
+assign accel_mode           = int_accel_mode;
+assign inputData            = int_inputData;
+assign startCopy            = int_startCopy;
+assign startCopy_ap_vld     = int_startCopy_ap_vld;
+assign int_startCopy_ap_ack = startCopy_ap_ack;
+assign trainedRegion_i      = int_trainedRegion_i;
+assign IOCheckIdx           = int_IOCheckIdx;
+assign IORegionIdx          = int_IORegionIdx;
+assign n_regions_in_i       = int_n_regions_in_i;
+assign failedTask           = int_failedTask;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -1307,18 +1295,6 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_failedTask_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_failedTask_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_FAILEDTASK_CTRL && WSTRB[0] && WDATA[0])
-            int_failedTask_ap_vld <= 1'b1;
-        else if (int_failedTask_ap_ack)
-            int_failedTask_ap_vld <= 1'b0; // clear on handshake
-    end
-end
-
 //synthesis translate_off
 always @(posedge ACLK) begin
     if (ACLK_EN) begin
@@ -1334,6 +1310,9 @@ end
 // errorInTask
 assign int_errorInTask_address0  = errorInTask_address0 >> 2;
 assign int_errorInTask_ce0       = errorInTask_ce0;
+assign int_errorInTask_be0       = errorInTask_we0 << errorInTask_address0[1:0];
+assign int_errorInTask_d0        = {4{errorInTask_d0}};
+assign errorInTask_q0            = int_errorInTask_q0 >> (int_errorInTask_shift0 * 8);
 assign int_errorInTask_address1  = ar_hs? raddr[3:2] : waddr[3:2];
 assign int_errorInTask_ce1       = ar_hs | (int_errorInTask_write & WVALID);
 assign int_errorInTask_we1       = int_errorInTask_write & w_hs;

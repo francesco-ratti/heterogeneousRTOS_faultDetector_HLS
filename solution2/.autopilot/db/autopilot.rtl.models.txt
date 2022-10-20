@@ -12,9 +12,10 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1
 run_mux_84_32_1_1
 run_mux_648_8_1_1
 run_mux_864_32_1_1
-run_run_test_outcome_AOV_RAM_AUTO_1R1W
+run_run_test_out_AOV_RAM_AUTO_1R1W
+run_mux_168_8_1_1
 run_fifo_w320_d1_S
-run_fifo_w288_d1_S
+run_fifo_w297_d1_S
 run_regions_RAM_AUTO_1R1W
 run_gmem_m_axi
 run_control_s_axi

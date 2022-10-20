@@ -15,7 +15,7 @@ target triple = "fpga64-xilinx-none"
 %struct.taskFailure = type { %"struct.ap_uint<8>", %"struct.ap_uint<8>" }
 
 ; Function Attrs: noinline
-define void @apatb_run_ir(i8 signext %accel_mode, i8* noalias nonnull %copying, %struct.controlStr* noalias nocapture nonnull readonly %inputData, i8* noalias nonnull %startCopy, i8* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %struct.REGION_T* nocapture readonly %trainedRegion_i, %struct.REGION_T* noalias nocapture nonnull %trainedRegion_o, %"struct.ap_uint<8>"* nocapture readonly %IOCheckIdx, %"struct.ap_uint<8>"* nocapture readonly %IORegionIdx, %"struct.ap_uint<8>"* noalias nocapture nonnull %n_regions_in, %struct.taskFailure* noalias nocapture nonnull readonly %failedTask) local_unnamed_addr #0 {
+define void @apatb_run_ir(i8 signext %accel_mode, i8* noalias nonnull %copying, %struct.controlStr* noalias nocapture nonnull readonly %inputData, i8* noalias nonnull %startCopy, i8* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %struct.REGION_T* nocapture readonly %trainedRegion_i, %struct.REGION_T* noalias nocapture nonnull %trainedRegion_o, %"struct.ap_uint<8>"* nocapture readonly %IOCheckIdx, %"struct.ap_uint<8>"* nocapture readonly %IORegionIdx, %"struct.ap_uint<8>"* noalias nocapture nonnull %n_regions_in, %struct.taskFailure* noalias nocapture nonnull %failedTask) local_unnamed_addr #0 {
 entry:
   %copying_copy = alloca i8, align 512
   %inputData_copy = alloca %struct.controlStr, align 512
@@ -309,9 +309,11 @@ define internal fastcc void @copy_back(i8* noalias, i8* noalias readonly align 5
 entry:
   call fastcc void @onebyonecpy_hls.p0i8(i8* %0, i8* align 512 %1)
   call fastcc void @onebyonecpy_hls.p0i8(i8* %4, i8* align 512 %5)
+  call fastcc void @onebyonecpy_hls.p0a16i8([16 x i8]* %6, [16 x i8]* align 512 %7)
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* %8, [16 x %struct.OutcomeStr]* align 512 %9)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* %10, %struct.REGION_T* align 512 %11)
   call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<8>"(%"struct.ap_uint<8>"* %12, %"struct.ap_uint<8>"* align 512 %13)
+  call fastcc void @onebyonecpy_hls.p0struct.taskFailure(%struct.taskFailure* %14, %struct.taskFailure* align 512 %15)
   ret void
 }
 

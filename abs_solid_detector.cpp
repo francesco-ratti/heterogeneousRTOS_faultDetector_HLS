@@ -396,6 +396,15 @@ struct OutcomeStr {
 	float AOV[MAX_AOV_DIM];
 };
 
+struct OutputStr {
+	ap_uint<8> checkId;
+	ap_uint<8> executionId;
+	ap_uint<16> uniId;
+	ap_uint<8> taskId;
+	bool fault;
+	float AOV[MAX_AOV_DIM];
+};
+
 struct controlStr {
 	ap_uint<8> checkId;
 	ap_uint<8> taskId;
@@ -415,12 +424,12 @@ struct taskFailure {
 #define sizeOfInputData sizeof(float)*MAX_AOV_DIM
 
 
-void writeOutcome(char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, taskFailure *failedTask, hls::stream<OutcomeStr, 1> &source) {
+void writeOutcome(char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, taskFailure *failedTask, hls::stream<OutputStr, 1> &source) {
 
 	while(1) {
 #pragma HLS PIPELINE off
 
-		OutcomeStr outcome=source.read();
+		OutputStr in=source.read();
 		//#pragma HLS PIPELINE II=8
 		//#pragma HLS inline off
 		//	OutcomeStr out;
@@ -430,29 +439,28 @@ void writeOutcome(char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[
 	out.error=error;
 		 */
 
-		// OutcomeStr outcome;
-		// outcome.checkId=checkId;
-		// outcome.uniId=uniId;
-		// outcome.executionId=executionId;
-		// memcpy((void*) &(outcome.AOV), (void*) data, sizeOfInputData);
+		OutcomeStr outcome;
+		outcome.checkId=in.checkId;
+		outcome.uniId=in.uniId;
+		outcome.executionId=in.executionId;
+		memcpy(&(outcome.AOV), &in.AOV, sizeOfInputData);
 
-		//if (!(*errorInTask && (failedTaskExecutionId)==executionId)) {
-		memcpy(outcomeInRam, &outcome, sizeof(outcome));
-		//*errorInTask = error;
 
-		/*if (error) {
-		 *failedTaskExecutionId=executionId;
-			failedTask->taskId=taskId;
-			failedTask->executionId=executionId;
-		}*/
-		//}
-		//toScheduler.write(taskId);
-		//}
+		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
+			memcpy(outcomeInRam, &outcome, sizeof(outcome));
+			errorInTask[in.taskId] = in.fault;
+
+			if (in.fault) {
+				failedTaskExecutionId[in.taskId]=in.executionId;
+				failedTask->taskId=in.taskId;
+				failedTask->executionId=in.executionId;
+			}
+		}
 	}
 }
 
 
-void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 1> &source, hls::stream<OutcomeStr, 1> &dest) {
+void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 1> &source, hls::stream<OutputStr, 1> &dest) {
 
 	controlStr in;
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
@@ -461,22 +469,26 @@ void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MA
 #pragma HLS pipeline off
 
 		while (1) {
-			OutcomeStr outcome;
+			//#pragma HLS pipeline II=300
+			OutputStr out;
 			in=source.read();
-			outcome.checkId=in.checkId;
-			outcome.uniId=in.uniId;
-			outcome.executionId=in.executionId;
-			memcpy((void*) &(outcome.AOV), (void*) &(in.AOV), sizeOfInputData);
+			out.checkId=in.checkId;
+			out.uniId=in.uniId;
+			out.executionId=in.executionId;
+			out.taskId=in.taskId;
+			memcpy((void*) &(out.AOV), (void*) &(in.AOV), sizeOfInputData);
 
 			if (in.command!=COMMAND_TEST) {
 				break;
 			}
+
 			bool vld=is_valid(in.AOV);
 			bool hasReg=hasRegion(regions[in.checkId], n_regions[in.checkId], in.AOV);//find_region(regions, n_regions, data) < 0 )
-			bool error = !(vld && hasReg);
+			bool fault = !(vld && hasReg);
 
-			if (error)
-				dest.write(outcome);
+			//if (error)
+			out.fault=fault;
+			dest.write(out);
 		}
 
 		if (in.command==COMMAND_TRAIN) {
@@ -531,6 +543,7 @@ void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForDat
 #pragma HLS stable variable=failedTask
 #pragma HLS stable variable=copying
 	bool error;
+#pragma HLS interface mode=ap_ctrl_none port=return
 
 	//		ap_uint<8> checkId;
 	//		ap_uint<8> taskId;
@@ -540,7 +553,7 @@ void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForDat
 	//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
 
 	hls::stream<controlStr, 1> copyDest;
-	hls::stream<OutcomeStr, 1> outcomeStream;
+	hls::stream<OutputStr, 1> outcomeStream;
 
 
 	read_data(copyDest, inputAOV, startCopy, copying);

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runTest'" level="0">
-<item name = "Date">Thu Oct 20 16:17:37 2022
+<item name = "Date">Thu Oct 20 19:19:30 2022
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
 <item name = "Project">detector_solid</item>
@@ -50,14 +50,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 10, -</column>
+<column name="Expression">-, -, 0, 6, -</column>
 <column name="FIFO">-, -, 198, 136, -</column>
-<column name="Instance">0, 22, 9532, 16652, 0</column>
+<column name="Instance">0, 22, 9986, 16894, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, 2, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 10, 9, 31, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 10, 9, 32, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -65,8 +65,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="read_data_U0">read_data, 0, 0, 402, 427, 0</column>
-<column name="run_test_U0">run_test, 0, 22, 9128, 16200, 0</column>
-<column name="writeOutcome_U0">writeOutcome, 0, 0, 2, 25, 0</column>
+<column name="run_test_U0">run_test, 0, 22, 9135, 16191, 0</column>
+<column name="writeOutcome_U0">writeOutcome, 0, 0, 449, 276, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -80,14 +80,12 @@
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
 <column name="copyDest_U">0, 99, 0, -, 1, 320, 320</column>
-<column name="outcomeStream_U">0, 99, 0, -, 1, 288, 288</column>
+<column name="outcomeStream_U">0, 99, 0, -, 1, 297, 297</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="ap_idle">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_continue">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_done">and, 0, 0, 2, 1, 1</column>
 <column name="run_test_U0_ap_start">or, 0, 0, 2, 1, 1</column>
 <column name="writeOutcome_U0_ap_start">or, 0, 0, 2, 1, 1</column>
 </table>
@@ -160,6 +158,11 @@
 <column name="startCopy">in, 8, ap_hs, startCopy, pointer</column>
 <column name="startCopy_ap_vld">in, 1, ap_hs, startCopy, pointer</column>
 <column name="startCopy_ap_ack">out, 1, ap_hs, startCopy, pointer</column>
+<column name="errorInTask_address0">out, 4, ap_memory, errorInTask, array</column>
+<column name="errorInTask_ce0">out, 1, ap_memory, errorInTask, array</column>
+<column name="errorInTask_d0">out, 8, ap_memory, errorInTask, array</column>
+<column name="errorInTask_q0">in, 8, ap_memory, errorInTask, array</column>
+<column name="errorInTask_we0">out, 1, ap_memory, errorInTask, array</column>
 <column name="copying">out, 8, ap_vld, copying, pointer</column>
 <column name="copying_ap_vld">out, 1, ap_vld, copying, pointer</column>
 <column name="p_ZL9n_regions_0_i">in, 8, ap_ovld, p_ZL9n_regions_0, pointer</column>
@@ -478,13 +481,13 @@
 <column name="regions_5_d1">out, 32, ap_memory, regions_5, array</column>
 <column name="regions_5_q1">in, 32, ap_memory, regions_5, array</column>
 <column name="regions_5_we1">out, 1, ap_memory, regions_5, array</column>
-<column name="ap_clk">in, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_rst">in, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_start">in, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_done">out, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_ready">out, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_idle">out, 1, ap_ctrl_hs, runTest, return value</column>
-<column name="ap_continue">in, 1, ap_ctrl_hs, runTest, return value</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_none, runTest, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_none, runTest, return value</column>
 </table>
 </item>
 </section>

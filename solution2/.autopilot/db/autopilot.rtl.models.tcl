@@ -21,14 +21,18 @@ set SynModuleInfo {
     SUBMODULES {
       {MODELNAME run_mux_648_8_1_1 RTLNAME run_mux_648_8_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME run_mux_864_32_1_1 RTLNAME run_mux_864_32_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
-      {MODELNAME run_run_test_outcome_AOV_RAM_AUTO_1R1W RTLNAME run_run_test_outcome_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME run_run_test_out_AOV_RAM_AUTO_1R1W RTLNAME run_run_test_out_AOV_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME writeOutcome MODELNAME writeOutcome RTLNAME run_writeOutcome}
+  {SRCNAME writeOutcome MODELNAME writeOutcome RTLNAME run_writeOutcome
+    SUBMODULES {
+      {MODELNAME run_mux_168_8_1_1 RTLNAME run_mux_168_8_1_1 BINDTYPE op TYPE mux IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+    }
+  }
   {SRCNAME runTest MODELNAME runTest RTLNAME run_runTest
     SUBMODULES {
       {MODELNAME run_fifo_w320_d1_S RTLNAME run_fifo_w320_d1_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
-      {MODELNAME run_fifo_w288_d1_S RTLNAME run_fifo_w288_d1_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
+      {MODELNAME run_fifo_w297_d1_S RTLNAME run_fifo_w297_d1_S BINDTYPE storage TYPE fifo IMPL srl ALLOW_PRAGMA 1 INSTNAME {$InstName}}
     }
   }
   {SRCNAME run MODELNAME run RTLNAME run IS_TOP 1

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 250
+set ID 254
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -127,7 +127,7 @@ startCopy {
 	offset_end 59
 }
 errorInTask { 
-	dir X
+	dir IO
 	width 8
 	depth 16
 	mode ap_memory
@@ -135,7 +135,7 @@ errorInTask {
 	offset_end 79
 	core_op ram_1p
 	core_impl auto
-	core_latency 3
+	core_latency 1
 	byte_write 0
 }
 trainedRegion_i { 
@@ -190,9 +190,9 @@ failedTask {
 	dir I
 	width 16
 	depth 1
-	mode ap_hs
-	offset 412
-	offset_end 419
+	mode ap_none
+	offset 416
+	offset_end 423
 }
 outcomeInRam { 
 	dir X
@@ -204,7 +204,7 @@ outcomeInRam {
 	core_op ram_1p
 	core_impl auto
 	core_latency 3
-	byte_write 0
+	byte_write 1
 }
 ap_start { }
 ap_done { }
@@ -221,7 +221,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 251 \
+			id 255 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \

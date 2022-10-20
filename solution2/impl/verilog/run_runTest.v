@@ -56,6 +56,11 @@ module run_runTest (
         m_axi_gmem_BUSER,
         inputAOV,
         startCopy,
+        errorInTask_address0,
+        errorInTask_ce0,
+        errorInTask_d0,
+        errorInTask_q0,
+        errorInTask_we0,
         copying,
         p_ZL9n_regions_0_i,
         p_ZL9n_regions_0_o,
@@ -252,7 +257,6 @@ module run_runTest (
         startCopy_ap_ack,
         copying_ap_vld,
         ap_start,
-        ap_done,
         p_ZL9n_regions_0_i_ap_vld,
         p_ZL9n_regions_0_o_ap_vld,
         p_ZL9n_regions_1_i_ap_vld,
@@ -381,6 +385,7 @@ module run_runTest (
         p_ZL9n_regions_62_o_ap_vld,
         p_ZL9n_regions_63_i_ap_vld,
         p_ZL9n_regions_63_o_ap_vld,
+        ap_done,
         ap_ready,
         ap_idle,
         ap_continue
@@ -435,6 +440,11 @@ input  [0:0] m_axi_gmem_BID;
 input  [0:0] m_axi_gmem_BUSER;
 input  [63:0] inputAOV;
 input  [7:0] startCopy;
+output  [3:0] errorInTask_address0;
+output   errorInTask_ce0;
+output  [7:0] errorInTask_d0;
+input  [7:0] errorInTask_q0;
+output   errorInTask_we0;
 output  [7:0] copying;
 input  [7:0] p_ZL9n_regions_0_i;
 output  [7:0] p_ZL9n_regions_0_o;
@@ -631,7 +641,6 @@ input   startCopy_ap_vld;
 output   startCopy_ap_ack;
 output   copying_ap_vld;
 input   ap_start;
-output   ap_done;
 input   p_ZL9n_regions_0_i_ap_vld;
 output   p_ZL9n_regions_0_o_ap_vld;
 input   p_ZL9n_regions_1_i_ap_vld;
@@ -760,6 +769,7 @@ input   p_ZL9n_regions_62_i_ap_vld;
 output   p_ZL9n_regions_62_o_ap_vld;
 input   p_ZL9n_regions_63_i_ap_vld;
 output   p_ZL9n_regions_63_o_ap_vld;
+output   ap_done;
 output   ap_ready;
 output   ap_idle;
 input   ap_continue;
@@ -806,14 +816,13 @@ wire    read_data_U0_m_axi_gmem_BREADY;
 wire    read_data_U0_startCopy_ap_ack;
 wire   [7:0] read_data_U0_copying;
 wire    read_data_U0_copying_ap_vld;
-wire    ap_sync_continue;
 wire    run_test_U0_ap_start;
 wire    run_test_U0_ap_done;
 wire    run_test_U0_ap_continue;
 wire    run_test_U0_ap_idle;
 wire    run_test_U0_ap_ready;
 wire    run_test_U0_copyDest_read;
-wire   [287:0] run_test_U0_outcomeStream_din;
+wire   [296:0] run_test_U0_outcomeStream_din;
 wire    run_test_U0_outcomeStream_write;
 wire   [7:0] run_test_U0_p_ZL9n_regions_0_o;
 wire   [7:0] run_test_U0_p_ZL9n_regions_1_o;
@@ -933,6 +942,10 @@ wire    writeOutcome_U0_ap_done;
 wire    writeOutcome_U0_ap_continue;
 wire    writeOutcome_U0_ap_idle;
 wire    writeOutcome_U0_ap_ready;
+wire   [3:0] writeOutcome_U0_errorInTask_address0;
+wire    writeOutcome_U0_errorInTask_ce0;
+wire    writeOutcome_U0_errorInTask_we0;
+wire   [7:0] writeOutcome_U0_errorInTask_d0;
 wire    writeOutcome_U0_outcomeStream_read;
 reg    ap_sync_reg_writeOutcome_U0_ap_start;
 wire    copyDest_full_n;
@@ -941,11 +954,10 @@ wire   [1:0] copyDest_num_data_valid;
 wire   [1:0] copyDest_fifo_cap;
 wire    copyDest_empty_n;
 wire    outcomeStream_full_n;
-wire   [287:0] outcomeStream_dout;
+wire   [296:0] outcomeStream_dout;
 wire   [1:0] outcomeStream_num_data_valid;
 wire   [1:0] outcomeStream_fifo_cap;
 wire    outcomeStream_empty_n;
-wire    ap_sync_done;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -1237,6 +1249,11 @@ run_writeOutcome writeOutcome_U0(
     .ap_continue(writeOutcome_U0_ap_continue),
     .ap_idle(writeOutcome_U0_ap_idle),
     .ap_ready(writeOutcome_U0_ap_ready),
+    .errorInTask_address0(writeOutcome_U0_errorInTask_address0),
+    .errorInTask_ce0(writeOutcome_U0_errorInTask_ce0),
+    .errorInTask_we0(writeOutcome_U0_errorInTask_we0),
+    .errorInTask_d0(writeOutcome_U0_errorInTask_d0),
+    .errorInTask_q0(errorInTask_q0),
     .outcomeStream_dout(outcomeStream_dout),
     .outcomeStream_num_data_valid(outcomeStream_num_data_valid),
     .outcomeStream_fifo_cap(outcomeStream_fifo_cap),
@@ -1259,7 +1276,7 @@ run_fifo_w320_d1_S copyDest_U(
     .if_read(run_test_U0_copyDest_read)
 );
 
-run_fifo_w288_d1_S outcomeStream_U(
+run_fifo_w297_d1_S outcomeStream_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
@@ -1294,19 +1311,23 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_done = ap_sync_done;
+assign ap_done = writeOutcome_U0_ap_done;
 
 assign ap_idle = (writeOutcome_U0_ap_idle & run_test_U0_ap_idle & read_data_U0_ap_idle);
 
 assign ap_ready = read_data_U0_ap_ready;
 
-assign ap_sync_continue = (ap_sync_done & ap_continue);
-
-assign ap_sync_done = (writeOutcome_U0_ap_done & run_test_U0_ap_done & read_data_U0_ap_done);
-
 assign copying = read_data_U0_copying;
 
 assign copying_ap_vld = read_data_U0_copying_ap_vld;
+
+assign errorInTask_address0 = writeOutcome_U0_errorInTask_address0;
+
+assign errorInTask_ce0 = writeOutcome_U0_errorInTask_ce0;
+
+assign errorInTask_d0 = writeOutcome_U0_errorInTask_d0;
+
+assign errorInTask_we0 = writeOutcome_U0_errorInTask_we0;
 
 assign m_axi_gmem_ARADDR = read_data_U0_m_axi_gmem_ARADDR;
 
@@ -1628,7 +1649,7 @@ assign p_ZL9n_regions_9_o = run_test_U0_p_ZL9n_regions_9_o;
 
 assign p_ZL9n_regions_9_o_ap_vld = 1'b1;
 
-assign read_data_U0_ap_continue = ap_sync_continue;
+assign read_data_U0_ap_continue = 1'b1;
 
 assign read_data_U0_ap_start = ap_start;
 
@@ -1728,13 +1749,13 @@ assign regions_we0 = run_test_U0_regions_we0;
 
 assign regions_we1 = run_test_U0_regions_we1;
 
-assign run_test_U0_ap_continue = ap_sync_continue;
+assign run_test_U0_ap_continue = 1'b1;
 
 assign run_test_U0_ap_start = (ap_sync_reg_run_test_U0_ap_start | ap_start);
 
 assign startCopy_ap_ack = read_data_U0_startCopy_ap_ack;
 
-assign writeOutcome_U0_ap_continue = ap_sync_continue;
+assign writeOutcome_U0_ap_continue = ap_continue;
 
 assign writeOutcome_U0_ap_start = (ap_sync_reg_writeOutcome_U0_ap_start | ap_start);
 

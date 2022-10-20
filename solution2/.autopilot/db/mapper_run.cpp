@@ -187,7 +187,7 @@ struct __cosim_s1__ { char data[1]; };
 struct __cosim_s2__ { char data[2]; };
 struct __cosim_s64__ { char data[64]; };
 struct __cosim_s128__ { char data[128]; };
-extern "C" void run(__cosim_s64__*, char, volatile void *, int, volatile void *, char*, __cosim_s64__*, __cosim_s96__*, volatile void *, __cosim_s1__, __cosim_s1__, volatile void *, volatile void *);
+extern "C" void run(__cosim_s64__*, char, volatile void *, int, volatile void *, char*, __cosim_s64__*, __cosim_s96__*, volatile void *, __cosim_s1__, __cosim_s1__, volatile void *, short*);
 extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * __xlx_apatb_param_copying, volatile void * __xlx_apatb_param_inputData, volatile void * __xlx_apatb_param_startCopy, volatile void * __xlx_apatb_param_errorInTask, volatile void * __xlx_apatb_param_outcomeInRam, __cosim_s96__* __xlx_apatb_param_trainedRegion_i, volatile void * __xlx_apatb_param_trainedRegion_o, __cosim_s1__* __xlx_apatb_param_IOCheckIdx, __cosim_s1__* __xlx_apatb_param_IORegionIdx, volatile void * __xlx_apatb_param_n_regions_in, volatile void * __xlx_apatb_param_failedTask) {
   // Collect __xlx_inputData__tmp_vec
   vector<sc_bv<512> >__xlx_inputData__tmp_vec;
@@ -338,8 +338,23 @@ extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * 
     ((long long*)__xlx_outcomeInRam__input_buffer)[i*5+3] = __xlx_outcomeInRam__tmp_vec[i].range(255, 192).to_uint64();
     ((long long*)__xlx_outcomeInRam__input_buffer)[i*5+4] = __xlx_outcomeInRam__tmp_vec[i].range(287, 256).to_uint64();
   }
+  // Collect __xlx_failedTask__tmp_vec
+  vector<sc_bv<16> >__xlx_failedTask__tmp_vec;
+  for (int j = 0, e = 1; j != e; ++j) {
+    sc_bv<16> _xlx_tmp_sc;
+    _xlx_tmp_sc.range(7, 0) = ((char*)__xlx_apatb_param_failedTask)[j*2+0];
+    _xlx_tmp_sc.range(15, 8) = ((char*)__xlx_apatb_param_failedTask)[j*2+1];
+    __xlx_failedTask__tmp_vec.push_back(_xlx_tmp_sc);
+  }
+  int __xlx_size_param_failedTask = 1;
+  int __xlx_offset_param_failedTask = 0;
+  int __xlx_offset_byte_param_failedTask = 0*2;
+  short* __xlx_failedTask__input_buffer= new short[__xlx_failedTask__tmp_vec.size()];
+  for (int i = 0; i < __xlx_failedTask__tmp_vec.size(); ++i) {
+    __xlx_failedTask__input_buffer[i] = __xlx_failedTask__tmp_vec[i].range(15, 0).to_uint64();
+  }
   // DUT call
-  run(__xlx_inputData__input_buffer, __xlx_apatb_param_accel_mode, __xlx_apatb_param_copying, __xlx_offset_byte_param_inputData, __xlx_apatb_param_startCopy, __xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, *__xlx_apatb_param_IOCheckIdx, *__xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_apatb_param_failedTask);
+  run(__xlx_inputData__input_buffer, __xlx_apatb_param_accel_mode, __xlx_apatb_param_copying, __xlx_offset_byte_param_inputData, __xlx_apatb_param_startCopy, __xlx_errorInTask__input_buffer, __xlx_outcomeInRam__input_buffer, __xlx_apatb_param_trainedRegion_i, __xlx_apatb_param_trainedRegion_o, *__xlx_apatb_param_IOCheckIdx, *__xlx_apatb_param_IORegionIdx, __xlx_apatb_param_n_regions_in, __xlx_failedTask__input_buffer);
 // print __xlx_apatb_param_inputData
   sc_bv<512>*__xlx_inputData_output_buffer = new sc_bv<512>[__xlx_size_param_inputData];
   for (int i = 0; i < __xlx_size_param_inputData; ++i) {
@@ -474,5 +489,14 @@ extern "C" void apatb_run_hw(char __xlx_apatb_param_accel_mode, volatile void * 
     ((char*)__xlx_apatb_param_outcomeInRam)[i*36+33] = __xlx_outcomeInRam_output_buffer[i].range(271, 264).to_uint();
     ((char*)__xlx_apatb_param_outcomeInRam)[i*36+34] = __xlx_outcomeInRam_output_buffer[i].range(279, 272).to_uint();
     ((char*)__xlx_apatb_param_outcomeInRam)[i*36+35] = __xlx_outcomeInRam_output_buffer[i].range(287, 280).to_uint();
+  }
+// print __xlx_apatb_param_failedTask
+  sc_bv<16>*__xlx_failedTask_output_buffer = new sc_bv<16>[__xlx_size_param_failedTask];
+  for (int i = 0; i < __xlx_size_param_failedTask; ++i) {
+    __xlx_failedTask_output_buffer[i] = __xlx_failedTask__input_buffer[i+__xlx_offset_param_failedTask];
+  }
+  for (int i = 0; i < __xlx_size_param_failedTask; ++i) {
+    ((char*)__xlx_apatb_param_failedTask)[i*2+0] = __xlx_failedTask_output_buffer[i].range(7, 0).to_uint();
+    ((char*)__xlx_apatb_param_failedTask)[i*2+1] = __xlx_failedTask_output_buffer[i].range(15, 8).to_uint();
   }
 }

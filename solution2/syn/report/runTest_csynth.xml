@@ -38,8 +38,8 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>22</DSP>
-<FF>9732</FF>
-<LUT>16798</LUT>
+<FF>10186</FF>
+<LUT>17036</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -608,6 +608,61 @@
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>errorInTask_address0</name>
+<Object>errorInTask</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>errorInTask_ce0</name>
+<Object>errorInTask</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>errorInTask_d0</name>
+<Object>errorInTask</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>errorInTask_q0</name>
+<Object>errorInTask</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>8</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>errorInTask_we0</name>
+<Object>errorInTask</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -4116,7 +4171,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -4127,7 +4182,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -4138,7 +4193,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -4149,7 +4204,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -4160,7 +4215,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -4171,7 +4226,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>1</Bits>
@@ -4182,7 +4237,7 @@
 <Object>runTest</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>

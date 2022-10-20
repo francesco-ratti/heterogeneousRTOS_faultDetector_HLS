@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/grp_runTest_fu_1344_activity": {
+				"grp_runTest_fu_1380/grp_runTest_fu_1380_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -24,7 +24,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/read_data_U0/read_data_U0_activity": {
+				"grp_runTest_fu_1380/read_data_U0/read_data_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -35,7 +35,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/run_test_U0/grp_insert_point_fu_641/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_activity": {
+				"grp_runTest_fu_1380/run_test_U0/grp_insert_point_fu_646/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -45,7 +45,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/run_test_U0/grp_insert_point_fu_641/grp_insert_point_fu_641_activity": {
+				"grp_runTest_fu_1380/run_test_U0/grp_insert_point_fu_646/grp_insert_point_fu_646_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -55,7 +55,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/run_test_U0/run_test_U0_activity": {
+				"grp_runTest_fu_1380/run_test_U0/run_test_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -66,7 +66,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/writeOutcome_U0/writeOutcome_U0_activity": {
+				"grp_runTest_fu_1380/writeOutcome_U0/writeOutcome_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
