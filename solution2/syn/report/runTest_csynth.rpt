@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTest'
 ================================================================
-* Date:           Thu Oct 20 12:05:44 2022
+* Date:           Thu Oct 20 12:16:26 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
 * Project:        detector_solid
@@ -56,14 +56,14 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|      6|    -|
+|Expression       |        -|    -|       0|     10|    -|
 |FIFO             |        -|    -|     198|    136|    -|
-|Instance         |        0|    -|    1572|   1674|    0|
+|Instance         |        0|    -|    1581|   1696|    0|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|      -|    -|
 |Register         |        -|    -|       2|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|    1772|   1816|    0|
+|Total            |        0|    0|    1781|   1842|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -75,11 +75,11 @@
     +-----------------+--------------+---------+----+------+------+-----+
     |     Instance    |    Module    | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +-----------------+--------------+---------+----+------+------+-----+
-    |read_data_U0     |read_data     |        0|   0|   393|   405|    0|
+    |read_data_U0     |read_data     |        0|   0|   402|   427|    0|
     |run_test_U0      |run_test      |        0|   0|  1177|  1244|    0|
     |writeOutcome_U0  |writeOutcome  |        0|   0|     2|    25|    0|
     +-----------------+--------------+---------+----+------+------+-----+
-    |Total            |              |        0|   0|  1572|  1674|    0|
+    |Total            |              |        0|   0|  1581|  1696|    0|
     +-----------------+--------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -103,10 +103,12 @@
     |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +--------------------------+----------+----+---+----+------------+------------+
     |ap_idle                   |       and|   0|  0|   2|           1|           1|
+    |ap_sync_continue          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_done              |       and|   0|  0|   2|           1|           1|
     |run_test_U0_ap_start      |        or|   0|  0|   2|           1|           1|
     |writeOutcome_U0_ap_start  |        or|   0|  0|   2|           1|           1|
     +--------------------------+----------+----+---+----+------------+------------+
-    |Total                     |          |   0|  0|   6|           3|           3|
+    |Total                     |          |   0|  0|  10|           5|           5|
     +--------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -179,8 +181,11 @@
 |m_axi_gmem_BUSER          |   in|    1|       m_axi|               gmem|       pointer|
 |inputAOV                  |   in|   64|     ap_none|           inputAOV|        scalar|
 |inputAOV_ap_vld           |   in|    1|     ap_none|           inputAOV|        scalar|
-|startCopy                 |   in|   64|     ap_none|          startCopy|        scalar|
-|startCopy_ap_vld          |   in|    1|     ap_none|          startCopy|        scalar|
+|startCopy                 |   in|    8|       ap_hs|          startCopy|       pointer|
+|startCopy_ap_vld          |   in|    1|       ap_hs|          startCopy|       pointer|
+|startCopy_ap_ack          |  out|    1|       ap_hs|          startCopy|       pointer|
+|copying                   |  out|    8|      ap_vld|            copying|       pointer|
+|copying_ap_vld            |  out|    1|      ap_vld|            copying|       pointer|
 |p_ZL9n_regions_0          |   in|    8|     ap_none|   p_ZL9n_regions_0|       pointer|
 |p_ZL9n_regions_0_ap_vld   |   in|    1|     ap_none|   p_ZL9n_regions_0|       pointer|
 |p_ZL9n_regions_1          |   in|    8|     ap_none|   p_ZL9n_regions_1|       pointer|

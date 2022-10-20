@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runTest'
 ================================================================
-* Date:           Thu Oct 20 12:05:44 2022
+* Date:           Thu Oct 20 12:16:26 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
 * Project:        detector_solid
@@ -56,14 +56,14 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|      6|    -|
+|Expression       |        -|    -|       0|     10|    -|
 |FIFO             |        -|    -|     198|    136|    -|
-|Instance         |        0|    -|    1572|   1674|    0|
+|Instance         |        0|    -|    1581|   1696|    0|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|      -|    -|
 |Register         |        -|    -|       2|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|    1772|   1816|    0|
+|Total            |        0|    0|    1781|   1842|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -75,11 +75,11 @@
     +-----------------+--------------+---------+----+------+------+-----+
     |     Instance    |    Module    | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +-----------------+--------------+---------+----+------+------+-----+
-    |read_data_U0     |read_data     |        0|   0|   393|   405|    0|
+    |read_data_U0     |read_data     |        0|   0|   402|   427|    0|
     |run_test_U0      |run_test      |        0|   0|  1177|  1244|    0|
     |writeOutcome_U0  |writeOutcome  |        0|   0|     2|    25|    0|
     +-----------------+--------------+---------+----+------+------+-----+
-    |Total            |              |        0|   0|  1572|  1674|    0|
+    |Total            |              |        0|   0|  1581|  1696|    0|
     +-----------------+--------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -103,10 +103,12 @@
     |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +--------------------------+----------+----+---+----+------------+------------+
     |ap_idle                   |       and|   0|  0|   2|           1|           1|
+    |ap_sync_continue          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_done              |       and|   0|  0|   2|           1|           1|
     |run_test_U0_ap_start      |        or|   0|  0|   2|           1|           1|
     |writeOutcome_U0_ap_start  |        or|   0|  0|   2|           1|           1|
     +--------------------------+----------+----+---+----+------------+------------+
-    |Total                     |          |   0|  0|   6|           3|           3|
+    |Total                     |          |   0|  0|  10|           5|           5|
     +--------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -179,8 +181,11 @@
 |m_axi_gmem_BUSER          |   in|    1|       m_axi|               gmem|       pointer|
 |inputAOV                  |   in|   64|     ap_none|           inputAOV|        scalar|
 |inputAOV_ap_vld           |   in|    1|     ap_none|           inputAOV|        scalar|
-|startCopy                 |   in|   64|     ap_none|          startCopy|        scalar|
-|startCopy_ap_vld          |   in|    1|     ap_none|          startCopy|        scalar|
+|startCopy                 |   in|    8|       ap_hs|          startCopy|       pointer|
+|startCopy_ap_vld          |   in|    1|       ap_hs|          startCopy|       pointer|
+|startCopy_ap_ack          |  out|    1|       ap_hs|          startCopy|       pointer|
+|copying                   |  out|    8|      ap_vld|            copying|       pointer|
+|copying_ap_vld            |  out|    1|      ap_vld|            copying|       pointer|
 |p_ZL9n_regions_0          |   in|    8|     ap_none|   p_ZL9n_regions_0|       pointer|
 |p_ZL9n_regions_0_ap_vld   |   in|    1|     ap_none|   p_ZL9n_regions_0|       pointer|
 |p_ZL9n_regions_1          |   in|    8|     ap_none|   p_ZL9n_regions_1|       pointer|
@@ -400,108 +405,107 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 13.1>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%startCopy_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %startCopy"   --->   Operation 7 'read' 'startCopy_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV"   --->   Operation 8 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%copyDest = alloca i64 1"   --->   Operation 9 'alloca' 'copyDest' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 320> <Depth = 1> <FIFO>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%outcomeStream = alloca i64 1"   --->   Operation 10 'alloca' 'outcomeStream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 288> <Depth = 1> <FIFO>
-ST_1 : Operation 11 [2/2] (13.1ns)   --->   "%call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i64 %startCopy_read" [detector_solid/abs_solid_detector.cpp:531]   --->   Operation 11 'call' 'call_ln531' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV"   --->   Operation 7 'read' 'inputAOV_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%copyDest = alloca i64 1"   --->   Operation 8 'alloca' 'copyDest' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 320> <Depth = 1> <FIFO>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%outcomeStream = alloca i64 1"   --->   Operation 9 'alloca' 'outcomeStream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 288> <Depth = 1> <FIFO>
+ST_1 : Operation 10 [2/2] (13.1ns)   --->   "%call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i8 %startCopy, i8 %copying" [detector_solid/abs_solid_detector.cpp:531]   --->   Operation 10 'call' 'call_ln531' <Predicate = true> <Delay = 13.1> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i64 %startCopy_read" [detector_solid/abs_solid_detector.cpp:531]   --->   Operation 12 'call' 'call_ln531' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 2 <SV = 1> <Delay = 1.55>
+ST_2 : Operation 11 [1/2] (1.55ns)   --->   "%call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i8 %startCopy, i8 %copying" [detector_solid/abs_solid_detector.cpp:531]   --->   Operation 11 'call' 'call_ln531' <Predicate = true> <Delay = 1.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 13 [2/2] (0.00ns)   --->   "%call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3" [detector_solid/abs_solid_detector.cpp:532]   --->   Operation 13 'call' 'call_ln532' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 12 [2/2] (0.00ns)   --->   "%call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3" [detector_solid/abs_solid_detector.cpp:532]   --->   Operation 12 'call' 'call_ln532' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 14 [1/2] (0.00ns)   --->   "%call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3" [detector_solid/abs_solid_detector.cpp:532]   --->   Operation 14 'call' 'call_ln532' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 13 [1/2] (0.00ns)   --->   "%call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3" [detector_solid/abs_solid_detector.cpp:532]   --->   Operation 13 'call' 'call_ln532' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 15 [2/2] (0.00ns)   --->   "%call_ln533 = call void @writeOutcome, i288 %outcomeStream" [detector_solid/abs_solid_detector.cpp:533]   --->   Operation 15 'call' 'call_ln533' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 14 [2/2] (0.00ns)   --->   "%call_ln533 = call void @writeOutcome, i288 %outcomeStream" [detector_solid/abs_solid_detector.cpp:533]   --->   Operation 14 'call' 'call_ln533' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 6 <SV = 5> <Delay = 0.00>
-ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 1, void @empty_23"   --->   Operation 16 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_27, i32 0, i32 0, void @empty_23, i32 64, i32 0, void @empty_7, void @empty_14, void @empty_23, i32 16, i32 16, i32 16, i32 16, void @empty_23, void @empty_23, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyDest_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i320 %copyDest, i320 %copyDest"   --->   Operation 18 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_3, i32 0, i32 0, void @empty_23, i32 0, i32 0, void @empty_23, void @empty_23, void @empty_23, i32 0, i32 0, i32 0, i32 0, void @empty_23, void @empty_23, i32 4294967295, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @outcomeStream_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i288 %outcomeStream, i288 %outcomeStream"   --->   Operation 20 'specchannel' 'empty_47' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_3, i32 0, i32 0, void @empty_23, i32 0, i32 0, void @empty_23, void @empty_23, void @empty_23, i32 0, i32 0, i32 0, i32 0, void @empty_23, void @empty_23, i32 4294967295, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specstablecontent_ln510 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %gmem, void " [detector_solid/abs_solid_detector.cpp:510]   --->   Operation 22 'specstablecontent' 'specstablecontent_ln510' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specstablecontent_ln511 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void " [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 23 'specstablecontent' 'specstablecontent_ln511' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specstablecontent_ln512 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void " [detector_solid/abs_solid_detector.cpp:512]   --->   Operation 24 'specstablecontent' 'specstablecontent_ln512' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_1, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 25 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 26 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_3, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 27 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 28 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_2, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 28 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_5, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 29 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 30 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_4, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 30 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 31 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_63, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 31 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 32 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_62, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 32 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_61, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 33 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_60, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 34 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_59, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 35 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_58, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 36 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_57, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 37 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_56, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 38 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_55, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 39 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_54, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 40 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_53, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 41 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_52, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 42 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_51, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 43 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_50, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 44 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_49, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 45 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_48, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 46 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_47, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 47 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_46, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 48 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_45, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 49 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_44, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 50 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_43, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 51 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_42, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 52 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_41, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 53 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_40, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 54 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_39, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 55 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_38, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 56 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_37, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 57 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_36, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 58 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_35, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 59 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_34, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 60 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_33, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 61 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_32, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 62 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_31, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 63 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_30, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 64 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_29, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 65 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_28, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 66 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_27, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 67 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_26, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 68 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_25, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 69 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_24, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 70 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_23, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 71 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_22, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 72 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_21, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 73 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_20, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 74 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_19, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 75 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_18, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 76 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_17, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 77 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_16, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 78 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_15, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 79 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_14, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 80 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_13, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 81 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_12, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 82 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_11, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 83 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_10, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 84 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_9, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 85 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_8, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 86 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_7, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 87 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_6, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 88 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_5, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 89 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_4, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 90 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_3, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 91 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_2, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 92 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_1, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 93 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_0, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 94 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%specstablecontent_ln516 = specstablecontent void @_ssdm_op_SpecStableContent, i16 <undef>, void " [detector_solid/abs_solid_detector.cpp:516]   --->   Operation 95 'specstablecontent' 'specstablecontent_ln516' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%specstablecontent_ln517 = specstablecontent void @_ssdm_op_SpecStableContent, i8 <undef>, void " [detector_solid/abs_solid_detector.cpp:517]   --->   Operation 96 'specstablecontent' 'specstablecontent_ln517' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 97 [1/2] (0.00ns)   --->   "%call_ln533 = call void @writeOutcome, i288 %outcomeStream" [detector_solid/abs_solid_detector.cpp:533]   --->   Operation 97 'call' 'call_ln533' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%ret_ln534 = ret" [detector_solid/abs_solid_detector.cpp:534]   --->   Operation 98 'ret' 'ret_ln534' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 1, void @empty_29"   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_19, i32 0, i32 0, void @empty_29, i32 64, i32 0, void @empty_28, void @empty_27, void @empty_29, i32 16, i32 16, i32 16, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyDest_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i320 %copyDest, i320 %copyDest"   --->   Operation 17 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%empty_48 = specchannel i32 @_ssdm_op_SpecChannel, void @outcomeStream_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i288 %outcomeStream, i288 %outcomeStream"   --->   Operation 19 'specchannel' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specstablecontent_ln510 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %gmem, void " [detector_solid/abs_solid_detector.cpp:510]   --->   Operation 21 'specstablecontent' 'specstablecontent_ln510' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specstablecontent_ln511 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void " [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 22 'specstablecontent' 'specstablecontent_ln511' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%specstablecontent_ln512 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void " [detector_solid/abs_solid_detector.cpp:512]   --->   Operation 23 'specstablecontent' 'specstablecontent_ln512' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_1, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 24 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 25 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 25 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_3, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 26 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_2, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 27 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_5, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 28 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_4, void " [detector_solid/abs_solid_detector.cpp:514]   --->   Operation 29 'specstablecontent' 'specstablecontent_ln514' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 30 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_63, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 30 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 31 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_62, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 31 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 32 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_61, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 32 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_60, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 33 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_59, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 34 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_58, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 35 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_57, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 36 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_56, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 37 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_55, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 38 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_54, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 39 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_53, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 40 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_52, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 41 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_51, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 42 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_50, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 43 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_49, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 44 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_48, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 45 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_47, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 46 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_46, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 47 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_45, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 48 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_44, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 49 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 50 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_43, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 50 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_42, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 51 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_41, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 52 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_40, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 53 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_39, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 54 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_38, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 55 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_37, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 56 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_36, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 57 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_35, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 58 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_34, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 59 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_33, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 60 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_32, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 61 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_31, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 62 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_30, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 63 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_29, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 64 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_28, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 65 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_27, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 66 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_26, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 67 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_25, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 68 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_24, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 69 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_23, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 70 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_22, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 71 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_21, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 72 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_20, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 73 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_19, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 74 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_18, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 75 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_17, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 76 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_16, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 77 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_15, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 78 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_14, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 79 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_13, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 80 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_12, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 81 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_11, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 82 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_10, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 83 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_9, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 84 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_8, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 85 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_7, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 86 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_6, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 87 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_5, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 88 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_4, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 89 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_3, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 90 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_2, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 91 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_1, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 92 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_0, void " [detector_solid/abs_solid_detector.cpp:515]   --->   Operation 93 'specstablecontent' 'specstablecontent_ln515' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%specstablecontent_ln516 = specstablecontent void @_ssdm_op_SpecStableContent, i16 <undef>, void " [detector_solid/abs_solid_detector.cpp:516]   --->   Operation 94 'specstablecontent' 'specstablecontent_ln516' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%specstablecontent_ln517 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %copying, void " [detector_solid/abs_solid_detector.cpp:517]   --->   Operation 95 'specstablecontent' 'specstablecontent_ln517' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 96 [1/2] (0.00ns)   --->   "%call_ln533 = call void @writeOutcome, i288 %outcomeStream" [detector_solid/abs_solid_detector.cpp:533]   --->   Operation 96 'call' 'call_ln533' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 97 [1/1] (0.00ns)   --->   "%ret_ln534 = ret" [detector_solid/abs_solid_detector.cpp:534]   --->   Operation 97 'ret' 'ret_ln534' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -517,7 +521,8 @@ STG Binding:
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
 Port [ inputAOV]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ startCopy]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ startCopy]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_hs:ce=0
+Port [ copying]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
 Port [ p_ZL9n_regions_0]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ p_ZL9n_regions_1]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ p_ZL9n_regions_2]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
@@ -592,7 +597,6 @@ Port [ regions_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; 
 
 <LifeTime>
 <method=bitvector/>
-startCopy_read           (read                ) [ 0010000]
 inputAOV_read            (read                ) [ 0010000]
 copyDest                 (alloca              ) [ 0111111]
 outcomeStream            (alloca              ) [ 0011111]
@@ -602,7 +606,7 @@ specdataflowpipeline_ln0 (specdataflowpipeline) [ 0000000]
 specinterface_ln0        (specinterface       ) [ 0000000]
 empty                    (specchannel         ) [ 0000000]
 specinterface_ln0        (specinterface       ) [ 0000000]
-empty_47                 (specchannel         ) [ 0000000]
+empty_48                 (specchannel         ) [ 0000000]
 specinterface_ln0        (specinterface       ) [ 0000000]
 specstablecontent_ln510  (specstablecontent   ) [ 0000000]
 specstablecontent_ln511  (specstablecontent   ) [ 0000000]
@@ -713,585 +717,594 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="6" class="1000" name="p_ZL9n_regions_0">
+<comp id="6" class="1000" name="copying">
 <pin_list>
 <pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="copying"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="p_ZL9n_regions_0">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_0"/></StgValue>
 </bind>
 </comp>
 
-<comp id="8" class="1000" name="p_ZL9n_regions_1">
+<comp id="10" class="1000" name="p_ZL9n_regions_1">
 <pin_list>
-<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_1"/></StgValue>
 </bind>
 </comp>
 
-<comp id="10" class="1000" name="p_ZL9n_regions_2">
+<comp id="12" class="1000" name="p_ZL9n_regions_2">
 <pin_list>
-<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_2"/></StgValue>
 </bind>
 </comp>
 
-<comp id="12" class="1000" name="p_ZL9n_regions_3">
+<comp id="14" class="1000" name="p_ZL9n_regions_3">
 <pin_list>
-<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_3"/></StgValue>
 </bind>
 </comp>
 
-<comp id="14" class="1000" name="p_ZL9n_regions_4">
+<comp id="16" class="1000" name="p_ZL9n_regions_4">
 <pin_list>
-<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_4"/></StgValue>
 </bind>
 </comp>
 
-<comp id="16" class="1000" name="p_ZL9n_regions_5">
+<comp id="18" class="1000" name="p_ZL9n_regions_5">
 <pin_list>
-<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_5"/></StgValue>
 </bind>
 </comp>
 
-<comp id="18" class="1000" name="p_ZL9n_regions_6">
+<comp id="20" class="1000" name="p_ZL9n_regions_6">
 <pin_list>
-<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_6"/></StgValue>
 </bind>
 </comp>
 
-<comp id="20" class="1000" name="p_ZL9n_regions_7">
+<comp id="22" class="1000" name="p_ZL9n_regions_7">
 <pin_list>
-<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_7"/></StgValue>
 </bind>
 </comp>
 
-<comp id="22" class="1000" name="p_ZL9n_regions_8">
+<comp id="24" class="1000" name="p_ZL9n_regions_8">
 <pin_list>
-<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_8"/></StgValue>
 </bind>
 </comp>
 
-<comp id="24" class="1000" name="p_ZL9n_regions_9">
+<comp id="26" class="1000" name="p_ZL9n_regions_9">
 <pin_list>
-<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_9"/></StgValue>
 </bind>
 </comp>
 
-<comp id="26" class="1000" name="p_ZL9n_regions_10">
+<comp id="28" class="1000" name="p_ZL9n_regions_10">
 <pin_list>
-<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_10"/></StgValue>
 </bind>
 </comp>
 
-<comp id="28" class="1000" name="p_ZL9n_regions_11">
+<comp id="30" class="1000" name="p_ZL9n_regions_11">
 <pin_list>
-<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_11"/></StgValue>
 </bind>
 </comp>
 
-<comp id="30" class="1000" name="p_ZL9n_regions_12">
+<comp id="32" class="1000" name="p_ZL9n_regions_12">
 <pin_list>
-<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_12"/></StgValue>
 </bind>
 </comp>
 
-<comp id="32" class="1000" name="p_ZL9n_regions_13">
+<comp id="34" class="1000" name="p_ZL9n_regions_13">
 <pin_list>
-<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_13"/></StgValue>
 </bind>
 </comp>
 
-<comp id="34" class="1000" name="p_ZL9n_regions_14">
+<comp id="36" class="1000" name="p_ZL9n_regions_14">
 <pin_list>
-<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_14"/></StgValue>
 </bind>
 </comp>
 
-<comp id="36" class="1000" name="p_ZL9n_regions_15">
+<comp id="38" class="1000" name="p_ZL9n_regions_15">
 <pin_list>
-<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_15"/></StgValue>
 </bind>
 </comp>
 
-<comp id="38" class="1000" name="p_ZL9n_regions_16">
+<comp id="40" class="1000" name="p_ZL9n_regions_16">
 <pin_list>
-<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_16"/></StgValue>
 </bind>
 </comp>
 
-<comp id="40" class="1000" name="p_ZL9n_regions_17">
+<comp id="42" class="1000" name="p_ZL9n_regions_17">
 <pin_list>
-<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_17"/></StgValue>
 </bind>
 </comp>
 
-<comp id="42" class="1000" name="p_ZL9n_regions_18">
+<comp id="44" class="1000" name="p_ZL9n_regions_18">
 <pin_list>
-<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_18"/></StgValue>
 </bind>
 </comp>
 
-<comp id="44" class="1000" name="p_ZL9n_regions_19">
+<comp id="46" class="1000" name="p_ZL9n_regions_19">
 <pin_list>
-<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_19"/></StgValue>
 </bind>
 </comp>
 
-<comp id="46" class="1000" name="p_ZL9n_regions_20">
+<comp id="48" class="1000" name="p_ZL9n_regions_20">
 <pin_list>
-<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_20"/></StgValue>
 </bind>
 </comp>
 
-<comp id="48" class="1000" name="p_ZL9n_regions_21">
+<comp id="50" class="1000" name="p_ZL9n_regions_21">
 <pin_list>
-<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_21"/></StgValue>
 </bind>
 </comp>
 
-<comp id="50" class="1000" name="p_ZL9n_regions_22">
+<comp id="52" class="1000" name="p_ZL9n_regions_22">
 <pin_list>
-<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_22"/></StgValue>
 </bind>
 </comp>
 
-<comp id="52" class="1000" name="p_ZL9n_regions_23">
+<comp id="54" class="1000" name="p_ZL9n_regions_23">
 <pin_list>
-<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_23"/></StgValue>
 </bind>
 </comp>
 
-<comp id="54" class="1000" name="p_ZL9n_regions_24">
+<comp id="56" class="1000" name="p_ZL9n_regions_24">
 <pin_list>
-<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_24"/></StgValue>
 </bind>
 </comp>
 
-<comp id="56" class="1000" name="p_ZL9n_regions_25">
+<comp id="58" class="1000" name="p_ZL9n_regions_25">
 <pin_list>
-<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_25"/></StgValue>
 </bind>
 </comp>
 
-<comp id="58" class="1000" name="p_ZL9n_regions_26">
+<comp id="60" class="1000" name="p_ZL9n_regions_26">
 <pin_list>
-<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_26"/></StgValue>
 </bind>
 </comp>
 
-<comp id="60" class="1000" name="p_ZL9n_regions_27">
+<comp id="62" class="1000" name="p_ZL9n_regions_27">
 <pin_list>
-<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_27"/></StgValue>
 </bind>
 </comp>
 
-<comp id="62" class="1000" name="p_ZL9n_regions_28">
+<comp id="64" class="1000" name="p_ZL9n_regions_28">
 <pin_list>
-<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_28"/></StgValue>
 </bind>
 </comp>
 
-<comp id="64" class="1000" name="p_ZL9n_regions_29">
+<comp id="66" class="1000" name="p_ZL9n_regions_29">
 <pin_list>
-<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_29"/></StgValue>
 </bind>
 </comp>
 
-<comp id="66" class="1000" name="p_ZL9n_regions_30">
+<comp id="68" class="1000" name="p_ZL9n_regions_30">
 <pin_list>
-<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_30"/></StgValue>
 </bind>
 </comp>
 
-<comp id="68" class="1000" name="p_ZL9n_regions_31">
+<comp id="70" class="1000" name="p_ZL9n_regions_31">
 <pin_list>
-<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_31"/></StgValue>
 </bind>
 </comp>
 
-<comp id="70" class="1000" name="p_ZL9n_regions_32">
+<comp id="72" class="1000" name="p_ZL9n_regions_32">
 <pin_list>
-<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_32"/></StgValue>
 </bind>
 </comp>
 
-<comp id="72" class="1000" name="p_ZL9n_regions_33">
+<comp id="74" class="1000" name="p_ZL9n_regions_33">
 <pin_list>
-<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_33"/></StgValue>
 </bind>
 </comp>
 
-<comp id="74" class="1000" name="p_ZL9n_regions_34">
+<comp id="76" class="1000" name="p_ZL9n_regions_34">
 <pin_list>
-<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_34"/></StgValue>
 </bind>
 </comp>
 
-<comp id="76" class="1000" name="p_ZL9n_regions_35">
+<comp id="78" class="1000" name="p_ZL9n_regions_35">
 <pin_list>
-<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_35"/></StgValue>
 </bind>
 </comp>
 
-<comp id="78" class="1000" name="p_ZL9n_regions_36">
+<comp id="80" class="1000" name="p_ZL9n_regions_36">
 <pin_list>
-<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_36"/></StgValue>
 </bind>
 </comp>
 
-<comp id="80" class="1000" name="p_ZL9n_regions_37">
+<comp id="82" class="1000" name="p_ZL9n_regions_37">
 <pin_list>
-<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_37"/></StgValue>
 </bind>
 </comp>
 
-<comp id="82" class="1000" name="p_ZL9n_regions_38">
+<comp id="84" class="1000" name="p_ZL9n_regions_38">
 <pin_list>
-<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_38"/></StgValue>
 </bind>
 </comp>
 
-<comp id="84" class="1000" name="p_ZL9n_regions_39">
+<comp id="86" class="1000" name="p_ZL9n_regions_39">
 <pin_list>
-<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_39"/></StgValue>
 </bind>
 </comp>
 
-<comp id="86" class="1000" name="p_ZL9n_regions_40">
+<comp id="88" class="1000" name="p_ZL9n_regions_40">
 <pin_list>
-<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_40"/></StgValue>
 </bind>
 </comp>
 
-<comp id="88" class="1000" name="p_ZL9n_regions_41">
+<comp id="90" class="1000" name="p_ZL9n_regions_41">
 <pin_list>
-<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_41"/></StgValue>
 </bind>
 </comp>
 
-<comp id="90" class="1000" name="p_ZL9n_regions_42">
+<comp id="92" class="1000" name="p_ZL9n_regions_42">
 <pin_list>
-<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_42"/></StgValue>
 </bind>
 </comp>
 
-<comp id="92" class="1000" name="p_ZL9n_regions_43">
+<comp id="94" class="1000" name="p_ZL9n_regions_43">
 <pin_list>
-<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_43"/></StgValue>
 </bind>
 </comp>
 
-<comp id="94" class="1000" name="p_ZL9n_regions_44">
+<comp id="96" class="1000" name="p_ZL9n_regions_44">
 <pin_list>
-<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+<pin id="97" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_44"/></StgValue>
 </bind>
 </comp>
 
-<comp id="96" class="1000" name="p_ZL9n_regions_45">
+<comp id="98" class="1000" name="p_ZL9n_regions_45">
 <pin_list>
-<pin id="97" dir="1" index="0" bw="1" slack="0"/>
+<pin id="99" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_45"/></StgValue>
 </bind>
 </comp>
 
-<comp id="98" class="1000" name="p_ZL9n_regions_46">
+<comp id="100" class="1000" name="p_ZL9n_regions_46">
 <pin_list>
-<pin id="99" dir="1" index="0" bw="1" slack="0"/>
+<pin id="101" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_46"/></StgValue>
 </bind>
 </comp>
 
-<comp id="100" class="1000" name="p_ZL9n_regions_47">
+<comp id="102" class="1000" name="p_ZL9n_regions_47">
 <pin_list>
-<pin id="101" dir="1" index="0" bw="1" slack="0"/>
+<pin id="103" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_47"/></StgValue>
 </bind>
 </comp>
 
-<comp id="102" class="1000" name="p_ZL9n_regions_48">
+<comp id="104" class="1000" name="p_ZL9n_regions_48">
 <pin_list>
-<pin id="103" dir="1" index="0" bw="1" slack="0"/>
+<pin id="105" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_48"/></StgValue>
 </bind>
 </comp>
 
-<comp id="104" class="1000" name="p_ZL9n_regions_49">
+<comp id="106" class="1000" name="p_ZL9n_regions_49">
 <pin_list>
-<pin id="105" dir="1" index="0" bw="1" slack="0"/>
+<pin id="107" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_49"/></StgValue>
 </bind>
 </comp>
 
-<comp id="106" class="1000" name="p_ZL9n_regions_50">
+<comp id="108" class="1000" name="p_ZL9n_regions_50">
 <pin_list>
-<pin id="107" dir="1" index="0" bw="1" slack="0"/>
+<pin id="109" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_50"/></StgValue>
 </bind>
 </comp>
 
-<comp id="108" class="1000" name="p_ZL9n_regions_51">
+<comp id="110" class="1000" name="p_ZL9n_regions_51">
 <pin_list>
-<pin id="109" dir="1" index="0" bw="1" slack="0"/>
+<pin id="111" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_51"/></StgValue>
 </bind>
 </comp>
 
-<comp id="110" class="1000" name="p_ZL9n_regions_52">
+<comp id="112" class="1000" name="p_ZL9n_regions_52">
 <pin_list>
-<pin id="111" dir="1" index="0" bw="1" slack="0"/>
+<pin id="113" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_52"/></StgValue>
 </bind>
 </comp>
 
-<comp id="112" class="1000" name="p_ZL9n_regions_53">
+<comp id="114" class="1000" name="p_ZL9n_regions_53">
 <pin_list>
-<pin id="113" dir="1" index="0" bw="1" slack="0"/>
+<pin id="115" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_53"/></StgValue>
 </bind>
 </comp>
 
-<comp id="114" class="1000" name="p_ZL9n_regions_54">
+<comp id="116" class="1000" name="p_ZL9n_regions_54">
 <pin_list>
-<pin id="115" dir="1" index="0" bw="1" slack="0"/>
+<pin id="117" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_54"/></StgValue>
 </bind>
 </comp>
 
-<comp id="116" class="1000" name="p_ZL9n_regions_55">
+<comp id="118" class="1000" name="p_ZL9n_regions_55">
 <pin_list>
-<pin id="117" dir="1" index="0" bw="1" slack="0"/>
+<pin id="119" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_55"/></StgValue>
 </bind>
 </comp>
 
-<comp id="118" class="1000" name="p_ZL9n_regions_56">
+<comp id="120" class="1000" name="p_ZL9n_regions_56">
 <pin_list>
-<pin id="119" dir="1" index="0" bw="1" slack="0"/>
+<pin id="121" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_56"/></StgValue>
 </bind>
 </comp>
 
-<comp id="120" class="1000" name="p_ZL9n_regions_57">
+<comp id="122" class="1000" name="p_ZL9n_regions_57">
 <pin_list>
-<pin id="121" dir="1" index="0" bw="1" slack="0"/>
+<pin id="123" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_57"/></StgValue>
 </bind>
 </comp>
 
-<comp id="122" class="1000" name="p_ZL9n_regions_58">
+<comp id="124" class="1000" name="p_ZL9n_regions_58">
 <pin_list>
-<pin id="123" dir="1" index="0" bw="1" slack="0"/>
+<pin id="125" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_58"/></StgValue>
 </bind>
 </comp>
 
-<comp id="124" class="1000" name="p_ZL9n_regions_59">
+<comp id="126" class="1000" name="p_ZL9n_regions_59">
 <pin_list>
-<pin id="125" dir="1" index="0" bw="1" slack="0"/>
+<pin id="127" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_59"/></StgValue>
 </bind>
 </comp>
 
-<comp id="126" class="1000" name="p_ZL9n_regions_60">
+<comp id="128" class="1000" name="p_ZL9n_regions_60">
 <pin_list>
-<pin id="127" dir="1" index="0" bw="1" slack="0"/>
+<pin id="129" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_60"/></StgValue>
 </bind>
 </comp>
 
-<comp id="128" class="1000" name="p_ZL9n_regions_61">
+<comp id="130" class="1000" name="p_ZL9n_regions_61">
 <pin_list>
-<pin id="129" dir="1" index="0" bw="1" slack="0"/>
+<pin id="131" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_61"/></StgValue>
 </bind>
 </comp>
 
-<comp id="130" class="1000" name="p_ZL9n_regions_62">
+<comp id="132" class="1000" name="p_ZL9n_regions_62">
 <pin_list>
-<pin id="131" dir="1" index="0" bw="1" slack="0"/>
+<pin id="133" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_62"/></StgValue>
 </bind>
 </comp>
 
-<comp id="132" class="1000" name="p_ZL9n_regions_63">
+<comp id="134" class="1000" name="p_ZL9n_regions_63">
 <pin_list>
-<pin id="133" dir="1" index="0" bw="1" slack="0"/>
+<pin id="135" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="p_ZL9n_regions_63"/></StgValue>
 </bind>
 </comp>
 
-<comp id="134" class="1000" name="regions">
+<comp id="136" class="1000" name="regions">
 <pin_list>
-<pin id="135" dir="1" index="0" bw="1" slack="0"/>
+<pin id="137" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="regions"/><MemPortTyVec>1 3 </MemPortTyVec>
@@ -1299,9 +1312,9 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="136" class="1000" name="regions_1">
+<comp id="138" class="1000" name="regions_1">
 <pin_list>
-<pin id="137" dir="1" index="0" bw="1" slack="0"/>
+<pin id="139" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="regions_1"/><MemPortTyVec>1 3 </MemPortTyVec>
@@ -1309,9 +1322,9 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="138" class="1000" name="regions_2">
+<comp id="140" class="1000" name="regions_2">
 <pin_list>
-<pin id="139" dir="1" index="0" bw="1" slack="0"/>
+<pin id="141" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name="regions_2"/><MemPortTyVec>1 3 </MemPortTyVec>
@@ -1319,22 +1332,13 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="140" class="1000" name="regions_3">
-<pin_list>
-<pin id="141" dir="1" index="0" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="regions_3"/><MemPortTyVec>1 3 </MemPortTyVec>
-</StgValue>
-</bind>
-</comp>
-
-<comp id="142" class="1001" name="const_142">
+<comp id="142" class="1000" name="regions_3">
 <pin_list>
 <pin id="143" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i64"/></StgValue>
+<StgValue><ssdm name="regions_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
 </bind>
 </comp>
 
@@ -1343,7 +1347,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="145" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i64"/></StgValue>
 </bind>
 </comp>
 
@@ -1352,7 +1356,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="147" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="read_data"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -1361,7 +1365,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="149" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="run_test"/></StgValue>
+<StgValue><ssdm name="read_data"/></StgValue>
 </bind>
 </comp>
 
@@ -1370,16 +1374,16 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="151" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="writeOutcome"/></StgValue>
+<StgValue><ssdm name="run_test"/></StgValue>
 </bind>
 </comp>
 
 <comp id="152" class="1001" name="const_152">
 <pin_list>
-<pin id="153" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="153" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+<StgValue><ssdm name="writeOutcome"/></StgValue>
 </bind>
 </comp>
 
@@ -1388,7 +1392,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="155" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
 </bind>
 </comp>
 
@@ -1406,7 +1410,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="159" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_23"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -1415,7 +1419,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="161" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+<StgValue><ssdm name="empty_29"/></StgValue>
 </bind>
 </comp>
 
@@ -1424,7 +1428,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="163" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_27"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
 </bind>
 </comp>
 
@@ -1433,7 +1437,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="165" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="empty_19"/></StgValue>
 </bind>
 </comp>
 
@@ -1451,7 +1455,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="169" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_7"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -1460,7 +1464,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="171" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_14"/></StgValue>
+<StgValue><ssdm name="empty_28"/></StgValue>
 </bind>
 </comp>
 
@@ -1469,7 +1473,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="173" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="empty_27"/></StgValue>
 </bind>
 </comp>
 
@@ -1478,7 +1482,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="175" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -1487,7 +1491,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="177" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="copyDest_str"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
 </bind>
 </comp>
 
@@ -1496,7 +1500,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="179" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str"/></StgValue>
+<StgValue><ssdm name="copyDest_str"/></StgValue>
 </bind>
 </comp>
 
@@ -1505,7 +1509,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="181" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_3"/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -1514,7 +1518,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="183" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="outcomeStream_str"/></StgValue>
+<StgValue><ssdm name="empty_23"/></StgValue>
 </bind>
 </comp>
 
@@ -1523,7 +1527,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="185" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecStableContent"/></StgValue>
+<StgValue><ssdm name="outcomeStream_str"/></StgValue>
 </bind>
 </comp>
 
@@ -1532,7 +1536,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="187" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecStableContent"/></StgValue>
 </bind>
 </comp>
 
@@ -1559,7 +1563,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="193" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="regions_5"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -1568,7 +1572,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="195" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="regions_4"/></StgValue>
+<StgValue><ssdm name="regions_5"/></StgValue>
 </bind>
 </comp>
 
@@ -1577,7 +1581,7 @@ ret_ln534                (ret                 ) [ 0000000]
 <pin id="197" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="regions_4"/></StgValue>
 </bind>
 </comp>
 
@@ -1612,7 +1616,7 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="208" class="1004" name="startCopy_read_read_fu_208">
+<comp id="208" class="1004" name="inputAOV_read_read_fu_208">
 <pin_list>
 <pin id="209" dir="0" index="0" bw="64" slack="0"/>
 <pin id="210" dir="0" index="1" bw="64" slack="0"/>
@@ -1620,30 +1624,19 @@ ret_ln534                (ret                 ) [ 0000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="startCopy_read/1 "/>
-</bind>
-</comp>
-
-<comp id="214" class="1004" name="inputAOV_read_read_fu_214">
-<pin_list>
-<pin id="215" dir="0" index="0" bw="64" slack="0"/>
-<pin id="216" dir="0" index="1" bw="64" slack="0"/>
-<pin id="217" dir="1" index="2" bw="64" slack="0"/>
-</pin_list>
-<bind>
-<opcode="read(1150) " fcode="read"/>
 <opset="inputAOV_read/1 "/>
 </bind>
 </comp>
 
-<comp id="220" class="1004" name="grp_read_data_fu_220">
+<comp id="214" class="1004" name="grp_read_data_fu_214">
 <pin_list>
-<pin id="221" dir="0" index="0" bw="0" slack="0"/>
-<pin id="222" dir="0" index="1" bw="320" slack="0"/>
-<pin id="223" dir="0" index="2" bw="512" slack="0"/>
-<pin id="224" dir="0" index="3" bw="64" slack="0"/>
-<pin id="225" dir="0" index="4" bw="64" slack="0"/>
-<pin id="226" dir="1" index="5" bw="0" slack="2147483647"/>
+<pin id="215" dir="0" index="0" bw="0" slack="0"/>
+<pin id="216" dir="0" index="1" bw="320" slack="0"/>
+<pin id="217" dir="0" index="2" bw="512" slack="0"/>
+<pin id="218" dir="0" index="3" bw="64" slack="0"/>
+<pin id="219" dir="0" index="4" bw="8" slack="0"/>
+<pin id="220" dir="0" index="5" bw="8" slack="0"/>
+<pin id="221" dir="1" index="6" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1651,80 +1644,80 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="231" class="1004" name="grp_run_test_fu_231">
+<comp id="227" class="1004" name="grp_run_test_fu_227">
 <pin_list>
-<pin id="232" dir="0" index="0" bw="0" slack="0"/>
-<pin id="233" dir="0" index="1" bw="320" slack="2"/>
-<pin id="234" dir="0" index="2" bw="288" slack="2"/>
-<pin id="235" dir="0" index="3" bw="8" slack="0"/>
-<pin id="236" dir="0" index="4" bw="8" slack="0"/>
-<pin id="237" dir="0" index="5" bw="8" slack="0"/>
-<pin id="238" dir="0" index="6" bw="8" slack="0"/>
-<pin id="239" dir="0" index="7" bw="8" slack="0"/>
-<pin id="240" dir="0" index="8" bw="8" slack="0"/>
-<pin id="241" dir="0" index="9" bw="8" slack="0"/>
-<pin id="242" dir="0" index="10" bw="8" slack="0"/>
-<pin id="243" dir="0" index="11" bw="8" slack="0"/>
-<pin id="244" dir="0" index="12" bw="8" slack="0"/>
-<pin id="245" dir="0" index="13" bw="8" slack="0"/>
-<pin id="246" dir="0" index="14" bw="8" slack="0"/>
-<pin id="247" dir="0" index="15" bw="8" slack="0"/>
-<pin id="248" dir="0" index="16" bw="8" slack="0"/>
-<pin id="249" dir="0" index="17" bw="8" slack="0"/>
-<pin id="250" dir="0" index="18" bw="8" slack="0"/>
-<pin id="251" dir="0" index="19" bw="8" slack="0"/>
-<pin id="252" dir="0" index="20" bw="8" slack="0"/>
-<pin id="253" dir="0" index="21" bw="8" slack="0"/>
-<pin id="254" dir="0" index="22" bw="8" slack="0"/>
-<pin id="255" dir="0" index="23" bw="8" slack="0"/>
-<pin id="256" dir="0" index="24" bw="8" slack="0"/>
-<pin id="257" dir="0" index="25" bw="8" slack="0"/>
-<pin id="258" dir="0" index="26" bw="8" slack="0"/>
-<pin id="259" dir="0" index="27" bw="8" slack="0"/>
-<pin id="260" dir="0" index="28" bw="8" slack="0"/>
-<pin id="261" dir="0" index="29" bw="8" slack="0"/>
-<pin id="262" dir="0" index="30" bw="8" slack="0"/>
-<pin id="263" dir="0" index="31" bw="8" slack="0"/>
-<pin id="264" dir="0" index="32" bw="8" slack="0"/>
-<pin id="265" dir="0" index="33" bw="8" slack="0"/>
-<pin id="266" dir="0" index="34" bw="8" slack="0"/>
-<pin id="267" dir="0" index="35" bw="8" slack="0"/>
-<pin id="268" dir="0" index="36" bw="8" slack="0"/>
-<pin id="269" dir="0" index="37" bw="8" slack="0"/>
-<pin id="270" dir="0" index="38" bw="8" slack="0"/>
-<pin id="271" dir="0" index="39" bw="8" slack="0"/>
-<pin id="272" dir="0" index="40" bw="8" slack="0"/>
-<pin id="273" dir="0" index="41" bw="8" slack="0"/>
-<pin id="274" dir="0" index="42" bw="8" slack="0"/>
-<pin id="275" dir="0" index="43" bw="8" slack="0"/>
-<pin id="276" dir="0" index="44" bw="8" slack="0"/>
-<pin id="277" dir="0" index="45" bw="8" slack="0"/>
-<pin id="278" dir="0" index="46" bw="8" slack="0"/>
-<pin id="279" dir="0" index="47" bw="8" slack="0"/>
-<pin id="280" dir="0" index="48" bw="8" slack="0"/>
-<pin id="281" dir="0" index="49" bw="8" slack="0"/>
-<pin id="282" dir="0" index="50" bw="8" slack="0"/>
-<pin id="283" dir="0" index="51" bw="8" slack="0"/>
-<pin id="284" dir="0" index="52" bw="8" slack="0"/>
-<pin id="285" dir="0" index="53" bw="8" slack="0"/>
-<pin id="286" dir="0" index="54" bw="8" slack="0"/>
-<pin id="287" dir="0" index="55" bw="8" slack="0"/>
-<pin id="288" dir="0" index="56" bw="8" slack="0"/>
-<pin id="289" dir="0" index="57" bw="8" slack="0"/>
-<pin id="290" dir="0" index="58" bw="8" slack="0"/>
-<pin id="291" dir="0" index="59" bw="8" slack="0"/>
-<pin id="292" dir="0" index="60" bw="8" slack="0"/>
-<pin id="293" dir="0" index="61" bw="8" slack="0"/>
-<pin id="294" dir="0" index="62" bw="8" slack="0"/>
-<pin id="295" dir="0" index="63" bw="8" slack="0"/>
-<pin id="296" dir="0" index="64" bw="8" slack="0"/>
-<pin id="297" dir="0" index="65" bw="8" slack="0"/>
-<pin id="298" dir="0" index="66" bw="8" slack="0"/>
-<pin id="299" dir="0" index="67" bw="32" slack="0"/>
-<pin id="300" dir="0" index="68" bw="32" slack="0"/>
-<pin id="301" dir="0" index="69" bw="32" slack="0"/>
-<pin id="302" dir="0" index="70" bw="32" slack="0"/>
-<pin id="303" dir="1" index="71" bw="0" slack="2147483647"/>
+<pin id="228" dir="0" index="0" bw="0" slack="0"/>
+<pin id="229" dir="0" index="1" bw="320" slack="2"/>
+<pin id="230" dir="0" index="2" bw="288" slack="2"/>
+<pin id="231" dir="0" index="3" bw="8" slack="0"/>
+<pin id="232" dir="0" index="4" bw="8" slack="0"/>
+<pin id="233" dir="0" index="5" bw="8" slack="0"/>
+<pin id="234" dir="0" index="6" bw="8" slack="0"/>
+<pin id="235" dir="0" index="7" bw="8" slack="0"/>
+<pin id="236" dir="0" index="8" bw="8" slack="0"/>
+<pin id="237" dir="0" index="9" bw="8" slack="0"/>
+<pin id="238" dir="0" index="10" bw="8" slack="0"/>
+<pin id="239" dir="0" index="11" bw="8" slack="0"/>
+<pin id="240" dir="0" index="12" bw="8" slack="0"/>
+<pin id="241" dir="0" index="13" bw="8" slack="0"/>
+<pin id="242" dir="0" index="14" bw="8" slack="0"/>
+<pin id="243" dir="0" index="15" bw="8" slack="0"/>
+<pin id="244" dir="0" index="16" bw="8" slack="0"/>
+<pin id="245" dir="0" index="17" bw="8" slack="0"/>
+<pin id="246" dir="0" index="18" bw="8" slack="0"/>
+<pin id="247" dir="0" index="19" bw="8" slack="0"/>
+<pin id="248" dir="0" index="20" bw="8" slack="0"/>
+<pin id="249" dir="0" index="21" bw="8" slack="0"/>
+<pin id="250" dir="0" index="22" bw="8" slack="0"/>
+<pin id="251" dir="0" index="23" bw="8" slack="0"/>
+<pin id="252" dir="0" index="24" bw="8" slack="0"/>
+<pin id="253" dir="0" index="25" bw="8" slack="0"/>
+<pin id="254" dir="0" index="26" bw="8" slack="0"/>
+<pin id="255" dir="0" index="27" bw="8" slack="0"/>
+<pin id="256" dir="0" index="28" bw="8" slack="0"/>
+<pin id="257" dir="0" index="29" bw="8" slack="0"/>
+<pin id="258" dir="0" index="30" bw="8" slack="0"/>
+<pin id="259" dir="0" index="31" bw="8" slack="0"/>
+<pin id="260" dir="0" index="32" bw="8" slack="0"/>
+<pin id="261" dir="0" index="33" bw="8" slack="0"/>
+<pin id="262" dir="0" index="34" bw="8" slack="0"/>
+<pin id="263" dir="0" index="35" bw="8" slack="0"/>
+<pin id="264" dir="0" index="36" bw="8" slack="0"/>
+<pin id="265" dir="0" index="37" bw="8" slack="0"/>
+<pin id="266" dir="0" index="38" bw="8" slack="0"/>
+<pin id="267" dir="0" index="39" bw="8" slack="0"/>
+<pin id="268" dir="0" index="40" bw="8" slack="0"/>
+<pin id="269" dir="0" index="41" bw="8" slack="0"/>
+<pin id="270" dir="0" index="42" bw="8" slack="0"/>
+<pin id="271" dir="0" index="43" bw="8" slack="0"/>
+<pin id="272" dir="0" index="44" bw="8" slack="0"/>
+<pin id="273" dir="0" index="45" bw="8" slack="0"/>
+<pin id="274" dir="0" index="46" bw="8" slack="0"/>
+<pin id="275" dir="0" index="47" bw="8" slack="0"/>
+<pin id="276" dir="0" index="48" bw="8" slack="0"/>
+<pin id="277" dir="0" index="49" bw="8" slack="0"/>
+<pin id="278" dir="0" index="50" bw="8" slack="0"/>
+<pin id="279" dir="0" index="51" bw="8" slack="0"/>
+<pin id="280" dir="0" index="52" bw="8" slack="0"/>
+<pin id="281" dir="0" index="53" bw="8" slack="0"/>
+<pin id="282" dir="0" index="54" bw="8" slack="0"/>
+<pin id="283" dir="0" index="55" bw="8" slack="0"/>
+<pin id="284" dir="0" index="56" bw="8" slack="0"/>
+<pin id="285" dir="0" index="57" bw="8" slack="0"/>
+<pin id="286" dir="0" index="58" bw="8" slack="0"/>
+<pin id="287" dir="0" index="59" bw="8" slack="0"/>
+<pin id="288" dir="0" index="60" bw="8" slack="0"/>
+<pin id="289" dir="0" index="61" bw="8" slack="0"/>
+<pin id="290" dir="0" index="62" bw="8" slack="0"/>
+<pin id="291" dir="0" index="63" bw="8" slack="0"/>
+<pin id="292" dir="0" index="64" bw="8" slack="0"/>
+<pin id="293" dir="0" index="65" bw="8" slack="0"/>
+<pin id="294" dir="0" index="66" bw="8" slack="0"/>
+<pin id="295" dir="0" index="67" bw="32" slack="0"/>
+<pin id="296" dir="0" index="68" bw="32" slack="0"/>
+<pin id="297" dir="0" index="69" bw="32" slack="0"/>
+<pin id="298" dir="0" index="70" bw="32" slack="0"/>
+<pin id="299" dir="1" index="71" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1732,11 +1725,11 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="373" class="1004" name="grp_writeOutcome_fu_373">
+<comp id="369" class="1004" name="grp_writeOutcome_fu_369">
 <pin_list>
-<pin id="374" dir="0" index="0" bw="0" slack="0"/>
-<pin id="375" dir="0" index="1" bw="288" slack="4"/>
-<pin id="376" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="370" dir="0" index="0" bw="0" slack="0"/>
+<pin id="371" dir="0" index="1" bw="288" slack="4"/>
+<pin id="372" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1744,40 +1737,30 @@ ret_ln534                (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="378" class="1005" name="startCopy_read_reg_378">
+<comp id="374" class="1005" name="inputAOV_read_reg_374">
 <pin_list>
-<pin id="379" dir="0" index="0" bw="64" slack="1"/>
-<pin id="380" dir="1" index="1" bw="64" slack="1"/>
-</pin_list>
-<bind>
-<opset="startCopy_read "/>
-</bind>
-</comp>
-
-<comp id="383" class="1005" name="inputAOV_read_reg_383">
-<pin_list>
-<pin id="384" dir="0" index="0" bw="64" slack="1"/>
-<pin id="385" dir="1" index="1" bw="64" slack="1"/>
+<pin id="375" dir="0" index="0" bw="64" slack="1"/>
+<pin id="376" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
 <opset="inputAOV_read "/>
 </bind>
 </comp>
 
-<comp id="388" class="1005" name="copyDest_reg_388">
+<comp id="379" class="1005" name="copyDest_reg_379">
 <pin_list>
-<pin id="389" dir="0" index="0" bw="320" slack="0"/>
-<pin id="390" dir="1" index="1" bw="320" slack="0"/>
+<pin id="380" dir="0" index="0" bw="320" slack="0"/>
+<pin id="381" dir="1" index="1" bw="320" slack="0"/>
 </pin_list>
 <bind>
 <opset="copyDest "/>
 </bind>
 </comp>
 
-<comp id="394" class="1005" name="outcomeStream_reg_394">
+<comp id="385" class="1005" name="outcomeStream_reg_385">
 <pin_list>
-<pin id="395" dir="0" index="0" bw="288" slack="2"/>
-<pin id="396" dir="1" index="1" bw="288" slack="2"/>
+<pin id="386" dir="0" index="0" bw="288" slack="2"/>
+<pin id="387" dir="1" index="1" bw="288" slack="2"/>
 </pin_list>
 <bind>
 <opset="outcomeStream "/>
@@ -1787,185 +1770,179 @@ ret_ln534                (ret                 ) [ 0000000]
 </comp_list>
 
 <net_list>
-<net id="203"><net_src comp="144" pin="0"/><net_sink comp="200" pin=0"/></net>
+<net id="203"><net_src comp="146" pin="0"/><net_sink comp="200" pin=0"/></net>
 
-<net id="207"><net_src comp="144" pin="0"/><net_sink comp="204" pin=0"/></net>
+<net id="207"><net_src comp="146" pin="0"/><net_sink comp="204" pin=0"/></net>
 
-<net id="212"><net_src comp="142" pin="0"/><net_sink comp="208" pin=0"/></net>
+<net id="212"><net_src comp="144" pin="0"/><net_sink comp="208" pin=0"/></net>
 
-<net id="213"><net_src comp="4" pin="0"/><net_sink comp="208" pin=1"/></net>
+<net id="213"><net_src comp="2" pin="0"/><net_sink comp="208" pin=1"/></net>
 
-<net id="218"><net_src comp="142" pin="0"/><net_sink comp="214" pin=0"/></net>
+<net id="222"><net_src comp="148" pin="0"/><net_sink comp="214" pin=0"/></net>
 
-<net id="219"><net_src comp="2" pin="0"/><net_sink comp="214" pin=1"/></net>
+<net id="223"><net_src comp="0" pin="0"/><net_sink comp="214" pin=2"/></net>
 
-<net id="227"><net_src comp="146" pin="0"/><net_sink comp="220" pin=0"/></net>
+<net id="224"><net_src comp="208" pin="2"/><net_sink comp="214" pin=3"/></net>
 
-<net id="228"><net_src comp="0" pin="0"/><net_sink comp="220" pin=2"/></net>
+<net id="225"><net_src comp="4" pin="0"/><net_sink comp="214" pin=4"/></net>
 
-<net id="229"><net_src comp="214" pin="2"/><net_sink comp="220" pin=3"/></net>
+<net id="226"><net_src comp="6" pin="0"/><net_sink comp="214" pin=5"/></net>
 
-<net id="230"><net_src comp="208" pin="2"/><net_sink comp="220" pin=4"/></net>
+<net id="300"><net_src comp="150" pin="0"/><net_sink comp="227" pin=0"/></net>
 
-<net id="304"><net_src comp="148" pin="0"/><net_sink comp="231" pin=0"/></net>
+<net id="301"><net_src comp="8" pin="0"/><net_sink comp="227" pin=3"/></net>
 
-<net id="305"><net_src comp="6" pin="0"/><net_sink comp="231" pin=3"/></net>
+<net id="302"><net_src comp="10" pin="0"/><net_sink comp="227" pin=4"/></net>
 
-<net id="306"><net_src comp="8" pin="0"/><net_sink comp="231" pin=4"/></net>
+<net id="303"><net_src comp="12" pin="0"/><net_sink comp="227" pin=5"/></net>
 
-<net id="307"><net_src comp="10" pin="0"/><net_sink comp="231" pin=5"/></net>
+<net id="304"><net_src comp="14" pin="0"/><net_sink comp="227" pin=6"/></net>
 
-<net id="308"><net_src comp="12" pin="0"/><net_sink comp="231" pin=6"/></net>
+<net id="305"><net_src comp="16" pin="0"/><net_sink comp="227" pin=7"/></net>
 
-<net id="309"><net_src comp="14" pin="0"/><net_sink comp="231" pin=7"/></net>
+<net id="306"><net_src comp="18" pin="0"/><net_sink comp="227" pin=8"/></net>
 
-<net id="310"><net_src comp="16" pin="0"/><net_sink comp="231" pin=8"/></net>
+<net id="307"><net_src comp="20" pin="0"/><net_sink comp="227" pin=9"/></net>
 
-<net id="311"><net_src comp="18" pin="0"/><net_sink comp="231" pin=9"/></net>
+<net id="308"><net_src comp="22" pin="0"/><net_sink comp="227" pin=10"/></net>
 
-<net id="312"><net_src comp="20" pin="0"/><net_sink comp="231" pin=10"/></net>
+<net id="309"><net_src comp="24" pin="0"/><net_sink comp="227" pin=11"/></net>
 
-<net id="313"><net_src comp="22" pin="0"/><net_sink comp="231" pin=11"/></net>
+<net id="310"><net_src comp="26" pin="0"/><net_sink comp="227" pin=12"/></net>
 
-<net id="314"><net_src comp="24" pin="0"/><net_sink comp="231" pin=12"/></net>
+<net id="311"><net_src comp="28" pin="0"/><net_sink comp="227" pin=13"/></net>
 
-<net id="315"><net_src comp="26" pin="0"/><net_sink comp="231" pin=13"/></net>
+<net id="312"><net_src comp="30" pin="0"/><net_sink comp="227" pin=14"/></net>
 
-<net id="316"><net_src comp="28" pin="0"/><net_sink comp="231" pin=14"/></net>
+<net id="313"><net_src comp="32" pin="0"/><net_sink comp="227" pin=15"/></net>
 
-<net id="317"><net_src comp="30" pin="0"/><net_sink comp="231" pin=15"/></net>
+<net id="314"><net_src comp="34" pin="0"/><net_sink comp="227" pin=16"/></net>
 
-<net id="318"><net_src comp="32" pin="0"/><net_sink comp="231" pin=16"/></net>
+<net id="315"><net_src comp="36" pin="0"/><net_sink comp="227" pin=17"/></net>
 
-<net id="319"><net_src comp="34" pin="0"/><net_sink comp="231" pin=17"/></net>
+<net id="316"><net_src comp="38" pin="0"/><net_sink comp="227" pin=18"/></net>
 
-<net id="320"><net_src comp="36" pin="0"/><net_sink comp="231" pin=18"/></net>
+<net id="317"><net_src comp="40" pin="0"/><net_sink comp="227" pin=19"/></net>
 
-<net id="321"><net_src comp="38" pin="0"/><net_sink comp="231" pin=19"/></net>
+<net id="318"><net_src comp="42" pin="0"/><net_sink comp="227" pin=20"/></net>
 
-<net id="322"><net_src comp="40" pin="0"/><net_sink comp="231" pin=20"/></net>
+<net id="319"><net_src comp="44" pin="0"/><net_sink comp="227" pin=21"/></net>
 
-<net id="323"><net_src comp="42" pin="0"/><net_sink comp="231" pin=21"/></net>
+<net id="320"><net_src comp="46" pin="0"/><net_sink comp="227" pin=22"/></net>
 
-<net id="324"><net_src comp="44" pin="0"/><net_sink comp="231" pin=22"/></net>
+<net id="321"><net_src comp="48" pin="0"/><net_sink comp="227" pin=23"/></net>
 
-<net id="325"><net_src comp="46" pin="0"/><net_sink comp="231" pin=23"/></net>
+<net id="322"><net_src comp="50" pin="0"/><net_sink comp="227" pin=24"/></net>
 
-<net id="326"><net_src comp="48" pin="0"/><net_sink comp="231" pin=24"/></net>
+<net id="323"><net_src comp="52" pin="0"/><net_sink comp="227" pin=25"/></net>
 
-<net id="327"><net_src comp="50" pin="0"/><net_sink comp="231" pin=25"/></net>
+<net id="324"><net_src comp="54" pin="0"/><net_sink comp="227" pin=26"/></net>
 
-<net id="328"><net_src comp="52" pin="0"/><net_sink comp="231" pin=26"/></net>
+<net id="325"><net_src comp="56" pin="0"/><net_sink comp="227" pin=27"/></net>
 
-<net id="329"><net_src comp="54" pin="0"/><net_sink comp="231" pin=27"/></net>
+<net id="326"><net_src comp="58" pin="0"/><net_sink comp="227" pin=28"/></net>
 
-<net id="330"><net_src comp="56" pin="0"/><net_sink comp="231" pin=28"/></net>
+<net id="327"><net_src comp="60" pin="0"/><net_sink comp="227" pin=29"/></net>
 
-<net id="331"><net_src comp="58" pin="0"/><net_sink comp="231" pin=29"/></net>
+<net id="328"><net_src comp="62" pin="0"/><net_sink comp="227" pin=30"/></net>
 
-<net id="332"><net_src comp="60" pin="0"/><net_sink comp="231" pin=30"/></net>
+<net id="329"><net_src comp="64" pin="0"/><net_sink comp="227" pin=31"/></net>
 
-<net id="333"><net_src comp="62" pin="0"/><net_sink comp="231" pin=31"/></net>
+<net id="330"><net_src comp="66" pin="0"/><net_sink comp="227" pin=32"/></net>
 
-<net id="334"><net_src comp="64" pin="0"/><net_sink comp="231" pin=32"/></net>
+<net id="331"><net_src comp="68" pin="0"/><net_sink comp="227" pin=33"/></net>
 
-<net id="335"><net_src comp="66" pin="0"/><net_sink comp="231" pin=33"/></net>
+<net id="332"><net_src comp="70" pin="0"/><net_sink comp="227" pin=34"/></net>
 
-<net id="336"><net_src comp="68" pin="0"/><net_sink comp="231" pin=34"/></net>
+<net id="333"><net_src comp="72" pin="0"/><net_sink comp="227" pin=35"/></net>
 
-<net id="337"><net_src comp="70" pin="0"/><net_sink comp="231" pin=35"/></net>
+<net id="334"><net_src comp="74" pin="0"/><net_sink comp="227" pin=36"/></net>
 
-<net id="338"><net_src comp="72" pin="0"/><net_sink comp="231" pin=36"/></net>
+<net id="335"><net_src comp="76" pin="0"/><net_sink comp="227" pin=37"/></net>
 
-<net id="339"><net_src comp="74" pin="0"/><net_sink comp="231" pin=37"/></net>
+<net id="336"><net_src comp="78" pin="0"/><net_sink comp="227" pin=38"/></net>
 
-<net id="340"><net_src comp="76" pin="0"/><net_sink comp="231" pin=38"/></net>
+<net id="337"><net_src comp="80" pin="0"/><net_sink comp="227" pin=39"/></net>
 
-<net id="341"><net_src comp="78" pin="0"/><net_sink comp="231" pin=39"/></net>
+<net id="338"><net_src comp="82" pin="0"/><net_sink comp="227" pin=40"/></net>
 
-<net id="342"><net_src comp="80" pin="0"/><net_sink comp="231" pin=40"/></net>
+<net id="339"><net_src comp="84" pin="0"/><net_sink comp="227" pin=41"/></net>
 
-<net id="343"><net_src comp="82" pin="0"/><net_sink comp="231" pin=41"/></net>
+<net id="340"><net_src comp="86" pin="0"/><net_sink comp="227" pin=42"/></net>
 
-<net id="344"><net_src comp="84" pin="0"/><net_sink comp="231" pin=42"/></net>
+<net id="341"><net_src comp="88" pin="0"/><net_sink comp="227" pin=43"/></net>
 
-<net id="345"><net_src comp="86" pin="0"/><net_sink comp="231" pin=43"/></net>
+<net id="342"><net_src comp="90" pin="0"/><net_sink comp="227" pin=44"/></net>
 
-<net id="346"><net_src comp="88" pin="0"/><net_sink comp="231" pin=44"/></net>
+<net id="343"><net_src comp="92" pin="0"/><net_sink comp="227" pin=45"/></net>
 
-<net id="347"><net_src comp="90" pin="0"/><net_sink comp="231" pin=45"/></net>
+<net id="344"><net_src comp="94" pin="0"/><net_sink comp="227" pin=46"/></net>
 
-<net id="348"><net_src comp="92" pin="0"/><net_sink comp="231" pin=46"/></net>
+<net id="345"><net_src comp="96" pin="0"/><net_sink comp="227" pin=47"/></net>
 
-<net id="349"><net_src comp="94" pin="0"/><net_sink comp="231" pin=47"/></net>
+<net id="346"><net_src comp="98" pin="0"/><net_sink comp="227" pin=48"/></net>
 
-<net id="350"><net_src comp="96" pin="0"/><net_sink comp="231" pin=48"/></net>
+<net id="347"><net_src comp="100" pin="0"/><net_sink comp="227" pin=49"/></net>
 
-<net id="351"><net_src comp="98" pin="0"/><net_sink comp="231" pin=49"/></net>
+<net id="348"><net_src comp="102" pin="0"/><net_sink comp="227" pin=50"/></net>
 
-<net id="352"><net_src comp="100" pin="0"/><net_sink comp="231" pin=50"/></net>
+<net id="349"><net_src comp="104" pin="0"/><net_sink comp="227" pin=51"/></net>
 
-<net id="353"><net_src comp="102" pin="0"/><net_sink comp="231" pin=51"/></net>
+<net id="350"><net_src comp="106" pin="0"/><net_sink comp="227" pin=52"/></net>
 
-<net id="354"><net_src comp="104" pin="0"/><net_sink comp="231" pin=52"/></net>
+<net id="351"><net_src comp="108" pin="0"/><net_sink comp="227" pin=53"/></net>
 
-<net id="355"><net_src comp="106" pin="0"/><net_sink comp="231" pin=53"/></net>
+<net id="352"><net_src comp="110" pin="0"/><net_sink comp="227" pin=54"/></net>
 
-<net id="356"><net_src comp="108" pin="0"/><net_sink comp="231" pin=54"/></net>
+<net id="353"><net_src comp="112" pin="0"/><net_sink comp="227" pin=55"/></net>
 
-<net id="357"><net_src comp="110" pin="0"/><net_sink comp="231" pin=55"/></net>
+<net id="354"><net_src comp="114" pin="0"/><net_sink comp="227" pin=56"/></net>
 
-<net id="358"><net_src comp="112" pin="0"/><net_sink comp="231" pin=56"/></net>
+<net id="355"><net_src comp="116" pin="0"/><net_sink comp="227" pin=57"/></net>
 
-<net id="359"><net_src comp="114" pin="0"/><net_sink comp="231" pin=57"/></net>
+<net id="356"><net_src comp="118" pin="0"/><net_sink comp="227" pin=58"/></net>
 
-<net id="360"><net_src comp="116" pin="0"/><net_sink comp="231" pin=58"/></net>
+<net id="357"><net_src comp="120" pin="0"/><net_sink comp="227" pin=59"/></net>
 
-<net id="361"><net_src comp="118" pin="0"/><net_sink comp="231" pin=59"/></net>
+<net id="358"><net_src comp="122" pin="0"/><net_sink comp="227" pin=60"/></net>
 
-<net id="362"><net_src comp="120" pin="0"/><net_sink comp="231" pin=60"/></net>
+<net id="359"><net_src comp="124" pin="0"/><net_sink comp="227" pin=61"/></net>
 
-<net id="363"><net_src comp="122" pin="0"/><net_sink comp="231" pin=61"/></net>
+<net id="360"><net_src comp="126" pin="0"/><net_sink comp="227" pin=62"/></net>
 
-<net id="364"><net_src comp="124" pin="0"/><net_sink comp="231" pin=62"/></net>
+<net id="361"><net_src comp="128" pin="0"/><net_sink comp="227" pin=63"/></net>
 
-<net id="365"><net_src comp="126" pin="0"/><net_sink comp="231" pin=63"/></net>
+<net id="362"><net_src comp="130" pin="0"/><net_sink comp="227" pin=64"/></net>
 
-<net id="366"><net_src comp="128" pin="0"/><net_sink comp="231" pin=64"/></net>
+<net id="363"><net_src comp="132" pin="0"/><net_sink comp="227" pin=65"/></net>
 
-<net id="367"><net_src comp="130" pin="0"/><net_sink comp="231" pin=65"/></net>
+<net id="364"><net_src comp="134" pin="0"/><net_sink comp="227" pin=66"/></net>
 
-<net id="368"><net_src comp="132" pin="0"/><net_sink comp="231" pin=66"/></net>
+<net id="365"><net_src comp="136" pin="0"/><net_sink comp="227" pin=67"/></net>
 
-<net id="369"><net_src comp="134" pin="0"/><net_sink comp="231" pin=67"/></net>
+<net id="366"><net_src comp="138" pin="0"/><net_sink comp="227" pin=68"/></net>
 
-<net id="370"><net_src comp="136" pin="0"/><net_sink comp="231" pin=68"/></net>
+<net id="367"><net_src comp="140" pin="0"/><net_sink comp="227" pin=69"/></net>
 
-<net id="371"><net_src comp="138" pin="0"/><net_sink comp="231" pin=69"/></net>
+<net id="368"><net_src comp="142" pin="0"/><net_sink comp="227" pin=70"/></net>
 
-<net id="372"><net_src comp="140" pin="0"/><net_sink comp="231" pin=70"/></net>
+<net id="373"><net_src comp="152" pin="0"/><net_sink comp="369" pin=0"/></net>
 
-<net id="377"><net_src comp="150" pin="0"/><net_sink comp="373" pin=0"/></net>
+<net id="377"><net_src comp="208" pin="2"/><net_sink comp="374" pin=0"/></net>
 
-<net id="381"><net_src comp="208" pin="2"/><net_sink comp="378" pin=0"/></net>
+<net id="378"><net_src comp="374" pin="1"/><net_sink comp="214" pin=3"/></net>
 
-<net id="382"><net_src comp="378" pin="1"/><net_sink comp="220" pin=4"/></net>
+<net id="382"><net_src comp="200" pin="1"/><net_sink comp="379" pin=0"/></net>
 
-<net id="386"><net_src comp="214" pin="2"/><net_sink comp="383" pin=0"/></net>
+<net id="383"><net_src comp="379" pin="1"/><net_sink comp="214" pin=1"/></net>
 
-<net id="387"><net_src comp="383" pin="1"/><net_sink comp="220" pin=3"/></net>
+<net id="384"><net_src comp="379" pin="1"/><net_sink comp="227" pin=1"/></net>
 
-<net id="391"><net_src comp="200" pin="1"/><net_sink comp="388" pin=0"/></net>
+<net id="388"><net_src comp="204" pin="1"/><net_sink comp="385" pin=0"/></net>
 
-<net id="392"><net_src comp="388" pin="1"/><net_sink comp="220" pin=1"/></net>
+<net id="389"><net_src comp="385" pin="1"/><net_sink comp="227" pin=2"/></net>
 
-<net id="393"><net_src comp="388" pin="1"/><net_sink comp="231" pin=1"/></net>
-
-<net id="397"><net_src comp="204" pin="1"/><net_sink comp="394" pin=0"/></net>
-
-<net id="398"><net_src comp="394" pin="1"/><net_sink comp="231" pin=2"/></net>
-
-<net id="399"><net_src comp="394" pin="1"/><net_sink comp="373" pin=1"/></net>
+<net id="390"><net_src comp="385" pin="1"/><net_sink comp="369" pin=1"/></net>
 
 </net_list>
 
@@ -1975,6 +1952,8 @@ ret_ln534                (ret                 ) [ 0000000]
 * FSMD analyzer results:
   - Output states:
 	Port: gmem | {}
+	Port: startCopy | {}
+	Port: copying | {1 2 }
 	Port: p_ZL9n_regions_0 | {}
 	Port: p_ZL9n_regions_1 | {}
 	Port: p_ZL9n_regions_2 | {}
@@ -2046,7 +2025,8 @@ ret_ln534                (ret                 ) [ 0000000]
  - Input state : 
 	Port: runTest : gmem | {1 2 }
 	Port: runTest : inputAOV | {1 }
-	Port: runTest : startCopy | {1 }
+	Port: runTest : startCopy | {1 2 }
+	Port: runTest : copying | {}
 	Port: runTest : p_ZL9n_regions_0 | {3 4 }
 	Port: runTest : p_ZL9n_regions_1 | {3 4 }
 	Port: runTest : p_ZL9n_regions_2 | {3 4 }
@@ -2130,42 +2110,39 @@ ret_ln534                (ret                 ) [ 0000000]
 ============================================================
 
 * Functional unit list:
-|----------|----------------------------|---------|---------|---------|---------|---------|
-| Operation|       Functional Unit      |   BRAM  |  Delay  |    FF   |   LUT   |   URAM  |
-|----------|----------------------------|---------|---------|---------|---------|---------|
-|          |    grp_read_data_fu_220    |    0    |  1.588  |   833   |    38   |    0    |
-|   call   |     grp_run_test_fu_231    |    0    | 43.5918 |   1568  |   1034  |    0    |
-|          |   grp_writeOutcome_fu_373  |    0    |    0    |    0    |    0    |    0    |
-|----------|----------------------------|---------|---------|---------|---------|---------|
-|   read   | startCopy_read_read_fu_208 |    0    |    0    |    0    |    0    |    0    |
-|          |  inputAOV_read_read_fu_214 |    0    |    0    |    0    |    0    |    0    |
-|----------|----------------------------|---------|---------|---------|---------|---------|
-|   Total  |                            |    0    | 45.1798 |   2401  |   1072  |    0    |
-|----------|----------------------------|---------|---------|---------|---------|---------|
+|----------|---------------------------|---------|---------|---------|---------|---------|
+| Operation|      Functional Unit      |   BRAM  |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|---------------------------|---------|---------|---------|---------|---------|
+|          |    grp_read_data_fu_214   |    0    |  3.176  |   833   |    20   |    0    |
+|   call   |    grp_run_test_fu_227    |    0    | 43.5918 |   1568  |   1034  |    0    |
+|          |  grp_writeOutcome_fu_369  |    0    |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|
+|   read   | inputAOV_read_read_fu_208 |    0    |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|
+|   Total  |                           |    0    | 46.7678 |   2401  |   1054  |    0    |
+|----------|---------------------------|---------|---------|---------|---------|---------|
 
 Memories:
 N/A
 
 * Register list:
-+----------------------+--------+
-|                      |   FF   |
-+----------------------+--------+
-|   copyDest_reg_388   |   320  |
-| inputAOV_read_reg_383|   64   |
-| outcomeStream_reg_394|   288  |
-|startCopy_read_reg_378|   64   |
-+----------------------+--------+
-|         Total        |   736  |
-+----------------------+--------+
++---------------------+--------+
+|                     |   FF   |
++---------------------+--------+
+|   copyDest_reg_379  |   320  |
+|inputAOV_read_reg_374|   64   |
+|outcomeStream_reg_385|   288  |
++---------------------+--------+
+|        Total        |   672  |
++---------------------+--------+
 
 * Multiplexer (MUX) list: 
 |----------------------|------|------|------|--------||---------||---------|
 |         Comp         |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
 |----------------------|------|------|------|--------||---------||---------|
-| grp_read_data_fu_220 |  p3  |   2  |  64  |   128  ||    9    |
-| grp_read_data_fu_220 |  p4  |   2  |  64  |   128  ||    9    |
+| grp_read_data_fu_214 |  p3  |   2  |  64  |   128  ||    9    |
 |----------------------|------|------|------|--------||---------||---------|
-|         Total        |      |      |      |   256  ||  3.176  ||    18   |
+|         Total        |      |      |      |   128  ||  1.588  ||    9    |
 |----------------------|------|------|------|--------||---------||---------|
 
 
@@ -2174,10 +2151,10 @@ N/A
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  |  Delay |   FF   |   LUT  |  URAM  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    0   |   45   |  2401  |  1072  |    0   |
+|  Function |    0   |   46   |  2401  |  1054  |    0   |
 |   Memory  |    -   |    -   |    -   |    -   |    -   |
-|Multiplexer|    -   |    3   |    -   |   18   |    -   |
-|  Register |    -   |    -   |   736  |    -   |    -   |
+|Multiplexer|    -   |    1   |    -   |    9   |    -   |
+|  Register |    -   |    -   |   672  |    -   |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    0   |   48   |  3137  |  1090  |    0   |
+|   Total   |    0   |   48   |  3073  |  1063  |    0   |
 +-----------+--------+--------+--------+--------+--------+

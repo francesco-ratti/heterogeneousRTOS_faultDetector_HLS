@@ -47,7 +47,6 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("m_axi_gmem_BRESP", 2, hls_in, 0, "m_axi", "RESP", 1),
 	Port_Property("m_axi_gmem_BID", 1, hls_in, 0, "m_axi", "ID", 1),
 	Port_Property("m_axi_gmem_BUSER", 1, hls_in, 0, "m_axi", "DATA", 1),
-	Port_Property("startCopy", 64, hls_in, 4, "ap_none", "in_data", 1),
 	Port_Property("s_axi_control_AWVALID", 1, hls_in, -1, "", "", 1),
 	Port_Property("s_axi_control_AWREADY", 1, hls_out, -1, "", "", 1),
 	Port_Property("s_axi_control_AWADDR", 11, hls_in, -1, "", "", 1),

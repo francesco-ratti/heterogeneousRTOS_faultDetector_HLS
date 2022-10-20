@@ -91,13 +91,6 @@ u32 XRun_Get_accel_mode(XRun *InstancePtr) {
     return Data;
 }
 
-void XRun_Set_copying(XRun *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYING_DATA, Data);
-}
-
 u32 XRun_Get_copying(XRun *InstancePtr) {
     u32 Data;
 
@@ -127,21 +120,48 @@ u64 XRun_Get_inputData(XRun *InstancePtr) {
     return Data;
 }
 
-void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data) {
+void XRun_Set_startCopy(XRun *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA, Data);
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_DATA, Data);
 }
 
-u32 XRun_Get_IOCheckIdx(XRun *InstancePtr) {
+u32 XRun_Get_startCopy(XRun *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA);
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_DATA);
     return Data;
+}
+
+void XRun_Set_startCopy_vld(XRun *InstancePtr) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL, 1);
+}
+
+u32 XRun_Get_startCopy_vld(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL);
+    return Data & 0x1;
+}
+
+u32 XRun_Get_startCopy_ack(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL);
+    return (Data >> 1) & 0x1;
 }
 
 void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data) {
@@ -231,6 +251,23 @@ XRun_Trainedregion_o XRun_Get_trainedRegion_o(XRun *InstancePtr) {
     Data.word_21 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 84);
     Data.word_22 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 88);
     Data.word_23 = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA + 92);
+    return Data;
+}
+
+void XRun_Set_IOCheckIdx(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA, Data);
+}
+
+u32 XRun_Get_IOCheckIdx(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_IOCHECKIDX_DATA);
     return Data;
 }
 

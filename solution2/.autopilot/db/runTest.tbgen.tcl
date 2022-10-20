@@ -15,7 +15,8 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ gmem int 512 regular {axi_master 0}  }
 	{ inputAOV int 64 regular  }
-	{ startCopy int 64 regular  }
+	{ startCopy int 8 regular {pointer 0 volatile }  }
+	{ copying int 8 regular {pointer 1 volatile }  }
 	{ p_ZL9n_regions_0 int 8 regular {pointer 0} {global 0}  }
 	{ p_ZL9n_regions_1 int 8 regular {pointer 0} {global 0}  }
 	{ p_ZL9n_regions_2 int 8 regular {pointer 0} {global 0}  }
@@ -86,9 +87,10 @@ set C_modelArgList {
 	{ regions_3 float 32 regular {array 4096 { 1 3 } 1 1 } {global 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputData","offset": { "type": "dynamic","port_name": "inputData","bundle": "control"},"direction": "READONLY"},{"cName": "startCopy","offset": { "type": "dynamic","port_name": "startCopy"},}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputData","offset": { "type": "dynamic","port_name": "inputData","bundle": "control"},"direction": "READONLY"}]}]} , 
  	{ "Name" : "inputAOV", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "startCopy", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
+ 	{ "Name" : "startCopy", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "copying", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
  	{ "Name" : "p_ZL9n_regions_0", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "p_ZL9n_regions_1", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "p_ZL9n_regions_2", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY", "extern" : 0} , 
@@ -158,7 +160,7 @@ set C_modelArgMapList {[
  	{ "Name" : "regions_2", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} , 
  	{ "Name" : "regions_3", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "extern" : 0} ]}
 # RTL Port declarations: 
-set portNum 225
+set portNum 228
 set portList { 
 	{ m_axi_gmem_AWVALID sc_out sc_logic 1 signal 0 } 
 	{ m_axi_gmem_AWREADY sc_in sc_logic 1 signal 0 } 
@@ -207,181 +209,184 @@ set portList {
 	{ m_axi_gmem_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem_BUSER sc_in sc_lv 1 signal 0 } 
 	{ inputAOV sc_in sc_lv 64 signal 1 } 
-	{ startCopy sc_in sc_lv 64 signal 2 } 
-	{ p_ZL9n_regions_0 sc_in sc_lv 8 signal 3 } 
-	{ p_ZL9n_regions_1 sc_in sc_lv 8 signal 4 } 
-	{ p_ZL9n_regions_2 sc_in sc_lv 8 signal 5 } 
-	{ p_ZL9n_regions_3 sc_in sc_lv 8 signal 6 } 
-	{ p_ZL9n_regions_4 sc_in sc_lv 8 signal 7 } 
-	{ p_ZL9n_regions_5 sc_in sc_lv 8 signal 8 } 
-	{ p_ZL9n_regions_6 sc_in sc_lv 8 signal 9 } 
-	{ p_ZL9n_regions_7 sc_in sc_lv 8 signal 10 } 
-	{ p_ZL9n_regions_8 sc_in sc_lv 8 signal 11 } 
-	{ p_ZL9n_regions_9 sc_in sc_lv 8 signal 12 } 
-	{ p_ZL9n_regions_10 sc_in sc_lv 8 signal 13 } 
-	{ p_ZL9n_regions_11 sc_in sc_lv 8 signal 14 } 
-	{ p_ZL9n_regions_12 sc_in sc_lv 8 signal 15 } 
-	{ p_ZL9n_regions_13 sc_in sc_lv 8 signal 16 } 
-	{ p_ZL9n_regions_14 sc_in sc_lv 8 signal 17 } 
-	{ p_ZL9n_regions_15 sc_in sc_lv 8 signal 18 } 
-	{ p_ZL9n_regions_16 sc_in sc_lv 8 signal 19 } 
-	{ p_ZL9n_regions_17 sc_in sc_lv 8 signal 20 } 
-	{ p_ZL9n_regions_18 sc_in sc_lv 8 signal 21 } 
-	{ p_ZL9n_regions_19 sc_in sc_lv 8 signal 22 } 
-	{ p_ZL9n_regions_20 sc_in sc_lv 8 signal 23 } 
-	{ p_ZL9n_regions_21 sc_in sc_lv 8 signal 24 } 
-	{ p_ZL9n_regions_22 sc_in sc_lv 8 signal 25 } 
-	{ p_ZL9n_regions_23 sc_in sc_lv 8 signal 26 } 
-	{ p_ZL9n_regions_24 sc_in sc_lv 8 signal 27 } 
-	{ p_ZL9n_regions_25 sc_in sc_lv 8 signal 28 } 
-	{ p_ZL9n_regions_26 sc_in sc_lv 8 signal 29 } 
-	{ p_ZL9n_regions_27 sc_in sc_lv 8 signal 30 } 
-	{ p_ZL9n_regions_28 sc_in sc_lv 8 signal 31 } 
-	{ p_ZL9n_regions_29 sc_in sc_lv 8 signal 32 } 
-	{ p_ZL9n_regions_30 sc_in sc_lv 8 signal 33 } 
-	{ p_ZL9n_regions_31 sc_in sc_lv 8 signal 34 } 
-	{ p_ZL9n_regions_32 sc_in sc_lv 8 signal 35 } 
-	{ p_ZL9n_regions_33 sc_in sc_lv 8 signal 36 } 
-	{ p_ZL9n_regions_34 sc_in sc_lv 8 signal 37 } 
-	{ p_ZL9n_regions_35 sc_in sc_lv 8 signal 38 } 
-	{ p_ZL9n_regions_36 sc_in sc_lv 8 signal 39 } 
-	{ p_ZL9n_regions_37 sc_in sc_lv 8 signal 40 } 
-	{ p_ZL9n_regions_38 sc_in sc_lv 8 signal 41 } 
-	{ p_ZL9n_regions_39 sc_in sc_lv 8 signal 42 } 
-	{ p_ZL9n_regions_40 sc_in sc_lv 8 signal 43 } 
-	{ p_ZL9n_regions_41 sc_in sc_lv 8 signal 44 } 
-	{ p_ZL9n_regions_42 sc_in sc_lv 8 signal 45 } 
-	{ p_ZL9n_regions_43 sc_in sc_lv 8 signal 46 } 
-	{ p_ZL9n_regions_44 sc_in sc_lv 8 signal 47 } 
-	{ p_ZL9n_regions_45 sc_in sc_lv 8 signal 48 } 
-	{ p_ZL9n_regions_46 sc_in sc_lv 8 signal 49 } 
-	{ p_ZL9n_regions_47 sc_in sc_lv 8 signal 50 } 
-	{ p_ZL9n_regions_48 sc_in sc_lv 8 signal 51 } 
-	{ p_ZL9n_regions_49 sc_in sc_lv 8 signal 52 } 
-	{ p_ZL9n_regions_50 sc_in sc_lv 8 signal 53 } 
-	{ p_ZL9n_regions_51 sc_in sc_lv 8 signal 54 } 
-	{ p_ZL9n_regions_52 sc_in sc_lv 8 signal 55 } 
-	{ p_ZL9n_regions_53 sc_in sc_lv 8 signal 56 } 
-	{ p_ZL9n_regions_54 sc_in sc_lv 8 signal 57 } 
-	{ p_ZL9n_regions_55 sc_in sc_lv 8 signal 58 } 
-	{ p_ZL9n_regions_56 sc_in sc_lv 8 signal 59 } 
-	{ p_ZL9n_regions_57 sc_in sc_lv 8 signal 60 } 
-	{ p_ZL9n_regions_58 sc_in sc_lv 8 signal 61 } 
-	{ p_ZL9n_regions_59 sc_in sc_lv 8 signal 62 } 
-	{ p_ZL9n_regions_60 sc_in sc_lv 8 signal 63 } 
-	{ p_ZL9n_regions_61 sc_in sc_lv 8 signal 64 } 
-	{ p_ZL9n_regions_62 sc_in sc_lv 8 signal 65 } 
-	{ p_ZL9n_regions_63 sc_in sc_lv 8 signal 66 } 
-	{ regions_address0 sc_out sc_lv 12 signal 67 } 
-	{ regions_ce0 sc_out sc_logic 1 signal 67 } 
-	{ regions_d0 sc_out sc_lv 32 signal 67 } 
-	{ regions_q0 sc_in sc_lv 32 signal 67 } 
-	{ regions_we0 sc_out sc_logic 1 signal 67 } 
-	{ regions_address1 sc_out sc_lv 12 signal 67 } 
-	{ regions_ce1 sc_out sc_logic 1 signal 67 } 
-	{ regions_d1 sc_out sc_lv 32 signal 67 } 
-	{ regions_q1 sc_in sc_lv 32 signal 67 } 
-	{ regions_we1 sc_out sc_logic 1 signal 67 } 
-	{ regions_1_address0 sc_out sc_lv 12 signal 68 } 
-	{ regions_1_ce0 sc_out sc_logic 1 signal 68 } 
-	{ regions_1_d0 sc_out sc_lv 32 signal 68 } 
-	{ regions_1_q0 sc_in sc_lv 32 signal 68 } 
-	{ regions_1_we0 sc_out sc_logic 1 signal 68 } 
-	{ regions_1_address1 sc_out sc_lv 12 signal 68 } 
-	{ regions_1_ce1 sc_out sc_logic 1 signal 68 } 
-	{ regions_1_d1 sc_out sc_lv 32 signal 68 } 
-	{ regions_1_q1 sc_in sc_lv 32 signal 68 } 
-	{ regions_1_we1 sc_out sc_logic 1 signal 68 } 
-	{ regions_2_address0 sc_out sc_lv 12 signal 69 } 
-	{ regions_2_ce0 sc_out sc_logic 1 signal 69 } 
-	{ regions_2_d0 sc_out sc_lv 32 signal 69 } 
-	{ regions_2_q0 sc_in sc_lv 32 signal 69 } 
-	{ regions_2_we0 sc_out sc_logic 1 signal 69 } 
-	{ regions_2_address1 sc_out sc_lv 12 signal 69 } 
-	{ regions_2_ce1 sc_out sc_logic 1 signal 69 } 
-	{ regions_2_d1 sc_out sc_lv 32 signal 69 } 
-	{ regions_2_q1 sc_in sc_lv 32 signal 69 } 
-	{ regions_2_we1 sc_out sc_logic 1 signal 69 } 
-	{ regions_3_address0 sc_out sc_lv 12 signal 70 } 
-	{ regions_3_ce0 sc_out sc_logic 1 signal 70 } 
-	{ regions_3_d0 sc_out sc_lv 32 signal 70 } 
-	{ regions_3_q0 sc_in sc_lv 32 signal 70 } 
-	{ regions_3_we0 sc_out sc_logic 1 signal 70 } 
-	{ regions_3_address1 sc_out sc_lv 12 signal 70 } 
-	{ regions_3_ce1 sc_out sc_logic 1 signal 70 } 
-	{ regions_3_d1 sc_out sc_lv 32 signal 70 } 
-	{ regions_3_q1 sc_in sc_lv 32 signal 70 } 
-	{ regions_3_we1 sc_out sc_logic 1 signal 70 } 
+	{ startCopy sc_in sc_lv 8 signal 2 } 
+	{ copying sc_out sc_lv 8 signal 3 } 
+	{ p_ZL9n_regions_0 sc_in sc_lv 8 signal 4 } 
+	{ p_ZL9n_regions_1 sc_in sc_lv 8 signal 5 } 
+	{ p_ZL9n_regions_2 sc_in sc_lv 8 signal 6 } 
+	{ p_ZL9n_regions_3 sc_in sc_lv 8 signal 7 } 
+	{ p_ZL9n_regions_4 sc_in sc_lv 8 signal 8 } 
+	{ p_ZL9n_regions_5 sc_in sc_lv 8 signal 9 } 
+	{ p_ZL9n_regions_6 sc_in sc_lv 8 signal 10 } 
+	{ p_ZL9n_regions_7 sc_in sc_lv 8 signal 11 } 
+	{ p_ZL9n_regions_8 sc_in sc_lv 8 signal 12 } 
+	{ p_ZL9n_regions_9 sc_in sc_lv 8 signal 13 } 
+	{ p_ZL9n_regions_10 sc_in sc_lv 8 signal 14 } 
+	{ p_ZL9n_regions_11 sc_in sc_lv 8 signal 15 } 
+	{ p_ZL9n_regions_12 sc_in sc_lv 8 signal 16 } 
+	{ p_ZL9n_regions_13 sc_in sc_lv 8 signal 17 } 
+	{ p_ZL9n_regions_14 sc_in sc_lv 8 signal 18 } 
+	{ p_ZL9n_regions_15 sc_in sc_lv 8 signal 19 } 
+	{ p_ZL9n_regions_16 sc_in sc_lv 8 signal 20 } 
+	{ p_ZL9n_regions_17 sc_in sc_lv 8 signal 21 } 
+	{ p_ZL9n_regions_18 sc_in sc_lv 8 signal 22 } 
+	{ p_ZL9n_regions_19 sc_in sc_lv 8 signal 23 } 
+	{ p_ZL9n_regions_20 sc_in sc_lv 8 signal 24 } 
+	{ p_ZL9n_regions_21 sc_in sc_lv 8 signal 25 } 
+	{ p_ZL9n_regions_22 sc_in sc_lv 8 signal 26 } 
+	{ p_ZL9n_regions_23 sc_in sc_lv 8 signal 27 } 
+	{ p_ZL9n_regions_24 sc_in sc_lv 8 signal 28 } 
+	{ p_ZL9n_regions_25 sc_in sc_lv 8 signal 29 } 
+	{ p_ZL9n_regions_26 sc_in sc_lv 8 signal 30 } 
+	{ p_ZL9n_regions_27 sc_in sc_lv 8 signal 31 } 
+	{ p_ZL9n_regions_28 sc_in sc_lv 8 signal 32 } 
+	{ p_ZL9n_regions_29 sc_in sc_lv 8 signal 33 } 
+	{ p_ZL9n_regions_30 sc_in sc_lv 8 signal 34 } 
+	{ p_ZL9n_regions_31 sc_in sc_lv 8 signal 35 } 
+	{ p_ZL9n_regions_32 sc_in sc_lv 8 signal 36 } 
+	{ p_ZL9n_regions_33 sc_in sc_lv 8 signal 37 } 
+	{ p_ZL9n_regions_34 sc_in sc_lv 8 signal 38 } 
+	{ p_ZL9n_regions_35 sc_in sc_lv 8 signal 39 } 
+	{ p_ZL9n_regions_36 sc_in sc_lv 8 signal 40 } 
+	{ p_ZL9n_regions_37 sc_in sc_lv 8 signal 41 } 
+	{ p_ZL9n_regions_38 sc_in sc_lv 8 signal 42 } 
+	{ p_ZL9n_regions_39 sc_in sc_lv 8 signal 43 } 
+	{ p_ZL9n_regions_40 sc_in sc_lv 8 signal 44 } 
+	{ p_ZL9n_regions_41 sc_in sc_lv 8 signal 45 } 
+	{ p_ZL9n_regions_42 sc_in sc_lv 8 signal 46 } 
+	{ p_ZL9n_regions_43 sc_in sc_lv 8 signal 47 } 
+	{ p_ZL9n_regions_44 sc_in sc_lv 8 signal 48 } 
+	{ p_ZL9n_regions_45 sc_in sc_lv 8 signal 49 } 
+	{ p_ZL9n_regions_46 sc_in sc_lv 8 signal 50 } 
+	{ p_ZL9n_regions_47 sc_in sc_lv 8 signal 51 } 
+	{ p_ZL9n_regions_48 sc_in sc_lv 8 signal 52 } 
+	{ p_ZL9n_regions_49 sc_in sc_lv 8 signal 53 } 
+	{ p_ZL9n_regions_50 sc_in sc_lv 8 signal 54 } 
+	{ p_ZL9n_regions_51 sc_in sc_lv 8 signal 55 } 
+	{ p_ZL9n_regions_52 sc_in sc_lv 8 signal 56 } 
+	{ p_ZL9n_regions_53 sc_in sc_lv 8 signal 57 } 
+	{ p_ZL9n_regions_54 sc_in sc_lv 8 signal 58 } 
+	{ p_ZL9n_regions_55 sc_in sc_lv 8 signal 59 } 
+	{ p_ZL9n_regions_56 sc_in sc_lv 8 signal 60 } 
+	{ p_ZL9n_regions_57 sc_in sc_lv 8 signal 61 } 
+	{ p_ZL9n_regions_58 sc_in sc_lv 8 signal 62 } 
+	{ p_ZL9n_regions_59 sc_in sc_lv 8 signal 63 } 
+	{ p_ZL9n_regions_60 sc_in sc_lv 8 signal 64 } 
+	{ p_ZL9n_regions_61 sc_in sc_lv 8 signal 65 } 
+	{ p_ZL9n_regions_62 sc_in sc_lv 8 signal 66 } 
+	{ p_ZL9n_regions_63 sc_in sc_lv 8 signal 67 } 
+	{ regions_address0 sc_out sc_lv 12 signal 68 } 
+	{ regions_ce0 sc_out sc_logic 1 signal 68 } 
+	{ regions_d0 sc_out sc_lv 32 signal 68 } 
+	{ regions_q0 sc_in sc_lv 32 signal 68 } 
+	{ regions_we0 sc_out sc_logic 1 signal 68 } 
+	{ regions_address1 sc_out sc_lv 12 signal 68 } 
+	{ regions_ce1 sc_out sc_logic 1 signal 68 } 
+	{ regions_d1 sc_out sc_lv 32 signal 68 } 
+	{ regions_q1 sc_in sc_lv 32 signal 68 } 
+	{ regions_we1 sc_out sc_logic 1 signal 68 } 
+	{ regions_1_address0 sc_out sc_lv 12 signal 69 } 
+	{ regions_1_ce0 sc_out sc_logic 1 signal 69 } 
+	{ regions_1_d0 sc_out sc_lv 32 signal 69 } 
+	{ regions_1_q0 sc_in sc_lv 32 signal 69 } 
+	{ regions_1_we0 sc_out sc_logic 1 signal 69 } 
+	{ regions_1_address1 sc_out sc_lv 12 signal 69 } 
+	{ regions_1_ce1 sc_out sc_logic 1 signal 69 } 
+	{ regions_1_d1 sc_out sc_lv 32 signal 69 } 
+	{ regions_1_q1 sc_in sc_lv 32 signal 69 } 
+	{ regions_1_we1 sc_out sc_logic 1 signal 69 } 
+	{ regions_2_address0 sc_out sc_lv 12 signal 70 } 
+	{ regions_2_ce0 sc_out sc_logic 1 signal 70 } 
+	{ regions_2_d0 sc_out sc_lv 32 signal 70 } 
+	{ regions_2_q0 sc_in sc_lv 32 signal 70 } 
+	{ regions_2_we0 sc_out sc_logic 1 signal 70 } 
+	{ regions_2_address1 sc_out sc_lv 12 signal 70 } 
+	{ regions_2_ce1 sc_out sc_logic 1 signal 70 } 
+	{ regions_2_d1 sc_out sc_lv 32 signal 70 } 
+	{ regions_2_q1 sc_in sc_lv 32 signal 70 } 
+	{ regions_2_we1 sc_out sc_logic 1 signal 70 } 
+	{ regions_3_address0 sc_out sc_lv 12 signal 71 } 
+	{ regions_3_ce0 sc_out sc_logic 1 signal 71 } 
+	{ regions_3_d0 sc_out sc_lv 32 signal 71 } 
+	{ regions_3_q0 sc_in sc_lv 32 signal 71 } 
+	{ regions_3_we0 sc_out sc_logic 1 signal 71 } 
+	{ regions_3_address1 sc_out sc_lv 12 signal 71 } 
+	{ regions_3_ce1 sc_out sc_logic 1 signal 71 } 
+	{ regions_3_d1 sc_out sc_lv 32 signal 71 } 
+	{ regions_3_q1 sc_in sc_lv 32 signal 71 } 
+	{ regions_3_we1 sc_out sc_logic 1 signal 71 } 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
 	{ inputAOV_ap_vld sc_in sc_logic 1 invld 1 } 
 	{ startCopy_ap_vld sc_in sc_logic 1 invld 2 } 
+	{ startCopy_ap_ack sc_out sc_logic 1 inacc 2 } 
+	{ copying_ap_vld sc_out sc_logic 1 outvld 3 } 
 	{ ap_start sc_in sc_logic 1 start -1 } 
-	{ p_ZL9n_regions_0_ap_vld sc_in sc_logic 1 invld 3 } 
-	{ p_ZL9n_regions_1_ap_vld sc_in sc_logic 1 invld 4 } 
-	{ p_ZL9n_regions_2_ap_vld sc_in sc_logic 1 invld 5 } 
-	{ p_ZL9n_regions_3_ap_vld sc_in sc_logic 1 invld 6 } 
-	{ p_ZL9n_regions_4_ap_vld sc_in sc_logic 1 invld 7 } 
-	{ p_ZL9n_regions_5_ap_vld sc_in sc_logic 1 invld 8 } 
-	{ p_ZL9n_regions_6_ap_vld sc_in sc_logic 1 invld 9 } 
-	{ p_ZL9n_regions_7_ap_vld sc_in sc_logic 1 invld 10 } 
-	{ p_ZL9n_regions_8_ap_vld sc_in sc_logic 1 invld 11 } 
-	{ p_ZL9n_regions_9_ap_vld sc_in sc_logic 1 invld 12 } 
-	{ p_ZL9n_regions_10_ap_vld sc_in sc_logic 1 invld 13 } 
-	{ p_ZL9n_regions_11_ap_vld sc_in sc_logic 1 invld 14 } 
-	{ p_ZL9n_regions_12_ap_vld sc_in sc_logic 1 invld 15 } 
-	{ p_ZL9n_regions_13_ap_vld sc_in sc_logic 1 invld 16 } 
-	{ p_ZL9n_regions_14_ap_vld sc_in sc_logic 1 invld 17 } 
-	{ p_ZL9n_regions_15_ap_vld sc_in sc_logic 1 invld 18 } 
-	{ p_ZL9n_regions_16_ap_vld sc_in sc_logic 1 invld 19 } 
-	{ p_ZL9n_regions_17_ap_vld sc_in sc_logic 1 invld 20 } 
-	{ p_ZL9n_regions_18_ap_vld sc_in sc_logic 1 invld 21 } 
-	{ p_ZL9n_regions_19_ap_vld sc_in sc_logic 1 invld 22 } 
-	{ p_ZL9n_regions_20_ap_vld sc_in sc_logic 1 invld 23 } 
-	{ p_ZL9n_regions_21_ap_vld sc_in sc_logic 1 invld 24 } 
-	{ p_ZL9n_regions_22_ap_vld sc_in sc_logic 1 invld 25 } 
-	{ p_ZL9n_regions_23_ap_vld sc_in sc_logic 1 invld 26 } 
-	{ p_ZL9n_regions_24_ap_vld sc_in sc_logic 1 invld 27 } 
-	{ p_ZL9n_regions_25_ap_vld sc_in sc_logic 1 invld 28 } 
-	{ p_ZL9n_regions_26_ap_vld sc_in sc_logic 1 invld 29 } 
-	{ p_ZL9n_regions_27_ap_vld sc_in sc_logic 1 invld 30 } 
-	{ p_ZL9n_regions_28_ap_vld sc_in sc_logic 1 invld 31 } 
-	{ p_ZL9n_regions_29_ap_vld sc_in sc_logic 1 invld 32 } 
-	{ p_ZL9n_regions_30_ap_vld sc_in sc_logic 1 invld 33 } 
-	{ p_ZL9n_regions_31_ap_vld sc_in sc_logic 1 invld 34 } 
-	{ p_ZL9n_regions_32_ap_vld sc_in sc_logic 1 invld 35 } 
-	{ p_ZL9n_regions_33_ap_vld sc_in sc_logic 1 invld 36 } 
-	{ p_ZL9n_regions_34_ap_vld sc_in sc_logic 1 invld 37 } 
-	{ p_ZL9n_regions_35_ap_vld sc_in sc_logic 1 invld 38 } 
-	{ p_ZL9n_regions_36_ap_vld sc_in sc_logic 1 invld 39 } 
-	{ p_ZL9n_regions_37_ap_vld sc_in sc_logic 1 invld 40 } 
-	{ p_ZL9n_regions_38_ap_vld sc_in sc_logic 1 invld 41 } 
-	{ p_ZL9n_regions_39_ap_vld sc_in sc_logic 1 invld 42 } 
-	{ p_ZL9n_regions_40_ap_vld sc_in sc_logic 1 invld 43 } 
-	{ p_ZL9n_regions_41_ap_vld sc_in sc_logic 1 invld 44 } 
-	{ p_ZL9n_regions_42_ap_vld sc_in sc_logic 1 invld 45 } 
-	{ p_ZL9n_regions_43_ap_vld sc_in sc_logic 1 invld 46 } 
-	{ p_ZL9n_regions_44_ap_vld sc_in sc_logic 1 invld 47 } 
-	{ p_ZL9n_regions_45_ap_vld sc_in sc_logic 1 invld 48 } 
-	{ p_ZL9n_regions_46_ap_vld sc_in sc_logic 1 invld 49 } 
-	{ p_ZL9n_regions_47_ap_vld sc_in sc_logic 1 invld 50 } 
-	{ p_ZL9n_regions_48_ap_vld sc_in sc_logic 1 invld 51 } 
-	{ p_ZL9n_regions_49_ap_vld sc_in sc_logic 1 invld 52 } 
-	{ p_ZL9n_regions_50_ap_vld sc_in sc_logic 1 invld 53 } 
-	{ p_ZL9n_regions_51_ap_vld sc_in sc_logic 1 invld 54 } 
-	{ p_ZL9n_regions_52_ap_vld sc_in sc_logic 1 invld 55 } 
-	{ p_ZL9n_regions_53_ap_vld sc_in sc_logic 1 invld 56 } 
-	{ p_ZL9n_regions_54_ap_vld sc_in sc_logic 1 invld 57 } 
-	{ p_ZL9n_regions_55_ap_vld sc_in sc_logic 1 invld 58 } 
-	{ p_ZL9n_regions_56_ap_vld sc_in sc_logic 1 invld 59 } 
-	{ p_ZL9n_regions_57_ap_vld sc_in sc_logic 1 invld 60 } 
-	{ p_ZL9n_regions_58_ap_vld sc_in sc_logic 1 invld 61 } 
-	{ p_ZL9n_regions_59_ap_vld sc_in sc_logic 1 invld 62 } 
-	{ p_ZL9n_regions_60_ap_vld sc_in sc_logic 1 invld 63 } 
-	{ p_ZL9n_regions_61_ap_vld sc_in sc_logic 1 invld 64 } 
-	{ p_ZL9n_regions_62_ap_vld sc_in sc_logic 1 invld 65 } 
-	{ p_ZL9n_regions_63_ap_vld sc_in sc_logic 1 invld 66 } 
 	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ p_ZL9n_regions_0_ap_vld sc_in sc_logic 1 invld 4 } 
+	{ p_ZL9n_regions_1_ap_vld sc_in sc_logic 1 invld 5 } 
+	{ p_ZL9n_regions_2_ap_vld sc_in sc_logic 1 invld 6 } 
+	{ p_ZL9n_regions_3_ap_vld sc_in sc_logic 1 invld 7 } 
+	{ p_ZL9n_regions_4_ap_vld sc_in sc_logic 1 invld 8 } 
+	{ p_ZL9n_regions_5_ap_vld sc_in sc_logic 1 invld 9 } 
+	{ p_ZL9n_regions_6_ap_vld sc_in sc_logic 1 invld 10 } 
+	{ p_ZL9n_regions_7_ap_vld sc_in sc_logic 1 invld 11 } 
+	{ p_ZL9n_regions_8_ap_vld sc_in sc_logic 1 invld 12 } 
+	{ p_ZL9n_regions_9_ap_vld sc_in sc_logic 1 invld 13 } 
+	{ p_ZL9n_regions_10_ap_vld sc_in sc_logic 1 invld 14 } 
+	{ p_ZL9n_regions_11_ap_vld sc_in sc_logic 1 invld 15 } 
+	{ p_ZL9n_regions_12_ap_vld sc_in sc_logic 1 invld 16 } 
+	{ p_ZL9n_regions_13_ap_vld sc_in sc_logic 1 invld 17 } 
+	{ p_ZL9n_regions_14_ap_vld sc_in sc_logic 1 invld 18 } 
+	{ p_ZL9n_regions_15_ap_vld sc_in sc_logic 1 invld 19 } 
+	{ p_ZL9n_regions_16_ap_vld sc_in sc_logic 1 invld 20 } 
+	{ p_ZL9n_regions_17_ap_vld sc_in sc_logic 1 invld 21 } 
+	{ p_ZL9n_regions_18_ap_vld sc_in sc_logic 1 invld 22 } 
+	{ p_ZL9n_regions_19_ap_vld sc_in sc_logic 1 invld 23 } 
+	{ p_ZL9n_regions_20_ap_vld sc_in sc_logic 1 invld 24 } 
+	{ p_ZL9n_regions_21_ap_vld sc_in sc_logic 1 invld 25 } 
+	{ p_ZL9n_regions_22_ap_vld sc_in sc_logic 1 invld 26 } 
+	{ p_ZL9n_regions_23_ap_vld sc_in sc_logic 1 invld 27 } 
+	{ p_ZL9n_regions_24_ap_vld sc_in sc_logic 1 invld 28 } 
+	{ p_ZL9n_regions_25_ap_vld sc_in sc_logic 1 invld 29 } 
+	{ p_ZL9n_regions_26_ap_vld sc_in sc_logic 1 invld 30 } 
+	{ p_ZL9n_regions_27_ap_vld sc_in sc_logic 1 invld 31 } 
+	{ p_ZL9n_regions_28_ap_vld sc_in sc_logic 1 invld 32 } 
+	{ p_ZL9n_regions_29_ap_vld sc_in sc_logic 1 invld 33 } 
+	{ p_ZL9n_regions_30_ap_vld sc_in sc_logic 1 invld 34 } 
+	{ p_ZL9n_regions_31_ap_vld sc_in sc_logic 1 invld 35 } 
+	{ p_ZL9n_regions_32_ap_vld sc_in sc_logic 1 invld 36 } 
+	{ p_ZL9n_regions_33_ap_vld sc_in sc_logic 1 invld 37 } 
+	{ p_ZL9n_regions_34_ap_vld sc_in sc_logic 1 invld 38 } 
+	{ p_ZL9n_regions_35_ap_vld sc_in sc_logic 1 invld 39 } 
+	{ p_ZL9n_regions_36_ap_vld sc_in sc_logic 1 invld 40 } 
+	{ p_ZL9n_regions_37_ap_vld sc_in sc_logic 1 invld 41 } 
+	{ p_ZL9n_regions_38_ap_vld sc_in sc_logic 1 invld 42 } 
+	{ p_ZL9n_regions_39_ap_vld sc_in sc_logic 1 invld 43 } 
+	{ p_ZL9n_regions_40_ap_vld sc_in sc_logic 1 invld 44 } 
+	{ p_ZL9n_regions_41_ap_vld sc_in sc_logic 1 invld 45 } 
+	{ p_ZL9n_regions_42_ap_vld sc_in sc_logic 1 invld 46 } 
+	{ p_ZL9n_regions_43_ap_vld sc_in sc_logic 1 invld 47 } 
+	{ p_ZL9n_regions_44_ap_vld sc_in sc_logic 1 invld 48 } 
+	{ p_ZL9n_regions_45_ap_vld sc_in sc_logic 1 invld 49 } 
+	{ p_ZL9n_regions_46_ap_vld sc_in sc_logic 1 invld 50 } 
+	{ p_ZL9n_regions_47_ap_vld sc_in sc_logic 1 invld 51 } 
+	{ p_ZL9n_regions_48_ap_vld sc_in sc_logic 1 invld 52 } 
+	{ p_ZL9n_regions_49_ap_vld sc_in sc_logic 1 invld 53 } 
+	{ p_ZL9n_regions_50_ap_vld sc_in sc_logic 1 invld 54 } 
+	{ p_ZL9n_regions_51_ap_vld sc_in sc_logic 1 invld 55 } 
+	{ p_ZL9n_regions_52_ap_vld sc_in sc_logic 1 invld 56 } 
+	{ p_ZL9n_regions_53_ap_vld sc_in sc_logic 1 invld 57 } 
+	{ p_ZL9n_regions_54_ap_vld sc_in sc_logic 1 invld 58 } 
+	{ p_ZL9n_regions_55_ap_vld sc_in sc_logic 1 invld 59 } 
+	{ p_ZL9n_regions_56_ap_vld sc_in sc_logic 1 invld 60 } 
+	{ p_ZL9n_regions_57_ap_vld sc_in sc_logic 1 invld 61 } 
+	{ p_ZL9n_regions_58_ap_vld sc_in sc_logic 1 invld 62 } 
+	{ p_ZL9n_regions_59_ap_vld sc_in sc_logic 1 invld 63 } 
+	{ p_ZL9n_regions_60_ap_vld sc_in sc_logic 1 invld 64 } 
+	{ p_ZL9n_regions_61_ap_vld sc_in sc_logic 1 invld 65 } 
+	{ p_ZL9n_regions_62_ap_vld sc_in sc_logic 1 invld 66 } 
+	{ p_ZL9n_regions_63_ap_vld sc_in sc_logic 1 invld 67 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
@@ -434,7 +439,8 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BID" }} , 
  	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }} , 
  	{ "name": "inputAOV", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "inputAOV", "role": "default" }} , 
- 	{ "name": "startCopy", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "startCopy", "role": "default" }} , 
+ 	{ "name": "startCopy", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "startCopy", "role": "default" }} , 
+ 	{ "name": "copying", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "copying", "role": "default" }} , 
  	{ "name": "p_ZL9n_regions_0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_ZL9n_regions_0", "role": "default" }} , 
  	{ "name": "p_ZL9n_regions_1", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_ZL9n_regions_1", "role": "default" }} , 
  	{ "name": "p_ZL9n_regions_2", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "p_ZL9n_regions_2", "role": "default" }} , 
@@ -543,7 +549,10 @@ set NewPortList {[
  	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
  	{ "name": "inputAOV_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "inputAOV", "role": "ap_vld" }} , 
  	{ "name": "startCopy_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "startCopy", "role": "ap_vld" }} , 
+ 	{ "name": "startCopy_ap_ack", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "startCopy", "role": "ap_ack" }} , 
+ 	{ "name": "copying_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "copying", "role": "ap_vld" }} , 
  	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
+ 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "p_ZL9n_regions_0_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_0", "role": "ap_vld" }} , 
  	{ "name": "p_ZL9n_regions_1_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_1", "role": "ap_vld" }} , 
  	{ "name": "p_ZL9n_regions_2_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_2", "role": "ap_vld" }} , 
@@ -608,7 +617,6 @@ set NewPortList {[
  	{ "name": "p_ZL9n_regions_61_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_61", "role": "ap_vld" }} , 
  	{ "name": "p_ZL9n_regions_62_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_62", "role": "ap_vld" }} , 
  	{ "name": "p_ZL9n_regions_63_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "p_ZL9n_regions_63", "role": "ap_vld" }} , 
- 	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }}  ]}
@@ -631,13 +639,19 @@ set RtlHierarchyInfo {[
 		"InputProcess" : [
 			{"ID" : "1", "Name" : "read_data_U0"}],
 		"OutputProcess" : [
+			{"ID" : "1", "Name" : "read_data_U0"},
 			{"ID" : "19", "Name" : "writeOutcome_U0"}],
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "1", "SubInstance" : "read_data_U0", "Port" : "gmem"}]},
 			{"Name" : "inputAOV", "Type" : "None", "Direction" : "I"},
-			{"Name" : "startCopy", "Type" : "None", "Direction" : "I"},
+			{"Name" : "startCopy", "Type" : "HS", "Direction" : "I",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "read_data_U0", "Port" : "startCopy"}]},
+			{"Name" : "copying", "Type" : "Vld", "Direction" : "O",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "read_data_U0", "Port" : "copying"}]},
 			{"Name" : "p_ZL9n_regions_0", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "2", "SubInstance" : "run_test_U0", "Port" : "p_ZL9n_regions_0"}]},
@@ -865,10 +879,13 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "inputAOV", "Type" : "None", "Direction" : "I"},
-			{"Name" : "startCopy", "Type" : "None", "Direction" : "I"}],
+			{"Name" : "startCopy", "Type" : "HS", "Direction" : "I",
+				"BlockSignal" : [
+					{"Name" : "startCopy_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "copying", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_494_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "72", "FirstState" : "ap_ST_fsm_state72", "LastState" : ["ap_ST_fsm_state72"], "QuitState" : ["ap_ST_fsm_state72"], "PreState" : ["ap_ST_fsm_state71"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state72_blk"}}]},
+				"LoopDec" : {"FSMBitwidth" : "73", "FirstState" : "ap_ST_fsm_state72", "LastState" : ["ap_ST_fsm_state73"], "QuitState" : ["ap_ST_fsm_state72"], "PreState" : ["ap_ST_fsm_state71"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.run_test_U0", "Parent" : "0", "Child" : ["3", "4", "7", "12", "17", "18"],
 		"CDFG" : "run_test",
 		"Protocol" : "ap_ctrl_hs",
@@ -998,7 +1015,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "outcome_AOV", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_1_fu_353.mux_84_32_1_1_U5", "Parent" : "4"},
+	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_1_fu_353.mux_84_32_1_1_U6", "Parent" : "4"},
 	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_1_fu_353.flow_control_loop_pipe_sequential_init_U", "Parent" : "4"},
 	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366", "Parent" : "2", "Child" : ["8", "9", "10", "11"],
 		"CDFG" : "run_test_Pipeline_is_valid_label2",
@@ -1025,9 +1042,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "in_AOV_7", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "is_valid_label2", "PipelineType" : "NotSupport"}]},
-	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.fcmp_32ns_32ns_1_2_no_dsp_1_U17", "Parent" : "7"},
-	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.fcmp_32ns_32ns_1_2_no_dsp_1_U18", "Parent" : "7"},
-	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.mux_84_32_1_1_U19", "Parent" : "7"},
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.fcmp_32ns_32ns_1_2_no_dsp_1_U18", "Parent" : "7"},
+	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.fcmp_32ns_32ns_1_2_no_dsp_1_U19", "Parent" : "7"},
+	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.mux_84_32_1_1_U20", "Parent" : "7"},
 	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_is_valid_label2_fu_366.flow_control_loop_pipe_sequential_init_U", "Parent" : "7"},
 	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378", "Parent" : "2", "Child" : ["13", "14", "15", "16"],
 		"CDFG" : "run_test_Pipeline_VITIS_LOOP_55_2",
@@ -1061,12 +1078,12 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_55_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_pp0_stage1", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage1_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_864_32_1_1_U30", "Parent" : "12"},
-	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_21_32_1_1_U31", "Parent" : "12"},
-	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_21_32_1_1_U32", "Parent" : "12"},
+	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_864_32_1_1_U31", "Parent" : "12"},
+	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_21_32_1_1_U32", "Parent" : "12"},
+	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.mux_21_32_1_1_U33", "Parent" : "12"},
 	{"ID" : "16", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.run_test_U0.grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378.flow_control_loop_pipe_sequential_init_U", "Parent" : "12"},
-	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.mux_648_8_1_1_U49", "Parent" : "2"},
-	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U50", "Parent" : "2"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.mux_648_8_1_1_U50", "Parent" : "2"},
+	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.run_test_U0.fcmp_32ns_32ns_1_2_no_dsp_1_U51", "Parent" : "2"},
 	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.writeOutcome_U0", "Parent" : "0",
 		"CDFG" : "writeOutcome",
 		"Protocol" : "ap_ctrl_hs",
@@ -1096,7 +1113,8 @@ set ArgLastReadFirstWriteLatency {
 	runTest {
 		gmem {Type I LastRead 70 FirstWrite -1}
 		inputAOV {Type I LastRead 0 FirstWrite -1}
-		startCopy {Type I LastRead 0 FirstWrite -1}
+		startCopy {Type I LastRead 71 FirstWrite -1}
+		copying {Type O LastRead -1 FirstWrite 71}
 		p_ZL9n_regions_0 {Type I LastRead 0 FirstWrite -1}
 		p_ZL9n_regions_1 {Type I LastRead 0 FirstWrite -1}
 		p_ZL9n_regions_2 {Type I LastRead 0 FirstWrite -1}
@@ -1169,7 +1187,8 @@ set ArgLastReadFirstWriteLatency {
 		copyDest {Type O LastRead -1 FirstWrite 71}
 		gmem {Type I LastRead 70 FirstWrite -1}
 		inputAOV {Type I LastRead 0 FirstWrite -1}
-		startCopy {Type I LastRead 70 FirstWrite -1}}
+		startCopy {Type I LastRead 71 FirstWrite -1}
+		copying {Type O LastRead -1 FirstWrite 71}}
 	run_test {
 		copyDest {Type I LastRead 1 FirstWrite -1}
 		outcomeStream {Type O LastRead -1 FirstWrite 7}
@@ -1291,7 +1310,8 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem_AWVALID VALID 1 1 }  { m_axi_gmem_AWREADY READY 0 1 }  { m_axi_gmem_AWADDR ADDR 1 64 }  { m_axi_gmem_AWID ID 1 1 }  { m_axi_gmem_AWLEN SIZE 1 32 }  { m_axi_gmem_AWSIZE BURST 1 3 }  { m_axi_gmem_AWBURST LOCK 1 2 }  { m_axi_gmem_AWLOCK CACHE 1 2 }  { m_axi_gmem_AWCACHE PROT 1 4 }  { m_axi_gmem_AWPROT QOS 1 3 }  { m_axi_gmem_AWQOS REGION 1 4 }  { m_axi_gmem_AWREGION USER 1 4 }  { m_axi_gmem_AWUSER DATA 1 1 }  { m_axi_gmem_WVALID VALID 1 1 }  { m_axi_gmem_WREADY READY 0 1 }  { m_axi_gmem_WDATA FIFONUM 1 512 }  { m_axi_gmem_WSTRB STRB 1 64 }  { m_axi_gmem_WLAST LAST 1 1 }  { m_axi_gmem_WID ID 1 1 }  { m_axi_gmem_WUSER DATA 1 1 }  { m_axi_gmem_ARVALID VALID 1 1 }  { m_axi_gmem_ARREADY READY 0 1 }  { m_axi_gmem_ARADDR ADDR 1 64 }  { m_axi_gmem_ARID ID 1 1 }  { m_axi_gmem_ARLEN SIZE 1 32 }  { m_axi_gmem_ARSIZE BURST 1 3 }  { m_axi_gmem_ARBURST LOCK 1 2 }  { m_axi_gmem_ARLOCK CACHE 1 2 }  { m_axi_gmem_ARCACHE PROT 1 4 }  { m_axi_gmem_ARPROT QOS 1 3 }  { m_axi_gmem_ARQOS REGION 1 4 }  { m_axi_gmem_ARREGION USER 1 4 }  { m_axi_gmem_ARUSER DATA 1 1 }  { m_axi_gmem_RVALID VALID 0 1 }  { m_axi_gmem_RREADY READY 1 1 }  { m_axi_gmem_RDATA FIFONUM 0 512 }  { m_axi_gmem_RLAST LAST 0 1 }  { m_axi_gmem_RID ID 0 1 }  { m_axi_gmem_RFIFONUM LEN 0 9 }  { m_axi_gmem_RUSER DATA 0 1 }  { m_axi_gmem_RRESP RESP 0 2 }  { m_axi_gmem_BVALID VALID 0 1 }  { m_axi_gmem_BREADY READY 1 1 }  { m_axi_gmem_BRESP RESP 0 2 }  { m_axi_gmem_BID ID 0 1 }  { m_axi_gmem_BUSER DATA 0 1 } } }
 	inputAOV { ap_none {  { inputAOV in_data 0 64 }  { inputAOV_ap_vld in_vld 0 1 } } }
-	startCopy { ap_none {  { startCopy in_data 0 64 }  { startCopy_ap_vld in_vld 0 1 } } }
+	startCopy { ap_hs {  { startCopy in_data 0 8 }  { startCopy_ap_vld in_vld 0 1 }  { startCopy_ap_ack in_acc 1 1 } } }
+	copying { ap_vld {  { copying out_data 1 8 }  { copying_ap_vld out_vld 1 1 } } }
 	p_ZL9n_regions_0 { ap_none {  { p_ZL9n_regions_0 in_data 0 8 }  { p_ZL9n_regions_0_ap_vld in_vld 0 1 } } }
 	p_ZL9n_regions_1 { ap_none {  { p_ZL9n_regions_1 in_data 0 8 }  { p_ZL9n_regions_1_ap_vld in_vld 0 1 } } }
 	p_ZL9n_regions_2 { ap_none {  { p_ZL9n_regions_2 in_data 0 8 }  { p_ZL9n_regions_2_ap_vld in_vld 0 1 } } }

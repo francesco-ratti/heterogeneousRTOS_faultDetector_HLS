@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 205
+set ID 207
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -103,7 +103,7 @@ accel_mode {
 	offset_end 23
 }
 copying { 
-	dir I
+	dir O
 	width 8
 	depth 1
 	mode ap_none
@@ -118,11 +118,11 @@ inputData {
 	offset 40
 	offset_end 51
 }
-IOCheckIdx { 
+startCopy { 
 	dir I
 	width 8
 	depth 1
-	mode ap_none
+	mode ap_hs
 	offset 52
 	offset_end 59
 }
@@ -154,7 +154,7 @@ trainedRegion_o {
 	offset 180
 	offset_end 279
 }
-IORegionIdx { 
+IOCheckIdx { 
 	dir I
 	width 8
 	depth 1
@@ -162,7 +162,7 @@ IORegionIdx {
 	offset 380
 	offset_end 387
 }
-n_regions_in_i { 
+IORegionIdx { 
 	dir I
 	width 8
 	depth 1
@@ -170,21 +170,29 @@ n_regions_in_i {
 	offset 388
 	offset_end 395
 }
-n_regions_in_o { 
-	dir O
+n_regions_in_i { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
 	offset 396
 	offset_end 403
 }
+n_regions_in_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 404
+	offset_end 411
+}
 failedTask { 
 	dir I
 	width 16
 	depth 1
 	mode ap_hs
-	offset 404
-	offset_end 411
+	offset 412
+	offset_end 419
 }
 outcomeInRam { 
 	dir X
@@ -213,7 +221,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 206 \
+			id 208 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -231,21 +239,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler run_control_s_axi BINDTYPE interface TYPE interface_s_axilite
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 208 \
-    name startCopy \
-    type other \
-    dir I \
-    reset_level 0 \
-    sync_rst true \
-    corename dc_startCopy \
-    op interface \
-    ports { startCopy { I 64 vector } } \
-} "
 }
 
 

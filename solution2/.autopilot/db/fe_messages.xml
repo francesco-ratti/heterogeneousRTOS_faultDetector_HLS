@@ -692,46 +692,52 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:660:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port=copying" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:662:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = trainedRegion_i" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:661:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port=startCopy" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:663:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = trainedRegion_o" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:662:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_hs port=startCopy" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:664:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = IOCheckIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = trainedRegion_i" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:665:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = IORegionIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = trainedRegion_o" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:666:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = IOCheckIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:667:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode= s_axilite port = IORegionIdx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:669:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=failedTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:668:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:670:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_hs port=failedTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:671:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:673:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_hs port=failedTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:672:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:674:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port = n_regions_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:676:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port = errorInTask" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:675:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:677:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port = outcomeInRam" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:680:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:682:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=regions dim=2 cyclic factor=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:681:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:683:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=failedTaskExecutionIds complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:684:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:686:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=failedTaskExecutionIds" ARG_PragmaType="reset" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:686:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="detector_solid/abs_solid_detector.cpp:688:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="run" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=n_regions complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot\ap_int_base.h:260:67" msg_body="Inlining function 'ssdm_int&lt;32, true&gt;::ssdm_int(int)' into 'ap_int_base&lt;32, true&gt;::ap_int_base(int)'">
@@ -752,29 +758,29 @@
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:470:56" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run_test(REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;controlStr, 1&gt;&amp;, hls::stream&lt;OutcomeStr, 1&gt;&amp;)'">
         <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run_test(REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;controlStr, 1&gt;&amp;, hls::stream&lt;OutcomeStr, 1&gt;&amp;)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:689:11" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:691:11" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:689:23" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:691:23" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:693:27" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:695:27" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:692:40" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:694:40" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:692:28" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:694:28" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:690:13" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
-        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char*, controlStr*, bool*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:692:13" msg_body="Inlining function 'ap_int_base&lt;8, false&gt;::operator unsigned long long() const' into 'run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)'">
+        <args Callee="ap_int_base&lt;8, false&gt;::operator unsigned long long() const" Caller="run(char, char volatile*, controlStr*, char volatile*, char*, OutcomeStr*, REGION_T, REGION_T*, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;*, taskFailure*)"/>
     </msg>
     <msg msg_groups="PRAGMA_DISAGGREGATE" msg_id="214-210" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:457:13" msg_body="Disaggregating variable 'in'">
         <args Name="in"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:490:0" msg_body="Inlining function 'setProcessingState(char*, bool)' into 'read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, bool*, char*)'">
-        <args Callee="setProcessingState(char*, bool)" Caller="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, bool*, char*)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:490:0" msg_body="Inlining function 'setProcessingState(char volatile*, bool)' into 'read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*)'">
+        <args Callee="setProcessingState(char volatile*, bool)" Caller="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*)"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:68:0" msg_body="Inlining function 'std::isnan(float)' into 'is_valid(float const*)'">
         <args Callee="std::isnan(float)" Caller="is_valid(float const*)"/>
@@ -809,8 +815,8 @@
     <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="detector_solid/abs_solid_detector.cpp:527:29" msg_body="Aggregating fifo (hls::stream) variable 'copyDest' with compact=bit mode in 320-bits">
         <args AggregateTypeName="compact=bit" Bitwidth="320" HwTyName="fifo (hls::stream)" Name="copyDest"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9" msg_body="Inlining function '_llvm.fpga.pack.bits.i320.s_struct.controlStrs.1' into 'read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, bool*, char*) (.1)'">
-        <args Callee="_llvm.fpga.pack.bits.i320.s_struct.controlStrs.1" Caller="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, bool*, char*) (.1)"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174:9" msg_body="Inlining function '_llvm.fpga.pack.bits.i320.s_struct.controlStrs.1' into 'read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*) (.1)'">
+        <args Callee="_llvm.fpga.pack.bits.i320.s_struct.controlStrs.1" Caller="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*) (.1)"/>
     </msg>
     <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:145:9" msg_body="Inlining function '_llvm.fpga.unpack.bits.s_struct.controlStrs.i320.1' into 'run_test(REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;controlStr, 1&gt;&amp;, hls::stream&lt;OutcomeStr, 1&gt;&amp;) (.1)'">
         <args Callee="_llvm.fpga.unpack.bits.s_struct.controlStrs.i320.1" Caller="run_test(REGION_T (*) [16], ap_uint&lt;8&gt;*, hls::stream&lt;controlStr, 1&gt;&amp;, hls::stream&lt;OutcomeStr, 1&gt;&amp;) (.1)"/>

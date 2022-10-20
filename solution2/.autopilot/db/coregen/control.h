@@ -25,7 +25,7 @@
 //         others  - reserved
 // 0x014 : reserved
 // 0x018 : Data signal of copying
-//         bit 7~0 - copying[7:0] (Read/Write)
+//         bit 7~0 - copying[7:0] (Read)
 //         others  - reserved
 // 0x01c : reserved
 // 0x028 : Data signal of inputData
@@ -33,10 +33,13 @@
 // 0x02c : Data signal of inputData
 //         bit 31~0 - inputData[63:32] (Read/Write)
 // 0x030 : reserved
-// 0x034 : Data signal of IOCheckIdx
-//         bit 7~0 - IOCheckIdx[7:0] (Read/Write)
+// 0x034 : Data signal of startCopy
+//         bit 7~0 - startCopy[7:0] (Read/Write)
 //         others  - reserved
-// 0x038 : reserved
+// 0x038 : Control signal of startCopy
+//         bit 0  - startCopy_ap_vld (Read/Write/COH)
+//         bit 1  - startCopy_ap_ack (Read)
+//         others - reserved
 // 0x050 : Data signal of trainedRegion_i
 //         bit 31~0 - trainedRegion_i[31:0] (Read/Write)
 // 0x054 : Data signal of trainedRegion_i
@@ -135,22 +138,26 @@
 // 0x110 : Data signal of trainedRegion_o
 //         bit 31~0 - trainedRegion_o[767:736] (Read)
 // 0x114 : reserved
-// 0x17c : Data signal of IORegionIdx
-//         bit 7~0 - IORegionIdx[7:0] (Read/Write)
+// 0x17c : Data signal of IOCheckIdx
+//         bit 7~0 - IOCheckIdx[7:0] (Read/Write)
 //         others  - reserved
 // 0x180 : reserved
-// 0x184 : Data signal of n_regions_in_i
-//         bit 7~0 - n_regions_in_i[7:0] (Read/Write)
+// 0x184 : Data signal of IORegionIdx
+//         bit 7~0 - IORegionIdx[7:0] (Read/Write)
 //         others  - reserved
 // 0x188 : reserved
-// 0x18c : Data signal of n_regions_in_o
-//         bit 7~0 - n_regions_in_o[7:0] (Read)
+// 0x18c : Data signal of n_regions_in_i
+//         bit 7~0 - n_regions_in_i[7:0] (Read/Write)
 //         others  - reserved
 // 0x190 : reserved
-// 0x194 : Data signal of failedTask
+// 0x194 : Data signal of n_regions_in_o
+//         bit 7~0 - n_regions_in_o[7:0] (Read)
+//         others  - reserved
+// 0x198 : reserved
+// 0x19c : Data signal of failedTask
 //         bit 15~0 - failedTask[15:0] (Read/Write)
 //         others   - reserved
-// 0x198 : Control signal of failedTask
+// 0x1a0 : Control signal of failedTask
 //         bit 0  - failedTask_ap_vld (Read/Write/COH)
 //         bit 1  - failedTask_ap_ack (Read)
 //         others - reserved
@@ -190,8 +197,9 @@
 #define CONTROL_BITS_COPYING_DATA          8
 #define CONTROL_ADDR_INPUTDATA_DATA        0x028
 #define CONTROL_BITS_INPUTDATA_DATA        64
-#define CONTROL_ADDR_IOCHECKIDX_DATA       0x034
-#define CONTROL_BITS_IOCHECKIDX_DATA       8
+#define CONTROL_ADDR_STARTCOPY_DATA        0x034
+#define CONTROL_BITS_STARTCOPY_DATA        8
+#define CONTROL_ADDR_STARTCOPY_CTRL        0x038
 #define CONTROL_ADDR_TRAINEDREGION_I_DATA  0x050
 #define CONTROL_BITS_TRAINEDREGION_I_DATA  768
 #define CONTROL_ADDR_TRAINEDREGION_I_DATA_ 0x078
@@ -200,15 +208,17 @@
 #define CONTROL_BITS_TRAINEDREGION_O_DATA  768
 #define CONTROL_ADDR_TRAINEDREGION_O_DATA_ 0x0dc
 #define CONTROL_BITS_TRAINEDREGION_O_DATA  768
-#define CONTROL_ADDR_IOREGIONIDX_DATA      0x17c
+#define CONTROL_ADDR_IOCHECKIDX_DATA       0x17c
+#define CONTROL_BITS_IOCHECKIDX_DATA       8
+#define CONTROL_ADDR_IOREGIONIDX_DATA      0x184
 #define CONTROL_BITS_IOREGIONIDX_DATA      8
-#define CONTROL_ADDR_N_REGIONS_IN_I_DATA   0x184
+#define CONTROL_ADDR_N_REGIONS_IN_I_DATA   0x18c
 #define CONTROL_BITS_N_REGIONS_IN_I_DATA   8
-#define CONTROL_ADDR_N_REGIONS_IN_O_DATA   0x18c
+#define CONTROL_ADDR_N_REGIONS_IN_O_DATA   0x194
 #define CONTROL_BITS_N_REGIONS_IN_O_DATA   8
-#define CONTROL_ADDR_FAILEDTASK_DATA       0x194
+#define CONTROL_ADDR_FAILEDTASK_DATA       0x19c
 #define CONTROL_BITS_FAILEDTASK_DATA       16
-#define CONTROL_ADDR_FAILEDTASK_CTRL       0x198
+#define CONTROL_ADDR_FAILEDTASK_CTRL       0x1a0
 #define CONTROL_ADDR_ERRORINTASK_BASE      0x040
 #define CONTROL_ADDR_ERRORINTASK_HIGH      0x04f
 #define CONTROL_WIDTH_ERRORINTASK          8

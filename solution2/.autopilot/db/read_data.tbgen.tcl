@@ -16,15 +16,17 @@ set C_modelArgList {
 	{ copyDest int 320 regular {fifo 1 volatile }  }
 	{ gmem int 512 regular {axi_master 0}  }
 	{ inputAOV int 64 regular  }
-	{ startCopy int 64 regular  }
+	{ startCopy int 8 regular {pointer 0 volatile }  }
+	{ copying int 8 regular {pointer 1 volatile }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "copyDest", "interface" : "fifo", "bitwidth" : 320, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputData","offset": { "type": "dynamic","port_name": "inputData","bundle": "control"},"direction": "READONLY"},{"cName": "startCopy","offset": { "type": "dynamic","port_name": "startCopy"},}]}]} , 
+ 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputData","offset": { "type": "dynamic","port_name": "inputData","bundle": "control"},"direction": "READONLY"}]}]} , 
  	{ "Name" : "inputAOV", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "startCopy", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} ]}
+ 	{ "Name" : "startCopy", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "copying", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 60
+set portNum 64
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -85,7 +87,11 @@ set portList {
 	{ m_axi_gmem_BID sc_in sc_lv 1 signal 1 } 
 	{ m_axi_gmem_BUSER sc_in sc_lv 1 signal 1 } 
 	{ inputAOV sc_in sc_lv 64 signal 2 } 
-	{ startCopy sc_in sc_lv 64 signal 3 } 
+	{ startCopy sc_in sc_lv 8 signal 3 } 
+	{ startCopy_ap_vld sc_in sc_logic 1 invld 3 } 
+	{ startCopy_ap_ack sc_out sc_logic 1 inacc 3 } 
+	{ copying sc_out sc_lv 8 signal 4 } 
+	{ copying_ap_vld sc_out sc_logic 1 outvld 4 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -147,7 +153,11 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BID" }} , 
  	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }} , 
  	{ "name": "inputAOV", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "inputAOV", "role": "default" }} , 
- 	{ "name": "startCopy", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "startCopy", "role": "default" }}  ]}
+ 	{ "name": "startCopy", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "startCopy", "role": "default" }} , 
+ 	{ "name": "startCopy_ap_vld", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "startCopy", "role": "ap_vld" }} , 
+ 	{ "name": "startCopy_ap_ack", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "startCopy", "role": "ap_ack" }} , 
+ 	{ "name": "copying", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "copying", "role": "default" }} , 
+ 	{ "name": "copying_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "copying", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -173,10 +183,13 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "inputAOV", "Type" : "None", "Direction" : "I"},
-			{"Name" : "startCopy", "Type" : "None", "Direction" : "I"}],
+			{"Name" : "startCopy", "Type" : "HS", "Direction" : "I",
+				"BlockSignal" : [
+					{"Name" : "startCopy_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "copying", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_494_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "72", "FirstState" : "ap_ST_fsm_state72", "LastState" : ["ap_ST_fsm_state72"], "QuitState" : ["ap_ST_fsm_state72"], "PreState" : ["ap_ST_fsm_state71"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state72_blk"}}]}]}
+				"LoopDec" : {"FSMBitwidth" : "73", "FirstState" : "ap_ST_fsm_state72", "LastState" : ["ap_ST_fsm_state73"], "QuitState" : ["ap_ST_fsm_state72"], "PreState" : ["ap_ST_fsm_state71"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -184,7 +197,8 @@ set ArgLastReadFirstWriteLatency {
 		copyDest {Type O LastRead -1 FirstWrite 71}
 		gmem {Type I LastRead 70 FirstWrite -1}
 		inputAOV {Type I LastRead 0 FirstWrite -1}
-		startCopy {Type I LastRead 70 FirstWrite -1}}}
+		startCopy {Type I LastRead 71 FirstWrite -1}
+		copying {Type O LastRead -1 FirstWrite 71}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -200,5 +214,6 @@ set Spec2ImplPortList {
 	copyDest { ap_fifo {  { copyDest_din fifo_port_we 1 320 }  { copyDest_num_data_valid fifo_status_num_data_valid 0 2 }  { copyDest_fifo_cap fifo_update 0 2 }  { copyDest_full_n fifo_status 0 1 }  { copyDest_write fifo_data 1 1 } } }
 	 { m_axi {  { m_axi_gmem_AWVALID VALID 1 1 }  { m_axi_gmem_AWREADY READY 0 1 }  { m_axi_gmem_AWADDR ADDR 1 64 }  { m_axi_gmem_AWID ID 1 1 }  { m_axi_gmem_AWLEN SIZE 1 32 }  { m_axi_gmem_AWSIZE BURST 1 3 }  { m_axi_gmem_AWBURST LOCK 1 2 }  { m_axi_gmem_AWLOCK CACHE 1 2 }  { m_axi_gmem_AWCACHE PROT 1 4 }  { m_axi_gmem_AWPROT QOS 1 3 }  { m_axi_gmem_AWQOS REGION 1 4 }  { m_axi_gmem_AWREGION USER 1 4 }  { m_axi_gmem_AWUSER DATA 1 1 }  { m_axi_gmem_WVALID VALID 1 1 }  { m_axi_gmem_WREADY READY 0 1 }  { m_axi_gmem_WDATA FIFONUM 1 512 }  { m_axi_gmem_WSTRB STRB 1 64 }  { m_axi_gmem_WLAST LAST 1 1 }  { m_axi_gmem_WID ID 1 1 }  { m_axi_gmem_WUSER DATA 1 1 }  { m_axi_gmem_ARVALID VALID 1 1 }  { m_axi_gmem_ARREADY READY 0 1 }  { m_axi_gmem_ARADDR ADDR 1 64 }  { m_axi_gmem_ARID ID 1 1 }  { m_axi_gmem_ARLEN SIZE 1 32 }  { m_axi_gmem_ARSIZE BURST 1 3 }  { m_axi_gmem_ARBURST LOCK 1 2 }  { m_axi_gmem_ARLOCK CACHE 1 2 }  { m_axi_gmem_ARCACHE PROT 1 4 }  { m_axi_gmem_ARPROT QOS 1 3 }  { m_axi_gmem_ARQOS REGION 1 4 }  { m_axi_gmem_ARREGION USER 1 4 }  { m_axi_gmem_ARUSER DATA 1 1 }  { m_axi_gmem_RVALID VALID 0 1 }  { m_axi_gmem_RREADY READY 1 1 }  { m_axi_gmem_RDATA FIFONUM 0 512 }  { m_axi_gmem_RLAST LAST 0 1 }  { m_axi_gmem_RID ID 0 1 }  { m_axi_gmem_RFIFONUM LEN 0 9 }  { m_axi_gmem_RUSER DATA 0 1 }  { m_axi_gmem_RRESP RESP 0 2 }  { m_axi_gmem_BVALID VALID 0 1 }  { m_axi_gmem_BREADY READY 1 1 }  { m_axi_gmem_BRESP RESP 0 2 }  { m_axi_gmem_BID ID 0 1 }  { m_axi_gmem_BUSER DATA 0 1 } } }
 	inputAOV { ap_none {  { inputAOV in_data 0 64 } } }
-	startCopy { ap_none {  { startCopy in_data 0 64 } } }
+	startCopy { ap_hs {  { startCopy in_data 0 8 }  { startCopy_ap_vld in_vld 0 1 }  { startCopy_ap_ack in_acc 1 1 } } }
+	copying { ap_vld {  { copying out_data 1 8 }  { copying_ap_vld out_vld 1 1 } } }
 }

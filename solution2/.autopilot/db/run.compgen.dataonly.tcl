@@ -11,7 +11,7 @@ accel_mode {
 	offset_end 23
 }
 copying { 
-	dir I
+	dir O
 	width 8
 	depth 1
 	mode ap_none
@@ -26,11 +26,11 @@ inputData {
 	offset 40
 	offset_end 51
 }
-IOCheckIdx { 
+startCopy { 
 	dir I
 	width 8
 	depth 1
-	mode ap_none
+	mode ap_hs
 	offset 52
 	offset_end 59
 }
@@ -62,7 +62,7 @@ trainedRegion_o {
 	offset 180
 	offset_end 279
 }
-IORegionIdx { 
+IOCheckIdx { 
 	dir I
 	width 8
 	depth 1
@@ -70,7 +70,7 @@ IORegionIdx {
 	offset 380
 	offset_end 387
 }
-n_regions_in_i { 
+IORegionIdx { 
 	dir I
 	width 8
 	depth 1
@@ -78,21 +78,29 @@ n_regions_in_i {
 	offset 388
 	offset_end 395
 }
-n_regions_in_o { 
-	dir O
+n_regions_in_i { 
+	dir I
 	width 8
 	depth 1
 	mode ap_none
 	offset 396
 	offset_end 403
 }
+n_regions_in_o { 
+	dir O
+	width 8
+	depth 1
+	mode ap_none
+	offset 404
+	offset_end 411
+}
 failedTask { 
 	dir I
 	width 16
 	depth 1
 	mode ap_hs
-	offset 404
-	offset_end 411
+	offset 412
+	offset_end 419
 }
 outcomeInRam { 
 	dir X

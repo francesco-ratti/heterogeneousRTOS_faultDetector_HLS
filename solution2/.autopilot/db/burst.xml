@@ -1,0 +1,6 @@
+<VitisHLS:BurstInfo>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:485:16" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="if.then.store.2" VarName="copying" ParentFunc="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:487:16" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="if.then.store.6" VarName="copying" ParentFunc="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:496:6" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="while.body.load.0" VarName="startCopy" ParentFunc="read_data(hls::stream&lt;controlStr, 1&gt;&amp;, controlStr*, char volatile*, char volatile*)"/>
+</VitisHLS:BurstInfo>
+

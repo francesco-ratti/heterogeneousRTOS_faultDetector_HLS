@@ -548,7 +548,6 @@ std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
 CodeState = DUMP_INPUTS;
 unsigned __xlx_offset_byte_param_inputData = 0;
-unsigned __xlx_offset_byte_param_startCopy = 0;
 unsigned __xlx_offset_byte_param_errorInTask = 0;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -615,22 +614,6 @@ aesl_fh.write(AUTOTB_TVIN_outcomeInRam, end_str());
 }
 
 #endif
-#ifdef USE_BINARY_TV_FILE
-{
-aesl_fh.touch(AUTOTB_TVIN_gmem, 'b');
-transaction<512> tr(2);
-__xlx_offset_byte_param_inputData = 0*64;
-if (__xlx_apatb_param_inputData) {
-  tr.import<64>((char*)__xlx_apatb_param_inputData, 1, 0);
-}
-__xlx_offset_byte_param_startCopy = 1*64;
-if (__xlx_apatb_param_startCopy) {
-  tr.import<64>((char*)__xlx_apatb_param_startCopy, 1, 0);
-}
-aesl_fh.write(AUTOTB_TVIN_gmem, tr.p, tr.tbytes);
-tcl_file.set_num(2, &tcl_file.gmem_depth);
-}
-#else
 aesl_fh.touch(AUTOTB_TVIN_gmem);
 {
 aesl_fh.write(AUTOTB_TVIN_gmem, begin_str(AESL_transaction));
@@ -642,18 +625,9 @@ std::string s = formatData(pos, 512);
 aesl_fh.write(AUTOTB_TVIN_gmem, s);
 }
 }
-__xlx_offset_byte_param_startCopy = 1*64;
-if (__xlx_apatb_param_startCopy) {
-for (size_t i = 0; i < 1; ++i) {
-unsigned char *pos = (unsigned char*)__xlx_apatb_param_startCopy + i * 64;
-std::string s = formatData(pos, 512);
-aesl_fh.write(AUTOTB_TVIN_gmem, s);
-}
-}
-tcl_file.set_num(2, &tcl_file.gmem_depth);
+tcl_file.set_num(1, &tcl_file.gmem_depth);
 aesl_fh.write(AUTOTB_TVIN_gmem, end_str());
 }
-#endif
 // print accel_mode Transactions
 {
 aesl_fh.write(AUTOTB_TVIN_accel_mode, begin_str(AESL_transaction));
@@ -691,8 +665,8 @@ aesl_fh.write(AUTOTB_TVIN_inputData, end_str());
 {
 aesl_fh.write(AUTOTB_TVIN_startCopy, begin_str(AESL_transaction));
 {
-auto *pos = (unsigned char*)&__xlx_offset_byte_param_startCopy;
-aesl_fh.write(AUTOTB_TVIN_startCopy, formatData(pos, 32));
+auto *pos = (unsigned char*)__xlx_apatb_param_startCopy;
+aesl_fh.write(AUTOTB_TVIN_startCopy, formatData(pos, 8));
 }
   tcl_file.set_num(1, &tcl_file.startCopy_depth);
 aesl_fh.write(AUTOTB_TVIN_startCopy, end_str());

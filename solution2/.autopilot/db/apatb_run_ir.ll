@@ -15,11 +15,11 @@ target triple = "fpga64-xilinx-none"
 %struct.taskFailure = type { %"struct.ap_uint<8>", %"struct.ap_uint<8>" }
 
 ; Function Attrs: noinline
-define void @apatb_run_ir(i8 signext %accel_mode, i8* noalias nocapture nonnull %copying, %struct.controlStr* noalias nocapture nonnull readonly %inputData, i1* noalias nonnull readnone %startCopy, i8* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %struct.REGION_T* nocapture readonly %trainedRegion_i, %struct.REGION_T* noalias nocapture nonnull %trainedRegion_o, %"struct.ap_uint<8>"* nocapture readonly %IOCheckIdx, %"struct.ap_uint<8>"* nocapture readonly %IORegionIdx, %"struct.ap_uint<8>"* noalias nocapture nonnull %n_regions_in, %struct.taskFailure* noalias nocapture nonnull readonly %failedTask) local_unnamed_addr #0 {
+define void @apatb_run_ir(i8 signext %accel_mode, i8* noalias nonnull %copying, %struct.controlStr* noalias nocapture nonnull readonly %inputData, i8* noalias nonnull %startCopy, i8* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="16" %errorInTask, %struct.OutcomeStr* noalias nocapture nonnull "fpga.decayed.dim.hint"="16" %outcomeInRam, %struct.REGION_T* nocapture readonly %trainedRegion_i, %struct.REGION_T* noalias nocapture nonnull %trainedRegion_o, %"struct.ap_uint<8>"* nocapture readonly %IOCheckIdx, %"struct.ap_uint<8>"* nocapture readonly %IORegionIdx, %"struct.ap_uint<8>"* noalias nocapture nonnull %n_regions_in, %struct.taskFailure* noalias nocapture nonnull readonly %failedTask) local_unnamed_addr #0 {
 entry:
   %copying_copy = alloca i8, align 512
   %inputData_copy = alloca %struct.controlStr, align 512
-  %startCopy_copy = alloca i1, align 512
+  %startCopy_copy = alloca i8, align 512
   %errorInTask_copy = alloca [16 x i8], align 512
   %outcomeInRam_copy = alloca [16 x %struct.OutcomeStr], align 512
   %trainedRegion_o_copy = alloca %struct.REGION_T, align 512
@@ -27,20 +27,20 @@ entry:
   %failedTask_copy = alloca %struct.taskFailure, align 512
   %0 = bitcast i8* %errorInTask to [16 x i8]*
   %1 = bitcast %struct.OutcomeStr* %outcomeInRam to [16 x %struct.OutcomeStr]*
-  call fastcc void @copy_in(i8* nonnull %copying, i8* nonnull align 512 %copying_copy, %struct.controlStr* nonnull %inputData, %struct.controlStr* nonnull align 512 %inputData_copy, i1* nonnull %startCopy, i1* nonnull align 512 %startCopy_copy, [16 x i8]* nonnull %0, [16 x i8]* nonnull align 512 %errorInTask_copy, [16 x %struct.OutcomeStr]* nonnull %1, [16 x %struct.OutcomeStr]* nonnull align 512 %outcomeInRam_copy, %struct.REGION_T* nonnull %trainedRegion_o, %struct.REGION_T* nonnull align 512 %trainedRegion_o_copy, %"struct.ap_uint<8>"* nonnull %n_regions_in, %"struct.ap_uint<8>"* nonnull align 512 %n_regions_in_copy, %struct.taskFailure* nonnull %failedTask, %struct.taskFailure* nonnull align 512 %failedTask_copy)
+  call fastcc void @copy_in(i8* nonnull %copying, i8* nonnull align 512 %copying_copy, %struct.controlStr* nonnull %inputData, %struct.controlStr* nonnull align 512 %inputData_copy, i8* nonnull %startCopy, i8* nonnull align 512 %startCopy_copy, [16 x i8]* nonnull %0, [16 x i8]* nonnull align 512 %errorInTask_copy, [16 x %struct.OutcomeStr]* nonnull %1, [16 x %struct.OutcomeStr]* nonnull align 512 %outcomeInRam_copy, %struct.REGION_T* nonnull %trainedRegion_o, %struct.REGION_T* nonnull align 512 %trainedRegion_o_copy, %"struct.ap_uint<8>"* nonnull %n_regions_in, %"struct.ap_uint<8>"* nonnull align 512 %n_regions_in_copy, %struct.taskFailure* nonnull %failedTask, %struct.taskFailure* nonnull align 512 %failedTask_copy)
   %2 = getelementptr inbounds [16 x i8], [16 x i8]* %errorInTask_copy, i32 0, i32 0
   %3 = getelementptr inbounds [16 x %struct.OutcomeStr], [16 x %struct.OutcomeStr]* %outcomeInRam_copy, i32 0, i32 0
-  call void @apatb_run_hw(i8 %accel_mode, i8* %copying_copy, %struct.controlStr* %inputData_copy, i1* %startCopy_copy, i8* %2, %struct.OutcomeStr* %3, %struct.REGION_T* %trainedRegion_i, %struct.REGION_T* %trainedRegion_o_copy, %"struct.ap_uint<8>"* %IOCheckIdx, %"struct.ap_uint<8>"* %IORegionIdx, %"struct.ap_uint<8>"* %n_regions_in_copy, %struct.taskFailure* %failedTask_copy)
-  call void @copy_back(i8* %copying, i8* %copying_copy, %struct.controlStr* %inputData, %struct.controlStr* %inputData_copy, i1* %startCopy, i1* %startCopy_copy, [16 x i8]* %0, [16 x i8]* %errorInTask_copy, [16 x %struct.OutcomeStr]* %1, [16 x %struct.OutcomeStr]* %outcomeInRam_copy, %struct.REGION_T* %trainedRegion_o, %struct.REGION_T* %trainedRegion_o_copy, %"struct.ap_uint<8>"* %n_regions_in, %"struct.ap_uint<8>"* %n_regions_in_copy, %struct.taskFailure* %failedTask, %struct.taskFailure* %failedTask_copy)
+  call void @apatb_run_hw(i8 %accel_mode, i8* %copying_copy, %struct.controlStr* %inputData_copy, i8* %startCopy_copy, i8* %2, %struct.OutcomeStr* %3, %struct.REGION_T* %trainedRegion_i, %struct.REGION_T* %trainedRegion_o_copy, %"struct.ap_uint<8>"* %IOCheckIdx, %"struct.ap_uint<8>"* %IORegionIdx, %"struct.ap_uint<8>"* %n_regions_in_copy, %struct.taskFailure* %failedTask_copy)
+  call void @copy_back(i8* %copying, i8* %copying_copy, %struct.controlStr* %inputData, %struct.controlStr* %inputData_copy, i8* %startCopy, i8* %startCopy_copy, [16 x i8]* %0, [16 x i8]* %errorInTask_copy, [16 x %struct.OutcomeStr]* %1, [16 x %struct.OutcomeStr]* %outcomeInRam_copy, %struct.REGION_T* %trainedRegion_o, %struct.REGION_T* %trainedRegion_o_copy, %"struct.ap_uint<8>"* %n_regions_in, %"struct.ap_uint<8>"* %n_regions_in_copy, %struct.taskFailure* %failedTask, %struct.taskFailure* %failedTask_copy)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_in(i8* noalias readonly, i8* noalias align 512, %struct.controlStr* noalias readonly, %struct.controlStr* noalias align 512, i1* noalias readonly, i1* noalias align 512, [16 x i8]* noalias readonly, [16 x i8]* noalias align 512, [16 x %struct.OutcomeStr]* noalias readonly, [16 x %struct.OutcomeStr]* noalias align 512, %struct.REGION_T* noalias readonly, %struct.REGION_T* noalias align 512, %"struct.ap_uint<8>"* noalias readonly, %"struct.ap_uint<8>"* noalias align 512, %struct.taskFailure* noalias readonly, %struct.taskFailure* noalias align 512) unnamed_addr #1 {
+define internal fastcc void @copy_in(i8* noalias readonly, i8* noalias align 512, %struct.controlStr* noalias readonly, %struct.controlStr* noalias align 512, i8* noalias readonly, i8* noalias align 512, [16 x i8]* noalias readonly, [16 x i8]* noalias align 512, [16 x %struct.OutcomeStr]* noalias readonly, [16 x %struct.OutcomeStr]* noalias align 512, %struct.REGION_T* noalias readonly, %struct.REGION_T* noalias align 512, %"struct.ap_uint<8>"* noalias readonly, %"struct.ap_uint<8>"* noalias align 512, %struct.taskFailure* noalias readonly, %struct.taskFailure* noalias align 512) unnamed_addr #1 {
 entry:
   call fastcc void @onebyonecpy_hls.p0i8(i8* align 512 %1, i8* %0)
   call fastcc void @onebyonecpy_hls.p0struct.controlStr(%struct.controlStr* align 512 %3, %struct.controlStr* %2)
-  call fastcc void @onebyonecpy_hls.p0i1(i1* align 512 %5, i1* %4)
+  call fastcc void @onebyonecpy_hls.p0i8(i8* align 512 %5, i8* %4)
   call fastcc void @onebyonecpy_hls.p0a16i8([16 x i8]* align 512 %7, [16 x i8]* %6)
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* align 512 %9, [16 x %struct.OutcomeStr]* %8)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* align 512 %11, %struct.REGION_T* %10)
@@ -121,25 +121,6 @@ for.loop9:                                        ; preds = %for.loop9, %copy.sp
   br i1 %exitcond, label %for.loop9, label %ret
 
 ret:                                              ; preds = %for.loop9, %entry
-  ret void
-}
-
-; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @onebyonecpy_hls.p0i1(i1* noalias align 512, i1* noalias readonly) unnamed_addr #2 {
-entry:
-  %2 = icmp eq i1* %0, null
-  %3 = icmp eq i1* %1, null
-  %4 = or i1 %2, %3
-  br i1 %4, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  %5 = bitcast i1* %1 to i8*
-  %6 = load i8, i8* %5
-  %7 = trunc i8 %6 to i1
-  store i1 %7, i1* %0, align 512
-  br label %ret
-
-ret:                                              ; preds = %copy, %entry
   ret void
 }
 
@@ -308,11 +289,11 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_out(i8* noalias, i8* noalias readonly align 512, %struct.controlStr* noalias, %struct.controlStr* noalias readonly align 512, i1* noalias, i1* noalias readonly align 512, [16 x i8]* noalias, [16 x i8]* noalias readonly align 512, [16 x %struct.OutcomeStr]* noalias, [16 x %struct.OutcomeStr]* noalias readonly align 512, %struct.REGION_T* noalias, %struct.REGION_T* noalias readonly align 512, %"struct.ap_uint<8>"* noalias, %"struct.ap_uint<8>"* noalias readonly align 512, %struct.taskFailure* noalias, %struct.taskFailure* noalias readonly align 512) unnamed_addr #3 {
+define internal fastcc void @copy_out(i8* noalias, i8* noalias readonly align 512, %struct.controlStr* noalias, %struct.controlStr* noalias readonly align 512, i8* noalias, i8* noalias readonly align 512, [16 x i8]* noalias, [16 x i8]* noalias readonly align 512, [16 x %struct.OutcomeStr]* noalias, [16 x %struct.OutcomeStr]* noalias readonly align 512, %struct.REGION_T* noalias, %struct.REGION_T* noalias readonly align 512, %"struct.ap_uint<8>"* noalias, %"struct.ap_uint<8>"* noalias readonly align 512, %struct.taskFailure* noalias, %struct.taskFailure* noalias readonly align 512) unnamed_addr #3 {
 entry:
   call fastcc void @onebyonecpy_hls.p0i8(i8* %0, i8* align 512 %1)
   call fastcc void @onebyonecpy_hls.p0struct.controlStr(%struct.controlStr* %2, %struct.controlStr* align 512 %3)
-  call fastcc void @onebyonecpy_hls.p0i1(i1* %4, i1* align 512 %5)
+  call fastcc void @onebyonecpy_hls.p0i8(i8* %4, i8* align 512 %5)
   call fastcc void @onebyonecpy_hls.p0a16i8([16 x i8]* %6, [16 x i8]* align 512 %7)
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* %8, [16 x %struct.OutcomeStr]* align 512 %9)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* %10, %struct.REGION_T* align 512 %11)
@@ -321,31 +302,32 @@ entry:
   ret void
 }
 
-declare void @apatb_run_hw(i8, i8*, %struct.controlStr*, i1*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*)
+declare void @apatb_run_hw(i8, i8*, %struct.controlStr*, i8*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*)
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_back(i8* noalias, i8* noalias readonly align 512, %struct.controlStr* noalias, %struct.controlStr* noalias readonly align 512, i1* noalias, i1* noalias readonly align 512, [16 x i8]* noalias, [16 x i8]* noalias readonly align 512, [16 x %struct.OutcomeStr]* noalias, [16 x %struct.OutcomeStr]* noalias readonly align 512, %struct.REGION_T* noalias, %struct.REGION_T* noalias readonly align 512, %"struct.ap_uint<8>"* noalias, %"struct.ap_uint<8>"* noalias readonly align 512, %struct.taskFailure* noalias, %struct.taskFailure* noalias readonly align 512) unnamed_addr #3 {
+define internal fastcc void @copy_back(i8* noalias, i8* noalias readonly align 512, %struct.controlStr* noalias, %struct.controlStr* noalias readonly align 512, i8* noalias, i8* noalias readonly align 512, [16 x i8]* noalias, [16 x i8]* noalias readonly align 512, [16 x %struct.OutcomeStr]* noalias, [16 x %struct.OutcomeStr]* noalias readonly align 512, %struct.REGION_T* noalias, %struct.REGION_T* noalias readonly align 512, %"struct.ap_uint<8>"* noalias, %"struct.ap_uint<8>"* noalias readonly align 512, %struct.taskFailure* noalias, %struct.taskFailure* noalias readonly align 512) unnamed_addr #3 {
 entry:
   call fastcc void @onebyonecpy_hls.p0i8(i8* %0, i8* align 512 %1)
+  call fastcc void @onebyonecpy_hls.p0i8(i8* %4, i8* align 512 %5)
   call fastcc void @onebyonecpy_hls.p0a16struct.OutcomeStr([16 x %struct.OutcomeStr]* %8, [16 x %struct.OutcomeStr]* align 512 %9)
   call fastcc void @onebyonecpy_hls.p0struct.REGION_T(%struct.REGION_T* %10, %struct.REGION_T* align 512 %11)
   call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<8>"(%"struct.ap_uint<8>"* %12, %"struct.ap_uint<8>"* align 512 %13)
   ret void
 }
 
-define void @run_hw_stub_wrapper(i8, i8*, %struct.controlStr*, i1*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*) #4 {
+define void @run_hw_stub_wrapper(i8, i8*, %struct.controlStr*, i8*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*) #4 {
 entry:
   %12 = bitcast i8* %4 to [16 x i8]*
   %13 = bitcast %struct.OutcomeStr* %5 to [16 x %struct.OutcomeStr]*
-  call void @copy_out(i8* null, i8* %1, %struct.controlStr* null, %struct.controlStr* %2, i1* null, i1* %3, [16 x i8]* null, [16 x i8]* %12, [16 x %struct.OutcomeStr]* null, [16 x %struct.OutcomeStr]* %13, %struct.REGION_T* null, %struct.REGION_T* %7, %"struct.ap_uint<8>"* null, %"struct.ap_uint<8>"* %10, %struct.taskFailure* null, %struct.taskFailure* %11)
+  call void @copy_out(i8* null, i8* %1, %struct.controlStr* null, %struct.controlStr* %2, i8* null, i8* %3, [16 x i8]* null, [16 x i8]* %12, [16 x %struct.OutcomeStr]* null, [16 x %struct.OutcomeStr]* %13, %struct.REGION_T* null, %struct.REGION_T* %7, %"struct.ap_uint<8>"* null, %"struct.ap_uint<8>"* %10, %struct.taskFailure* null, %struct.taskFailure* %11)
   %14 = bitcast [16 x i8]* %12 to i8*
   %15 = bitcast [16 x %struct.OutcomeStr]* %13 to %struct.OutcomeStr*
-  call void @run_hw_stub(i8 %0, i8* %1, %struct.controlStr* %2, i1* %3, i8* %14, %struct.OutcomeStr* %15, %struct.REGION_T* %6, %struct.REGION_T* %7, %"struct.ap_uint<8>"* %8, %"struct.ap_uint<8>"* %9, %"struct.ap_uint<8>"* %10, %struct.taskFailure* %11)
-  call void @copy_in(i8* null, i8* %1, %struct.controlStr* null, %struct.controlStr* %2, i1* null, i1* %3, [16 x i8]* null, [16 x i8]* %12, [16 x %struct.OutcomeStr]* null, [16 x %struct.OutcomeStr]* %13, %struct.REGION_T* null, %struct.REGION_T* %7, %"struct.ap_uint<8>"* null, %"struct.ap_uint<8>"* %10, %struct.taskFailure* null, %struct.taskFailure* %11)
+  call void @run_hw_stub(i8 %0, i8* %1, %struct.controlStr* %2, i8* %3, i8* %14, %struct.OutcomeStr* %15, %struct.REGION_T* %6, %struct.REGION_T* %7, %"struct.ap_uint<8>"* %8, %"struct.ap_uint<8>"* %9, %"struct.ap_uint<8>"* %10, %struct.taskFailure* %11)
+  call void @copy_in(i8* null, i8* %1, %struct.controlStr* null, %struct.controlStr* %2, i8* null, i8* %3, [16 x i8]* null, [16 x i8]* %12, [16 x %struct.OutcomeStr]* null, [16 x %struct.OutcomeStr]* %13, %struct.REGION_T* null, %struct.REGION_T* %7, %"struct.ap_uint<8>"* null, %"struct.ap_uint<8>"* %10, %struct.taskFailure* null, %struct.taskFailure* %11)
   ret void
 }
 
-declare void @run_hw_stub(i8, i8*, %struct.controlStr*, i1*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*)
+declare void @run_hw_stub(i8, i8*, %struct.controlStr*, i8*, i8*, %struct.OutcomeStr*, %struct.REGION_T*, %struct.REGION_T*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %"struct.ap_uint<8>"*, %struct.taskFailure*)
 
 attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse "fpga.wrapper.func"="copyin" }

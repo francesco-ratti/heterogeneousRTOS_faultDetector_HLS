@@ -480,20 +480,20 @@ void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MA
 //	}
 //}
 
-void setProcessingState(char* processing, bool value) {
+void setProcessingState(volatile char* processing, bool value) {
 	if (value)
 		(*processing)=0xFF;
 	else
 		(*processing)=0x0;
 }
 
-void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, bool* startCopy, char* copying) {
+void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
 
 	controlStr destStr;
 
 	while (1) {
 #pragma HLS PIPELINE off
-		if (startCopy) {
+		if (*startCopy) {
 			setProcessingState(copying, true);
 			memcpy(&destStr, inputAOV, sizeof(controlStr));
 			setProcessingState(copying, false);
@@ -503,8 +503,8 @@ void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, bool* sta
 	}
 }
 
-void runTest(controlStr* inputAOV, bool* startCopy, /*char* readyForData,  char* copyInputAOV,*/
-		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, char* copying
+void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
+		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
 #pragma HLS stable variable=inputAOV
@@ -649,7 +649,7 @@ static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 #define MODE_TRAIN 4
 
 
-void run(char accel_mode, char* copying, controlStr* inputData, bool* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
+void run(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
 	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
@@ -658,6 +658,8 @@ void run(char accel_mode, char* copying, controlStr* inputData, bool* startCopy,
 #pragma HLS interface mode= m_axi port = inputData offset=slave// bundle=A
 
 #pragma HLS interface mode= s_axilite port=copying
+#pragma HLS interface mode= s_axilite port=startCopy
+#pragma HLS INTERFACE mode=ap_hs port=startCopy
 
 #pragma HLS interface mode= s_axilite port = trainedRegion_i //bundle=A
 #pragma HLS interface mode= s_axilite port = trainedRegion_o //bundle=A

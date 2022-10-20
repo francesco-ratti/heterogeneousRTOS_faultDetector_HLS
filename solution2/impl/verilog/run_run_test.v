@@ -538,7 +538,7 @@ run_mux_648_8_1_1 #(
     .din63_WIDTH( 8 ),
     .din64_WIDTH( 8 ),
     .dout_WIDTH( 8 ))
-mux_648_8_1_1_U49(
+mux_648_8_1_1_U50(
     .din0(p_ZL9n_regions_0),
     .din1(p_ZL9n_regions_1),
     .din2(p_ZL9n_regions_2),
@@ -613,7 +613,7 @@ run_fcmp_32ns_32ns_1_2_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_2_no_dsp_1_U50(
+fcmp_32ns_32ns_1_2_no_dsp_1_U51(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(grp_fu_1356_p0),

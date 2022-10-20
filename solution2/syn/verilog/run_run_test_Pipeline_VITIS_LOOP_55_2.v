@@ -208,7 +208,7 @@ run_mux_864_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 64 ),
     .dout_WIDTH( 32 ))
-mux_864_32_1_1_U30(
+mux_864_32_1_1_U31(
     .din0(in_AOV),
     .din1(in_AOV_1),
     .din2(in_AOV_2),
@@ -228,7 +228,7 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U31(
+mux_21_32_1_1_U32(
     .din0(regions_q0),
     .din1(regions_1_q0),
     .din2(trunc_ln1),
@@ -242,7 +242,7 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U32(
+mux_21_32_1_1_U33(
     .din0(regions_2_q0),
     .din1(regions_3_q0),
     .din2(trunc_ln1),

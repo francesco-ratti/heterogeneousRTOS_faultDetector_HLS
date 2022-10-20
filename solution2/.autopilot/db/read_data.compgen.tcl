@@ -63,7 +63,22 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_startCopy \
     op interface \
-    ports { startCopy { I 64 vector } } \
+    ports { startCopy { I 8 vector } startCopy_ap_vld { I 1 bit } startCopy_ap_ack { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 5 \
+    name copying \
+    type other \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_copying \
+    op interface \
+    ports { copying { O 8 vector } copying_ap_vld { O 1 bit } } \
 } "
 }
 

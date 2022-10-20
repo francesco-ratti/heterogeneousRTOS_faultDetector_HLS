@@ -583,7 +583,7 @@ for.body3.i.split:9 %speclooptripcount_ln57 = speclooptripcount void @_ssdm_op_S
 
 <Node id="39" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body3.i.split:10 %specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18
+for.body3.i.split:10 %specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln55"/></StgValue>

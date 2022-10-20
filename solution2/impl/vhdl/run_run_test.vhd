@@ -692,7 +692,7 @@ begin
         grp_fu_1356_p_dout0 => grp_fu_1356_p2,
         grp_fu_1356_p_ce => grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378_grp_fu_1356_p_ce);
 
-    mux_648_8_1_1_U49 : component run_mux_648_8_1_1
+    mux_648_8_1_1_U50 : component run_mux_648_8_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -830,7 +830,7 @@ begin
         din64 => in_checkId_V_reg_1213,
         dout => n_regions_V_fu_858_p66);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U50 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U51 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,

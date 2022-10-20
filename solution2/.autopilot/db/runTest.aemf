@@ -1,328 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666260346243">
-  <ports id="1" name="gmem" type="PortType" coreId="1702129263" bitwidth="512" iftype="IfTypeFifo">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666260986507">
+  <ports id="1" name="gmem" type="PortType" coreId="1852142702" bitwidth="512" iftype="IfTypeFifo">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="2" name="inputAOV" type="PortType" coreId="1702129263" bitwidth="64">
+  <ports id="2" name="inputAOV" type="PortType" coreId="1852142702" bitwidth="64">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="startCopy" type="PortType" coreId="1885684796" bitwidth="64">
-    <dataOutputObjs>read</dataOutputObjs>
+  <ports id="3" name="startCopy" type="PortType" coreId="1852142702" bitwidth="8">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="4" name="copying" type="PortType" coreId="1043341373" bitwidth="8" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="4" name="p_ZL9n_regions_0" type="PortType" coreId="882231224" bitwidth="8">
+  <ports id="5" name="p_ZL9n_regions_0" type="PortType" coreId="1852142702" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="5" name="p_ZL9n_regions_1" type="PortType" coreId="1718558757" bitwidth="8">
+  <ports id="6" name="p_ZL9n_regions_1" type="PortType" coreId="87" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="6" name="p_ZL9n_regions_2" type="PortType" coreId="4294967295" bitwidth="8">
+  <ports id="7" name="p_ZL9n_regions_2" type="PortType" coreId="42" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="7" name="p_ZL9n_regions_3" type="PortType" coreId="4294967295" bitwidth="8">
+  <ports id="8" name="p_ZL9n_regions_3" type="PortType" coreId="93" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="8" name="p_ZL9n_regions_4" type="PortType" coreId="751408264" bitwidth="8">
+  <ports id="9" name="p_ZL9n_regions_4" type="PortType" coreId="1869832051" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="9" name="p_ZL9n_regions_5" type="PortType" coreId="0" bitwidth="8">
+  <ports id="10" name="p_ZL9n_regions_5" type="PortType" coreId="34" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="10" name="p_ZL9n_regions_6" type="PortType" coreId="752111712" bitwidth="8">
+  <ports id="11" name="p_ZL9n_regions_6" type="PortType" coreId="740910117" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="11" name="p_ZL9n_regions_7" type="PortType" coreId="751412224" bitwidth="8">
+  <ports id="12" name="p_ZL9n_regions_7" type="PortType" coreId="1852142702" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="12" name="p_ZL9n_regions_8" type="PortType" coreId="543434016" bitwidth="8">
+  <ports id="13" name="p_ZL9n_regions_8" type="PortType" coreId="86" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="13" name="p_ZL9n_regions_9" type="PortType" coreId="4" bitwidth="8">
+  <ports id="14" name="p_ZL9n_regions_9" type="PortType" coreId="166886656" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="14" name="p_ZL9n_regions_10" type="PortType" coreId="1919249519" bitwidth="8">
+  <ports id="15" name="p_ZL9n_regions_10" type="PortType" coreId="61" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="15" name="p_ZL9n_regions_11" type="PortType" coreId="758395186" bitwidth="8">
+  <ports id="16" name="p_ZL9n_regions_11" type="PortType" coreId="1680154734" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="16" name="p_ZL9n_regions_12" type="PortType" coreId="751406776" bitwidth="8">
+  <ports id="17" name="p_ZL9n_regions_12" type="PortType" coreId="1852142702" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="17" name="p_ZL9n_regions_13" type="PortType" coreId="1702129263" bitwidth="8">
+  <ports id="18" name="p_ZL9n_regions_13" type="PortType" coreId="1852142702" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="18" name="p_ZL9n_regions_14" type="PortType" coreId="645164649" bitwidth="8">
+  <ports id="19" name="p_ZL9n_regions_14" type="PortType" coreId="166727472" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="19" name="p_ZL9n_regions_15" type="PortType" coreId="645033844" bitwidth="8">
+  <ports id="20" name="p_ZL9n_regions_15" type="PortType" coreId="1717924464" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="20" name="p_ZL9n_regions_16" type="PortType" coreId="1835083323" bitwidth="8">
+  <ports id="21" name="p_ZL9n_regions_16" type="PortType" coreId="1713384556" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="21" name="p_ZL9n_regions_17" type="PortType" coreId="892155696" bitwidth="8">
+  <ports id="22" name="p_ZL9n_regions_17" type="PortType" coreId="1933195891" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="22" name="p_ZL9n_regions_18" type="PortType" coreId="1819243359" bitwidth="8">
+  <ports id="23" name="p_ZL9n_regions_18" type="PortType" coreId="758395186" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="23" name="p_ZL9n_regions_19" type="PortType" coreId="644182881" bitwidth="8">
+  <ports id="24" name="p_ZL9n_regions_19" type="PortType" coreId="790766141" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="24" name="p_ZL9n_regions_20" type="PortType" coreId="1970420595" bitwidth="8">
+  <ports id="25" name="p_ZL9n_regions_20" type="PortType" coreId="1667593317" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="25" name="p_ZL9n_regions_21" type="PortType" coreId="1668576591" bitwidth="8">
+  <ports id="26" name="p_ZL9n_regions_21" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="26" name="p_ZL9n_regions_22" type="PortType" coreId="644182892" bitwidth="8">
+  <ports id="27" name="p_ZL9n_regions_22" type="PortType" coreId="572669294" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="27" name="p_ZL9n_regions_23" type="PortType" coreId="544108393" bitwidth="8">
+  <ports id="28" name="p_ZL9n_regions_23" type="PortType" coreId="1702258035" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="28" name="p_ZL9n_regions_24" type="PortType" coreId="1397508130" bitwidth="8">
+  <ports id="29" name="p_ZL9n_regions_24" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="29" name="p_ZL9n_regions_25" type="PortType" coreId="1663050309" bitwidth="8">
+  <ports id="30" name="p_ZL9n_regions_25" type="PortType" coreId="1650536292" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="30" name="p_ZL9n_regions_26" type="PortType" coreId="1869898597" bitwidth="8">
+  <ports id="31" name="p_ZL9n_regions_26" type="PortType" coreId="1701669220" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="31" name="p_ZL9n_regions_27" type="PortType" coreId="1986360096" bitwidth="8">
+  <ports id="32" name="p_ZL9n_regions_27" type="PortType" coreId="1819167010" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="32" name="p_ZL9n_regions_28" type="PortType" coreId="1629498461" bitwidth="8">
+  <ports id="33" name="p_ZL9n_regions_28" type="PortType" coreId="1663988335" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="33" name="p_ZL9n_regions_29" type="PortType" coreId="1931502951" bitwidth="8">
+  <ports id="34" name="p_ZL9n_regions_29" type="PortType" coreId="1814458991" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="34" name="p_ZL9n_regions_30" type="PortType" coreId="539768891" bitwidth="8">
+  <ports id="35" name="p_ZL9n_regions_30" type="PortType" coreId="790766141" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="35" name="p_ZL9n_regions_31" type="PortType" coreId="1853187616" bitwidth="8">
+  <ports id="36" name="p_ZL9n_regions_31" type="PortType" coreId="1814459502" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="36" name="p_ZL9n_regions_32" type="PortType" coreId="1953394531" bitwidth="8">
+  <ports id="37" name="p_ZL9n_regions_32" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="37" name="p_ZL9n_regions_33" type="PortType" coreId="942750312" bitwidth="8">
+  <ports id="38" name="p_ZL9n_regions_33" type="PortType" coreId="1702129263" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="38" name="p_ZL9n_regions_34" type="PortType" coreId="1181447009" bitwidth="8">
+  <ports id="39" name="p_ZL9n_regions_34" type="PortType" coreId="1852140905" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="39" name="p_ZL9n_regions_35" type="PortType" coreId="1702129263" bitwidth="8">
+  <ports id="40" name="p_ZL9n_regions_35" type="PortType" coreId="1885414944" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="40" name="p_ZL9n_regions_36" type="PortType" coreId="1732321853" bitwidth="8">
+  <ports id="41" name="p_ZL9n_regions_36" type="PortType" coreId="1869635878" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="41" name="p_ZL9n_regions_37" type="PortType" coreId="691286586" bitwidth="8">
+  <ports id="42" name="p_ZL9n_regions_37" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="42" name="p_ZL9n_regions_38" type="PortType" coreId="1279795773" bitwidth="8">
+  <ports id="43" name="p_ZL9n_regions_38" type="PortType" coreId="859058527" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="43" name="p_ZL9n_regions_39" type="PortType" coreId="1852383291" bitwidth="8">
+  <ports id="44" name="p_ZL9n_regions_39" type="PortType" coreId="544370548" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="44" name="p_ZL9n_regions_40" type="PortType" coreId="1919251566" bitwidth="8">
+  <ports id="45" name="p_ZL9n_regions_40" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="45" name="p_ZL9n_regions_41" type="PortType" coreId="1635000354" bitwidth="8">
+  <ports id="46" name="p_ZL9n_regions_41" type="PortType" coreId="1601200443" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="46" name="p_ZL9n_regions_42" type="PortType" coreId="1751344500" bitwidth="8">
+  <ports id="47" name="p_ZL9n_regions_42" type="PortType" coreId="1819243124" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="47" name="p_ZL9n_regions_43" type="PortType" coreId="573126970" bitwidth="8">
+  <ports id="48" name="p_ZL9n_regions_43" type="PortType" coreId="1937008994" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="48" name="p_ZL9n_regions_44" type="PortType" coreId="1667592992" bitwidth="8">
+  <ports id="49" name="p_ZL9n_regions_44" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="49" name="p_ZL9n_regions_45" type="PortType" coreId="1634755954" bitwidth="8">
+  <ports id="50" name="p_ZL9n_regions_45" type="PortType" coreId="576533049" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="50" name="p_ZL9n_regions_46" type="PortType" coreId="678719081" bitwidth="8">
+  <ports id="51" name="p_ZL9n_regions_46" type="PortType" coreId="1768713801" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="51" name="p_ZL9n_regions_47" type="PortType" coreId="1969188961" bitwidth="8">
+  <ports id="52" name="p_ZL9n_regions_47" type="PortType" coreId="1936028767" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="52" name="p_ZL9n_regions_48" type="PortType" coreId="1031369833" bitwidth="8">
+  <ports id="53" name="p_ZL9n_regions_48" type="PortType" coreId="0" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="53" name="p_ZL9n_regions_49" type="PortType" coreId="151666223" bitwidth="8">
+  <ports id="54" name="p_ZL9n_regions_49" type="PortType" coreId="576533049" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="54" name="p_ZL9n_regions_50" type="PortType" coreId="1629909810" bitwidth="8">
+  <ports id="55" name="p_ZL9n_regions_50" type="PortType" coreId="1814459502" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="55" name="p_ZL9n_regions_51" type="PortType" coreId="1986360096" bitwidth="8">
+  <ports id="56" name="p_ZL9n_regions_51" type="PortType" coreId="1814458991" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="56" name="p_ZL9n_regions_52" type="PortType" coreId="574108722" bitwidth="8">
+  <ports id="57" name="p_ZL9n_regions_52" type="PortType" coreId="790766141" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="57" name="p_ZL9n_regions_53" type="PortType" coreId="1868767266" bitwidth="8">
+  <ports id="58" name="p_ZL9n_regions_53" type="PortType" coreId="1818304628" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="58" name="p_ZL9n_regions_54" type="PortType" coreId="1667593263" bitwidth="8">
+  <ports id="59" name="p_ZL9n_regions_54" type="PortType" coreId="1702129263" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="59" name="p_ZL9n_regions_55" type="PortType" coreId="1111957555" bitwidth="8">
+  <ports id="60" name="p_ZL9n_regions_55" type="PortType" coreId="1702258035" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="60" name="p_ZL9n_regions_56" type="PortType" coreId="1043276322" bitwidth="8">
+  <ports id="61" name="p_ZL9n_regions_56" type="PortType" coreId="1768713801" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="61" name="p_ZL9n_regions_57" type="PortType" coreId="1935827247" bitwidth="8">
+  <ports id="62" name="p_ZL9n_regions_57" type="PortType" coreId="980448372" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="62" name="p_ZL9n_regions_58" type="PortType" coreId="1852403305" bitwidth="8">
+  <ports id="63" name="p_ZL9n_regions_58" type="PortType" coreId="572669294" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="63" name="p_ZL9n_regions_59" type="PortType" coreId="1702129263" bitwidth="8">
+  <ports id="64" name="p_ZL9n_regions_59" type="PortType" coreId="1869635878" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="64" name="p_ZL9n_regions_60" type="PortType" coreId="1663050274" bitwidth="8">
+  <ports id="65" name="p_ZL9n_regions_60" type="PortType" coreId="1685217636" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="65" name="p_ZL9n_regions_61" type="PortType" coreId="575620686" bitwidth="8">
+  <ports id="66" name="p_ZL9n_regions_61" type="PortType" coreId="1768843590" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="66" name="p_ZL9n_regions_62" type="PortType" coreId="1597258036" bitwidth="8">
+  <ports id="67" name="p_ZL9n_regions_62" type="PortType" coreId="1667593317" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="67" name="p_ZL9n_regions_63" type="PortType" coreId="1931489568" bitwidth="8">
+  <ports id="68" name="p_ZL9n_regions_63" type="PortType" coreId="1601200443" bitwidth="8">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="68" name="regions" type="PortType" coreName="RAM" coreId="1684370293" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="69" name="regions" type="PortType" coreName="RAM" coreId="1196312910" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="69" name="regions_1" type="PortType" coreName="RAM" coreId="828326990" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="70" name="regions_1" type="PortType" coreName="RAM" coreId="1852140905" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="70" name="regions_2" type="PortType" coreName="RAM" coreId="574452846" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="71" name="regions_2" type="PortType" coreName="RAM" coreId="1953852527" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="71" name="regions_3" type="PortType" coreName="RAM" coreId="1295780106" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
+  <ports id="72" name="regions_3" type="PortType" coreName="RAM" coreId="1819243124" bitwidth="32" iftype="IfTypeRegister" arraysize="4096">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <edges id="164" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="166" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="172" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="173" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="174" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="175" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="178" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="179" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="182" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
-  <edges id="183" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="184" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="185" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="186" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="187" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="188" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="189" source_obj="//@ports.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="190" source_obj="//@ports.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="191" source_obj="//@ports.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="192" source_obj="//@ports.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="193" source_obj="//@ports.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="194" source_obj="//@ports.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="195" source_obj="//@ports.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="196" source_obj="//@ports.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="197" source_obj="//@ports.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="198" source_obj="//@ports.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="199" source_obj="//@ports.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="200" source_obj="//@ports.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="201" source_obj="//@ports.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="202" source_obj="//@ports.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="203" source_obj="//@ports.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="204" source_obj="//@ports.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="205" source_obj="//@ports.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="206" source_obj="//@ports.26" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="207" source_obj="//@ports.27" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="208" source_obj="//@ports.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="209" source_obj="//@ports.29" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="210" source_obj="//@ports.30" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="211" source_obj="//@ports.31" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="212" source_obj="//@ports.32" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="213" source_obj="//@ports.33" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="214" source_obj="//@ports.34" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="215" source_obj="//@ports.35" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="216" source_obj="//@ports.36" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="217" source_obj="//@ports.37" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="218" source_obj="//@ports.38" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="219" source_obj="//@ports.39" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="220" source_obj="//@ports.40" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="221" source_obj="//@ports.41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="222" source_obj="//@ports.42" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="223" source_obj="//@ports.43" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="224" source_obj="//@ports.44" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="225" source_obj="//@ports.45" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="226" source_obj="//@ports.46" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="227" source_obj="//@ports.47" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="228" source_obj="//@ports.48" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="229" source_obj="//@ports.49" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="230" source_obj="//@ports.50" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="231" source_obj="//@ports.51" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="232" source_obj="//@ports.52" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="233" source_obj="//@ports.53" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="234" source_obj="//@ports.54" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="235" source_obj="//@ports.55" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="236" source_obj="//@ports.56" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="237" source_obj="//@ports.57" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="238" source_obj="//@ports.58" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="239" source_obj="//@ports.59" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="240" source_obj="//@ports.60" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="241" source_obj="//@ports.61" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="242" source_obj="//@ports.62" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="243" source_obj="//@ports.63" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="244" source_obj="//@ports.64" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="245" source_obj="//@ports.65" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="246" source_obj="//@ports.66" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="247" source_obj="//@ports.67" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="248" source_obj="//@ports.68" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="249" source_obj="//@ports.69" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="250" source_obj="//@ports.70" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="579" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="164" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="170" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="171" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="173" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@ports.3"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="182" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="183" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="184" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="185" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="186" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="187" source_obj="//@ports.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="188" source_obj="//@ports.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="189" source_obj="//@ports.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="190" source_obj="//@ports.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="191" source_obj="//@ports.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="192" source_obj="//@ports.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="193" source_obj="//@ports.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="194" source_obj="//@ports.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="195" source_obj="//@ports.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="196" source_obj="//@ports.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="197" source_obj="//@ports.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="198" source_obj="//@ports.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="199" source_obj="//@ports.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="200" source_obj="//@ports.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="201" source_obj="//@ports.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="202" source_obj="//@ports.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="203" source_obj="//@ports.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="204" source_obj="//@ports.26" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="205" source_obj="//@ports.27" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="206" source_obj="//@ports.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="207" source_obj="//@ports.29" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="208" source_obj="//@ports.30" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="209" source_obj="//@ports.31" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="210" source_obj="//@ports.32" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="211" source_obj="//@ports.33" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="212" source_obj="//@ports.34" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="213" source_obj="//@ports.35" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="214" source_obj="//@ports.36" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="215" source_obj="//@ports.37" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="216" source_obj="//@ports.38" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="217" source_obj="//@ports.39" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="218" source_obj="//@ports.40" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="219" source_obj="//@ports.41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="220" source_obj="//@ports.42" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="221" source_obj="//@ports.43" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="222" source_obj="//@ports.44" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="223" source_obj="//@ports.45" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="224" source_obj="//@ports.46" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="225" source_obj="//@ports.47" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="226" source_obj="//@ports.48" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="227" source_obj="//@ports.49" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="228" source_obj="//@ports.50" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="229" source_obj="//@ports.51" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="230" source_obj="//@ports.52" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="231" source_obj="//@ports.53" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="232" source_obj="//@ports.54" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="233" source_obj="//@ports.55" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="234" source_obj="//@ports.56" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="235" source_obj="//@ports.57" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="236" source_obj="//@ports.58" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="237" source_obj="//@ports.59" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="238" source_obj="//@ports.60" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="239" source_obj="//@ports.61" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="240" source_obj="//@ports.62" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="241" source_obj="//@ports.63" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="242" source_obj="//@ports.64" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="243" source_obj="//@ports.65" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="244" source_obj="//@ports.66" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="245" source_obj="//@ports.67" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="246" source_obj="//@ports.68" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="247" source_obj="//@ports.69" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="248" source_obj="//@ports.70" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="249" source_obj="//@ports.71" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="577" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="578" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="579" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
   <edges id="580" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="581" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="582" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
-  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="507" RegionName="runTest">
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" iiViolation="" id="509" RegionName="runTest">
     <basic_blocks id="161" name="runTest" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="startCopy_read" coreId="0" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
-        <dataInputObjs>startCopy</dataInputObjs>
-        <dataOutputObjs>call</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="inputAOV_read" coreId="892679226" bitwidth="64" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="inputAOV_read" coreId="0" bitwidth="64" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <dataInputObjs>inputAOV</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="copyDest" rtlName="copyDest_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="320" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="copyDest" rtlName="copyDest_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="320" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
         <dataOutputObjs>call</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="outcomeStream" rtlName="outcomeStream_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="288" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="outcomeStream" rtlName="outcomeStream_U" coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" bitwidth="288" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
         <dataOutputObjs>call</dataOutputObjs>
         <dataOutputObjs>call</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="_ln531" lineNumber="531" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_data_U0" coreId="1885958176" contextFuncName="runTest" opcode="call" nodeLatency="1" m_display="0" m_delay="13.1" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="157" name="_ln531" lineNumber="531" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="read_data_U0" coreId="0" contextFuncName="runTest" opcode="call" nodeLatency="1" m_display="0" m_delay="13.1" m_topoIndex="4" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="531" fileDirectory="C:\Users\franc" functionName="runTest"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
-        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>startCopy</dataInputObjs>
+        <dataOutputObjs>copying</dataOutputObjs>
         <constName>read_data</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="158" name="_ln532" lineNumber="532" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="run_test_U0" coreId="1701344366" contextFuncName="runTest" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="158" name="_ln532" lineNumber="532" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="run_test_U0" coreId="0" contextFuncName="runTest" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="532" fileDirectory="C:\Users\franc" functionName="runTest"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
@@ -396,12 +396,12 @@
         <dataInputObjs>regions_3</dataInputObjs>
         <constName>run_test</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="_ln533" lineNumber="533" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="539831586" contextFuncName="runTest" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="_ln533" lineNumber="533" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." rtlName="writeOutcome_U0" coreId="0" contextFuncName="runTest" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="533" fileDirectory="C:\Users\franc" functionName="runTest"/>
         <dataInputObjs>alloca</dataInputObjs>
         <constName>writeOutcome</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="160" name="_ln534" lineNumber="534" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTest" opcode="ret" nodeLabel="5.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="160" name="_ln534" lineNumber="534" fileName="detector_solid/abs_solid_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="runTest" opcode="ret" nodeLabel="5.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="detector_solid/abs_solid_detector.cpp" linenumber="534" fileDirectory="C:\Users\franc" functionName="runTest"/>
       </node_objs>
       <fileValidLineNumbers fileName="detector_solid/abs_solid_detector.cpp">
@@ -418,17 +418,14 @@
   <ScheduleInfo time="3"/>
   <ScheduleInfo time="4"/>
   <ScheduleInfo time="5"/>
-  <regnodes realName="outcomeStream_reg_394">
-    <nodeIds>79</nodeIds>
-  </regnodes>
-  <regnodes realName="copyDest_reg_388">
+  <regnodes realName="copyDest_reg_379">
     <nodeIds>76</nodeIds>
   </regnodes>
-  <regnodes realName="inputAOV_read_reg_383">
+  <regnodes realName="inputAOV_read_reg_374">
     <nodeIds>75</nodeIds>
   </regnodes>
-  <regnodes realName="startCopy_read_reg_378">
-    <nodeIds>74</nodeIds>
+  <regnodes realName="outcomeStream_reg_385">
+    <nodeIds>79</nodeIds>
   </regnodes>
   <expressionNodes realName="copyDest_fu_200">
     <nodeIds>76</nodeIds>
@@ -436,21 +433,23 @@
   <expressionNodes realName="outcomeStream_fu_204">
     <nodeIds>79</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_run_test_fu_231">
-    <nodeIds>158</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_read_data_fu_220">
-    <nodeIds>157</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_writeOutcome_fu_373">
+  <moduleNodes realName="grp_writeOutcome_fu_369">
     <nodeIds>159</nodeIds>
   </moduleNodes>
-  <ioNodes realName="inputAOV_read_read_fu_214">
+  <moduleNodes realName="grp_read_data_fu_214">
+    <nodeIds>157</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_run_test_fu_227">
+    <nodeIds>158</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="inputAOV_read_read_fu_208">
     <nodeIds>75</nodeIds>
   </ioNodes>
-  <ioNodes realName="startCopy_read_read_fu_208">
-    <nodeIds>74</nodeIds>
-  </ioNodes>
+  <ioPorts name="copying">
+    <contents name="call">
+      <nodeIds>157</nodeIds>
+    </contents>
+  </ioPorts>
   <ioPorts name="gmem">
     <contents name="call">
       <nodeIds>157</nodeIds>
@@ -782,13 +781,12 @@
     </contents>
   </ioPorts>
   <ioPorts name="startCopy">
-    <contents name="read">
-      <nodeIds>74</nodeIds>
+    <contents name="call">
+      <nodeIds>157</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="74" stage="1" latency="1"/>
       <operations id="75" stage="1" latency="1"/>
       <operations id="76" stage="1" latency="1"/>
       <operations id="79" stage="1" latency="1"/>
@@ -807,8 +805,8 @@
       <operations id="159" stage="2" latency="2"/>
     </states>
     <states id="6">
-      <operations id="72" stage="1" latency="1"/>
       <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
       <operations id="77" stage="1" latency="1"/>
       <operations id="78" stage="1" latency="1"/>
       <operations id="80" stage="1" latency="1"/>
@@ -914,310 +912,314 @@
         <processe_list name="read_data_U0" ssdmobj_id="157">
           <pins>
             <port name="gmem" type="BUSType" top_port_object_id="" top_port_object_id_reference="_173" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_data_U0" ssdmobj_id="157" object_id="_247"/>
+            <inst name="read_data_U0" ssdmobj_id="157" object_id="_248"/>
           </pins>
           <pins>
             <port name="inputAOV" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_174" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_data_U0" ssdmobj_id="157" object_id="_247"/>
+            <inst name="read_data_U0" ssdmobj_id="157" object_id="_248"/>
           </pins>
           <pins>
             <port name="startCopy" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_175" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_data_U0" ssdmobj_id="157" object_id="_247"/>
+            <inst name="read_data_U0" ssdmobj_id="157" object_id="_248"/>
+          </pins>
+          <pins>
+            <port name="copying" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_176" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="read_data_U0" ssdmobj_id="157" object_id="_248"/>
           </pins>
         </processe_list>
         <processe_list name="run_test_U0" ssdmobj_id="158">
           <pins>
-            <port name="p_ZL9n_regions_0" type="SIOType" top_port_object_id="" top_port_object_id_reference="_176" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_0" type="SIOType" top_port_object_id="" top_port_object_id_reference="_177" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_1" type="SIOType" top_port_object_id="" top_port_object_id_reference="_177" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_1" type="SIOType" top_port_object_id="" top_port_object_id_reference="_178" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_2" type="SIOType" top_port_object_id="" top_port_object_id_reference="_178" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_2" type="SIOType" top_port_object_id="" top_port_object_id_reference="_179" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_3" type="SIOType" top_port_object_id="" top_port_object_id_reference="_179" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_3" type="SIOType" top_port_object_id="" top_port_object_id_reference="_180" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_4" type="SIOType" top_port_object_id="" top_port_object_id_reference="_180" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_4" type="SIOType" top_port_object_id="" top_port_object_id_reference="_181" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_5" type="SIOType" top_port_object_id="" top_port_object_id_reference="_181" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_5" type="SIOType" top_port_object_id="" top_port_object_id_reference="_182" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_6" type="SIOType" top_port_object_id="" top_port_object_id_reference="_182" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_6" type="SIOType" top_port_object_id="" top_port_object_id_reference="_183" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_7" type="SIOType" top_port_object_id="" top_port_object_id_reference="_183" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_7" type="SIOType" top_port_object_id="" top_port_object_id_reference="_184" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_8" type="SIOType" top_port_object_id="" top_port_object_id_reference="_184" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_8" type="SIOType" top_port_object_id="" top_port_object_id_reference="_185" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_9" type="SIOType" top_port_object_id="" top_port_object_id_reference="_185" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_9" type="SIOType" top_port_object_id="" top_port_object_id_reference="_186" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_10" type="SIOType" top_port_object_id="" top_port_object_id_reference="_186" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_10" type="SIOType" top_port_object_id="" top_port_object_id_reference="_187" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_11" type="SIOType" top_port_object_id="" top_port_object_id_reference="_187" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_11" type="SIOType" top_port_object_id="" top_port_object_id_reference="_188" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_12" type="SIOType" top_port_object_id="" top_port_object_id_reference="_188" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_12" type="SIOType" top_port_object_id="" top_port_object_id_reference="_189" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_13" type="SIOType" top_port_object_id="" top_port_object_id_reference="_189" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_13" type="SIOType" top_port_object_id="" top_port_object_id_reference="_190" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_14" type="SIOType" top_port_object_id="" top_port_object_id_reference="_190" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_14" type="SIOType" top_port_object_id="" top_port_object_id_reference="_191" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_15" type="SIOType" top_port_object_id="" top_port_object_id_reference="_191" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_15" type="SIOType" top_port_object_id="" top_port_object_id_reference="_192" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_16" type="SIOType" top_port_object_id="" top_port_object_id_reference="_192" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_16" type="SIOType" top_port_object_id="" top_port_object_id_reference="_193" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_17" type="SIOType" top_port_object_id="" top_port_object_id_reference="_193" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_17" type="SIOType" top_port_object_id="" top_port_object_id_reference="_194" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_18" type="SIOType" top_port_object_id="" top_port_object_id_reference="_194" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_18" type="SIOType" top_port_object_id="" top_port_object_id_reference="_195" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_19" type="SIOType" top_port_object_id="" top_port_object_id_reference="_195" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_19" type="SIOType" top_port_object_id="" top_port_object_id_reference="_196" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_20" type="SIOType" top_port_object_id="" top_port_object_id_reference="_196" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_20" type="SIOType" top_port_object_id="" top_port_object_id_reference="_197" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_21" type="SIOType" top_port_object_id="" top_port_object_id_reference="_197" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_21" type="SIOType" top_port_object_id="" top_port_object_id_reference="_198" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_22" type="SIOType" top_port_object_id="" top_port_object_id_reference="_198" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_22" type="SIOType" top_port_object_id="" top_port_object_id_reference="_199" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_23" type="SIOType" top_port_object_id="" top_port_object_id_reference="_199" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_23" type="SIOType" top_port_object_id="" top_port_object_id_reference="_200" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_24" type="SIOType" top_port_object_id="" top_port_object_id_reference="_200" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_24" type="SIOType" top_port_object_id="" top_port_object_id_reference="_201" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_25" type="SIOType" top_port_object_id="" top_port_object_id_reference="_201" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_25" type="SIOType" top_port_object_id="" top_port_object_id_reference="_202" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_26" type="SIOType" top_port_object_id="" top_port_object_id_reference="_202" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_26" type="SIOType" top_port_object_id="" top_port_object_id_reference="_203" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_27" type="SIOType" top_port_object_id="" top_port_object_id_reference="_203" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_27" type="SIOType" top_port_object_id="" top_port_object_id_reference="_204" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_28" type="SIOType" top_port_object_id="" top_port_object_id_reference="_204" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_28" type="SIOType" top_port_object_id="" top_port_object_id_reference="_205" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_29" type="SIOType" top_port_object_id="" top_port_object_id_reference="_205" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_29" type="SIOType" top_port_object_id="" top_port_object_id_reference="_206" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_30" type="SIOType" top_port_object_id="" top_port_object_id_reference="_206" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_30" type="SIOType" top_port_object_id="" top_port_object_id_reference="_207" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_31" type="SIOType" top_port_object_id="" top_port_object_id_reference="_207" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_31" type="SIOType" top_port_object_id="" top_port_object_id_reference="_208" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_32" type="SIOType" top_port_object_id="" top_port_object_id_reference="_208" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_32" type="SIOType" top_port_object_id="" top_port_object_id_reference="_209" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_33" type="SIOType" top_port_object_id="" top_port_object_id_reference="_209" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_33" type="SIOType" top_port_object_id="" top_port_object_id_reference="_210" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_34" type="SIOType" top_port_object_id="" top_port_object_id_reference="_210" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_34" type="SIOType" top_port_object_id="" top_port_object_id_reference="_211" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_35" type="SIOType" top_port_object_id="" top_port_object_id_reference="_211" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_35" type="SIOType" top_port_object_id="" top_port_object_id_reference="_212" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_36" type="SIOType" top_port_object_id="" top_port_object_id_reference="_212" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_36" type="SIOType" top_port_object_id="" top_port_object_id_reference="_213" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_37" type="SIOType" top_port_object_id="" top_port_object_id_reference="_213" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_37" type="SIOType" top_port_object_id="" top_port_object_id_reference="_214" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_38" type="SIOType" top_port_object_id="" top_port_object_id_reference="_214" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_38" type="SIOType" top_port_object_id="" top_port_object_id_reference="_215" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_39" type="SIOType" top_port_object_id="" top_port_object_id_reference="_215" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_39" type="SIOType" top_port_object_id="" top_port_object_id_reference="_216" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_40" type="SIOType" top_port_object_id="" top_port_object_id_reference="_216" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_40" type="SIOType" top_port_object_id="" top_port_object_id_reference="_217" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_41" type="SIOType" top_port_object_id="" top_port_object_id_reference="_217" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_41" type="SIOType" top_port_object_id="" top_port_object_id_reference="_218" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_42" type="SIOType" top_port_object_id="" top_port_object_id_reference="_218" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_42" type="SIOType" top_port_object_id="" top_port_object_id_reference="_219" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_43" type="SIOType" top_port_object_id="" top_port_object_id_reference="_219" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_43" type="SIOType" top_port_object_id="" top_port_object_id_reference="_220" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_44" type="SIOType" top_port_object_id="" top_port_object_id_reference="_220" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_44" type="SIOType" top_port_object_id="" top_port_object_id_reference="_221" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_45" type="SIOType" top_port_object_id="" top_port_object_id_reference="_221" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_45" type="SIOType" top_port_object_id="" top_port_object_id_reference="_222" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_46" type="SIOType" top_port_object_id="" top_port_object_id_reference="_222" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_46" type="SIOType" top_port_object_id="" top_port_object_id_reference="_223" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_47" type="SIOType" top_port_object_id="" top_port_object_id_reference="_223" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_47" type="SIOType" top_port_object_id="" top_port_object_id_reference="_224" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_48" type="SIOType" top_port_object_id="" top_port_object_id_reference="_224" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_48" type="SIOType" top_port_object_id="" top_port_object_id_reference="_225" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_49" type="SIOType" top_port_object_id="" top_port_object_id_reference="_225" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_49" type="SIOType" top_port_object_id="" top_port_object_id_reference="_226" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_50" type="SIOType" top_port_object_id="" top_port_object_id_reference="_226" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_50" type="SIOType" top_port_object_id="" top_port_object_id_reference="_227" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_51" type="SIOType" top_port_object_id="" top_port_object_id_reference="_227" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_51" type="SIOType" top_port_object_id="" top_port_object_id_reference="_228" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_52" type="SIOType" top_port_object_id="" top_port_object_id_reference="_228" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_52" type="SIOType" top_port_object_id="" top_port_object_id_reference="_229" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_53" type="SIOType" top_port_object_id="" top_port_object_id_reference="_229" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_53" type="SIOType" top_port_object_id="" top_port_object_id_reference="_230" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_54" type="SIOType" top_port_object_id="" top_port_object_id_reference="_230" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_54" type="SIOType" top_port_object_id="" top_port_object_id_reference="_231" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_55" type="SIOType" top_port_object_id="" top_port_object_id_reference="_231" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_55" type="SIOType" top_port_object_id="" top_port_object_id_reference="_232" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_56" type="SIOType" top_port_object_id="" top_port_object_id_reference="_232" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_56" type="SIOType" top_port_object_id="" top_port_object_id_reference="_233" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_57" type="SIOType" top_port_object_id="" top_port_object_id_reference="_233" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_57" type="SIOType" top_port_object_id="" top_port_object_id_reference="_234" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_58" type="SIOType" top_port_object_id="" top_port_object_id_reference="_234" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_58" type="SIOType" top_port_object_id="" top_port_object_id_reference="_235" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_59" type="SIOType" top_port_object_id="" top_port_object_id_reference="_235" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_59" type="SIOType" top_port_object_id="" top_port_object_id_reference="_236" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_60" type="SIOType" top_port_object_id="" top_port_object_id_reference="_236" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_60" type="SIOType" top_port_object_id="" top_port_object_id_reference="_237" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_61" type="SIOType" top_port_object_id="" top_port_object_id_reference="_237" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_61" type="SIOType" top_port_object_id="" top_port_object_id_reference="_238" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_62" type="SIOType" top_port_object_id="" top_port_object_id_reference="_238" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_62" type="SIOType" top_port_object_id="" top_port_object_id_reference="_239" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="p_ZL9n_regions_63" type="SIOType" top_port_object_id="" top_port_object_id_reference="_239" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="p_ZL9n_regions_63" type="SIOType" top_port_object_id="" top_port_object_id_reference="_240" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="regions" type="MEMType" top_port_object_id="" top_port_object_id_reference="_240" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="regions" type="MEMType" top_port_object_id="" top_port_object_id_reference="_241" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="regions_1" type="MEMType" top_port_object_id="" top_port_object_id_reference="_241" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="regions_1" type="MEMType" top_port_object_id="" top_port_object_id_reference="_242" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="regions_2" type="MEMType" top_port_object_id="" top_port_object_id_reference="_242" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="regions_2" type="MEMType" top_port_object_id="" top_port_object_id_reference="_243" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
           <pins>
-            <port name="regions_3" type="MEMType" top_port_object_id="" top_port_object_id_reference="_243" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <port name="regions_3" type="MEMType" top_port_object_id="" top_port_object_id_reference="_244" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </pins>
         </processe_list>
         <processe_list name="writeOutcome_U0" ssdmobj_id="159"/>
         <channel_list depth="1" bitwidth="320" suggested_type="0" suggested_depth="2" name="copyDest" ssdmobj_id="76">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="read_data_U0" ssdmobj_id="157" object_id="_247"/>
+            <inst name="read_data_U0" ssdmobj_id="157" object_id="_248"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </sink>
         </channel_list>
         <channel_list depth="1" bitwidth="288" suggested_type="0" suggested_depth="2" name="outcomeStream" ssdmobj_id="79">
           <source>
             <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="run_test_U0" ssdmobj_id="158" object_id="_255"/>
+            <inst name="run_test_U0" ssdmobj_id="158" object_id="_258"/>
           </source>
           <sink>
             <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
-            <inst name="writeOutcome_U0" ssdmobj_id="159" object_id="_401"/>
+            <inst name="writeOutcome_U0" ssdmobj_id="159" object_id="_404"/>
           </sink>
         </channel_list>
       </mDfPipe>

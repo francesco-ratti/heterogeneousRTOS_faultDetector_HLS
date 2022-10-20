@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Thu Oct 20 12:05:56 2022
+    * Date:           Thu Oct 20 12:16:30 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
@@ -19,10 +19,10 @@
     |                  Modules                 |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |    |           |            |     |
     |                  & Loops                 |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   | DSP|     FF    |     LUT    | URAM|
     +------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
-    |+ run                                     |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|  48 (17%)|   -|  7398 (6%)|  9222 (17%)|    -|
-    | + runTest*                               |  Timing|  -0.00|        -|          -|         -|        -|     -|  dataflow|         -|   -|  1772 (1%)|   1816 (3%)|    -|
-    |  + read_data                             |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|         -|   -|  393 (~0%)|   405 (~0%)|    -|
-    |   o VITIS_LOOP_494_1                     |       -|  13.14|        -|          -|         1|        -|     -|        no|         -|   -|          -|           -|    -|
+    |+ run                                     |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|  48 (17%)|   -|  7421 (6%)|  9273 (17%)|    -|
+    | + runTest*                               |  Timing|  -0.00|        -|          -|         -|        -|     -|  dataflow|         -|   -|  1781 (1%)|   1842 (3%)|    -|
+    |  + read_data                             |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|         -|   -|  402 (~0%)|   427 (~0%)|    -|
+    |   o VITIS_LOOP_494_1                     |       -|  13.14|        -|          -|         2|        -|     -|        no|         -|   -|          -|           -|    -|
     |  + run_test                              |       -|   1.77|        -|          -|         -|        -|     -|        no|         -|   -|  1177 (1%)|   1244 (2%)|    -|
     |   o VITIS_LOOP_460_1                     |       -|  13.14|        -|          -|       797|        -|     -|        no|         -|   -|          -|           -|    -|
     |    + run_test_Pipeline_1                 |       -|   8.51|       10|    180.000|         -|       10|     -|        no|         -|   -|    6 (~0%)|    91 (~0%)|    -|
@@ -64,10 +64,11 @@
 | s_axi_control | IP_IER             | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                   |
 | s_axi_control | IP_ISR             | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                   |
 | s_axi_control | accel_mode         | 0x10   | 32    | W      | Data signal of accel_mode        |                                                                                 |
-| s_axi_control | copying            | 0x18   | 32    | W      | Data signal of copying           |                                                                                 |
+| s_axi_control | copying            | 0x18   | 32    | R      | Data signal of copying           |                                                                                 |
 | s_axi_control | inputData_1        | 0x28   | 32    | W      | Data signal of inputData         |                                                                                 |
 | s_axi_control | inputData_2        | 0x2c   | 32    | W      | Data signal of inputData         |                                                                                 |
-| s_axi_control | IOCheckIdx         | 0x34   | 32    | W      | Data signal of IOCheckIdx        |                                                                                 |
+| s_axi_control | startCopy          | 0x34   | 32    | W      | Data signal of startCopy         |                                                                                 |
+| s_axi_control | startCopy_ctrl     | 0x38   | 32    | RW     | Control signal of startCopy      | 0=startCopy_ap_vld 1=startCopy_ap_ack                                           |
 | s_axi_control | trainedRegion_i_1  | 0x50   | 32    | W      | Data signal of trainedRegion_i   |                                                                                 |
 | s_axi_control | trainedRegion_i_2  | 0x54   | 32    | W      | Data signal of trainedRegion_i   |                                                                                 |
 | s_axi_control | trainedRegion_i_3  | 0x58   | 32    | W      | Data signal of trainedRegion_i   |                                                                                 |
@@ -116,19 +117,13 @@
 | s_axi_control | trainedRegion_o_22 | 0x108  | 32    | R      | Data signal of trainedRegion_o   |                                                                                 |
 | s_axi_control | trainedRegion_o_23 | 0x10c  | 32    | R      | Data signal of trainedRegion_o   |                                                                                 |
 | s_axi_control | trainedRegion_o_24 | 0x110  | 32    | R      | Data signal of trainedRegion_o   |                                                                                 |
-| s_axi_control | IORegionIdx        | 0x17c  | 32    | W      | Data signal of IORegionIdx       |                                                                                 |
-| s_axi_control | n_regions_in_i     | 0x184  | 32    | W      | Data signal of n_regions_in_i    |                                                                                 |
-| s_axi_control | n_regions_in_o     | 0x18c  | 32    | R      | Data signal of n_regions_in_o    |                                                                                 |
-| s_axi_control | failedTask         | 0x194  | 32    | W      | Data signal of failedTask        |                                                                                 |
-| s_axi_control | failedTask_ctrl    | 0x198  | 32    | RW     | Control signal of failedTask     | 0=failedTask_ap_vld 1=failedTask_ap_ack                                         |
+| s_axi_control | IOCheckIdx         | 0x17c  | 32    | W      | Data signal of IOCheckIdx        |                                                                                 |
+| s_axi_control | IORegionIdx        | 0x184  | 32    | W      | Data signal of IORegionIdx       |                                                                                 |
+| s_axi_control | n_regions_in_i     | 0x18c  | 32    | W      | Data signal of n_regions_in_i    |                                                                                 |
+| s_axi_control | n_regions_in_o     | 0x194  | 32    | R      | Data signal of n_regions_in_o    |                                                                                 |
+| s_axi_control | failedTask         | 0x19c  | 32    | W      | Data signal of failedTask        |                                                                                 |
+| s_axi_control | failedTask_ctrl    | 0x1a0  | 32    | RW     | Control signal of failedTask     | 0=failedTask_ap_vld 1=failedTask_ap_ack                                         |
 +---------------+--------------------+--------+-------+--------+----------------------------------+---------------------------------------------------------------------------------+
-
-* REGISTER
-+-----------+---------+----------+
-| Interface | Mode    | Bitwidth |
-+-----------+---------+----------+
-| startCopy | ap_none | 64       |
-+-----------+---------+----------+
 
 * TOP LEVEL CONTROL
 +-----------+------------+-----------+
@@ -149,9 +144,9 @@
 | Argument        | Direction | Datatype     |
 +-----------------+-----------+--------------+
 | accel_mode      | in        | char         |
-| copying         | out       | char*        |
+| copying         | out       | pointer      |
 | inputData       | in        | controlStr*  |
-| startCopy       | in        | bool*        |
+| startCopy       | in        | pointer      |
 | errorInTask     | unused    | char*        |
 | outcomeInRam    | unused    | OutcomeStr*  |
 | trainedRegion_i | in        | REGION_T     |
@@ -171,8 +166,8 @@
 | inputData       | m_axi_gmem    | interface |          |                                               |
 | inputData       | s_axi_control | register  | offset   | name=inputData_1 offset=0x28 range=32         |
 | inputData       | s_axi_control | register  | offset   | name=inputData_2 offset=0x2c range=32         |
-| startCopy       | m_axi_gmem    | interface |          |                                               |
-| startCopy       | startCopy     | port      | offset   |                                               |
+| startCopy       | s_axi_control | register  |          | name=startCopy offset=0x34 range=32           |
+| startCopy       | s_axi_control | register  |          | name=startCopy_ctrl offset=0x38 range=32      |
 | errorInTask     | s_axi_control | memory    |          | name=errorInTask offset=64 range=16           |
 | outcomeInRam    | s_axi_control | memory    |          | name=outcomeInRam offset=1024 range=1024      |
 | trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_1 offset=0x50 range=32   |
@@ -223,14 +218,21 @@
 | trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_22 offset=0x108 range=32 |
 | trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_23 offset=0x10c range=32 |
 | trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_24 offset=0x110 range=32 |
-| IOCheckIdx      | s_axi_control | register  |          | name=IOCheckIdx offset=0x34 range=32          |
-| IORegionIdx     | s_axi_control | register  |          | name=IORegionIdx offset=0x17c range=32        |
-| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_i offset=0x184 range=32     |
-| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_o offset=0x18c range=32     |
-| failedTask      | s_axi_control | register  |          | name=failedTask offset=0x194 range=32         |
-| failedTask      | s_axi_control | register  |          | name=failedTask_ctrl offset=0x198 range=32    |
+| IOCheckIdx      | s_axi_control | register  |          | name=IOCheckIdx offset=0x17c range=32         |
+| IORegionIdx     | s_axi_control | register  |          | name=IORegionIdx offset=0x184 range=32        |
+| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_i offset=0x18c range=32     |
+| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_o offset=0x194 range=32     |
+| failedTask      | s_axi_control | register  |          | name=failedTask offset=0x19c range=32         |
+| failedTask      | s_axi_control | register  |          | name=failedTask_ctrl offset=0x1a0 range=32    |
 +-----------------+---------------+-----------+----------+-----------------------------------------------+
 
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
 
 ================================================================
 == Bind Op Report
@@ -239,8 +241,8 @@
 | Name                                   | DSP | Pragma | Variable  | Op  | Impl   | Latency |
 +----------------------------------------+-----+--------+-----------+-----+--------+---------+
 | + run                                  | 0   |        |           |     |        |         |
-|   add_ln692_fu_1578_p2                 | -   |        | add_ln692 | add | fabric | 0       |
-|   add_ln689_fu_2033_p2                 | -   |        | add_ln689 | add | fabric | 0       |
+|   add_ln694_fu_1575_p2                 | -   |        | add_ln694 | add | fabric | 0       |
+|   add_ln691_fu_2030_p2                 | -   |        | add_ln691 | add | fabric | 0       |
 |  + runTest                             | 0   |        |           |     |        |         |
 |   + run_test                           | 0   |        |           |     |        |         |
 |     add_ln49_fu_938_p2                 | -   |        | add_ln49  | add | fabric | 0       |
@@ -305,20 +307,22 @@
 | interface       | mode= s_axilite port = accel_mode         | detector_solid/abs_solid_detector.cpp:657 in run                             |
 | interface       | mode= m_axi port = inputData offset=slave | detector_solid/abs_solid_detector.cpp:658 in run                             |
 | interface       | mode= s_axilite port=copying              | detector_solid/abs_solid_detector.cpp:660 in run, copying                    |
-| interface       | mode= s_axilite port = trainedRegion_i    | detector_solid/abs_solid_detector.cpp:662 in run                             |
-| interface       | mode= s_axilite port = trainedRegion_o    | detector_solid/abs_solid_detector.cpp:663 in run                             |
-| interface       | mode= s_axilite port = IOCheckIdx         | detector_solid/abs_solid_detector.cpp:664 in run                             |
-| interface       | mode= s_axilite port = IORegionIdx        | detector_solid/abs_solid_detector.cpp:665 in run                             |
-| interface       | mode=s_axilite port=failedTask            | detector_solid/abs_solid_detector.cpp:667 in run, failedTask                 |
-| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:668 in run, failedTask                 |
-| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:671 in run, failedTask                 |
-| interface       | mode=s_axilite port = n_regions_in        | detector_solid/abs_solid_detector.cpp:672 in run                             |
-| interface       | mode=s_axilite port = errorInTask         | detector_solid/abs_solid_detector.cpp:674 in run                             |
-| interface       | mode=s_axilite port = outcomeInRam        | detector_solid/abs_solid_detector.cpp:675 in run                             |
-| array_partition | variable=regions dim=2 cyclic factor=2    | detector_solid/abs_solid_detector.cpp:680 in run, regions                    |
-| array_partition | variable=failedTaskExecutionIds complete  | detector_solid/abs_solid_detector.cpp:681 in run, failedTaskExecutionIds     |
-| reset           | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:684 in run, failedTaskExecutionIds     |
-| array_partition | variable=n_regions complete               | detector_solid/abs_solid_detector.cpp:686 in run, n_regions                  |
+| interface       | mode= s_axilite port=startCopy            | detector_solid/abs_solid_detector.cpp:661 in run, startCopy                  |
+| interface       | mode=ap_hs port=startCopy                 | detector_solid/abs_solid_detector.cpp:662 in run, startCopy                  |
+| interface       | mode= s_axilite port = trainedRegion_i    | detector_solid/abs_solid_detector.cpp:664 in run                             |
+| interface       | mode= s_axilite port = trainedRegion_o    | detector_solid/abs_solid_detector.cpp:665 in run                             |
+| interface       | mode= s_axilite port = IOCheckIdx         | detector_solid/abs_solid_detector.cpp:666 in run                             |
+| interface       | mode= s_axilite port = IORegionIdx        | detector_solid/abs_solid_detector.cpp:667 in run                             |
+| interface       | mode=s_axilite port=failedTask            | detector_solid/abs_solid_detector.cpp:669 in run, failedTask                 |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:670 in run, failedTask                 |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:673 in run, failedTask                 |
+| interface       | mode=s_axilite port = n_regions_in        | detector_solid/abs_solid_detector.cpp:674 in run                             |
+| interface       | mode=s_axilite port = errorInTask         | detector_solid/abs_solid_detector.cpp:676 in run                             |
+| interface       | mode=s_axilite port = outcomeInRam        | detector_solid/abs_solid_detector.cpp:677 in run                             |
+| array_partition | variable=regions dim=2 cyclic factor=2    | detector_solid/abs_solid_detector.cpp:682 in run, regions                    |
+| array_partition | variable=failedTaskExecutionIds complete  | detector_solid/abs_solid_detector.cpp:683 in run, failedTaskExecutionIds     |
+| reset           | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:686 in run, failedTaskExecutionIds     |
+| array_partition | variable=n_regions complete               | detector_solid/abs_solid_detector.cpp:688 in run, n_regions                  |
 +-----------------+-------------------------------------------+------------------------------------------------------------------------------+
 
 

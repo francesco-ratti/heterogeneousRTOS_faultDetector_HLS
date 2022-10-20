@@ -31,7 +31,7 @@
 
 <Node id="2" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_3, i32 0, i32 0, void @empty_23, i32 0, i32 0, void @empty_23, void @empty_23, void @empty_23, i32 0, i32 0, i32 0, i32 0, void @empty_23, void @empty_23, i32 4294967295, i32 0
+entry:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -64,7 +64,7 @@ entry:1 %br_ln420 = br void %while.body
 
 <Node id="5" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-while.body:0 %specloopname_ln144 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21
+while.body:0 %specloopname_ln144 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln144"/></StgValue>
@@ -115,23 +115,23 @@ while.body:2 %br_ln420 = br void %while.body
 </dataflow>
 <dataflow id="13" from="outcomeStream" to="specinterface_ln0" fromId="10" toId="3">
 </dataflow>
-<dataflow id="15" from="empty_3" to="specinterface_ln0" fromId="14" toId="3">
+<dataflow id="15" from="empty_23" to="specinterface_ln0" fromId="14" toId="3">
 </dataflow>
 <dataflow id="17" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
 <dataflow id="18" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
-<dataflow id="20" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="20" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
 <dataflow id="21" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
 <dataflow id="22" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
-<dataflow id="23" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="23" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
-<dataflow id="24" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="24" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
-<dataflow id="25" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="25" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
 <dataflow id="26" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
@@ -141,9 +141,9 @@ while.body:2 %br_ln420 = br void %while.body
 </dataflow>
 <dataflow id="29" from="StgValue_16" to="specinterface_ln0" fromId="16" toId="3">
 </dataflow>
-<dataflow id="30" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="30" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
-<dataflow id="31" from="empty_23" to="specinterface_ln0" fromId="19" toId="3">
+<dataflow id="31" from="empty_29" to="specinterface_ln0" fromId="19" toId="3">
 </dataflow>
 <dataflow id="33" from="StgValue_32" to="specinterface_ln0" fromId="32" toId="3">
 </dataflow>
@@ -151,7 +151,7 @@ while.body:2 %br_ln420 = br void %while.body
 </dataflow>
 <dataflow id="36" from="_ssdm_op_SpecLoopName" to="specloopname_ln144" fromId="35" toId="5">
 </dataflow>
-<dataflow id="38" from="empty_21" to="specloopname_ln144" fromId="37" toId="5">
+<dataflow id="38" from="empty_6" to="specloopname_ln144" fromId="37" toId="5">
 </dataflow>
 <dataflow id="40" from="_ssdm_op_Read.ap_fifo.volatile.i288P0A" to="p_0" fromId="39" toId="6">
 </dataflow>

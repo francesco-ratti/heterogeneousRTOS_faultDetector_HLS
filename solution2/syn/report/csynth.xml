@@ -32,8 +32,8 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>48</BRAM_18K>
-            <FF>7398</FF>
-            <LUT>9222</LUT>
+            <FF>7421</FF>
+            <LUT>9273</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -806,40 +806,28 @@
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
-        <RtlPorts>
-            <name>startCopy</name>
-            <Object>startCopy</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>ap_none</IOProtocol>
-            <IOConfig/>
-            <Dir>in</Dir>
-            <Bits>64</Bits>
-            <Attribute>data</Attribute>
-            <CType>int</CType>
-        </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="5">
             <ModuleName>run</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_runTest_fu_1350</InstName>
+                    <InstName>grp_runTest_fu_1344</InstName>
                     <ModuleName>runTest</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1350</ID>
+                    <ID>1344</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>read_data_U0</InstName>
                             <ModuleName>read_data</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>220</ID>
+                            <ID>214</ID>
                         </Instance>
                         <Instance>
                             <InstName>run_test_U0</InstName>
                             <ModuleName>run_test</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>231</ID>
+                            <ID>227</ID>
                             <InstancesList>
                                 <Instance>
                                     <InstName>grp_run_test_Pipeline_1_fu_353</InstName>
@@ -869,13 +857,13 @@
                             <InstName>writeOutcome_U0</InstName>
                             <ModuleName>writeOutcome</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>373</ID>
+                            <ID>369</ID>
                         </Instance>
                     </InstancesList>
                     <BindInstances>copyDest_U outcomeStream_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>add_ln692_fu_1578_p2 add_ln689_fu_2033_p2 regions_U regions_2_U regions_4_U regions_1_U regions_3_U regions_5_U</BindInstances>
+            <BindInstances>add_ln694_fu_1575_p2 add_ln691_fu_2030_p2 regions_U regions_2_U regions_4_U regions_1_U regions_3_U regions_5_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -906,8 +894,8 @@
                         <TripCount>inf</TripCount>
                         <Latency>undef</Latency>
                         <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-                        <IterationLatency>1</IterationLatency>
-                        <PipelineDepth>1</PipelineDepth>
+                        <IterationLatency>2</IterationLatency>
+                        <PipelineDepth>2</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList/>
                     </VITIS_LOOP_494_1>
@@ -915,10 +903,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>393</FF>
+                    <FF>402</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>405</LUT>
+                    <LUT>427</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1285,10 +1273,10 @@
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>1772</FF>
+                    <FF>1781</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>1816</LUT>
+                    <LUT>1842</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>3</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1328,10 +1316,10 @@
                     <BRAM_18K>48</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>17</UTIL_BRAM>
-                    <FF>7398</FF>
+                    <FF>7421</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>6</UTIL_FF>
-                    <LUT>9222</LUT>
+                    <LUT>9273</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>17</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1343,8 +1331,8 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln692_fu_1578_p2" SOURCE="detector_solid/abs_solid_detector.cpp:692" URAM="0" VARIABLE="add_ln692"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln689_fu_2033_p2" SOURCE="detector_solid/abs_solid_detector.cpp:689" URAM="0" VARIABLE="add_ln689"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln694_fu_1575_p2" SOURCE="detector_solid/abs_solid_detector.cpp:694" URAM="0" VARIABLE="add_ln694"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln691_fu_2030_p2" SOURCE="detector_solid/abs_solid_detector.cpp:691" URAM="0" VARIABLE="add_ln691"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_U" SOURCE="" URAM="0" VARIABLE="regions"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_2_U" SOURCE="" URAM="0" VARIABLE="regions_2"/>
                 <BindNode BINDTYPE="storage" BRAM="8" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="regions_4_U" SOURCE="" URAM="0" VARIABLE="regions_4"/>
@@ -1357,7 +1345,7 @@
     <FIFOInformation>
         <FIFOInst>
             <Name>copyDest_U</Name>
-            <ParentInst>grp_runTest_fu_1350</ParentInst>
+            <ParentInst>grp_runTest_fu_1344</ParentInst>
             <StaticDepth>1</StaticDepth>
             <RuntimeDepth>mOutPtr</RuntimeDepth>
             <InterfaceList>
@@ -1372,7 +1360,7 @@
         </FIFOInst>
         <FIFOInst>
             <Name>outcomeStream_U</Name>
-            <ParentInst>grp_runTest_fu_1350</ParentInst>
+            <ParentInst>grp_runTest_fu_1344</ParentInst>
             <StaticDepth>1</StaticDepth>
             <RuntimeDepth>mOutPtr</RuntimeDepth>
             <InterfaceList>
@@ -1430,9 +1418,9 @@
                 <hwRef type="register" interface="s_axi_control" name="accel_mode" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="copying" index="1" direction="out" srcType="char*" srcSize="8">
+        <Arg ArgName="copying" index="1" direction="out" srcType="*" srcSize="8">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="copying" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="copying" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="inputData" index="2" direction="in" srcType="controlStr*" srcSize="352">
@@ -1442,10 +1430,10 @@
                 <hwRef type="register" interface="s_axi_control" name="inputData_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="startCopy" index="3" direction="in" srcType="bool*" srcSize="1">
+        <Arg ArgName="startCopy" index="3" direction="in" srcType="*" srcSize="8">
             <hwRefs>
-                <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="in"/>
-                <hwRef type="port" interface="startCopy" name="startCopy" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="startCopy" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="startCopy_ctrl" usage="control" direction="inout"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="errorInTask" index="4" direction="unused" srcType="char*" srcSize="8">
@@ -1602,9 +1590,9 @@
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x18" name="copying" access="W" description="Data signal of copying" range="32">
+                <register offset="0x18" name="copying" access="R" description="Data signal of copying" range="32">
                     <fields>
-                        <field offset="0" width="8" name="copying" access="W" description="Bit 7 to 0 of copying"/>
+                        <field offset="0" width="8" name="copying" access="R" description="Bit 7 to 0 of copying"/>
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
@@ -1618,10 +1606,17 @@
                         <field offset="0" width="32" name="inputData" access="W" description="Bit 63 to 32 of inputData"/>
                     </fields>
                 </register>
-                <register offset="0x34" name="IOCheckIdx" access="W" description="Data signal of IOCheckIdx" range="32">
+                <register offset="0x34" name="startCopy" access="W" description="Data signal of startCopy" range="32">
                     <fields>
-                        <field offset="0" width="8" name="IOCheckIdx" access="W" description="Bit 7 to 0 of IOCheckIdx"/>
+                        <field offset="0" width="8" name="startCopy" access="W" description="Bit 7 to 0 of startCopy"/>
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x38" name="startCopy_ctrl" access="RW" description="Control signal of startCopy" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="startCopy_ap_vld" access="W" description="Control signal startCopy_ap_vld"/>
+                        <field offset="1" width="1" name="startCopy_ap_ack" access="R" description="Control signal startCopy_ap_ack"/>
+                        <field offset="2" width="30" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
                 <register offset="0x50" name="trainedRegion_i_1" access="W" description="Data signal of trainedRegion_i" range="32">
@@ -1864,31 +1859,37 @@
                         <field offset="0" width="32" name="trainedRegion_o" access="R" description="Bit 767 to 736 of trainedRegion_o"/>
                     </fields>
                 </register>
-                <register offset="0x17c" name="IORegionIdx" access="W" description="Data signal of IORegionIdx" range="32">
+                <register offset="0x17c" name="IOCheckIdx" access="W" description="Data signal of IOCheckIdx" range="32">
+                    <fields>
+                        <field offset="0" width="8" name="IOCheckIdx" access="W" description="Bit 7 to 0 of IOCheckIdx"/>
+                        <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x184" name="IORegionIdx" access="W" description="Data signal of IORegionIdx" range="32">
                     <fields>
                         <field offset="0" width="8" name="IORegionIdx" access="W" description="Bit 7 to 0 of IORegionIdx"/>
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x184" name="n_regions_in_i" access="W" description="Data signal of n_regions_in_i" range="32">
+                <register offset="0x18c" name="n_regions_in_i" access="W" description="Data signal of n_regions_in_i" range="32">
                     <fields>
                         <field offset="0" width="8" name="n_regions_in_i" access="W" description="Bit 7 to 0 of n_regions_in_i"/>
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x18c" name="n_regions_in_o" access="R" description="Data signal of n_regions_in_o" range="32">
+                <register offset="0x194" name="n_regions_in_o" access="R" description="Data signal of n_regions_in_o" range="32">
                     <fields>
                         <field offset="0" width="8" name="n_regions_in_o" access="R" description="Bit 7 to 0 of n_regions_in_o"/>
                         <field offset="8" width="24" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x194" name="failedTask" access="W" description="Data signal of failedTask" range="32">
+                <register offset="0x19c" name="failedTask" access="W" description="Data signal of failedTask" range="32">
                     <fields>
                         <field offset="0" width="16" name="failedTask" access="W" description="Bit 15 to 0 of failedTask"/>
                         <field offset="16" width="16" name="RESERVED" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
-                <register offset="0x198" name="failedTask_ctrl" access="RW" description="Control signal of failedTask" range="32">
+                <register offset="0x1a0" name="failedTask_ctrl" access="RW" description="Control signal of failedTask" range="32">
                     <fields>
                         <field offset="0" width="1" name="failedTask_ap_vld" access="W" description="Control signal failedTask_ap_vld"/>
                         <field offset="1" width="1" name="failedTask_ap_ack" access="R" description="Control signal failedTask_ap_ack"/>
@@ -1900,14 +1901,15 @@
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="accel_mode"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24" argName="copying"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="inputData"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52" argName="startCopy"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64" argName="errorInTask"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="1024" argName="outcomeInRam"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="80" argName="trainedRegion_i"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="180" argName="trainedRegion_o"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="52" argName="IOCheckIdx"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="380" argName="IORegionIdx"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="388" argName="n_regions_in"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="404" argName="failedTask"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="380" argName="IOCheckIdx"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="388" argName="IORegionIdx"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="396" argName="n_regions_in"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="412" argName="failedTask"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
@@ -2006,19 +2008,6 @@
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="inputData"/>
                 <constraint constraint_type="bitwidth" orig_bitwidth="352" final_bitwidth="512" argName="inputData"/>
-                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="direct" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="startCopy"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="1" final_bitwidth="512" argName="startCopy"/>
-            </constraints>
-        </Interface>
-        <Interface InterfaceName="startCopy" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="64">
-            <portMaps>
-                <portMap portMapName="startCopy">DATA</portMap>
-            </portMaps>
-            <ports>
-                <port>startCopy</port>
-            </ports>
-            <constraints>
-                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="startCopy"/>
             </constraints>
         </Interface>
     </Interfaces>
@@ -2044,10 +2033,11 @@
                     <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
                     <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
                     <column name="s_axi_control">accel_mode, 0x10, 32, W, Data signal of accel_mode, </column>
-                    <column name="s_axi_control">copying, 0x18, 32, W, Data signal of copying, </column>
+                    <column name="s_axi_control">copying, 0x18, 32, R, Data signal of copying, </column>
                     <column name="s_axi_control">inputData_1, 0x28, 32, W, Data signal of inputData, </column>
                     <column name="s_axi_control">inputData_2, 0x2c, 32, W, Data signal of inputData, </column>
-                    <column name="s_axi_control">IOCheckIdx, 0x34, 32, W, Data signal of IOCheckIdx, </column>
+                    <column name="s_axi_control">startCopy, 0x34, 32, W, Data signal of startCopy, </column>
+                    <column name="s_axi_control">startCopy_ctrl, 0x38, 32, RW, Control signal of startCopy, 0=startCopy_ap_vld 1=startCopy_ap_ack</column>
                     <column name="s_axi_control">trainedRegion_i_1, 0x50, 32, W, Data signal of trainedRegion_i, </column>
                     <column name="s_axi_control">trainedRegion_i_2, 0x54, 32, W, Data signal of trainedRegion_i, </column>
                     <column name="s_axi_control">trainedRegion_i_3, 0x58, 32, W, Data signal of trainedRegion_i, </column>
@@ -2096,17 +2086,12 @@
                     <column name="s_axi_control">trainedRegion_o_22, 0x108, 32, R, Data signal of trainedRegion_o, </column>
                     <column name="s_axi_control">trainedRegion_o_23, 0x10c, 32, R, Data signal of trainedRegion_o, </column>
                     <column name="s_axi_control">trainedRegion_o_24, 0x110, 32, R, Data signal of trainedRegion_o, </column>
-                    <column name="s_axi_control">IORegionIdx, 0x17c, 32, W, Data signal of IORegionIdx, </column>
-                    <column name="s_axi_control">n_regions_in_i, 0x184, 32, W, Data signal of n_regions_in_i, </column>
-                    <column name="s_axi_control">n_regions_in_o, 0x18c, 32, R, Data signal of n_regions_in_o, </column>
-                    <column name="s_axi_control">failedTask, 0x194, 32, W, Data signal of failedTask, </column>
-                    <column name="s_axi_control">failedTask_ctrl, 0x198, 32, RW, Control signal of failedTask, 0=failedTask_ap_vld 1=failedTask_ap_ack</column>
-                </table>
-            </item>
-            <item name="REGISTER">
-                <table isCollapsed="0">
-                    <keys size="3">Interface, Mode, Bitwidth</keys>
-                    <column name="startCopy">ap_none, 64, , </column>
+                    <column name="s_axi_control">IOCheckIdx, 0x17c, 32, W, Data signal of IOCheckIdx, </column>
+                    <column name="s_axi_control">IORegionIdx, 0x184, 32, W, Data signal of IORegionIdx, </column>
+                    <column name="s_axi_control">n_regions_in_i, 0x18c, 32, W, Data signal of n_regions_in_i, </column>
+                    <column name="s_axi_control">n_regions_in_o, 0x194, 32, R, Data signal of n_regions_in_o, </column>
+                    <column name="s_axi_control">failedTask, 0x19c, 32, W, Data signal of failedTask, </column>
+                    <column name="s_axi_control">failedTask_ctrl, 0x1a0, 32, RW, Control signal of failedTask, 0=failedTask_ap_vld 1=failedTask_ap_ack</column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -2126,9 +2111,9 @@
                 <table isCollapsed="1">
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="accel_mode">in, char</column>
-                    <column name="copying">out, char*</column>
+                    <column name="copying">out, pointer</column>
                     <column name="inputData">in, controlStr*</column>
-                    <column name="startCopy">in, bool*</column>
+                    <column name="startCopy">in, pointer</column>
                     <column name="errorInTask">unused, char*</column>
                     <column name="outcomeInRam">unused, OutcomeStr*</column>
                     <column name="trainedRegion_i">in, REGION_T</column>
@@ -2147,8 +2132,8 @@
                     <column name="inputData">m_axi_gmem, interface, , </column>
                     <column name="inputData">s_axi_control, register, offset, name=inputData_1 offset=0x28 range=32</column>
                     <column name="inputData">s_axi_control, register, offset, name=inputData_2 offset=0x2c range=32</column>
-                    <column name="startCopy">m_axi_gmem, interface, , </column>
-                    <column name="startCopy">startCopy, port, offset, </column>
+                    <column name="startCopy">s_axi_control, register, , name=startCopy offset=0x34 range=32</column>
+                    <column name="startCopy">s_axi_control, register, , name=startCopy_ctrl offset=0x38 range=32</column>
                     <column name="errorInTask">s_axi_control, memory, , name=errorInTask offset=64 range=16</column>
                     <column name="outcomeInRam">s_axi_control, memory, , name=outcomeInRam offset=1024 range=1024</column>
                     <column name="trainedRegion_i">s_axi_control, register, , name=trainedRegion_i_1 offset=0x50 range=32</column>
@@ -2199,16 +2184,19 @@
                     <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_22 offset=0x108 range=32</column>
                     <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_23 offset=0x10c range=32</column>
                     <column name="trainedRegion_o">s_axi_control, register, , name=trainedRegion_o_24 offset=0x110 range=32</column>
-                    <column name="IOCheckIdx">s_axi_control, register, , name=IOCheckIdx offset=0x34 range=32</column>
-                    <column name="IORegionIdx">s_axi_control, register, , name=IORegionIdx offset=0x17c range=32</column>
-                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_i offset=0x184 range=32</column>
-                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_o offset=0x18c range=32</column>
-                    <column name="failedTask">s_axi_control, register, , name=failedTask offset=0x194 range=32</column>
-                    <column name="failedTask">s_axi_control, register, , name=failedTask_ctrl offset=0x198 range=32</column>
+                    <column name="IOCheckIdx">s_axi_control, register, , name=IOCheckIdx offset=0x17c range=32</column>
+                    <column name="IORegionIdx">s_axi_control, register, , name=IORegionIdx offset=0x184 range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_i offset=0x18c range=32</column>
+                    <column name="n_regions_in">s_axi_control, register, , name=n_regions_in_o offset=0x194 range=32</column>
+                    <column name="failedTask">s_axi_control, register, , name=failedTask offset=0x19c range=32</column>
+                    <column name="failedTask">s_axi_control, register, , name=failedTask_ctrl offset=0x1a0 range=32</column>
                 </table>
             </item>
         </section>
     </ReportSWInterface>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
+    </ReportBurst>
     <PragmaReport>
         <Pragma type="loop_tripcount" location="detector_solid/abs_solid_detector.cpp:53" status="valid" parentFunction="hasregion" variable="" isDirective="0" options="min=0 max=16"/>
         <Pragma type="loop_tripcount" location="detector_solid/abs_solid_detector.cpp:57" status="valid" parentFunction="hasregion" variable="" isDirective="0" options="min=1 max=8"/>
@@ -2232,20 +2220,22 @@
         <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:657" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = accel_mode"/>
         <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:658" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= m_axi port = inputData offset=slave"/>
         <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:660" status="valid" parentFunction="run" variable="copying" isDirective="0" options="mode= s_axilite port=copying"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:662" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = trainedRegion_i"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:663" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = trainedRegion_o"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:664" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = IOCheckIdx"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:665" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = IORegionIdx"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:667" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=s_axilite port=failedTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:668" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=ap_hs port=failedTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:671" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=ap_hs port=failedTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:672" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = n_regions_in"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:674" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = errorInTask"/>
-        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:675" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = outcomeInRam"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:680" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions dim=2 cyclic factor=2"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:681" status="valid" parentFunction="run" variable="failedTaskExecutionIds" isDirective="0" options="variable=failedTaskExecutionIds complete"/>
-        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:684" status="valid" parentFunction="run" variable="failedTaskExecutionIds" isDirective="0" options="variable=failedTaskExecutionIds"/>
-        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:686" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions complete"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:661" status="valid" parentFunction="run" variable="startCopy" isDirective="0" options="mode= s_axilite port=startCopy"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:662" status="valid" parentFunction="run" variable="startCopy" isDirective="0" options="mode=ap_hs port=startCopy"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:664" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = trainedRegion_i"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:665" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = trainedRegion_o"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:666" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = IOCheckIdx"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:667" status="valid" parentFunction="run" variable="" isDirective="0" options="mode= s_axilite port = IORegionIdx"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:669" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=s_axilite port=failedTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:670" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=ap_hs port=failedTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:673" status="valid" parentFunction="run" variable="failedTask" isDirective="0" options="mode=ap_hs port=failedTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:674" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = n_regions_in"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:676" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = errorInTask"/>
+        <Pragma type="interface" location="detector_solid/abs_solid_detector.cpp:677" status="valid" parentFunction="run" variable="" isDirective="0" options="mode=s_axilite port = outcomeInRam"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:682" status="valid" parentFunction="run" variable="regions" isDirective="0" options="variable=regions dim=2 cyclic factor=2"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:683" status="valid" parentFunction="run" variable="failedTaskExecutionIds" isDirective="0" options="variable=failedTaskExecutionIds complete"/>
+        <Pragma type="reset" location="detector_solid/abs_solid_detector.cpp:686" status="valid" parentFunction="run" variable="failedTaskExecutionIds" isDirective="0" options="variable=failedTaskExecutionIds"/>
+        <Pragma type="array_partition" location="detector_solid/abs_solid_detector.cpp:688" status="valid" parentFunction="run" variable="n_regions" isDirective="0" options="variable=n_regions complete"/>
     </PragmaReport>
 </profile>
 

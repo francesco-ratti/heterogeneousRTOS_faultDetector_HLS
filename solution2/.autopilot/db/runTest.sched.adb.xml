@@ -3,31 +3,31 @@
 
 <trans_list>
 
-<trans id="99" from="1" to="2">
+<trans id="98" from="1" to="2">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="100" from="2" to="3">
+<trans id="99" from="2" to="3">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="101" from="3" to="4">
+<trans id="100" from="3" to="4">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="102" from="4" to="5">
+<trans id="101" from="4" to="5">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="103" from="5" to="6">
+<trans id="102" from="5" to="6">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
@@ -47,27 +47,27 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="74" bw="64" op_0_bw="64" op_1_bw="64">
+<Node id="75" bw="64" op_0_bw="64" op_1_bw="64">
 <![CDATA[
-entry:2 %startCopy_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %startCopy
+entry:2 %inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV
 
 ]]></Node>
-<StgValue><ssdm name="startCopy_read"/></StgValue>
+<StgValue><ssdm name="inputAOV_read"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
-<core>NULL</core>
+<core>FIFO_SRL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="75" bw="64" op_0_bw="64" op_1_bw="64">
+<Node id="76" bw="320" op_0_bw="64">
 <![CDATA[
-entry:3 %inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV
+entry:3 %copyDest = alloca i64 1
 
 ]]></Node>
-<StgValue><ssdm name="inputAOV_read"/></StgValue>
+<StgValue><ssdm name="copyDest"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -77,39 +77,24 @@ entry:3 %inputAOV_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %inputAOV
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="76" bw="320" op_0_bw="64">
-<![CDATA[
-entry:4 %copyDest = alloca i64 1
-
-]]></Node>
-<StgValue><ssdm name="copyDest"/></StgValue>
-</operation>
-
-<operation id="10" st_id="1" stage="1" lat="1">
-<core>FIFO_SRL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
-</condition>
-
 <Node id="79" bw="288" op_0_bw="64">
 <![CDATA[
-entry:7 %outcomeStream = alloca i64 1
+entry:6 %outcomeStream = alloca i64 1
 
 ]]></Node>
 <StgValue><ssdm name="outcomeStream"/></StgValue>
 </operation>
 
-<operation id="11" st_id="1" stage="2" lat="2">
+<operation id="10" st_id="1" stage="2" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="157" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="512" op_3_bw="64" op_4_bw="64">
+<Node id="157" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="512" op_3_bw="64" op_4_bw="8" op_5_bw="8">
 <![CDATA[
-entry:85 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i64 %startCopy_read
+entry:84 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i8 %startCopy, i8 %copying
 
 ]]></Node>
 <StgValue><ssdm name="call_ln531"/></StgValue>
@@ -118,16 +103,16 @@ entry:85 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %in
 
 <state id="2" st_id="2">
 
-<operation id="12" st_id="2" stage="1" lat="2">
+<operation id="11" st_id="2" stage="1" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="157" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="512" op_3_bw="64" op_4_bw="64">
+<Node id="157" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="512" op_3_bw="64" op_4_bw="8" op_5_bw="8">
 <![CDATA[
-entry:85 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i64 %startCopy_read
+entry:84 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %inputAOV_read, i8 %startCopy, i8 %copying
 
 ]]></Node>
 <StgValue><ssdm name="call_ln531"/></StgValue>
@@ -136,7 +121,7 @@ entry:85 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %in
 
 <state id="3" st_id="3">
 
-<operation id="13" st_id="3" stage="2" lat="2">
+<operation id="12" st_id="3" stage="2" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -145,7 +130,7 @@ entry:85 %call_ln531 = call void @read_data, i320 %copyDest, i512 %gmem, i64 %in
 
 <Node id="158" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="288" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8" op_9_bw="8" op_10_bw="8" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="8" op_16_bw="8" op_17_bw="8" op_18_bw="8" op_19_bw="8" op_20_bw="8" op_21_bw="8" op_22_bw="8" op_23_bw="8" op_24_bw="8" op_25_bw="8" op_26_bw="8" op_27_bw="8" op_28_bw="8" op_29_bw="8" op_30_bw="8" op_31_bw="8" op_32_bw="8" op_33_bw="8" op_34_bw="8" op_35_bw="8" op_36_bw="8" op_37_bw="8" op_38_bw="8" op_39_bw="8" op_40_bw="8" op_41_bw="8" op_42_bw="8" op_43_bw="8" op_44_bw="8" op_45_bw="8" op_46_bw="8" op_47_bw="8" op_48_bw="8" op_49_bw="8" op_50_bw="8" op_51_bw="8" op_52_bw="8" op_53_bw="8" op_54_bw="8" op_55_bw="8" op_56_bw="8" op_57_bw="8" op_58_bw="8" op_59_bw="8" op_60_bw="8" op_61_bw="8" op_62_bw="8" op_63_bw="8" op_64_bw="8" op_65_bw="8" op_66_bw="8" op_67_bw="32" op_68_bw="32" op_69_bw="32" op_70_bw="32" op_71_bw="0" op_72_bw="0">
 <![CDATA[
-entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3
+entry:85 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3
 
 ]]></Node>
 <StgValue><ssdm name="call_ln532"/></StgValue>
@@ -154,7 +139,7 @@ entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream,
 
 <state id="4" st_id="4">
 
-<operation id="14" st_id="4" stage="1" lat="2">
+<operation id="13" st_id="4" stage="1" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -163,7 +148,7 @@ entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream,
 
 <Node id="158" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="288" op_3_bw="8" op_4_bw="8" op_5_bw="8" op_6_bw="8" op_7_bw="8" op_8_bw="8" op_9_bw="8" op_10_bw="8" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="8" op_16_bw="8" op_17_bw="8" op_18_bw="8" op_19_bw="8" op_20_bw="8" op_21_bw="8" op_22_bw="8" op_23_bw="8" op_24_bw="8" op_25_bw="8" op_26_bw="8" op_27_bw="8" op_28_bw="8" op_29_bw="8" op_30_bw="8" op_31_bw="8" op_32_bw="8" op_33_bw="8" op_34_bw="8" op_35_bw="8" op_36_bw="8" op_37_bw="8" op_38_bw="8" op_39_bw="8" op_40_bw="8" op_41_bw="8" op_42_bw="8" op_43_bw="8" op_44_bw="8" op_45_bw="8" op_46_bw="8" op_47_bw="8" op_48_bw="8" op_49_bw="8" op_50_bw="8" op_51_bw="8" op_52_bw="8" op_53_bw="8" op_54_bw="8" op_55_bw="8" op_56_bw="8" op_57_bw="8" op_58_bw="8" op_59_bw="8" op_60_bw="8" op_61_bw="8" op_62_bw="8" op_63_bw="8" op_64_bw="8" op_65_bw="8" op_66_bw="8" op_67_bw="32" op_68_bw="32" op_69_bw="32" op_70_bw="32" op_71_bw="0" op_72_bw="0">
 <![CDATA[
-entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3
+entry:85 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream, i8 %p_ZL9n_regions_0, i8 %p_ZL9n_regions_1, i8 %p_ZL9n_regions_2, i8 %p_ZL9n_regions_3, i8 %p_ZL9n_regions_4, i8 %p_ZL9n_regions_5, i8 %p_ZL9n_regions_6, i8 %p_ZL9n_regions_7, i8 %p_ZL9n_regions_8, i8 %p_ZL9n_regions_9, i8 %p_ZL9n_regions_10, i8 %p_ZL9n_regions_11, i8 %p_ZL9n_regions_12, i8 %p_ZL9n_regions_13, i8 %p_ZL9n_regions_14, i8 %p_ZL9n_regions_15, i8 %p_ZL9n_regions_16, i8 %p_ZL9n_regions_17, i8 %p_ZL9n_regions_18, i8 %p_ZL9n_regions_19, i8 %p_ZL9n_regions_20, i8 %p_ZL9n_regions_21, i8 %p_ZL9n_regions_22, i8 %p_ZL9n_regions_23, i8 %p_ZL9n_regions_24, i8 %p_ZL9n_regions_25, i8 %p_ZL9n_regions_26, i8 %p_ZL9n_regions_27, i8 %p_ZL9n_regions_28, i8 %p_ZL9n_regions_29, i8 %p_ZL9n_regions_30, i8 %p_ZL9n_regions_31, i8 %p_ZL9n_regions_32, i8 %p_ZL9n_regions_33, i8 %p_ZL9n_regions_34, i8 %p_ZL9n_regions_35, i8 %p_ZL9n_regions_36, i8 %p_ZL9n_regions_37, i8 %p_ZL9n_regions_38, i8 %p_ZL9n_regions_39, i8 %p_ZL9n_regions_40, i8 %p_ZL9n_regions_41, i8 %p_ZL9n_regions_42, i8 %p_ZL9n_regions_43, i8 %p_ZL9n_regions_44, i8 %p_ZL9n_regions_45, i8 %p_ZL9n_regions_46, i8 %p_ZL9n_regions_47, i8 %p_ZL9n_regions_48, i8 %p_ZL9n_regions_49, i8 %p_ZL9n_regions_50, i8 %p_ZL9n_regions_51, i8 %p_ZL9n_regions_52, i8 %p_ZL9n_regions_53, i8 %p_ZL9n_regions_54, i8 %p_ZL9n_regions_55, i8 %p_ZL9n_regions_56, i8 %p_ZL9n_regions_57, i8 %p_ZL9n_regions_58, i8 %p_ZL9n_regions_59, i8 %p_ZL9n_regions_60, i8 %p_ZL9n_regions_61, i8 %p_ZL9n_regions_62, i8 %p_ZL9n_regions_63, i32 %regions, i32 %regions_1, i32 %regions_2, i32 %regions_3
 
 ]]></Node>
 <StgValue><ssdm name="call_ln532"/></StgValue>
@@ -172,7 +157,7 @@ entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream,
 
 <state id="5" st_id="5">
 
-<operation id="15" st_id="5" stage="2" lat="2">
+<operation id="14" st_id="5" stage="2" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -181,7 +166,7 @@ entry:86 %call_ln532 = call void @run_test, i320 %copyDest, i288 %outcomeStream,
 
 <Node id="159" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-entry:87 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
+entry:86 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
 
 ]]></Node>
 <StgValue><ssdm name="call_ln533"/></StgValue>
@@ -190,6 +175,21 @@ entry:87 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
 
 <state id="6" st_id="6">
 
+<operation id="15" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="73" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+entry:0 %specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 1, void @empty_29
+
+]]></Node>
+<StgValue><ssdm name="specdataflowpipeline_ln0"/></StgValue>
+</operation>
+
 <operation id="16" st_id="6" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
@@ -197,12 +197,12 @@ entry:87 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="72" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="0">
+<Node id="74" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:0 %specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 1, void @empty_23
+entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_19, i32 0, i32 0, void @empty_29, i32 64, i32 0, void @empty_28, void @empty_27, void @empty_29, i32 16, i32 16, i32 16, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0
 
 ]]></Node>
-<StgValue><ssdm name="specdataflowpipeline_ln0"/></StgValue>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
 </operation>
 
 <operation id="17" st_id="6" stage="1" lat="1">
@@ -212,12 +212,12 @@ entry:0 %specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecData
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="73" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<Node id="77" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="320" op_8_bw="320">
 <![CDATA[
-entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_27, i32 0, i32 0, void @empty_23, i32 64, i32 0, void @empty_7, void @empty_14, void @empty_23, i32 16, i32 16, i32 16, i32 16, void @empty_23, void @empty_23, i32 4294967295, i32 0
+entry:4 %empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyDest_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i320 %copyDest, i320 %copyDest
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </operation>
 
 <operation id="18" st_id="6" stage="1" lat="1">
@@ -227,12 +227,12 @@ entry:1 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %g
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="77" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="320" op_8_bw="320">
+<Node id="78" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:5 %empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyDest_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i320 %copyDest, i320 %copyDest
+entry:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0
 
 ]]></Node>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
 </operation>
 
 <operation id="19" st_id="6" stage="1" lat="1">
@@ -242,12 +242,12 @@ entry:5 %empty = specchannel i32 @_ssdm_op_SpecChannel, void @copyDest_str, i32 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="78" bw="0" op_0_bw="0" op_1_bw="320" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<Node id="80" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="288" op_8_bw="288">
 <![CDATA[
-entry:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_3, i32 0, i32 0, void @empty_23, i32 0, i32 0, void @empty_23, void @empty_23, void @empty_23, i32 0, i32 0, i32 0, i32 0, void @empty_23, void @empty_23, i32 4294967295, i32 0
+entry:7 %empty_48 = specchannel i32 @_ssdm_op_SpecChannel, void @outcomeStream_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i288 %outcomeStream, i288 %outcomeStream
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+<StgValue><ssdm name="empty_48"/></StgValue>
 </operation>
 
 <operation id="20" st_id="6" stage="1" lat="1">
@@ -257,12 +257,12 @@ entry:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %c
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="80" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="288" op_8_bw="288">
+<Node id="81" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-entry:8 %empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @outcomeStream_str, i32 1, void @p_str, void @p_str, i32 1, i32 1, i288 %outcomeStream, i288 %outcomeStream
+entry:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0
 
 ]]></Node>
-<StgValue><ssdm name="empty_47"/></StgValue>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
 </operation>
 
 <operation id="21" st_id="6" stage="1" lat="1">
@@ -272,12 +272,12 @@ entry:8 %empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @outcomeStream_s
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="81" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<Node id="82" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0">
 <![CDATA[
-entry:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %outcomeStream, void @empty_3, i32 0, i32 0, void @empty_23, i32 0, i32 0, void @empty_23, void @empty_23, void @empty_23, i32 0, i32 0, i32 0, i32 0, void @empty_23, void @empty_23, i32 4294967295, i32 0
+entry:9 %specstablecontent_ln510 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %gmem, void 
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln510"/></StgValue>
 </operation>
 
 <operation id="22" st_id="6" stage="1" lat="1">
@@ -287,12 +287,12 @@ entry:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i288 %o
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="82" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0">
+<Node id="83" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-entry:10 %specstablecontent_ln510 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %gmem, void 
+entry:10 %specstablecontent_ln511 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void 
 
 ]]></Node>
-<StgValue><ssdm name="specstablecontent_ln510"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln511"/></StgValue>
 </operation>
 
 <operation id="23" st_id="6" stage="1" lat="1">
@@ -302,12 +302,12 @@ entry:10 %specstablecontent_ln510 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="83" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
+<Node id="84" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-entry:11 %specstablecontent_ln511 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void 
+entry:11 %specstablecontent_ln512 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void 
 
 ]]></Node>
-<StgValue><ssdm name="specstablecontent_ln511"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln512"/></StgValue>
 </operation>
 
 <operation id="24" st_id="6" stage="1" lat="1">
@@ -317,12 +317,12 @@ entry:11 %specstablecontent_ln511 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="84" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
+<Node id="85" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:12 %specstablecontent_ln512 = specstablecontent void @_ssdm_op_SpecStableContent, void <undef>, void 
+entry:12 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_1, void 
 
 ]]></Node>
-<StgValue><ssdm name="specstablecontent_ln512"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
 </operation>
 
 <operation id="25" st_id="6" stage="1" lat="1">
@@ -332,9 +332,9 @@ entry:12 %specstablecontent_ln512 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="85" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<Node id="86" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:13 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_1, void 
+entry:13 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
@@ -347,9 +347,9 @@ entry:13 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="86" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<Node id="87" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:14 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions, void 
+entry:14 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_3, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
@@ -362,9 +362,9 @@ entry:14 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="87" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<Node id="88" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:15 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_3, void 
+entry:15 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_2, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
@@ -377,9 +377,9 @@ entry:15 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="88" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
+<Node id="89" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-entry:16 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %regions_2, void 
+entry:16 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_5, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
@@ -392,9 +392,9 @@ entry:16 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="89" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
+<Node id="90" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-entry:17 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_5, void 
+entry:17 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_4, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
@@ -407,12 +407,12 @@ entry:17 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="90" bw="0" op_0_bw="0" op_1_bw="0" op_2_bw="0">
+<Node id="91" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:18 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableContent, void @regions_4, void 
+entry:18 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_63, void 
 
 ]]></Node>
-<StgValue><ssdm name="specstablecontent_ln514"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
 </operation>
 
 <operation id="31" st_id="6" stage="1" lat="1">
@@ -422,9 +422,9 @@ entry:18 %specstablecontent_ln514 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="91" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="92" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:19 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_63, void 
+entry:19 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_62, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -437,9 +437,9 @@ entry:19 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="92" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="93" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:20 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_62, void 
+entry:20 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_61, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -452,9 +452,9 @@ entry:20 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="93" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="94" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:21 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_61, void 
+entry:21 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_60, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -467,9 +467,9 @@ entry:21 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="94" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="95" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:22 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_60, void 
+entry:22 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_59, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -482,9 +482,9 @@ entry:22 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="95" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="96" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:23 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_59, void 
+entry:23 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_58, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -497,9 +497,9 @@ entry:23 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="96" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="97" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:24 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_58, void 
+entry:24 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_57, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -512,9 +512,9 @@ entry:24 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="97" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="98" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:25 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_57, void 
+entry:25 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_56, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -527,9 +527,9 @@ entry:25 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="98" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="99" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:26 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_56, void 
+entry:26 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_55, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -542,9 +542,9 @@ entry:26 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="99" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="100" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:27 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_55, void 
+entry:27 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_54, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -557,9 +557,9 @@ entry:27 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="100" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="101" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:28 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_54, void 
+entry:28 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_53, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -572,9 +572,9 @@ entry:28 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="101" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="102" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:29 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_53, void 
+entry:29 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_52, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -587,9 +587,9 @@ entry:29 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="102" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="103" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:30 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_52, void 
+entry:30 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_51, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -602,9 +602,9 @@ entry:30 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="103" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="104" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:31 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_51, void 
+entry:31 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_50, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -617,9 +617,9 @@ entry:31 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="104" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="105" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:32 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_50, void 
+entry:32 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_49, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -632,9 +632,9 @@ entry:32 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="105" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="106" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:33 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_49, void 
+entry:33 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_48, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -647,9 +647,9 @@ entry:33 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="106" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="107" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:34 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_48, void 
+entry:34 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_47, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -662,9 +662,9 @@ entry:34 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="107" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="108" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:35 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_47, void 
+entry:35 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_46, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -677,9 +677,9 @@ entry:35 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="108" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="109" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:36 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_46, void 
+entry:36 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_45, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -692,9 +692,9 @@ entry:36 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="109" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="110" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:37 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_45, void 
+entry:37 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_44, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -707,9 +707,9 @@ entry:37 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="110" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="111" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:38 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_44, void 
+entry:38 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_43, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -722,9 +722,9 @@ entry:38 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="111" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="112" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:39 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_43, void 
+entry:39 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_42, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -737,9 +737,9 @@ entry:39 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="112" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="113" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:40 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_42, void 
+entry:40 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_41, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -752,9 +752,9 @@ entry:40 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="113" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="114" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:41 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_41, void 
+entry:41 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_40, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -767,9 +767,9 @@ entry:41 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="114" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="115" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:42 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_40, void 
+entry:42 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_39, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -782,9 +782,9 @@ entry:42 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="115" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="116" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:43 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_39, void 
+entry:43 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_38, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -797,9 +797,9 @@ entry:43 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="116" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="117" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:44 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_38, void 
+entry:44 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_37, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -812,9 +812,9 @@ entry:44 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="117" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="118" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:45 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_37, void 
+entry:45 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_36, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -827,9 +827,9 @@ entry:45 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="118" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="119" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:46 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_36, void 
+entry:46 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_35, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -842,9 +842,9 @@ entry:46 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="119" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="120" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:47 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_35, void 
+entry:47 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_34, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -857,9 +857,9 @@ entry:47 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="120" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="121" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:48 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_34, void 
+entry:48 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_33, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -872,9 +872,9 @@ entry:48 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="121" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="122" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:49 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_33, void 
+entry:49 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_32, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -887,9 +887,9 @@ entry:49 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="122" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="123" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:50 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_32, void 
+entry:50 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_31, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -902,9 +902,9 @@ entry:50 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="123" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="124" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:51 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_31, void 
+entry:51 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_30, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -917,9 +917,9 @@ entry:51 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="124" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="125" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:52 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_30, void 
+entry:52 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_29, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -932,9 +932,9 @@ entry:52 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="125" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="126" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:53 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_29, void 
+entry:53 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_28, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -947,9 +947,9 @@ entry:53 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="126" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="127" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:54 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_28, void 
+entry:54 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_27, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -962,9 +962,9 @@ entry:54 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="127" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="128" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:55 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_27, void 
+entry:55 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_26, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -977,9 +977,9 @@ entry:55 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="128" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="129" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:56 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_26, void 
+entry:56 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_25, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -992,9 +992,9 @@ entry:56 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="129" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="130" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:57 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_25, void 
+entry:57 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_24, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1007,9 +1007,9 @@ entry:57 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="130" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="131" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:58 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_24, void 
+entry:58 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_23, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1022,9 +1022,9 @@ entry:58 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="131" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="132" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:59 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_23, void 
+entry:59 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_22, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1037,9 +1037,9 @@ entry:59 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="132" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="133" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:60 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_22, void 
+entry:60 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_21, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1052,9 +1052,9 @@ entry:60 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="133" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="134" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:61 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_21, void 
+entry:61 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_20, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1067,9 +1067,9 @@ entry:61 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="134" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="135" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:62 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_20, void 
+entry:62 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_19, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1082,9 +1082,9 @@ entry:62 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="135" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="136" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:63 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_19, void 
+entry:63 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_18, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1097,9 +1097,9 @@ entry:63 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="136" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="137" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:64 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_18, void 
+entry:64 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_17, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1112,9 +1112,9 @@ entry:64 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="137" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="138" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:65 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_17, void 
+entry:65 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_16, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1127,9 +1127,9 @@ entry:65 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="138" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="139" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:66 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_16, void 
+entry:66 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_15, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1142,9 +1142,9 @@ entry:66 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="139" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="140" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:67 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_15, void 
+entry:67 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_14, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1157,9 +1157,9 @@ entry:67 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="140" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="141" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:68 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_14, void 
+entry:68 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_13, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1172,9 +1172,9 @@ entry:68 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="141" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="142" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:69 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_13, void 
+entry:69 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_12, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1187,9 +1187,9 @@ entry:69 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="142" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="143" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:70 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_12, void 
+entry:70 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_11, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1202,9 +1202,9 @@ entry:70 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="143" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="144" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:71 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_11, void 
+entry:71 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_10, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1217,9 +1217,9 @@ entry:71 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="144" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="145" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:72 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_10, void 
+entry:72 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_9, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1232,9 +1232,9 @@ entry:72 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="145" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="146" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:73 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_9, void 
+entry:73 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_8, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1247,9 +1247,9 @@ entry:73 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="146" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="147" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:74 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_8, void 
+entry:74 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_7, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1262,9 +1262,9 @@ entry:74 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="147" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="148" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:75 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_7, void 
+entry:75 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_6, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1277,9 +1277,9 @@ entry:75 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="148" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="149" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:76 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_6, void 
+entry:76 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_5, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1292,9 +1292,9 @@ entry:76 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="149" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="150" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:77 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_5, void 
+entry:77 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_4, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1307,9 +1307,9 @@ entry:77 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="150" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="151" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:78 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_4, void 
+entry:78 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_3, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1322,9 +1322,9 @@ entry:78 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="151" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="152" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:79 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_3, void 
+entry:79 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_2, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1337,9 +1337,9 @@ entry:79 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="152" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="153" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:80 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_2, void 
+entry:80 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_1, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1352,9 +1352,9 @@ entry:80 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="153" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="154" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:81 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_1, void 
+entry:81 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_0, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
@@ -1367,12 +1367,12 @@ entry:81 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="154" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
+<Node id="155" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0">
 <![CDATA[
-entry:82 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %p_ZL9n_regions_0, void 
+entry:82 %specstablecontent_ln516 = specstablecontent void @_ssdm_op_SpecStableContent, i16 <undef>, void 
 
 ]]></Node>
-<StgValue><ssdm name="specstablecontent_ln515"/></StgValue>
+<StgValue><ssdm name="specstablecontent_ln516"/></StgValue>
 </operation>
 
 <operation id="95" st_id="6" stage="1" lat="1">
@@ -1382,30 +1382,15 @@ entry:82 %specstablecontent_ln515 = specstablecontent void @_ssdm_op_SpecStableC
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="155" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0">
-<![CDATA[
-entry:83 %specstablecontent_ln516 = specstablecontent void @_ssdm_op_SpecStableContent, i16 <undef>, void 
-
-]]></Node>
-<StgValue><ssdm name="specstablecontent_ln516"/></StgValue>
-</operation>
-
-<operation id="96" st_id="6" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
-</condition>
-
 <Node id="156" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0">
 <![CDATA[
-entry:84 %specstablecontent_ln517 = specstablecontent void @_ssdm_op_SpecStableContent, i8 <undef>, void 
+entry:83 %specstablecontent_ln517 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %copying, void 
 
 ]]></Node>
 <StgValue><ssdm name="specstablecontent_ln517"/></StgValue>
 </operation>
 
-<operation id="97" st_id="6" stage="1" lat="2">
+<operation id="96" st_id="6" stage="1" lat="2">
 <core></core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1414,13 +1399,13 @@ entry:84 %specstablecontent_ln517 = specstablecontent void @_ssdm_op_SpecStableC
 
 <Node id="159" bw="0" op_0_bw="0" op_1_bw="288" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-entry:87 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
+entry:86 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
 
 ]]></Node>
 <StgValue><ssdm name="call_ln533"/></StgValue>
 </operation>
 
-<operation id="98" st_id="6" stage="1" lat="1">
+<operation id="97" st_id="6" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1429,7 +1414,7 @@ entry:87 %call_ln533 = call void @writeOutcome, i288 %outcomeStream
 
 <Node id="160" bw="0">
 <![CDATA[
-entry:88 %ret_ln534 = ret
+entry:87 %ret_ln534 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln534"/></StgValue>

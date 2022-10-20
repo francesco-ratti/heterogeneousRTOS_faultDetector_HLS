@@ -26979,20 +26979,20 @@ void run_test(region_t regions[64][16], ap_uint<8> n_regions[64], hls::stream<co
 
 
 
-void setProcessingState(char* processing, bool value) {
+void setProcessingState(volatile char* processing, bool value) {
  if (value)
   (*processing)=0xFF;
  else
   (*processing)=0x0;
 }
 
-void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, bool* startCopy, char* copying) {
+void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
 
  controlStr destStr;
 
  VITIS_LOOP_494_1: while (1) {
 #pragma HLS PIPELINE off
- if (startCopy) {
+ if (*startCopy) {
    setProcessingState(copying, true);
    memcpy(&destStr, inputAOV, sizeof(controlStr));
    setProcessingState(copying, false);
@@ -27002,8 +27002,8 @@ void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, bool* sta
  }
 }
 
-void runTest(controlStr* inputAOV, bool* startCopy,
-  OutcomeStr * outcomeInRam, char errorInTask[16], ap_uint<8> failedTaskExecutionIds[16], region_t regions[64][16], ap_uint<8> n_regions[64], taskFailure *failedTask, char* copying
+void runTest(controlStr* inputAOV, volatile char* startCopy,
+  OutcomeStr * outcomeInRam, char errorInTask[16], ap_uint<8> failedTaskExecutionIds[16], region_t regions[64][16], ap_uint<8> n_regions[64], taskFailure *failedTask, volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
 #pragma HLS stable variable=inputAOV
@@ -27029,7 +27029,7 @@ static region_t regions[64][16];
 static ap_uint<8> n_regions[64];
 static ap_uint<8> failedTaskExecutionIds[16];
 # 652 "detector_solid/abs_solid_detector.cpp"
-__attribute__((sdx_kernel("run", 0))) void run(char accel_mode, char* copying, controlStr* inputData, bool* startCopy, char errorInTask[16], OutcomeStr outcomeInRam[16], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
+__attribute__((sdx_kernel("run", 0))) void run(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[16], OutcomeStr outcomeInRam[16], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
 #line 18 "C:/Users/franc/detector_solid/solution2/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=run
 # 652 "detector_solid/abs_solid_detector.cpp"
@@ -27046,6 +27046,8 @@ __attribute__((sdx_kernel("run", 0))) void run(char accel_mode, char* copying, c
 #pragma HLS interface mode= m_axi port = inputData offset=slave
 
 #pragma HLS interface mode= s_axilite port=copying
+#pragma HLS interface mode= s_axilite port=startCopy
+#pragma HLS INTERFACE mode=ap_hs port=startCopy
 
 #pragma HLS interface mode= s_axilite port = trainedRegion_i
 #pragma HLS interface mode= s_axilite port = trainedRegion_o

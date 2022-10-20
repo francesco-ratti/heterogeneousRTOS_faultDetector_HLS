@@ -56,6 +56,7 @@ module run_runTest (
         m_axi_gmem_BUSER,
         inputAOV,
         startCopy,
+        copying,
         p_ZL9n_regions_0,
         p_ZL9n_regions_1,
         p_ZL9n_regions_2,
@@ -164,7 +165,10 @@ module run_runTest (
         ap_rst,
         inputAOV_ap_vld,
         startCopy_ap_vld,
+        startCopy_ap_ack,
+        copying_ap_vld,
         ap_start,
+        ap_done,
         p_ZL9n_regions_0_ap_vld,
         p_ZL9n_regions_1_ap_vld,
         p_ZL9n_regions_2_ap_vld,
@@ -229,7 +233,6 @@ module run_runTest (
         p_ZL9n_regions_61_ap_vld,
         p_ZL9n_regions_62_ap_vld,
         p_ZL9n_regions_63_ap_vld,
-        ap_done,
         ap_ready,
         ap_idle,
         ap_continue
@@ -283,7 +286,8 @@ input  [1:0] m_axi_gmem_BRESP;
 input  [0:0] m_axi_gmem_BID;
 input  [0:0] m_axi_gmem_BUSER;
 input  [63:0] inputAOV;
-input  [63:0] startCopy;
+input  [7:0] startCopy;
+output  [7:0] copying;
 input  [7:0] p_ZL9n_regions_0;
 input  [7:0] p_ZL9n_regions_1;
 input  [7:0] p_ZL9n_regions_2;
@@ -392,7 +396,10 @@ input   ap_clk;
 input   ap_rst;
 input   inputAOV_ap_vld;
 input   startCopy_ap_vld;
+output   startCopy_ap_ack;
+output   copying_ap_vld;
 input   ap_start;
+output   ap_done;
 input   p_ZL9n_regions_0_ap_vld;
 input   p_ZL9n_regions_1_ap_vld;
 input   p_ZL9n_regions_2_ap_vld;
@@ -457,7 +464,6 @@ input   p_ZL9n_regions_60_ap_vld;
 input   p_ZL9n_regions_61_ap_vld;
 input   p_ZL9n_regions_62_ap_vld;
 input   p_ZL9n_regions_63_ap_vld;
-output   ap_done;
 output   ap_ready;
 output   ap_idle;
 input   ap_continue;
@@ -501,6 +507,10 @@ wire   [3:0] read_data_U0_m_axi_gmem_ARREGION;
 wire   [0:0] read_data_U0_m_axi_gmem_ARUSER;
 wire    read_data_U0_m_axi_gmem_RREADY;
 wire    read_data_U0_m_axi_gmem_BREADY;
+wire    read_data_U0_startCopy_ap_ack;
+wire   [7:0] read_data_U0_copying;
+wire    read_data_U0_copying_ap_vld;
+wire    ap_sync_continue;
 wire    run_test_U0_ap_start;
 wire    run_test_U0_ap_done;
 wire    run_test_U0_ap_continue;
@@ -535,6 +545,7 @@ wire   [287:0] outcomeStream_dout;
 wire   [1:0] outcomeStream_num_data_valid;
 wire   [1:0] outcomeStream_fifo_cap;
 wire    outcomeStream_empty_n;
+wire    ap_sync_done;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -603,7 +614,11 @@ run_read_data read_data_U0(
     .m_axi_gmem_BID(1'd0),
     .m_axi_gmem_BUSER(1'd0),
     .inputAOV(inputAOV),
-    .startCopy(startCopy)
+    .startCopy(startCopy),
+    .startCopy_ap_vld(startCopy_ap_vld),
+    .startCopy_ap_ack(read_data_U0_startCopy_ap_ack),
+    .copying(read_data_U0_copying),
+    .copying_ap_vld(read_data_U0_copying_ap_vld)
 );
 
 run_run_test run_test_U0(
@@ -767,11 +782,19 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_done = writeOutcome_U0_ap_done;
+assign ap_done = ap_sync_done;
 
 assign ap_idle = (writeOutcome_U0_ap_idle & run_test_U0_ap_idle & read_data_U0_ap_idle);
 
 assign ap_ready = read_data_U0_ap_ready;
+
+assign ap_sync_continue = (ap_sync_done & ap_continue);
+
+assign ap_sync_done = (writeOutcome_U0_ap_done & read_data_U0_ap_done);
+
+assign copying = read_data_U0_copying;
+
+assign copying_ap_vld = read_data_U0_copying_ap_vld;
 
 assign m_axi_gmem_ARADDR = read_data_U0_m_axi_gmem_ARADDR;
 
@@ -837,7 +860,7 @@ assign m_axi_gmem_WUSER = 1'd0;
 
 assign m_axi_gmem_WVALID = 1'b0;
 
-assign read_data_U0_ap_continue = 1'b1;
+assign read_data_U0_ap_continue = ap_sync_continue;
 
 assign read_data_U0_ap_start = ap_start;
 
@@ -909,7 +932,9 @@ assign run_test_U0_ap_continue = 1'b1;
 
 assign run_test_U0_ap_start = (ap_sync_reg_run_test_U0_ap_start | ap_start);
 
-assign writeOutcome_U0_ap_continue = ap_continue;
+assign startCopy_ap_ack = read_data_U0_startCopy_ap_ack;
+
+assign writeOutcome_U0_ap_continue = ap_sync_continue;
 
 assign writeOutcome_U0_ap_start = (ap_sync_reg_writeOutcome_U0_ap_start | ap_start);
 
