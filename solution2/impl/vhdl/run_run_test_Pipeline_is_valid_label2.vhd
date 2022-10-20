@@ -17,20 +17,20 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read4 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read7 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read8 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read9 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read10 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_1 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_2 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_3 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_4 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_5 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_6 : IN STD_LOGIC_VECTOR (31 downto 0);
+    in_AOV_7 : IN STD_LOGIC_VECTOR (31 downto 0);
     ap_return : OUT STD_LOGIC_VECTOR (0 downto 0);
-    grp_fu_462_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_462_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_462_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
-    grp_fu_462_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
-    grp_fu_462_p_ce : OUT STD_LOGIC );
+    grp_fu_1356_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_1356_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_1356_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
+    grp_fu_1356_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
+    grp_fu_1356_p_ce : OUT STD_LOGIC );
 end;
 
 
@@ -85,7 +85,7 @@ attribute shreg_extract : string;
     signal ap_loop_init : STD_LOGIC;
     signal ap_sig_allocacmp_i_1 : STD_LOGIC_VECTOR (3 downto 0);
     signal bitcast_ln73_fu_192_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_1_fu_196_p4 : STD_LOGIC_VECTOR (7 downto 0);
+    signal tmp_4_fu_196_p4 : STD_LOGIC_VECTOR (7 downto 0);
     signal trunc_ln73_fu_206_p1 : STD_LOGIC_VECTOR (22 downto 0);
     signal grp_fu_137_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_fu_142_p2 : STD_LOGIC_VECTOR (0 downto 0);
@@ -167,7 +167,7 @@ attribute shreg_extract : string;
 
 
 begin
-    fcmp_32ns_32ns_1_2_no_dsp_1_U833 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U17 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -183,7 +183,7 @@ begin
         opcode => ap_const_lv5_1,
         dout => grp_fu_137_p2);
 
-    fcmp_32ns_32ns_1_2_no_dsp_1_U834 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
+    fcmp_32ns_32ns_1_2_no_dsp_1_U18 : component run_fcmp_32ns_32ns_1_2_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -199,7 +199,7 @@ begin
         opcode => ap_const_lv5_1,
         dout => grp_fu_142_p2);
 
-    mux_84_32_1_1_U835 : component run_mux_84_32_1_1
+    mux_84_32_1_1_U19 : component run_mux_84_32_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -214,14 +214,14 @@ begin
         din8_WIDTH => 4,
         dout_WIDTH => 32)
     port map (
-        din0 => p_read3,
-        din1 => p_read4,
-        din2 => p_read5,
-        din3 => p_read6,
-        din4 => p_read7,
-        din5 => p_read8,
-        din6 => p_read9,
-        din7 => p_read10,
+        din0 => in_AOV,
+        din1 => in_AOV_1,
+        din2 => in_AOV_2,
+        din3 => in_AOV_3,
+        din4 => in_AOV_4,
+        din5 => in_AOV_5,
+        din6 => in_AOV_6,
+        din7 => in_AOV_7,
         din8 => ap_sig_allocacmp_i_1,
         dout => p_x_assign_fu_167_p10);
 
@@ -435,16 +435,16 @@ begin
     end process;
 
     bitcast_ln73_fu_192_p1 <= p_x_assign_fu_167_p10;
-    grp_fu_462_p_ce <= ap_const_logic_1;
-    grp_fu_462_p_din0 <= p_x_assign_fu_167_p10;
-    grp_fu_462_p_din1 <= ap_const_lv32_0;
-    grp_fu_462_p_opcode <= ap_const_lv5_8;
+    grp_fu_1356_p_ce <= ap_const_logic_1;
+    grp_fu_1356_p_din0 <= p_x_assign_fu_167_p10;
+    grp_fu_1356_p_din1 <= ap_const_lv32_0;
+    grp_fu_1356_p_opcode <= ap_const_lv5_8;
     icmp_ln70_fu_155_p2 <= "1" when (ap_sig_allocacmp_i_1 = ap_const_lv4_8) else "0";
     icmp_ln73_1_fu_216_p2 <= "1" when (trunc_ln73_fu_206_p1 = ap_const_lv23_0) else "0";
-    icmp_ln73_fu_210_p2 <= "0" when (tmp_1_fu_196_p4 = ap_const_lv8_FF) else "1";
-    or_ln73_1_fu_238_p2 <= (grp_fu_462_p_dout0 or and_ln73_fu_232_p2);
+    icmp_ln73_fu_210_p2 <= "0" when (tmp_4_fu_196_p4 = ap_const_lv8_FF) else "1";
+    or_ln73_1_fu_238_p2 <= (grp_fu_1356_p_dout0 or and_ln73_fu_232_p2);
     or_ln73_2_fu_226_p2 <= (grp_fu_142_p2 or grp_fu_137_p2);
     or_ln73_fu_222_p2 <= (icmp_ln73_reg_271 or icmp_ln73_1_reg_276);
-    tmp_1_fu_196_p4 <= bitcast_ln73_fu_192_p1(30 downto 23);
+    tmp_4_fu_196_p4 <= bitcast_ln73_fu_192_p1(30 downto 23);
     trunc_ln73_fu_206_p1 <= bitcast_ln73_fu_192_p1(23 - 1 downto 0);
 end behav;

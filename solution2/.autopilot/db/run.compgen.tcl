@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 1110
+set ID 205
 set hasByteEnable 0
 set MemName run_regions_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
@@ -103,7 +103,7 @@ accel_mode {
 	offset_end 23
 }
 copying { 
-	dir O
+	dir I
 	width 8
 	depth 1
 	mode ap_none
@@ -127,7 +127,7 @@ IOCheckIdx {
 	offset_end 59
 }
 errorInTask { 
-	dir IO
+	dir X
 	width 8
 	depth 16
 	mode ap_memory
@@ -135,7 +135,7 @@ errorInTask {
 	offset_end 79
 	core_op ram_1p
 	core_impl auto
-	core_latency 1
+	core_latency 3
 	byte_write 0
 }
 trainedRegion_i { 
@@ -178,8 +178,16 @@ n_regions_in_o {
 	offset 396
 	offset_end 403
 }
+failedTask { 
+	dir I
+	width 16
+	depth 1
+	mode ap_hs
+	offset 404
+	offset_end 411
+}
 outcomeInRam { 
-	dir O
+	dir X
 	width 288
 	depth 16
 	mode ap_memory
@@ -187,8 +195,8 @@ outcomeInRam {
 	offset_end 2047
 	core_op ram_1p
 	core_impl auto
-	core_latency 1
-	byte_write 1
+	core_latency 3
+	byte_write 0
 }
 ap_start { }
 ap_done { }
@@ -205,7 +213,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 1111 \
+			id 206 \
 			corename run_control_axilite \
 			name run_control_s_axi \
 			ports {$port_control} \
@@ -228,15 +236,15 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 1113 \
-    name failedTask \
+    id 208 \
+    name startCopy \
     type other \
-    dir O \
+    dir I \
     reset_level 0 \
     sync_rst true \
-    corename dc_failedTask \
+    corename dc_startCopy \
     op interface \
-    ports { failedTask { O 16 vector } failedTask_ap_vld { O 1 bit } failedTask_ap_ack { I 1 bit } } \
+    ports { startCopy { I 64 vector } } \
 } "
 }
 
@@ -287,29 +295,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# RegSlice definition:
-set ID 1114
-set RegSliceName run_regslice_forward
-set RegSliceInstName run_regslice_forward_U
-set CoreName ap_simcore_run_regslice_forward
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix run_ \
-    sliceTypeList 1\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
 }
 
 

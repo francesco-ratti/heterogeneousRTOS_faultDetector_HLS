@@ -1,5 +1,11 @@
 # This script segment is generated automatically by AutoPilot
 
+set name run_fcmp_32ns_32ns_1_2_no_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fcmp} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -10,120 +16,120 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 836 \
-    name p_read3 \
+    id 21 \
+    name in_AOV \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read3 \
+    corename dc_in_AOV \
     op interface \
-    ports { p_read3 { I 32 vector } } \
+    ports { in_AOV { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 837 \
-    name p_read4 \
+    id 22 \
+    name in_AOV_1 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read4 \
+    corename dc_in_AOV_1 \
     op interface \
-    ports { p_read4 { I 32 vector } } \
+    ports { in_AOV_1 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 838 \
-    name p_read5 \
+    id 23 \
+    name in_AOV_2 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read5 \
+    corename dc_in_AOV_2 \
     op interface \
-    ports { p_read5 { I 32 vector } } \
+    ports { in_AOV_2 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 839 \
-    name p_read6 \
+    id 24 \
+    name in_AOV_3 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read6 \
+    corename dc_in_AOV_3 \
     op interface \
-    ports { p_read6 { I 32 vector } } \
+    ports { in_AOV_3 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 840 \
-    name p_read7 \
+    id 25 \
+    name in_AOV_4 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read7 \
+    corename dc_in_AOV_4 \
     op interface \
-    ports { p_read7 { I 32 vector } } \
+    ports { in_AOV_4 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 841 \
-    name p_read8 \
+    id 26 \
+    name in_AOV_5 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read8 \
+    corename dc_in_AOV_5 \
     op interface \
-    ports { p_read8 { I 32 vector } } \
+    ports { in_AOV_5 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 842 \
-    name p_read9 \
+    id 27 \
+    name in_AOV_6 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read9 \
+    corename dc_in_AOV_6 \
     op interface \
-    ports { p_read9 { I 32 vector } } \
+    ports { in_AOV_6 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 843 \
-    name p_read10 \
+    id 28 \
+    name in_AOV_7 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_read10 \
+    corename dc_in_AOV_7 \
     op interface \
-    ports { p_read10 { I 32 vector } } \
+    ports { in_AOV_7 { I 32 vector } } \
 } "
 }
 

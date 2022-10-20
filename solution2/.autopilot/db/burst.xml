@@ -1,6 +1,0 @@
-<VitisHLS:BurstInfo>
-    <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:497:112" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="entry.load.114" VarName="error" ParentFunc="runTest(controlStr*, OutcomeStr*, char*, ap_uint&lt;8&gt;*, REGION_T (*) [16], ap_uint&lt;8&gt;*, taskFailure*, char*)"/>
-    <burst group="BURST_VERBOSE_MISSED" fe_name="NonByteSizeMemoryAccessMissed" src_info="detector_solid/abs_solid_detector.cpp:451:9" msg_id="214-226" msg_severity="INFO" msg_body="Non byte size access is unsupported" resolution="214-226" ID="land.end.store.2" VarName="error" ParentFunc="run_test(bool*, REGION_T*, ap_uint&lt;8&gt;, float*)"/>
-    <burst group="BURST_VERBOSE_MISSED" fe_name="CouldNotAnalyzeBoundsPatternMissed" src_info="detector_solid/abs_solid_detector.cpp:262:22" msg_id="214-252" msg_severity="INFO" msg_body="Could not analyze the loop bounds" resolution="214-252" LoopLoc="detector_solid/abs_solid_detector.cpp:262:22" LoopName="VITIS_LOOP_262_1" ParentFunc="insert_point(REGION_T*, ap_uint&lt;8&gt;&amp;, float const*)"/>
-</VitisHLS:BurstInfo>
-

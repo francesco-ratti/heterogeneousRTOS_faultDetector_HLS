@@ -31,7 +31,7 @@
 //         others  - reserved
 // 0x014 : reserved
 // 0x018 : Data signal of copying
-//         bit 7~0 - copying[7:0] (Read)
+//         bit 7~0 - copying[7:0] (Read/Write)
 //         others  - reserved
 // 0x01c : reserved
 // 0x028 : Data signal of inputData
@@ -153,6 +153,13 @@
 //         bit 7~0 - n_regions_in_o[7:0] (Read)
 //         others  - reserved
 // 0x190 : reserved
+// 0x194 : Data signal of failedTask
+//         bit 15~0 - failedTask[15:0] (Read/Write)
+//         others   - reserved
+// 0x198 : Control signal of failedTask
+//         bit 0  - failedTask_ap_vld (Read/Write/COH)
+//         bit 1  - failedTask_ap_ack (Read)
+//         others - reserved
 // 0x040 ~
 // 0x04f : Memory 'errorInTask' (16 * 8b)
 //         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -205,6 +212,9 @@
 #define XRUN_CONTROL_BITS_N_REGIONS_IN_I_DATA   8
 #define XRUN_CONTROL_ADDR_N_REGIONS_IN_O_DATA   0x18c
 #define XRUN_CONTROL_BITS_N_REGIONS_IN_O_DATA   8
+#define XRUN_CONTROL_ADDR_FAILEDTASK_DATA       0x194
+#define XRUN_CONTROL_BITS_FAILEDTASK_DATA       16
+#define XRUN_CONTROL_ADDR_FAILEDTASK_CTRL       0x198
 #define XRUN_CONTROL_ADDR_ERRORINTASK_BASE      0x040
 #define XRUN_CONTROL_ADDR_ERRORINTASK_HIGH      0x04f
 #define XRUN_CONTROL_WIDTH_ERRORINTASK          8

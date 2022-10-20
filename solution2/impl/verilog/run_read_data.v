@@ -15,6 +15,11 @@ module run_read_data (
         ap_continue,
         ap_idle,
         ap_ready,
+        copyDest_din,
+        copyDest_num_data_valid,
+        copyDest_fifo_cap,
+        copyDest_full_n,
+        copyDest_write,
         m_axi_gmem_AWVALID,
         m_axi_gmem_AWREADY,
         m_axi_gmem_AWADDR,
@@ -62,97 +67,81 @@ module run_read_data (
         m_axi_gmem_BID,
         m_axi_gmem_BUSER,
         inputAOV,
-        copying,
-        copying_ap_vld,
-        ap_return_0,
-        ap_return_1,
-        ap_return_2,
-        ap_return_3,
-        ap_return_4,
-        ap_return_5,
-        ap_return_6,
-        ap_return_7,
-        ap_return_8
+        startCopy
 );
 
-parameter    ap_ST_fsm_state1 = 78'd1;
-parameter    ap_ST_fsm_state2 = 78'd2;
-parameter    ap_ST_fsm_state3 = 78'd4;
-parameter    ap_ST_fsm_state4 = 78'd8;
-parameter    ap_ST_fsm_state5 = 78'd16;
-parameter    ap_ST_fsm_state6 = 78'd32;
-parameter    ap_ST_fsm_state7 = 78'd64;
-parameter    ap_ST_fsm_state8 = 78'd128;
-parameter    ap_ST_fsm_state9 = 78'd256;
-parameter    ap_ST_fsm_state10 = 78'd512;
-parameter    ap_ST_fsm_state11 = 78'd1024;
-parameter    ap_ST_fsm_state12 = 78'd2048;
-parameter    ap_ST_fsm_state13 = 78'd4096;
-parameter    ap_ST_fsm_state14 = 78'd8192;
-parameter    ap_ST_fsm_state15 = 78'd16384;
-parameter    ap_ST_fsm_state16 = 78'd32768;
-parameter    ap_ST_fsm_state17 = 78'd65536;
-parameter    ap_ST_fsm_state18 = 78'd131072;
-parameter    ap_ST_fsm_state19 = 78'd262144;
-parameter    ap_ST_fsm_state20 = 78'd524288;
-parameter    ap_ST_fsm_state21 = 78'd1048576;
-parameter    ap_ST_fsm_state22 = 78'd2097152;
-parameter    ap_ST_fsm_state23 = 78'd4194304;
-parameter    ap_ST_fsm_state24 = 78'd8388608;
-parameter    ap_ST_fsm_state25 = 78'd16777216;
-parameter    ap_ST_fsm_state26 = 78'd33554432;
-parameter    ap_ST_fsm_state27 = 78'd67108864;
-parameter    ap_ST_fsm_state28 = 78'd134217728;
-parameter    ap_ST_fsm_state29 = 78'd268435456;
-parameter    ap_ST_fsm_state30 = 78'd536870912;
-parameter    ap_ST_fsm_state31 = 78'd1073741824;
-parameter    ap_ST_fsm_state32 = 78'd2147483648;
-parameter    ap_ST_fsm_state33 = 78'd4294967296;
-parameter    ap_ST_fsm_state34 = 78'd8589934592;
-parameter    ap_ST_fsm_state35 = 78'd17179869184;
-parameter    ap_ST_fsm_state36 = 78'd34359738368;
-parameter    ap_ST_fsm_state37 = 78'd68719476736;
-parameter    ap_ST_fsm_state38 = 78'd137438953472;
-parameter    ap_ST_fsm_state39 = 78'd274877906944;
-parameter    ap_ST_fsm_state40 = 78'd549755813888;
-parameter    ap_ST_fsm_state41 = 78'd1099511627776;
-parameter    ap_ST_fsm_state42 = 78'd2199023255552;
-parameter    ap_ST_fsm_state43 = 78'd4398046511104;
-parameter    ap_ST_fsm_state44 = 78'd8796093022208;
-parameter    ap_ST_fsm_state45 = 78'd17592186044416;
-parameter    ap_ST_fsm_state46 = 78'd35184372088832;
-parameter    ap_ST_fsm_state47 = 78'd70368744177664;
-parameter    ap_ST_fsm_state48 = 78'd140737488355328;
-parameter    ap_ST_fsm_state49 = 78'd281474976710656;
-parameter    ap_ST_fsm_state50 = 78'd562949953421312;
-parameter    ap_ST_fsm_state51 = 78'd1125899906842624;
-parameter    ap_ST_fsm_state52 = 78'd2251799813685248;
-parameter    ap_ST_fsm_state53 = 78'd4503599627370496;
-parameter    ap_ST_fsm_state54 = 78'd9007199254740992;
-parameter    ap_ST_fsm_state55 = 78'd18014398509481984;
-parameter    ap_ST_fsm_state56 = 78'd36028797018963968;
-parameter    ap_ST_fsm_state57 = 78'd72057594037927936;
-parameter    ap_ST_fsm_state58 = 78'd144115188075855872;
-parameter    ap_ST_fsm_state59 = 78'd288230376151711744;
-parameter    ap_ST_fsm_state60 = 78'd576460752303423488;
-parameter    ap_ST_fsm_state61 = 78'd1152921504606846976;
-parameter    ap_ST_fsm_state62 = 78'd2305843009213693952;
-parameter    ap_ST_fsm_state63 = 78'd4611686018427387904;
-parameter    ap_ST_fsm_state64 = 78'd9223372036854775808;
-parameter    ap_ST_fsm_state65 = 78'd18446744073709551616;
-parameter    ap_ST_fsm_state66 = 78'd36893488147419103232;
-parameter    ap_ST_fsm_state67 = 78'd73786976294838206464;
-parameter    ap_ST_fsm_state68 = 78'd147573952589676412928;
-parameter    ap_ST_fsm_state69 = 78'd295147905179352825856;
-parameter    ap_ST_fsm_state70 = 78'd590295810358705651712;
-parameter    ap_ST_fsm_state71 = 78'd1180591620717411303424;
-parameter    ap_ST_fsm_state72 = 78'd2361183241434822606848;
-parameter    ap_ST_fsm_state73 = 78'd4722366482869645213696;
-parameter    ap_ST_fsm_state74 = 78'd9444732965739290427392;
-parameter    ap_ST_fsm_state75 = 78'd18889465931478580854784;
-parameter    ap_ST_fsm_state76 = 78'd37778931862957161709568;
-parameter    ap_ST_fsm_state77 = 78'd75557863725914323419136;
-parameter    ap_ST_fsm_state78 = 78'd151115727451828646838272;
+parameter    ap_ST_fsm_state1 = 72'd1;
+parameter    ap_ST_fsm_state2 = 72'd2;
+parameter    ap_ST_fsm_state3 = 72'd4;
+parameter    ap_ST_fsm_state4 = 72'd8;
+parameter    ap_ST_fsm_state5 = 72'd16;
+parameter    ap_ST_fsm_state6 = 72'd32;
+parameter    ap_ST_fsm_state7 = 72'd64;
+parameter    ap_ST_fsm_state8 = 72'd128;
+parameter    ap_ST_fsm_state9 = 72'd256;
+parameter    ap_ST_fsm_state10 = 72'd512;
+parameter    ap_ST_fsm_state11 = 72'd1024;
+parameter    ap_ST_fsm_state12 = 72'd2048;
+parameter    ap_ST_fsm_state13 = 72'd4096;
+parameter    ap_ST_fsm_state14 = 72'd8192;
+parameter    ap_ST_fsm_state15 = 72'd16384;
+parameter    ap_ST_fsm_state16 = 72'd32768;
+parameter    ap_ST_fsm_state17 = 72'd65536;
+parameter    ap_ST_fsm_state18 = 72'd131072;
+parameter    ap_ST_fsm_state19 = 72'd262144;
+parameter    ap_ST_fsm_state20 = 72'd524288;
+parameter    ap_ST_fsm_state21 = 72'd1048576;
+parameter    ap_ST_fsm_state22 = 72'd2097152;
+parameter    ap_ST_fsm_state23 = 72'd4194304;
+parameter    ap_ST_fsm_state24 = 72'd8388608;
+parameter    ap_ST_fsm_state25 = 72'd16777216;
+parameter    ap_ST_fsm_state26 = 72'd33554432;
+parameter    ap_ST_fsm_state27 = 72'd67108864;
+parameter    ap_ST_fsm_state28 = 72'd134217728;
+parameter    ap_ST_fsm_state29 = 72'd268435456;
+parameter    ap_ST_fsm_state30 = 72'd536870912;
+parameter    ap_ST_fsm_state31 = 72'd1073741824;
+parameter    ap_ST_fsm_state32 = 72'd2147483648;
+parameter    ap_ST_fsm_state33 = 72'd4294967296;
+parameter    ap_ST_fsm_state34 = 72'd8589934592;
+parameter    ap_ST_fsm_state35 = 72'd17179869184;
+parameter    ap_ST_fsm_state36 = 72'd34359738368;
+parameter    ap_ST_fsm_state37 = 72'd68719476736;
+parameter    ap_ST_fsm_state38 = 72'd137438953472;
+parameter    ap_ST_fsm_state39 = 72'd274877906944;
+parameter    ap_ST_fsm_state40 = 72'd549755813888;
+parameter    ap_ST_fsm_state41 = 72'd1099511627776;
+parameter    ap_ST_fsm_state42 = 72'd2199023255552;
+parameter    ap_ST_fsm_state43 = 72'd4398046511104;
+parameter    ap_ST_fsm_state44 = 72'd8796093022208;
+parameter    ap_ST_fsm_state45 = 72'd17592186044416;
+parameter    ap_ST_fsm_state46 = 72'd35184372088832;
+parameter    ap_ST_fsm_state47 = 72'd70368744177664;
+parameter    ap_ST_fsm_state48 = 72'd140737488355328;
+parameter    ap_ST_fsm_state49 = 72'd281474976710656;
+parameter    ap_ST_fsm_state50 = 72'd562949953421312;
+parameter    ap_ST_fsm_state51 = 72'd1125899906842624;
+parameter    ap_ST_fsm_state52 = 72'd2251799813685248;
+parameter    ap_ST_fsm_state53 = 72'd4503599627370496;
+parameter    ap_ST_fsm_state54 = 72'd9007199254740992;
+parameter    ap_ST_fsm_state55 = 72'd18014398509481984;
+parameter    ap_ST_fsm_state56 = 72'd36028797018963968;
+parameter    ap_ST_fsm_state57 = 72'd72057594037927936;
+parameter    ap_ST_fsm_state58 = 72'd144115188075855872;
+parameter    ap_ST_fsm_state59 = 72'd288230376151711744;
+parameter    ap_ST_fsm_state60 = 72'd576460752303423488;
+parameter    ap_ST_fsm_state61 = 72'd1152921504606846976;
+parameter    ap_ST_fsm_state62 = 72'd2305843009213693952;
+parameter    ap_ST_fsm_state63 = 72'd4611686018427387904;
+parameter    ap_ST_fsm_state64 = 72'd9223372036854775808;
+parameter    ap_ST_fsm_state65 = 72'd18446744073709551616;
+parameter    ap_ST_fsm_state66 = 72'd36893488147419103232;
+parameter    ap_ST_fsm_state67 = 72'd73786976294838206464;
+parameter    ap_ST_fsm_state68 = 72'd147573952589676412928;
+parameter    ap_ST_fsm_state69 = 72'd295147905179352825856;
+parameter    ap_ST_fsm_state70 = 72'd590295810358705651712;
+parameter    ap_ST_fsm_state71 = 72'd1180591620717411303424;
+parameter    ap_ST_fsm_state72 = 72'd2361183241434822606848;
 
 input   ap_clk;
 input   ap_rst;
@@ -161,6 +150,11 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
+output  [319:0] copyDest_din;
+input  [1:0] copyDest_num_data_valid;
+input  [1:0] copyDest_fifo_cap;
+input   copyDest_full_n;
+output   copyDest_write;
 output   m_axi_gmem_AWVALID;
 input   m_axi_gmem_AWREADY;
 output  [63:0] m_axi_gmem_AWADDR;
@@ -208,92 +202,33 @@ input  [1:0] m_axi_gmem_BRESP;
 input  [0:0] m_axi_gmem_BID;
 input  [0:0] m_axi_gmem_BUSER;
 input  [63:0] inputAOV;
-output  [7:0] copying;
-output   copying_ap_vld;
-output  [5:0] ap_return_0;
-output  [31:0] ap_return_1;
-output  [31:0] ap_return_2;
-output  [31:0] ap_return_3;
-output  [31:0] ap_return_4;
-output  [31:0] ap_return_5;
-output  [31:0] ap_return_6;
-output  [31:0] ap_return_7;
-output  [31:0] ap_return_8;
+input  [63:0] startCopy;
 
-reg ap_done;
 reg ap_idle;
-reg ap_ready;
+reg copyDest_write;
 reg m_axi_gmem_ARVALID;
 reg m_axi_gmem_RREADY;
-reg copying_ap_vld;
 
 reg    ap_done_reg;
-(* fsm_encoding = "none" *) reg   [77:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [71:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
+reg    copyDest_blk_n;
+wire    ap_CS_fsm_state72;
+reg   [0:0] tobool_reg_166;
 reg    gmem_blk_n_AR;
 reg    gmem_blk_n_R;
 wire    ap_CS_fsm_state71;
-reg   [31:0] tmp_reg_512;
-reg   [31:0] tmp_s_reg_517;
-reg   [31:0] tmp_55_reg_522;
-reg   [31:0] tmp_56_reg_527;
-reg   [31:0] tmp_57_reg_532;
-reg   [31:0] tmp_58_reg_537;
-reg   [31:0] tmp_59_reg_542;
-reg   [31:0] tmp_60_reg_547;
-wire   [5:0] empty_211_fu_345_p1;
-reg   [5:0] empty_211_reg_552;
-reg   [2:0] dest_AOV_address0;
-reg    dest_AOV_ce0;
-reg    dest_AOV_we0;
-reg   [31:0] dest_AOV_d0;
-wire   [31:0] dest_AOV_q0;
-reg   [2:0] dest_AOV_address1;
-reg    dest_AOV_ce1;
-reg    dest_AOV_we1;
-reg   [31:0] dest_AOV_d1;
-wire    grp_read_data_Pipeline_1_fu_231_ap_start;
-wire    grp_read_data_Pipeline_1_fu_231_ap_done;
-wire    grp_read_data_Pipeline_1_fu_231_ap_idle;
-wire    grp_read_data_Pipeline_1_fu_231_ap_ready;
-wire   [2:0] grp_read_data_Pipeline_1_fu_231_dest_AOV_address0;
-wire    grp_read_data_Pipeline_1_fu_231_dest_AOV_ce0;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_7_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_7_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_6_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_6_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_5_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_5_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_4_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_4_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_3_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_3_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_2_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_2_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_1_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_1_out_0_out_ap_vld;
-wire   [31:0] grp_read_data_Pipeline_1_fu_231_AOV_0_out_0_out;
-wire    grp_read_data_Pipeline_1_fu_231_AOV_0_out_0_out_ap_vld;
-reg    grp_read_data_Pipeline_1_fu_231_ap_start_reg;
-wire    ap_CS_fsm_state76;
-wire    ap_CS_fsm_state77;
-wire    ap_CS_fsm_state72;
-wire    ap_CS_fsm_state73;
-wire    ap_CS_fsm_state74;
-wire    ap_CS_fsm_state75;
-wire  signed [63:0] p_cast_cast_fu_254_p1;
+wire   [0:0] tobool_fu_120_p2;
+wire   [319:0] or_ln174_s_fu_150_p4;
+reg   [319:0] or_ln174_s_reg_170;
+wire  signed [63:0] p_cast_cast_fu_109_p1;
 reg    ap_block_state1;
-wire    ap_CS_fsm_state78;
-wire   [31:0] empty_fu_349_p1;
-wire   [31:0] empty_204_fu_353_p1;
-wire   [31:0] empty_205_fu_357_p1;
-wire   [31:0] empty_206_fu_361_p1;
-wire   [31:0] empty_207_fu_365_p1;
-wire   [31:0] empty_208_fu_369_p1;
-wire   [31:0] empty_209_fu_373_p1;
-wire   [31:0] empty_210_fu_377_p1;
-wire   [57:0] p_cast_fu_244_p4;
-reg   [77:0] ap_NS_fsm;
+reg    ap_block_state72;
+wire   [57:0] p_cast_fu_99_p4;
+wire   [255:0] tmp_s_fu_126_p4;
+wire   [39:0] tmp_54_fu_136_p4;
+wire   [23:0] trunc_ln174_fu_146_p1;
+reg   [71:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
 wire    ap_ST_fsm_state3_blk;
@@ -365,67 +300,14 @@ wire    ap_ST_fsm_state68_blk;
 wire    ap_ST_fsm_state69_blk;
 wire    ap_ST_fsm_state70_blk;
 reg    ap_ST_fsm_state71_blk;
-wire    ap_ST_fsm_state72_blk;
-wire    ap_ST_fsm_state73_blk;
-wire    ap_ST_fsm_state74_blk;
-wire    ap_ST_fsm_state75_blk;
-wire    ap_ST_fsm_state76_blk;
-reg    ap_ST_fsm_state77_blk;
-wire    ap_ST_fsm_state78_blk;
+reg    ap_ST_fsm_state72_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
 #0 ap_done_reg = 1'b0;
-#0 ap_CS_fsm = 78'd1;
-#0 grp_read_data_Pipeline_1_fu_231_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 72'd1;
 end
-
-run_read_data_dest_AOV_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-dest_AOV_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(dest_AOV_address0),
-    .ce0(dest_AOV_ce0),
-    .we0(dest_AOV_we0),
-    .d0(dest_AOV_d0),
-    .q0(dest_AOV_q0),
-    .address1(dest_AOV_address1),
-    .ce1(dest_AOV_ce1),
-    .we1(dest_AOV_we1),
-    .d1(dest_AOV_d1)
-);
-
-run_read_data_Pipeline_1 grp_read_data_Pipeline_1_fu_231(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_read_data_Pipeline_1_fu_231_ap_start),
-    .ap_done(grp_read_data_Pipeline_1_fu_231_ap_done),
-    .ap_idle(grp_read_data_Pipeline_1_fu_231_ap_idle),
-    .ap_ready(grp_read_data_Pipeline_1_fu_231_ap_ready),
-    .dest_AOV_address0(grp_read_data_Pipeline_1_fu_231_dest_AOV_address0),
-    .dest_AOV_ce0(grp_read_data_Pipeline_1_fu_231_dest_AOV_ce0),
-    .dest_AOV_q0(dest_AOV_q0),
-    .AOV_7_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_7_out_0_out),
-    .AOV_7_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_7_out_0_out_ap_vld),
-    .AOV_6_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_6_out_0_out),
-    .AOV_6_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_6_out_0_out_ap_vld),
-    .AOV_5_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_5_out_0_out),
-    .AOV_5_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_5_out_0_out_ap_vld),
-    .AOV_4_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_4_out_0_out),
-    .AOV_4_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_4_out_0_out_ap_vld),
-    .AOV_3_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_3_out_0_out),
-    .AOV_3_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_3_out_0_out_ap_vld),
-    .AOV_2_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_2_out_0_out),
-    .AOV_2_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_2_out_0_out_ap_vld),
-    .AOV_1_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_1_out_0_out),
-    .AOV_1_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_1_out_0_out_ap_vld),
-    .AOV_0_out_0_out(grp_read_data_Pipeline_1_fu_231_AOV_0_out_0_out),
-    .AOV_0_out_0_out_ap_vld(grp_read_data_Pipeline_1_fu_231_AOV_0_out_0_out_ap_vld)
-);
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
@@ -436,40 +318,9 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_done_reg <= 1'b0;
-    end else begin
-        if ((ap_continue == 1'b1)) begin
-            ap_done_reg <= 1'b0;
-        end else if ((1'b1 == ap_CS_fsm_state78)) begin
-            ap_done_reg <= 1'b1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_read_data_Pipeline_1_fu_231_ap_start_reg <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_CS_fsm_state76)) begin
-            grp_read_data_Pipeline_1_fu_231_ap_start_reg <= 1'b1;
-        end else if ((grp_read_data_Pipeline_1_fu_231_ap_ready == 1'b1)) begin
-            grp_read_data_Pipeline_1_fu_231_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state71)) begin
-        empty_211_reg_552 <= empty_211_fu_345_p1;
-        tmp_55_reg_522 <= {{m_axi_gmem_RDATA[191:160]}};
-        tmp_56_reg_527 <= {{m_axi_gmem_RDATA[223:192]}};
-        tmp_57_reg_532 <= {{m_axi_gmem_RDATA[255:224]}};
-        tmp_58_reg_537 <= {{m_axi_gmem_RDATA[287:256]}};
-        tmp_59_reg_542 <= {{m_axi_gmem_RDATA[319:288]}};
-        tmp_60_reg_547 <= {{m_axi_gmem_RDATA[351:320]}};
-        tmp_reg_512 <= {{m_axi_gmem_RDATA[127:96]}};
-        tmp_s_reg_517 <= {{m_axi_gmem_RDATA[159:128]}};
+        or_ln174_s_reg_170 <= or_ln174_s_fu_150_p4;
+        tobool_reg_166 <= tobool_fu_120_p2;
     end
 end
 
@@ -621,39 +472,19 @@ always @ (*) begin
     end
 end
 
-assign ap_ST_fsm_state72_blk = 1'b0;
-
-assign ap_ST_fsm_state73_blk = 1'b0;
-
-assign ap_ST_fsm_state74_blk = 1'b0;
-
-assign ap_ST_fsm_state75_blk = 1'b0;
-
-assign ap_ST_fsm_state76_blk = 1'b0;
-
 always @ (*) begin
-    if ((grp_read_data_Pipeline_1_fu_231_ap_done == 1'b0)) begin
-        ap_ST_fsm_state77_blk = 1'b1;
+    if (((copyDest_full_n == 1'b0) & (tobool_reg_166 == 1'd0))) begin
+        ap_ST_fsm_state72_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state77_blk = 1'b0;
+        ap_ST_fsm_state72_blk = 1'b0;
     end
 end
-
-assign ap_ST_fsm_state78_blk = 1'b0;
 
 assign ap_ST_fsm_state7_blk = 1'b0;
 
 assign ap_ST_fsm_state8_blk = 1'b0;
 
 assign ap_ST_fsm_state9_blk = 1'b0;
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state78)) begin
-        ap_done = 1'b1;
-    end else begin
-        ap_done = ap_done_reg;
-    end
-end
 
 always @ (*) begin
     if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
@@ -664,110 +495,18 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state78)) begin
-        ap_ready = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state72) & (tobool_reg_166 == 1'd0))) begin
+        copyDest_blk_n = copyDest_full_n;
     end else begin
-        ap_ready = 1'b0;
+        copyDest_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state78)) begin
-        copying_ap_vld = 1'b1;
+    if ((~((copyDest_full_n == 1'b0) & (tobool_reg_166 == 1'd0)) & (1'b1 == ap_CS_fsm_state72) & (tobool_reg_166 == 1'd0))) begin
+        copyDest_write = 1'b1;
     end else begin
-        copying_ap_vld = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state75)) begin
-        dest_AOV_address0 = 64'd7;
-    end else if ((1'b1 == ap_CS_fsm_state74)) begin
-        dest_AOV_address0 = 64'd5;
-    end else if ((1'b1 == ap_CS_fsm_state73)) begin
-        dest_AOV_address0 = 64'd3;
-    end else if ((1'b1 == ap_CS_fsm_state72)) begin
-        dest_AOV_address0 = 64'd1;
-    end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        dest_AOV_address0 = grp_read_data_Pipeline_1_fu_231_dest_AOV_address0;
-    end else begin
-        dest_AOV_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state75)) begin
-        dest_AOV_address1 = 64'd6;
-    end else if ((1'b1 == ap_CS_fsm_state74)) begin
-        dest_AOV_address1 = 64'd4;
-    end else if ((1'b1 == ap_CS_fsm_state73)) begin
-        dest_AOV_address1 = 64'd2;
-    end else if ((1'b1 == ap_CS_fsm_state72)) begin
-        dest_AOV_address1 = 64'd0;
-    end else begin
-        dest_AOV_address1 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) | (1'b1 == ap_CS_fsm_state74) | (1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
-        dest_AOV_ce0 = 1'b1;
-    end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        dest_AOV_ce0 = grp_read_data_Pipeline_1_fu_231_dest_AOV_ce0;
-    end else begin
-        dest_AOV_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) | (1'b1 == ap_CS_fsm_state74) | (1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
-        dest_AOV_ce1 = 1'b1;
-    end else begin
-        dest_AOV_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state75)) begin
-        dest_AOV_d0 = empty_210_fu_377_p1;
-    end else if ((1'b1 == ap_CS_fsm_state74)) begin
-        dest_AOV_d0 = empty_208_fu_369_p1;
-    end else if ((1'b1 == ap_CS_fsm_state73)) begin
-        dest_AOV_d0 = empty_206_fu_361_p1;
-    end else if ((1'b1 == ap_CS_fsm_state72)) begin
-        dest_AOV_d0 = empty_204_fu_353_p1;
-    end else begin
-        dest_AOV_d0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state75)) begin
-        dest_AOV_d1 = empty_209_fu_373_p1;
-    end else if ((1'b1 == ap_CS_fsm_state74)) begin
-        dest_AOV_d1 = empty_207_fu_365_p1;
-    end else if ((1'b1 == ap_CS_fsm_state73)) begin
-        dest_AOV_d1 = empty_205_fu_357_p1;
-    end else if ((1'b1 == ap_CS_fsm_state72)) begin
-        dest_AOV_d1 = empty_fu_349_p1;
-    end else begin
-        dest_AOV_d1 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) | (1'b1 == ap_CS_fsm_state74) | (1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
-        dest_AOV_we0 = 1'b1;
-    end else begin
-        dest_AOV_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state75) | (1'b1 == ap_CS_fsm_state74) | (1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
-        dest_AOV_we1 = 1'b1;
-    end else begin
-        dest_AOV_we1 = 1'b0;
+        copyDest_write = 1'b0;
     end
 end
 
@@ -1027,29 +766,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state72 : begin
-            ap_NS_fsm = ap_ST_fsm_state73;
-        end
-        ap_ST_fsm_state73 : begin
-            ap_NS_fsm = ap_ST_fsm_state74;
-        end
-        ap_ST_fsm_state74 : begin
-            ap_NS_fsm = ap_ST_fsm_state75;
-        end
-        ap_ST_fsm_state75 : begin
-            ap_NS_fsm = ap_ST_fsm_state76;
-        end
-        ap_ST_fsm_state76 : begin
-            ap_NS_fsm = ap_ST_fsm_state77;
-        end
-        ap_ST_fsm_state77 : begin
-            if (((grp_read_data_Pipeline_1_fu_231_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state77))) begin
-                ap_NS_fsm = ap_ST_fsm_state78;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state77;
-            end
-        end
-        ap_ST_fsm_state78 : begin
-            ap_NS_fsm = ap_ST_fsm_state1;
+            ap_NS_fsm = ap_ST_fsm_state72;
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -1063,63 +780,21 @@ assign ap_CS_fsm_state71 = ap_CS_fsm[32'd70];
 
 assign ap_CS_fsm_state72 = ap_CS_fsm[32'd71];
 
-assign ap_CS_fsm_state73 = ap_CS_fsm[32'd72];
-
-assign ap_CS_fsm_state74 = ap_CS_fsm[32'd73];
-
-assign ap_CS_fsm_state75 = ap_CS_fsm[32'd74];
-
-assign ap_CS_fsm_state76 = ap_CS_fsm[32'd75];
-
-assign ap_CS_fsm_state77 = ap_CS_fsm[32'd76];
-
-assign ap_CS_fsm_state78 = ap_CS_fsm[32'd77];
-
 always @ (*) begin
     ap_block_state1 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0));
 end
 
-assign ap_return_0 = empty_211_reg_552;
+always @ (*) begin
+    ap_block_state72 = ((copyDest_full_n == 1'b0) & (tobool_reg_166 == 1'd0));
+end
 
-assign ap_return_1 = grp_read_data_Pipeline_1_fu_231_AOV_0_out_0_out;
+assign ap_done = ap_done_reg;
 
-assign ap_return_2 = grp_read_data_Pipeline_1_fu_231_AOV_1_out_0_out;
+assign ap_ready = 1'b0;
 
-assign ap_return_3 = grp_read_data_Pipeline_1_fu_231_AOV_2_out_0_out;
+assign copyDest_din = or_ln174_s_reg_170;
 
-assign ap_return_4 = grp_read_data_Pipeline_1_fu_231_AOV_3_out_0_out;
-
-assign ap_return_5 = grp_read_data_Pipeline_1_fu_231_AOV_4_out_0_out;
-
-assign ap_return_6 = grp_read_data_Pipeline_1_fu_231_AOV_5_out_0_out;
-
-assign ap_return_7 = grp_read_data_Pipeline_1_fu_231_AOV_6_out_0_out;
-
-assign ap_return_8 = grp_read_data_Pipeline_1_fu_231_AOV_7_out_0_out;
-
-assign copying = 8'd0;
-
-assign empty_204_fu_353_p1 = tmp_s_reg_517;
-
-assign empty_205_fu_357_p1 = tmp_55_reg_522;
-
-assign empty_206_fu_361_p1 = tmp_56_reg_527;
-
-assign empty_207_fu_365_p1 = tmp_57_reg_532;
-
-assign empty_208_fu_369_p1 = tmp_58_reg_537;
-
-assign empty_209_fu_373_p1 = tmp_59_reg_542;
-
-assign empty_210_fu_377_p1 = tmp_60_reg_547;
-
-assign empty_211_fu_345_p1 = m_axi_gmem_RDATA[5:0];
-
-assign empty_fu_349_p1 = tmp_reg_512;
-
-assign grp_read_data_Pipeline_1_fu_231_ap_start = grp_read_data_Pipeline_1_fu_231_ap_start_reg;
-
-assign m_axi_gmem_ARADDR = p_cast_cast_fu_254_p1;
+assign m_axi_gmem_ARADDR = p_cast_cast_fu_109_p1;
 
 assign m_axi_gmem_ARBURST = 2'd0;
 
@@ -1179,8 +854,22 @@ assign m_axi_gmem_WUSER = 1'd0;
 
 assign m_axi_gmem_WVALID = 1'b0;
 
-assign p_cast_cast_fu_254_p1 = $signed(p_cast_fu_244_p4);
+assign or_ln174_s_fu_150_p4 = {{{tmp_s_fu_126_p4}, {tmp_54_fu_136_p4}}, {trunc_ln174_fu_146_p1}};
 
-assign p_cast_fu_244_p4 = {{inputAOV[63:6]}};
+assign p_cast_cast_fu_109_p1 = $signed(p_cast_fu_99_p4);
+
+assign p_cast_fu_99_p4 = {{inputAOV[63:6]}};
+
+assign tmp_54_fu_136_p4 = {{m_axi_gmem_RDATA[71:32]}};
+
+assign tmp_s_fu_126_p4 = {{m_axi_gmem_RDATA[351:96]}};
+
+assign tobool_fu_120_p2 = ((startCopy == 64'd0) ? 1'b1 : 1'b0);
+
+assign trunc_ln174_fu_146_p1 = m_axi_gmem_RDATA[23:0];
+
+always @ (posedge ap_clk) begin
+    ap_done_reg <= 1'b0;
+end
 
 endmodule //run_read_data

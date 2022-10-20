@@ -18,7 +18,7 @@ set ResetLevelFlag 0
 set ResetStyle control
 set ResetSyncFlag 1
 set ResetRegisterFlag 1
-set ResetVariableFlag 1
+set ResetVariableFlag 0
 set ResetRegisterNum 3
 set FsmEncStyle onehot
 set MaxFanout 0
@@ -44,7 +44,7 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg484:-1
 set SourceFiles {sc {} c ../abs_solid_detector.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile /home/francesco/workspace/detector_solid/solution2/solution2.directive
+set DirectiveFile C:/Users/franc/detector_solid/solution2/solution2.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

@@ -33,22 +33,24 @@ module run_control_s_axi
     output wire                          flush,
     input  wire                          flush_done,
     output wire [7:0]                    accel_mode,
-    input  wire [7:0]                    copying,
+    output wire [7:0]                    copying,
     output wire [63:0]                   inputData,
     output wire [7:0]                    IOCheckIdx,
     input  wire [3:0]                    errorInTask_address0,
     input  wire                          errorInTask_ce0,
     input  wire                          errorInTask_we0,
     input  wire [7:0]                    errorInTask_d0,
-    output wire [7:0]                    errorInTask_q0,
     output wire [767:0]                  trainedRegion_i,
     input  wire [767:0]                  trainedRegion_o,
     output wire [7:0]                    IORegionIdx,
     output wire [7:0]                    n_regions_in_i,
     input  wire [7:0]                    n_regions_in_o,
+    output wire [15:0]                   failedTask,
+    output wire                          failedTask_ap_vld,
+    input  wire                          failedTask_ap_ack,
     input  wire [3:0]                    outcomeInRam_address0,
     input  wire                          outcomeInRam_ce0,
-    input  wire [35:0]                   outcomeInRam_we0,
+    input  wire                          outcomeInRam_we0,
     input  wire [287:0]                  outcomeInRam_d0,
     output wire                          ap_start,
     input  wire                          ap_done,
@@ -84,7 +86,7 @@ module run_control_s_axi
 //         others  - reserved
 // 0x014 : reserved
 // 0x018 : Data signal of copying
-//         bit 7~0 - copying[7:0] (Read)
+//         bit 7~0 - copying[7:0] (Read/Write)
 //         others  - reserved
 // 0x01c : reserved
 // 0x028 : Data signal of inputData
@@ -206,6 +208,13 @@ module run_control_s_axi
 //         bit 7~0 - n_regions_in_o[7:0] (Read)
 //         others  - reserved
 // 0x190 : reserved
+// 0x194 : Data signal of failedTask
+//         bit 15~0 - failedTask[15:0] (Read/Write)
+//         others   - reserved
+// 0x198 : Control signal of failedTask
+//         bit 0  - failedTask_ap_vld (Read/Write/COH)
+//         bit 1  - failedTask_ap_ack (Read)
+//         others - reserved
 // 0x040 ~
 // 0x04f : Memory 'errorInTask' (16 * 8b)
 //         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -303,6 +312,8 @@ localparam
     ADDR_N_REGIONS_IN_I_CTRL     = 11'h188,
     ADDR_N_REGIONS_IN_O_DATA_0   = 11'h18c,
     ADDR_N_REGIONS_IN_O_CTRL     = 11'h190,
+    ADDR_FAILEDTASK_DATA_0       = 11'h194,
+    ADDR_FAILEDTASK_CTRL         = 11'h198,
     ADDR_ERRORINTASK_BASE        = 11'h040,
     ADDR_ERRORINTASK_HIGH        = 11'h04f,
     ADDR_OUTCOMEINRAM_BASE       = 11'h400,
@@ -355,6 +366,9 @@ localparam
     reg  [7:0]                    int_IORegionIdx = 'b0;
     reg  [7:0]                    int_n_regions_in_i = 'b0;
     reg  [7:0]                    int_n_regions_in_o = 'b0;
+    reg  [15:0]                   int_failedTask = 'b0;
+    reg                           int_failedTask_ap_vld;
+    wire                          int_failedTask_ap_ack;
     // memory signals
     wire [1:0]                    int_errorInTask_address0;
     wire                          int_errorInTask_ce0;
@@ -374,8 +388,12 @@ localparam
     wire                          int_outcomeInRam_ce0;
     wire [35:0]                   int_outcomeInRam_be0;
     wire [287:0]                  int_outcomeInRam_d0;
+    wire [287:0]                  int_outcomeInRam_q0;
     wire [3:0]                    int_outcomeInRam_address1;
     wire                          int_outcomeInRam_ce1;
+    wire                          int_outcomeInRam_we1;
+    wire [35:0]                   int_outcomeInRam_be1;
+    wire [287:0]                  int_outcomeInRam_d1;
     wire [287:0]                  int_outcomeInRam_q1;
     reg                           int_outcomeInRam_read;
     reg                           int_outcomeInRam_write;
@@ -405,7 +423,7 @@ run_control_s_axi_ram #(
 // int_outcomeInRam
 run_control_s_axi_ram #(
     .MEM_STYLE ( "auto" ),
-    .MEM_TYPE  ( "S2P" ),
+    .MEM_TYPE  ( "T2P" ),
     .BYTES     ( 36 ),
     .DEPTH     ( 16 )
 ) int_outcomeInRam (
@@ -414,12 +432,12 @@ run_control_s_axi_ram #(
     .ce0       ( int_outcomeInRam_ce0 ),
     .we0       ( int_outcomeInRam_be0 ),
     .d0        ( int_outcomeInRam_d0 ),
-    .q0        (  ),
+    .q0        ( int_outcomeInRam_q0 ),
     .clk1      ( ACLK ),
     .address1  ( int_outcomeInRam_address1 ),
     .ce1       ( int_outcomeInRam_ce1 ),
-    .we1       ( {36{1'b0}} ),
-    .d1        ( {288{1'b0}} ),
+    .we1       ( int_outcomeInRam_be1 ),
+    .d1        ( int_outcomeInRam_d1 ),
     .q1        ( int_outcomeInRam_q1 )
 );
 
@@ -700,6 +718,13 @@ always @(posedge ACLK) begin
                 ADDR_N_REGIONS_IN_O_DATA_0: begin
                     rdata <= int_n_regions_in_o[7:0];
                 end
+                ADDR_FAILEDTASK_DATA_0: begin
+                    rdata <= int_failedTask[15:0];
+                end
+                ADDR_FAILEDTASK_CTRL: begin
+                    rdata[0] <= int_failedTask_ap_vld;
+                    rdata[1] <= ~int_failedTask_ap_vld;
+                end
             endcase
         end
         else if (int_errorInTask_read) begin
@@ -713,19 +738,23 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt         = int_interrupt;
-assign ap_start          = int_ap_start;
-assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_done;
-assign task_ap_ready     = ap_ready && !int_auto_restart;
-assign flush             = int_flush;
-assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
-assign sw_reset          = int_sw_reset && int_flush_done;
-assign accel_mode        = int_accel_mode;
-assign inputData         = int_inputData;
-assign IOCheckIdx        = int_IOCheckIdx;
-assign trainedRegion_i   = int_trainedRegion_i;
-assign IORegionIdx       = int_IORegionIdx;
-assign n_regions_in_i    = int_n_regions_in_i;
+assign interrupt             = int_interrupt;
+assign ap_start              = int_ap_start;
+assign task_ap_done          = (ap_done && !auto_restart_status) || auto_restart_done;
+assign task_ap_ready         = ap_ready && !int_auto_restart;
+assign flush                 = int_flush;
+assign auto_restart_done     = auto_restart_status && (ap_idle && !int_ap_idle);
+assign sw_reset              = int_sw_reset && int_flush_done;
+assign accel_mode            = int_accel_mode;
+assign copying               = int_copying;
+assign inputData             = int_inputData;
+assign IOCheckIdx            = int_IOCheckIdx;
+assign trainedRegion_i       = int_trainedRegion_i;
+assign IORegionIdx           = int_IORegionIdx;
+assign n_regions_in_i        = int_n_regions_in_i;
+assign failedTask            = int_failedTask;
+assign failedTask_ap_vld     = int_failedTask_ap_vld;
+assign int_failedTask_ap_ack = failedTask_ap_ack;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -902,13 +931,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_copying
+// int_copying[7:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_copying <= 0;
+        int_copying[7:0] <= 0;
     else if (ACLK_EN) begin
-        if (ap_done)
-            int_copying <= copying;
+        if (w_hs && waddr == ADDR_COPYING_DATA_0)
+            int_copying[7:0] <= (WDATA[31:0] & wmask) | (int_copying[7:0] & ~wmask);
     end
 end
 
@@ -1222,6 +1251,28 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_failedTask[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_failedTask[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_FAILEDTASK_DATA_0)
+            int_failedTask[15:0] <= (WDATA[31:0] & wmask) | (int_failedTask[15:0] & ~wmask);
+    end
+end
+
+// int_failedTask_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_failedTask_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_FAILEDTASK_CTRL && WSTRB[0] && WDATA[0])
+            int_failedTask_ap_vld <= 1'b1;
+        else if (int_failedTask_ap_ack)
+            int_failedTask_ap_vld <= 1'b0; // clear on handshake
+    end
+end
+
 //synthesis translate_off
 always @(posedge ACLK) begin
     if (ACLK_EN) begin
@@ -1237,9 +1288,6 @@ end
 // errorInTask
 assign int_errorInTask_address0  = errorInTask_address0 >> 2;
 assign int_errorInTask_ce0       = errorInTask_ce0;
-assign int_errorInTask_be0       = errorInTask_we0 << errorInTask_address0[1:0];
-assign int_errorInTask_d0        = {4{errorInTask_d0}};
-assign errorInTask_q0            = int_errorInTask_q0 >> (int_errorInTask_shift0 * 8);
 assign int_errorInTask_address1  = ar_hs? raddr[3:2] : waddr[3:2];
 assign int_errorInTask_ce1       = ar_hs | (int_errorInTask_write & WVALID);
 assign int_errorInTask_we1       = int_errorInTask_write & w_hs;
@@ -1248,10 +1296,11 @@ assign int_errorInTask_d1        = WDATA;
 // outcomeInRam
 assign int_outcomeInRam_address0 = outcomeInRam_address0;
 assign int_outcomeInRam_ce0      = outcomeInRam_ce0;
-assign int_outcomeInRam_be0      = outcomeInRam_we0;
-assign int_outcomeInRam_d0       = outcomeInRam_d0;
 assign int_outcomeInRam_address1 = ar_hs? raddr[9:6] : waddr[9:6];
 assign int_outcomeInRam_ce1      = ar_hs | (int_outcomeInRam_write & WVALID);
+assign int_outcomeInRam_we1      = int_outcomeInRam_write & w_hs;
+assign int_outcomeInRam_be1      = int_outcomeInRam_we1 ? WSTRB << (waddr[5:2] * 4) : 'b0;
+assign int_outcomeInRam_d1       = {16{WDATA}};
 // int_errorInTask_read
 always @(posedge ACLK) begin
     if (ARESET)
@@ -1295,6 +1344,18 @@ always @(posedge ACLK) begin
             int_outcomeInRam_read <= 1'b1;
         else
             int_outcomeInRam_read <= 1'b0;
+    end
+end
+
+// int_outcomeInRam_write
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_outcomeInRam_write <= 1'b0;
+    else if (ACLK_EN) begin
+        if (aw_hs && AWADDR[ADDR_BITS-1:0] >= ADDR_OUTCOMEINRAM_BASE && AWADDR[ADDR_BITS-1:0] <= ADDR_OUTCOMEINRAM_HIGH)
+            int_outcomeInRam_write <= 1'b1;
+        else if (w_hs)
+            int_outcomeInRam_write <= 1'b0;
     end
 end
 

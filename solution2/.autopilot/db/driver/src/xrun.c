@@ -91,6 +91,13 @@ u32 XRun_Get_accel_mode(XRun *InstancePtr) {
     return Data;
 }
 
+void XRun_Set_copying(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYING_DATA, Data);
+}
+
 u32 XRun_Get_copying(XRun *InstancePtr) {
     u32 Data;
 
@@ -269,6 +276,50 @@ u32 XRun_Get_n_regions_in_o(XRun *InstancePtr) {
 
     Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_N_REGIONS_IN_O_DATA);
     return Data;
+}
+
+void XRun_Set_failedTask(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_FAILEDTASK_DATA, Data);
+}
+
+u32 XRun_Get_failedTask(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_FAILEDTASK_DATA);
+    return Data;
+}
+
+void XRun_Set_failedTask_vld(XRun *InstancePtr) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_FAILEDTASK_CTRL, 1);
+}
+
+u32 XRun_Get_failedTask_vld(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_FAILEDTASK_CTRL);
+    return Data & 0x1;
+}
+
+u32 XRun_Get_failedTask_ack(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_FAILEDTASK_CTRL);
+    return (Data >> 1) & 0x1;
 }
 
 u32 XRun_Get_errorInTask_BaseAddress(XRun *InstancePtr) {

@@ -14,34 +14,34 @@ module run_run_test_Pipeline_VITIS_LOOP_55_2 (
         ap_done,
         ap_idle,
         ap_ready,
-        tmp_11,
+        tmp_16,
+        trunc_ln1,
+        in_AOV,
+        in_AOV_1,
+        in_AOV_2,
+        in_AOV_3,
+        in_AOV_4,
+        in_AOV_5,
+        in_AOV_6,
+        in_AOV_7,
         regions_address0,
         regions_ce0,
         regions_q0,
+        regions_1_address0,
+        regions_1_ce0,
+        regions_1_q0,
         regions_2_address0,
         regions_2_ce0,
         regions_2_q0,
         regions_3_address0,
         regions_3_ce0,
         regions_3_q0,
-        regions_4_address0,
-        regions_4_ce0,
-        regions_4_q0,
-        trunc_ln1,
-        p_read3,
-        p_read4,
-        p_read5,
-        p_read6,
-        p_read7,
-        p_read8,
-        p_read9,
-        p_read10,
         ap_return,
-        grp_fu_462_p_din0,
-        grp_fu_462_p_din1,
-        grp_fu_462_p_opcode,
-        grp_fu_462_p_dout0,
-        grp_fu_462_p_ce
+        grp_fu_1356_p_din0,
+        grp_fu_1356_p_din1,
+        grp_fu_1356_p_opcode,
+        grp_fu_1356_p_dout0,
+        grp_fu_1356_p_ce
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 5'd1;
@@ -56,40 +56,40 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [11:0] tmp_11;
+input  [11:0] tmp_16;
+input  [0:0] trunc_ln1;
+input  [31:0] in_AOV;
+input  [31:0] in_AOV_1;
+input  [31:0] in_AOV_2;
+input  [31:0] in_AOV_3;
+input  [31:0] in_AOV_4;
+input  [31:0] in_AOV_5;
+input  [31:0] in_AOV_6;
+input  [31:0] in_AOV_7;
 output  [11:0] regions_address0;
 output   regions_ce0;
 input  [31:0] regions_q0;
+output  [11:0] regions_1_address0;
+output   regions_1_ce0;
+input  [31:0] regions_1_q0;
 output  [11:0] regions_2_address0;
 output   regions_2_ce0;
 input  [31:0] regions_2_q0;
 output  [11:0] regions_3_address0;
 output   regions_3_ce0;
 input  [31:0] regions_3_q0;
-output  [11:0] regions_4_address0;
-output   regions_4_ce0;
-input  [31:0] regions_4_q0;
-input  [0:0] trunc_ln1;
-input  [31:0] p_read3;
-input  [31:0] p_read4;
-input  [31:0] p_read5;
-input  [31:0] p_read6;
-input  [31:0] p_read7;
-input  [31:0] p_read8;
-input  [31:0] p_read9;
-input  [31:0] p_read10;
 output  [1:0] ap_return;
-output  [31:0] grp_fu_462_p_din0;
-output  [31:0] grp_fu_462_p_din1;
-output  [4:0] grp_fu_462_p_opcode;
-input  [0:0] grp_fu_462_p_dout0;
-output   grp_fu_462_p_ce;
+output  [31:0] grp_fu_1356_p_din0;
+output  [31:0] grp_fu_1356_p_din1;
+output  [4:0] grp_fu_1356_p_opcode;
+input  [0:0] grp_fu_1356_p_dout0;
+output   grp_fu_1356_p_ce;
 
 reg ap_idle;
 reg regions_ce0;
+reg regions_1_ce0;
 reg regions_2_ce0;
 reg regions_3_ce0;
-reg regions_4_ce0;
 reg[1:0] ap_return;
 
 (* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
@@ -115,11 +115,11 @@ reg   [63:0] j_1_reg_465;
 wire    ap_CS_fsm_pp0_stage1;
 wire    ap_block_state2_pp0_stage1_iter0;
 wire    ap_block_pp0_stage1_11001;
-reg   [11:0] regions_3_addr_reg_481;
-reg   [11:0] regions_4_addr_reg_486;
-wire   [31:0] tmp_1_i_fu_238_p10;
-reg   [31:0] tmp_1_i_reg_491;
-wire   [31:0] tmp_i_fu_252_p4;
+reg   [11:0] regions_2_addr_reg_481;
+reg   [11:0] regions_3_addr_reg_486;
+wire   [31:0] tmp_2_fu_238_p10;
+reg   [31:0] tmp_2_reg_491;
+wire   [31:0] tmp_1_fu_252_p4;
 wire    ap_CS_fsm_pp0_stage2;
 wire    ap_block_state3_pp0_stage2_iter0;
 wire    ap_block_pp0_stage2_11001;
@@ -133,7 +133,7 @@ wire    ap_block_state4_pp0_stage3_iter0;
 wire    ap_block_pp0_stage3_11001;
 wire   [63:0] add_ln55_fu_343_p2;
 reg   [63:0] add_ln55_reg_516;
-wire   [31:0] tmp_2_i_fu_348_p4;
+wire   [31:0] tmp_3_fu_348_p4;
 wire    ap_block_pp0_stage4_11001;
 wire   [0:0] icmp_ln59_4_fu_376_p2;
 reg   [0:0] icmp_ln59_4_reg_526;
@@ -156,7 +156,7 @@ wire   [31:0] bitcast_ln59_fu_262_p1;
 wire   [7:0] tmp_fu_266_p4;
 wire   [22:0] trunc_ln59_1_fu_276_p1;
 wire   [31:0] bitcast_ln59_1_fu_292_p1;
-wire   [7:0] tmp_5_fu_295_p4;
+wire   [7:0] tmp_8_fu_295_p4;
 wire   [22:0] trunc_ln59_2_fu_305_p1;
 wire   [0:0] icmp_ln59_3_fu_319_p2;
 wire   [0:0] icmp_ln59_2_fu_313_p2;
@@ -164,7 +164,7 @@ wire   [0:0] or_ln59_fu_309_p2;
 wire   [0:0] or_ln59_1_fu_325_p2;
 wire   [0:0] and_ln59_fu_331_p2;
 wire   [31:0] bitcast_ln59_2_fu_358_p1;
-wire   [7:0] tmp_7_fu_362_p4;
+wire   [7:0] tmp_s_fu_362_p4;
 wire   [22:0] trunc_ln59_3_fu_372_p1;
 wire   [0:0] or_ln59_2_fu_388_p2;
 reg   [4:0] grp_fu_209_opcode;
@@ -208,17 +208,17 @@ run_mux_864_32_1_1 #(
     .din7_WIDTH( 32 ),
     .din8_WIDTH( 64 ),
     .dout_WIDTH( 32 ))
-mux_864_32_1_1_U845(
-    .din0(p_read3),
-    .din1(p_read4),
-    .din2(p_read5),
-    .din3(p_read6),
-    .din4(p_read7),
-    .din5(p_read8),
-    .din6(p_read9),
-    .din7(p_read10),
+mux_864_32_1_1_U30(
+    .din0(in_AOV),
+    .din1(in_AOV_1),
+    .din2(in_AOV_2),
+    .din3(in_AOV_3),
+    .din4(in_AOV_4),
+    .din5(in_AOV_5),
+    .din6(in_AOV_6),
+    .din7(in_AOV_7),
     .din8(j_fu_80),
-    .dout(tmp_1_i_fu_238_p10)
+    .dout(tmp_2_fu_238_p10)
 );
 
 run_mux_21_32_1_1 #(
@@ -228,11 +228,11 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U846(
+mux_21_32_1_1_U31(
     .din0(regions_q0),
-    .din1(regions_2_q0),
+    .din1(regions_1_q0),
     .din2(trunc_ln1),
-    .dout(tmp_i_fu_252_p4)
+    .dout(tmp_1_fu_252_p4)
 );
 
 run_mux_21_32_1_1 #(
@@ -242,11 +242,11 @@ run_mux_21_32_1_1 #(
     .din1_WIDTH( 32 ),
     .din2_WIDTH( 1 ),
     .dout_WIDTH( 32 ))
-mux_21_32_1_1_U847(
-    .din0(regions_3_q0),
-    .din1(regions_4_q0),
+mux_21_32_1_1_U32(
+    .din0(regions_2_q0),
+    .din1(regions_3_q0),
     .din2(trunc_ln1),
-    .dout(tmp_2_i_fu_348_p4)
+    .dout(tmp_3_fu_348_p4)
 );
 
 run_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_sequential_init_U(
@@ -362,9 +362,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
         j_1_reg_465 <= j_fu_80;
-        regions_3_addr_reg_481 <= zext_ln59_fu_230_p1;
-        regions_4_addr_reg_486 <= zext_ln59_fu_230_p1;
-        tmp_1_i_reg_491 <= tmp_1_i_fu_238_p10;
+        regions_2_addr_reg_481 <= zext_ln59_fu_230_p1;
+        regions_3_addr_reg_486 <= zext_ln59_fu_230_p1;
+        tmp_2_reg_491 <= tmp_2_fu_238_p10;
     end
 end
 
@@ -463,9 +463,9 @@ end
 always @ (*) begin
     if ((ap_enable_reg_pp0_iter0 == 1'b1)) begin
         if (((1'b0 == ap_block_pp0_stage4) & (1'b1 == ap_CS_fsm_pp0_stage4))) begin
-            grp_fu_209_p0 = tmp_2_i_fu_348_p4;
+            grp_fu_209_p0 = tmp_3_fu_348_p4;
         end else if (((1'b0 == ap_block_pp0_stage2) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
-            grp_fu_209_p0 = tmp_i_fu_252_p4;
+            grp_fu_209_p0 = tmp_1_fu_252_p4;
         end else begin
             grp_fu_209_p0 = 'bx;
         end
@@ -476,6 +476,14 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        regions_1_ce0 = 1'b1;
+    end else begin
+        regions_1_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage3_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage3))) begin
         regions_2_ce0 = 1'b1;
     end else begin
         regions_2_ce0 = 1'b0;
@@ -487,14 +495,6 @@ always @ (*) begin
         regions_3_ce0 = 1'b1;
     end else begin
         regions_3_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage3_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage3))) begin
-        regions_4_ce0 = 1'b1;
-    end else begin
-        regions_4_ce0 = 1'b0;
     end
 end
 
@@ -553,11 +553,11 @@ end
 
 assign add_ln55_fu_343_p2 = (j_1_reg_465 + 64'd1);
 
-assign add_ln59_fu_225_p2 = (tmp_11 + trunc_ln59_fu_221_p1);
+assign add_ln59_fu_225_p2 = (tmp_16 + trunc_ln59_fu_221_p1);
 
-assign and_ln59_1_fu_337_p2 = (grp_fu_462_p_dout0 & and_ln59_fu_331_p2);
+assign and_ln59_1_fu_337_p2 = (grp_fu_1356_p_dout0 & and_ln59_fu_331_p2);
 
-assign and_ln59_2_fu_392_p2 = (or_ln59_2_fu_388_p2 & grp_fu_462_p_dout0);
+assign and_ln59_2_fu_392_p2 = (or_ln59_2_fu_388_p2 & grp_fu_1356_p_dout0);
 
 assign and_ln59_fu_331_p2 = (or_ln59_fu_309_p2 & or_ln59_1_fu_325_p2);
 
@@ -633,27 +633,27 @@ assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign bitcast_ln59_1_fu_292_p1 = tmp_1_i_reg_491;
+assign bitcast_ln59_1_fu_292_p1 = tmp_2_reg_491;
 
-assign bitcast_ln59_2_fu_358_p1 = tmp_2_i_fu_348_p4;
+assign bitcast_ln59_2_fu_358_p1 = tmp_3_fu_348_p4;
 
-assign bitcast_ln59_fu_262_p1 = tmp_i_fu_252_p4;
+assign bitcast_ln59_fu_262_p1 = tmp_1_fu_252_p4;
 
-assign grp_fu_462_p_ce = 1'b1;
+assign grp_fu_1356_p_ce = 1'b1;
 
-assign grp_fu_462_p_din0 = grp_fu_209_p0;
+assign grp_fu_1356_p_din0 = grp_fu_209_p0;
 
-assign grp_fu_462_p_din1 = tmp_1_i_reg_491;
+assign grp_fu_1356_p_din1 = tmp_2_reg_491;
 
-assign grp_fu_462_p_opcode = grp_fu_209_opcode;
+assign grp_fu_1356_p_opcode = grp_fu_209_opcode;
 
 assign icmp_ln59_1_fu_286_p2 = ((trunc_ln59_1_fu_276_p1 == 23'd0) ? 1'b1 : 1'b0);
 
-assign icmp_ln59_2_fu_313_p2 = ((tmp_5_fu_295_p4 != 8'd255) ? 1'b1 : 1'b0);
+assign icmp_ln59_2_fu_313_p2 = ((tmp_8_fu_295_p4 != 8'd255) ? 1'b1 : 1'b0);
 
 assign icmp_ln59_3_fu_319_p2 = ((trunc_ln59_2_fu_305_p1 == 23'd0) ? 1'b1 : 1'b0);
 
-assign icmp_ln59_4_fu_376_p2 = ((tmp_7_fu_362_p4 != 8'd255) ? 1'b1 : 1'b0);
+assign icmp_ln59_4_fu_376_p2 = ((tmp_s_fu_362_p4 != 8'd255) ? 1'b1 : 1'b0);
 
 assign icmp_ln59_5_fu_382_p2 = ((trunc_ln59_3_fu_372_p1 == 23'd0) ? 1'b1 : 1'b0);
 
@@ -667,19 +667,19 @@ assign or_ln59_2_fu_388_p2 = (icmp_ln59_5_reg_531 | icmp_ln59_4_reg_526);
 
 assign or_ln59_fu_309_p2 = (icmp_ln59_reg_502 | icmp_ln59_1_reg_507);
 
-assign regions_2_address0 = zext_ln59_fu_230_p1;
+assign regions_1_address0 = zext_ln59_fu_230_p1;
 
-assign regions_3_address0 = regions_3_addr_reg_481;
+assign regions_2_address0 = regions_2_addr_reg_481;
 
-assign regions_4_address0 = regions_4_addr_reg_486;
+assign regions_3_address0 = regions_3_addr_reg_486;
 
 assign regions_address0 = zext_ln59_fu_230_p1;
 
-assign tmp_5_fu_295_p4 = {{bitcast_ln59_1_fu_292_p1[30:23]}};
-
-assign tmp_7_fu_362_p4 = {{bitcast_ln59_2_fu_358_p1[30:23]}};
+assign tmp_8_fu_295_p4 = {{bitcast_ln59_1_fu_292_p1[30:23]}};
 
 assign tmp_fu_266_p4 = {{bitcast_ln59_fu_262_p1[30:23]}};
+
+assign tmp_s_fu_362_p4 = {{bitcast_ln59_2_fu_358_p1[30:23]}};
 
 assign trunc_ln59_1_fu_276_p1 = bitcast_ln59_fu_262_p1[22:0];
 

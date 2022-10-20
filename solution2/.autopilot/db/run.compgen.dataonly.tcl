@@ -11,7 +11,7 @@ accel_mode {
 	offset_end 23
 }
 copying { 
-	dir O
+	dir I
 	width 8
 	depth 1
 	mode ap_none
@@ -35,7 +35,7 @@ IOCheckIdx {
 	offset_end 59
 }
 errorInTask { 
-	dir IO
+	dir X
 	width 8
 	depth 16
 	mode ap_memory
@@ -43,7 +43,7 @@ errorInTask {
 	offset_end 79
 	core_op ram_1p
 	core_impl auto
-	core_latency 1
+	core_latency 3
 	byte_write 0
 }
 trainedRegion_i { 
@@ -86,8 +86,16 @@ n_regions_in_o {
 	offset 396
 	offset_end 403
 }
+failedTask { 
+	dir I
+	width 16
+	depth 1
+	mode ap_hs
+	offset 404
+	offset_end 411
+}
 outcomeInRam { 
-	dir O
+	dir X
 	width 288
 	depth 16
 	mode ap_memory
@@ -95,8 +103,8 @@ outcomeInRam {
 	offset_end 2047
 	core_op ram_1p
 	core_impl auto
-	core_latency 1
-	byte_write 1
+	core_latency 3
+	byte_write 0
 }
 ap_start { }
 ap_done { }

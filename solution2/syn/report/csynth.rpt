@@ -4,8 +4,8 @@
 == Synthesis Summary Report of 'run'
 ================================================================
 + General Information: 
-    * Date:           Mon Oct 17 15:15:08 2022
-    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Date:           Thu Oct 20 12:05:56 2022
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
     * Product family: zynq
@@ -15,44 +15,26 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +--------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |                      Modules                     |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
-    |                      & Loops                     |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
-    +--------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |+ run                                             |  Timing|  -0.55|     1297|  2.335e+04|         -|     1298|     -|        no|  64 (22%)|  22 (10%)|  34081 (32%)|  42358 (79%)|    -|
-    | + runTrain*                                      |  Timing|  -0.55|     1293|  2.327e+04|         -|     1206|     -|  dataflow|         -|  22 (10%)|  17049 (16%)|  23703 (44%)|    -|
-    |  + entry_proc                                    |       -|   9.51|        0|      0.000|         -|        0|     -|        no|         -|         -|      2 (~0%)|     587 (1%)|    -|
-    |  + read_data                                     |  Timing|  -0.00|       87|  1.566e+03|         -|       87|     -|        no|         -|         -|    672 (~0%)|     606 (1%)|    -|
-    |   + read_data_Pipeline_1                         |       -|   9.82|       10|    180.000|         -|       10|     -|        no|         -|         -|    266 (~0%)|     60 (~0%)|    -|
-    |    o Loop 1                                      |       -|  13.14|        8|    144.000|         2|        1|     8|       yes|         -|         -|            -|            -|    -|
-    |  + runTrain_Block_entry174_proc                  |  Timing|  -0.55|     1205|  2.169e+04|         -|     1205|     -|        no|         -|  22 (10%)|    9136 (8%)|  17380 (32%)|    -|
-    |   + insert_point2                                |  Timing|  -0.55|     1204|  2.167e+04|         -|     1204|     -|        no|         -|  22 (10%)|    8108 (7%)|  12841 (24%)|    -|
-    |    + insert_point2_Pipeline_is_valid_label2      |       -|   5.14|       19|    342.000|         -|       19|     -|        no|         -|         -|     16 (~0%)|    157 (~0%)|    -|
-    |     o is_valid_label2                            |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
-    |    + insert_point2_Pipeline_insert_point_label4  |       -|   7.58|       10|    180.000|         -|       10|     -|        no|         -|         -|      6 (~0%)|    163 (~0%)|    -|
-    |     o insert_point_label4                        |       -|  13.14|        8|    144.000|         1|        1|     8|       yes|         -|         -|            -|            -|    -|
-    |    + insert_point2_Pipeline_VITIS_LOOP_262_1     |  Timing|  -0.55|     1134|  2.041e+04|         -|     1134|     -|        no|         -|   17 (7%)|    5859 (5%)|   8432 (15%)|    -|
-    |     o VITIS_LOOP_262_1                           |       -|  13.14|     1132|  2.038e+04|        46|        8|   136|       yes|         -|         -|            -|            -|    -|
-    |    + insert_point2_Pipeline_insert_point_label6  |       -|   0.76|       26|    468.000|         -|       26|     -|        no|         -|         -|    567 (~0%)|     600 (1%)|    -|
-    |     o insert_point_label6                        |      II|  13.14|       24|    432.000|        11|        2|     8|       yes|         -|         -|            -|            -|    -|
-    | + runTest*                                       |  Timing|  -0.00|      880|  1.584e+04|         -|      792|     -|  dataflow|         -|         -|  10906 (10%)|  10209 (19%)|    -|
-    |  + entry_proc17                                  |       -|   9.51|        0|      0.000|         -|        0|     -|        no|         -|         -|      2 (~0%)|     587 (1%)|    -|
-    |  + read_data_1                                   |  Timing|  -0.00|       87|  1.566e+03|         -|       87|     -|        no|         -|         -|    706 (~0%)|     606 (1%)|    -|
-    |   + read_data_1_Pipeline_1                       |       -|   9.82|       10|    180.000|         -|       10|     -|        no|         -|         -|    266 (~0%)|     60 (~0%)|    -|
-    |    o Loop 1                                      |       -|  13.14|        8|    144.000|         2|        1|     8|       yes|         -|         -|            -|            -|    -|
-    |  + runTest_Block_entry6987_proc                  |       -|   6.37|        0|      0.000|         -|        0|     -|        no|         -|         -|     24 (~0%)|     887 (1%)|    -|
-    |  + run_test                                      |       -|   1.77|      791|  1.424e+04|         -|      791|     -|        no|         -|         -|    324 (~0%)|     813 (1%)|    -|
-    |   + run_test_Pipeline_is_valid_label2            |       -|   5.14|       19|    342.000|         -|       19|     -|        no|         -|         -|     16 (~0%)|    157 (~0%)|    -|
-    |    o is_valid_label2                             |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|         -|            -|            -|    -|
-    |   o VITIS_LOOP_49_1                              |       -|  13.14|      769|  1.384e+04|        48|        -|    16|        no|         -|         -|            -|            -|    -|
-    |    + run_test_Pipeline_VITIS_LOOP_55_2           |       -|   2.87|       46|    828.000|         -|       46|     -|        no|         -|         -|    265 (~0%)|    411 (~0%)|    -|
-    |     o VITIS_LOOP_55_2                            |      II|  13.14|       44|    792.000|         5|        5|     8|       yes|         -|         -|            -|            -|    -|
-    |  + runTest_Block_entry6989_proc                  |       -|   9.51|        0|      0.000|         -|        0|     -|        no|         -|         -|     38 (~0%)|     47 (~0%)|    -|
-    |  + runTest_Block_entry6990_proc                  |       -|   3.70|       20|    360.000|         -|       20|     -|        no|         -|         -|    681 (~0%)|     698 (1%)|    -|
-    |   + writeOutcome                                 |       -|   5.97|       18|    324.000|         -|       18|     -|        no|         -|         -|    292 (~0%)|    303 (~0%)|    -|
-    |    + writeOutcome_Pipeline_1                     |       -|   8.51|       10|    180.000|         -|       10|     -|        no|         -|         -|      6 (~0%)|     91 (~0%)|    -|
-    |     o Loop 1                                     |       -|  13.14|        8|    144.000|         1|        1|     8|       yes|         -|         -|            -|            -|    -|
-    +--------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    +------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+    |                  Modules                 |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |    |           |            |     |
+    |                  & Loops                 |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   | DSP|     FF    |     LUT    | URAM|
+    +------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
+    |+ run                                     |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|  48 (17%)|   -|  7398 (6%)|  9222 (17%)|    -|
+    | + runTest*                               |  Timing|  -0.00|        -|          -|         -|        -|     -|  dataflow|         -|   -|  1772 (1%)|   1816 (3%)|    -|
+    |  + read_data                             |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|         -|   -|  393 (~0%)|   405 (~0%)|    -|
+    |   o VITIS_LOOP_494_1                     |       -|  13.14|        -|          -|         1|        -|     -|        no|         -|   -|          -|           -|    -|
+    |  + run_test                              |       -|   1.77|        -|          -|         -|        -|     -|        no|         -|   -|  1177 (1%)|   1244 (2%)|    -|
+    |   o VITIS_LOOP_460_1                     |       -|  13.14|        -|          -|       797|        -|     -|        no|         -|   -|          -|           -|    -|
+    |    + run_test_Pipeline_1                 |       -|   8.51|       10|    180.000|         -|       10|     -|        no|         -|   -|    6 (~0%)|    91 (~0%)|    -|
+    |     o Loop 1                             |       -|  13.14|        8|    144.000|         1|        1|     8|       yes|         -|   -|          -|           -|    -|
+    |    + run_test_Pipeline_is_valid_label2   |       -|   5.14|       19|    342.000|         -|       19|     -|        no|         -|   -|   16 (~0%)|   157 (~0%)|    -|
+    |     o is_valid_label2                    |      II|  13.14|       17|    306.000|         2|        2|     8|       yes|         -|   -|          -|           -|    -|
+    |    o VITIS_LOOP_49_1                     |       -|  13.14|      769|  1.384e+04|        48|        -|    16|        no|         -|   -|          -|           -|    -|
+    |     + run_test_Pipeline_VITIS_LOOP_55_2  |       -|   2.87|       46|    828.000|         -|       46|     -|        no|         -|   -|  265 (~0%)|   411 (~0%)|    -|
+    |      o VITIS_LOOP_55_2                   |      II|  13.14|       44|    792.000|         5|        5|     8|       yes|         -|   -|          -|           -|    -|
+    |  + writeOutcome                          |       -|   9.51|        -|          -|         -|        -|     -|        no|         -|   -|    2 (~0%)|    25 (~0%)|    -|
+    |   o VITIS_LOOP_420_1                     |       -|  13.14|        -|          -|         1|        -|     -|        no|         -|   -|          -|           -|    -|
+    +------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----+-----------+------------+-----+
 
 
 ================================================================
@@ -67,11 +49,11 @@
 +------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
-+---------------+------------+---------------+--------+----------+-------------------+
-| Interface     | Data Width | Address Width | Offset | Register | Resource Estimate |
-+---------------+------------+---------------+--------+----------+-------------------+
-| s_axi_control | 32         | 11            | 16     | 0        | BRAM=16           |
-+---------------+------------+---------------+--------+----------+-------------------+
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 11            | 16     | 0        |
++---------------+------------+---------------+--------+----------+
 
 * S_AXILITE Registers
 +---------------+--------------------+--------+-------+--------+----------------------------------+---------------------------------------------------------------------------------+
@@ -82,7 +64,7 @@
 | s_axi_control | IP_IER             | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                   |
 | s_axi_control | IP_ISR             | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                   |
 | s_axi_control | accel_mode         | 0x10   | 32    | W      | Data signal of accel_mode        |                                                                                 |
-| s_axi_control | copying            | 0x18   | 32    | R      | Data signal of copying           |                                                                                 |
+| s_axi_control | copying            | 0x18   | 32    | W      | Data signal of copying           |                                                                                 |
 | s_axi_control | inputData_1        | 0x28   | 32    | W      | Data signal of inputData         |                                                                                 |
 | s_axi_control | inputData_2        | 0x2c   | 32    | W      | Data signal of inputData         |                                                                                 |
 | s_axi_control | IOCheckIdx         | 0x34   | 32    | W      | Data signal of IOCheckIdx        |                                                                                 |
@@ -137,14 +119,16 @@
 | s_axi_control | IORegionIdx        | 0x17c  | 32    | W      | Data signal of IORegionIdx       |                                                                                 |
 | s_axi_control | n_regions_in_i     | 0x184  | 32    | W      | Data signal of n_regions_in_i    |                                                                                 |
 | s_axi_control | n_regions_in_o     | 0x18c  | 32    | R      | Data signal of n_regions_in_o    |                                                                                 |
+| s_axi_control | failedTask         | 0x194  | 32    | W      | Data signal of failedTask        |                                                                                 |
+| s_axi_control | failedTask_ctrl    | 0x198  | 32    | RW     | Control signal of failedTask     | 0=failedTask_ap_vld 1=failedTask_ap_ack                                         |
 +---------------+--------------------+--------+-------+--------+----------------------------------+---------------------------------------------------------------------------------+
 
 * REGISTER
-+------------+-------+----------+
-| Interface  | Mode  | Bitwidth |
-+------------+-------+----------+
-| failedTask | ap_hs | 16       |
-+------------+-------+----------+
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| startCopy | ap_none | 64       |
++-----------+---------+----------+
 
 * TOP LEVEL CONTROL
 +-----------+------------+-----------+
@@ -167,467 +151,174 @@
 | accel_mode      | in        | char         |
 | copying         | out       | char*        |
 | inputData       | in        | controlStr*  |
-| errorInTask     | inout     | char*        |
-| outcomeInRam    | out       | OutcomeStr*  |
+| startCopy       | in        | bool*        |
+| errorInTask     | unused    | char*        |
+| outcomeInRam    | unused    | OutcomeStr*  |
 | trainedRegion_i | in        | REGION_T     |
 | trainedRegion_o | out       | REGION_T*    |
 | IOCheckIdx      | in        | ap_uint<8>   |
 | IORegionIdx     | in        | ap_uint<8>   |
 | n_regions_in    | inout     | ap_uint<8>*  |
-| failedTask      | out       | taskFailure* |
+| failedTask      | unused    | taskFailure* |
 +-----------------+-----------+--------------+
 
 * SW-to-HW Mapping
-+-----------------+-------------------+-----------+----------+-----------------------------------------------+
-| Argument        | HW Interface      | HW Type   | HW Usage | HW Info                                       |
-+-----------------+-------------------+-----------+----------+-----------------------------------------------+
-| accel_mode      | s_axi_control     | register  |          | name=accel_mode offset=0x10 range=32          |
-| copying         | s_axi_control     | register  |          | name=copying offset=0x18 range=32             |
-| inputData       | m_axi_gmem        | interface |          |                                               |
-| inputData       | s_axi_control     | register  | offset   | name=inputData_1 offset=0x28 range=32         |
-| inputData       | s_axi_control     | register  | offset   | name=inputData_2 offset=0x2c range=32         |
-| errorInTask     | s_axi_control     | memory    |          | name=errorInTask offset=64 range=16           |
-| outcomeInRam    | s_axi_control     | memory    |          | name=outcomeInRam offset=1024 range=1024      |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_1 offset=0x50 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_2 offset=0x54 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_3 offset=0x58 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_4 offset=0x5c range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_5 offset=0x60 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_6 offset=0x64 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_7 offset=0x68 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_8 offset=0x6c range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_9 offset=0x70 range=32   |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_10 offset=0x74 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_11 offset=0x78 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_12 offset=0x7c range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_13 offset=0x80 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_14 offset=0x84 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_15 offset=0x88 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_16 offset=0x8c range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_17 offset=0x90 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_18 offset=0x94 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_19 offset=0x98 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_20 offset=0x9c range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_21 offset=0xa0 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_22 offset=0xa4 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_23 offset=0xa8 range=32  |
-| trainedRegion_i | s_axi_control     | register  |          | name=trainedRegion_i_24 offset=0xac range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_1 offset=0xb4 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_2 offset=0xb8 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_3 offset=0xbc range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_4 offset=0xc0 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_5 offset=0xc4 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_6 offset=0xc8 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_7 offset=0xcc range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_8 offset=0xd0 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_9 offset=0xd4 range=32   |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_10 offset=0xd8 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_11 offset=0xdc range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_12 offset=0xe0 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_13 offset=0xe4 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_14 offset=0xe8 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_15 offset=0xec range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_16 offset=0xf0 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_17 offset=0xf4 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_18 offset=0xf8 range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_19 offset=0xfc range=32  |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_20 offset=0x100 range=32 |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_21 offset=0x104 range=32 |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_22 offset=0x108 range=32 |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_23 offset=0x10c range=32 |
-| trainedRegion_o | s_axi_control     | register  |          | name=trainedRegion_o_24 offset=0x110 range=32 |
-| IOCheckIdx      | s_axi_control     | register  |          | name=IOCheckIdx offset=0x34 range=32          |
-| IORegionIdx     | s_axi_control     | register  |          | name=IORegionIdx offset=0x17c range=32        |
-| n_regions_in    | s_axi_control     | register  |          | name=n_regions_in_i offset=0x184 range=32     |
-| n_regions_in    | s_axi_control     | register  |          | name=n_regions_in_o offset=0x18c range=32     |
-| failedTask      | failedTask        | port      |          |                                               |
-| failedTask      | failedTask_ap_vld | port      |          |                                               |
-| failedTask      | failedTask_ap_ack | port      |          |                                               |
-+-----------------+-------------------+-----------+----------+-----------------------------------------------+
++-----------------+---------------+-----------+----------+-----------------------------------------------+
+| Argument        | HW Interface  | HW Type   | HW Usage | HW Info                                       |
++-----------------+---------------+-----------+----------+-----------------------------------------------+
+| accel_mode      | s_axi_control | register  |          | name=accel_mode offset=0x10 range=32          |
+| copying         | s_axi_control | register  |          | name=copying offset=0x18 range=32             |
+| inputData       | m_axi_gmem    | interface |          |                                               |
+| inputData       | s_axi_control | register  | offset   | name=inputData_1 offset=0x28 range=32         |
+| inputData       | s_axi_control | register  | offset   | name=inputData_2 offset=0x2c range=32         |
+| startCopy       | m_axi_gmem    | interface |          |                                               |
+| startCopy       | startCopy     | port      | offset   |                                               |
+| errorInTask     | s_axi_control | memory    |          | name=errorInTask offset=64 range=16           |
+| outcomeInRam    | s_axi_control | memory    |          | name=outcomeInRam offset=1024 range=1024      |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_1 offset=0x50 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_2 offset=0x54 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_3 offset=0x58 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_4 offset=0x5c range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_5 offset=0x60 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_6 offset=0x64 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_7 offset=0x68 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_8 offset=0x6c range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_9 offset=0x70 range=32   |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_10 offset=0x74 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_11 offset=0x78 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_12 offset=0x7c range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_13 offset=0x80 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_14 offset=0x84 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_15 offset=0x88 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_16 offset=0x8c range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_17 offset=0x90 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_18 offset=0x94 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_19 offset=0x98 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_20 offset=0x9c range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_21 offset=0xa0 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_22 offset=0xa4 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_23 offset=0xa8 range=32  |
+| trainedRegion_i | s_axi_control | register  |          | name=trainedRegion_i_24 offset=0xac range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_1 offset=0xb4 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_2 offset=0xb8 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_3 offset=0xbc range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_4 offset=0xc0 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_5 offset=0xc4 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_6 offset=0xc8 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_7 offset=0xcc range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_8 offset=0xd0 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_9 offset=0xd4 range=32   |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_10 offset=0xd8 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_11 offset=0xdc range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_12 offset=0xe0 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_13 offset=0xe4 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_14 offset=0xe8 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_15 offset=0xec range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_16 offset=0xf0 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_17 offset=0xf4 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_18 offset=0xf8 range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_19 offset=0xfc range=32  |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_20 offset=0x100 range=32 |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_21 offset=0x104 range=32 |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_22 offset=0x108 range=32 |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_23 offset=0x10c range=32 |
+| trainedRegion_o | s_axi_control | register  |          | name=trainedRegion_o_24 offset=0x110 range=32 |
+| IOCheckIdx      | s_axi_control | register  |          | name=IOCheckIdx offset=0x34 range=32          |
+| IORegionIdx     | s_axi_control | register  |          | name=IORegionIdx offset=0x17c range=32        |
+| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_i offset=0x184 range=32     |
+| n_regions_in    | s_axi_control | register  |          | name=n_regions_in_o offset=0x18c range=32     |
+| failedTask      | s_axi_control | register  |          | name=failedTask offset=0x194 range=32         |
+| failedTask      | s_axi_control | register  |          | name=failedTask_ctrl offset=0x198 range=32    |
++-----------------+---------------+-----------+----------+-----------------------------------------------+
 
-
-================================================================
-== M_AXI Burst Information
-================================================================
- Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
-
-  No burst in design
 
 ================================================================
 == Bind Op Report
 ================================================================
-+--------------------------------------------------+-----+--------+---------------------------------+------+---------+---------+
-| Name                                             | DSP | Pragma | Variable                        | Op   | Impl    | Latency |
-+--------------------------------------------------+-----+--------+---------------------------------+------+---------+---------+
-| + run                                            | 22  |        |                                 |      |         |         |
-|   add_ln652_fu_2114_p2                           | -   |        | add_ln652                       | add  | fabric  | 0       |
-|   add_ln649_fu_2569_p2                           | -   |        | add_ln649                       | add  | fabric  | 0       |
-|  + runTrain                                      | 22  |        |                                 |      |         |         |
-|    checkId_V_U                                   | -   |        | checkId_V                       | fifo | srl     | 0       |
-|    AOV_U                                         | -   |        | AOV                             | fifo | srl     | 0       |
-|    AOV_1_U                                       | -   |        | AOV_1                           | fifo | srl     | 0       |
-|    AOV_2_U                                       | -   |        | AOV_2                           | fifo | srl     | 0       |
-|    AOV_3_U                                       | -   |        | AOV_3                           | fifo | srl     | 0       |
-|    AOV_4_U                                       | -   |        | AOV_4                           | fifo | srl     | 0       |
-|    AOV_5_U                                       | -   |        | AOV_5                           | fifo | srl     | 0       |
-|    AOV_6_U                                       | -   |        | AOV_6                           | fifo | srl     | 0       |
-|    AOV_7_U                                       | -   |        | AOV_7                           | fifo | srl     | 0       |
-|   + read_data                                    | 0   |        |                                 |      |         |         |
-|    + read_data_Pipeline_1                        | 0   |        |                                 |      |         |         |
-|      empty_fu_175_p2                             | -   |        | empty                           | add  | fabric  | 0       |
-|   + runTrain_Block_entry174_proc                 | 22  |        |                                 |      |         |         |
-|    + insert_point2                               | 22  |        |                                 |      |         |         |
-|      fcmp_32ns_32ns_1_2_no_dsp_1_U240            | -   |        | add_ln243                       | add  | fabric  | 0       |
-|      add_ln243_6_fu_1312_p2                      | -   |        | add_ln243_6                     | add  | fabric  | 0       |
-|      add_ln243_7_fu_1331_p2                      | -   |        | add_ln243_7                     | add  | fabric  | 0       |
-|      add_ln243_8_fu_1350_p2                      | -   |        | add_ln243_8                     | add  | fabric  | 0       |
-|      add_ln243_9_fu_1369_p2                      | -   |        | add_ln243_9                     | add  | fabric  | 0       |
-|      faddfsub_32ns_32ns_32_4_full_dsp_1_U243     | -   |        | add_ln243_10                    | add  | fabric  | 0       |
-|      add_ln886_fu_1408_p2                        | -   |        | add_ln886                       | add  | fabric  | 0       |
-|      add_ln349_fu_1445_p2                        | -   |        | add_ln349                       | add  | fabric  | 0       |
-|      add_ln349_1_fu_1459_p2                      | -   |        | add_ln349_1                     | add  | fabric  | 0       |
-|      add_ln352_fu_1473_p2                        | -   |        | add_ln352                       | add  | fabric  | 0       |
-|      add_ln352_1_fu_1487_p2                      | -   |        | add_ln352_1                     | add  | fabric  | 0       |
-|      add_ln367_fu_1501_p2                        | -   |        | add_ln367                       | add  | fabric  | 0       |
-|      add_ln367_1_fu_1506_p2                      | -   |        | add_ln367_1                     | add  | fabric  | 0       |
-|      add_ln349_2_fu_1521_p2                      | -   |        | add_ln349_2                     | add  | fabric  | 0       |
-|      add_ln349_3_fu_1535_p2                      | -   |        | add_ln349_3                     | add  | fabric  | 0       |
-|      add_ln352_2_fu_1549_p2                      | -   |        | add_ln352_2                     | add  | fabric  | 0       |
-|      add_ln352_3_fu_1563_p2                      | -   |        | add_ln352_3                     | add  | fabric  | 0       |
-|      add_ln355_fu_1577_p2                        | -   |        | add_ln355                       | add  | fabric  | 0       |
-|      add_ln355_1_fu_1591_p2                      | -   |        | add_ln355_1                     | add  | fabric  | 0       |
-|     + insert_point2_Pipeline_is_valid_label2     | 0   |        |                                 |      |         |         |
-|       add_ln70_fu_161_p2                         | -   |        | add_ln70                        | add  | fabric  | 0       |
-|     + insert_point2_Pipeline_insert_point_label4 | 0   |        |                                 |      |         |         |
-|       add_ln242_fu_262_p2                        | -   |        | add_ln242                       | add  | fabric  | 0       |
-|       add_ln243_fu_272_p2                        | -   |        | add_ln243                       | add  | fabric  | 0       |
-|       add_ln243_1_fu_283_p2                      | -   |        | add_ln243_1                     | add  | fabric  | 0       |
-|       add_ln243_2_fu_294_p2                      | -   |        | add_ln243_2                     | add  | fabric  | 0       |
-|       add_ln243_3_fu_305_p2                      | -   |        | add_ln243_3                     | add  | fabric  | 0       |
-|       add_ln243_4_fu_316_p2                      | -   |        | add_ln243_4                     | add  | fabric  | 0       |
-|       add_ln243_5_fu_327_p2                      | -   |        | add_ln243_5                     | add  | fabric  | 0       |
-|     + insert_point2_Pipeline_VITIS_LOOP_262_1    | 17  |        |                                 |      |         |         |
-|       add_ln295_fu_1408_p2                       | -   |        | add_ln295                       | add  | fabric  | 0       |
-|       add_ln295_1_fu_1426_p2                     | -   |        | add_ln295_1                     | add  | fabric  | 0       |
-|       add_ln295_2_fu_1444_p2                     | -   |        | add_ln295_2                     | add  | fabric  | 0       |
-|       add_ln295_3_fu_1462_p2                     | -   |        | add_ln295_3                     | add  | fabric  | 0       |
-|       add_ln290_fu_1480_p2                       | -   |        | add_ln290                       | add  | fabric  | 0       |
-|       add_ln290_1_fu_1498_p2                     | -   |        | add_ln290_1                     | add  | fabric  | 0       |
-|       add_ln296_fu_1526_p2                       | -   |        | add_ln296                       | add  | fabric  | 0       |
-|       add_ln296_1_fu_1544_p2                     | -   |        | add_ln296_1                     | add  | fabric  | 0       |
-|       add_ln296_2_fu_1562_p2                     | -   |        | add_ln296_2                     | add  | fabric  | 0       |
-|       add_ln296_3_fu_1580_p2                     | -   |        | add_ln296_3                     | add  | fabric  | 0       |
-|       add_ln290_2_fu_1598_p2                     | -   |        | add_ln290_2                     | add  | fabric  | 0       |
-|       add_ln290_3_fu_1616_p2                     | -   |        | add_ln290_3                     | add  | fabric  | 0       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d1                              | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d2                              | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | sub                             | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub2                            | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | distance_1                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d1_1                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d2_1                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | sub79_1                         | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub91_1                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | distance_2                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d1_2                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d2_2                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | sub79_2                         | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | ov_8                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub91_2                         | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | ov_9                            | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | overlap_2                       | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | distance_3                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d1_3                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d2_3                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | sub79_3                         | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub91_3                         | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | overlap_3                       | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d_4                             | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | distance_4                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d1_4                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | d2_4                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub79_4                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_16                           | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | sub91_4                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_17                           | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | overlap_4                       | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d_5                             | fsub | fulldsp | 3       |
-|       fadd_32ns_32ns_32_4_full_dsp_1_U184        | 2   |        | distance_5                      | fadd | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d1_5                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | d2_5                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub79_5                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_20                           | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | sub91_5                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_21                           | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | overlap_5                       | fmul | maxdsp  | 1       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U178        | 2   |        | d_6                             | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | mul_6                           | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | distance_6                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | d1_6                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | d2_6                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | sub79_6                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_24                           | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U179        | 2   |        | sub91_6                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | ov_25                           | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | overlap_6                       | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | d_7                             | fsub | fulldsp | 3       |
-|       fmul_32ns_32ns_32_2_max_dsp_1_U186         | 3   |        | mul_7                           | fmul | maxdsp  | 1       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | distance_7                      | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U180        | 2   |        | d1_7                            | fsub | fulldsp | 3       |
-|       fsub_32ns_32ns_32_4_full_dsp_1_U181        | 2   |        | d2_7                            | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U182    | 2   |        | sub79_7                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | ov_28                           | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | sub91_7                         | fsub | fulldsp | 3       |
-|       faddfsub_32ns_32ns_32_4_full_dsp_1_U183    | 2   |        | ov_29                           | fsub | fulldsp | 3       |
-|       i_real_4_fu_3013_p2                        | -   |        | i_real_4                        | add  | fabric  | 0       |
-|       k_real_fu_1640_p2                          | -   |        | k_real                          | add  | fabric  | 0       |
-|       k_real_2_fu_1646_p2                        | -   |        | k_real_2                        | add  | fabric  | 0       |
-|     + insert_point2_Pipeline_insert_point_label6 | 0   |        |                                 |      |         |         |
-|       add_ln348_fu_331_p2                        | -   |        | add_ln348                       | add  | fabric  | 0       |
-|       add_ln349_fu_341_p2                        | -   |        | add_ln349                       | add  | fabric  | 0       |
-|       add_ln349_1_fu_352_p2                      | -   |        | add_ln349_1                     | add  | fabric  | 0       |
-|       add_ln349_2_fu_363_p2                      | -   |        | add_ln349_2                     | add  | fabric  | 0       |
-|       add_ln349_3_fu_374_p2                      | -   |        | add_ln349_3                     | add  | fabric  | 0       |
-|       add_ln352_fu_385_p2                        | -   |        | add_ln352                       | add  | fabric  | 0       |
-|       add_ln352_1_fu_396_p2                      | -   |        | add_ln352_1                     | add  | fabric  | 0       |
-|       add_ln352_2_fu_407_p2                      | -   |        | add_ln352_2                     | add  | fabric  | 0       |
-|       add_ln352_3_fu_418_p2                      | -   |        | add_ln352_3                     | add  | fabric  | 0       |
-|       add_ln355_fu_636_p2                        | -   |        | add_ln355                       | add  | fabric  | 0       |
-|       add_ln355_1_fu_645_p2                      | -   |        | add_ln355_1                     | add  | fabric  | 0       |
-|  + runTest                                       | 0   |        |                                 |      |         |         |
-|    checkId_V_U                                   | -   |        | checkId_V                       | fifo | srl     | 0       |
-|    taskId_V_U                                    | -   |        | taskId_V                        | fifo | srl     | 0       |
-|    executionId_V_U                               | -   |        | executionId_V                   | fifo | srl     | 0       |
-|    uniId_V_U                                     | -   |        | uniId_V                         | fifo | srl     | 0       |
-|    AOV_c95_channel_U                             | -   |        | AOV_c95_channel                 | fifo | srl     | 0       |
-|    AOV_1_c96_channel_U                           | -   |        | AOV_1_c96_channel               | fifo | srl     | 0       |
-|    AOV_2_c97_channel_U                           | -   |        | AOV_2_c97_channel               | fifo | srl     | 0       |
-|    AOV_3_c98_channel_U                           | -   |        | AOV_3_c98_channel               | fifo | srl     | 0       |
-|    AOV_4_c99_channel_U                           | -   |        | AOV_4_c99_channel               | fifo | srl     | 0       |
-|    AOV_5_c100_channel_U                          | -   |        | AOV_5_c100_channel              | fifo | srl     | 0       |
-|    AOV_6_c101_channel_U                          | -   |        | AOV_6_c101_channel              | fifo | srl     | 0       |
-|    AOV_7_c102_channel_U                          | -   |        | AOV_7_c102_channel              | fifo | srl     | 0       |
-|    checkId_V_load_loc_channel_U                  | -   |        | checkId_V_load_loc_channel      | fifo | srl     | 0       |
-|    checkId_V_load_cast_loc_channel_U             | -   |        | checkId_V_load_cast_loc_channel | fifo | srl     | 0       |
-|    agg_tmp_loc_channel_U                         | -   |        | agg_tmp_loc_channel             | fifo | srl     | 0       |
-|    error_U                                       | -   |        | error                           | fifo | srl     | 0       |
-|    taskId_V_load_loc_channel_U                   | -   |        | taskId_V_load_loc_channel       | fifo | srl     | 0       |
-|    taskId_V_load_cast_loc_channel_U              | -   |        | taskId_V_load_cast_loc_channel  | fifo | srl     | 0       |
-|    executionId_V_load_loc_channel_U              | -   |        | executionId_V_load_loc_channel  | fifo | srl     | 0       |
-|    uniId_V_load_loc_channel_U                    | -   |        | uniId_V_load_loc_channel        | fifo | srl     | 0       |
-|   + read_data_1                                  | 0   |        |                                 |      |         |         |
-|    + read_data_1_Pipeline_1                      | 0   |        |                                 |      |         |         |
-|      empty_fu_175_p2                             | -   |        | empty                           | add  | fabric  | 0       |
-|   + run_test                                     | 0   |        |                                 |      |         |         |
-|     fcmp_32ns_32ns_1_2_no_dsp_1_U863             | -   |        | p_read_19                       | fifo | srl     | 0       |
-|     add_ln49_fu_318_p2                           | -   |        | add_ln49                        | add  | fabric  | 0       |
-|     add_ln59_fu_343_p2                           | -   |        | add_ln59                        | add  | fabric  | 0       |
-|    + run_test_Pipeline_is_valid_label2           | 0   |        |                                 |      |         |         |
-|      add_ln70_fu_161_p2                          | -   |        | add_ln70                        | add  | fabric  | 0       |
-|    + run_test_Pipeline_VITIS_LOOP_55_2           | 0   |        |                                 |      |         |         |
-|      add_ln59_fu_225_p2                          | -   |        | add_ln59                        | add  | fabric  | 0       |
-|      add_ln55_fu_343_p2                          | -   |        | add_ln55                        | add  | fabric  | 0       |
-|   + runTest_Block_entry6990_proc                 | 0   |        |                                 |      |         |         |
-|    + writeOutcome                                | 0   |        |                                 |      |         |         |
-|     + writeOutcome_Pipeline_1                    | 0   |        |                                 |      |         |         |
-|       empty_fu_123_p2                            | -   |        | empty                           | add  | fabric  | 0       |
-+--------------------------------------------------+-----+--------+---------------------------------+------+---------+---------+
++----------------------------------------+-----+--------+-----------+-----+--------+---------+
+| Name                                   | DSP | Pragma | Variable  | Op  | Impl   | Latency |
++----------------------------------------+-----+--------+-----------+-----+--------+---------+
+| + run                                  | 0   |        |           |     |        |         |
+|   add_ln692_fu_1578_p2                 | -   |        | add_ln692 | add | fabric | 0       |
+|   add_ln689_fu_2033_p2                 | -   |        | add_ln689 | add | fabric | 0       |
+|  + runTest                             | 0   |        |           |     |        |         |
+|   + run_test                           | 0   |        |           |     |        |         |
+|     add_ln49_fu_938_p2                 | -   |        | add_ln49  | add | fabric | 0       |
+|     add_ln59_fu_963_p2                 | -   |        | add_ln59  | add | fabric | 0       |
+|    + run_test_Pipeline_1               | 0   |        |           |     |        |         |
+|      empty_fu_123_p2                   | -   |        | empty     | add | fabric | 0       |
+|    + run_test_Pipeline_is_valid_label2 | 0   |        |           |     |        |         |
+|      add_ln70_fu_161_p2                | -   |        | add_ln70  | add | fabric | 0       |
+|    + run_test_Pipeline_VITIS_LOOP_55_2 | 0   |        |           |     |        |         |
+|      add_ln59_fu_225_p2                | -   |        | add_ln59  | add | fabric | 0       |
+|      add_ln55_fu_343_p2                | -   |        | add_ln55  | add | fabric | 0       |
++----------------------------------------+-----+--------+-----------+-----+--------+---------+
 
 
 ================================================================
 == Bind Storage Report
 ================================================================
-+----------------------------------+------+------+--------+------------------------+---------+------+---------+
-| Name                             | BRAM | URAM | Pragma | Variable               | Storage | Impl | Latency |
-+----------------------------------+------+------+--------+------------------------+---------+------+---------+
-| + run                            | 64   | 0    |        |                        |         |      |         |
-|   regions_U                      | 8    | -    |        | regions                | ram_t2p | auto | 1       |
-|   regions_3_U                    | 8    | -    |        | regions_3              | ram_t2p | auto | 1       |
-|   regions_5_U                    | 8    | -    |        | regions_5              | ram_t2p | auto | 1       |
-|   regions_2_U                    | 8    | -    |        | regions_2              | ram_t2p | auto | 1       |
-|   regions_4_U                    | 8    | -    |        | regions_4              | ram_t2p | auto | 1       |
-|   regions_6_U                    | 8    | -    |        | regions_6              | ram_t2p | auto | 1       |
-|  + runTrain                      | 0    | 0    |        |                        |         |      |         |
-|    p_ZL9n_regions_9_in_c_U       | -    | -    |        | p_ZL9n_regions_9_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_8_in_c_U       | -    | -    |        | p_ZL9n_regions_8_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_7_in_c_U       | -    | -    |        | p_ZL9n_regions_7_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_63_in_c_U      | -    | -    |        | p_ZL9n_regions_63_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_62_in_c_U      | -    | -    |        | p_ZL9n_regions_62_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_61_in_c_U      | -    | -    |        | p_ZL9n_regions_61_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_60_in_c_U      | -    | -    |        | p_ZL9n_regions_60_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_6_in_c_U       | -    | -    |        | p_ZL9n_regions_6_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_59_in_c_U      | -    | -    |        | p_ZL9n_regions_59_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_58_in_c_U      | -    | -    |        | p_ZL9n_regions_58_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_57_in_c_U      | -    | -    |        | p_ZL9n_regions_57_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_56_in_c_U      | -    | -    |        | p_ZL9n_regions_56_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_55_in_c_U      | -    | -    |        | p_ZL9n_regions_55_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_54_in_c_U      | -    | -    |        | p_ZL9n_regions_54_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_53_in_c_U      | -    | -    |        | p_ZL9n_regions_53_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_52_in_c_U      | -    | -    |        | p_ZL9n_regions_52_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_51_in_c_U      | -    | -    |        | p_ZL9n_regions_51_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_50_in_c_U      | -    | -    |        | p_ZL9n_regions_50_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_5_in_c_U       | -    | -    |        | p_ZL9n_regions_5_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_49_in_c_U      | -    | -    |        | p_ZL9n_regions_49_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_48_in_c_U      | -    | -    |        | p_ZL9n_regions_48_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_47_in_c_U      | -    | -    |        | p_ZL9n_regions_47_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_46_in_c_U      | -    | -    |        | p_ZL9n_regions_46_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_45_in_c_U      | -    | -    |        | p_ZL9n_regions_45_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_44_in_c_U      | -    | -    |        | p_ZL9n_regions_44_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_43_in_c_U      | -    | -    |        | p_ZL9n_regions_43_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_42_in_c_U      | -    | -    |        | p_ZL9n_regions_42_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_41_in_c_U      | -    | -    |        | p_ZL9n_regions_41_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_40_in_c_U      | -    | -    |        | p_ZL9n_regions_40_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_4_in_c_U       | -    | -    |        | p_ZL9n_regions_4_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_39_in_c_U      | -    | -    |        | p_ZL9n_regions_39_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_38_in_c_U      | -    | -    |        | p_ZL9n_regions_38_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_37_in_c_U      | -    | -    |        | p_ZL9n_regions_37_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_36_in_c_U      | -    | -    |        | p_ZL9n_regions_36_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_35_in_c_U      | -    | -    |        | p_ZL9n_regions_35_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_34_in_c_U      | -    | -    |        | p_ZL9n_regions_34_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_33_in_c_U      | -    | -    |        | p_ZL9n_regions_33_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_32_in_c_U      | -    | -    |        | p_ZL9n_regions_32_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_31_in_c_U      | -    | -    |        | p_ZL9n_regions_31_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_30_in_c_U      | -    | -    |        | p_ZL9n_regions_30_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_3_in_c_U       | -    | -    |        | p_ZL9n_regions_3_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_29_in_c_U      | -    | -    |        | p_ZL9n_regions_29_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_28_in_c_U      | -    | -    |        | p_ZL9n_regions_28_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_27_in_c_U      | -    | -    |        | p_ZL9n_regions_27_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_26_in_c_U      | -    | -    |        | p_ZL9n_regions_26_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_25_in_c_U      | -    | -    |        | p_ZL9n_regions_25_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_24_in_c_U      | -    | -    |        | p_ZL9n_regions_24_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_23_in_c_U      | -    | -    |        | p_ZL9n_regions_23_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_22_in_c_U      | -    | -    |        | p_ZL9n_regions_22_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_21_in_c_U      | -    | -    |        | p_ZL9n_regions_21_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_20_in_c_U      | -    | -    |        | p_ZL9n_regions_20_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_2_in_c_U       | -    | -    |        | p_ZL9n_regions_2_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_19_in_c_U      | -    | -    |        | p_ZL9n_regions_19_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_18_in_c_U      | -    | -    |        | p_ZL9n_regions_18_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_17_in_c_U      | -    | -    |        | p_ZL9n_regions_17_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_16_in_c_U      | -    | -    |        | p_ZL9n_regions_16_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_15_in_c_U      | -    | -    |        | p_ZL9n_regions_15_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_14_in_c_U      | -    | -    |        | p_ZL9n_regions_14_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_13_in_c_U      | -    | -    |        | p_ZL9n_regions_13_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_12_in_c_U      | -    | -    |        | p_ZL9n_regions_12_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_11_in_c_U      | -    | -    |        | p_ZL9n_regions_11_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_10_in_c_U      | -    | -    |        | p_ZL9n_regions_10_in_c | fifo    | srl  | 0       |
-|    p_ZL9n_regions_1_in_c_U       | -    | -    |        | p_ZL9n_regions_1_in_c  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_0_in_c_U       | -    | -    |        | p_ZL9n_regions_0_in_c  | fifo    | srl  | 0       |
-|   + read_data                    | 0    | 0    |        |                        |         |      |         |
-|     dest_AOV_U                   | -    | -    |        | dest_AOV               | ram_t2p | auto | 1       |
-|  + runTest                       | 0    | 0    |        |                        |         |      |         |
-|    AOV_7_c_U                     | -    | -    |        | AOV_7_c                | fifo    | srl  | 0       |
-|    AOV_6_c_U                     | -    | -    |        | AOV_6_c                | fifo    | srl  | 0       |
-|    AOV_5_c_U                     | -    | -    |        | AOV_5_c                | fifo    | srl  | 0       |
-|    AOV_4_c_U                     | -    | -    |        | AOV_4_c                | fifo    | srl  | 0       |
-|    AOV_3_c_U                     | -    | -    |        | AOV_3_c                | fifo    | srl  | 0       |
-|    AOV_2_c_U                     | -    | -    |        | AOV_2_c                | fifo    | srl  | 0       |
-|    AOV_1_c_U                     | -    | -    |        | AOV_1_c                | fifo    | srl  | 0       |
-|    AOV_c_U                       | -    | -    |        | AOV_c                  | fifo    | srl  | 0       |
-|    p_ZL9n_regions_9_c_U          | -    | -    |        | p_ZL9n_regions_9_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_8_c_U          | -    | -    |        | p_ZL9n_regions_8_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_7_c_U          | -    | -    |        | p_ZL9n_regions_7_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_63_c_U         | -    | -    |        | p_ZL9n_regions_63_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_62_c_U         | -    | -    |        | p_ZL9n_regions_62_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_61_c_U         | -    | -    |        | p_ZL9n_regions_61_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_60_c_U         | -    | -    |        | p_ZL9n_regions_60_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_6_c_U          | -    | -    |        | p_ZL9n_regions_6_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_59_c_U         | -    | -    |        | p_ZL9n_regions_59_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_58_c_U         | -    | -    |        | p_ZL9n_regions_58_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_57_c_U         | -    | -    |        | p_ZL9n_regions_57_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_56_c_U         | -    | -    |        | p_ZL9n_regions_56_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_55_c_U         | -    | -    |        | p_ZL9n_regions_55_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_54_c_U         | -    | -    |        | p_ZL9n_regions_54_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_53_c_U         | -    | -    |        | p_ZL9n_regions_53_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_52_c_U         | -    | -    |        | p_ZL9n_regions_52_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_51_c_U         | -    | -    |        | p_ZL9n_regions_51_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_50_c_U         | -    | -    |        | p_ZL9n_regions_50_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_5_c_U          | -    | -    |        | p_ZL9n_regions_5_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_49_c_U         | -    | -    |        | p_ZL9n_regions_49_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_48_c_U         | -    | -    |        | p_ZL9n_regions_48_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_47_c_U         | -    | -    |        | p_ZL9n_regions_47_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_46_c_U         | -    | -    |        | p_ZL9n_regions_46_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_45_c_U         | -    | -    |        | p_ZL9n_regions_45_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_44_c_U         | -    | -    |        | p_ZL9n_regions_44_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_43_c_U         | -    | -    |        | p_ZL9n_regions_43_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_42_c_U         | -    | -    |        | p_ZL9n_regions_42_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_41_c_U         | -    | -    |        | p_ZL9n_regions_41_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_40_c_U         | -    | -    |        | p_ZL9n_regions_40_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_4_c_U          | -    | -    |        | p_ZL9n_regions_4_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_39_c_U         | -    | -    |        | p_ZL9n_regions_39_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_38_c_U         | -    | -    |        | p_ZL9n_regions_38_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_37_c_U         | -    | -    |        | p_ZL9n_regions_37_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_36_c_U         | -    | -    |        | p_ZL9n_regions_36_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_35_c_U         | -    | -    |        | p_ZL9n_regions_35_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_34_c_U         | -    | -    |        | p_ZL9n_regions_34_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_33_c_U         | -    | -    |        | p_ZL9n_regions_33_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_32_c_U         | -    | -    |        | p_ZL9n_regions_32_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_31_c_U         | -    | -    |        | p_ZL9n_regions_31_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_30_c_U         | -    | -    |        | p_ZL9n_regions_30_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_3_c_U          | -    | -    |        | p_ZL9n_regions_3_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_29_c_U         | -    | -    |        | p_ZL9n_regions_29_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_28_c_U         | -    | -    |        | p_ZL9n_regions_28_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_27_c_U         | -    | -    |        | p_ZL9n_regions_27_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_26_c_U         | -    | -    |        | p_ZL9n_regions_26_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_25_c_U         | -    | -    |        | p_ZL9n_regions_25_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_24_c_U         | -    | -    |        | p_ZL9n_regions_24_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_23_c_U         | -    | -    |        | p_ZL9n_regions_23_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_22_c_U         | -    | -    |        | p_ZL9n_regions_22_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_21_c_U         | -    | -    |        | p_ZL9n_regions_21_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_20_c_U         | -    | -    |        | p_ZL9n_regions_20_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_2_c_U          | -    | -    |        | p_ZL9n_regions_2_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_19_c_U         | -    | -    |        | p_ZL9n_regions_19_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_18_c_U         | -    | -    |        | p_ZL9n_regions_18_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_17_c_U         | -    | -    |        | p_ZL9n_regions_17_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_16_c_U         | -    | -    |        | p_ZL9n_regions_16_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_15_c_U         | -    | -    |        | p_ZL9n_regions_15_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_14_c_U         | -    | -    |        | p_ZL9n_regions_14_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_13_c_U         | -    | -    |        | p_ZL9n_regions_13_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_12_c_U         | -    | -    |        | p_ZL9n_regions_12_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_11_c_U         | -    | -    |        | p_ZL9n_regions_11_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_10_c_U         | -    | -    |        | p_ZL9n_regions_10_c    | fifo    | srl  | 0       |
-|    p_ZL9n_regions_1_c_U          | -    | -    |        | p_ZL9n_regions_1_c     | fifo    | srl  | 0       |
-|    p_ZL9n_regions_0_c_U          | -    | -    |        | p_ZL9n_regions_0_c     | fifo    | srl  | 0       |
-|   + read_data_1                  | 0    | 0    |        |                        |         |      |         |
-|     dest_AOV_U                   | -    | -    |        | dest_AOV               | ram_t2p | auto | 1       |
-|   + runTest_Block_entry6990_proc | 0    | 0    |        |                        |         |      |         |
-|    + writeOutcome                | 0    | 0    |        |                        |         |      |         |
-|      outcome_AOV_U               | -    | -    |        | outcome_AOV            | ram_s2p | auto | 1       |
-+----------------------------------+------+------+--------+------------------------+---------+------+---------+
++--------------------+------+------+--------+---------------+---------+------+---------+
+| Name               | BRAM | URAM | Pragma | Variable      | Storage | Impl | Latency |
++--------------------+------+------+--------+---------------+---------+------+---------+
+| + run              | 48   | 0    |        |               |         |      |         |
+|   regions_U        | 8    | -    |        | regions       | ram_t2p | auto | 1       |
+|   regions_2_U      | 8    | -    |        | regions_2     | ram_t2p | auto | 1       |
+|   regions_4_U      | 8    | -    |        | regions_4     | ram_t2p | auto | 1       |
+|   regions_1_U      | 8    | -    |        | regions_1     | ram_t2p | auto | 1       |
+|   regions_3_U      | 8    | -    |        | regions_3     | ram_t2p | auto | 1       |
+|   regions_5_U      | 8    | -    |        | regions_5     | ram_t2p | auto | 1       |
+|  + runTest         | 0    | 0    |        |               |         |      |         |
+|    copyDest_U      | -    | -    |        | copyDest      | fifo    | srl  | 0       |
+|    outcomeStream_U | -    | -    |        | outcomeStream | fifo    | srl  | 0       |
+|   + run_test       | 0    | 0    |        |               |         |      |         |
+|     outcome_AOV_U  | -    | -    |        | outcome_AOV   | ram_s2p | auto | 1       |
++--------------------+------+------+--------+---------------+---------+------+---------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------------+------------------------------------------+--------------------------------------------------------------------------+
-| Type            | Options                                  | Location                                                                 |
-+-----------------+------------------------------------------+--------------------------------------------------------------------------+
-| loop_tripcount  | min=0 max=16                             | detector_solid/abs_solid_detector.cpp:53 in hasregion                    |
-| loop_tripcount  | min=1 max=8                              | detector_solid/abs_solid_detector.cpp:57 in hasregion                    |
-| inline          |                                          | detector_solid/abs_solid_detector.cpp:80 in update_train_regions         |
-| loop_tripcount  | min=0 max=136                            | detector_solid/abs_solid_detector.cpp:264 in insert_point                |
-| pipeline        | II=8                                     | detector_solid/abs_solid_detector.cpp:265 in insert_point                |
-| dataflow        |                                          | detector_solid/abs_solid_detector.cpp:485 in runtest                     |
-| array_partition | variable=AOV type=complete               | detector_solid/abs_solid_detector.cpp:493 in runtest, AOV                |
-| dataflow        |                                          | detector_solid/abs_solid_detector.cpp:504 in runtrain                    |
-| array_partition | variable=AOV type=complete               | detector_solid/abs_solid_detector.cpp:510 in runtrain, AOV               |
-| interface       | mode=ap_ctrl_hs port=return              | detector_solid/abs_solid_detector.cpp:617 in run, return                 |
-| interface       | mode=s_axilite port=return               | detector_solid/abs_solid_detector.cpp:618 in run, return                 |
-| interface       | s_axilite port = accel_mode              | detector_solid/abs_solid_detector.cpp:621 in run                         |
-| interface       | m_axi port = inputData offset=slave      | detector_solid/abs_solid_detector.cpp:622 in run                         |
-| interface       | s_axilite port=copying                   | detector_solid/abs_solid_detector.cpp:624 in run, copying                |
-| interface       | s_axilite port = trainedRegion_i         | detector_solid/abs_solid_detector.cpp:626 in run                         |
-| interface       | s_axilite port = trainedRegion_o         | detector_solid/abs_solid_detector.cpp:627 in run                         |
-| interface       | s_axilite port = IOCheckIdx              | detector_solid/abs_solid_detector.cpp:628 in run                         |
-| interface       | s_axilite port = IORegionIdx             | detector_solid/abs_solid_detector.cpp:629 in run                         |
-| interface       | ap_hs port=failedTask                    | detector_solid/abs_solid_detector.cpp:631 in run, failedTask             |
-| interface       | s_axilite port = n_regions_in            | detector_solid/abs_solid_detector.cpp:632 in run                         |
-| interface       | s_axilite port = errorInTask             | detector_solid/abs_solid_detector.cpp:634 in run                         |
-| interface       | s_axilite port=outcomeInRam              | detector_solid/abs_solid_detector.cpp:635 in run, outcomeInRam           |
-| array_partition | variable=regions dim=2 cyclic factor=2   | detector_solid/abs_solid_detector.cpp:640 in run, regions                |
-| array_partition | variable=failedTaskExecutionIds complete | detector_solid/abs_solid_detector.cpp:641 in run, failedTaskExecutionIds |
-| reset           | variable=failedTaskExecutionIds          | detector_solid/abs_solid_detector.cpp:644 in run, failedTaskExecutionIds |
-| array_partition | variable=n_regions complete              | detector_solid/abs_solid_detector.cpp:646 in run, n_regions              |
-+-----------------+------------------------------------------+--------------------------------------------------------------------------+
++-----------------+-------------------------------------------+------------------------------------------------------------------------------+
+| Type            | Options                                   | Location                                                                     |
++-----------------+-------------------------------------------+------------------------------------------------------------------------------+
+| loop_tripcount  | min=0 max=16                              | detector_solid/abs_solid_detector.cpp:53 in hasregion                        |
+| loop_tripcount  | min=1 max=8                               | detector_solid/abs_solid_detector.cpp:57 in hasregion                        |
+| inline          |                                           | detector_solid/abs_solid_detector.cpp:80 in update_train_regions             |
+| loop_tripcount  | min=0 max=136                             | detector_solid/abs_solid_detector.cpp:264 in insert_point                    |
+| pipeline        | II=8                                      | detector_solid/abs_solid_detector.cpp:265 in insert_point                    |
+| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:421 in writeoutcome                    |
+| array_partition | variable=in.AOV type=complete             | detector_solid/abs_solid_detector.cpp:458 in run_test, in.AOV                |
+| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:495 in read_data                       |
+| dataflow        | disable_start_propagation                 | detector_solid/abs_solid_detector.cpp:509 in runtest                         |
+| stable          | variable=inputAOV                         | detector_solid/abs_solid_detector.cpp:510 in runtest, inputAOV               |
+| stable          | variable=outcomeInRam                     | detector_solid/abs_solid_detector.cpp:511 in runtest, outcomeInRam           |
+| stable          | variable=errorInTask                      | detector_solid/abs_solid_detector.cpp:512 in runtest, errorInTask            |
+| stable          | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:513 in runtest, failedTaskExecutionIds |
+| stable          | variable=regions                          | detector_solid/abs_solid_detector.cpp:514 in runtest, regions                |
+| stable          | variable=n_regions                        | detector_solid/abs_solid_detector.cpp:515 in runtest, n_regions              |
+| stable          | variable=failedTask                       | detector_solid/abs_solid_detector.cpp:516 in runtest, failedTask             |
+| stable          | variable=copying                          | detector_solid/abs_solid_detector.cpp:517 in runtest, copying                |
+| interface       | mode=ap_ctrl_hs port=return               | detector_solid/abs_solid_detector.cpp:653 in run, return                     |
+| interface       | mode=s_axilite port=return                | detector_solid/abs_solid_detector.cpp:654 in run, return                     |
+| interface       | mode= s_axilite port = accel_mode         | detector_solid/abs_solid_detector.cpp:657 in run                             |
+| interface       | mode= m_axi port = inputData offset=slave | detector_solid/abs_solid_detector.cpp:658 in run                             |
+| interface       | mode= s_axilite port=copying              | detector_solid/abs_solid_detector.cpp:660 in run, copying                    |
+| interface       | mode= s_axilite port = trainedRegion_i    | detector_solid/abs_solid_detector.cpp:662 in run                             |
+| interface       | mode= s_axilite port = trainedRegion_o    | detector_solid/abs_solid_detector.cpp:663 in run                             |
+| interface       | mode= s_axilite port = IOCheckIdx         | detector_solid/abs_solid_detector.cpp:664 in run                             |
+| interface       | mode= s_axilite port = IORegionIdx        | detector_solid/abs_solid_detector.cpp:665 in run                             |
+| interface       | mode=s_axilite port=failedTask            | detector_solid/abs_solid_detector.cpp:667 in run, failedTask                 |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:668 in run, failedTask                 |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:671 in run, failedTask                 |
+| interface       | mode=s_axilite port = n_regions_in        | detector_solid/abs_solid_detector.cpp:672 in run                             |
+| interface       | mode=s_axilite port = errorInTask         | detector_solid/abs_solid_detector.cpp:674 in run                             |
+| interface       | mode=s_axilite port = outcomeInRam        | detector_solid/abs_solid_detector.cpp:675 in run                             |
+| array_partition | variable=regions dim=2 cyclic factor=2    | detector_solid/abs_solid_detector.cpp:680 in run, regions                    |
+| array_partition | variable=failedTaskExecutionIds complete  | detector_solid/abs_solid_detector.cpp:681 in run, failedTaskExecutionIds     |
+| reset           | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:684 in run, failedTaskExecutionIds     |
+| array_partition | variable=n_regions complete               | detector_solid/abs_solid_detector.cpp:686 in run, n_regions                  |
++-----------------+-------------------------------------------+------------------------------------------------------------------------------+
 
 

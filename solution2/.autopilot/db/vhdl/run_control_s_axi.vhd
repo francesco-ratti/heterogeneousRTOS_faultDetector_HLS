@@ -36,22 +36,24 @@ port (
     flush                 :out  STD_LOGIC;
     flush_done            :in   STD_LOGIC;
     accel_mode            :out  STD_LOGIC_VECTOR(7 downto 0);
-    copying               :in   STD_LOGIC_VECTOR(7 downto 0);
+    copying               :out  STD_LOGIC_VECTOR(7 downto 0);
     inputData             :out  STD_LOGIC_VECTOR(63 downto 0);
     IOCheckIdx            :out  STD_LOGIC_VECTOR(7 downto 0);
     errorInTask_address0  :in   STD_LOGIC_VECTOR(3 downto 0);
     errorInTask_ce0       :in   STD_LOGIC;
     errorInTask_we0       :in   STD_LOGIC;
     errorInTask_d0        :in   STD_LOGIC_VECTOR(7 downto 0);
-    errorInTask_q0        :out  STD_LOGIC_VECTOR(7 downto 0);
     trainedRegion_i       :out  STD_LOGIC_VECTOR(767 downto 0);
     trainedRegion_o       :in   STD_LOGIC_VECTOR(767 downto 0);
     IORegionIdx           :out  STD_LOGIC_VECTOR(7 downto 0);
     n_regions_in_i        :out  STD_LOGIC_VECTOR(7 downto 0);
     n_regions_in_o        :in   STD_LOGIC_VECTOR(7 downto 0);
+    failedTask            :out  STD_LOGIC_VECTOR(15 downto 0);
+    failedTask_ap_vld     :out  STD_LOGIC;
+    failedTask_ap_ack     :in   STD_LOGIC;
     outcomeInRam_address0 :in   STD_LOGIC_VECTOR(3 downto 0);
     outcomeInRam_ce0      :in   STD_LOGIC;
-    outcomeInRam_we0      :in   STD_LOGIC_VECTOR(35 downto 0);
+    outcomeInRam_we0      :in   STD_LOGIC;
     outcomeInRam_d0       :in   STD_LOGIC_VECTOR(287 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
@@ -89,7 +91,7 @@ end entity run_control_s_axi;
 --         others  - reserved
 -- 0x014 : reserved
 -- 0x018 : Data signal of copying
---         bit 7~0 - copying[7:0] (Read)
+--         bit 7~0 - copying[7:0] (Read/Write)
 --         others  - reserved
 -- 0x01c : reserved
 -- 0x028 : Data signal of inputData
@@ -211,6 +213,13 @@ end entity run_control_s_axi;
 --         bit 7~0 - n_regions_in_o[7:0] (Read)
 --         others  - reserved
 -- 0x190 : reserved
+-- 0x194 : Data signal of failedTask
+--         bit 15~0 - failedTask[15:0] (Read/Write)
+--         others   - reserved
+-- 0x198 : Control signal of failedTask
+--         bit 0  - failedTask_ap_vld (Read/Write/COH)
+--         bit 1  - failedTask_ap_ack (Read)
+--         others - reserved
 -- 0x040 ~
 -- 0x04f : Memory 'errorInTask' (16 * 8b)
 --         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -311,6 +320,8 @@ architecture behave of run_control_s_axi is
     constant ADDR_N_REGIONS_IN_I_CTRL     : INTEGER := 16#188#;
     constant ADDR_N_REGIONS_IN_O_DATA_0   : INTEGER := 16#18c#;
     constant ADDR_N_REGIONS_IN_O_CTRL     : INTEGER := 16#190#;
+    constant ADDR_FAILEDTASK_DATA_0       : INTEGER := 16#194#;
+    constant ADDR_FAILEDTASK_CTRL         : INTEGER := 16#198#;
     constant ADDR_ERRORINTASK_BASE        : INTEGER := 16#040#;
     constant ADDR_ERRORINTASK_HIGH        : INTEGER := 16#04f#;
     constant ADDR_OUTCOMEINRAM_BASE       : INTEGER := 16#400#;
@@ -355,6 +366,9 @@ architecture behave of run_control_s_axi is
     signal int_IORegionIdx     : UNSIGNED(7 downto 0) := (others => '0');
     signal int_n_regions_in_i  : UNSIGNED(7 downto 0) := (others => '0');
     signal int_n_regions_in_o  : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_failedTask      : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_failedTask_ap_vld : STD_LOGIC;
+    signal int_failedTask_ap_ack : STD_LOGIC;
     -- memory signals
     signal int_errorInTask_address0 : UNSIGNED(1 downto 0);
     signal int_errorInTask_ce0 : STD_LOGIC;
@@ -374,8 +388,12 @@ architecture behave of run_control_s_axi is
     signal int_outcomeInRam_ce0 : STD_LOGIC;
     signal int_outcomeInRam_be0 : UNSIGNED(35 downto 0);
     signal int_outcomeInRam_d0 : UNSIGNED(287 downto 0);
+    signal int_outcomeInRam_q0 : UNSIGNED(287 downto 0);
     signal int_outcomeInRam_address1 : UNSIGNED(3 downto 0);
     signal int_outcomeInRam_ce1 : STD_LOGIC;
+    signal int_outcomeInRam_we1 : STD_LOGIC;
+    signal int_outcomeInRam_be1 : UNSIGNED(35 downto 0);
+    signal int_outcomeInRam_d1 : UNSIGNED(287 downto 0);
     signal int_outcomeInRam_q1 : UNSIGNED(287 downto 0);
     signal int_outcomeInRam_read : STD_LOGIC;
     signal int_outcomeInRam_write : STD_LOGIC;
@@ -442,7 +460,7 @@ port map (
 int_outcomeInRam : run_control_s_axi_ram
 generic map (
      MEM_STYLE => "auto",
-     MEM_TYPE  => "S2P",
+     MEM_TYPE  => "T2P",
      BYTES     => 36,
      DEPTH     => 16,
      AWIDTH    => log2(16))
@@ -452,12 +470,12 @@ port map (
      ce0       => int_outcomeInRam_ce0,
      we0       => int_outcomeInRam_be0,
      d0        => int_outcomeInRam_d0,
-     q0        => open,
+     q0        => int_outcomeInRam_q0,
      clk1      => ACLK,
      address1  => int_outcomeInRam_address1,
      ce1       => int_outcomeInRam_ce1,
-     we1       => (others=>'0'),
-     d1        => (others=>'0'),
+     we1       => int_outcomeInRam_be1,
+     d1        => int_outcomeInRam_d1,
      q1        => int_outcomeInRam_q1);
 
 
@@ -696,6 +714,11 @@ port map (
                         rdata_data <= RESIZE(int_n_regions_in_i(7 downto 0), 32);
                     when ADDR_N_REGIONS_IN_O_DATA_0 =>
                         rdata_data <= RESIZE(int_n_regions_in_o(7 downto 0), 32);
+                    when ADDR_FAILEDTASK_DATA_0 =>
+                        rdata_data <= RESIZE(int_failedTask(15 downto 0), 32);
+                    when ADDR_FAILEDTASK_CTRL =>
+                        rdata_data(1) <= not int_failedTask_ap_vld;
+                        rdata_data(0) <= int_failedTask_ap_vld;
                     when others =>
                         NULL;
                     end case;
@@ -717,11 +740,15 @@ port map (
     auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     sw_reset             <= int_sw_reset and int_flush_done;
     accel_mode           <= STD_LOGIC_VECTOR(int_accel_mode);
+    copying              <= STD_LOGIC_VECTOR(int_copying);
     inputData            <= STD_LOGIC_VECTOR(int_inputData);
     IOCheckIdx           <= STD_LOGIC_VECTOR(int_IOCheckIdx);
     trainedRegion_i      <= STD_LOGIC_VECTOR(int_trainedRegion_i);
     IORegionIdx          <= STD_LOGIC_VECTOR(int_IORegionIdx);
     n_regions_in_i       <= STD_LOGIC_VECTOR(int_n_regions_in_i);
+    failedTask           <= STD_LOGIC_VECTOR(int_failedTask);
+    failedTask_ap_vld    <= int_failedTask_ap_vld;
+    int_failedTask_ap_ack <= failedTask_ap_ack;
 
     process (ACLK)
     begin
@@ -950,11 +977,9 @@ port map (
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_copying <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (ap_done = '1') then
-                    int_copying <= UNSIGNED(copying);
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_COPYING_DATA_0) then
+                    int_copying(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_copying(7 downto 0));
                 end if;
             end if;
         end if;
@@ -1305,14 +1330,37 @@ port map (
         end if;
     end process;
 
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_FAILEDTASK_DATA_0) then
+                    int_failedTask(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_failedTask(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_failedTask_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_FAILEDTASK_CTRL and WSTRB(0) = '1' and WDATA(0) = '1') then
+                    int_failedTask_ap_vld <= '1';
+                elsif (int_failedTask_ap_ack = '1') then
+                    int_failedTask_ap_vld <= '0'; -- clear on handshake
+                end if;
+            end if;
+        end if;
+    end process;
+
 
 -- ----------------------- Memory logic ------------------
     -- errorInTask
     int_errorInTask_address0 <= SHIFT_RIGHT(UNSIGNED(errorInTask_address0), 2)(1 downto 0);
     int_errorInTask_ce0  <= errorInTask_ce0;
-    int_errorInTask_be0  <= SHIFT_LEFT(TO_UNSIGNED(1, 4), TO_INTEGER(UNSIGNED(errorInTask_address0(1 downto 0)))) when errorInTask_we0 = '1' else (others=>'0');
-    int_errorInTask_d0   <= UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0) & UNSIGNED(errorInTask_d0);
-    errorInTask_q0       <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_errorInTask_q0, TO_INTEGER(int_errorInTask_shift0) * 8)(7 downto 0));
     int_errorInTask_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
     int_errorInTask_ce1  <= '1' when ar_hs = '1' or (int_errorInTask_write = '1' and WVALID  = '1') else '0';
     int_errorInTask_we1  <= '1' when int_errorInTask_write = '1' and w_hs = '1' else '0';
@@ -1321,10 +1369,11 @@ port map (
     -- outcomeInRam
     int_outcomeInRam_address0 <= UNSIGNED(outcomeInRam_address0);
     int_outcomeInRam_ce0 <= outcomeInRam_ce0;
-    int_outcomeInRam_be0 <= RESIZE(UNSIGNED(outcomeInRam_we0), 36);
-    int_outcomeInRam_d0  <= RESIZE(UNSIGNED(outcomeInRam_d0), 288);
     int_outcomeInRam_address1 <= raddr(9 downto 6) when ar_hs = '1' else waddr(9 downto 6);
     int_outcomeInRam_ce1 <= '1' when ar_hs = '1' or (int_outcomeInRam_write = '1' and WVALID  = '1') else '0';
+    int_outcomeInRam_we1 <= '1' when int_outcomeInRam_write = '1' and w_hs = '1' else '0';
+    int_outcomeInRam_be1 <= SHIFT_LEFT(RESIZE(UNSIGNED(WSTRB), 36), TO_INTEGER(waddr(5 downto 2)) * 4) when int_outcomeInRam_we1 = '1' else (others=>'0');
+    int_outcomeInRam_d1  <= RESIZE(UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA) & UNSIGNED(WDATA), 288);
 
     process (ACLK)
     begin
@@ -1379,6 +1428,21 @@ port map (
                     int_outcomeInRam_read <= '1';
                 else
                     int_outcomeInRam_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_outcomeInRam_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_OUTCOMEINRAM_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_OUTCOMEINRAM_HIGH) then
+                    int_outcomeInRam_write <= '1';
+                elsif (w_hs = '1') then
+                    int_outcomeInRam_write <= '0';
                 end if;
             end if;
         end if;
