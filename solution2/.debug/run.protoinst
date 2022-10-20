@@ -35,7 +35,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/run_test_U0/grp_run_test_Pipeline_1_fu_353/grp_run_test_Pipeline_1_fu_353_activity": {
+				"grp_runTest_fu_1344/run_test_U0/grp_insert_point_fu_641/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987/grp_insert_point_Pipeline_VITIS_LOOP_262_1_fu_987_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -45,17 +45,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_runTest_fu_1344/run_test_U0/grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378/grp_run_test_Pipeline_VITIS_LOOP_55_2_fu_378_activity": {
-					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
-					"ports": {
-						"AP_CLK": { "actual": "ap_clk"},
-						"AP_DONE": { "actual": "ap_done"},
-						"AP_READY": { "actual": "ap_ready"},
-						"AP_RESET": { "actual": "ap_rst"},
-						"AP_START": { "actual": "ap_start"}
-					}
-				},
-				"grp_runTest_fu_1344/run_test_U0/grp_run_test_Pipeline_is_valid_label2_fu_366/grp_run_test_Pipeline_is_valid_label2_fu_366_activity": {
+				"grp_runTest_fu_1344/run_test_U0/grp_insert_point_fu_641/grp_insert_point_fu_641_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_data'
 ================================================================
-* Date:           Thu Oct 20 12:16:23 2022
+* Date:           Thu Oct 20 16:17:17 2022
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
 * Project:        detector_solid
@@ -41,7 +41,7 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_494_1  |        ?|        ?|         2|          -|          -|   inf|        no|
+        |- VITIS_LOOP_509_1  |        ?|        ?|         2|          -|          -|   inf|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -85,7 +85,7 @@
     +----------------------+----------+----+---+----+------------+------------+
     |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------+----------+----+---+----+------------+------------+
-    |icmp_ln496_fu_171_p2  |      icmp|   0|  0|  11|           8|           1|
+    |icmp_ln511_fu_171_p2  |      icmp|   0|  0|  11|           8|           1|
     |ap_block_state1       |        or|   0|  0|   2|           1|           1|
     |ap_block_state72      |        or|   0|  0|   2|           1|           1|
     +----------------------+----------+----+---+----+------------+------------+
@@ -114,7 +114,7 @@
     |ap_CS_fsm           |   73|   0|   73|          0|
     |ap_done_reg         |    0|   0|    1|          1|
     |copying_preg        |    8|   0|    8|          0|
-    |icmp_ln496_reg_188  |    1|   0|    1|          0|
+    |icmp_ln511_reg_188  |    1|   0|    1|          0|
     |or_ln174_s_reg_183  |  320|   0|  320|          0|
     +--------------------+-----+----+-----+-----------+
     |Total               |  402|   0|  403|          1|
@@ -519,27 +519,27 @@ ST_70 : Operation 147 [1/70] (13.1ns)   --->   "%gmem_load_req = readreq i1 @_ss
 State 71 <SV = 70> <Delay = 13.1>
 ST_71 : Operation 148 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %copying, void "   --->   Operation 148 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
 ST_71 : Operation 149 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %gmem, void "   --->   Operation 149 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
-ST_71 : Operation 150 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_23, i32 0, i32 0, void @empty_29, i32 0, i32 0, void @empty_29, void @empty_29, void @empty_29, i32 0, i32 0, i32 0, i32 0, void @empty_29, void @empty_29, i32 4294967295, i32 0"   --->   Operation 150 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_71 : Operation 151 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_19, i32 0, i32 0, void @empty_29, i32 64, i32 0, void @empty_28, void @empty_27, void @empty_29, i32 16, i32 16, i32 16, i32 16, void @empty_29, void @empty_29, i32 4294967295, i32 0"   --->   Operation 151 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 150 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i320 %copyDest, void @empty_10, i32 0, i32 0, void @empty_6, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0"   --->   Operation 150 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 151 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem, void @empty_5, i32 0, i32 0, void @empty_6, i32 64, i32 0, void @empty_7, void @empty_12, void @empty_6, i32 16, i32 16, i32 16, i32 16, void @empty_6, void @empty_6, i32 4294967295, i32 0"   --->   Operation 151 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_71 : Operation 152 [1/1] (13.1ns)   --->   "%gmem_addr_read = read i512 @_ssdm_op_Read.m_axi.i512P1A, i64 %gmem_addr"   --->   Operation 152 'read' 'gmem_addr_read' <Predicate = true> <Delay = 13.1> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_71 : Operation 153 [1/1] (0.00ns)   --->   "%tmp_s = partselect i256 @_ssdm_op_PartSelect.i256.i512.i32.i32, i512 %gmem_addr_read, i32 96, i32 351" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 153 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
-ST_71 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_54 = partselect i40 @_ssdm_op_PartSelect.i40.i512.i32.i32, i512 %gmem_addr_read, i32 32, i32 71" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 154 'partselect' 'tmp_54' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_53 = partselect i40 @_ssdm_op_PartSelect.i40.i512.i32.i32, i512 %gmem_addr_read, i32 32, i32 71" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 154 'partselect' 'tmp_53' <Predicate = true> <Delay = 0.00>
 ST_71 : Operation 155 [1/1] (0.00ns)   --->   "%trunc_ln174 = trunc i512 %gmem_addr_read" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 155 'trunc' 'trunc_ln174' <Predicate = true> <Delay = 0.00>
-ST_71 : Operation 156 [1/1] (0.00ns)   --->   "%or_ln174_s = bitconcatenate i320 @_ssdm_op_BitConcatenate.i320.i256.i40.i24, i256 %tmp_s, i40 %tmp_54, i24 %trunc_ln174" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 156 'bitconcatenate' 'or_ln174_s' <Predicate = true> <Delay = 0.00>
-ST_71 : Operation 157 [1/1] (0.00ns)   --->   "%br_ln494 = br void %while.body" [detector_solid/abs_solid_detector.cpp:494]   --->   Operation 157 'br' 'br_ln494' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 156 [1/1] (0.00ns)   --->   "%or_ln174_s = bitconcatenate i320 @_ssdm_op_BitConcatenate.i320.i256.i40.i24, i256 %tmp_s, i40 %tmp_53, i24 %trunc_ln174" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 156 'bitconcatenate' 'or_ln174_s' <Predicate = true> <Delay = 0.00>
+ST_71 : Operation 157 [1/1] (0.00ns)   --->   "%br_ln509 = br void %while.body" [detector_solid/abs_solid_detector.cpp:509]   --->   Operation 157 'br' 'br_ln509' <Predicate = true> <Delay = 0.00>
 
 State 72 <SV = 71> <Delay = 5.18>
-ST_72 : Operation 158 [1/1] (0.00ns)   --->   "%specloopname_ln496 = specloopname void @_ssdm_op_SpecLoopName, void @empty_1" [detector_solid/abs_solid_detector.cpp:496]   --->   Operation 158 'specloopname' 'specloopname_ln496' <Predicate = true> <Delay = 0.00>
-ST_72 : Operation 159 [1/1] (0.00ns)   --->   "%startCopy_read = read i8 @_ssdm_op_Read.ap_auto.volatile.i8P0A, i8 %startCopy" [detector_solid/abs_solid_detector.cpp:496]   --->   Operation 159 'read' 'startCopy_read' <Predicate = true> <Delay = 0.00>
-ST_72 : Operation 160 [1/1] (1.55ns)   --->   "%icmp_ln496 = icmp_eq  i8 %startCopy_read, i8 0" [detector_solid/abs_solid_detector.cpp:496]   --->   Operation 160 'icmp' 'icmp_ln496' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_72 : Operation 161 [1/1] (0.00ns)   --->   "%br_ln496 = br i1 %icmp_ln496, void %if.then, void %if.end" [detector_solid/abs_solid_detector.cpp:496]   --->   Operation 161 'br' 'br_ln496' <Predicate = true> <Delay = 0.00>
-ST_72 : Operation 162 [1/1] (0.00ns)   --->   "%write_ln485 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 255" [detector_solid/abs_solid_detector.cpp:485]   --->   Operation 162 'write' 'write_ln485' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_72 : Operation 163 [1/1] (3.63ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i320P0A, i320 %copyDest, i320 %or_ln174_s" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 163 'write' 'write_ln174' <Predicate = (!icmp_ln496)> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 320> <Depth = 1> <FIFO>
+ST_72 : Operation 158 [1/1] (0.00ns)   --->   "%specloopname_ln511 = specloopname void @_ssdm_op_SpecLoopName, void @empty" [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 158 'specloopname' 'specloopname_ln511' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 159 [1/1] (0.00ns)   --->   "%startCopy_read = read i8 @_ssdm_op_Read.ap_auto.volatile.i8P0A, i8 %startCopy" [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 159 'read' 'startCopy_read' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 160 [1/1] (1.55ns)   --->   "%icmp_ln511 = icmp_eq  i8 %startCopy_read, i8 0" [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 160 'icmp' 'icmp_ln511' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_72 : Operation 161 [1/1] (0.00ns)   --->   "%br_ln511 = br i1 %icmp_ln511, void %if.then, void %if.end" [detector_solid/abs_solid_detector.cpp:511]   --->   Operation 161 'br' 'br_ln511' <Predicate = true> <Delay = 0.00>
+ST_72 : Operation 162 [1/1] (0.00ns)   --->   "%write_ln500 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 255" [detector_solid/abs_solid_detector.cpp:500]   --->   Operation 162 'write' 'write_ln500' <Predicate = (!icmp_ln511)> <Delay = 0.00>
+ST_72 : Operation 163 [1/1] (3.63ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i320P0A, i320 %copyDest, i320 %or_ln174_s" [C:/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 163 'write' 'write_ln174' <Predicate = (!icmp_ln511)> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 320> <Depth = 1> <FIFO>
 
 State 73 <SV = 72> <Delay = 0.00>
-ST_73 : Operation 164 [1/1] (0.00ns)   --->   "%write_ln487 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 0" [detector_solid/abs_solid_detector.cpp:487]   --->   Operation 164 'write' 'write_ln487' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_73 : Operation 165 [1/1] (0.00ns)   --->   "%br_ln502 = br void %if.end" [detector_solid/abs_solid_detector.cpp:502]   --->   Operation 165 'br' 'br_ln502' <Predicate = (!icmp_ln496)> <Delay = 0.00>
-ST_73 : Operation 166 [1/1] (0.00ns)   --->   "%br_ln494 = br void %while.body" [detector_solid/abs_solid_detector.cpp:494]   --->   Operation 166 'br' 'br_ln494' <Predicate = true> <Delay = 0.00>
+ST_73 : Operation 164 [1/1] (0.00ns)   --->   "%write_ln502 = write void @_ssdm_op_Write.ap_auto.volatile.i8P0A, i8 %copying, i8 0" [detector_solid/abs_solid_detector.cpp:502]   --->   Operation 164 'write' 'write_ln502' <Predicate = (!icmp_ln511)> <Delay = 0.00>
+ST_73 : Operation 165 [1/1] (0.00ns)   --->   "%br_ln517 = br void %if.end" [detector_solid/abs_solid_detector.cpp:517]   --->   Operation 165 'br' 'br_ln517' <Predicate = (!icmp_ln511)> <Delay = 0.00>
+ST_73 : Operation 166 [1/1] (0.00ns)   --->   "%br_ln509 = br void %while.body" [detector_solid/abs_solid_detector.cpp:509]   --->   Operation 166 'br' 'br_ln509' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -575,19 +575,19 @@ specinterface_ln0     (specinterface    ) [ 000000000000000000000000000000000000
 specinterface_ln0     (specinterface    ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 gmem_addr_read        (read             ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 tmp_s                 (partselect       ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-tmp_54                (partselect       ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_53                (partselect       ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 trunc_ln174           (trunc            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 or_ln174_s            (bitconcatenate   ) [ 00000000000000000000000000000000000000000000000000000000000000000000000011]
-br_ln494              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-specloopname_ln496    (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln509              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+specloopname_ln511    (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 startCopy_read        (read             ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-icmp_ln496            (icmp             ) [ 00000000000000000000000000000000000000000000000000000000000000000000000011]
-br_ln496              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-write_ln485           (write            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+icmp_ln511            (icmp             ) [ 00000000000000000000000000000000000000000000000000000000000000000000000011]
+br_ln511              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+write_ln500           (write            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 write_ln174           (write            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-write_ln487           (write            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln502              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
-br_ln494              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+write_ln502           (write            ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln517              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
+br_ln509              (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000]
 </LifeTime>
 
 <model>
@@ -724,7 +724,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_23"/></StgValue>
+<StgValue><ssdm name="empty_10"/></StgValue>
 </bind>
 </comp>
 
@@ -742,7 +742,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_29"/></StgValue>
+<StgValue><ssdm name="empty_6"/></StgValue>
 </bind>
 </comp>
 
@@ -760,7 +760,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_19"/></StgValue>
+<StgValue><ssdm name="empty_5"/></StgValue>
 </bind>
 </comp>
 
@@ -778,7 +778,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_28"/></StgValue>
+<StgValue><ssdm name="empty_7"/></StgValue>
 </bind>
 </comp>
 
@@ -787,7 +787,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_27"/></StgValue>
+<StgValue><ssdm name="empty_12"/></StgValue>
 </bind>
 </comp>
 
@@ -886,7 +886,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 <pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </bind>
 </comp>
 
@@ -993,7 +993,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln485/72 write_ln487/73 "/>
+<opset="write_ln500/72 write_ln502/73 "/>
 </bind>
 </comp>
 
@@ -1061,7 +1061,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="147" class="1004" name="tmp_54_fu_147">
+<comp id="147" class="1004" name="tmp_53_fu_147">
 <pin_list>
 <pin id="148" dir="0" index="0" bw="40" slack="0"/>
 <pin id="149" dir="0" index="1" bw="512" slack="0"/>
@@ -1071,7 +1071,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_54/71 "/>
+<opset="tmp_53/71 "/>
 </bind>
 </comp>
 
@@ -1100,7 +1100,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="171" class="1004" name="icmp_ln496_fu_171">
+<comp id="171" class="1004" name="icmp_ln511_fu_171">
 <pin_list>
 <pin id="172" dir="0" index="0" bw="8" slack="0"/>
 <pin id="173" dir="0" index="1" bw="8" slack="0"/>
@@ -1108,7 +1108,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln496/72 "/>
+<opset="icmp_ln511/72 "/>
 </bind>
 </comp>
 
@@ -1132,13 +1132,13 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="188" class="1005" name="icmp_ln496_reg_188">
+<comp id="188" class="1005" name="icmp_ln511_reg_188">
 <pin_list>
 <pin id="189" dir="0" index="0" bw="1" slack="1"/>
 <pin id="190" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln496 "/>
+<opset="icmp_ln511 "/>
 </bind>
 </comp>
 
@@ -1322,7 +1322,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 	State 71
 		or_ln174_s : 1
 	State 72
-		br_ln496 : 1
+		br_ln511 : 1
 	State 73
 
 
@@ -1334,7 +1334,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 |----------|---------------------------|---------|---------|
 | Operation|      Functional Unit      |    FF   |   LUT   |
 |----------|---------------------------|---------|---------|
-|   icmp   |     icmp_ln496_fu_171     |    0    |    11   |
+|   icmp   |     icmp_ln511_fu_171     |    0    |    11   |
 |----------|---------------------------|---------|---------|
 |          |  inputAOV_read_read_fu_76 |    0    |    0    |
 |   read   | gmem_addr_read_read_fu_89 |    0    |    0    |
@@ -1347,7 +1347,7 @@ br_ln494              (br               ) [ 000000000000000000000000000000000000
 |----------|---------------------------|---------|---------|
 |          |       p_cast_fu_116       |    0    |    0    |
 |partselect|        tmp_s_fu_137       |    0    |    0    |
-|          |       tmp_54_fu_147       |    0    |    0    |
+|          |       tmp_53_fu_147       |    0    |    0    |
 |----------|---------------------------|---------|---------|
 |   sext   |     p_cast_cast_fu_126    |    0    |    0    |
 |----------|---------------------------|---------|---------|
@@ -1366,7 +1366,7 @@ N/A
 |                  |   FF   |
 +------------------+--------+
 | gmem_addr_reg_177|   512  |
-|icmp_ln496_reg_188|    1   |
+|icmp_ln511_reg_188|    1   |
 |or_ln174_s_reg_183|   320  |
 +------------------+--------+
 |       Total      |   833  |

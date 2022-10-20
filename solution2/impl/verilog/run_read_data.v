@@ -226,14 +226,14 @@ reg    ap_done_reg;
 wire    ap_CS_fsm_state1;
 reg    copyDest_blk_n;
 wire    ap_CS_fsm_state72;
-wire   [0:0] icmp_ln496_fu_171_p2;
+wire   [0:0] icmp_ln511_fu_171_p2;
 reg    gmem_blk_n_AR;
 reg    gmem_blk_n_R;
 wire    ap_CS_fsm_state71;
 reg    startCopy_blk_n;
 wire   [319:0] or_ln174_s_fu_161_p4;
 reg   [319:0] or_ln174_s_reg_183;
-reg   [0:0] icmp_ln496_reg_188;
+reg   [0:0] icmp_ln511_reg_188;
 wire  signed [63:0] p_cast_cast_fu_126_p1;
 reg    ap_block_state1;
 reg    ap_block_state72;
@@ -241,7 +241,7 @@ reg   [7:0] copying_preg;
 wire    ap_CS_fsm_state73;
 wire   [57:0] p_cast_fu_116_p4;
 wire   [255:0] tmp_s_fu_137_p4;
-wire   [39:0] tmp_54_fu_147_p4;
+wire   [39:0] tmp_53_fu_147_p4;
 wire   [23:0] trunc_ln174_fu_157_p1;
 reg   [72:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
@@ -338,9 +338,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         copying_preg <= 8'd0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state73) & (icmp_ln496_reg_188 == 1'd0))) begin
+        if (((1'b1 == ap_CS_fsm_state73) & (icmp_ln511_reg_188 == 1'd0))) begin
             copying_preg <= 8'd0;
-        end else if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln496_fu_171_p2 == 1'd0))) begin
+        end else if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln511_fu_171_p2 == 1'd0))) begin
             copying_preg <= 8'd255;
         end
     end
@@ -348,7 +348,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state72)) begin
-        icmp_ln496_reg_188 <= icmp_ln496_fu_171_p2;
+        icmp_ln511_reg_188 <= icmp_ln511_fu_171_p2;
     end
 end
 
@@ -507,7 +507,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0)))) begin
+    if (((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0)))) begin
         ap_ST_fsm_state72_blk = 1'b1;
     end else begin
         ap_ST_fsm_state72_blk = 1'b0;
@@ -531,7 +531,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state72) & (icmp_ln496_fu_171_p2 == 1'd0))) begin
+    if (((1'b1 == ap_CS_fsm_state72) & (icmp_ln511_fu_171_p2 == 1'd0))) begin
         copyDest_blk_n = copyDest_full_n;
     end else begin
         copyDest_blk_n = 1'b1;
@@ -539,7 +539,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln496_fu_171_p2 == 1'd0))) begin
+    if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln511_fu_171_p2 == 1'd0))) begin
         copyDest_write = 1'b1;
     end else begin
         copyDest_write = 1'b0;
@@ -547,9 +547,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state73) & (icmp_ln496_reg_188 == 1'd0))) begin
+    if (((1'b1 == ap_CS_fsm_state73) & (icmp_ln511_reg_188 == 1'd0))) begin
         copying = 8'd0;
-    end else if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln496_fu_171_p2 == 1'd0))) begin
+    end else if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln511_fu_171_p2 == 1'd0))) begin
         copying = 8'd255;
     end else begin
         copying = copying_preg;
@@ -557,7 +557,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_state73) & (icmp_ln496_reg_188 == 1'd0)) | (~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln496_fu_171_p2 == 1'd0)))) begin
+    if ((((1'b1 == ap_CS_fsm_state73) & (icmp_ln511_reg_188 == 1'd0)) | (~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72) & (icmp_ln511_fu_171_p2 == 1'd0)))) begin
         copying_ap_vld = 1'b1;
     end else begin
         copying_ap_vld = 1'b0;
@@ -597,7 +597,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72))) begin
+    if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72))) begin
         startCopy_ap_ack = 1'b1;
     end else begin
         startCopy_ap_ack = 1'b0;
@@ -836,7 +836,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state72 : begin
-            if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72))) begin
+            if ((~((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0))) & (1'b1 == ap_CS_fsm_state72))) begin
                 ap_NS_fsm = ap_ST_fsm_state73;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state72;
@@ -864,7 +864,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_block_state72 = ((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln496_fu_171_p2 == 1'd0)));
+    ap_block_state72 = ((startCopy_ap_vld == 1'b0) | ((copyDest_full_n == 1'b0) & (icmp_ln511_fu_171_p2 == 1'd0)));
 end
 
 assign ap_done = ap_done_reg;
@@ -873,7 +873,7 @@ assign ap_ready = 1'b0;
 
 assign copyDest_din = or_ln174_s_reg_183;
 
-assign icmp_ln496_fu_171_p2 = ((startCopy == 8'd0) ? 1'b1 : 1'b0);
+assign icmp_ln511_fu_171_p2 = ((startCopy == 8'd0) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem_ARADDR = p_cast_cast_fu_126_p1;
 
@@ -935,13 +935,13 @@ assign m_axi_gmem_WUSER = 1'd0;
 
 assign m_axi_gmem_WVALID = 1'b0;
 
-assign or_ln174_s_fu_161_p4 = {{{tmp_s_fu_137_p4}, {tmp_54_fu_147_p4}}, {trunc_ln174_fu_157_p1}};
+assign or_ln174_s_fu_161_p4 = {{{tmp_s_fu_137_p4}, {tmp_53_fu_147_p4}}, {trunc_ln174_fu_157_p1}};
 
 assign p_cast_cast_fu_126_p1 = $signed(p_cast_fu_116_p4);
 
 assign p_cast_fu_116_p4 = {{inputAOV[63:6]}};
 
-assign tmp_54_fu_147_p4 = {{m_axi_gmem_RDATA[71:32]}};
+assign tmp_53_fu_147_p4 = {{m_axi_gmem_RDATA[71:32]}};
 
 assign tmp_s_fu_137_p4 = {{m_axi_gmem_RDATA[351:96]}};
 

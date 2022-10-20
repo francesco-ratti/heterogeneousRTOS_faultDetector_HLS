@@ -458,19 +458,34 @@ void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MA
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
 
 	while (1) {
-		in=source.read();
+#pragma HLS pipeline off
 
-		OutcomeStr outcome;
-		outcome.checkId=in.checkId;
-		outcome.uniId=in.uniId;
-		outcome.executionId=in.executionId;
-		memcpy((void*) &(outcome.AOV), (void*) &(in.AOV), sizeOfInputData);
-		dest.write(outcome);
+		while (1) {
+			OutcomeStr outcome;
+			in=source.read();
+			outcome.checkId=in.checkId;
+			outcome.uniId=in.uniId;
+			outcome.executionId=in.executionId;
+			memcpy((void*) &(outcome.AOV), (void*) &(in.AOV), sizeOfInputData);
 
-		bool error = !(is_valid(in.AOV) && hasRegion(regions[in.checkId], n_regions[in.checkId], in.AOV));//find_region(regions, n_regions, data) < 0 ) ;
+			if (in.command!=COMMAND_TEST) {
+				break;
+			}
+			bool vld=is_valid(in.AOV);
+			bool hasReg=hasRegion(regions[in.checkId], n_regions[in.checkId], in.AOV);//find_region(regions, n_regions, data) < 0 )
+			bool error = !(vld && hasReg);
 
-		if (error)
-			dest.write(outcome);
+			if (error)
+				dest.write(outcome);
+		}
+
+		if (in.command==COMMAND_TRAIN) {
+			insert_point(regions[in.checkId],
+					n_regions[in.checkId],
+					in.AOV);
+		}
+
+
 	}
 }
 

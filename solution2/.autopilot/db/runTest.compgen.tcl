@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # FIFO definition: 
-set ID 126
+set ID 167
 set FifoName run_fifo_w320_d1_S
 set InstName copyDest_U
 set CoreName ap_simcore_fifo
@@ -75,7 +75,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 
 # FIFO definition: 
-set ID 127
+set ID 168
 set FifoName run_fifo_w288_d1_S
 set InstName outcomeStream_U
 set CoreName ap_simcore_fifo
@@ -159,11 +159,11 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 196 \
+    id 237 \
     name regions \
     reset_level 1 \
     sync_rst true \
-    dir I \
+    dir IO \
     corename regions \
     op interface \
     ports { regions_address0 { O 12 vector } regions_ce0 { O 1 bit } regions_d0 { O 32 vector } regions_q0 { I 32 vector } regions_we0 { O 1 bit } regions_address1 { O 12 vector } regions_ce1 { O 1 bit } regions_d1 { O 32 vector } regions_q1 { I 32 vector } regions_we1 { O 1 bit } } \
@@ -178,11 +178,11 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 197 \
+    id 238 \
     name regions_1 \
     reset_level 1 \
     sync_rst true \
-    dir I \
+    dir IO \
     corename regions_1 \
     op interface \
     ports { regions_1_address0 { O 12 vector } regions_1_ce0 { O 1 bit } regions_1_d0 { O 32 vector } regions_1_q0 { I 32 vector } regions_1_we0 { O 1 bit } regions_1_address1 { O 12 vector } regions_1_ce1 { O 1 bit } regions_1_d1 { O 32 vector } regions_1_q1 { I 32 vector } regions_1_we1 { O 1 bit } } \
@@ -197,11 +197,11 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 198 \
+    id 239 \
     name regions_2 \
     reset_level 1 \
     sync_rst true \
-    dir I \
+    dir IO \
     corename regions_2 \
     op interface \
     ports { regions_2_address0 { O 12 vector } regions_2_ce0 { O 1 bit } regions_2_d0 { O 32 vector } regions_2_q0 { I 32 vector } regions_2_we0 { O 1 bit } regions_2_address1 { O 12 vector } regions_2_ce1 { O 1 bit } regions_2_d1 { O 32 vector } regions_2_q1 { I 32 vector } regions_2_we1 { O 1 bit } } \
@@ -216,11 +216,11 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 199 \
+    id 240 \
     name regions_3 \
     reset_level 1 \
     sync_rst true \
-    dir I \
+    dir IO \
     corename regions_3 \
     op interface \
     ports { regions_3_address0 { O 12 vector } regions_3_ce0 { O 1 bit } regions_3_d0 { O 32 vector } regions_3_q0 { I 32 vector } regions_3_we0 { O 1 bit } regions_3_address1 { O 12 vector } regions_3_ce1 { O 1 bit } regions_3_d1 { O 32 vector } regions_3_q1 { I 32 vector } regions_3_we1 { O 1 bit } } \
@@ -231,10 +231,48 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 
 
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 241 \
+    name regions_4 \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename regions_4 \
+    op interface \
+    ports { regions_4_address0 { O 12 vector } regions_4_ce0 { O 1 bit } regions_4_d0 { O 32 vector } regions_4_q0 { I 32 vector } regions_4_we0 { O 1 bit } regions_4_address1 { O 12 vector } regions_4_ce1 { O 1 bit } regions_4_d1 { O 32 vector } regions_4_q1 { I 32 vector } regions_4_we1 { O 1 bit } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_4'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 242 \
+    name regions_5 \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename regions_5 \
+    op interface \
+    ports { regions_5_address0 { O 12 vector } regions_5_ce0 { O 1 bit } regions_5_d0 { O 32 vector } regions_5_q0 { I 32 vector } regions_5_we0 { O 1 bit } regions_5_address1 { O 12 vector } regions_5_ce1 { O 1 bit } regions_5_d1 { O 32 vector } regions_5_q1 { I 32 vector } regions_5_we1 { O 1 bit } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'regions_5'"
+}
+}
+
+
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 128 \
+    id 169 \
     name gmem \
     type other \
     dir I \
@@ -249,7 +287,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 129 \
+    id 170 \
     name inputAOV \
     type other \
     dir I \
@@ -264,7 +302,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 130 \
+    id 171 \
     name startCopy \
     type other \
     dir I \
@@ -279,7 +317,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 131 \
+    id 172 \
     name copying \
     type other \
     dir O \
@@ -294,630 +332,15 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 132 \
+    id 173 \
     name p_ZL9n_regions_0 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
     corename dc_p_ZL9n_regions_0 \
     op interface \
-    ports { p_ZL9n_regions_0 { I 8 vector } p_ZL9n_regions_0_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 133 \
-    name p_ZL9n_regions_1 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_1 \
-    op interface \
-    ports { p_ZL9n_regions_1 { I 8 vector } p_ZL9n_regions_1_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 134 \
-    name p_ZL9n_regions_2 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_2 \
-    op interface \
-    ports { p_ZL9n_regions_2 { I 8 vector } p_ZL9n_regions_2_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 135 \
-    name p_ZL9n_regions_3 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_3 \
-    op interface \
-    ports { p_ZL9n_regions_3 { I 8 vector } p_ZL9n_regions_3_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 136 \
-    name p_ZL9n_regions_4 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_4 \
-    op interface \
-    ports { p_ZL9n_regions_4 { I 8 vector } p_ZL9n_regions_4_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 137 \
-    name p_ZL9n_regions_5 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_5 \
-    op interface \
-    ports { p_ZL9n_regions_5 { I 8 vector } p_ZL9n_regions_5_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 138 \
-    name p_ZL9n_regions_6 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_6 \
-    op interface \
-    ports { p_ZL9n_regions_6 { I 8 vector } p_ZL9n_regions_6_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 139 \
-    name p_ZL9n_regions_7 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_7 \
-    op interface \
-    ports { p_ZL9n_regions_7 { I 8 vector } p_ZL9n_regions_7_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 140 \
-    name p_ZL9n_regions_8 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_8 \
-    op interface \
-    ports { p_ZL9n_regions_8 { I 8 vector } p_ZL9n_regions_8_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 141 \
-    name p_ZL9n_regions_9 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_9 \
-    op interface \
-    ports { p_ZL9n_regions_9 { I 8 vector } p_ZL9n_regions_9_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 142 \
-    name p_ZL9n_regions_10 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_10 \
-    op interface \
-    ports { p_ZL9n_regions_10 { I 8 vector } p_ZL9n_regions_10_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 143 \
-    name p_ZL9n_regions_11 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_11 \
-    op interface \
-    ports { p_ZL9n_regions_11 { I 8 vector } p_ZL9n_regions_11_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 144 \
-    name p_ZL9n_regions_12 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_12 \
-    op interface \
-    ports { p_ZL9n_regions_12 { I 8 vector } p_ZL9n_regions_12_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 145 \
-    name p_ZL9n_regions_13 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_13 \
-    op interface \
-    ports { p_ZL9n_regions_13 { I 8 vector } p_ZL9n_regions_13_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 146 \
-    name p_ZL9n_regions_14 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_14 \
-    op interface \
-    ports { p_ZL9n_regions_14 { I 8 vector } p_ZL9n_regions_14_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 147 \
-    name p_ZL9n_regions_15 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_15 \
-    op interface \
-    ports { p_ZL9n_regions_15 { I 8 vector } p_ZL9n_regions_15_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 148 \
-    name p_ZL9n_regions_16 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_16 \
-    op interface \
-    ports { p_ZL9n_regions_16 { I 8 vector } p_ZL9n_regions_16_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 149 \
-    name p_ZL9n_regions_17 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_17 \
-    op interface \
-    ports { p_ZL9n_regions_17 { I 8 vector } p_ZL9n_regions_17_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 150 \
-    name p_ZL9n_regions_18 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_18 \
-    op interface \
-    ports { p_ZL9n_regions_18 { I 8 vector } p_ZL9n_regions_18_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 151 \
-    name p_ZL9n_regions_19 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_19 \
-    op interface \
-    ports { p_ZL9n_regions_19 { I 8 vector } p_ZL9n_regions_19_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 152 \
-    name p_ZL9n_regions_20 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_20 \
-    op interface \
-    ports { p_ZL9n_regions_20 { I 8 vector } p_ZL9n_regions_20_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 153 \
-    name p_ZL9n_regions_21 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_21 \
-    op interface \
-    ports { p_ZL9n_regions_21 { I 8 vector } p_ZL9n_regions_21_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 154 \
-    name p_ZL9n_regions_22 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_22 \
-    op interface \
-    ports { p_ZL9n_regions_22 { I 8 vector } p_ZL9n_regions_22_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 155 \
-    name p_ZL9n_regions_23 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_23 \
-    op interface \
-    ports { p_ZL9n_regions_23 { I 8 vector } p_ZL9n_regions_23_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 156 \
-    name p_ZL9n_regions_24 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_24 \
-    op interface \
-    ports { p_ZL9n_regions_24 { I 8 vector } p_ZL9n_regions_24_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 157 \
-    name p_ZL9n_regions_25 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_25 \
-    op interface \
-    ports { p_ZL9n_regions_25 { I 8 vector } p_ZL9n_regions_25_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 158 \
-    name p_ZL9n_regions_26 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_26 \
-    op interface \
-    ports { p_ZL9n_regions_26 { I 8 vector } p_ZL9n_regions_26_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 159 \
-    name p_ZL9n_regions_27 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_27 \
-    op interface \
-    ports { p_ZL9n_regions_27 { I 8 vector } p_ZL9n_regions_27_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 160 \
-    name p_ZL9n_regions_28 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_28 \
-    op interface \
-    ports { p_ZL9n_regions_28 { I 8 vector } p_ZL9n_regions_28_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 161 \
-    name p_ZL9n_regions_29 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_29 \
-    op interface \
-    ports { p_ZL9n_regions_29 { I 8 vector } p_ZL9n_regions_29_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 162 \
-    name p_ZL9n_regions_30 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_30 \
-    op interface \
-    ports { p_ZL9n_regions_30 { I 8 vector } p_ZL9n_regions_30_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 163 \
-    name p_ZL9n_regions_31 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_31 \
-    op interface \
-    ports { p_ZL9n_regions_31 { I 8 vector } p_ZL9n_regions_31_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 164 \
-    name p_ZL9n_regions_32 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_32 \
-    op interface \
-    ports { p_ZL9n_regions_32 { I 8 vector } p_ZL9n_regions_32_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 165 \
-    name p_ZL9n_regions_33 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_33 \
-    op interface \
-    ports { p_ZL9n_regions_33 { I 8 vector } p_ZL9n_regions_33_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 166 \
-    name p_ZL9n_regions_34 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_34 \
-    op interface \
-    ports { p_ZL9n_regions_34 { I 8 vector } p_ZL9n_regions_34_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 167 \
-    name p_ZL9n_regions_35 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_35 \
-    op interface \
-    ports { p_ZL9n_regions_35 { I 8 vector } p_ZL9n_regions_35_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 168 \
-    name p_ZL9n_regions_36 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_36 \
-    op interface \
-    ports { p_ZL9n_regions_36 { I 8 vector } p_ZL9n_regions_36_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 169 \
-    name p_ZL9n_regions_37 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_37 \
-    op interface \
-    ports { p_ZL9n_regions_37 { I 8 vector } p_ZL9n_regions_37_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 170 \
-    name p_ZL9n_regions_38 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_38 \
-    op interface \
-    ports { p_ZL9n_regions_38 { I 8 vector } p_ZL9n_regions_38_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 171 \
-    name p_ZL9n_regions_39 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_39 \
-    op interface \
-    ports { p_ZL9n_regions_39 { I 8 vector } p_ZL9n_regions_39_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 172 \
-    name p_ZL9n_regions_40 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_40 \
-    op interface \
-    ports { p_ZL9n_regions_40 { I 8 vector } p_ZL9n_regions_40_ap_vld { I 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 173 \
-    name p_ZL9n_regions_41 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_p_ZL9n_regions_41 \
-    op interface \
-    ports { p_ZL9n_regions_41 { I 8 vector } p_ZL9n_regions_41_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_0_i { I 8 vector } p_ZL9n_regions_0_o { O 8 vector } p_ZL9n_regions_0_i_ap_vld { I 1 bit } p_ZL9n_regions_0_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -925,14 +348,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 174 \
-    name p_ZL9n_regions_42 \
+    name p_ZL9n_regions_1 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_42 \
+    corename dc_p_ZL9n_regions_1 \
     op interface \
-    ports { p_ZL9n_regions_42 { I 8 vector } p_ZL9n_regions_42_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_1_i { I 8 vector } p_ZL9n_regions_1_o { O 8 vector } p_ZL9n_regions_1_i_ap_vld { I 1 bit } p_ZL9n_regions_1_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -940,14 +363,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 175 \
-    name p_ZL9n_regions_43 \
+    name p_ZL9n_regions_2 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_43 \
+    corename dc_p_ZL9n_regions_2 \
     op interface \
-    ports { p_ZL9n_regions_43 { I 8 vector } p_ZL9n_regions_43_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_2_i { I 8 vector } p_ZL9n_regions_2_o { O 8 vector } p_ZL9n_regions_2_i_ap_vld { I 1 bit } p_ZL9n_regions_2_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -955,14 +378,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 176 \
-    name p_ZL9n_regions_44 \
+    name p_ZL9n_regions_3 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_44 \
+    corename dc_p_ZL9n_regions_3 \
     op interface \
-    ports { p_ZL9n_regions_44 { I 8 vector } p_ZL9n_regions_44_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_3_i { I 8 vector } p_ZL9n_regions_3_o { O 8 vector } p_ZL9n_regions_3_i_ap_vld { I 1 bit } p_ZL9n_regions_3_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -970,14 +393,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 177 \
-    name p_ZL9n_regions_45 \
+    name p_ZL9n_regions_4 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_45 \
+    corename dc_p_ZL9n_regions_4 \
     op interface \
-    ports { p_ZL9n_regions_45 { I 8 vector } p_ZL9n_regions_45_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_4_i { I 8 vector } p_ZL9n_regions_4_o { O 8 vector } p_ZL9n_regions_4_i_ap_vld { I 1 bit } p_ZL9n_regions_4_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -985,14 +408,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 178 \
-    name p_ZL9n_regions_46 \
+    name p_ZL9n_regions_5 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_46 \
+    corename dc_p_ZL9n_regions_5 \
     op interface \
-    ports { p_ZL9n_regions_46 { I 8 vector } p_ZL9n_regions_46_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_5_i { I 8 vector } p_ZL9n_regions_5_o { O 8 vector } p_ZL9n_regions_5_i_ap_vld { I 1 bit } p_ZL9n_regions_5_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1000,14 +423,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 179 \
-    name p_ZL9n_regions_47 \
+    name p_ZL9n_regions_6 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_47 \
+    corename dc_p_ZL9n_regions_6 \
     op interface \
-    ports { p_ZL9n_regions_47 { I 8 vector } p_ZL9n_regions_47_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_6_i { I 8 vector } p_ZL9n_regions_6_o { O 8 vector } p_ZL9n_regions_6_i_ap_vld { I 1 bit } p_ZL9n_regions_6_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1015,14 +438,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 180 \
-    name p_ZL9n_regions_48 \
+    name p_ZL9n_regions_7 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_48 \
+    corename dc_p_ZL9n_regions_7 \
     op interface \
-    ports { p_ZL9n_regions_48 { I 8 vector } p_ZL9n_regions_48_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_7_i { I 8 vector } p_ZL9n_regions_7_o { O 8 vector } p_ZL9n_regions_7_i_ap_vld { I 1 bit } p_ZL9n_regions_7_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1030,14 +453,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 181 \
-    name p_ZL9n_regions_49 \
+    name p_ZL9n_regions_8 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_49 \
+    corename dc_p_ZL9n_regions_8 \
     op interface \
-    ports { p_ZL9n_regions_49 { I 8 vector } p_ZL9n_regions_49_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_8_i { I 8 vector } p_ZL9n_regions_8_o { O 8 vector } p_ZL9n_regions_8_i_ap_vld { I 1 bit } p_ZL9n_regions_8_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1045,14 +468,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 182 \
-    name p_ZL9n_regions_50 \
+    name p_ZL9n_regions_9 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_50 \
+    corename dc_p_ZL9n_regions_9 \
     op interface \
-    ports { p_ZL9n_regions_50 { I 8 vector } p_ZL9n_regions_50_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_9_i { I 8 vector } p_ZL9n_regions_9_o { O 8 vector } p_ZL9n_regions_9_i_ap_vld { I 1 bit } p_ZL9n_regions_9_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1060,14 +483,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 183 \
-    name p_ZL9n_regions_51 \
+    name p_ZL9n_regions_10 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_51 \
+    corename dc_p_ZL9n_regions_10 \
     op interface \
-    ports { p_ZL9n_regions_51 { I 8 vector } p_ZL9n_regions_51_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_10_i { I 8 vector } p_ZL9n_regions_10_o { O 8 vector } p_ZL9n_regions_10_i_ap_vld { I 1 bit } p_ZL9n_regions_10_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1075,14 +498,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 184 \
-    name p_ZL9n_regions_52 \
+    name p_ZL9n_regions_11 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_52 \
+    corename dc_p_ZL9n_regions_11 \
     op interface \
-    ports { p_ZL9n_regions_52 { I 8 vector } p_ZL9n_regions_52_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_11_i { I 8 vector } p_ZL9n_regions_11_o { O 8 vector } p_ZL9n_regions_11_i_ap_vld { I 1 bit } p_ZL9n_regions_11_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1090,14 +513,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 185 \
-    name p_ZL9n_regions_53 \
+    name p_ZL9n_regions_12 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_53 \
+    corename dc_p_ZL9n_regions_12 \
     op interface \
-    ports { p_ZL9n_regions_53 { I 8 vector } p_ZL9n_regions_53_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_12_i { I 8 vector } p_ZL9n_regions_12_o { O 8 vector } p_ZL9n_regions_12_i_ap_vld { I 1 bit } p_ZL9n_regions_12_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1105,14 +528,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 186 \
-    name p_ZL9n_regions_54 \
+    name p_ZL9n_regions_13 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_54 \
+    corename dc_p_ZL9n_regions_13 \
     op interface \
-    ports { p_ZL9n_regions_54 { I 8 vector } p_ZL9n_regions_54_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_13_i { I 8 vector } p_ZL9n_regions_13_o { O 8 vector } p_ZL9n_regions_13_i_ap_vld { I 1 bit } p_ZL9n_regions_13_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1120,14 +543,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 187 \
-    name p_ZL9n_regions_55 \
+    name p_ZL9n_regions_14 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_55 \
+    corename dc_p_ZL9n_regions_14 \
     op interface \
-    ports { p_ZL9n_regions_55 { I 8 vector } p_ZL9n_regions_55_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_14_i { I 8 vector } p_ZL9n_regions_14_o { O 8 vector } p_ZL9n_regions_14_i_ap_vld { I 1 bit } p_ZL9n_regions_14_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1135,14 +558,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 188 \
-    name p_ZL9n_regions_56 \
+    name p_ZL9n_regions_15 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_56 \
+    corename dc_p_ZL9n_regions_15 \
     op interface \
-    ports { p_ZL9n_regions_56 { I 8 vector } p_ZL9n_regions_56_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_15_i { I 8 vector } p_ZL9n_regions_15_o { O 8 vector } p_ZL9n_regions_15_i_ap_vld { I 1 bit } p_ZL9n_regions_15_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1150,14 +573,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 189 \
-    name p_ZL9n_regions_57 \
+    name p_ZL9n_regions_16 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_57 \
+    corename dc_p_ZL9n_regions_16 \
     op interface \
-    ports { p_ZL9n_regions_57 { I 8 vector } p_ZL9n_regions_57_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_16_i { I 8 vector } p_ZL9n_regions_16_o { O 8 vector } p_ZL9n_regions_16_i_ap_vld { I 1 bit } p_ZL9n_regions_16_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1165,14 +588,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 190 \
-    name p_ZL9n_regions_58 \
+    name p_ZL9n_regions_17 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_58 \
+    corename dc_p_ZL9n_regions_17 \
     op interface \
-    ports { p_ZL9n_regions_58 { I 8 vector } p_ZL9n_regions_58_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_17_i { I 8 vector } p_ZL9n_regions_17_o { O 8 vector } p_ZL9n_regions_17_i_ap_vld { I 1 bit } p_ZL9n_regions_17_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1180,14 +603,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 191 \
-    name p_ZL9n_regions_59 \
+    name p_ZL9n_regions_18 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_59 \
+    corename dc_p_ZL9n_regions_18 \
     op interface \
-    ports { p_ZL9n_regions_59 { I 8 vector } p_ZL9n_regions_59_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_18_i { I 8 vector } p_ZL9n_regions_18_o { O 8 vector } p_ZL9n_regions_18_i_ap_vld { I 1 bit } p_ZL9n_regions_18_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1195,14 +618,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 192 \
-    name p_ZL9n_regions_60 \
+    name p_ZL9n_regions_19 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_60 \
+    corename dc_p_ZL9n_regions_19 \
     op interface \
-    ports { p_ZL9n_regions_60 { I 8 vector } p_ZL9n_regions_60_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_19_i { I 8 vector } p_ZL9n_regions_19_o { O 8 vector } p_ZL9n_regions_19_i_ap_vld { I 1 bit } p_ZL9n_regions_19_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1210,14 +633,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 193 \
-    name p_ZL9n_regions_61 \
+    name p_ZL9n_regions_20 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_61 \
+    corename dc_p_ZL9n_regions_20 \
     op interface \
-    ports { p_ZL9n_regions_61 { I 8 vector } p_ZL9n_regions_61_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_20_i { I 8 vector } p_ZL9n_regions_20_o { O 8 vector } p_ZL9n_regions_20_i_ap_vld { I 1 bit } p_ZL9n_regions_20_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1225,14 +648,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 194 \
-    name p_ZL9n_regions_62 \
+    name p_ZL9n_regions_21 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_p_ZL9n_regions_62 \
+    corename dc_p_ZL9n_regions_21 \
     op interface \
-    ports { p_ZL9n_regions_62 { I 8 vector } p_ZL9n_regions_62_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_21_i { I 8 vector } p_ZL9n_regions_21_o { O 8 vector } p_ZL9n_regions_21_i_ap_vld { I 1 bit } p_ZL9n_regions_21_o_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -1240,14 +663,629 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 195 \
+    name p_ZL9n_regions_22 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_22 \
+    op interface \
+    ports { p_ZL9n_regions_22_i { I 8 vector } p_ZL9n_regions_22_o { O 8 vector } p_ZL9n_regions_22_i_ap_vld { I 1 bit } p_ZL9n_regions_22_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 196 \
+    name p_ZL9n_regions_23 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_23 \
+    op interface \
+    ports { p_ZL9n_regions_23_i { I 8 vector } p_ZL9n_regions_23_o { O 8 vector } p_ZL9n_regions_23_i_ap_vld { I 1 bit } p_ZL9n_regions_23_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 197 \
+    name p_ZL9n_regions_24 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_24 \
+    op interface \
+    ports { p_ZL9n_regions_24_i { I 8 vector } p_ZL9n_regions_24_o { O 8 vector } p_ZL9n_regions_24_i_ap_vld { I 1 bit } p_ZL9n_regions_24_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 198 \
+    name p_ZL9n_regions_25 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_25 \
+    op interface \
+    ports { p_ZL9n_regions_25_i { I 8 vector } p_ZL9n_regions_25_o { O 8 vector } p_ZL9n_regions_25_i_ap_vld { I 1 bit } p_ZL9n_regions_25_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 199 \
+    name p_ZL9n_regions_26 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_26 \
+    op interface \
+    ports { p_ZL9n_regions_26_i { I 8 vector } p_ZL9n_regions_26_o { O 8 vector } p_ZL9n_regions_26_i_ap_vld { I 1 bit } p_ZL9n_regions_26_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 200 \
+    name p_ZL9n_regions_27 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_27 \
+    op interface \
+    ports { p_ZL9n_regions_27_i { I 8 vector } p_ZL9n_regions_27_o { O 8 vector } p_ZL9n_regions_27_i_ap_vld { I 1 bit } p_ZL9n_regions_27_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 201 \
+    name p_ZL9n_regions_28 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_28 \
+    op interface \
+    ports { p_ZL9n_regions_28_i { I 8 vector } p_ZL9n_regions_28_o { O 8 vector } p_ZL9n_regions_28_i_ap_vld { I 1 bit } p_ZL9n_regions_28_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 202 \
+    name p_ZL9n_regions_29 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_29 \
+    op interface \
+    ports { p_ZL9n_regions_29_i { I 8 vector } p_ZL9n_regions_29_o { O 8 vector } p_ZL9n_regions_29_i_ap_vld { I 1 bit } p_ZL9n_regions_29_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 203 \
+    name p_ZL9n_regions_30 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_30 \
+    op interface \
+    ports { p_ZL9n_regions_30_i { I 8 vector } p_ZL9n_regions_30_o { O 8 vector } p_ZL9n_regions_30_i_ap_vld { I 1 bit } p_ZL9n_regions_30_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 204 \
+    name p_ZL9n_regions_31 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_31 \
+    op interface \
+    ports { p_ZL9n_regions_31_i { I 8 vector } p_ZL9n_regions_31_o { O 8 vector } p_ZL9n_regions_31_i_ap_vld { I 1 bit } p_ZL9n_regions_31_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 205 \
+    name p_ZL9n_regions_32 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_32 \
+    op interface \
+    ports { p_ZL9n_regions_32_i { I 8 vector } p_ZL9n_regions_32_o { O 8 vector } p_ZL9n_regions_32_i_ap_vld { I 1 bit } p_ZL9n_regions_32_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 206 \
+    name p_ZL9n_regions_33 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_33 \
+    op interface \
+    ports { p_ZL9n_regions_33_i { I 8 vector } p_ZL9n_regions_33_o { O 8 vector } p_ZL9n_regions_33_i_ap_vld { I 1 bit } p_ZL9n_regions_33_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 207 \
+    name p_ZL9n_regions_34 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_34 \
+    op interface \
+    ports { p_ZL9n_regions_34_i { I 8 vector } p_ZL9n_regions_34_o { O 8 vector } p_ZL9n_regions_34_i_ap_vld { I 1 bit } p_ZL9n_regions_34_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 208 \
+    name p_ZL9n_regions_35 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_35 \
+    op interface \
+    ports { p_ZL9n_regions_35_i { I 8 vector } p_ZL9n_regions_35_o { O 8 vector } p_ZL9n_regions_35_i_ap_vld { I 1 bit } p_ZL9n_regions_35_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 209 \
+    name p_ZL9n_regions_36 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_36 \
+    op interface \
+    ports { p_ZL9n_regions_36_i { I 8 vector } p_ZL9n_regions_36_o { O 8 vector } p_ZL9n_regions_36_i_ap_vld { I 1 bit } p_ZL9n_regions_36_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 210 \
+    name p_ZL9n_regions_37 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_37 \
+    op interface \
+    ports { p_ZL9n_regions_37_i { I 8 vector } p_ZL9n_regions_37_o { O 8 vector } p_ZL9n_regions_37_i_ap_vld { I 1 bit } p_ZL9n_regions_37_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 211 \
+    name p_ZL9n_regions_38 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_38 \
+    op interface \
+    ports { p_ZL9n_regions_38_i { I 8 vector } p_ZL9n_regions_38_o { O 8 vector } p_ZL9n_regions_38_i_ap_vld { I 1 bit } p_ZL9n_regions_38_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 212 \
+    name p_ZL9n_regions_39 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_39 \
+    op interface \
+    ports { p_ZL9n_regions_39_i { I 8 vector } p_ZL9n_regions_39_o { O 8 vector } p_ZL9n_regions_39_i_ap_vld { I 1 bit } p_ZL9n_regions_39_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 213 \
+    name p_ZL9n_regions_40 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_40 \
+    op interface \
+    ports { p_ZL9n_regions_40_i { I 8 vector } p_ZL9n_regions_40_o { O 8 vector } p_ZL9n_regions_40_i_ap_vld { I 1 bit } p_ZL9n_regions_40_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 214 \
+    name p_ZL9n_regions_41 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_41 \
+    op interface \
+    ports { p_ZL9n_regions_41_i { I 8 vector } p_ZL9n_regions_41_o { O 8 vector } p_ZL9n_regions_41_i_ap_vld { I 1 bit } p_ZL9n_regions_41_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 215 \
+    name p_ZL9n_regions_42 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_42 \
+    op interface \
+    ports { p_ZL9n_regions_42_i { I 8 vector } p_ZL9n_regions_42_o { O 8 vector } p_ZL9n_regions_42_i_ap_vld { I 1 bit } p_ZL9n_regions_42_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 216 \
+    name p_ZL9n_regions_43 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_43 \
+    op interface \
+    ports { p_ZL9n_regions_43_i { I 8 vector } p_ZL9n_regions_43_o { O 8 vector } p_ZL9n_regions_43_i_ap_vld { I 1 bit } p_ZL9n_regions_43_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 217 \
+    name p_ZL9n_regions_44 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_44 \
+    op interface \
+    ports { p_ZL9n_regions_44_i { I 8 vector } p_ZL9n_regions_44_o { O 8 vector } p_ZL9n_regions_44_i_ap_vld { I 1 bit } p_ZL9n_regions_44_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 218 \
+    name p_ZL9n_regions_45 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_45 \
+    op interface \
+    ports { p_ZL9n_regions_45_i { I 8 vector } p_ZL9n_regions_45_o { O 8 vector } p_ZL9n_regions_45_i_ap_vld { I 1 bit } p_ZL9n_regions_45_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 219 \
+    name p_ZL9n_regions_46 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_46 \
+    op interface \
+    ports { p_ZL9n_regions_46_i { I 8 vector } p_ZL9n_regions_46_o { O 8 vector } p_ZL9n_regions_46_i_ap_vld { I 1 bit } p_ZL9n_regions_46_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 220 \
+    name p_ZL9n_regions_47 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_47 \
+    op interface \
+    ports { p_ZL9n_regions_47_i { I 8 vector } p_ZL9n_regions_47_o { O 8 vector } p_ZL9n_regions_47_i_ap_vld { I 1 bit } p_ZL9n_regions_47_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 221 \
+    name p_ZL9n_regions_48 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_48 \
+    op interface \
+    ports { p_ZL9n_regions_48_i { I 8 vector } p_ZL9n_regions_48_o { O 8 vector } p_ZL9n_regions_48_i_ap_vld { I 1 bit } p_ZL9n_regions_48_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 222 \
+    name p_ZL9n_regions_49 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_49 \
+    op interface \
+    ports { p_ZL9n_regions_49_i { I 8 vector } p_ZL9n_regions_49_o { O 8 vector } p_ZL9n_regions_49_i_ap_vld { I 1 bit } p_ZL9n_regions_49_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 223 \
+    name p_ZL9n_regions_50 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_50 \
+    op interface \
+    ports { p_ZL9n_regions_50_i { I 8 vector } p_ZL9n_regions_50_o { O 8 vector } p_ZL9n_regions_50_i_ap_vld { I 1 bit } p_ZL9n_regions_50_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 224 \
+    name p_ZL9n_regions_51 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_51 \
+    op interface \
+    ports { p_ZL9n_regions_51_i { I 8 vector } p_ZL9n_regions_51_o { O 8 vector } p_ZL9n_regions_51_i_ap_vld { I 1 bit } p_ZL9n_regions_51_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 225 \
+    name p_ZL9n_regions_52 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_52 \
+    op interface \
+    ports { p_ZL9n_regions_52_i { I 8 vector } p_ZL9n_regions_52_o { O 8 vector } p_ZL9n_regions_52_i_ap_vld { I 1 bit } p_ZL9n_regions_52_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 226 \
+    name p_ZL9n_regions_53 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_53 \
+    op interface \
+    ports { p_ZL9n_regions_53_i { I 8 vector } p_ZL9n_regions_53_o { O 8 vector } p_ZL9n_regions_53_i_ap_vld { I 1 bit } p_ZL9n_regions_53_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 227 \
+    name p_ZL9n_regions_54 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_54 \
+    op interface \
+    ports { p_ZL9n_regions_54_i { I 8 vector } p_ZL9n_regions_54_o { O 8 vector } p_ZL9n_regions_54_i_ap_vld { I 1 bit } p_ZL9n_regions_54_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 228 \
+    name p_ZL9n_regions_55 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_55 \
+    op interface \
+    ports { p_ZL9n_regions_55_i { I 8 vector } p_ZL9n_regions_55_o { O 8 vector } p_ZL9n_regions_55_i_ap_vld { I 1 bit } p_ZL9n_regions_55_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 229 \
+    name p_ZL9n_regions_56 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_56 \
+    op interface \
+    ports { p_ZL9n_regions_56_i { I 8 vector } p_ZL9n_regions_56_o { O 8 vector } p_ZL9n_regions_56_i_ap_vld { I 1 bit } p_ZL9n_regions_56_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 230 \
+    name p_ZL9n_regions_57 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_57 \
+    op interface \
+    ports { p_ZL9n_regions_57_i { I 8 vector } p_ZL9n_regions_57_o { O 8 vector } p_ZL9n_regions_57_i_ap_vld { I 1 bit } p_ZL9n_regions_57_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 231 \
+    name p_ZL9n_regions_58 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_58 \
+    op interface \
+    ports { p_ZL9n_regions_58_i { I 8 vector } p_ZL9n_regions_58_o { O 8 vector } p_ZL9n_regions_58_i_ap_vld { I 1 bit } p_ZL9n_regions_58_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 232 \
+    name p_ZL9n_regions_59 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_59 \
+    op interface \
+    ports { p_ZL9n_regions_59_i { I 8 vector } p_ZL9n_regions_59_o { O 8 vector } p_ZL9n_regions_59_i_ap_vld { I 1 bit } p_ZL9n_regions_59_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 233 \
+    name p_ZL9n_regions_60 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_60 \
+    op interface \
+    ports { p_ZL9n_regions_60_i { I 8 vector } p_ZL9n_regions_60_o { O 8 vector } p_ZL9n_regions_60_i_ap_vld { I 1 bit } p_ZL9n_regions_60_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 234 \
+    name p_ZL9n_regions_61 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_61 \
+    op interface \
+    ports { p_ZL9n_regions_61_i { I 8 vector } p_ZL9n_regions_61_o { O 8 vector } p_ZL9n_regions_61_i_ap_vld { I 1 bit } p_ZL9n_regions_61_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 235 \
+    name p_ZL9n_regions_62 \
+    type other \
+    dir IO \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_p_ZL9n_regions_62 \
+    op interface \
+    ports { p_ZL9n_regions_62_i { I 8 vector } p_ZL9n_regions_62_o { O 8 vector } p_ZL9n_regions_62_i_ap_vld { I 1 bit } p_ZL9n_regions_62_o_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 236 \
     name p_ZL9n_regions_63 \
     type other \
-    dir I \
+    dir IO \
     reset_level 1 \
     sync_rst true \
     corename dc_p_ZL9n_regions_63 \
     op interface \
-    ports { p_ZL9n_regions_63 { I 8 vector } p_ZL9n_regions_63_ap_vld { I 1 bit } } \
+    ports { p_ZL9n_regions_63_i { I 8 vector } p_ZL9n_regions_63_o { O 8 vector } p_ZL9n_regions_63_i_ap_vld { I 1 bit } p_ZL9n_regions_63_o_ap_vld { O 1 bit } } \
 } "
 }
 
