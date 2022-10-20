@@ -43,7 +43,7 @@
         </UIAutoSimConf>
     </UIConfigurations>
     <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" output="/home/francesco/workspace/ip_repo" rtl="verilog" rtlButton="true" rtlCombo="verilog">
-        <Format display_name="faultDetectorMicro" formatName="ip_catalog" description="" vendor="" library="" ipname="run" version="" taxonomy=""/>
+        <Format display_name="faultDetectorMicro" formatName="ip_catalog"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
@@ -71,7 +71,7 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock default="false" name="default" period="18"/>
+        <clock name="default" default="false" period="18"/>
     </clockList>
 </solution>
 

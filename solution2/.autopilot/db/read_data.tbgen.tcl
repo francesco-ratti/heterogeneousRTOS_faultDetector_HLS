@@ -4,7 +4,7 @@ set isCombinational 0
 set isDatapathOnly 0
 set isPipelined 0
 set pipeline_type none
-set FunctionProtocol ap_ctrl_hs
+set FunctionProtocol ap_ctrl_none
 set isOneStateSeq 0
 set ProfileFlag 0
 set StallSigGenFlag 0
@@ -13,14 +13,14 @@ set hasInterrupt 0
 set C_modelName {read_data}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ copyDest int 320 regular {fifo 1 volatile }  }
+	{ sourceStream int 320 regular {fifo 1 volatile }  }
 	{ gmem int 512 regular {axi_master 0}  }
 	{ inputAOV int 64 regular  }
 	{ startCopy int 8 regular {pointer 0 volatile }  }
 	{ copying int 8 regular {pointer 1 volatile }  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "copyDest", "interface" : "fifo", "bitwidth" : 320, "direction" : "WRITEONLY"} , 
+	{ "Name" : "sourceStream", "interface" : "fifo", "bitwidth" : 320, "direction" : "WRITEONLY"} , 
  	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 512, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "inputData","offset": { "type": "dynamic","port_name": "inputData","bundle": "control"},"direction": "READONLY"}]}]} , 
  	{ "Name" : "inputAOV", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
  	{ "Name" : "startCopy", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
@@ -35,11 +35,11 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ copyDest_din sc_out sc_lv 320 signal 0 } 
-	{ copyDest_num_data_valid sc_in sc_lv 2 signal 0 } 
-	{ copyDest_fifo_cap sc_in sc_lv 2 signal 0 } 
-	{ copyDest_full_n sc_in sc_logic 1 signal 0 } 
-	{ copyDest_write sc_out sc_logic 1 signal 0 } 
+	{ sourceStream_din sc_out sc_lv 320 signal 0 } 
+	{ sourceStream_num_data_valid sc_in sc_lv 2 signal 0 } 
+	{ sourceStream_fifo_cap sc_in sc_lv 2 signal 0 } 
+	{ sourceStream_full_n sc_in sc_logic 1 signal 0 } 
+	{ sourceStream_write sc_out sc_logic 1 signal 0 } 
 	{ m_axi_gmem_AWVALID sc_out sc_logic 1 signal 1 } 
 	{ m_axi_gmem_AWREADY sc_in sc_logic 1 signal 1 } 
 	{ m_axi_gmem_AWADDR sc_out sc_lv 64 signal 1 } 
@@ -101,11 +101,11 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "copyDest_din", "direction": "out", "datatype": "sc_lv", "bitwidth":320, "type": "signal", "bundle":{"name": "copyDest", "role": "din" }} , 
- 	{ "name": "copyDest_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "copyDest", "role": "num_data_valid" }} , 
- 	{ "name": "copyDest_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "copyDest", "role": "fifo_cap" }} , 
- 	{ "name": "copyDest_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "copyDest", "role": "full_n" }} , 
- 	{ "name": "copyDest_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "copyDest", "role": "write" }} , 
+ 	{ "name": "sourceStream_din", "direction": "out", "datatype": "sc_lv", "bitwidth":320, "type": "signal", "bundle":{"name": "sourceStream", "role": "din" }} , 
+ 	{ "name": "sourceStream_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "sourceStream", "role": "num_data_valid" }} , 
+ 	{ "name": "sourceStream_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "sourceStream", "role": "fifo_cap" }} , 
+ 	{ "name": "sourceStream_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "sourceStream", "role": "full_n" }} , 
+ 	{ "name": "sourceStream_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "sourceStream", "role": "write" }} , 
  	{ "name": "m_axi_gmem_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "AWVALID" }} , 
  	{ "name": "m_axi_gmem_AWREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "AWREADY" }} , 
  	{ "name": "m_axi_gmem_AWADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "gmem", "role": "AWADDR" }} , 
@@ -162,11 +162,11 @@ set NewPortList {[
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
 		"CDFG" : "read_data",
-		"Protocol" : "ap_ctrl_hs",
+		"Protocol" : "ap_ctrl_none",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "-1", "EstimateLatencyMax" : "-1",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "2", "EstimateLatencyMax" : "72",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -175,9 +175,9 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "copyDest", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "1", "DependentChanType" : "0",
+			{"Name" : "sourceStream", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "1", "DependentChanType" : "0",
 				"BlockSignal" : [
-					{"Name" : "copyDest_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "sourceStream_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
@@ -186,32 +186,29 @@ set RtlHierarchyInfo {[
 			{"Name" : "startCopy", "Type" : "HS", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "startCopy_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "copying", "Type" : "Vld", "Direction" : "O"}],
-		"Loop" : [
-			{"Name" : "VITIS_LOOP_521_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "73", "FirstState" : "ap_ST_fsm_state72", "LastState" : ["ap_ST_fsm_state73"], "QuitState" : ["ap_ST_fsm_state72"], "PreState" : ["ap_ST_fsm_state71"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]}]}
+			{"Name" : "copying", "Type" : "Vld", "Direction" : "O"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	read_data {
-		copyDest {Type O LastRead -1 FirstWrite 71}
-		gmem {Type I LastRead 70 FirstWrite -1}
-		inputAOV {Type I LastRead 0 FirstWrite -1}
-		startCopy {Type I LastRead 71 FirstWrite -1}
+		sourceStream {Type O LastRead -1 FirstWrite 72}
+		gmem {Type I LastRead 71 FirstWrite -1}
+		inputAOV {Type I LastRead 1 FirstWrite -1}
+		startCopy {Type I LastRead 0 FirstWrite -1}
 		copying {Type O LastRead -1 FirstWrite 71}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "-1", "Max" : "-1"}
-	, {"Name" : "Interval", "Min" : "-1", "Max" : "-1"}
+	{"Name" : "Latency", "Min" : "2", "Max" : "72"}
+	, {"Name" : "Interval", "Min" : "2", "Max" : "72"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	copyDest { ap_fifo {  { copyDest_din fifo_port_we 1 320 }  { copyDest_num_data_valid fifo_status_num_data_valid 0 2 }  { copyDest_fifo_cap fifo_update 0 2 }  { copyDest_full_n fifo_status 0 1 }  { copyDest_write fifo_data 1 1 } } }
+	sourceStream { ap_fifo {  { sourceStream_din fifo_port_we 1 320 }  { sourceStream_num_data_valid fifo_status_num_data_valid 0 2 }  { sourceStream_fifo_cap fifo_update 0 2 }  { sourceStream_full_n fifo_status 0 1 }  { sourceStream_write fifo_data 1 1 } } }
 	 { m_axi {  { m_axi_gmem_AWVALID VALID 1 1 }  { m_axi_gmem_AWREADY READY 0 1 }  { m_axi_gmem_AWADDR ADDR 1 64 }  { m_axi_gmem_AWID ID 1 1 }  { m_axi_gmem_AWLEN SIZE 1 32 }  { m_axi_gmem_AWSIZE BURST 1 3 }  { m_axi_gmem_AWBURST LOCK 1 2 }  { m_axi_gmem_AWLOCK CACHE 1 2 }  { m_axi_gmem_AWCACHE PROT 1 4 }  { m_axi_gmem_AWPROT QOS 1 3 }  { m_axi_gmem_AWQOS REGION 1 4 }  { m_axi_gmem_AWREGION USER 1 4 }  { m_axi_gmem_AWUSER DATA 1 1 }  { m_axi_gmem_WVALID VALID 1 1 }  { m_axi_gmem_WREADY READY 0 1 }  { m_axi_gmem_WDATA FIFONUM 1 512 }  { m_axi_gmem_WSTRB STRB 1 64 }  { m_axi_gmem_WLAST LAST 1 1 }  { m_axi_gmem_WID ID 1 1 }  { m_axi_gmem_WUSER DATA 1 1 }  { m_axi_gmem_ARVALID VALID 1 1 }  { m_axi_gmem_ARREADY READY 0 1 }  { m_axi_gmem_ARADDR ADDR 1 64 }  { m_axi_gmem_ARID ID 1 1 }  { m_axi_gmem_ARLEN SIZE 1 32 }  { m_axi_gmem_ARSIZE BURST 1 3 }  { m_axi_gmem_ARBURST LOCK 1 2 }  { m_axi_gmem_ARLOCK CACHE 1 2 }  { m_axi_gmem_ARCACHE PROT 1 4 }  { m_axi_gmem_ARPROT QOS 1 3 }  { m_axi_gmem_ARQOS REGION 1 4 }  { m_axi_gmem_ARREGION USER 1 4 }  { m_axi_gmem_ARUSER DATA 1 1 }  { m_axi_gmem_RVALID VALID 0 1 }  { m_axi_gmem_RREADY READY 1 1 }  { m_axi_gmem_RDATA FIFONUM 0 512 }  { m_axi_gmem_RLAST LAST 0 1 }  { m_axi_gmem_RID ID 0 1 }  { m_axi_gmem_RFIFONUM LEN 0 9 }  { m_axi_gmem_RUSER DATA 0 1 }  { m_axi_gmem_RRESP RESP 0 2 }  { m_axi_gmem_BVALID VALID 0 1 }  { m_axi_gmem_BREADY READY 1 1 }  { m_axi_gmem_BRESP RESP 0 2 }  { m_axi_gmem_BID ID 0 1 }  { m_axi_gmem_BUSER DATA 0 1 } } }
 	inputAOV { ap_none {  { inputAOV in_data 0 64 } } }
 	startCopy { ap_hs {  { startCopy in_data 0 8 }  { startCopy_ap_vld in_vld 0 1 }  { startCopy_ap_ack in_acc 1 1 } } }

@@ -1,35 +1,18 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [
-        {
-          "functionName": "run",
+      "directive": [{
+          "functionName": "top",
           "label": "",
           "functionLabel": "",
           "id": "1",
-          "sourceFile": "C:\/Users\/franc\/detector_solid\/solution2\/directives.tcl",
-          "sourceLine": "6",
-          "pragma": {
-            "name": "TOP",
-            "option": [{
-                "name": "name",
-                "value": "run"
-              }]
-          }
-        },
-        {
-          "functionName": "run",
-          "label": "",
-          "functionLabel": "",
-          "id": "2",
           "sourceFile": "C:\/Users\/franc\/detector_solid\/solution2\/csynth.tcl",
           "sourceLine": "18",
           "pragma": {
             "name": "TOP",
             "option": [{
                 "name": "name",
-                "value": "run"
+                "value": "top"
               }]
           }
-        }
-      ]
+        }]
     }]}

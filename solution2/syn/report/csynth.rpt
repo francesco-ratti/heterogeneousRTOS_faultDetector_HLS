@@ -1,10 +1,10 @@
 
 
 ================================================================
-== Synthesis Summary Report of 'run'
+== Synthesis Summary Report of 'top'
 ================================================================
 + General Information: 
-    * Date:           Thu Oct 20 19:19:41 2022
+    * Date:           Thu Oct 20 20:21:19 2022
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
     * Project:        detector_solid
     * Solution:       solution2 (Vitis Kernel Flow Target)
@@ -15,30 +15,28 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +-----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |                    Modules                    |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
-    |                    & Loops                    |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
-    +-----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
-    |+ run                                          |  Timing|  -0.55|        -|          -|         -|        -|     -|        no|  48 (17%)|  22 (10%)|  15828 (14%)|  25436 (47%)|    -|
-    | + runTest*                                    |  Timing|  -0.55|        -|          -|         -|        -|     -|  dataflow|         -|  22 (10%)|   10186 (9%)|  17036 (32%)|    -|
-    |  + read_data                                  |  Timing|  -0.00|        -|          -|         -|        -|     -|        no|         -|         -|    402 (~0%)|    427 (~0%)|    -|
-    |   o VITIS_LOOP_521_1                          |       -|  13.14|        -|          -|         2|        -|     -|        no|         -|         -|            -|            -|    -|
-    |  + run_test                                   |  Timing|  -0.55|        -|          -|         -|        -|     -|        no|         -|  22 (10%)|    9135 (8%)|  16191 (30%)|    -|
-    |   o VITIS_LOOP_468_1                          |       -|  13.14|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
-    |    + insert_point                             |  Timing|  -0.55|     1268|  2.282e+04|         -|     1268|     -|        no|         -|  22 (10%)|    7980 (7%)|  12317 (23%)|    -|
-    |     + insert_point_Pipeline_VITIS_LOOP_262_1  |  Timing|  -0.55|     1134|  2.041e+04|         -|     1134|     -|        no|         -|   17 (7%)|    5859 (5%)|   8432 (15%)|    -|
-    |      o VITIS_LOOP_262_1                       |       -|  13.14|     1132|  2.038e+04|        46|        8|   136|       yes|         -|         -|            -|            -|    -|
-    |     o is_valid_label2                         |       -|  13.14|       17|    306.000|         2|        -|     8|        no|         -|         -|            -|            -|    -|
-    |     o insert_point_label4                     |       -|  13.14|        8|    144.000|         1|        -|     8|        no|         -|         -|            -|            -|    -|
-    |     o insert_point_label6                     |       -|  13.14|       96|  1.728e+03|        12|        -|     8|        no|         -|         -|            -|            -|    -|
-    |    o VITIS_LOOP_471_2                         |       -|  13.14|        -|          -|       792|        -|     -|        no|         -|         -|            -|            -|    -|
-    |     o VITIS_LOOP_471_2.1                      |       -|  13.14|        8|    144.000|         1|        -|     8|        no|         -|         -|            -|            -|    -|
-    |     o is_valid_label2                         |       -|  13.14|       17|    306.000|         2|        -|     8|        no|         -|         -|            -|            -|    -|
-    |     o VITIS_LOOP_49_1                         |       -|  13.14|      757|  1.363e+04|        47|        -|    16|        no|         -|         -|            -|            -|    -|
-    |      o VITIS_LOOP_55_2                        |       -|  13.14|       44|    792.000|         5|        -|     8|        no|         -|         -|            -|            -|    -|
-    |  + writeOutcome                               |       -|   6.94|        -|          -|         -|        -|     -|        no|         -|         -|    449 (~0%)|    276 (~0%)|    -|
-    |   o VITIS_LOOP_429_1                          |       -|  13.14|        -|          -|         2|        -|     -|        no|         -|         -|            -|            -|    -|
-    +-----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |                    Modules                   |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
+    |                    & Loops                   |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |+ top                                         |  Timing|  -0.55|        -|          -|         -|        -|     -|        no|  64 (22%)|  22 (10%)|  17403 (16%)|  26164 (49%)|    -|
+    | + run*                                       |  Timing|  -0.55|        -|          -|         -|        -|     -|  dataflow|         -|  22 (10%)|  11759 (11%)|  17765 (33%)|    -|
+    |  + read_data                                 |  Timing|  -0.00|       72|  1.296e+03|         -|       72|     -|        no|         -|         -|    403 (~0%)|    438 (~0%)|    -|
+    |  + compute                                   |  Timing|  -0.55|        -|          -|         -|        -|     -|        no|         -|  22 (10%)|   10160 (9%)|  16776 (31%)|    -|
+    |   + insert_point                             |  Timing|  -0.55|     1268|  2.282e+04|         -|     1268|     -|        no|         -|  22 (10%)|    7980 (7%)|  12317 (23%)|    -|
+    |    + insert_point_Pipeline_VITIS_LOOP_262_1  |  Timing|  -0.55|     1134|  2.041e+04|         -|     1134|     -|        no|         -|   17 (7%)|    5859 (5%)|   8432 (15%)|    -|
+    |     o VITIS_LOOP_262_1                       |       -|  13.14|     1132|  2.038e+04|        46|        8|   136|       yes|         -|         -|            -|            -|    -|
+    |    o is_valid_label2                         |       -|  13.14|       17|    306.000|         2|        -|     8|        no|         -|         -|            -|            -|    -|
+    |    o insert_point_label4                     |       -|  13.14|        8|    144.000|         1|        -|     8|        no|         -|         -|            -|            -|    -|
+    |    o insert_point_label6                     |       -|  13.14|       96|  1.728e+03|        12|        -|     8|        no|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_473_1                         |       -|  13.14|        -|          -|       792|        -|     -|        no|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_473_1.1                      |       -|  13.14|        8|    144.000|         1|        -|     8|        no|         -|         -|            -|            -|    -|
+    |    o is_valid_label2                         |       -|  13.14|       17|    306.000|         2|        -|     8|        no|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_49_1                         |       -|  13.14|      757|  1.363e+04|        47|        -|    16|        no|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_55_2                        |       -|  13.14|       44|    792.000|         5|        -|     8|        no|         -|         -|            -|            -|    -|
+    |  + handle_outcome                            |       -|   6.94|       25|    450.000|         -|       25|     -|        no|         -|         -|    996 (~0%)|    405 (~0%)|    -|
+    |   o Loop 1                                   |       -|  13.14|       16|    288.000|         2|        -|     8|        no|         -|         -|            -|            -|    -|
+    +----------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
 
 
 ================================================================
@@ -53,11 +51,11 @@
 +------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
-+---------------+------------+---------------+--------+----------+
-| Interface     | Data Width | Address Width | Offset | Register |
-+---------------+------------+---------------+--------+----------+
-| s_axi_control | 32         | 11            | 16     | 0        |
-+---------------+------------+---------------+--------+----------+
++---------------+------------+---------------+--------+----------+-------------------+
+| Interface     | Data Width | Address Width | Offset | Register | Resource Estimate |
++---------------+------------+---------------+--------+----------+-------------------+
+| s_axi_control | 32         | 11            | 16     | 0        | BRAM=16           |
++---------------+------------+---------------+--------+----------+-------------------+
 
 * S_AXILITE Registers
 +---------------+--------------------+--------+-------+--------+----------------------------------+---------------------------------------------------------------------------------+
@@ -125,7 +123,8 @@
 | s_axi_control | IORegionIdx        | 0x184  | 32    | W      | Data signal of IORegionIdx       |                                                                                 |
 | s_axi_control | n_regions_in_i     | 0x18c  | 32    | W      | Data signal of n_regions_in_i    |                                                                                 |
 | s_axi_control | n_regions_in_o     | 0x194  | 32    | R      | Data signal of n_regions_in_o    |                                                                                 |
-| s_axi_control | failedTask         | 0x1a0  | 32    | W      | Data signal of failedTask        |                                                                                 |
+| s_axi_control | failedTask         | 0x1a0  | 32    | R      | Data signal of failedTask        |                                                                                 |
+| s_axi_control | failedTask_ctrl    | 0x1a4  | 32    | R      | Control signal of failedTask     | 0=failedTask_ap_vld                                                             |
 +---------------+--------------------+--------+-------+--------+----------------------------------+---------------------------------------------------------------------------------+
 
 * TOP LEVEL CONTROL
@@ -226,6 +225,7 @@
 | n_regions_in    | s_axi_control | register  |          | name=n_regions_in_i offset=0x18c range=32     |
 | n_regions_in    | s_axi_control | register  |          | name=n_regions_in_o offset=0x194 range=32     |
 | failedTask      | s_axi_control | register  |          | name=failedTask offset=0x1a0 range=32         |
+| failedTask      | s_axi_control | register  |          | name=failedTask_ctrl offset=0x1a4 range=32    |
 +-----------------+---------------+-----------+----------+-----------------------------------------------+
 
 
@@ -242,17 +242,17 @@
 +----------------------------------------------+-----+--------+--------------+------+---------+---------+
 | Name                                         | DSP | Pragma | Variable     | Op   | Impl    | Latency |
 +----------------------------------------------+-----+--------+--------------+------+---------+---------+
-| + run                                        | 22  |        |              |      |         |         |
-|   add_ln722_fu_1649_p2                       | -   |        | add_ln722    | add  | fabric  | 0       |
-|   add_ln719_fu_2104_p2                       | -   |        | add_ln719    | add  | fabric  | 0       |
-|  + runTest                                   | 22  |        |              |      |         |         |
-|   + run_test                                 | 22  |        |              |      |         |         |
-|     empty_fu_1537_p2                         | -   |        | empty        | add  | fabric  | 0       |
-|     add_ln70_fu_1583_p2                      | -   |        | add_ln70     | add  | fabric  | 0       |
-|     add_ln49_fu_1753_p2                      | -   |        | add_ln49     | add  | fabric  | 0       |
-|     add_ln59_fu_1773_p2                      | -   |        | add_ln59     | add  | fabric  | 0       |
-|     add_ln59_1_fu_1788_p2                    | -   |        | add_ln59_1   | add  | fabric  | 0       |
-|     add_ln55_fu_1815_p2                      | -   |        | add_ln55     | add  | fabric  | 0       |
+| + top                                        | 22  |        |              |      |         |         |
+|   add_ln724_fu_1653_p2                       | -   |        | add_ln724    | add  | fabric  | 0       |
+|   add_ln721_fu_2108_p2                       | -   |        | add_ln721    | add  | fabric  | 0       |
+|  + run                                       | 22  |        |              |      |         |         |
+|   + compute                                  | 22  |        |              |      |         |         |
+|     empty_fu_2047_p2                         | -   |        | empty        | add  | fabric  | 0       |
+|     add_ln70_fu_2093_p2                      | -   |        | add_ln70     | add  | fabric  | 0       |
+|     add_ln49_fu_2263_p2                      | -   |        | add_ln49     | add  | fabric  | 0       |
+|     add_ln59_fu_2283_p2                      | -   |        | add_ln59     | add  | fabric  | 0       |
+|     add_ln59_1_fu_2298_p2                    | -   |        | add_ln59_1   | add  | fabric  | 0       |
+|     add_ln55_fu_2325_p2                      | -   |        | add_ln55     | add  | fabric  | 0       |
 |    + insert_point                            | 22  |        |              |      |         |         |
 |      add_ln70_fu_1425_p2                     | -   |        | add_ln70     | add  | fabric  | 0       |
 |      add_ln243_fu_1492_p2                    | -   |        | add_ln243    | add  | fabric  | 0       |
@@ -370,77 +370,82 @@
 |       i_real_4_fu_3017_p2                    | -   |        | i_real_4     | add  | fabric  | 0       |
 |       k_real_fu_1644_p2                      | -   |        | k_real       | add  | fabric  | 0       |
 |       k_real_2_fu_1650_p2                    | -   |        | k_real_2     | add  | fabric  | 0       |
+|   + handle_outcome                           | 0   |        |              |      |         |         |
+|     empty_fu_563_p2                          | -   |        | empty        | add  | fabric  | 0       |
 +----------------------------------------------+-----+--------+--------------+------+---------+---------+
 
 
 ================================================================
 == Bind Storage Report
 ================================================================
-+--------------------+------+------+--------+---------------+---------+------+---------+
-| Name               | BRAM | URAM | Pragma | Variable      | Storage | Impl | Latency |
-+--------------------+------+------+--------+---------------+---------+------+---------+
-| + run              | 48   | 0    |        |               |         |      |         |
-|   regions_U        | 8    | -    |        | regions       | ram_t2p | auto | 1       |
-|   regions_2_U      | 8    | -    |        | regions_2     | ram_t2p | auto | 1       |
-|   regions_4_U      | 8    | -    |        | regions_4     | ram_t2p | auto | 1       |
-|   regions_1_U      | 8    | -    |        | regions_1     | ram_t2p | auto | 1       |
-|   regions_3_U      | 8    | -    |        | regions_3     | ram_t2p | auto | 1       |
-|   regions_5_U      | 8    | -    |        | regions_5     | ram_t2p | auto | 1       |
-|  + runTest         | 0    | 0    |        |               |         |      |         |
-|    copyDest_U      | -    | -    |        | copyDest      | fifo    | srl  | 0       |
-|    outcomeStream_U | -    | -    |        | outcomeStream | fifo    | srl  | 0       |
-|   + run_test       | 0    | 0    |        |               |         |      |         |
-|     out_AOV_U      | -    | -    |        | out_AOV       | ram_s2p | auto | 1       |
-+--------------------+------+------+--------+---------------+---------+------+---------+
++--------------------+------+------+--------+--------------+---------+------+---------+
+| Name               | BRAM | URAM | Pragma | Variable     | Storage | Impl | Latency |
++--------------------+------+------+--------+--------------+---------+------+---------+
+| + top              | 64   | 0    |        |              |         |      |         |
+|   regions_U        | 8    | -    |        | regions      | ram_t2p | auto | 1       |
+|   regions_2_U      | 8    | -    |        | regions_2    | ram_t2p | auto | 1       |
+|   regions_4_U      | 8    | -    |        | regions_4    | ram_t2p | auto | 1       |
+|   regions_1_U      | 8    | -    |        | regions_1    | ram_t2p | auto | 1       |
+|   regions_3_U      | 8    | -    |        | regions_3    | ram_t2p | auto | 1       |
+|   regions_5_U      | 8    | -    |        | regions_5    | ram_t2p | auto | 1       |
+|  + run             | 0    | 0    |        |              |         |      |         |
+|    sourceStream_U  | -    | -    |        | sourceStream | fifo    | srl  | 0       |
+|    destStream_U    | -    | -    |        | destStream   | fifo    | srl  | 0       |
+|   + compute        | 0    | 0    |        |              |         |      |         |
+|     out_AOV_U      | -    | -    |        | out_AOV      | ram_s2p | auto | 1       |
+|   + handle_outcome | 0    | 0    |        |              |         |      |         |
+|     in_AOV_U       | -    | -    |        | in_AOV       | ram_t2p | auto | 1       |
+|     outcome_AOV_U  | -    | -    |        | outcome_AOV  | ram_s2p | auto | 1       |
++--------------------+------+------+--------+--------------+---------+------+---------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------------+-------------------------------------------+------------------------------------------------------------------------------+
-| Type            | Options                                   | Location                                                                     |
-+-----------------+-------------------------------------------+------------------------------------------------------------------------------+
-| loop_tripcount  | min=0 max=16                              | detector_solid/abs_solid_detector.cpp:53 in hasregion                        |
-| loop_tripcount  | min=1 max=8                               | detector_solid/abs_solid_detector.cpp:57 in hasregion                        |
-| inline          |                                           | detector_solid/abs_solid_detector.cpp:80 in update_train_regions             |
-| loop_tripcount  | min=0 max=136                             | detector_solid/abs_solid_detector.cpp:264 in insert_point                    |
-| pipeline        | II=8                                      | detector_solid/abs_solid_detector.cpp:265 in insert_point                    |
-| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:430 in writeoutcome                    |
-| array_partition | variable=in.AOV type=complete             | detector_solid/abs_solid_detector.cpp:466 in run_test, in.AOV                |
-| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:469 in run_test                        |
-| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:522 in read_data                       |
-| dataflow        | disable_start_propagation                 | detector_solid/abs_solid_detector.cpp:536 in runtest                         |
-| stable          | variable=inputAOV                         | detector_solid/abs_solid_detector.cpp:537 in runtest, inputAOV               |
-| stable          | variable=outcomeInRam                     | detector_solid/abs_solid_detector.cpp:538 in runtest, outcomeInRam           |
-| stable          | variable=errorInTask                      | detector_solid/abs_solid_detector.cpp:539 in runtest, errorInTask            |
-| stable          | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:540 in runtest, failedTaskExecutionIds |
-| stable          | variable=regions                          | detector_solid/abs_solid_detector.cpp:541 in runtest, regions                |
-| stable          | variable=n_regions                        | detector_solid/abs_solid_detector.cpp:542 in runtest, n_regions              |
-| stable          | variable=failedTask                       | detector_solid/abs_solid_detector.cpp:543 in runtest, failedTask             |
-| stable          | variable=copying                          | detector_solid/abs_solid_detector.cpp:544 in runtest, copying                |
-| interface       | mode=ap_ctrl_none port=return             | detector_solid/abs_solid_detector.cpp:546 in runtest, return                 |
-| interface       | mode=ap_ctrl_hs port=return               | detector_solid/abs_solid_detector.cpp:681 in run, return                     |
-| interface       | mode=s_axilite port=return                | detector_solid/abs_solid_detector.cpp:682 in run, return                     |
-| interface       | mode= s_axilite port = accel_mode         | detector_solid/abs_solid_detector.cpp:685 in run                             |
-| interface       | mode= m_axi port = inputData offset=slave | detector_solid/abs_solid_detector.cpp:686 in run                             |
-| interface       | mode= s_axilite port=copying              | detector_solid/abs_solid_detector.cpp:688 in run, copying                    |
-| interface       | mode= s_axilite port=startCopy            | detector_solid/abs_solid_detector.cpp:689 in run, startCopy                  |
-| interface       | mode=ap_hs port=startCopy                 | detector_solid/abs_solid_detector.cpp:690 in run, startCopy                  |
-| interface       | mode= s_axilite port = trainedRegion_i    | detector_solid/abs_solid_detector.cpp:692 in run                             |
-| interface       | mode= s_axilite port = trainedRegion_o    | detector_solid/abs_solid_detector.cpp:693 in run                             |
-| interface       | mode= s_axilite port = IOCheckIdx         | detector_solid/abs_solid_detector.cpp:694 in run                             |
-| interface       | mode= s_axilite port = IORegionIdx        | detector_solid/abs_solid_detector.cpp:695 in run                             |
-| interface       | mode=s_axilite port=failedTask            | detector_solid/abs_solid_detector.cpp:697 in run, failedTask                 |
-| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:698 in run, failedTask                 |
-| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:701 in run, failedTask                 |
-| interface       | mode=s_axilite port = n_regions_in        | detector_solid/abs_solid_detector.cpp:702 in run                             |
-| interface       | mode=s_axilite port = errorInTask         | detector_solid/abs_solid_detector.cpp:704 in run                             |
-| interface       | mode=s_axilite port = outcomeInRam        | detector_solid/abs_solid_detector.cpp:705 in run                             |
-| array_partition | variable=regions dim=2 cyclic factor=2    | detector_solid/abs_solid_detector.cpp:710 in run, regions                    |
-| array_partition | variable=failedTaskExecutionIds complete  | detector_solid/abs_solid_detector.cpp:711 in run, failedTaskExecutionIds     |
-| reset           | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:714 in run, failedTaskExecutionIds     |
-| array_partition | variable=n_regions complete               | detector_solid/abs_solid_detector.cpp:716 in run, n_regions                  |
-+-----------------+-------------------------------------------+------------------------------------------------------------------------------+
++-----------------+-------------------------------------------+--------------------------------------------------------------------------+
+| Type            | Options                                   | Location                                                                 |
++-----------------+-------------------------------------------+--------------------------------------------------------------------------+
+| loop_tripcount  | min=0 max=16                              | detector_solid/abs_solid_detector.cpp:53 in hasregion                    |
+| loop_tripcount  | min=1 max=8                               | detector_solid/abs_solid_detector.cpp:57 in hasregion                    |
+| inline          |                                           | detector_solid/abs_solid_detector.cpp:80 in update_train_regions         |
+| loop_tripcount  | min=0 max=136                             | detector_solid/abs_solid_detector.cpp:264 in insert_point                |
+| pipeline        | II=8                                      | detector_solid/abs_solid_detector.cpp:265 in insert_point                |
+| interface       | mode=ap_ctrl_none port=return             | detector_solid/abs_solid_detector.cpp:428 in handle_outcome, return      |
+| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:431 in handle_outcome              |
+| array_partition | variable=in.AOV type=complete             | detector_solid/abs_solid_detector.cpp:467 in compute, in.AOV             |
+| interface       | mode=ap_ctrl_none port=return             | detector_solid/abs_solid_detector.cpp:468 in compute, return             |
+| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:471 in compute                     |
+| interface       | mode=ap_ctrl_none port=return             | detector_solid/abs_solid_detector.cpp:522 in read_data, return           |
+| pipeline        | off                                       | detector_solid/abs_solid_detector.cpp:525 in read_data                   |
+| dataflow        | disable_start_propagation                 | detector_solid/abs_solid_detector.cpp:539 in run                         |
+| stable          | variable=inputAOV                         | detector_solid/abs_solid_detector.cpp:540 in run, inputAOV               |
+| stable          | variable=outcomeInRam                     | detector_solid/abs_solid_detector.cpp:541 in run, outcomeInRam           |
+| stable          | variable=errorInTask                      | detector_solid/abs_solid_detector.cpp:542 in run, errorInTask            |
+| stable          | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:543 in run, failedTaskExecutionIds |
+| stable          | variable=regions                          | detector_solid/abs_solid_detector.cpp:544 in run, regions                |
+| stable          | variable=n_regions                        | detector_solid/abs_solid_detector.cpp:545 in run, n_regions              |
+| interface       | mode=ap_ctrl_hs port=return               | detector_solid/abs_solid_detector.cpp:683 in top, return                 |
+| interface       | mode=s_axilite port=return                | detector_solid/abs_solid_detector.cpp:684 in top, return                 |
+| interface       | mode= s_axilite port = accel_mode         | detector_solid/abs_solid_detector.cpp:687 in top                         |
+| interface       | mode= m_axi port = inputData offset=slave | detector_solid/abs_solid_detector.cpp:688 in top                         |
+| interface       | mode= s_axilite port=copying              | detector_solid/abs_solid_detector.cpp:690 in top, copying                |
+| interface       | mode= s_axilite port=startCopy            | detector_solid/abs_solid_detector.cpp:691 in top, startCopy              |
+| interface       | mode=ap_hs port=startCopy                 | detector_solid/abs_solid_detector.cpp:692 in top, startCopy              |
+| interface       | mode= s_axilite port = trainedRegion_i    | detector_solid/abs_solid_detector.cpp:694 in top                         |
+| interface       | mode= s_axilite port = trainedRegion_o    | detector_solid/abs_solid_detector.cpp:695 in top                         |
+| interface       | mode= s_axilite port = IOCheckIdx         | detector_solid/abs_solid_detector.cpp:696 in top                         |
+| interface       | mode= s_axilite port = IORegionIdx        | detector_solid/abs_solid_detector.cpp:697 in top                         |
+| interface       | mode=s_axilite port=failedTask            | detector_solid/abs_solid_detector.cpp:699 in top, failedTask             |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:700 in top, failedTask             |
+| interface       | mode=ap_hs port=failedTask                | detector_solid/abs_solid_detector.cpp:703 in top, failedTask             |
+| interface       | mode=s_axilite port = n_regions_in        | detector_solid/abs_solid_detector.cpp:704 in top                         |
+| interface       | mode=s_axilite port = errorInTask         | detector_solid/abs_solid_detector.cpp:706 in top                         |
+| interface       | mode=s_axilite port = outcomeInRam        | detector_solid/abs_solid_detector.cpp:707 in top                         |
+| array_partition | variable=regions dim=2 cyclic factor=2    | detector_solid/abs_solid_detector.cpp:712 in top, regions                |
+| array_partition | variable=failedTaskExecutionIds complete  | detector_solid/abs_solid_detector.cpp:713 in top, failedTaskExecutionIds |
+| reset           | variable=failedTaskExecutionIds           | detector_solid/abs_solid_detector.cpp:716 in top, failedTaskExecutionIds |
+| array_partition | variable=n_regions complete               | detector_solid/abs_solid_detector.cpp:718 in top, n_regions              |
++-----------------+-------------------------------------------+--------------------------------------------------------------------------+
 
 

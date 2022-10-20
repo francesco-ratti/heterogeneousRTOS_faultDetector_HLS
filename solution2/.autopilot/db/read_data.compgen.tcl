@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 1 \
-    name copyDest \
+    name sourceStream \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_copyDest \
+    corename dc_sourceStream \
     op interface \
-    ports { copyDest_din { O 320 vector } copyDest_num_data_valid { I 2 vector } copyDest_fifo_cap { I 2 vector } copyDest_full_n { I 1 bit } copyDest_write { O 1 bit } } \
+    ports { sourceStream_din { O 320 vector } sourceStream_num_data_valid { I 2 vector } sourceStream_fifo_cap { I 2 vector } sourceStream_full_n { I 1 bit } sourceStream_write { O 1 bit } } \
 } "
 }
 

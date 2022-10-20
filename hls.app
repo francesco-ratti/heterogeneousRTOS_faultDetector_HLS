@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="detector_solid" top="run">
+<project xmlns="com.autoesl.autopilot.project" name="detector_solid" top="top">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

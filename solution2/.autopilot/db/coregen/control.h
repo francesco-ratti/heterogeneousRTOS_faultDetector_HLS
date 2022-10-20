@@ -155,9 +155,11 @@
 //         others  - reserved
 // 0x198 : reserved
 // 0x1a0 : Data signal of failedTask
-//         bit 15~0 - failedTask[15:0] (Read/Write)
+//         bit 15~0 - failedTask[15:0] (Read)
 //         others   - reserved
-// 0x1a4 : reserved
+// 0x1a4 : Control signal of failedTask
+//         bit 0  - failedTask_ap_vld (Read/COR)
+//         others - reserved
 // 0x040 ~
 // 0x04f : Memory 'errorInTask' (16 * 8b)
 //         Word n : bit [ 7: 0] - errorInTask[4n]
@@ -215,6 +217,7 @@
 #define CONTROL_BITS_N_REGIONS_IN_O_DATA   8
 #define CONTROL_ADDR_FAILEDTASK_DATA       0x1a0
 #define CONTROL_BITS_FAILEDTASK_DATA       16
+#define CONTROL_ADDR_FAILEDTASK_CTRL       0x1a4
 #define CONTROL_ADDR_ERRORINTASK_BASE      0x040
 #define CONTROL_ADDR_ERRORINTASK_HIGH      0x04f
 #define CONTROL_WIDTH_ERRORINTASK          8

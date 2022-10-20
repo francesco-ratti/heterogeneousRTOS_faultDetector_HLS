@@ -1,5 +1,5 @@
 
-set TopModule "run"
+set TopModule "top"
 set ClockPeriod 20
 set ClockList ap_clk
 set HasVivadoClockPeriod 1
@@ -23,7 +23,7 @@ set ResetRegisterNum 3
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix run_
+set RtlSubPrefix top_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}

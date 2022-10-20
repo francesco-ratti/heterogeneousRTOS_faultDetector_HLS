@@ -424,9 +424,10 @@ struct taskFailure {
 #define sizeOfInputData sizeof(float)*MAX_AOV_DIM
 
 
-void writeOutcome(char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, taskFailure *failedTask, hls::stream<OutputStr, 1> &source) {
+void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ OutcomeStr* outcomeInRam, taskFailure *failedTask, hls::stream<OutputStr, 1> &source) {
+#pragma HLS interface mode=ap_ctrl_none port=return
 
-	while(1) {
+//	while(1) {
 #pragma HLS PIPELINE off
 
 		OutputStr in=source.read();
@@ -456,16 +457,17 @@ void writeOutcome(char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[
 				failedTask->executionId=in.executionId;
 			}
 		}
-	}
+//	}
 }
 
 
-void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 1> &source, hls::stream<OutputStr, 1> &dest) {
+void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 1> &source, hls::stream<OutputStr, 1> &dest) {
 
 	controlStr in;
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
+#pragma HLS interface mode=ap_ctrl_none port=return
 
-	while (1) {
+//	while (1) {
 #pragma HLS pipeline off
 
 		while (1) {
@@ -498,7 +500,7 @@ void run_test(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MA
 		}
 
 
-	}
+//	}
 }
 
 //void resetError(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> executionId) {
@@ -517,8 +519,9 @@ void setProcessingState(volatile char* processing, bool value) {
 void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
 
 	controlStr destStr;
+#pragma HLS interface mode=ap_ctrl_none port=return
 
-	while (1) {
+//	while (1) {
 #pragma HLS PIPELINE off
 		if (*startCopy) {
 			setProcessingState(copying, true);
@@ -526,12 +529,12 @@ void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, volatile 
 			setProcessingState(copying, false);
 
 			dest.write(destStr);
-		}
+//		}
 	}
 }
 
-void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
-		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, volatile char* copying
+void run(controlStr* inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
+		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
 #pragma HLS stable variable=inputAOV
@@ -540,10 +543,10 @@ void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForDat
 #pragma HLS stable variable=failedTaskExecutionIds
 #pragma HLS stable variable=regions
 #pragma HLS stable variable=n_regions
-#pragma HLS stable variable=failedTask
-#pragma HLS stable variable=copying
+//#pragma HLS stable variable=failedTask
+//#pragma HLS stable variable=copying
 	bool error;
-#pragma HLS interface mode=ap_ctrl_none port=return
+//#pragma HLS interface mode=ap_ctrl_none port=return
 
 	//		ap_uint<8> checkId;
 	//		ap_uint<8> taskId;
@@ -552,13 +555,12 @@ void runTest(controlStr* inputAOV, volatile char* startCopy, /*char* readyForDat
 	//		float AOV[MAX_AOV_DIM];
 	//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
 
-	hls::stream<controlStr, 1> copyDest;
-	hls::stream<OutputStr, 1> outcomeStream;
+	hls::stream<controlStr, 1> sourceStream;
+	hls::stream<OutputStr, 1> destStream;
 
-
-	read_data(copyDest, inputAOV, startCopy, copying);
-	run_test(regions, n_regions, copyDest, outcomeStream);
-	writeOutcome(errorInTask, failedTaskExecutionIds, outcomeInRam, failedTask, outcomeStream);
+	read_data(sourceStream, inputAOV, startCopy, copying);
+	compute(regions, n_regions, sourceStream, destStream);
+	handle_outcome(errorInTask, failedTaskExecutionIds, outcomeInRam, failedTask, destStream);
 }
 
 
@@ -673,11 +675,11 @@ static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 
 #define MODE_INIT 1
 #define MODE_OUT 2
-#define MODE_TEST 3
-#define MODE_TRAIN 4
+#define MODE_RUN 3
+//#define MODE_TRAIN 4
 
 
-void run(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
+void top(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
 	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
@@ -721,8 +723,8 @@ void run(char accel_mode, volatile char* copying, controlStr* inputData, volatil
 	} else if (accel_mode==MODE_OUT) {
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
-	} else if (accel_mode==MODE_TEST) {
-		runTest(inputData, startCopy, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+	} else if (accel_mode==MODE_RUN) {
+		run(inputData, startCopy, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
 	} // else if (accel_mode==MODE_TRAIN) {
 	// runTrain(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
 	// }

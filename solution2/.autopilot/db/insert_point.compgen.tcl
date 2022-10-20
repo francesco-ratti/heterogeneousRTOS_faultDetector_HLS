@@ -1,37 +1,37 @@
 # This script segment is generated automatically by AutoPilot
 
-set name run_faddfsub_32ns_32ns_32_4_full_dsp_1
+set name top_faddfsub_32ns_32ns_32_4_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 
-set name run_fmul_32ns_32ns_32_2_max_dsp_1
+set name top_fmul_32ns_32ns_32_2_max_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name run_fcmp_32ns_32ns_1_2_no_dsp_1
+set name top_fcmp_32ns_32ns_1_2_no_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fcmp} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name run_fcmp_32ns_32ns_1_2_no_dsp_1
+set name top_fcmp_32ns_32ns_1_2_no_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fcmp} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name run_fcmp_32ns_32ns_1_2_no_dsp_1
+set name top_fcmp_32ns_32ns_1_2_no_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fcmp} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
 set id 49
-set name run_mux_84_32_1_1
+set name top_mux_84_32_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1

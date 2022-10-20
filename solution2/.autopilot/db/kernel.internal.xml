@@ -1,5 +1,5 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel name="run" language="c" vlnv="xilinx.com:hls:run:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="" hwControlProtocol="ap_ctrl_hs">
+  <kernel name="top" language="c" vlnv="xilinx.com:hls:top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="" hwControlProtocol="ap_ctrl_hs">
     <ports>
       <port name="M_AXI_GMEM" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="512"/>
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x800" dataWidth="32"/>

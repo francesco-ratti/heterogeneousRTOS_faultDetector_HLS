@@ -1,31 +1,31 @@
 # This script segment is generated automatically by AutoPilot
 
-set name run_fsub_32ns_32ns_32_4_full_dsp_1
+set name top_fsub_32ns_32ns_32_4_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 
-set name run_faddfsub_32ns_32ns_32_4_full_dsp_1
+set name top_faddfsub_32ns_32ns_32_4_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 
-set name run_fadd_32ns_32ns_32_4_full_dsp_1
+set name top_fadd_32ns_32ns_32_4_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 3 ALLOW_PRAGMA 1
 }
 
 
-set name run_fmul_32ns_32ns_32_2_max_dsp_1
+set name top_fmul_32ns_32ns_32_2_max_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
 set id 19
-set name run_mux_21_32_1_1
+set name top_mux_21_32_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -373,14 +373,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # flow_control definition:
-set InstName run_flow_control_loop_pipe_sequential_init_U
-set CompName run_flow_control_loop_pipe_sequential_init
+set InstName top_flow_control_loop_pipe_sequential_init_U
+set CompName top_flow_control_loop_pipe_sequential_init
 set name flow_control_loop_pipe_sequential_init
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \
     name ${name} \
-    prefix run_ \
+    prefix top_ \
 }"
 } else {
 puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control, check your platform lib"
