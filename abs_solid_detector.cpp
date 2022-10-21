@@ -692,10 +692,6 @@ void top(char accel_mode, volatile char* copying, controlStr* inputData, volatil
 #pragma HLS interface mode= s_axilite port = IOCheckIdx //bundle=A
 #pragma HLS interface mode= s_axilite port = IORegionIdx
 
-#pragma HLS INTERFACE mode=s_axilite port=failedTask
-#pragma HLS INTERFACE mode=ap_hs port=failedTask
-
-
 #pragma HLS INTERFACE mode=ap_hs port=failedTask
 #pragma HLS interface mode=s_axilite port = n_regions_in //bundle=A
 
@@ -705,7 +701,7 @@ void top(char accel_mode, volatile char* copying, controlStr* inputData, volatil
 	//#pragma HLS INTERFACE axis port=trainStream
 	/*#pragma HLS INTERFACE axis port=toScheduler*/
 
-#pragma HLS array_partition variable=regions dim=2 /*complete*/ //cyclic factor=2  //should be MAX_REGIONS
+#pragma HLS array_partition variable=regions dim=2 /*complete*/ cyclic factor=2  //should be MAX_REGIONS
 //#pragma HLS array_partition variable=failedTaskExecutionIds complete  //should be MAX_REGIONS
 
 
