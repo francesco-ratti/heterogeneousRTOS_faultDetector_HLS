@@ -9,8 +9,8 @@
     <arg id="1" name="copying" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x18" size="0x4" type="void*"/>
     <arg id="2" name="inputData" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x28" size="0x8" type="void*"/>
     <arg id="3" name="startCopy" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0x34" size="0x4" type="void*"/>
-    <arg id="4" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x40" size="0x10" type="char*"/>
-    <arg id="5" name="outcomeInRam" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x240" offset="0x400" size="0x400" type="OutcomeStr*"/>
+    <arg id="4" name="errorInTask" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x10" offset="0x40" size="0x10" type="*"/>
+    <arg id="5" name="outcomeInRam" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x240" offset="0x400" size="0x400" type="*"/>
     <arg id="6" name="trainedRegion_i" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x60" offset="0x50" size="0x60" type="int768"/>
     <arg id="7" name="trainedRegion_o" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x8" offset="0xB4" size="0x60" type="void*"/>
     <arg id="8" name="IOCheckIdx" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x1" offset="0x17C" size="0x4" type="unsigned int"/>
