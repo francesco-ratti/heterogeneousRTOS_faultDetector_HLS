@@ -529,7 +529,7 @@ void read_data(hls::stream<controlStr, 1> &dest, controlStr* inputAOV, volatile 
 	}
 }
 
-void run(controlStr* inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
+void runAfterInit(controlStr* inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
 		OutcomeStr * outcomeInRam, /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], taskFailure *failedTask, volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
@@ -675,7 +675,7 @@ static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 //#define MODE_TRAIN 4
 
 
-void top(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
+void run(char accel_mode, volatile char* copying, controlStr* inputData, volatile char* startCopy, char errorInTask[MAX_TASKS], OutcomeStr outcomeInRam[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> *n_regions_in, taskFailure *failedTask) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
 	//#pragma HLS interface s_axilite port = copyInputAOV //bundle=A
@@ -716,7 +716,7 @@ void top(char accel_mode, volatile char* copying, controlStr* inputData, volatil
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_in=n_regions[IOCheckIdx];
 	} else if (accel_mode==MODE_RUN) {
-		run(inputData, startCopy, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+		runAfterInit(inputData, startCopy, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
 	} // else if (accel_mode==MODE_TRAIN) {
 	// runTrain(inputData, outcomeInRam, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
 	// }
