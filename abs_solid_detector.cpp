@@ -424,7 +424,7 @@ struct taskFailure {
 #define sizeOfInputData sizeof(float)*MAX_AOV_DIM
 
 
-volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ volatile OutcomeStr outcomeInRam[MAX_TASKS], volatile unsigned short *failedTask, hls::stream<OutputStr, 1> &source) {
+volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ volatile OutcomeStr outcomeInRam[MAX_TASKS], volatile unsigned short *failedTask, hls::stream<OutputStr, 2> &source) {
 #pragma HLS interface mode=ap_ctrl_none port=return
 
 	for (;;) {
@@ -444,19 +444,19 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 		outcome.checkId=in.checkId;
 		outcome.uniId=in.uniId;
 		outcome.executionId=in.executionId;
-		//		memcpy(&(outcome.AOV), &in.AOV, sizeOfInputData);
-		for (size_t s=0; s<sizeOfInputData; s++) {
-#pragma HLS UNROLL
-			*((volatile char*) (&outcome.AOV)) = *((volatile char*) &in.AOV);
-		}
+		memcpy(&(outcome.AOV), &in.AOV, sizeOfInputData);
+		//		for (size_t s=0; s<sizeOfInputData; s++) {
+		//#pragma HLS UNROLL
+		//			*((volatile char*) (&outcome.AOV)) = *((volatile char*) &in.AOV);
+		//		}
 
 
 		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
-			//		memcpy((OutcomeStr*) outcomeInRam, &outcome, sizeof(outcome));
-			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
-#pragma HLS UNROLL
-				*((volatile char*) (&outcomeInRam[in.taskId])) = *((volatile char*) &outcome);
-			}
+			memcpy((OutcomeStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
+			//			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
+			//#pragma HLS UNROLL
+			//				*((volatile char*) (&outcomeInRam[in.taskId])) = *((volatile char*) &outcome);
+			//			}
 			errorInTask[in.taskId] = in.fault;
 
 			if (in.fault) {
@@ -475,7 +475,7 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 }
 
 
-volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 1> &source, hls::stream<OutputStr, 1> &dest) {
+volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 2> &source, hls::stream<OutputStr, 2> &dest) {
 
 	controlStr in;
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
@@ -530,8 +530,7 @@ void setProcessingState(volatile char* processing, bool value) {
 //#pragma HLS INLINE off
 //	memcpy(dest, source, size);
 //}
-
-volatile void read_data(hls::stream<controlStr, 1> &dest, volatile controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
+volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
 
 #pragma HLS interface mode=ap_ctrl_none port=return
 
@@ -539,15 +538,32 @@ volatile void read_data(hls::stream<controlStr, 1> &dest, volatile controlStr* i
 #pragma HLS PIPELINE off
 		if (*startCopy) {
 			controlStr destStr;
-			//memcpy(&destStr, &inputAOV, sizeof(controlStr));
+			//memcpy((void*)(&destStr), (void*) inputAOV, sizeof(controlStr));
 
-			setProcessingState(copying, true);
-			for (size_t s=0; s<sizeof(controlStr); s++) {
-#pragma HLS UNROLL
-				*((char*) (&destStr)) = *((volatile char*) inputAOV);
+			//			for (int i=0; i<5; i++) {
+			//#pragma HLS PIPELINE
+			//				*((volatile unsigned long long*) (&destStr))=*((volatile unsigned long long*) (inputAOV));
+			//			}
+
+			//			setProcessingState(copying, true);
+			//					for (size_t s=0; s<sizeof(controlStr); s++) {
+			//			#pragma HLS UNROLL
+			//						*((char*) (&destStr)) = *((volatile char*) inputAOV);
+			//					}
+
+			destStr.checkId=inputAOV->checkId;
+			destStr.command=inputAOV->command;
+			destStr.executionId=inputAOV->executionId;
+			destStr.taskId=inputAOV->taskId;
+			destStr.uniId=inputAOV->uniId;
+			for (int i=0; i<MAX_AOV_DIM; i++) {
+				//#pragma HLS UNROLL
+				destStr.AOV[i]=inputAOV->AOV[i];
 			}
-			setProcessingState(copying, false);
 
+
+			//			setProcessingState(copying, false);
+#pragma HLS DEPENDENCE type=intra variable=destStr dependent=true
 			dest.write(destStr);
 		}
 	}
@@ -575,8 +591,8 @@ void afterInit(volatile controlStr *inputAOV, volatile char* startCopy, /*char* 
 	//		float AOV[MAX_AOV_DIM];
 	//#pragma HLS ARRAY_PARTITION variable=AOV type=complete
 
-	hls::stream<controlStr, 1> sourceStream;
-	hls::stream<OutputStr, 1> destStream;
+	hls::stream<controlStr, 2> sourceStream;
+	hls::stream<OutputStr, 2> destStream;
 
 	read_data(sourceStream, inputAOV, startCopy, copying);
 	compute(regions, n_regions, sourceStream, destStream);
