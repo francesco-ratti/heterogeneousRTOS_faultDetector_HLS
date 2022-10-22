@@ -535,35 +535,54 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* i
 #pragma HLS interface mode=ap_ctrl_none port=return
 
 	for (;;) {
-#pragma HLS PIPELINE off
-		if (*startCopy) {
-			controlStr destStr;
-			//memcpy((void*)(&destStr), (void*) inputAOV, sizeof(controlStr));
 
-			//			for (int i=0; i<5; i++) {
-			//#pragma HLS PIPELINE
-			//				*((volatile unsigned long long*) (&destStr))=*((volatile unsigned long long*) (inputAOV));
+
+#pragma HLS PIPELINE off
+
+		if (*startCopy) {
+
+
+			controlStr destStr;
+			controlStr* ptr=(controlStr*)inputAOV;
+			setProcessingState(copying, true);
+
+
+
+			//memcpy(&destStr, ptr, sizeof(controlStr));
+
+			//									for (size_t i=0; i<sizeof(controlStr)/sizeof(unsigned long long); i++) {
+			//						#pragma HLS PIPELINE
+			//										*((volatile unsigned long long*) (&destStr))=*((volatile unsigned long long*) (inputAOV));
+			//									}
+
+			for (size_t s=0; s<sizeof(controlStr); s++) {
+#pragma HLS pipeline
+				*((volatile unsigned char*) (&destStr)) = *((volatile unsigned char*) inputAOV);
+			}
+			destStr=*ptr;
+
+
+			//			destStr.checkId=inputAOV->checkId;
+			//			destStr.command=inputAOV->command;
+			//			destStr.executionId=inputAOV->executionId;
+			//			destStr.taskId=inputAOV->taskId;
+			//			destStr.uniId=inputAOV->uniId;
+			//			for (int i=0; i<MAX_AOV_DIM; i++) {
+			//				//#pragma HLS unroll
+			//				destStr.AOV[i]=inputAOV->AOV[i];
 			//			}
 
-			//			setProcessingState(copying, true);
-			//					for (size_t s=0; s<sizeof(controlStr); s++) {
-			//			#pragma HLS UNROLL
-			//						*((char*) (&destStr)) = *((volatile char*) inputAOV);
-			//					}
 
-			destStr.checkId=inputAOV->checkId;
-			destStr.command=inputAOV->command;
-			destStr.executionId=inputAOV->executionId;
-			destStr.taskId=inputAOV->taskId;
-			destStr.uniId=inputAOV->uniId;
-			for (int i=0; i<MAX_AOV_DIM; i++) {
-				//#pragma HLS UNROLL
-				destStr.AOV[i]=inputAOV->AOV[i];
+			if (destStr.command==COMMAND_TRAIN || destStr.command==COMMAND_TEST) {
+				setProcessingState(copying, false);
 			}
-
-
-			//			setProcessingState(copying, false);
 #pragma HLS DEPENDENCE type=intra variable=destStr dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.AOV dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.checkId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.command dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.executionId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.taskId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.uniId dependent=true
 			dest.write(destStr);
 		}
 	}
