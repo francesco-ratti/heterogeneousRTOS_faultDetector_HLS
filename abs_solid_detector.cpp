@@ -476,7 +476,7 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 				//	#pragma HLS UNROLL
 				//					*((volatile char*) (failedTask)) = *((volatile char*) &tf);
 				//				}
-				*failedTask=(((unsigned short)in.taskId) & ((unsigned short)(in.executionId << 8)));
+				*failedTask=(((unsigned short)in.taskId) | (((unsigned short)(in.executionId)) << 8));
 				//				failedTask->taskId=in.taskId;
 				//				failedTask->executionId=in.executionId;
 			}
