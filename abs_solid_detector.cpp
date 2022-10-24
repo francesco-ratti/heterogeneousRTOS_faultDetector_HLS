@@ -402,6 +402,7 @@ struct OutputStr {
 	ap_uint<16> uniId;
 	ap_uint<8> taskId;
 	bool fault;
+	bool test;
 	float AOV[MAX_AOV_DIM];
 };
 
@@ -440,6 +441,12 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 	out.error=error;
 		 */
 
+		//void resetError(char* errorInTask, ap_uint<8>* failedTaskExecutionId, ap_uint<8> executionId) {
+		//	if (*errorInTask && (*failedTaskExecutionId)!=executionId) {
+		//		*errorInTask=0;
+		//	}
+		//}
+
 		OutcomeStr outcome;
 		outcome.checkId=in.checkId;
 		outcome.uniId=in.uniId;
@@ -452,12 +459,15 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 
 
 		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
-			memcpy((OutcomeStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
 			//			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
 			//#pragma HLS UNROLL
 			//				*((volatile char*) (&outcomeInRam[in.taskId])) = *((volatile char*) &outcome);
 			//			}
 			errorInTask[in.taskId] = in.fault;
+
+			if (in.test)
+				memcpy((OutcomeStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
+
 
 			if (in.fault) {
 				failedTaskExecutionId[in.taskId]=in.executionId;
@@ -503,10 +513,15 @@ volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_re
 			bool fault = !(vld && hasReg);
 
 			//if (error)
+			out.test=true;
 			out.fault=fault;
 			dest.write(out);
 			//		}
 		} else if (in.command==COMMAND_TRAIN) {
+			out.test=false;
+			out.fault=false;
+			dest.write(out);
+
 			insert_point(regions[in.checkId],
 					n_regions[in.checkId],
 					in.AOV);
