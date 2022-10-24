@@ -74,25 +74,6 @@ void XRun_DisableAutoRestart(XRun *InstancePtr) {
     XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-void XRun_Set_inputAOV(XRun *InstancePtr, u64 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTAOV_DATA, (u32)(Data));
-    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTAOV_DATA + 4, (u32)(Data >> 32));
-}
-
-u64 XRun_Get_inputAOV(XRun *InstancePtr) {
-    u64 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTAOV_DATA);
-    Data += (u64)XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTAOV_DATA + 4) << 32;
-    return Data;
-}
-
 void XRun_Set_accel_mode(XRun *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
@@ -108,6 +89,79 @@ u32 XRun_Get_accel_mode(XRun *InstancePtr) {
 
     Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_ACCEL_MODE_DATA);
     return Data;
+}
+
+u32 XRun_Get_copying(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_COPYING_DATA);
+    return Data;
+}
+
+void XRun_Set_inputData(XRun *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTDATA_DATA, (u32)(Data));
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTDATA_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XRun_Get_inputData(XRun *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTDATA_DATA);
+    Data += (u64)XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_INPUTDATA_DATA + 4) << 32;
+    return Data;
+}
+
+void XRun_Set_startCopy(XRun *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_DATA, Data);
+}
+
+u32 XRun_Get_startCopy(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_DATA);
+    return Data;
+}
+
+void XRun_Set_startCopy_vld(XRun *InstancePtr) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL, 1);
+}
+
+u32 XRun_Get_startCopy_vld(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL);
+    return Data & 0x1;
+}
+
+u32 XRun_Get_startCopy_ack(XRun *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL);
+    return (Data >> 1) & 0x1;
 }
 
 void XRun_Set_trainedRegion_i(XRun *InstancePtr, XRun_Trainedregion_i Data) {
@@ -507,10 +561,27 @@ u32 XRun_InterruptGetStatus(XRun *InstancePtr) {
     return XRun_ReadReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_ISR);
 }
 
-FAULTDETECTOR_OutcomeStr FAULTDETECTOR_getLastFault(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeStr* dest) {
+
+
+
+void FAULTDETECTOR_getLastTestedAOV(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeStr* dest) {
 	memcpy((void*) dest, (void*) (InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE+sizeof(FAULTDETECTOR_OutcomeStr)*taskId), sizeof(FAULTDETECTOR_OutcomeStr));
 }
+void FAULTDETECTOR_getLastTestedAOVDescriptor(XRun *InstancePtr, u8 taskId, FAULTDETECTOR_OutcomeDescriptor* dest) {
+	memcpy((void*) dest, (void*) (InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE+sizeof(FAULTDETECTOR_OutcomeStr)*taskId), sizeof(FAULTDETECTOR_OutcomeDescriptor));
+}
 
+u16 FAULTDETECTOR_getLastTestedAOVUniId(XRun *InstancePtr, u8 taskId) {
+	return ((FAULTDETECTOR_OutcomeStr*) (InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE+sizeof(FAULTDETECTOR_OutcomeStr)*taskId))->uniId;
+}
+
+u8 FAULTDETECTOR_getLastTestedAOVExecutionId(XRun *InstancePtr, u8 taskId) {
+	return ((FAULTDETECTOR_OutcomeStr*) (InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE+sizeof(FAULTDETECTOR_OutcomeStr)*taskId))->executionId;
+}
+
+u8 FAULTDETECTOR_getLastTestedAOVCheckId(XRun *InstancePtr, u8 taskId) {
+	return ((FAULTDETECTOR_OutcomeStr*) (InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE+sizeof(FAULTDETECTOR_OutcomeStr)*taskId))->checkId;
+}
 
 void FAULTDETECTOR_initRegions(XRun *InstancePtr, region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS], u8 n_regions[FAULTDETECTOR_MAX_CHECKS]) {
 	while (!XRun_IsReady(InstancePtr)) {}
@@ -547,7 +618,7 @@ void FAULTDETECTOR_dumpRegions(XRun *InstancePtr, region_t trainedRegions[FAULTD
 	XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_ACCEL_MODE_DATA, FAULTDETECTOR_MODE_RUN);
 }
 
-char FAULTDETECTOR_isFault(XRun *InstancePtr, u8 taskId) {
+char FAULTDETECTOR_hasFault(XRun *InstancePtr, u8 taskId) {
 	return *((char*) ((u32)(InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_ERRORINTASK_BASE+taskId*sizeof(char))));
 }
 
@@ -562,3 +633,13 @@ void FAULTDETECTOR_setTrainedRegion(XRun *InstancePtr, region_t* region) {
 region_t FAULTDETECTOR_getTrainedRegion(XRun *InstancePtr) {
 	return *((region_t*) ((u32)(InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA)));
 }
+
+void FAULTDETECTOR_startCopy(XRun *InstancePtr) {
+	*((char*) ((u32)(InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_STARTCOPY_DATA)))=0xFF;
+    XRun_WriteReg(InstancePtr->Control_BaseAddress, XRUN_CONTROL_ADDR_STARTCOPY_CTRL, 1);
+}
+
+char FAULTDETECTOR_isReadyForNextControl(XRun *InstancePtr) {
+	return  !(*((char*) ((u32)(InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_COPYING_DATA)))) && ((*((char*) ((u32)(InstancePtr->Control_BaseAddress+XRUN_CONTROL_ADDR_STARTCOPY_CTRL))) /*>> 1*/) & /*0x1*/0x3)==0x2;
+}
+
