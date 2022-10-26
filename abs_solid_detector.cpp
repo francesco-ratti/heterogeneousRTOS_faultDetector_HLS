@@ -380,7 +380,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 
 
-#define COMMAND_INIT 1
+#define COMMAND_STOP 1
 #define COMMAND_TEST 2
 #define COMMAND_TRAIN 3
 
@@ -397,12 +397,12 @@ struct OutcomeStr {
 };
 
 struct OutputStr {
+	ap_uint<2> command;
 	ap_uint<8> checkId;
 	ap_uint<8> executionId;
 	ap_uint<16> uniId;
 	ap_uint<8> taskId;
 	bool fault;
-	bool test;
 	float AOV[MAX_AOV_DIM];
 };
 
@@ -426,12 +426,13 @@ struct taskFailure {
 
 
 volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ volatile OutcomeStr outcomeInRam[MAX_TASKS], volatile unsigned short *failedTask, hls::stream<OutputStr, 2> &source) {
-#pragma HLS interface mode=ap_ctrl_none port=return
+#pragma HLS interface mode=ap_ctrl_hs port=return
 
 	for (;;) {
 #pragma HLS PIPELINE off
 
 		OutputStr in=source.read();
+
 		//#pragma HLS PIPELINE II=8
 		//#pragma HLS inline off
 		//	OutcomeStr out;
@@ -447,6 +448,7 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 		//	}
 		//}
 
+
 		OutcomeStr outcome;
 		outcome.checkId=in.checkId;
 		outcome.uniId=in.uniId;
@@ -457,6 +459,9 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 		//			*((volatile char*) (&outcome.AOV)) = *((volatile char*) &in.AOV);
 		//		}
 
+		if (in.command==COMMAND_STOP) {
+			break;
+		}
 
 		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
 			//			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
@@ -465,7 +470,7 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 			//			}
 			errorInTask[in.taskId] = in.fault;
 
-			if (in.test)
+			if (in.command==COMMAND_TEST)
 				memcpy((OutcomeStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
 
 
@@ -489,7 +494,7 @@ volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_re
 
 	controlStr in;
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
-#pragma HLS interface mode=ap_ctrl_none port=return
+#pragma HLS interface mode=ap_ctrl_hs port=return
 
 	for (;;) {
 #pragma HLS pipeline off
@@ -501,6 +506,7 @@ volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_re
 		out.uniId=in.uniId;
 		out.executionId=in.executionId;
 		out.taskId=in.taskId;
+		out.command=in.command;
 		memcpy((void*) &(out.AOV), (void*) &(in.AOV), sizeOfInputData);
 
 		//			if (in.command!=COMMAND_TEST) {
@@ -513,18 +519,19 @@ volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_re
 			bool fault = !(vld && hasReg);
 
 			//if (error)
-			out.test=true;
 			out.fault=fault;
 			dest.write(out);
 			//		}
 		} else if (in.command==COMMAND_TRAIN) {
-			out.test=false;
 			out.fault=false;
 			dest.write(out);
 
 			insert_point(regions[in.checkId],
 					n_regions[in.checkId],
 					in.AOV);
+		} else if (in.command==COMMAND_STOP) {
+			dest.write(out);
+			break;
 		}
 	}
 }
@@ -547,7 +554,7 @@ void setProcessingState(volatile char* processing, bool value) {
 //}
 volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* inputAOV, volatile char* startCopy, volatile char* copying) {
 
-#pragma HLS interface mode=ap_ctrl_none port=return
+#pragma HLS interface mode=ap_ctrl_hs port=return
 
 	for (;;) {
 
@@ -587,8 +594,7 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* i
 			//				destStr.AOV[i]=inputAOV->AOV[i];
 			//			}
 
-
-			if (destStr.command==COMMAND_TRAIN || destStr.command==COMMAND_TEST) {
+			if (destStr.command==COMMAND_TRAIN || destStr.command==COMMAND_TEST || destStr.command==COMMAND_STOP) {
 				setProcessingState(copying, false);
 			}
 #pragma HLS DEPENDENCE type=intra variable=destStr dependent=true
@@ -599,6 +605,10 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* i
 #pragma HLS DEPENDENCE type=intra variable=destStr.taskId dependent=true
 #pragma HLS DEPENDENCE type=intra variable=destStr.uniId dependent=true
 			dest.write(destStr);
+
+			if (destStr.command==COMMAND_STOP) {
+				break;
+			}
 		}
 	}
 }
@@ -616,7 +626,7 @@ void afterInit(volatile controlStr *inputAOV, volatile char* startCopy, /*char* 
 	//#pragma HLS stable variable=failedTask
 	//#pragma HLS stable variable=copying
 	//	bool error;
-	//#pragma HLS interface mode=ap_ctrl_none port=return
+#pragma HLS interface mode=ap_ctrl_hs port=return
 
 	//		ap_uint<8> checkId;
 	//		ap_uint<8> taskId;
