@@ -4,17 +4,17 @@
 # Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 # ==============================================================
 proc generate {drv_handle} {
-    xdefine_include_file $drv_handle "xparameters.h" "XRun" \
+    xdefine_include_file $drv_handle "xparameters.h" "XFaultdetector" \
         "NUM_INSTANCES" \
         "DEVICE_ID" \
         "C_S_AXI_CONTROL_BASEADDR" \
         "C_S_AXI_CONTROL_HIGHADDR"
 
-    xdefine_config_file $drv_handle "xrun_g.c" "XRun" \
+    xdefine_config_file $drv_handle "xfaultdetector_g.c" "XFaultdetector" \
         "DEVICE_ID" \
         "C_S_AXI_CONTROL_BASEADDR"
 
-    xdefine_canonical_xpars $drv_handle "xparameters.h" "XRun" \
+    xdefine_canonical_xpars $drv_handle "xparameters.h" "XFaultdetector" \
         "DEVICE_ID" \
         "C_S_AXI_CONTROL_BASEADDR" \
         "C_S_AXI_CONTROL_HIGHADDR"

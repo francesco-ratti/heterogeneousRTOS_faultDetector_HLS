@@ -5,12 +5,12 @@
 # ==============================================================
 OPTION psf_version = 2.1;
 
-BEGIN driver run
+BEGIN driver FaultDetector
 
- OPTION supported_peripherals = (run_v1_0 );
+ OPTION supported_peripherals = (FaultDetector_v1_0 );
  OPTION driver_state = ACTIVE;
  OPTION copyfiles = all;
- OPTION name = run;
+ OPTION name = FaultDetector;
  OPTION version = 1.0;
 
 END driver

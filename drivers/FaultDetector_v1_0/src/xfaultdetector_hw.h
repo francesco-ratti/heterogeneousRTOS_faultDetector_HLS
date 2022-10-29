@@ -149,12 +149,12 @@
 //         bit 7~0 - IORegionIdx[7:0] (Read/Write)
 //         others  - reserved
 // 0x188 : reserved
-// 0x18c : Data signal of n_regions_in_i
-//         bit 7~0 - n_regions_in_i[7:0] (Read/Write)
+// 0x18c : Data signal of n_regions_i
+//         bit 7~0 - n_regions_i[7:0] (Read/Write)
 //         others  - reserved
 // 0x190 : reserved
-// 0x194 : Data signal of n_regions_in_o
-//         bit 7~0 - n_regions_in_o[7:0] (Read)
+// 0x194 : Data signal of n_regions_o
+//         bit 7~0 - n_regions_o[7:0] (Read)
 //         others  - reserved
 // 0x198 : reserved
 // 0x040 ~
@@ -164,16 +164,16 @@
 //                  bit [23:16] - errorInTask[4n+2]
 //                  bit [31:24] - errorInTask[4n+3]
 // 0x400 ~
-// 0x7ff : Memory 'outcomeInRam' (16 * 288b)
-//         Word 16n  : bit [31:0] - outcomeInRam[n][31: 0]
-//         Word 16n+1 : bit [31:0] - outcomeInRam[n][63:32]
-//         Word 16n+2 : bit [31:0] - outcomeInRam[n][95:64]
-//         Word 16n+3 : bit [31:0] - outcomeInRam[n][127:96]
-//         Word 16n+4 : bit [31:0] - outcomeInRam[n][159:128]
-//         Word 16n+5 : bit [31:0] - outcomeInRam[n][191:160]
-//         Word 16n+6 : bit [31:0] - outcomeInRam[n][223:192]
-//         Word 16n+7 : bit [31:0] - outcomeInRam[n][255:224]
-//         Word 16n+8 : bit [31:0] - outcomeInRam[n][287:256]
+// 0x7ff : Memory 'lastTestDescriptor' (16 * 288b)
+//         Word 16n  : bit [31:0] - lastTestDescriptor[n][31: 0]
+//         Word 16n+1 : bit [31:0] - lastTestDescriptor[n][63:32]
+//         Word 16n+2 : bit [31:0] - lastTestDescriptor[n][95:64]
+//         Word 16n+3 : bit [31:0] - lastTestDescriptor[n][127:96]
+//         Word 16n+4 : bit [31:0] - lastTestDescriptor[n][159:128]
+//         Word 16n+5 : bit [31:0] - lastTestDescriptor[n][191:160]
+//         Word 16n+6 : bit [31:0] - lastTestDescriptor[n][223:192]
+//         Word 16n+7 : bit [31:0] - lastTestDescriptor[n][255:224]
+//         Word 16n+8 : bit [31:0] - lastTestDescriptor[n][287:256]
 //         Word 16n+9 : bit [31:0] - reserved
 //         Word 16n+10 : bit [31:0] - reserved
 //         Word 16n+11 : bit [31:0] - reserved
@@ -183,41 +183,41 @@
 //         Word 16n+15 : bit [31:0] - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XRUN_CONTROL_ADDR_AP_CTRL               0x000
-#define XRUN_CONTROL_ADDR_GIE                   0x004
-#define XRUN_CONTROL_ADDR_IER                   0x008
-#define XRUN_CONTROL_ADDR_ISR                   0x00c
-#define XRUN_CONTROL_ADDR_ACCEL_MODE_DATA       0x010
-#define XRUN_CONTROL_BITS_ACCEL_MODE_DATA       8
-#define XRUN_CONTROL_ADDR_COPYING_DATA          0x018
-#define XRUN_CONTROL_BITS_COPYING_DATA          8
-#define XRUN_CONTROL_ADDR_INPUTDATA_DATA        0x028
-#define XRUN_CONTROL_BITS_INPUTDATA_DATA        64
-#define XRUN_CONTROL_ADDR_STARTCOPY_DATA        0x034
-#define XRUN_CONTROL_BITS_STARTCOPY_DATA        8
-#define XRUN_CONTROL_ADDR_STARTCOPY_CTRL        0x038
-#define XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA  0x050
-#define XRUN_CONTROL_BITS_TRAINEDREGION_I_DATA  768
-#define XRUN_CONTROL_ADDR_TRAINEDREGION_I_DATA_ 0x078
-#define XRUN_CONTROL_BITS_TRAINEDREGION_I_DATA  768
-#define XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA  0x0b4
-#define XRUN_CONTROL_BITS_TRAINEDREGION_O_DATA  768
-#define XRUN_CONTROL_ADDR_TRAINEDREGION_O_DATA_ 0x0dc
-#define XRUN_CONTROL_BITS_TRAINEDREGION_O_DATA  768
-#define XRUN_CONTROL_ADDR_IOCHECKIDX_DATA       0x17c
-#define XRUN_CONTROL_BITS_IOCHECKIDX_DATA       8
-#define XRUN_CONTROL_ADDR_IOREGIONIDX_DATA      0x184
-#define XRUN_CONTROL_BITS_IOREGIONIDX_DATA      8
-#define XRUN_CONTROL_ADDR_N_REGIONS_IN_I_DATA   0x18c
-#define XRUN_CONTROL_BITS_N_REGIONS_IN_I_DATA   8
-#define XRUN_CONTROL_ADDR_N_REGIONS_IN_O_DATA   0x194
-#define XRUN_CONTROL_BITS_N_REGIONS_IN_O_DATA   8
-#define XRUN_CONTROL_ADDR_ERRORINTASK_BASE      0x040
-#define XRUN_CONTROL_ADDR_ERRORINTASK_HIGH      0x04f
-#define XRUN_CONTROL_WIDTH_ERRORINTASK          8
-#define XRUN_CONTROL_DEPTH_ERRORINTASK          16
-#define XRUN_CONTROL_ADDR_OUTCOMEINRAM_BASE     0x400
-#define XRUN_CONTROL_ADDR_OUTCOMEINRAM_HIGH     0x7ff
-#define XRUN_CONTROL_WIDTH_OUTCOMEINRAM         288
-#define XRUN_CONTROL_DEPTH_OUTCOMEINRAM         16
+#define XFAULTDETECTOR_CONTROL_ADDR_AP_CTRL                 0x000
+#define XFAULTDETECTOR_CONTROL_ADDR_GIE                     0x004
+#define XFAULTDETECTOR_CONTROL_ADDR_IER                     0x008
+#define XFAULTDETECTOR_CONTROL_ADDR_ISR                     0x00c
+#define XFAULTDETECTOR_CONTROL_ADDR_ACCEL_MODE_DATA         0x010
+#define XFAULTDETECTOR_CONTROL_BITS_ACCEL_MODE_DATA         8
+#define XFAULTDETECTOR_CONTROL_ADDR_COPYING_DATA            0x018
+#define XFAULTDETECTOR_CONTROL_BITS_COPYING_DATA            8
+#define XFAULTDETECTOR_CONTROL_ADDR_INPUTDATA_DATA          0x028
+#define XFAULTDETECTOR_CONTROL_BITS_INPUTDATA_DATA          64
+#define XFAULTDETECTOR_CONTROL_ADDR_STARTCOPY_DATA          0x034
+#define XFAULTDETECTOR_CONTROL_BITS_STARTCOPY_DATA          8
+#define XFAULTDETECTOR_CONTROL_ADDR_STARTCOPY_CTRL          0x038
+#define XFAULTDETECTOR_CONTROL_ADDR_TRAINEDREGION_I_DATA    0x050
+#define XFAULTDETECTOR_CONTROL_BITS_TRAINEDREGION_I_DATA    768
+#define XFAULTDETECTOR_CONTROL_ADDR_TRAINEDREGION_I_DATA_   0x078
+#define XFAULTDETECTOR_CONTROL_BITS_TRAINEDREGION_I_DATA    768
+#define XFAULTDETECTOR_CONTROL_ADDR_TRAINEDREGION_O_DATA    0x0b4
+#define XFAULTDETECTOR_CONTROL_BITS_TRAINEDREGION_O_DATA    768
+#define XFAULTDETECTOR_CONTROL_ADDR_TRAINEDREGION_O_DATA_   0x0dc
+#define XFAULTDETECTOR_CONTROL_BITS_TRAINEDREGION_O_DATA    768
+#define XFAULTDETECTOR_CONTROL_ADDR_IOCHECKIDX_DATA         0x17c
+#define XFAULTDETECTOR_CONTROL_BITS_IOCHECKIDX_DATA         8
+#define XFAULTDETECTOR_CONTROL_ADDR_IOREGIONIDX_DATA        0x184
+#define XFAULTDETECTOR_CONTROL_BITS_IOREGIONIDX_DATA        8
+#define XFAULTDETECTOR_CONTROL_ADDR_N_REGIONS_I_DATA        0x18c
+#define XFAULTDETECTOR_CONTROL_BITS_N_REGIONS_I_DATA        8
+#define XFAULTDETECTOR_CONTROL_ADDR_N_REGIONS_O_DATA        0x194
+#define XFAULTDETECTOR_CONTROL_BITS_N_REGIONS_O_DATA        8
+#define XFAULTDETECTOR_CONTROL_ADDR_ERRORINTASK_BASE        0x040
+#define XFAULTDETECTOR_CONTROL_ADDR_ERRORINTASK_HIGH        0x04f
+#define XFAULTDETECTOR_CONTROL_WIDTH_ERRORINTASK            8
+#define XFAULTDETECTOR_CONTROL_DEPTH_ERRORINTASK            16
+#define XFAULTDETECTOR_CONTROL_ADDR_LASTTESTDESCRIPTOR_BASE 0x400
+#define XFAULTDETECTOR_CONTROL_ADDR_LASTTESTDESCRIPTOR_HIGH 0x7ff
+#define XFAULTDETECTOR_CONTROL_WIDTH_LASTTESTDESCRIPTOR     288
+#define XFAULTDETECTOR_CONTROL_DEPTH_LASTTESTDESCRIPTOR     16
 
