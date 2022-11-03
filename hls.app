@@ -1,18 +1,16 @@
-<project xmlns="com.autoesl.autopilot.project" name="detector_solid" top="FaultDetector">
+<project xmlns="com.autoesl.autopilot.project" top="FaultDetector" name="faultDetection">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim"/>
     </Simulation>
     <files xmlns="">
-        <file name="detector_solid/abs_solid_detector.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="detector_solid/parameters.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="detector_solid/region.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="faultDetection/region.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="faultDetection/parameters.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="faultDetection/abs_solid_detector.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
-        <solution name="solution1" status="inactive"/>
-        <solution name="solution2" status="active"/>
-        <solution name="solution2" status="active"/>
+        <solution name="solution1" status="active"/>
     </solutions>
 </project>
 
