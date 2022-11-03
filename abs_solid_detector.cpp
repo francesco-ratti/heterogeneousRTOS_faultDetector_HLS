@@ -222,7 +222,7 @@ struct taskFailure {
 #define sizeOfInputData sizeof(float)*MAX_AOV_DIM
 
 
-volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionId[MAX_TASKS], /*hls::stream< ap_uint<8>> &toScheduler,*/ volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], volatile unsigned short *failedTask, hls::stream<OutputStr, 2> &source) {
+volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], /*ap_uint<8> failedTaskExecutionId[MAX_TASKS],*/ /*hls::stream< ap_uint<8>> &toScheduler,*/ volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], /*volatile unsigned short *failedTask,*/ hls::stream<OutputStr, 2> &source) {
 #pragma HLS interface mode=ap_ctrl_hs port=return
 
 	for (;;) {
@@ -241,23 +241,23 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 			break;
 		}
 
-		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
-			//			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
-			//#pragma HLS UNROLL
-			//				*((volatile char*) (&outcomeInRam[in.taskId])) = *((volatile char*) &outcome);
-			//			}
+//		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
+//			//			for (size_t s=0; s<sizeof(OutcomeStr); s++) {
+//			//#pragma HLS UNROLL
+//			//				*((volatile char*) (&outcomeInRam[in.taskId])) = *((volatile char*) &outcome);
+//			//			}
 			errorInTask[in.taskId] = in.fault;
 
 			if (in.command==COMMAND_TEST)
 				memcpy((testpointDescriptorStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
 
-
-			if (in.fault) {
-				failedTaskExecutionId[in.taskId]=in.executionId;
-
-				*failedTask=(((unsigned short)in.taskId) | (((unsigned short)(in.executionId)) << 8));
-			}
-		}
+//
+//			if (in.fault) {
+//				failedTaskExecutionId[in.taskId]=in.executionId;
+//
+//				*failedTask=(((unsigned short)in.taskId) | (((unsigned short)(in.executionId)) << 8));
+//			}
+//		}
 	}
 }
 
@@ -377,7 +377,7 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr* i
 }
 
 void afterInit(volatile controlStr *inputAOV, volatile char* startCopy, /*char* readyForData,  char* copyInputAOV,*/
-		volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS],  volatile unsigned short *failedTask, volatile char* copying
+		volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], /*ap_uint<8> failedTaskExecutionIds[MAX_TASKS],*/ region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS],  /*volatile unsigned short *failedTask,*/ volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
 #pragma HLS interface mode=ap_ctrl_hs port=return
@@ -387,20 +387,20 @@ void afterInit(volatile controlStr *inputAOV, volatile char* startCopy, /*char* 
 
 	read_data(sourceStream, inputAOV, startCopy, copying);
 	compute(regions, n_regions, sourceStream, destStream);
-	handle_outcome(errorInTask, failedTaskExecutionIds, outcomeInRam, failedTask, destStream);
+	handle_outcome(errorInTask, /*failedTaskExecutionIds,*/ outcomeInRam, /*failedTask,*/ destStream);
 }
 
 
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
 static ap_uint<8> n_regions[MAX_CHECKS];
-static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
+//static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 
 
 #define MODE_INIT 1
 #define MODE_OUT 2
 #define MODE_RUN 3
 
-void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr* inputData, volatile char* startCopy, volatile char errorInTask[MAX_TASKS], volatile testpointDescriptorStr lastTestDescriptor[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> n_regions_i,  ap_uint<8> *n_regions_o, volatile  unsigned short *failedTask) {
+void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr* inputData, volatile char* startCopy, volatile char errorInTask[MAX_TASKS], volatile testpointDescriptorStr lastTestDescriptor[MAX_TASKS], region_t trainedRegion_i, region_t *trainedRegion_o, ap_uint<8> IOCheckIdx, ap_uint<8> IORegionIdx, ap_uint<8> n_regions_i,  ap_uint<8> *n_regions_o/*, volatile  unsigned short *failedTask*/) {
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS interface mode= s_axilite port = accel_mode
@@ -415,7 +415,7 @@ void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr*
 #pragma HLS interface mode= s_axilite port = IOCheckIdx
 #pragma HLS interface mode= s_axilite port = IORegionIdx
 
-#pragma HLS INTERFACE mode=ap_hs port=failedTask
+//#pragma HLS INTERFACE mode=ap_hs port=failedTask
 #pragma HLS interface mode=s_axilite port = n_regions_i
 #pragma HLS interface mode=s_axilite port = n_regions_o
 
@@ -424,7 +424,7 @@ void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr*
 
 #pragma HLS array_partition variable=regions dim=2 /*complete*/ cyclic factor=2
 
-#pragma HLS reset variable=failedTaskExecutionIds
+//#pragma HLS reset variable=failedTaskExecutionIds
 
 
 	if (accel_mode==MODE_INIT) {
@@ -434,7 +434,7 @@ void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr*
 		*trainedRegion_o=regions[IOCheckIdx][IORegionIdx];
 		*n_regions_o=n_regions[IOCheckIdx];
 	} else if (accel_mode==MODE_RUN) {
-		afterInit(inputData, startCopy, lastTestDescriptor, errorInTask, failedTaskExecutionIds, regions, n_regions, failedTask, copying);
+		afterInit(inputData, startCopy, lastTestDescriptor, errorInTask, /*failedTaskExecutionIds,*/ regions, n_regions, /*failedTask,*/ copying);
 	}
 }
 
