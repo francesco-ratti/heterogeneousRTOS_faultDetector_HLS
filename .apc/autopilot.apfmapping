@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="abs_solid_detector.cpp" path="/home/francesco/workspace/detector_solid/abs_solid_detector.cpp"/>
-    <originFiles name="parameters.h" path="/home/francesco/workspace/detector_solid/parameters.h"/>
-    <originFiles name="region.h" path="/home/francesco/workspace/detector_solid/region.h"/>
+    <originFiles name="abs_solid_detector.cpp" path="/home/bosp/workspace/faultDetection/abs_solid_detector.cpp"/>
+    <originFiles name="parameters.h" path="/home/bosp/workspace/faultDetection/parameters.h"/>
+    <originFiles name="region.h" path="/home/bosp/workspace/faultDetection/region.h"/>
   </source>
   <testbench/>
 </autopilotfilemapping:AutoPilotFileMapping>

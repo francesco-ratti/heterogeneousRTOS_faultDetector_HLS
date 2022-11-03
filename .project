@@ -29,67 +29,47 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>/home/francesco/workspace/detector_solid/.apc/.src</location>
+			<location>/home/bosp/workspace/faultDetection/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>/home/francesco/workspace/detector_solid/.apc/.tb</location>
+			<location>/home/bosp/workspace/faultDetection/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>/home/francesco/workspace/detector_solid/solution1/.tcls</location>
-		</link>
-		<link>
-			<name>solution2/constraints</name>
-			<type>2</type>
-			<location>/home/francesco/workspace/detector_solid/solution2/.tcls</location>
+			<location>/home/bosp/workspace/faultDetection/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/abs_solid_detector.cpp</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/abs_solid_detector.cpp</location>
+			<location>/home/bosp/workspace/faultDetection/abs_solid_detector.cpp</location>
 		</link>
 		<link>
 			<name>source/parameters.h</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/parameters.h</location>
+			<location>/home/bosp/workspace/faultDetection/parameters.h</location>
 		</link>
 		<link>
 			<name>source/region.h</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/region.h</location>
+			<location>/home/bosp/workspace/faultDetection/region.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution1/solution1.directive</location>
+			<location>/home/bosp/workspace/faultDetection/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution1/directives.tcl</location>
+			<location>/home/bosp/workspace/faultDetection/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution1/script.tcl</location>
-		</link>
-		<link>
-			<name>solution2/constraints/.xml.directive</name>
-			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution2/solution2.directive</location>
-		</link>
-		<link>
-			<name>solution2/constraints/directives.tcl</name>
-			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution2/directives.tcl</location>
-		</link>
-		<link>
-			<name>solution2/constraints/script.tcl</name>
-			<type>1</type>
-			<location>/home/francesco/workspace/detector_solid/solution2/script.tcl</location>
+			<location>/home/bosp/workspace/faultDetection/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>
