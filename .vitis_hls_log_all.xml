@@ -3,35 +3,19 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <simLog/>
+      <mgLog/>
       <packageLog/>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:04.105+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_BREADY' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.395+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WUSER' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.381+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WID' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.373+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WLAST' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.364+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WSTRB' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.355+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WDATA' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.349+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WVALID' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.339+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWUSER' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.331+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWREGION' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.326+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWQOS' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.304+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWPROT' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.295+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWCACHE' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.289+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWLOCK' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.274+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWBURST' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-03T10:50:02.268+0100" type="Warning"/>
-      </synLog>
-      <packageLog>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fsub_32ns_32ns_32_4_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2022-11-03T11:35:43.406+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fmul_32ns_32ns_32_2_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2022-11-03T11:35:38.312+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fcmp_32ns_32ns_1_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2022-11-03T11:35:32.143+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_faddfsub_32ns_32ns_32_4_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2022-11-03T11:35:26.704+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fadd_32ns_32ns_32_4_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xA;create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.027 ; gain = 43.992 ; free physical = 1238 ; free virtual = 16368" projectName="faultDetection" solutionName="solution1" date="2022-11-03T11:35:21.609+0100" type="Warning"/>
-      </packageLog>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

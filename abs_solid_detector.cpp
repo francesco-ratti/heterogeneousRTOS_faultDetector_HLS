@@ -18,7 +18,7 @@ bool hasRegion(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, 
 			//#pragma HLS unroll
 #pragma HLS loop_tripcount min=1 max=8
 
-			if(regions[i].min[j] <= d[j] && regions[i].max[j] >= d[j]) {
+			if((regions[i].min[j] <= d[j] || fabs(regions[i].min[j] - d[j]) < thresh ) && ( regions[i].max[j] >= d[j] || fabs(regions[i].max[j] - d[j]) < thresh)) {
 				if (j==MAX_AOV_DIM-1)
 					return true;
 			} else break;
@@ -64,7 +64,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			int tmp_other=-1;
 
 			//MAX_REGIONS_SUMM
-			for(int i=0; i_real < n_regions-1; i++){
+			while (i_real < n_regions-1){
 				//#pragma HLS unroll
 #pragma HLS loop_tripcount min=0 max=136
 #pragma HLS PIPELINE II=8
@@ -119,7 +119,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 
 				if(tmp_other == -1 || sc > tmp_score){
-					tmp_other = i_real;
+					tmp_other = k_real;
 					tmp_score = sc;
 				}
 				//}
@@ -127,22 +127,16 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 
 				if (k_real==n_regions-1) {
-					i_real++;
-					k_real=i_real+1;
-
-
 					if(merge_1 < 0 || tmp_score > score){
 						score = tmp_score;
 						merge_1 = i_real;
 						merge_2 = tmp_other;
 					}
-
 					tmp_score=0;
 					tmp_other = -1;
 
-					/*if (i_real>=n_regions)
-						break;*/
-
+					i_real++;
+					k_real=i_real+1;
 				} else {
 					k_real++;
 				}
@@ -150,15 +144,16 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 			//merge_regions(regions, merge_1, merge_2);
 			//merge regions inlining
-			insert_point_label6:for(int i=0; i < MAX_AOV_DIM; i++){
-				if(regions[merge_2].min[i] < regions[merge_1].min[i]){
+			insert_point_label6: for(int i=0; i < MAX_AOV_DIM; i++){
+				if(regions[merge_1].min[i] > regions[merge_2].min[i]){
 					regions[merge_1].min[i] = regions[merge_2].min[i];
 				}
-				if(regions[merge_2].max[i] > regions[merge_1].max[i]){
+				if(regions[merge_1].max[i] < regions[merge_2].max[i]){
 					regions[merge_1].max[i] = regions[merge_2].max[i];
 				}
 				regions[merge_1].center[i] = (regions[merge_1].max[i] + regions[merge_1].min[i])/2.0;
 			}
+
 
 			//move everything over
 			//			insert_point_label7:for(int i=merge_2; i < MAX_REGIONS-1; i++){
@@ -169,7 +164,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			//				//}
 			//			}
 			//if (merge_2!=(n_regions-1))
-			regions[merge_2]=regions[n_regions-1];
+			regions[merge_2]=regions[MAX_REGIONS-1];
 			n_regions--;
 		}
 	}
