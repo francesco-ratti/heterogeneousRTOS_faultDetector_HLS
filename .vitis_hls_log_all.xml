@@ -3,19 +3,25 @@
   <errorLogs>
     <logs>
       <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:07.204+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_BREADY' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.381+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WUSER' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.377+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WID' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.374+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WLAST' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.371+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WSTRB' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.368+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WDATA' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.365+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WVALID' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.362+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWUSER' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.359+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWREGION' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.356+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWQOS' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.353+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWPROT' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.350+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_AWCACHE' to 0." projectName="faultDetection" solutionName="solution1" date="2022-11-24T21:36:05.347+0100" type="Warning"/>
+      </synLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

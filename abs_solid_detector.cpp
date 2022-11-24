@@ -9,16 +9,23 @@ const float thresh=THRESH;
 
 bool hasRegion(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, const float d[MAX_AOV_DIM]){
 	for(int i=0; i < n_regions; i++){
+#pragma HLS PIPELINE
 
 		//		if (i>=n_regions)
 		//			break;
 #pragma HLS loop_tripcount min=0 max=16
 		//#pragma HLS PIPELINE II=4
 		for(int j=0; j < MAX_AOV_DIM; j++){
-			//#pragma HLS unroll
-#pragma HLS loop_tripcount min=1 max=8
+			#pragma HLS unroll
+//#pragma HLS loop_tripcount min=1 max=8
 
-			if((regions[i].min[j] <= d[j] || fabs(regions[i].min[j] - d[j]) < thresh ) && ( regions[i].max[j] >= d[j] || fabs(regions[i].max[j] - d[j]) < thresh)) {
+			if((( regions[i].min[j] <= d[j] ) && ( regions[i].max[j] >= d[j] )) /*||
+			(	( regions[i].min[j] > d[j]  && ( regions[i].min[j] - d[j] < thresh )) ||
+				( d[j] > regions[i].min[j] && ( d[j] - regions[i].min[j] < thresh )) ||
+				( regions[i].max[j] > d[j]  && ( regions[i].max[j] - d[j] < thresh )) ||
+				( d[j] > regions[i].max[j] && ( d[j] - regions[i].max[j] < thresh ))
+			)*/
+			) {
 				if (j==MAX_AOV_DIM-1)
 					return true;
 			} else break;
@@ -417,7 +424,9 @@ void FaultDetector(char accel_mode, volatile char* copying, volatile controlStr*
 #pragma HLS interface mode=s_axilite port = errorInTask
 #pragma HLS INTERFACE mode=s_axilite port = lastTestDescriptor
 
-#pragma HLS array_partition variable=regions dim=2 /*complete*/ cyclic factor=2
+#pragma HLS array_partition variable=regions dim=2 complete
+#pragma HLS array_partition variable=regions dim=3 complete
+
 
 #pragma HLS reset variable=failedTaskExecutionIds
 
