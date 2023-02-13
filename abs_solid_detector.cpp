@@ -357,7 +357,8 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr in
 			char tskId=*taskId;
 			(*copying)=tskId | 0x1;
 //			setProcessingState(copying, tskId | 0x1);
-			memcpy(&destStr, (controlStr*) &(inputAOV[tskId]), sizeof(controlStr));
+			memcpy((void*) &destStr, (void*) &(inputAOV[tskId]), sizeof(controlStr));
+//			destStr=*((controlStr*) &(inputAOV[tskId]));
 
 
 
@@ -375,13 +376,13 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, volatile controlStr in
 //				setProcessingState(copying, false);
 				(*copying)=0x0;
 			}
-//#pragma HLS DEPENDENCE type=intra variable=destStr dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.AOV dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.checkId dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.command dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.executionId dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.taskId dependent=true
-//#pragma HLS DEPENDENCE type=intra variable=destStr.uniId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.AOV dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.checkId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.command dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.executionId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.taskId dependent=true
+#pragma HLS DEPENDENCE type=intra variable=destStr.uniId dependent=true
 			dest.write(destStr);
 
 			if (destStr.command==COMMAND_STOP) {

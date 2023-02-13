@@ -2,25 +2,18 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog/>
-      <packageLog/>
+      <synLog>
+        <logs message="ERROR: [HLS 200-1715] Encountered problem during source synthesis" projectName="faultDetection" solutionName="solution1" date="2023-02-13T02:14:53.710+0100"/>
+        <logs message="ERROR: [HLS 214-211] in function 'read_data(hls::stream&lt;controlStr, 2>&amp;, controlStr volatile*, char volatile*, char volatile*)': Detected illegal out-of-bounds access on variable 'destStr' which is struct 'controlStr' field 0" projectName="faultDetection" solutionName="solution1" date="2023-02-13T02:14:53.704+0100"/>
+      </synLog>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:23:25.608+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_BREADY' to 0." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:23:21.505+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WUSER' to 0." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:23:21.501+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WID' to 0." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:23:21.494+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'afterInit/m_axi_gmem_WLAST' to 0." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:23:21.491+0100" type="Warning"/>
+        <logs message="WARNING: [HLS 214-199] Ignoring dependence pragma on local scalar variable 'getelementptr'. (faultDetection/abs_solid_detector.cpp:381:9)" projectName="faultDetection" solutionName="solution1" date="2023-02-13T02:14:53.699+0100" type="Warning"/>
+        <logs message="WARNING: [HLS 214-199] Ignoring dependence pragma on local scalar variable 'getelementptr'. (faultDetection/abs_solid_detector.cpp:382:9)" projectName="faultDetection" solutionName="solution1" date="2023-02-13T02:14:53.695+0100" type="Warning"/>
       </synLog>
-      <packageLog>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fsub_32ns_32ns_32_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:26:39.367+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:26:34.237+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_fcmp_32ns_32ns_1_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xA;create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1318.836 ; gain = 2.969 ; free physical = 246 ; free virtual = 13343" projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:26:27.941+0100" type="Warning"/>
-        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'FaultDetector_faddfsub_32ns_32ns_32_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xA;create_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1309.930 ; gain = 46.961 ; free physical = 194 ; free virtual = 13353" projectName="faultDetection" solutionName="solution1" date="2023-02-11T18:26:22.069+0100" type="Warning"/>
-      </packageLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>
