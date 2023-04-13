@@ -1,9 +1,9 @@
 
 //custom commands and data types
-#define FAULTDETECTOR_MAX_CHECKS 64
-#define FAULTDETECTOR_MAX_TASKS 16
-#define FAULTDETECTOR_MAX_AOV_DIM 8
-#define FAULTDETECTOR_MAX_REGIONS 16
+#define FAULTDETECTOR_MAX_CHECKS 8
+#define FAULTDETECTOR_MAX_TASKS 8
+#define FAULTDETECTOR_MAX_AOV_DIM 4
+#define FAULTDETECTOR_MAX_REGIONS 8
 
 #define FAULTDETECTOR_MODE_INIT 1
 #define FAULTDETECTOR_MODE_OUT 2
@@ -17,25 +17,25 @@ typedef struct {
 
 typedef struct {
 	u8 checkId;
-	u8 executionId;
 	u16 uniId;
+	u8 executionId;
 	float AOV[FAULTDETECTOR_MAX_AOV_DIM];
-} FAULTDETECTOR_testpointDescriptorStr;
+} __attribute__((packed)) FAULTDETECTOR_testpointDescriptorStr;
 
 typedef struct {
 	u8 checkId;
-	u8 executionId;
 	u16 uniId;
-} FAULTDETECTOR_testpointShortDescriptorStr;
+	u8 executionId;
+} __attribute__((packed)) FAULTDETECTOR_testpointShortDescriptorStr;
 
 typedef struct {
 	u8 checkId;
+	u16 uniId;
+	u8 executionId;
+	float AOV[FAULTDETECTOR_MAX_AOV_DIM];
 	u8 taskId;
-	u8 executionId;
-	u16 uniId;
 	char command;
 	char gap0[2];
-	float AOV[FAULTDETECTOR_MAX_AOV_DIM];
 } FAULTDETECTOR_controlStr;
 
 //custom drivers:
@@ -51,5 +51,5 @@ char FAULTDETECTOR_hasFault(XFaultdetector *InstancePtr, u8 taskId);
 void FAULTDETECTOR_resetFault(XFaultdetector *InstancePtr, u8 taskId);
 void FAULTDETECTOR_setTrainedRegion(XFaultdetector *InstancePtr, FAULTDETECTOR_region_t* region);
 FAULTDETECTOR_region_t FAULTDETECTOR_getTrainedRegion(XFaultdetector *InstancePtr);
-void FAULTDETECTOR_startCopy(XFaultdetector *InstancePtr);
+void FAULTDETECTOR_startCopy(XFaultdetector *InstancePtr, u8 taskId);
 char FAULTDETECTOR_isReadyForNextControl(XFaultdetector *InstancePtr);
