@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="faultDetection" top="FaultDetector">
+<project xmlns="com.autoesl.autopilot.project" name="faultDetection" top="FaultDetector" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

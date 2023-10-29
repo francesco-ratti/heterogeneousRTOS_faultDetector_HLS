@@ -191,11 +191,11 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 ap_uint<2> fsmstate=STATE_UNINITIALISED;
 
 struct testpointDescriptorStr {
-	ap_uint<8> checkId;
 	ap_uint<16> uniId;
+	ap_uint<8> checkId;
 	ap_uint<8> executionId;
 	float AOV[MAX_AOV_DIM];
-};
+}  __attribute__((packed, aligned(4)));
 
 struct OutputStr {
 	ap_uint<2> command;
@@ -208,14 +208,14 @@ struct OutputStr {
 };
 
 struct controlStr {
-	ap_uint<8> checkId;
 	ap_uint<16> uniId;
+	ap_uint<8> checkId;
 	ap_uint<8> executionId;
 	float AOV[MAX_AOV_DIM];
 	ap_uint<8> taskId;
 	char command;
 	char gap0[2];
-};
+} __attribute__((packed, aligned(4)));
 
 struct taskFailure {
 	ap_uint<8> taskId;
