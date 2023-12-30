@@ -47,7 +47,7 @@ bool is_valid(const float val[MAX_AOV_DIM]){
 	return true;
 }
 
-void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
+void insert_point(region_t regions[MAX_REGIONS], ap_uint<4> &n_regions, const float d[MAX_AOV_DIM]) {//, bool is_accept){
 
 	//int id = find_region(regions, n_regions, d);
 
@@ -56,49 +56,39 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 		insert_point_label4:for(int i=0; i < MAX_AOV_DIM; i++){
 			regions[n_regions].min[i] = regions[n_regions].max[i] = regions[n_regions].center[i] = d[i];
 		}
-		n_regions++;
+//		n_regions++;
 
 		//if we're full of space, make room for another region.
-		if(n_regions == MAX_REGIONS){ //if we're full.
+		if(n_regions == MAX_REGIONS-1){ //if we're full.
 			//find the region with the most similar dynamics that isn't
 			//completely obstructed by another region.
-			int merge_1=-1;
-			int merge_2=-1;
+			ap_uint<4> merge_1=0;
+			bool merge_1_vld=false;
+
+			ap_uint<4> merge_2=0;
 			float score = 0;
 
-			int i_real=0;
-			int k_real=1;
+			ap_uint<4> i_real=0;
+			ap_uint<4> k_real=1;
 
 			float tmp_score=0;
-			int tmp_other=-1;
+			ap_uint<4> tmp_other=0;
+			bool tmp_other_vld=false;
 
 			//MAX_REGIONS_SUMM
-			while (i_real < n_regions-1){
+			while (i_real < MAX_REGIONS-1){
+#pragma HLS PIPELINE
+
 				//#pragma HLS unroll
-#pragma HLS loop_tripcount min=0 max=136
-#pragma HLS PIPELINE II=8
-
-
-
-				//int tmp_other = find_closest_region(regions, n_regions, i, &tmp_score);
-
-				//float bestscore=0.0;
-
-
-
-
-				//				for(int k=i+1; k < MAX_REGIONS; k++){
-				//			#pragma HLS unroll
-
-				//					if (k_real>=n_regions)
-				//						break;
-				//if(k != i) {
-				//printf("score [%d,%d]:", i, k);
+				#pragma HLS loop_tripcount min=0 max=136
 
 				float distance = 0;
 				float overlap=1;
 
 				insert_point_label5:for(int j=0; j < MAX_AOV_DIM; j++){
+//#pragma HLS PIPELINE off
+
+
 
 
 					float d = (regions[i_real].center[j] - regions[k_real].center[j]);
@@ -127,22 +117,22 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 
 
 
-				if(tmp_other == -1 || sc > tmp_score){
+				if(tmp_other_vld || sc > tmp_score){
 					tmp_other = k_real;
+					tmp_other_vld=true;
 					tmp_score = sc;
 				}
-				//}
-				//				}
 
 
-				if (k_real==n_regions-1) {
-					if(merge_1 < 0 || tmp_score > score){
+				if (k_real==MAX_REGIONS-1) {
+					if(merge_1_vld || tmp_score > score){
 						score = tmp_score;
 						merge_1 = i_real;
+						merge_1_vld=true;
 						merge_2 = tmp_other;
 					}
 					tmp_score=0;
-					tmp_other = -1;
+					tmp_other_vld=false;
 
 					i_real++;
 					k_real=i_real+1;
@@ -154,6 +144,8 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			//merge_regions(regions, merge_1, merge_2);
 			//merge regions inlining
 			insert_point_label6: for(int i=0; i < MAX_AOV_DIM; i++){
+//#pragma HLS PIPELINE off
+
 				if(regions[merge_1].min[i] > regions[merge_2].min[i]){
 					regions[merge_1].min[i] = regions[merge_2].min[i];
 				}
@@ -174,11 +166,11 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<8> &n_regions, const fl
 			//			}
 			//if (merge_2!=(n_regions-1))
 			regions[merge_2]=regions[MAX_REGIONS-1];
-			n_regions--;
-		}
+//			n_regions--;
+		} else
+			n_regions++;
 	}
 }
-
 
 
 #define COMMAND_STOP 1
@@ -245,24 +237,24 @@ volatile void handle_outcome(volatile char errorInTask[MAX_TASKS], ap_uint<8> fa
 			break;
 		}
 
-		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
+//		if (!(errorInTask[in.taskId] && failedTaskExecutionId[in.taskId]==in.executionId)) {
 			errorInTask[in.taskId] = in.fault;
-
-			if (in.command==COMMAND_TEST)
+//
+//			if (in.command==COMMAND_TEST)
 				memcpy((testpointDescriptorStr*) (&outcomeInRam[in.taskId]), &outcome, sizeof(outcome));
 
 
-			if (in.fault) {
-				failedTaskExecutionId[in.taskId]=in.executionId;
-
-				*failedTask=(((unsigned short)in.taskId) | (((unsigned short)(in.executionId)) << 8));
-			}
-		}
+//			if (in.fault) {
+//				failedTaskExecutionId[in.taskId]=in.executionId;
+//
+//				*failedTask=(((unsigned short)in.taskId) | (((unsigned short)(in.executionId)) << 8));
+//			}
+//		}
 	}
 }
 
 
-volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS], hls::stream<controlStr, 2> &source, hls::stream<OutputStr, 2> &dest) {
+volatile void compute(region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<4> n_regions[MAX_CHECKS], hls::stream<controlStr, 2> &source, hls::stream<OutputStr, 2> &dest) {
 
 	controlStr in;
 #pragma HLS ARRAY_PARTITION variable=in.AOV type=complete
@@ -395,7 +387,7 @@ volatile void read_data(hls::stream<controlStr, 2> &dest, controlStr inputAOV[MA
 }
 
 void afterInit(controlStr inputAOV[MAX_TASKS], volatile char* taskId, /*char* readyForData,  char* copyInputAOV,*/
-		volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<8> n_regions[MAX_CHECKS],  volatile unsigned short *failedTask, volatile char* copying
+		volatile testpointDescriptorStr outcomeInRam[MAX_TASKS], /* hls::stream< ap_uint<8> > &toScheduler,*/ volatile char errorInTask[MAX_TASKS], ap_uint<8> failedTaskExecutionIds[MAX_TASKS], region_t regions[MAX_CHECKS][MAX_REGIONS], ap_uint<4> n_regions[MAX_CHECKS],  volatile unsigned short *failedTask, volatile char* copying
 ) {
 #pragma HLS DATAFLOW disable_start_propagation
 #pragma HLS interface mode=ap_ctrl_hs port=return
@@ -410,7 +402,7 @@ void afterInit(controlStr inputAOV[MAX_TASKS], volatile char* taskId, /*char* re
 
 
 static region_t regions[MAX_CHECKS][MAX_REGIONS]; //regions from the distribution
-static ap_uint<8> n_regions[MAX_CHECKS];
+static ap_uint<4> n_regions[MAX_CHECKS];
 static ap_uint<8> failedTaskExecutionIds[MAX_TASKS];
 
 
