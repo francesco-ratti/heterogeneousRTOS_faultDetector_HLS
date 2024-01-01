@@ -53,7 +53,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/francesco/workspace"/>
+                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/etc"/>
                                     									
@@ -62,8 +62,6 @@
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/include"/>
                                     									
@@ -101,7 +99,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/francesco/workspace"/>
+                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/etc"/>
                                     									
@@ -110,8 +108,6 @@
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/include"/>
                                     									
@@ -191,7 +187,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.git|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -253,7 +249,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/francesco/workspace"/>
+                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/etc"/>
                                     									
@@ -262,8 +258,6 @@
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/include"/>
                                     									
@@ -291,7 +285,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/francesco/workspace"/>
+                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/etc"/>
                                     									
@@ -300,8 +294,6 @@
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2023.1/lnx64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/tools/Xilinx/Vitis_HLS/2022.2/include"/>
                                     									
@@ -371,7 +363,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.git|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

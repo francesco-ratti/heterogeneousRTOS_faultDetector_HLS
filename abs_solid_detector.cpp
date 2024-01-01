@@ -11,12 +11,12 @@ bool hasRegion(const region_t regions[MAX_REGIONS], const ap_uint<8> n_regions, 
 	for(int i=0; i < MAX_REGIONS; i++){
 		if (i>=n_regions)
 			break;
-#pragma HLS UNROLL
+//#pragma HLS UNROLL
 
 		//		if (i>=n_regions)
 		//			break;
-#pragma HLS loop_tripcount min=0 max=16
-		//#pragma HLS PIPELINE II=4
+//#pragma HLS loop_tripcount min=0 max=1
+		#pragma HLS PIPELINE II=4
 		for(int j=0; j < MAX_AOV_DIM; j++){
 			#pragma HLS unroll
 //#pragma HLS loop_tripcount min=1 max=8
@@ -144,7 +144,7 @@ void insert_point(region_t regions[MAX_REGIONS], ap_uint<4> &n_regions, const fl
 			//merge_regions(regions, merge_1, merge_2);
 			//merge regions inlining
 			insert_point_label6: for(int i=0; i < MAX_AOV_DIM; i++){
-//#pragma HLS PIPELINE off
+#pragma HLS PIPELINE off
 
 				if(regions[merge_1].min[i] > regions[merge_2].min[i]){
 					regions[merge_1].min[i] = regions[merge_2].min[i];
@@ -433,7 +433,7 @@ void FaultDetector(char accel_mode, volatile char* copying, controlStr inputData
 #pragma HLS INTERFACE mode=s_axilite port = lastTestDescriptor
 
 #pragma HLS array_partition variable=regions dim=2 complete
-#pragma HLS array_partition variable=regions dim=3 complete
+//#pragma HLS array_partition variable=regions dim=3 complete
 
 
 #pragma HLS reset variable=failedTaskExecutionIds
